@@ -12,7 +12,7 @@
              // $this.sticky_header();
              // $this.sticky_sidebar_hide_toggle();
              // $this.sticky_product_search();
-             // $this.pre_loader();
+             $this.pre_loader();
              $this.sideabr_toggle();
              $this.CatMenu();
              $this.DefaultMenu();
@@ -25,18 +25,7 @@
              if($('.header__cat__item.dropdown').length!==0){
              $this.cat_toggle();
              }
-             if ($('body.single-product').length) {
-             $this.woccomerce_tab();
-           }
         },
-         woccomerce_tab: function (){
-                 $( document ).ready( function() {
-                 if($( '.description_tab' ).hasClass('active')){
-                       $('.woocommerce-Tabs-panel.woocommerce-Tabs-panel--description').css('display','block');
-                    }
-                });
-
-           },
         sticky_sidebar_hide_toggle: function () {
                if($('#sidebar-primary.bigstr-sticky-sidebar').length!==0){
                       var lastScrollTop = 0;
@@ -107,7 +96,12 @@
                                 function removeLoader(){
                                     $( ".th_shop_mania_overlayloader" ).fadeOut(700, function(){
                                       // fadeOut complete. Remove the loading div
+                                   if ($("th-shop-mania-pre-loader img").length) {
                                    $(".th-shop-mania-pre-loader img" ).hide(); //makes page more lightweight
+                                    }
+                                    else{
+                                      $(".th-shop-mania-pre-loader .loader" ).hide();
+                                    }
                                     });  
                                   }
                                 }

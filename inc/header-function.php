@@ -290,3 +290,23 @@ if (!function_exists('th_shop_mania_header_btm_post_meta')) {
         }
     }
 }
+/**************************/
+//PRELOADER
+/**************************/
+if( ! function_exists( 'th_shop_mania_preloader' ) ){
+ function th_shop_mania_preloader(){
+ if (( isset( $_REQUEST['action'] ) && 'elementor' == $_REQUEST['action'] ) ||
+                isset( $_REQUEST['elementor-preview'] )){
+      return;
+ }else{  ?>
+    <div class="th_shop_mania_overlayloader">
+    <div class="th-shop-mania-pre-loader">
+       <div class="loader">&nbsp;</div>
+    </div>
+    </div> 
+   <?php 
+   }
+ }
+
+}
+add_action('th_shop_mania_site_preloader','th_shop_mania_preloader');
