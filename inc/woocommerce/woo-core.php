@@ -42,7 +42,7 @@ if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
 		 * Constructor
 		 */
 		public function __construct(){
-		    // add_action( 'wp_enqueue_scripts',array( $this, 'amaz_store_add_scripts' ));	
+		    add_action( 'wp_enqueue_scripts',array( $this, 'amaz_store_add_scripts' ));	
 		    // add_action( 'wp_enqueue_scripts',array( $this, 'amaz_store_add_style' ));	
 
 		    add_filter( 'post_class', array( $this, 'amaz_store_post_class' ) );
@@ -278,33 +278,10 @@ if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
 		 * Add Scripts
 		 */
 		function amaz_store_add_scripts(){
-		   wp_enqueue_script( 'amaz-store-woocommerce-js', AMAZ_STORE_THEME_URI .'/inc/woocommerce/js/woocommerce.js', array( 'jquery' ), '2.0.0', true );
-           $localize = array(
-				'ajaxUrl'  => admin_url( 'admin-ajax.php' ),
-				//cat-tab-filter
-				'amaz_store_single_row_slide_cat' => get_theme_mod('amaz_store_single_row_slide_cat',false),
-				'amaz_store_cat_slider_optn' => get_theme_mod('amaz_store_cat_slider_optn',false),
-				
-				//product-slider
-				'amaz_store_single_row_prdct_slide' => get_theme_mod('amaz_store_single_row_prdct_slide',false),
-				'amaz_store_product_slider_optn' => get_theme_mod('amaz_store_product_slider_optn',false),
-				//cat-slider
-				'amaz_store_category_slider_optn' => get_theme_mod('amaz_store_category_slider_optn',false),
-				//product-list
-				'amaz_store_single_row_prdct_list' => get_theme_mod('amaz_store_single_row_prdct_list',false),
-				'amaz_store_product_list_slide_optn' => get_theme_mod('amaz_store_product_list_slide_optn',false),
-				//category slider coloum
-				'amaz_store_cat_item_no' => get_theme_mod('amaz_store_cat_item_no','5'),
-				'amaz_store_rtl' => (bool)get_theme_mod('amaz_store_rtl'),
-				// 'amaz_store_frontpage_sidebar' => get_post_meta( get_option( 'page_on_front' ), 'amaz_store_sidebar_dyn', true ),
-				'amaz_store_frontpage_sidebar' =>amaz_store_sidebar_layout(get_post_meta( get_option( 'page_on_front' ), 'amaz_store_sidebar_dyn', true ),''),
-				
-				
-				
-			);
-           wp_localize_script( 'amaz-store-woocommerce-js', 'amazstore',  $localize );	
-           wp_enqueue_script('open-quick-view', AMAZ_STORE_THEME_URI.'inc/woocommerce/quick-view/js/quick-view.js', array( 'jquery' ), '', true );
-           wp_localize_script('open-quick-view', 'amazstoreqv', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
+		   wp_enqueue_script( 'th-shop-mania-woocommerce-js', th_shop_mania_THEME_URI .'/inc/woocommerce/js/woocommerce.js', array( 'jquery' ), '2.0.0', true );
+           
+           // wp_enqueue_script('open-quick-view', AMAZ_STORE_THEME_URI.'inc/woocommerce/quick-view/js/quick-view.js', array( 'jquery' ), '', true );
+           // wp_localize_script('open-quick-view', 'amazstoreqv', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
           
 		   }
 		/**
@@ -472,7 +449,10 @@ if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
              remove_action( 'woocommerce_after_single_product_summary',array( $this, 'amaz_store_woocommerce_output_upsells' ));	
              }
              add_filter( 'woocommerce_output_related_products_args', array( $this, 'amaz_store_related_no_col_product_show' ) );
-
+             	/**
+ 				* Remove "Description" Heading Title @ WooCommerce Single Product Tabs
+ 				*/
+			add_filter( 'woocommerce_product_description_heading', '__return_null' );
 		}
 	    /*****************/
 		// upsale product

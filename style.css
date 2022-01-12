@@ -597,6 +597,37 @@ background: #ff3377;
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
+.th-shop-mania-pre-loader .loader {
+    position: absolute;
+    border: 2px solid #D4B068;
+    border-radius: 50%;
+    border-top: 2px solid #f3f3f3;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin .6s linear infinite;
+    animation: spin .6s linear infinite;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0px 0px -50px;
+    display: block;
+    background-position: center;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 /* (4)Accessibility */
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -937,6 +968,9 @@ order: 2;
     -moz-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
+}
+.widget-footer{
+  border-top: 1px solid #ebebeb;
 }
 .widget-footer .widget.widget_text{
 margin-bottom:15px;
@@ -1293,6 +1327,9 @@ font-size:30px;
 position:relative;
     min-height: 550px;
 }
+.theme-th-shop-mania .page-content{
+  margin-top: 30px;
+}
 .right .primary-content-area{
     order: 1;
 }
@@ -1317,6 +1354,9 @@ position:relative;
 position:relative;
 margin-left: 9px;
 }
+.main-header-col3 .account{
+  display: block;
+}
 /*****************/
 /*Menu Alignment*/
 /*****************/
@@ -1333,10 +1373,11 @@ text-align:start;
     position: relative;
 }
 .below-footer{
-    border-top: solid;
+    border-top: 1px solid;
     border-bottom-width: 0px;
      position: relative;
-     border-color: transparent;
+     border-color: #EBEBEB;
+
 }
 .widget-footer{
   position:relative;
@@ -3363,6 +3404,10 @@ section.upsells.products > h2,
     width: 100%;
     padding: 0px 0px 20px;
 }
+section.related.products > h2, 
+section.upsells.products > h2{
+  text-align: center;
+}
 .woocommerce #reviews #comments ol.commentlist li{
     border-bottom: 1px solid #f1f1f1;
     list-style: outside none none;
@@ -3834,6 +3879,21 @@ border: 1px solid #f1f1f1;
   .woocommerce input.button:disabled,
    .woocommerce input.button:disabled[disabled] {
     padding: 0;
+}
+.woocommerce .cart-collaterals{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.woocommerce .cart-collaterals .cart_totals, 
+.woocommerce-page .cart-collaterals .cart_totals{
+    order: 1;
+    margin-left: auto;
+}
+.woocommerce .cart-collaterals .cross-sells, 
+.woocommerce-page .cart-collaterals .cross-sells{
+  width: 100%;
+  order: 2;
 }
 /************************/
 /*woocommerce cart page*/

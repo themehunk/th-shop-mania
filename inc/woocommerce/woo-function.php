@@ -44,7 +44,7 @@ function th_shop_mania_account(){
  if ( is_user_logged_in() ){?>
 <a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="account-text"><?php _e('Hello , ','th-shop-mania');?> <?php th_shop_mania_display_admin_name(); ?></span><span class="account-text"><?php _e('My account','th-shop-mania');?></span><i class="fa fa-user-o" aria-hidden="true"></i></a>
 <?php } else {?>
-<span><a href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="account-text"><?php _e('Login / Signup','th-shop-mania');?></span><span class="account-text"><?php _e('My account','th-shop-mania');?></span><i class="fa fa-lock" aria-hidden="true"></i></a></span>
+<span><a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="account-text"><?php _e('Login / Signup','th-shop-mania');?></span><span class="account-text"><?php _e('My account','th-shop-mania');?></span><i class="fa fa-lock" aria-hidden="true"></i></a></span>
 <?php }
  }
  add_action('th_shop_mania_account','th_shop_mania_account');
@@ -116,18 +116,16 @@ echo '</div>';
  // Plus Minus Quantity Buttons @ WooCommerce Single Product Page
 add_action( 'woocommerce_before_add_to_cart_quantity', 'th_shop_mania_display_quantity_minus',10,2 );
 function th_shop_mania_display_quantity_minus(){
-  global $product;
-  if($product->get_sold_individually()!='1'):
+
     echo '<div class="th-shop-mania-quantity"><button type="button" class="minus" >-</button>';
-  endif;
+  
   
 }
 add_action( 'woocommerce_after_add_to_cart_quantity', 'th_shop_mania_display_quantity_plus',10,2 );
 function th_shop_mania_display_quantity_plus(){
-  global $product;
-  if($product->get_sold_individually()!='1'):
+  
     echo '<button type="button" class="plus" >+</button></div>';
-  endif;
+  
 }
 
 //Woocommerce: How to remove page-title at the home/shop page but not category pages
@@ -384,3 +382,8 @@ add_action( 'woocommerce_after_shop_loop', 'th_shop_mania_pro_shop_content_end',
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+/**
+ * Remove "Description" Heading Title @ WooCommerce Single Product Tabs
+ */
+add_filter( 'woocommerce_product_description_heading', '__return_null' );

@@ -39,11 +39,11 @@ get_header();?>
 				?>
 			</div><!-- .error-404 -->
           </article>
+          					</div>
                            </div> <!-- end primary-content-wrap-->
         				</div> <!-- end primary primary-content-area-->
         				<?php get_sidebar(); ?><!-- end sidebar-primary  sidebar-content-area-->
         			</div> <!-- end main-area -->
-        			</div>
         		</div>
         	</div> <!-- end content-wrap -->
         </div> <!-- end content page-content -->

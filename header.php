@@ -51,7 +51,9 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
 ?>
 <body <?php body_class();?>>
 
-	<?php wp_body_open();?>
+	<?php wp_body_open();
+	do_action('th_shop_mania_site_preloader');
+	?>
 
 <div id="page" class="th-shop-mania-site">
 	<header>

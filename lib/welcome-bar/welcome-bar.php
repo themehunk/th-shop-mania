@@ -35,7 +35,7 @@ function th_shop_mania_started_admin_notice() {
           ?>
         </a>
         
-        <a href="<?php echo esc_url( admin_url( 'themes.php?page=th_shop_mania_thunk_started' ) ); ?>" class="th-inst-demo-btn"><?php echo __('Install Demo','th-shop-mania'); ?></a>
+        <a href="<?php echo esc_url( admin_url( 'themes.php?page=th_shop_mania_thunk_started&th-tab=import-demo-content' ) ); ?>" class="th-inst-demo-btn"><?php echo __('Install Demo','th-shop-mania'); ?></a>
       </p>
     </div>
     <?php
