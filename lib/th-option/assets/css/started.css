@@ -211,17 +211,10 @@ a.plugin-detail.thickbox.open-plugin-details-modal {
 .about-wrap .header{
     margin-bottom: 35px;
 }
-
-
-
-
 .main {
+    width: 100%;
     display: flex;
 }
-
-
-
-
 /* Create an active/current tablink class */
 .th-option-bottom-hdr .tablinks.active {
   color: #228add;

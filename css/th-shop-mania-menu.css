@@ -27,14 +27,14 @@
     margin: 0;
     border: 0px;
     font-size:14px;
-     font-family: 'Poppins', sans-serif;
+     font-family: 'Jost', sans-serif;
      font-weight: 400;
     padding: 12px;
     color: #111;
 }
  #open-above-menu.th-shop-mania-menu > li > a{
 font-size: 13px;
-font-family: 'Poppins', sans-serif;
+font-family: 'Jost', sans-serif;
 font-weight: 400;
 }
 .th-shop-mania-menu li a i {
@@ -723,7 +723,7 @@ width:100%!important;
 .sider.overcenter .sider-inner ul.th-shop-mania-menu li a{
 font-size:20px;
 color:#fff;
-font-family: 'Poppins';font-weight: 700;
+font-family: 'Jost';font-weight: 700;
 line-height: initial;
 padding: 10px 0px 10px 0px!important;
 

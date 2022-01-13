@@ -100,7 +100,7 @@
                                    $(".th-shop-mania-pre-loader img" ).hide(); //makes page more lightweight
                                     }
                                     else{
-                                      $(".th-shop-mania-pre-loader .loader" ).hide();
+                                      $(".th-shop-mania-pre-loader .th-loader" ).hide();
                                     }
                                     });  
                                   }
