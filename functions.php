@@ -189,7 +189,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ),
 
         ));
-
+remove_theme_support( 'widgets-block-editor' );
 	}
 endif;
 add_action( 'after_setup_theme', 'th_shop_mania_setup' );
