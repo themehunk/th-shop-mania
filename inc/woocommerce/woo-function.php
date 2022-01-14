@@ -27,15 +27,12 @@ if ( ! function_exists( 'th_shop_mania_cart_total_item' ) ){
    * Displayed a link to the cart including the number of items present and the cart total
    */
  function th_shop_mania_cart_total_item(){
-   global $woocommerce; 
-   $product_no = WC()->cart->get_cart_contents_count();
-  ?>
- <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','th-shop-mania' ); ?>">
-  <i class="fa fa-shopping-cart"></i>
-  <span class="count-item"><?php echo WC()->cart->get_cart_contents_count();?></span>
-  <span class="cart-total"><?php echo WC()->cart->get_cart_total(); ?></span>
-</a>
-  <?php }
+  if (shortcode_exists( 'taiowc' )) { ?>
+    <div class="cart-contents">
+   <?php echo do_shortcode('[taiowc]'); ?>
+   </div>
+ <?php }
+}
   add_action('th_shop_mania_cart_total_item','th_shop_mania_cart_total_item');
 }
 /** My Account Menu **/

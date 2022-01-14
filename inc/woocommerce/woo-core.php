@@ -14,13 +14,13 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 /**
  * Amaze Store WooCommerce Compatibility
  */
-if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
+if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 	/**
-	 * th_shop_mania_Pro_Woocommerce_Ext Compatibility
+	 * Th_Shop_Mania_Pro_Woocommerce_Ext Compatibility
 	 *
 	 * @since 1.0.0
 	 */
-	class th_shop_mania_Pro_Woocommerce_Ext{
+	class Th_Shop_Mania_Pro_Woocommerce_Ext{
 
         /**
 		 * Member Variable
@@ -51,8 +51,8 @@ if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
 		    // add_filter( 'open_theme_js_localize', array( $this, 'amaz_store_js_localize' ) );
 		    // add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'amaz_store_product_flip_image' ), 10 );
 		    // Register Store Sidebars.
-			add_action( 'widgets_init', array( $this, 'amaz_store_store_widgets_init' ), 15 );
-			add_action( 'after_setup_theme', array( $this, 'amaz_store_setup_theme' ) );
+			add_action( 'widgets_init', array( $this, 'th_shop_mania_store_widgets_init' ), 15 );
+			add_action( 'after_setup_theme', array( $this, 'th_shop_mania_setup_theme' ) );
 			// Replace Store Sidebars.
 			add_filter( 'th_shop_mania_get_sidebar', array( $this, 'th_shop_mania_replace_store_sidebar' ) );
 		    // quick view ajax.
@@ -86,7 +86,7 @@ if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
 		/**
 		 * Store widgets init.
 		 */
-		function amaz_store_store_widgets_init(){
+		function th_shop_mania_store_widgets_init(){
 			register_sidebar(array(
 		              'name'          => esc_html__( 'WooCommerce Shop Page Sidebar', 'th-shop-mania' ),
 		              'id'            => 'open-woo-shop-sidebar',
@@ -128,7 +128,7 @@ if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
 		 *
 		 * @since 1.0.3
 		 */
-		function amaz_store_setup_theme(){
+		function th_shop_mania_setup_theme(){
 			// WooCommerce.
 			add_theme_support( 'wc-product-gallery-zoom' );
 			add_theme_support( 'wc-product-gallery-lightbox' );
@@ -605,4 +605,4 @@ if ( ! class_exists( 'th_shop_mania_Pro_Woocommerce_Ext' ) ) :
 
 	}
 endif;
-th_shop_mania_Pro_Woocommerce_Ext::get_instance();
+Th_Shop_Mania_Pro_Woocommerce_Ext::get_instance();

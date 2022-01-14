@@ -109,6 +109,11 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'img' => 'icon-128x128.png',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
             ),
+        	'th-all-in-one-woo-cart' => array(
+            'name' => esc_html__( 'TH All In One Woo Cart', 'th-shop-mania' ),
+            'img' => 'icon-128x128.png',
+            'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+            ),  
             'th-advance-product-search' => array(
             'name' => esc_html__( 'TH Advance Product Search', 'th-shop-mania' ),
             'img' => 'icon-128x128.gif',
@@ -172,9 +177,19 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'img' => 'icon-128x128.png',
                 'active_filename' => 'elementor/elementor.php',
             ),
+            'th-all-in-one-woo-cart' => array(
+            'name' => esc_html__( 'TH All In One Woo Cart', 'th-shop-mania' ),
+            'img' => 'icon-128x128.png',
+            'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+            ),  
+            'th-advance-product-search' => array(
+            'name' => esc_html__( 'TH Advance Product Search', 'th-shop-mania' ),
+            'img' => 'icon-128x128.gif',
+            'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+            ),
 
         ));
-
+remove_theme_support( 'widgets-block-editor' );
 	}
 endif;
 add_action( 'after_setup_theme', 'th_shop_mania_setup' );
@@ -289,7 +304,7 @@ add_action( 'widgets_init', 'th_shop_mania_widgets_init' );
 function th_shop_mania_scripts(){
 	// enqueue css
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	wp_enqueue_style( 'poppins-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap', '', TH_SHOP_MANIA_THEME_VERSION );
+	wp_enqueue_style( 'jost-fonts', 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap', '', TH_SHOP_MANIA_THEME_VERSION );
 	wp_enqueue_style( 'font-awesome', th_shop_mania_THEME_URI . 'third-party/fonts/font-awesome/css/font-awesome.css', '', TH_SHOP_MANIA_THEME_VERSION );
 	wp_enqueue_style( 'animate', th_shop_mania_THEME_URI . 'css/animate.css','',TH_SHOP_MANIA_THEME_VERSION);
 	wp_enqueue_style( 'th-shop-mania-menu', th_shop_mania_THEME_URI . 'css/th-shop-mania-menu.css','',TH_SHOP_MANIA_THEME_VERSION);	

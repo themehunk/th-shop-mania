@@ -301,7 +301,7 @@ if( ! function_exists( 'th_shop_mania_preloader' ) ){
  }else{  ?>
     <div class="th_shop_mania_overlayloader">
     <div class="th-shop-mania-pre-loader">
-       <div class="loader">&nbsp;</div>
+       <div class="th-loader">&nbsp;</div>
     </div>
     </div> 
    <?php 
