@@ -60,7 +60,7 @@ $offcanvas = get_theme_mod('th_shop_mania_canvas_alignment','cnv-none');
 					<div class="main-header-col3">
            <div class="thunk-icon-market">
               <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url','th_shop_mania_whishlist_url','','')); ?>">
-        <span class="th-whishlist-text"><?php echo __('My Favourite','th-shop-mania'); ?></span> <span><?php echo __('Wishlist','th-shop-mania'); ?></span><i  class="fa fa-heart-o" aria-hidden="true"></i></a>
+       <i  class="fa fa-heart-o" aria-hidden="true"></i></a>
 
         <?php do_action( 'th_shop_mania_account' ); 
         do_action( 'th_shop_mania_cart_total_item' ); 

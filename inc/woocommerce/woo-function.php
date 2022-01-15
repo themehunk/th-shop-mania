@@ -39,9 +39,9 @@ if ( ! function_exists( 'th_shop_mania_cart_total_item' ) ){
 if ( ! function_exists( 'th_shop_mania_account' ) ){
 function th_shop_mania_account(){
  if ( is_user_logged_in() ){?>
-<a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="account-text"><?php _e('Hello , ','th-shop-mania');?> <?php th_shop_mania_display_admin_name(); ?></span><span class="account-text"><?php _e('My account','th-shop-mania');?></span><i class="fa fa-user-o" aria-hidden="true"></i></a>
+<a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 <?php } else {?>
-<span><a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="account-text"><?php _e('Login / Signup','th-shop-mania');?></span><span class="account-text"><?php _e('My account','th-shop-mania');?></span><i class="fa fa-lock" aria-hidden="true"></i></a></span>
+<a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><i class="fa fa-lock" aria-hidden="true"></i></a>
 <?php }
  }
  add_action('th_shop_mania_account','th_shop_mania_account');
@@ -71,10 +71,11 @@ if( ! function_exists( 'th_shop_mania_single_summary_end' ) ){
 }
 add_action( 'woocommerce_before_single_product_summary', 'th_shop_mania_single_summary_start',0);
 add_action( 'woocommerce_after_single_product_summary', 'th_shop_mania_single_summary_end',0);
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs',40 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-add_filter( 'woocommerce_product_tabs', 'th_shop_mania_woocommerce_custom_product_tabs', 40 );
+    //Below lines are to show meta tab right side of product image
+// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+// add_action( 'woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs',40 );
+// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+// add_filter( 'woocommerce_product_tabs', 'th_shop_mania_woocommerce_custom_product_tabs', 40 );
 function th_shop_mania_woocommerce_custom_product_tabs( $tabs ) {
      $tabs['delivery_information'] = array(
         'title'     => __( 'Meta Information', 'th-shop-mania' ),
@@ -341,9 +342,8 @@ if (!function_exists('th_shop_mania_add_to_compare_fltr')) {
 function th_shop_mania_add_to_compare_fltr($pid = ''){
   global $product;
   $product_id = $pid;
-        if( is_plugin_active('yith-woocommerce-compare/init.php') ){
-          echo '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($product_id).'" class="compare button" data-product_id="'.esc_attr($product_id).'" rel="nofollow">'.__('Compare','th-shop-mania').'</a></div></span></div>';
-
+        if(class_exists('th_product_compare')){
+          echo '<div class="thunk-compare"><a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'">'.__('Compare','th-shop-mania').'</a></div>';
            }
         }
 }
@@ -380,7 +380,20 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
+//To disable th compare button 
+remove_action('woocommerce_init','th_compare_add_action_shop_list');
+
 /**
  * Remove "Description" Heading Title @ WooCommerce Single Product Tabs
  */
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
+
+
+// Hook in
+add_filter( 'woocommerce_get_availability', 'custom_override_get_availability', 10, 2);
+ 
+// The hook in function $availability is passed via the filter!
+function custom_override_get_availability( $availability, $_product ) {
+if ( $_product->is_in_stock() ) $availability['availability'] = __('(In Stock)', 'th-shop-mania');
+return $availability;
+}

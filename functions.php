@@ -139,16 +139,16 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'img' => 'icon-128x128.png',
                 'active_filename' => 'woocommerce/woocommerce.php',
             ),
+            'th-product-compare' => array(
+                 'name' => esc_html__( 'Th Product Compare', 'th-shop-mania' ),
+                  'img' => 'icon-128x128.png',
+                 'active_filename' => 'th-product-compare/th-product-compare.php',
+             ),
 
             'yith-woocommerce-wishlist' => array(
                  'name' => esc_html__( 'YITH WooCommerce Wishlist', 'th-shop-mania' ),
                   'img' => 'icon-128x128.jpg',
                  'active_filename' => 'yith-woocommerce-wishlist/init.php',
-             ),
-            'yith-woocommerce-compare' => array(
-                 'name' => esc_html__( 'YITH WooCommerce Compare', 'th-shop-mania' ),
-                  'img' => 'icon-128x128.jpg',
-                 'active_filename' => 'yith-woocommerce-compare/init.php',
              ),
             
 
@@ -308,6 +308,7 @@ function th_shop_mania_scripts(){
 	wp_enqueue_style( 'font-awesome', th_shop_mania_THEME_URI . 'third-party/fonts/font-awesome/css/font-awesome.css', '', TH_SHOP_MANIA_THEME_VERSION );
 	wp_enqueue_style( 'animate', th_shop_mania_THEME_URI . 'css/animate.css','',TH_SHOP_MANIA_THEME_VERSION);
 	wp_enqueue_style( 'th-shop-mania-menu', th_shop_mania_THEME_URI . 'css/th-shop-mania-menu.css','',TH_SHOP_MANIA_THEME_VERSION);	
+
 	// wp_enqueue_style( 'th-shop-mania-main-style', th_shop_mania_THEME_URI . 'css/style.css','',TH_SHOP_MANIA_THEME_VERSION);
 
 	wp_enqueue_style( 'th-shop-mania-style', get_stylesheet_uri(), array(), TH_SHOP_MANIA_THEME_VERSION );
