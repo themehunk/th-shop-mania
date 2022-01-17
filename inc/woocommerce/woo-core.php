@@ -453,6 +453,8 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
  				* Remove "Description" Heading Title @ WooCommerce Single Product Tabs
  				*/
 			add_filter( 'woocommerce_product_description_heading', '__return_null' );
+
+			add_filter( 'woocommerce_get_availability', 'th_shop_mania_override_get_availability', 10, 2);
 		}
 	    /*****************/
 		// upsale product
@@ -602,7 +604,11 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			return $pagination;
 		}
 
-
+		// The hook in function $availability is passed via the filter!
+		function th_shop_mania_override_get_availability( $availability, $_product ) {
+		if ( $_product->is_in_stock() ) $availability['availability'] = __('(In Stock)', 'th-shop-mania');
+		return $availability;
+		}
 	}
 endif;
 Th_Shop_Mania_Pro_Woocommerce_Ext::get_instance();
