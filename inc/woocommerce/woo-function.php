@@ -396,3 +396,6 @@ function custom_override_get_availability( $availability, $_product ) {
 if ( $_product->is_in_stock() ) $availability['availability'] = __('(In Stock)', 'th-shop-mania');
 return $availability;
 }
+// Woocommerce Cart Page Customisation
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
