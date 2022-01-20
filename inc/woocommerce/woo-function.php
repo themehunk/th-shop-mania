@@ -382,20 +382,5 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 //To disable th compare button 
 remove_action('woocommerce_init','th_compare_add_action_shop_list');
 
-/**
- * Remove "Description" Heading Title @ WooCommerce Single Product Tabs
- */
-add_filter( 'woocommerce_product_description_heading', '__return_null' );
-
-
-// Hook in
-add_filter( 'woocommerce_get_availability', 'custom_override_get_availability', 10, 2);
- 
-// The hook in function $availability is passed via the filter!
-function custom_override_get_availability( $availability, $_product ) {
-if ( $_product->is_in_stock() ) $availability['availability'] = __('(In Stock)', 'th-shop-mania');
-return $availability;
-}
 // Woocommerce Cart Page Customisation
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
-add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );

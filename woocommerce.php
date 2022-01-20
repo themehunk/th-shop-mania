@@ -17,7 +17,7 @@ $th_shop_mania_sidebar = get_post_meta( $shoppage_id, 'th_shop_mania_sidebar_dyn
   elseif(class_exists( 'WooCommerce' ) && is_product()){
 $th_shop_mania_sidebar = get_post_meta(get_the_ID(), 'th_shop_mania_sidebar_dyn', true );
 }
-  elseif(empty(get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true ))){
+  else{
 $th_shop_mania_sidebar = 'right';
                   } 
 ?>
