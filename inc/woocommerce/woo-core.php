@@ -72,14 +72,21 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			// // Custom Template Quick View.
 			// $this->amaz_store_quick_view_content_actions();
 			
-		 //    add_action( 'wp', array( $this, 'amaz_store_single_product_customization' ) );
+		    add_action( 'wp', array( $this, 'amaz_store_single_product_customization' ) );
            
    //          // Alter cross-sells display
 			// remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
-			// if ( '0' != get_theme_mod( 'amaz_store_cross_num_col_shw', '2' ) ) {
-			// 	add_action( 'woocommerce_cart_collaterals', array( $this, 'amaz_store_cross_sell_display' ) );
-			// }
+			if ( '0' != get_theme_mod( 'amaz_store_cross_num_col_shw', '5' ) ) {
+				add_action( 'woocommerce_after_cart', array( $this, 'amaz_store_cross_sell_display' ) );
+			}
 
+			// Woocommerce Cart Page Customisation
+			remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
+
+			// add share button
+			
+			add_action( 'woocommerce_single_product_summary', array( $this, 'th_shop_mania_product_sahre_button_func'),90 );
 
 		 }
 		 // woocommerce sidebar
@@ -454,14 +461,14 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
  				*/
 			add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
-			add_filter( 'woocommerce_get_availability', 'th_shop_mania_override_get_availability', 10, 2);
+			add_filter( 'woocommerce_get_availability', array( $this, 'th_shop_mania_override_get_availability'),10, 2 );
 		}
 	    /*****************/
 		// upsale product
        /*****************/
 		function amaz_store_woocommerce_output_upsells(){
-		$upsell_columns = get_theme_mod('amaz_store_upsale_num_col_shw','4');
-		$upsell_no_product = get_theme_mod( 'amaz_store_upsale_num_product_shw','4');	
+		$upsell_columns = get_theme_mod('amaz_store_upsale_num_col_shw','5');
+		$upsell_no_product = get_theme_mod( 'amaz_store_upsale_num_product_shw','5');	
         woocommerce_upsell_display($upsell_no_product,$upsell_columns); // Display max 3 products, 3 per row
          }
         /*****************************/ 
@@ -505,11 +512,11 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 */
 		 function amaz_store_cross_sell_display(){
 			// Get count
-			$count = get_theme_mod( 'amaz_store_cross_num_product_shw', '4' );
-			$count = $count ? $count : '4';
+			$count = get_theme_mod( 'amaz_store_cross_num_product_shw', '5' );
+			$count = $count ? $count : '5';
 			// Get columns
-			$columns = get_theme_mod( 'amaz_store_cross_num_col_shw', '2' );
-			$columns = $columns ? $columns : '2';
+			$columns = get_theme_mod( 'amaz_store_cross_num_col_shw', '5' );
+			$columns = $columns ? $columns : '5';
 			// Alter cross-sell display
 			woocommerce_cross_sell_display( $count, $columns );
 		} 
@@ -609,6 +616,17 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		if ( $_product->is_in_stock() ) $availability['availability'] = __('(In Stock)', 'th-shop-mania');
 		return $availability;
 		}
+
+		//Share Icon on Product Single Page
+		function th_shop_mania_product_sahre_button_func() {
+		echo'<div class="social-share"><h3>'.__('Share','th-shop-mania').'</h3><ul>'?>
+		 <li class="fb-icon"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink()); ?>"></a></li>
+		 <li class="twt-icon"><a target="_blank" href="https://twitter.com/home?status=<?php the_title(); ?>-<?php esc_url(the_permalink()); ?>"></a></li>
+		 <li class="pinterest-icon"><a data-pin-do="skipLink" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php esc_url(the_permalink()); ?>&amp;media=&amp;description=<?php the_title(); ?>"></a></li>
+		 <li class="linked-icon"><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php esc_url(the_permalink()); ?>&title=<?php the_title(); ?>&source=LinkedIn"></a></li>
+		 <?php echo'</ul> 
+		</div>';
+}
 	}
 endif;
 Th_Shop_Mania_Pro_Woocommerce_Ext::get_instance();
