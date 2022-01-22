@@ -105,18 +105,10 @@ function th_shop_mania_below_footer_markup_lite(){ ?>
       <div class="container">
         <div class="below-footer-bar thnk-col-1">
           <div class="below-footer-col1"> 
-           <p class="footer-copyright">&copy;
+           <p class="footer-copyright">
               <?php
-              echo date_i18n(
-                /* translators: Copyright date format, see https://www.php.net/date */
-                _x( 'Y', 'copyright date format', 'th-shop-mania' )
-              );
-              ?>
-              <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-              <span class="powered-by-wordpress">
-              <span><?php _e( 'Designed by', 'th-shop-mania' ); ?></span>
-              <a href="<?php echo esc_url('https://www.themehunk.com/'); ?>" target="_blank">
-                <?php _e( 'Themehunk', 'th-shop-mania' ); ?>
+              echo esc_html(get_theme_mod('th_shop_mania_footer_bottom_col1_texthtml','Copyright | Th Shop Mania | Developed by ThemeHunk'));
+               ?>
               </a>
             </span>
             </p><!-- .footer-copyright -->

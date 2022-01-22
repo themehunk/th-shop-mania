@@ -1,5 +1,5 @@
 <div class="sidebar-section">
-            <div class="section">
+            <div class="section th-pro-theme-ad">
             <h3 class="hndle ui-sortable-handle">
                 <span><?php _e('Th Shop Mania Pro WordPress Theme','th-shop-mania'); ?> </span>
             </h3>
