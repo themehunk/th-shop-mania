@@ -4,7 +4,7 @@ if ( ! class_exists( 'WooCommerce' ) ){
      return;
 }
 if ( ! function_exists( 'th_shop_mania_whishlist_url' ) ){
-function th_shop_mania_whishlist_url(){
+function th_shop_mania_whishlist_url($argu=''){
 $wishlist_page_id =  get_option( 'yith_wcwl_wishlist_page_id' );
 $wishlist_permalink = get_the_permalink( $wishlist_page_id );
 return $wishlist_permalink ;
@@ -92,10 +92,10 @@ wc_get_template( 'single-product/meta.php' ); // The meta content first
  * Add next/prev buttons @ WooCommerce Single Product Page
  */
  
-add_action( 'woocommerce_single_product_summary', 'th_shop_mania_prev_next_product',0 );
+add_action( 'woocommerce_before_single_product_summary', 'th_shop_mania_prev_next_product',0 );
  
 // and if you also want them at the bottom...
-add_action( 'woocommerce_single_product_summary', 'th_shop_mania_prev_next_product',0 );
+// add_action( 'woocommerce_single_product_summary', 'th_shop_mania_prev_next_product',0 );
  
 function th_shop_mania_prev_next_product(){
  

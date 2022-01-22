@@ -1,12 +1,12 @@
 <!--- tab first -->
 <div class="theme_link">
     <h3><?php _e('1. Install Recommended Plugins','th-shop-mania'); ?></h3>
-    <p><?php _e('We highly Recommend to install ThemeHunk Customizer plugin to get all customization options in Th Shop Mania theme. Also install recommended plugins available in recommended tab.','th-shop-mania'); ?></p>
+    <p><?php _e('We highly Recommend to install Hunk Companion plugin to get all customization options in Th Shop Mania theme. Also install recommended plugins available in recommended tab.','th-shop-mania'); ?></p>
 </div>
 <div class="theme_link">
     <h3><?php _e('2. Setup Home Page','th-shop-mania'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
         <p><?php _e('To set up the HomePage in Th Shop Mania theme, Just follow the below given Instructions.','th-shop-mania'); ?> </p>
-<p><?php _e('Go to Wp Dashboard > Pages > Add New > Create a Page using “Home Page Template” available in Page attribute.','th-shop-mania'); ?> </p>
+<p><?php _e('Go to Wp Dashboard > Pages > Add New','th-shop-mania'); ?> </p>
 <p><?php _e('Now go to Settings > Reading > Your homepage displays > A static page (select below) and set that page as your homepage.','th-shop-mania'); ?> </p>
      <p>
         <?php
@@ -62,13 +62,8 @@
                 </div>
 
                <div class="col">
-                <a href="<?php echo admin_url('customize.php?autofocus[section]=th-shop-mania-section-header-group'); ?>" class="components-button is-link"><?php _e("Header Options","th-shop-mania"); ?></a>
-                <hr>
 
-                <a href="<?php echo admin_url('customize.php?autofocus[panel]=th-shop-mania-panel-frontpage'); ?>" class="components-button is-link"><?php _e("FrontPage Sections","th-shop-mania"); ?></a><hr>
-
-
-                 <a href="<?php echo admin_url('customize.php?autofocus[section]=th-shop-mania-section-footer-group'); ?>" class="components-button is-link"><?php _e("Footer Section","th-shop-mania"); ?></a><hr>
+                 <a href="<?php echo admin_url('customize.php?autofocus[section]=th-shop-mania-bottom-footer'); ?>" class="components-button is-link"><?php _e("Footer Section","th-shop-mania"); ?></a><hr>
             </div>
 
         </div>

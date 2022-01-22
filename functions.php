@@ -109,6 +109,16 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'img' => 'icon-128x128.png',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
             ),
+        	  'woocommerce' => array(
+                'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
+                 'img' => 'icon-128x128.png',
+                'active_filename' => 'woocommerce/woocommerce.php',
+            ),
+        	  'elementor' => array(
+                'name' => esc_html__( 'Elementor', 'th-shop-mania' ),
+                 'img' => 'icon-128x128.png',
+                'active_filename' => 'elementor/elementor.php',
+            ),
         	'th-all-in-one-woo-cart' => array(
             'name' => esc_html__( 'TH All In One Woo Cart', 'th-shop-mania' ),
             'img' => 'icon-128x128.png',
@@ -134,17 +144,11 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'img' => 'icon-128x128.png',
                 'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
             ), 
-            'woocommerce' => array(
-                'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
-                 'img' => 'icon-128x128.png',
-                'active_filename' => 'woocommerce/woocommerce.php',
-            ),
             'th-product-compare' => array(
                  'name' => esc_html__( 'Th Product Compare', 'th-shop-mania' ),
                   'img' => 'icon-128x128.png',
                  'active_filename' => 'th-product-compare/th-product-compare.php',
              ),
-
             'yith-woocommerce-wishlist' => array(
                  'name' => esc_html__( 'YITH WooCommerce Wishlist', 'th-shop-mania' ),
                   'img' => 'icon-128x128.jpg',

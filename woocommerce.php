@@ -14,8 +14,11 @@ $shoppage_id = get_option( 'woocommerce_shop_page_id' );
 
 $th_shop_mania_sidebar = get_post_meta( $shoppage_id, 'th_shop_mania_sidebar_dyn', true );
 }
-  elseif(class_exists( 'WooCommerce' ) && is_product()){
-$th_shop_mania_sidebar = get_post_meta(get_the_ID(), 'th_shop_mania_sidebar_dyn', true );
+elseif(class_exists( 'WooCommerce' ) && is_product() && get_theme_mod('th_shop_mania_product_single_sidebar_disable',false) !==true){
+    $th_shop_mania_sidebar = get_post_meta(get_the_ID(), 'th_shop_mania_sidebar_dyn', true );
+}
+elseif(class_exists( 'WooCommerce' ) && is_product() && (get_theme_mod('th_shop_mania_product_single_sidebar_disable',false)) ==true){
+    $th_shop_mania_sidebar = 'no-sidebar';
 }
   else{
 $th_shop_mania_sidebar = 'right';

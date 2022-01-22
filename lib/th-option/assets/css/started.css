@@ -1,7 +1,16 @@
 
 /*************************************/
 /***** Started theme css **/
-
+/* This css will remove when pro version ready */
+.th-pro-theme-ad,
+.th-pro-theme-ad + hr,
+.th-option-bottom-hdr .tablinks:nth-of-type(5){
+    display: none;
+}
+.rp-two-column.welcome-tabs{
+    height: 849px!important;
+}
+/* This css will remove when pro version ready */
 .wrap-th {
     margin: 10px 20px 0 2px;
 }
