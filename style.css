@@ -982,7 +982,7 @@ display:none;
 }
 nav .menu-item-description{
     position: absolute;
-    top: -3px;
+    top: 2px;
     left: calc(100% - 25px);
     background-color:#bd8348;
     font-size: 11px;
@@ -1268,10 +1268,15 @@ display:none;
     background: #ff3377;
 }
 .thunk-icon-market a i {
-    font-size: 18px;
+    font-size: 21px;
     line-height: inherit;
     font-weight: 700;
     margin-left: 5px;
+    font-family: "FontAwesome";
+}
+.thunk-icon-market .taiowc-icon svg, 
+.thunk-icon-market .taiowc-icon img{
+  width: 1.9rem;
 }
 /* taiowc css   */
 .main-header-bar .taiowc-content{
@@ -1482,7 +1487,6 @@ display:block;
 .site-title span{
   font-size:30px;
 }
-
 p.demo_store{
     position: fixed;
     top: initial!important;
@@ -1499,15 +1503,6 @@ p.demo_store{
 .toggle-cat-wrap{ 
     box-sizing: border-box;
     color: #111;
-    font-size: 14px;
-    margin-bottom: -5px;
-}
-.cat-icon{
-padding:10px;
-background: #ff3377;
-line-height: 56px;
-padding: 10px 7px;
-border-radius: 5px;
 }
 .toggle-title{
 margin-left:15px;
@@ -1540,7 +1535,7 @@ display:none;
 height: auto;
     text-shadow: none;
     width: 10px;
-    font-family: FontAwesome;
+    font-family: "FontAwesome";
 }
 .cat-icon span {
     display: block !important;
@@ -1567,6 +1562,11 @@ height: auto;
 .cat-toggle:hover{
     cursor: pointer;
 }
+.cate-text{
+  margin-left: 7px;
+  font-size: 16px;
+  line-height: 23px;
+}
 .cat-toggle{ 
     width: 100%;
     -webkit-box-align: center;
@@ -1581,8 +1581,11 @@ height: auto;
     -ms-flex-line-pack: center;
     align-content: center;
     background: none;
-    line-height: 43px;
     display: inline-flex;
+    background: #ff3377;
+    padding: 9px 7px;
+    border-radius: 5px;
+    color: #FFF;
   }
   .cat-toggle-search{ display: flex;
     display: -webkit-box;
@@ -2724,6 +2727,42 @@ border: 1px solid transparent;
 .woocommerce ul.products li.product .price{
   font-size: 16px;
 }
+.thunk-product-image{
+  position: relative;
+}
+.thunk-quik{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.thunk-quik a.opn-quick-view-text{
+    color: #fff;
+    font-size: 12px;
+    line-height: 19px;
+    padding: 5px 7px;
+    background: #008000;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 99;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.thunk-product:hover .thunk-quickview a.opn-quick-view-text{
+  opacity: 1;
+}
+#alm-quick-view-content.woocommerce div.product p.price{
+    font-size: 24px;
+    line-height: 31px;
+    color: #111;
+}
 /****************************/
 /*woocommerce product style*/
 /****************************/
@@ -3175,6 +3214,7 @@ section.related.products h2,
     background: transparent;
     line-height: 56px;
     max-height: 56px;
+    height: 100%;
     padding: 0 5px;
     text-align: center;
     width: 56px;
@@ -3452,7 +3492,7 @@ section.upsells.products > h2,
     vertical-align: top;
     margin: 0 0 20px 0;
     width: 100%;
-    padding: 0 0 20px;
+    padding: 0;
 }
 section.related.products > h2, 
 section.upsells.products > h2{
@@ -3595,7 +3635,7 @@ padding-right:20px!important;
 /*woocommerce meassage */
 .woocommerce-error, .woocommerce-info, .woocommerce-message {
     padding: 1em 0em 1em 0em;
-    margin: 0 0 30px;
+    margin: 0 0 54px;
     position: relative;
     background-color:transparent;
     color: #292e32;
@@ -6037,7 +6077,7 @@ p.read-more {
 }
 .thunk-post-meta {
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 15px;
 }
 article.thunk-article, article.thunk-post-article, .single article, .no-results.not-found, #error-404 {
     padding: 7.5px;

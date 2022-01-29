@@ -137,6 +137,9 @@ $th_shop_mania_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left'
                        <span class="cat-mid"></span>
                        <span class="cat-bot"></span>
                      </span>
+                     <span class="cate-text">
+                       <?php echo esc_html(get_theme_mod('th_shop_mania_main_hdr_cat_txt','All Categories')); ?>
+                     </span>
                     
                   </p>
               </div>

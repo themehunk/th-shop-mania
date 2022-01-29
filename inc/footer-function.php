@@ -56,6 +56,8 @@ add_action( 'th_shop_mania_top_footer', 'th_shop_mania_top_footer_markup' );
 if ( ! function_exists( 'th_shop_mania_widget_footer_markup_lite' ) ){  
 function th_shop_mania_widget_footer_markup_lite(){ 
 $th_shop_mania_bottom_footer_widget_layout  = get_theme_mod( 'th_shop_mania_bottom_footer_widget_layout','ft-wgt-none');  
+ //This is to check if any widget active then only add markup
+ if( is_active_sidebar('footer-1' ) ){
   ?>  
   <div class="widget-footer">
       <div class="container">
@@ -93,7 +95,7 @@ $th_shop_mania_bottom_footer_widget_layout  = get_theme_mod( 'th_shop_mania_bott
 
       </div>
     </div>  
-<?php }
+<?php } }
 }
 add_action( 'th_shop_mania_widget_footer_lite', 'th_shop_mania_widget_footer_markup_lite' );
 /**************************************/
