@@ -3655,8 +3655,8 @@ display:none;
 .woocommerce .woocommerce-message .button {
     float: right;
     font-size: 13px;
-font-weight:normal;
-background:transparent;
+    font-weight:normal;
+    background:transparent;
     display: inline-block;
     padding: 0 10px;
     line-height: 46px;
@@ -3665,6 +3665,7 @@ background:transparent;
     transition: all .5s ease-out;
     background: #59d600;
     color: #fff;
+    border-radius: 5px;
 }
 .woocommerce .woocommerce-error .button:hover,
 .woocommerce .woocommerce-info .button:hover, 

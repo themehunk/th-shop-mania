@@ -71,7 +71,7 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
                         <div class="title-plugin">
                             <h3><?php _e('Click Here To Import Demo Content', 'th-shop-mania'); ?></h3>
 
-                            <p> <?php _e('You need to Install required plugins like- Themehunk Customizer, WooCommerce and One click demo import plugin. After installing required plugins import button will activate.', 'th-shop-mania'); ?></p>
+                            <p> <?php _e('You need to Install required plugins mentioned below. After installing required plugins import button will activate.', 'th-shop-mania'); ?></p>
                             <a class="button disabled importdemo"><?php _e('Import Demo', 'th-shop-mania'); ?></a>
 
                         </div>
