@@ -36,7 +36,7 @@ add_filter( 'wp_page_menu', 'th_shop_mania_add_classes_to_page_menu' );
 	  function th_shop_mania_custom_menu(){
 		     register_nav_menus(array(
 			'th-shop-mania-main-menu'        => esc_html__( 'Main', 'th-shop-mania' ),
-			'th-shop-mania-sticky-menu'        => esc_html__( 'Sticky', 'th-shop-mania' ),
+			// 'th-shop-mania-sticky-menu'        => esc_html__( 'Sticky', 'th-shop-mania' ),
 			// 'th-shop-mania-footer-menu'  => esc_html__( 'Footer Menu', 'th-shop-mania' ),
 		) );
 	  }

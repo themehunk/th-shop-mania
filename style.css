@@ -6,7 +6,7 @@ Author URI: https://www.themehunk.com
 Description: Th Shop Mania is a Free WooCommerce theme for creating clean online stores for your business. It has a stylish Homepage design for listing premium products and high-end experiences. Theme comes with powerful functionality like Section On/Off, Header & Footer layouts, Product styles, Ajax live search, Offcanvas sidebar, Quick view, Pagination options for Shop & Blog page, multiple widgets for sidebar & footer, Color & background options, etc. Theme also supports many Product sections to showcase your product in your homepage, Sections like - Tabbed Product carousel, Woo category section, Product Carousel, Product list carousel. Other than these sections theme has Top Slider layout, Ribbon section with Image & Video, Banner layouts and Service section. Theme is integrated with WooCommerce & Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store. If you’re looking for a highly flexible e-commerce theme, then Th Shop Mania could have everything you need.
 Version: 1.0.0
 Requires at least: 4.5
-Tested up to: 5.8.1
+Tested up to: 5.9
 Requires PHP: 5.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -2552,7 +2552,58 @@ border:none;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-
+/* ShopPage Category Style   */
+.product-category.product:after{
+    position: absolute;
+    top: -1px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-color: #FFF;
+    border: 1px solid transparent;
+    content: ' ';
+    /* -webkit-box-shadow: 0px 1px 30px rgb(62 68 90 / 9%); */
+    box-shadow: 0 0 15px #eee;
+    border-radius: 0;
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity;
+    -webkit-transition: all 0.2s cubic-bezier(0.17, 0.62, 0.44, 0.99);
+    transition: all 0.2s cubic-bezier(0.17, 0.62, 0.44, 0.99);
+}
+.product-category.product:hover:after {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+      margin-bottom: -45px;
+      z-index: 1;
+      border: 1px solid #EEE;
+      box-shadow: 0 0 15px #eee;
+}
+.product-category.product a{
+  position: relative;
+  display: block;
+  padding: 16px 7px;
+}
+.product-category.product:hover a{
+  z-index: 2;
+}
+.product-category.product h2{
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: -45px;
+  transition: all 0.5s ease 0.1s;
+}
+.product-category.product:hover h2{
+  opacity: 1;
+  bottom: -21px;
+}
+.product-category.product a mark{
+  background: transparent;
+}
 /****************************/
 /*woocommerce product style*/
 /****************************/
@@ -2632,6 +2683,7 @@ border: 1px solid transparent;
   font-size: 16px;
   line-height: 23px;
   font-weight: 500;
+  border-radius: 4px;
 }
 .thunk-product .th-add-to-cart a:hover{
   background: transparent;
@@ -2723,6 +2775,7 @@ border: 1px solid transparent;
     margin: 0;
     left: initial;
     font-weight: 500;
+    z-index: initial;
 }
 .woocommerce ul.products li.product .price{
   font-size: 16px;
@@ -3659,7 +3712,7 @@ display:none;
     background:transparent;
     display: inline-block;
     padding: 0 10px;
-    line-height: 46px;
+    line-height: 39px;
     margin: 0;
     border: 1px solid #eee;
     transition: all .5s ease-out;
@@ -3829,7 +3882,6 @@ top:0em!important;
     letter-spacing: .1em;
     width:200px;
     border: 1px solid transparent;
-
 }
 /*compare style*/
 .woocommerce .entry-summary a.th-product-compare-btn.button{
@@ -4268,6 +4320,9 @@ border-radius:3px 0px 0px 3px;
     font-size: 16px;
     line-height: 23px;
     font-weight: 500;
+}
+.woocommerce .wishlist-title h2:hover{
+  background: initial;
 }
 .woocommerce #order_review table tfoot th {
     text-transform: capitalize;
@@ -5204,7 +5259,6 @@ display:inline;
 .single-product .social-share ul li a:hover {
 opacity:1;
 }
-
 .single-product .social-share ul li.fb-icon a {
 border-color:#3B5999;
 }
@@ -5222,8 +5276,6 @@ border-color: #CB211D;
 .single-product .social-share ul li.linked-icon a {
 border-color: #0177B5;
 }
-
-
 .single-product .social-share .fb-icon a:before {
   content: "\f09a";
   color: #3B5999;
@@ -5271,10 +5323,10 @@ display:block;
     display:none;
 }
 .mobile-nav-bar .mobile-nav-widget .header-support-wrap{
-float:left;
+  float:left;
 }
 .responsive-main-header .header-support-icon a.account i{
-font-size:15px;
+  font-size:15px;
   line-height: inherit;
 }
 .responsive-main-header .header-support-icon a.account{
