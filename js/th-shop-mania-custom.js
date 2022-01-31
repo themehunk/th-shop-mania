@@ -20,7 +20,7 @@
              if(jQuery('#th-shop-mania-stick-menu').length){   
              $this.StickMenu();
            }
-             $this.AboveMenu();
+             // $this.AboveMenu();
              $this.MobileMenuFunction();
              $this.mobile_menu_with_woocat();  
              $this.MoveToTop();

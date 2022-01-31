@@ -163,12 +163,7 @@ $th_shop_mania_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left'
         <div class="sider main  th-shop-mania-menu-hide <?php echo esc_attr($th_shop_mania_menu_open);?>">
         <div class="sider-inner">
           <?php if(has_nav_menu('th-shop-mania-main-menu' )){ 
-
-             if (wp_is_mobile()!== false){
-                   if(has_nav_menu('th-shop-mania-above-menu' )){
-                                th_shop_mania_abv_nav_menu();
-                       }
-                  }  
+  
                     th_shop_mania_main_nav_menu();
               }else{
                  wp_page_menu(array( 
@@ -246,9 +241,6 @@ $th_shop_mania_mobile_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open'
             <?php }?>
             <div id="mobile-nav-tab-menu" class="mobile-nav-tab-menu panel">
           <?php if(has_nav_menu('th-shop-mania-main-menu' )){ 
-                    if(has_nav_menu('th-shop-mania-above-menu' )){
-                         th_shop_mania_abv_nav_menu();
-                       }
                         th_shop_mania_main_nav_menu();
               }else{
                  wp_page_menu(array( 
