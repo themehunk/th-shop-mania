@@ -17,8 +17,10 @@
              $this.CatMenu();
              $this.DefaultMenu();
              $this.MainMenu();
+             if(jQuery('#th-shop-mania-stick-menu').length){   
              $this.StickMenu();
-             $this.AboveMenu();
+           }
+             // $this.AboveMenu();
              $this.MobileMenuFunction();
              $this.mobile_menu_with_woocat();  
              $this.MoveToTop();
@@ -199,6 +201,7 @@
             });
         },
         AboveMenu : function(){
+          if(jQuery('#open-above-menu').length){   
                 $("#open-above-menu").th_shop_mania_ResponsiveMenu({
                  resizeWidth:'1024', // Set the same in Media query       
                  animationSpeed:'medium', //slow, medium, fast
@@ -209,7 +212,7 @@
                  animationSpeed:'medium', //slow, medium, fast
                  accoridonExpAll:true//Expands all the accordion menu on click
             }); 
-        
+          }
         },
         
         MobileMenuFunction : function(){

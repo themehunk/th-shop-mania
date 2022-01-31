@@ -35,9 +35,8 @@ add_filter( 'wp_page_menu', 'th_shop_mania_add_classes_to_page_menu' );
      // This theme uses wp_nav_menu() in two locations.
 	  function th_shop_mania_custom_menu(){
 		     register_nav_menus(array(
-		    'th-shop-mania-above-menu'       => esc_html__( 'Header Above Menu', 'th-shop-mania' ),
 			'th-shop-mania-main-menu'        => esc_html__( 'Main', 'th-shop-mania' ),
-			'th-shop-mania-sticky-menu'        => esc_html__( 'Sticky', 'th-shop-mania' ),
+			// 'th-shop-mania-sticky-menu'        => esc_html__( 'Sticky', 'th-shop-mania' ),
 			// 'th-shop-mania-footer-menu'  => esc_html__( 'Footer Menu', 'th-shop-mania' ),
 		) );
 	  }

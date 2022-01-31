@@ -572,7 +572,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 					<span class="inifiniteLoader"><div class="loader"></div></span>
 					<?php if ( 'click' == $infinite_event ){ ?>
 						
-							<div class="amaz-store-load-more">
+							<div class="th-shop-mania-load-more">
 								<button id="load-more-product" class="load-more-product-button thunk-button opn-shop-load-more active" >
 									<?php echo apply_filters( 'open_load_more_text', esc_html( $load_more_text ) ); ?>
 								</button>
