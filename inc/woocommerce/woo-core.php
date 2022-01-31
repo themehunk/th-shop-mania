@@ -2,7 +2,7 @@
 /**
  * Perform all main WooCommerce configurations for this theme
  *
- * @package Amaze Store WordPress theme
+ * @package Th Shop Mania WordPress theme
  */
 // If plugin - 'WooCommerce' not exist then return.
 if ( ! class_exists( 'WooCommerce' ) ){
@@ -42,44 +42,42 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 * Constructor
 		 */
 		public function __construct(){
-		    add_action( 'wp_enqueue_scripts',array( $this, 'amaz_store_add_scripts' ));	
-		    // add_action( 'wp_enqueue_scripts',array( $this, 'amaz_store_add_style' ));	
+		    add_action( 'wp_enqueue_scripts',array( $this, 'th_shop_mania_add_scripts' ));	
+		    add_action( 'wp_enqueue_scripts',array( $this, 'th_shop_mania_add_style' ));	
 
-		    add_filter( 'post_class', array( $this, 'amaz_store_post_class' ) );
+		    add_filter( 'post_class', array( $this, 'th_shop_mania_post_class' ) );
 		   
-		    // add_action( 'after_setup_theme', array( $this, 'amaz_store_common_actions' ), 999 );
-		    // add_filter( 'open_theme_js_localize', array( $this, 'amaz_store_js_localize' ) );
-		    // add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'amaz_store_product_flip_image' ), 10 );
+		    add_action( 'after_setup_theme', array( $this, 'th_shop_mania_common_actions' ), 999 );
+		    add_filter( 'open_theme_js_localize', array( $this, 'th_shop_mania_js_localize' ) );
+		    // add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'th_shop_mania_product_flip_image' ), 10 );
 		    // Register Store Sidebars.
 			add_action( 'widgets_init', array( $this, 'th_shop_mania_store_widgets_init' ), 15 );
 			add_action( 'after_setup_theme', array( $this, 'th_shop_mania_setup_theme' ) );
 			// Replace Store Sidebars.
 			add_filter( 'th_shop_mania_get_sidebar', array( $this, 'th_shop_mania_replace_store_sidebar' ) );
 		    // quick view ajax.
-			// add_action( 'wp_ajax_alm_load_product_quick_view', array( $this, 'amaz_store_load_product_quick_view_ajax' ) );
-			// add_action( 'wp_ajax_nopriv_alm_load_product_quick_view', array( $this, 'amaz_store_load_product_quick_view_ajax' ) );
-			// add_action('amaz_store_woo_quick_view_product_summary', array( $this, 'amaz_store_woo_single_product_content_structure' ), 10, 1 );
-			// //shop
-			//  add_action('woocommerce_before_shop_loop', array($this, 'amaz_store_before_shop_loop'), 35);
-			//  add_action('woocommerce_after_shop_loop_item', array($this, 'amaz_store_list_after_shop_loop_item'),5);
-			//  // pagination
-   //          add_action( 'amaz_store_pagination_infinite', array( $this, 'shop_page_styles' ) );
-   //          add_action( 'amaz_store_pagination_infinite', array( $this, 'amaz_store_common_actions' ), 999 );
+			add_action( 'wp_ajax_alm_load_product_quick_view', array( $this, 'th_shop_mania_load_product_quick_view_ajax' ) );
+			add_action( 'wp_ajax_nopriv_alm_load_product_quick_view', array( $this, 'th_shop_mania_load_product_quick_view_ajax' ) );
+			add_action('th_shop_mania_woo_quick_view_product_summary', array( $this, 'th_shop_mania_woo_single_product_content_structure' ), 10, 1 );
+				//shop
+			//  add_action('woocommerce_before_shop_loop', array($this, 'th_shop_mania_before_shop_loop'), 35);
+			//  add_action('woocommerce_after_shop_loop_item', array($this, 'th_shop_mania_list_after_shop_loop_item'),5);
+				// pagination
+            add_action( 'th_shop_mania_pagination_infinite', array( $this, 'shop_page_styles' ) );
+            add_action( 'th_shop_mania_pagination_infinite', array( $this, 'th_shop_mania_common_actions' ), 999 );
 
-   //          add_action( 'wp_ajax_amaz_store_pagination_infinite', array( $this, 'amaz_store_pagination_infinite' ) );
+            add_action( 'wp_ajax_th_shop_mania_pagination_infinite', array( $this, 'th_shop_mania_pagination_infinite' ) );
             
-			// add_action( 'wp_ajax_nopriv_amaz_store_pagination_infinite', array( $this, 'amaz_store_pagination_infinite' ) );
+			add_action( 'wp_ajax_nopriv_th_shop_mania_pagination_infinite', array( $this, 'th_shop_mania_pagination_infinite' ) );
 			// // Custom Template Quick View.
-			// $this->amaz_store_quick_view_content_actions();
+			$this->th_shop_mania_quick_view_content_actions();
 			
-		    add_action( 'wp', array( $this, 'amaz_store_single_product_customization' ) );
+		    add_action( 'wp', array( $this, 'th_shop_mania_single_product_customization' ) );
            
    //          // Alter cross-sells display
-			// remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
-			if ( '0' != get_theme_mod( 'amaz_store_cross_num_col_shw', '5' ) ) {
-				add_action( 'woocommerce_after_cart', array( $this, 'amaz_store_cross_sell_display' ) );
+			if ( '0' != get_theme_mod( 'th_shop_mania_cross_num_col_shw', '5' ) ) {
+				add_action( 'woocommerce_after_cart', array( $this, 'th_shop_mania_cross_sell_display' ) );
 			}
-
 			// Woocommerce Cart Page Customisation
 			remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
@@ -144,9 +142,9 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		/**
 		 * Product Flip Image
 		 */
-		function amaz_store_product_flip_image(){
+		function th_shop_mania_product_flip_image(){
 			global $product;
-			$hover_style = get_theme_mod( 'amaz_store_woo_product_animation' );
+			$hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
 
 			if ( 'swap' === $hover_style ) {
 
@@ -156,7 +154,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 					$image_size = apply_filters( 'single_product_archive_thumbnail_size', 'shop_catalog' );
 
-					echo apply_filters( 'open_woocommerce_amaz_store_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-hover' ) ) );
+					echo apply_filters( 'open_woocommerce_th_shop_mania_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-hover' ) ) );
 				}
 			}
 			if ('slide' === $hover_style ) {
@@ -167,7 +165,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 					$image_size = apply_filters( 'single_product_archive_thumbnail_size', 'shop_catalog' );
 
-					echo apply_filters( 'amaz_store_woocommerce_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-slide' ) ) );
+					echo apply_filters( 'th_shop_mania_woocommerce_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-slide' ) ) );
 				}
 			}
 		}
@@ -179,36 +177,36 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 *
 		 * @return array;
 		 */
-		function amaz_store_post_class( $classes ){
+		function th_shop_mania_post_class( $classes ){
 			if (!th_shop_mania_is_blog()|| is_shop() || is_product_taxonomy() || post_type_exists( 'product' )){
                 $classes[] = 'thunk-woo-product-list';
-				$qv_enable = get_theme_mod( 'amaz_store_woo_quickview_enable',true);
+				$qv_enable = get_theme_mod( 'th_shop_mania_woo_quickview_enable',true);
 				if ( true == $qv_enable ){
 					$classes[] = 'opn-qv-enable';
 
 				}
 			}
 			if (is_shop() || is_product_taxonomy() ||  post_type_exists( 'product' )){
-				$hover_style = get_theme_mod( 'amaz_store_woo_product_animation' );
+				$hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
 				if ( '' !== $hover_style ) {
 					$classes[] = 'amaz-store-woo-hover-' . esc_attr($hover_style);
 				}
 				
 			}
 			if (is_shop() || is_product_taxonomy() || post_type_exists( 'product' )){
-			$single_product_tab_style = get_theme_mod( 'amaz_store_single_product_tab_layout','horizontal' );
+			$single_product_tab_style = get_theme_mod( 'th_shop_mania_single_product_tab_layout','horizontal' );
 				if ( '' !== $single_product_tab_style ){
 					$classes[] = 'open-single-product-tab-'.esc_attr($single_product_tab_style);
 				}
 			}
 			if (is_shop() || is_product_taxonomy() || post_type_exists( 'product' )){
-			$shadow_style = get_theme_mod( 'amaz_store_product_box_shadow' );
+			$shadow_style = get_theme_mod( 'th_shop_mania_product_box_shadow' );
 				if ( '' !== $shadow_style ){
 					$classes[] = 'open-shadow-' . esc_attr($shadow_style);
 				}	
 			}
 			if (is_shop() || is_product_taxonomy() || post_type_exists( 'product' )){
-			$shadow_hvr_style = get_theme_mod( 'amaz_store_product_box_shadow_on_hover' );
+			$shadow_hvr_style = get_theme_mod( 'th_shop_mania_product_box_shadow_on_hover' );
 				if ( '' !== $shadow_hvr_style ){
 					$classes[] = 'open-shadow-hover-' . esc_attr($shadow_hvr_style);
 				}	
@@ -238,21 +236,21 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 * @param array $localize   JS localize variables.
 		 * @return array
 		 */
-		function amaz_store_js_localize( $localize ){
+		function th_shop_mania_js_localize( $localize ){
 			global $wp_query;
-			$amaz_store_pagination                   = get_theme_mod( 'amaz_store_pagination' );
+			$th_shop_mania_pagination                   = get_theme_mod( 'th_shop_mania_pagination' );
 			$localize['ajax_url']                   = admin_url( 'admin-ajax.php' );
-			$localize['is_cart']                    = is_cart();
-			$localize['is_single_product']          = is_product();
+			// $localize['is_cart']                    = is_cart();
+			// $localize['is_single_product']          = is_product();
 			$localize['query_vars']                 = json_encode( $wp_query->query );
-			$localize['shop_quick_view_enable']     = get_theme_mod('amaz_store_woo_quickview_enable','true' );
+			$localize['shop_quick_view_enable']     = get_theme_mod('th_shop_mania_woo_quickview_enable',true );
 			$localize['shop_infinite_nonce']        = wp_create_nonce( 'opn-shop-load-more-nonce' );
 			$localize['shop_infinite_count']        = 2;
 			$localize['shop_infinite_total']        = $wp_query->max_num_pages;
-			$localize['shop_pagination']            = $amaz_store_pagination;
-			$localize['shop_infinite_scroll_event'] = $amaz_store_pagination;
+			$localize['shop_pagination']            = $th_shop_mania_pagination;
+			$localize['shop_infinite_scroll_event'] = $th_shop_mania_pagination;
 			$localize['query_vars']                 = json_encode( $wp_query->query );
-			$localize['shop_no_more_post_message']  = apply_filters( 'amaz_store_no_more_product_text', __( 'No more products to show.', 'th-shop-mania' ) );
+			$localize['shop_no_more_post_message']  = apply_filters( 'th_shop_mania_no_more_product_text', __( 'No more products to show.', 'th-shop-mania' ) );
 			return $localize;
 			
 		}
@@ -262,40 +260,40 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 * @since 1.1.0
 		 * @return void
 		 */
-		function amaz_store_common_actions(){
+		function th_shop_mania_common_actions(){
 			// Shop Pagination.
 			$this->shop_pagination();
 			// Quick View.
-			$this->amaz_store_shop_init_quick_view();
+			$this->th_shop_mania_shop_init_quick_view();
 
 		}
 		/**
 		 * Init Quick View
 		 */
-		function amaz_store_shop_init_quick_view(){
-			$qv_enable = get_theme_mod( 'amaz_store_woo_quickview_enable','true' );
+		function th_shop_mania_shop_init_quick_view(){
+			$qv_enable = get_theme_mod( 'th_shop_mania_woo_quickview_enable',true );
 			if ( true == $qv_enable ){
-				add_filter( 'open_theme_js_localize', array( $this, 'amaz_store_amaz_store_qv_js_localize' ) );
-				add_action( 'quickview', array( $this,'amaz_store_add_quick_view_on_img' ),15);
+				add_filter( 'open_theme_js_localize', array( $this, 'th_shop_mania_th_shop_mania_qv_js_localize' ) );
+				add_action( 'quickview', array( $this,'th_shop_mania_add_quick_view_on_img' ),15);
 				// load modal template.
-				add_action( 'wp_footer', array( $this, 'amaz_store_quick_view_html' ) );
+				add_action( 'wp_footer', array( $this, 'th_shop_mania_quick_view_html' ) );
 			}
 		}
 		/**
 		 * Add Scripts
 		 */
-		function amaz_store_add_scripts(){
+		function th_shop_mania_add_scripts(){
 		   wp_enqueue_script( 'th-shop-mania-woocommerce-js', th_shop_mania_THEME_URI .'/inc/woocommerce/js/woocommerce.js', array( 'jquery' ), '2.0.0', true );
            
-           // wp_enqueue_script('open-quick-view', AMAZ_STORE_THEME_URI.'inc/woocommerce/quick-view/js/quick-view.js', array( 'jquery' ), '', true );
-           // wp_localize_script('open-quick-view', 'amazstoreqv', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
+           wp_enqueue_script('open-quick-view', th_shop_mania_THEME_URI.'inc/woocommerce/quick-view/js/quick-view.js', array( 'jquery' ), '', true );
+           wp_localize_script('open-quick-view', 'thlocalizeqv', array('ajaxurl' => admin_url( 'admin-ajax.php' )));
           
 		   }
 		/**
 		 * Add Style
 		 */
-		function amaz_store_add_style(){
-        wp_enqueue_style( 'open-quick-view', AMAZ_STORE_THEME_URI. 'inc/woocommerce/quick-view/css/quick-view.css', null, '');
+		function th_shop_mania_add_style(){
+        wp_enqueue_style( 'open-quick-view', th_shop_mania_THEME_URI. 'inc/woocommerce/quick-view/css/quick-view.css', null, '');
 		}
         /**
 		 * Quick view localize.
@@ -304,7 +302,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 * @param array $localize   JS localize variables.
 		 * @return array
 		 */
-		function amaz_store_amaz_store_qv_js_localize( $localize ){
+		function th_shop_mania_th_shop_mania_qv_js_localize( $localize ){
 			global $wp_query;
 			$loader = '';
 			if ( ! isset( $localize['ajax_url'] ) ){
@@ -316,7 +314,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		/****************/
         // add to compare
         /****************/
-        function amaz_store_add_to_compare($pid=''){
+        function th_shop_mania_add_to_compare($pid=''){
         if( is_plugin_active('yith-woocommerce-compare/init.php') ){
           return '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($pid).'" class="compare button" data-product_id="'.esc_attr($pid).'" rel="nofollow">'.__('compare','th-shop-mania').'</a></div></span></div>';
 
@@ -325,7 +323,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		/**
 		 * Quick view on image
 		 */
-		function amaz_store_add_quick_view_on_img(){
+		function th_shop_mania_add_quick_view_on_img(){
 			global $product;
             $button='';
 			$product_id = $product->get_id();
@@ -349,21 +347,21 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		/**
 		 * Quick view html
 		 */
-		function amaz_store_quick_view_html(){
-			$this->amaz_store_quick_view_dependent_data();
-			require_once AMAZ_STORE_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-modal.php';
+		function th_shop_mania_quick_view_html(){
+			$this->th_shop_mania_quick_view_dependent_data();
+			require_once th_shop_mania_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-modal.php';
 		}
 		/**
 		 * Quick view dependent data
 		 */
-		function amaz_store_quick_view_dependent_data(){
+		function th_shop_mania_quick_view_dependent_data(){
 			wp_enqueue_script( 'wc-add-to-cart-variation' );
 			wp_enqueue_script( 'flexslider' );
 		}
         /**
 		 * Quick view ajax
 		 */
-		function amaz_store_load_product_quick_view_ajax(){
+		function th_shop_mania_load_product_quick_view_ajax(){
 			if ( ! isset( $_REQUEST['product_id'] ) ){
 				die();
 			}
@@ -374,56 +372,56 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
 			ob_start();
 			// load content template.
-			require_once AMAZ_STORE_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product.php';
+			require_once th_shop_mania_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product.php';
 			echo ob_get_clean();
 			die();
 		}
 		/**
 		 * Quick view actions
 		 */
-		public function amaz_store_quick_view_content_actions(){
+		public function th_shop_mania_quick_view_content_actions(){
 			// Image.
-			add_action('amaz_store_woo_qv_product_image', 'woocommerce_show_product_sale_flash', 10 );
-			add_action('amaz_store_woo_qv_product_image', array( $this, 'amaz_store_qv_product_images_markup' ), 20 );
+			add_action('th_shop_mania_woo_qv_product_image', 'woocommerce_show_product_sale_flash', 10 );
+			add_action('th_shop_mania_woo_qv_product_image', array( $this, 'th_shop_mania_qv_product_images_markup' ), 20 );
 		} 
 			
 		/**
 		 * Footer markup.
 		 */
-		function amaz_store_qv_product_images_markup(){
-           require_once AMAZ_STORE_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product-image.php';
+		function th_shop_mania_qv_product_images_markup(){
+           require_once th_shop_mania_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product-image.php';
 		}
-        function amaz_store_woo_single_product_content_structure(){
+        function th_shop_mania_woo_single_product_content_structure(){
 							/**
 							 * Add Product Title on single product page for all products.
 							 */
-							do_action( 'amaz_store_woo_single_title_before' );
+							do_action( 'th_shop_mania_woo_single_title_before' );
 							woocommerce_template_single_title();
-							do_action( 'amaz_store_woo_single_title_after' );
+							do_action( 'th_shop_mania_woo_single_title_after' );
 							/**
 							 * Add Product Price on single product page for all products.
 							 */
-							do_action( 'amaz_store_woo_single_price_before' );
+							do_action( 'th_shop_mania_woo_single_price_before' );
 							woocommerce_template_single_price();
-							do_action( 'amaz_store_woo_single_price_after' );
+							do_action( 'th_shop_mania_woo_single_price_after' );
 							/**
 							 * Add rating on single product page for all products.
 							 */
-							do_action( 'amaz_store_woo_single_rating_before' );
+							do_action( 'th_shop_mania_woo_single_rating_before' );
 							woocommerce_template_single_rating();
-							do_action( 'amaz_store_woo_single_rating_after' );
+							do_action( 'th_shop_mania_woo_single_rating_after' );
 							
-							do_action( 'amaz_store_woo_single_short_description_before' );
+							do_action( 'th_shop_mania_woo_single_short_description_before' );
 							woocommerce_template_single_excerpt();
-							do_action( 'amaz_store_woo_single_short_description_after' );
+							do_action( 'th_shop_mania_woo_single_short_description_after' );
 							
-							do_action( 'amaz_store_woo_single_add_to_cart_before' );
+							do_action( 'th_shop_mania_woo_single_add_to_cart_before' );
 							woocommerce_template_single_add_to_cart();
-							do_action( 'amaz_store_woo_single_add_to_cart_after' );
+							do_action( 'th_shop_mania_woo_single_add_to_cart_after' );
 							
-							do_action( 'amaz_store_woo_single_category_before' );
+							do_action( 'th_shop_mania_woo_single_category_before' );
 							woocommerce_template_single_meta();
-							do_action( 'amaz_store_woo_single_category_after' );
+							do_action( 'th_shop_mania_woo_single_category_after' );
 			
 		}
 
@@ -432,7 +430,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 *
 		 * @return void
 		 */
-		function amaz_store_single_product_customization(){
+		function th_shop_mania_single_product_customization(){
 			if ( ! is_product() ){
 				return;
 			}
@@ -442,20 +440,20 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
             add_filter('woocommerce_product_additional_information_heading', '__return_empty_string');
         
 			/* Display Related Products */
-			if ( ! get_theme_mod( 'amaz_store_related_product_display',true ) ) {
+			if ( ! get_theme_mod( 'th_shop_mania_related_product_display',true ) ) {
 				remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 			}
 			/* Display upsell Products */
-			if ( ! get_theme_mod( 'amaz_store_upsell_product_display',true ) ) {
+			if ( ! get_theme_mod( 'th_shop_mania_upsell_product_display',true ) ) {
 				remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 20 );
 			}
 
-			if(get_theme_mod( 'amaz_store_upsell_product_display',true )==true){
-			  add_action( 'woocommerce_after_single_product_summary',array( $this, 'amaz_store_woocommerce_output_upsells' ),15);
+			if(get_theme_mod( 'th_shop_mania_upsell_product_display',true )==true){
+			  add_action( 'woocommerce_after_single_product_summary',array( $this, 'th_shop_mania_woocommerce_output_upsells' ),15);
              }else{
-             remove_action( 'woocommerce_after_single_product_summary',array( $this, 'amaz_store_woocommerce_output_upsells' ));	
+             remove_action( 'woocommerce_after_single_product_summary',array( $this, 'th_shop_mania_woocommerce_output_upsells' ));	
              }
-             add_filter( 'woocommerce_output_related_products_args', array( $this, 'amaz_store_related_no_col_product_show' ) );
+             add_filter( 'woocommerce_output_related_products_args', array( $this, 'th_shop_mania_related_no_col_product_show' ) );
              	/**
  				* Remove "Description" Heading Title @ WooCommerce Single Product Tabs
  				*/
@@ -466,17 +464,17 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 	    /*****************/
 		// upsale product
        /*****************/
-		function amaz_store_woocommerce_output_upsells(){
-		$upsell_columns = get_theme_mod('amaz_store_upsale_num_col_shw','5');
-		$upsell_no_product = get_theme_mod( 'amaz_store_upsale_num_product_shw','5');	
+		function th_shop_mania_woocommerce_output_upsells(){
+		$upsell_columns = get_theme_mod('th_shop_mania_upsale_num_col_shw','5');
+		$upsell_no_product = get_theme_mod( 'th_shop_mania_upsale_num_product_shw','5');	
         woocommerce_upsell_display($upsell_no_product,$upsell_columns); // Display max 3 products, 3 per row
          }
         /*****************************/ 
         // realted product argument pass
         /*****************************/ 
-        function amaz_store_related_no_col_product_show( $args){
-		$rel_columns = get_theme_mod('amaz_store_related_num_col_shw','5');
-		$rel_no_product = get_theme_mod( 'amaz_store_related_num_product_shw','5');
+        function th_shop_mania_related_no_col_product_show( $args){
+		$rel_columns = get_theme_mod('th_shop_mania_related_num_col_shw','5');
+		$rel_no_product = get_theme_mod( 'th_shop_mania_related_num_product_shw','5');
 		$args['posts_per_page'] = $rel_no_product; // related products
 	    $args['columns'] = $rel_columns; // arranged in columns
 	    return $args;
@@ -485,8 +483,8 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
         /**
 		 * Shop page view list and grid view.
 		 */
-        function amaz_store_before_shop_loop(){
-        $viewshow = get_theme_mod('amaz_store_prd_view','grid-view');
+        function th_shop_mania_before_shop_loop(){
+        $viewshow = get_theme_mod('th_shop_mania_prd_view','grid-view');
         
         echo '<div class="thunk-list-grid-switcher">';
         if($viewshow == 'grid-view'){
@@ -501,7 +499,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
         echo '</div>';
         }
         // shop page content
-        function amaz_store_list_after_shop_loop_item(){
+        function th_shop_mania_list_after_shop_loop_item(){
         ?>
            <div class="os-product-excerpt"><?php the_excerpt(); ?></div>
         <?php   
@@ -510,12 +508,12 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		/**
 		 * Change products per row for crossells.
 		 */
-		 function amaz_store_cross_sell_display(){
+		 function th_shop_mania_cross_sell_display(){
 			// Get count
-			$count = get_theme_mod( 'amaz_store_cross_num_product_shw', '5' );
+			$count = get_theme_mod( 'th_shop_mania_cross_num_product_shw', '5' );
 			$count = $count ? $count : '5';
 			// Get columns
-			$columns = get_theme_mod( 'amaz_store_cross_num_col_shw', '5' );
+			$columns = get_theme_mod( 'th_shop_mania_cross_num_col_shw', '5' );
 			$columns = $columns ? $columns : '5';
 			// Alter cross-sell display
 			woocommerce_cross_sell_display( $count, $columns );
@@ -524,9 +522,9 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
         /**************************
 		 * Shop Pagination.
 		 **************************/
-		function amaz_store_pagination_infinite(){
+		function th_shop_mania_pagination_infinite(){
          	check_ajax_referer( 'opn-shop-load-more-nonce', 'nonce' );
-			do_action( 'amaz_store_pagination_infinite' );
+			do_action( 'th_shop_mania_pagination_infinite' );
 			$query_vars                   = json_decode( stripslashes( $_POST['query_vars'] ), true );
 			$query_vars['paged']          = isset( $_POST['page_no'] ) ? absint( $_POST['page_no'] ) : 1;
 			$query_vars['post_status']    = 'publish';
@@ -555,16 +553,16 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
         }
 
         function shop_pagination(){
-			$pagination = get_theme_mod( 'amaz_store_pagination' );
+			$pagination = get_theme_mod( 'th_shop_mania_pagination' );
 			if ( 'click' == $pagination || 'scroll' == $pagination){
 				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
-				add_action( 'woocommerce_after_shop_loop', array( $this, 'amaz_store_pagination' ), 10 );
+				add_action( 'woocommerce_after_shop_loop', array( $this, 'th_shop_mania_pagination' ), 10 );
 			}
 		}
-       function amaz_store_pagination( $output ){
+       function th_shop_mania_pagination( $output ){
 			global $wp_query;
-			$infinite_event = get_theme_mod( 'amaz_store_pagination' );
-			$load_more_text = get_theme_mod( 'amaz_store_pagination_loadmore_btn_text',__( 'Load More','th-shop-mania'));
+			$infinite_event = get_theme_mod( 'th_shop_mania_pagination' );
+			$load_more_text = get_theme_mod( 'th_shop_mania_pagination_loadmore_btn_text',__( 'Load More','th-shop-mania'));
 			if ( '' === $load_more_text ){
 				$load_more_text = __( 'Load More', 'th-shop-mania' );
 			}

@@ -429,7 +429,7 @@ function th_shop_mania_customize_function_register( $wp_customize ){
 $wp_customize->register_panel_type( 'Th_Shop_Mania_WP_Customize_Panel' );
 $wp_customize->register_section_type( 'Th_Shop_Mania_WP_Customize_Section' );
 // $wp_customize->register_section_type( 'amaz_store_WP_Customize_Control_Radio_Image' );
-// $wp_customize->register_section_type( 'amaz_store_WP_Customizer_Range_Value_Control' );
+$wp_customize->register_section_type( 'Th_Shop_Mania_WP_Customizer_Range_Value_Control' );
 // $wp_customize->register_section_type( 'th_shop_mania_Customizer_Color_Control' );
 // $wp_customize->register_section_type( 'amaz_store_Customize_Custom_Background_Control' );
 // $wp_customize->register_section_type( 'amaz_store_Customizer_Buttonset_Control' );

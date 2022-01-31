@@ -38,7 +38,7 @@ add_filter( 'wp_page_menu', 'th_shop_mania_add_classes_to_page_menu' );
 		    'th-shop-mania-above-menu'       => esc_html__( 'Header Above Menu', 'th-shop-mania' ),
 			'th-shop-mania-main-menu'        => esc_html__( 'Main', 'th-shop-mania' ),
 			'th-shop-mania-sticky-menu'        => esc_html__( 'Sticky', 'th-shop-mania' ),
-			'th-shop-mania-footer-menu'  => esc_html__( 'Footer Menu', 'th-shop-mania' ),
+			// 'th-shop-mania-footer-menu'  => esc_html__( 'Footer Menu', 'th-shop-mania' ),
 		) );
 	  }
 	  add_action( 'after_setup_theme', 'th_shop_mania_custom_menu' );
@@ -270,3 +270,47 @@ function th_shop_mania_attachment_display_settings() {
     update_option( 'image_default_size', 'large' );
 }
 add_action( 'after_setup_theme', 'th_shop_mania_attachment_display_settings' );
+
+/********************************/
+// responsive slider function
+/*********************************/
+if ( ! function_exists( 'th_shop_mania_responsive_slider_funct' ) ) :
+function th_shop_mania_responsive_slider_funct($control_name,$function_name){
+  $custom_css='';
+           $control_value = get_theme_mod( $control_name );
+           if ( empty( $control_value ) ){
+                return '';
+             }  
+        if ( th_shop_mania_is_json( $control_value ) ){
+    $control_value = json_decode( $control_value, true );
+    if ( ! empty( $control_value ) ) {
+
+      foreach ( $control_value as $key => $value ){
+        $custom_css .= call_user_func( $function_name, $value, $key );
+      }
+    }
+    return $custom_css;
+  }  
+}
+endif;
+/********************************/
+// responsive slider function add media query
+/********************************/
+if ( ! function_exists( 'th_shop_mania_add_media_query' ) ) :
+function th_shop_mania_add_media_query( $dimension, $custom_css ){
+  switch ($dimension){
+      case 'desktop':
+      $custom_css = '@media (min-width: 769px){' . $custom_css . '}';
+      break;
+      break;
+      case 'tablet':
+      $custom_css = '@media (max-width: 768px){' . $custom_css . '}';
+      break;
+      case 'mobile':
+      $custom_css = '@media (max-width: 550px){' . $custom_css . '}';
+      break;
+  }
+
+      return $custom_css;
+}
+endif;

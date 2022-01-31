@@ -21,7 +21,7 @@
                 });
 
            },
-           AddtoCartQuanty: function (){
+         AddtoCartQuanty: function (){
                 $('form.cart').on( 'click', 'button.plus, button.minus', function(){
                 // Get current quantity values
                 var qty = $( this ).siblings('.quantity').find( '.qty' );
