@@ -12,7 +12,7 @@
             <div class="section">
                 <h3><?php _e('Leave us a review','th-shop-mania'); ?></h3>
                 <p><?php _e('We would love to hear your feedback.','th-shop-mania'); ?> </p>
-                 <a href="https://www.trustpilot.com/review/themehunk.com" target="_blank" class="sidebar-link"><?php _e('Submit review','th-shop-mania'); ?></a>
+                 <a href="<?php echo esc_url('https://www.trustpilot.com/review/themehunk.com'); ?>" target="_blank" class="sidebar-link"><?php _e('Submit review','th-shop-mania'); ?></a>
 
             </div>
             <hr>

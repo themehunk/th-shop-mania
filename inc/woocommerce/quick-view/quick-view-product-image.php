@@ -48,7 +48,7 @@ global $post, $product, $woocommerce;
 			}
 		}
 	} else {
-		echo sprintf( '<li><img src="%s" alt="%s" /></li>', wc_placeholder_img_src(), __( 'Placeholder', 'amaz-store' ) );
+		echo sprintf( '<li><img src="%s" alt="%s" /></li>', wc_placeholder_img_src(), __( 'Placeholder', 'th-shop-mania' ) );
 	}
 	?>
 	</div>

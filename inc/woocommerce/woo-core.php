@@ -12,7 +12,7 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
          require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 /**
- * Amaze Store WooCommerce Compatibility
+ * Th Shop Mania WooCommerce Compatibility
  */
 if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 	/**
