@@ -2,17 +2,17 @@
 /**
  * WooCommerce - Quick View Product
  *
- * @package  Amaz Store
+ * @package  Th Shop Mania
  */
 
 while ( have_posts() ) :
 	the_post(); ?>
 <div class="alm-woo-product">
 	<div id="product-<?php the_ID(); ?>" <?php post_class( 'product' ); ?>>
-		<?php do_action( 'amaz_store_woo_qv_product_image' ); ?>
+		<?php do_action( 'th_shop_mania_woo_qv_product_image' ); ?>
 		<div class="summary entry-summary">
 			<div class="summary-content">
-				<?php do_action('amaz_store_woo_quick_view_product_summary', 'quick-view' ); ?>
+				<?php do_action('th_shop_mania_woo_quick_view_product_summary', 'quick-view' ); ?>
 			</div>
 		</div>
 	</div>

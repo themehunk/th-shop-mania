@@ -250,9 +250,6 @@ transition: all 0.2s ease-in-out;
 @media screen and (max-width: 1024px){
 .main-header #open-above-menu,.below-header #open-above-menu{
    display:block;
-}
-.abv-two .top-header-col1 .menu-toggle .menu-btn{
-float:none;
 }   
 .mhdfull .top-header .menu-toggle,
 .mhdfull .bottom-header .menu-toggle{
@@ -358,8 +355,6 @@ display: -webkit-inline-box;
     .bottom-header-bar .th-shop-mania-menu > li > a {
     padding: 10px 40px 10px 0px!important;
    }   
-.top-header-bar.abv-two .top-header-col1 .menu-toggle .menu-btn,
-.top-header-bar.abv-three .top-header-col1 .menu-toggle .menu-btn,
 .bottom-header-bar.btm-two .bottom-header-col1 .menu-toggle .menu-btn,
 .bottom-header-bar.btm-three .bottom-header-col1 .menu-toggle .menu-btn{
 float:left;

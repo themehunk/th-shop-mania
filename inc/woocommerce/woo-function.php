@@ -384,3 +384,10 @@ remove_action('woocommerce_init','th_compare_add_action_shop_list');
 
 // Woocommerce Cart Page Customisation
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
+// Sale Badge Text change
+add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
+function woocommerce_custom_sale_text($text, $post, $_product)
+{
+    return '<span class="onsale">'.esc_html(get_theme_mod('th_shop_mania_woo_sale_text','Sale')).'</span>';
+}
