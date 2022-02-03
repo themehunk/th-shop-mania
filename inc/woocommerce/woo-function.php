@@ -114,16 +114,17 @@ echo '</div>';
  // Plus Minus Quantity Buttons @ WooCommerce Single Product Page
 add_action( 'woocommerce_before_add_to_cart_quantity', 'th_shop_mania_display_quantity_minus',10,2 );
 function th_shop_mania_display_quantity_minus(){
-
+  global $product;
+  if($product->get_sold_individually()!='1'):
     echo '<div class="th-shop-mania-quantity"><button type="button" class="minus" >-</button>';
-  
-  
+  endif;  
 }
 add_action( 'woocommerce_after_add_to_cart_quantity', 'th_shop_mania_display_quantity_plus',10,2 );
 function th_shop_mania_display_quantity_plus(){
-  
+  global $product;
+  if($product->get_sold_individually()!='1'):
     echo '<button type="button" class="plus" >+</button></div>';
-  
+  endif;
 }
 //Woocommerce: How to remove page-title at the home/shop page but not category pages
 add_filter( 'woocommerce_show_page_title', 'th_shop_mania_not_a_shop_page' );

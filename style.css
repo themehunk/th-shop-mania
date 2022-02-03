@@ -1270,7 +1270,7 @@ display:none;
 }
 .thunk-icon-market .taiowc-icon svg, 
 .thunk-icon-market .taiowc-icon img{
-  width: 1.9rem;
+  width: 1.8rem;
 }
 /* taiowc css   */
 .main-header-bar .taiowc-content{
@@ -1577,7 +1577,7 @@ height: auto;
     background: none;
     display: inline-flex;
     background: #ff3377;
-    padding: 9px 7px;
+    padding: 9px 16px;
     border-radius: 5px;
     color: #FFF;
   }
@@ -1602,8 +1602,12 @@ height: auto;
   }
 /* Vertical Menu Styles
 ----------------------------------------*/
+.menu-category-list{
+  width: 209px;
+  position: relative;
+}
 .menu-category-list ul[data-menu-style="vertical"] {
-    width: 251px;
+    width: 100%;
     border: 1px solid #f1f1f1;
     background: #ffffff;
     position: absolute;
@@ -1693,7 +1697,7 @@ opacity: 1;
     border-bottom: 1px solid #e3e3e3;
     height: auto;
     min-height: 0 !important;
-    padding: 12px 25px;
+    padding: 12px 16px;
     text-decoration: none;
     -webkit-transition: all .4s ease;
     transition: all .4s ease;
@@ -3799,6 +3803,7 @@ clear: initial;
     height: 56px;
     line-height: 56px;
     width: 56px;
+    margin-left: 15px;
     letter-spacing: normal;
     border-color: #111;
 }
@@ -3867,6 +3872,7 @@ top:0em!important;
     letter-spacing: .1em;
     width:200px;
     border: 1px solid transparent;
+    margin-bottom: 21px;
 }
 /*compare style*/
 .woocommerce .entry-summary a.th-product-compare-btn.button{
@@ -5852,8 +5858,11 @@ font-family: FontAwesome;
     width: 40px;
 }
 .menu-category-list ul[data-menu-style="accordion"] li:last-child a{
-    border-bottom: 1px solid #f1f1f1;
-  
+    border-bottom: 1px solid #f1f1f1;  
+}
+.menu-category-list {
+  width: 209px;
+  position: relative;
 }
 /*sidebar Toggle*/
 .slide-toogle{

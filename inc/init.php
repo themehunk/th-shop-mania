@@ -26,6 +26,7 @@ get_template_part( 'lib/th-option/th-option');
 // get_template_part( 'lib/th-option/child-notify');
 get_template_part( 'lib/welcome-bar/welcome-bar');
 //customizer
+if (is_customize_preview()) {
 get_template_part('customizer/extend-customizer/class-th-shop-mania-wp-customize-panel');
 get_template_part('customizer/extend-customizer/class-th-shop-mania-wp-customize-section');
 get_template_part('customizer/customizer-radio-image/class/class-th-shop-mania-customize-control-radio-image');
@@ -33,3 +34,4 @@ get_template_part('customizer/customizer-range-value/class/class-th-shop-mania-c
 get_template_part('customizer/customizer-toggle/class-th-shop-mania-toggle-control');
 get_template_part('customizer/custom-customizer');
 get_template_part('customizer/customizer');
+}

@@ -385,7 +385,78 @@ class th_shop_mania_Customize_Control_Checkbox_Multiple extends WP_Customize_Con
     <?php }
 }
 }
+
 function th_shop_mania_customize_function_register( $wp_customize ){
+  /**
+ *widget-redirect
+ *
+ */
+class th_shop_mania_Widegt_Redirect extends WP_Customize_Control {
+    /**
+     * Control id
+     *
+     * @var string $id Control id.
+     */
+    public $id = '';
+
+    /**
+     * Button class.
+     *
+     * @var mixed|string
+     */
+    public $button_class = '';
+
+    /**
+     * Icon class.
+     *
+     * @var mixed|string
+     */
+    public $icon_class = '';
+
+    /**
+     * Button text.
+     *
+     * @var mixed|string
+     */
+    public $button_text = '';
+
+    /**
+     * 
+     *
+     * @param WP_Customize_Manager $manager Customizer manager.
+     * @param string               $id Control id.
+     * @param array                $args Argument.
+     */
+    public function __construct( $manager, $id, $args = array() ) {
+        parent::__construct( $manager, $id, $args );
+        $this->id = $id;
+        if ( ! empty( $args['button_class'] ) ) {
+            $this->button_class = $args['button_class'];
+        }
+        if ( ! empty( $args['icon_class'] ) ) {
+            $this->icon_class = $args['icon_class'];
+        }
+        if ( ! empty( $args['button_text'] ) ) {
+            $this->button_text = $args['button_text'];
+        }
+    }
+
+    /**
+     * Render content for the control.
+     *
+     */
+    public function render_content() {
+        if ( ! empty( $this->button_text ) ) {
+            echo '<button type="button" class="button menu-shortcut ' . esc_attr( $this->button_class ) . '" tabindex="0">';
+            if ( ! empty( $this->button_class ) ) {
+                echo '<span class="dashicons dashicons-admin-generic" style="margin-right: 10px;margin-top:3px;
+    color:#999;"></span>';
+            }
+                echo esc_html( $this->button_text );
+            echo '</button>';
+        }
+    }
+}
   // divider
     class th_shop_mania_Misc_Control extends WP_Customize_Control{
     public $description = '';

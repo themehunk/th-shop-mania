@@ -280,7 +280,7 @@ function th_shop_mania_responsive_slider_funct($control_name,$function_name){
            if ( empty( $control_value ) ){
                 return '';
              }  
-        if ( th_shop_mania_is_json( $control_value ) ){
+        if ( _th_shop_mania_is_json( $control_value ) ){
     $control_value = json_decode( $control_value, true );
     if ( ! empty( $control_value ) ) {
 
@@ -313,3 +313,7 @@ function th_shop_mania_add_media_query( $dimension, $custom_css ){
       return $custom_css;
 }
 endif;
+
+function _th_shop_mania_is_json( $string ){
+    return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
+}
