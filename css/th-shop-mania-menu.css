@@ -348,8 +348,11 @@ display: -webkit-inline-box;
     .th-shop-mania-menu > li > ul.sub-menu > li ul.sub-menu > li ul.sub-menu {
         position: static;
     }
-    .th-shop-mania-menu li ul.sub-menu li.menu-active > a > .arrow:before {
+     .th-shop-mania-menu li ul.sub-menu li > a > .arrow:before {
         content: "\f107" !important;
+    }
+    .th-shop-mania-menu li ul.sub-menu li.menu-active > a > .arrow:before {
+        content: "\f106" !important;
     }
   .th-shop-mania-menu > li > a,.top-header-bar .th-shop-mania-menu > li > a, 
     .bottom-header-bar .th-shop-mania-menu > li > a {
@@ -406,7 +409,7 @@ top:0;
 .mobile-menu-active .sider.left,
 .sticky-mobile-menu-active .sider.left,
 .mobile-bottom-menu-active .sider.left{
-    left:0px;
+    left:-12px;
 }
 .mobile-nav-widget{
 position: fixed;
@@ -427,8 +430,8 @@ transition: all 0.2s ease-in-out;
     top: 0;
     height: 100vh;
     z-index: 999999;
-    width: 280px;
-    padding: 3em 1.5em;
+    width: 350px;
+    padding: 0;
     max-width: 100%;
     border-right: 1px solid rgba(0,0,0,.1);
     overflow-x: hidden;
@@ -451,7 +454,7 @@ transition: all 0.2s ease-in-out;
 .sticky-mobile-menu-active .sider.right,
 .mobile-bottom-menu-active .sider.right {
     left:auto;
-    right:0;
+    right: -12px;
     transition: right 0.3s ease;
 }
  /*center over menu*/

@@ -36,8 +36,6 @@ add_filter( 'wp_page_menu', 'th_shop_mania_add_classes_to_page_menu' );
 	  function th_shop_mania_custom_menu(){
 		     register_nav_menus(array(
 			'th-shop-mania-main-menu'        => esc_html__( 'Main', 'th-shop-mania' ),
-			// 'th-shop-mania-sticky-menu'        => esc_html__( 'Sticky', 'th-shop-mania' ),
-			// 'th-shop-mania-footer-menu'  => esc_html__( 'Footer Menu', 'th-shop-mania' ),
 		) );
 	  }
 	  add_action( 'after_setup_theme', 'th_shop_mania_custom_menu' );
@@ -49,34 +47,6 @@ add_filter( 'wp_page_menu', 'th_shop_mania_add_classes_to_page_menu' );
               'link_before'    =>'<span class="th-shop-mania-menu-link">',
               'link_after'     => '</span>',
               'items_wrap'     => '<ul id="th-shop-mania-menu" class="th-shop-mania-menu" data-menu-style='.esc_attr(th_shop_mania_header_menu_style()).'>%3$s</ul>',
-             ));
-         }
-          //STICKY MENU
-           function th_shop_mania_stick_nav_menu(){
-              wp_nav_menu( array(
-              'theme_location' => 'th-shop-mania-sticky-menu', 
-              'container'      => false, 
-              'link_before'    =>'<span class="th-shop-mania-menu-link">',
-              'link_after'     => '</span>',
-              'items_wrap'     => '<ul id="th-shop-mania-stick-menu" class="th-shop-mania-menu" data-menu-style='.esc_attr(th_shop_mania_header_menu_style()).'>%3$s</ul>',
-             ));
-         }
-         // HEADER ABOVE MENU
-         function th_shop_mania_abv_nav_menu(){
-              wp_nav_menu( array('theme_location' => 'th-shop-mania-above-menu', 
-              'container'   => false, 
-              'link_before' => '<span class="th-shop-mania-menu-link">',
-              'link_after'  => '</span>',
-              'items_wrap'  => '<ul id="open-above-menu" class="th-shop-mania-menu" data-menu-style='.esc_attr(th_shop_mania_header_menu_style()).'>%3$s</ul>',
-             ));
-         }
-         // FOOTER TOP MENU
-         function th_shop_mania_footer_nav_menu(){
-              wp_nav_menu( array('theme_location' => 'th-shop-mania-footer-menu', 
-              'container'   => false, 
-              'link_before' => '<span class="th-shop-mania-menu-link">',
-              'link_after'  => '</span>',
-              'items_wrap'  => '<ul id="open-footer-menu" class="open-bottom-menu">%3$s</ul>',
              ));
          }
 function th_shop_mania_add_classes_to_page_menu_default( $ulclass ){
@@ -280,7 +250,7 @@ function th_shop_mania_responsive_slider_funct($control_name,$function_name){
            if ( empty( $control_value ) ){
                 return '';
              }  
-        if ( _th_shop_mania_is_json( $control_value ) ){
+        if ( th_shop_mania_is_json( $control_value ) ){
     $control_value = json_decode( $control_value, true );
     if ( ! empty( $control_value ) ) {
 
@@ -314,6 +284,9 @@ function th_shop_mania_add_media_query( $dimension, $custom_css ){
 }
 endif;
 
-function _th_shop_mania_is_json( $string ){
+
+if ( !function_exists('th_shop_mania_is_json') ) {
+function th_shop_mania_is_json( $string ){
     return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
+}
 }

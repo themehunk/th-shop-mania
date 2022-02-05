@@ -14,6 +14,6 @@ require th_shop_mania_THEME_DIR . 'customizer/section/color/global-color.php';
 
 }
 add_action('customize_register','th_shop_mania_customize_register');
-function th_shop_mania_is_json( $string ){
-    return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
-}
+// function th_shop_mania_is_json( $string ){
+//     return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
+// }

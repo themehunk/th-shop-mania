@@ -58,10 +58,10 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
 <div id="page" class="th-shop-mania-site">
 	<header>
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'th-shop-mania' ); ?></a>
-        <?php th_shop_mania_header_abv_post_meta($th_shop_mania_disable_above_header_dyn);
+        <?php do_action( 'th_shop_mania_sticky_header' );
+        	th_shop_mania_header_abv_post_meta($th_shop_mania_disable_above_header_dyn);
         	th_shop_mania_header_main_post_meta($th_shop_mania_disable_main_header_dyn);
 			th_shop_mania_header_btm_post_meta($th_shop_mania_disable_bottom_header_dyn);
-			do_action( 'th_shop_mania_sticky_header' );
         ?> 
 		<!-- end below-header -->
 	</header> <!-- end header -->

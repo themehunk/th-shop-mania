@@ -501,7 +501,6 @@ $wp_customize->register_panel_type( 'Th_Shop_Mania_WP_Customize_Panel' );
 $wp_customize->register_section_type( 'Th_Shop_Mania_WP_Customize_Section' );
 $wp_customize->register_section_type( 'th_shop_mania_WP_Customize_Control_Radio_Image' );
 $wp_customize->register_section_type( 'Th_Shop_Mania_WP_Customizer_Range_Value_Control' );
-// $wp_customize->register_section_type( 'th_shop_mania_Customizer_Color_Control' );
 // $wp_customize->register_section_type( 'amaz_store_Customize_Custom_Background_Control' );
 // $wp_customize->register_section_type( 'amaz_store_Customizer_Buttonset_Control' );
 $wp_customize->register_section_type( 'th_shop_mania_Toggle_Control' );
@@ -517,3 +516,13 @@ function th_shop_mania_customizer_style_registers(){
   wp_enqueue_style('th_shop_mania_customizer_styles', th_shop_mania_THEME_URI .'customizer/extend-customizer/extend-css/extend-customizer.css');
 }
 add_action('customize_controls_print_styles', 'th_shop_mania_customizer_style_registers');
+
+/**
+ * Used by hook: 'customize_preview_init'
+ * 
+ * @see add_action('customize_preview_init',$func)
+ */
+function th_shop_mania_customizer_live_preview(){
+wp_enqueue_script( 'th_shop_mania_live_customizer', get_template_directory_uri().'/customizer/js/live-customizer.js', array("jquery"),'', true );  
+}
+add_action('customize_preview_init','th_shop_mania_customizer_live_preview');
