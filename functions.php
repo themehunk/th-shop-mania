@@ -166,11 +166,6 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                 'active_filename' => 'hunk-companion/hunk-companion.php',
             ),
 
-            'one-click-demo-import' => array(
-                'name' => esc_html__( 'One Click Demo Import', 'th-shop-mania' ),
-                'img' => 'icon-128x128.png',
-                'active_filename' => 'one-click-demo-import/one-click-demo-import.php',
-            ), 
             'woocommerce' => array(
                 'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
                 'img' => 'icon-128x128.png',

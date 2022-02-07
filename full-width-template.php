@@ -9,14 +9,12 @@
 get_header();
 $th_shop_mania_sidebar = 'no-sidebar';
 ?>
-  <div id="content" class="page-content thunk-page <?php echo esc_attr($th_shop_mania_sidebar); ?>">
+  <div id="content" class="page-content thunk-page <?php echo esc_attr($th_shop_mania_sidebar); ?> full-width-template">
           <div class="content-wrap" >
               <div class="main-area">
                 <div id="primary" class="primary-content-area">
                   <div class="primary-content-wrap">
                     <div class="page-head">
-                   <?php th_shop_mania_get_page_title();?>
-                   <?php th_shop_mania_breadcrumb_trail();?>
                     </div>
                         <div class="thunk-content-wrap">
                         <?php

@@ -33,7 +33,7 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
             <div class="th-option-bottom-hdr">
                 <a class="tablinks <?php echo esc_attr($tabActiveWl) ?>" onclick="openTab(event, 'Welcome')"><?php _e('Welcome', 'th-shop-mania'); ?></a>
                 <a class="tablinks <?php echo esc_attr($tabActiveRp) ?>" onclick="openTab(event, 'Recommended-Plugin')"><?php _e('Recommended Plugin', 'th-shop-mania'); ?> </a>
-                <a class="tablinks th-import-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" onclick="openTab(event, 'Import-Demo-Content')"><?php _e('Demo Import', 'th-shop-mania'); ?> <p class="tooltiptext"><?php _e('Starter Templates', 'th-shop-mania'); ?></p> </a>
+                <a href="<?php echo esc_url(admin_url('themes.php?page=themehunk-site-library'));  ?>" class="tablinks th-import-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" ><?php _e('Demo Import', 'th-shop-mania'); ?> <p class="tooltiptext"><?php _e('Starter Templates', 'th-shop-mania'); ?></p> </a>
                 <a class="tablinks get-child <?php echo esc_attr($tabActiveGtChild) ?>" onclick="openTab(event, 'Get-Child-Theme')"><?php _e('Get Child Theme', 'th-shop-mania'); ?></a>
                 <a class="tablinks <?php echo esc_attr($tabActiveFreePRo) ?>" onclick="openTab(event, 'Free-Vs-Pro')"><?php _e('Free Vs Pro', 'th-shop-mania'); ?></a>
                 <a class="tablinks <?php echo esc_attr($tabActiveHelp) ?>" onclick="openTab(event, 'Help')"><?php _e('Help', 'th-shop-mania'); ?></a>

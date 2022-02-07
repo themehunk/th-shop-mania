@@ -8,9 +8,6 @@
 if ( ! class_exists( 'WooCommerce' ) ){
 	return;
 }
-if ( ! function_exists( 'is_plugin_active' ) ) {
-         require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-}
 /**
  * Th Shop Mania WooCommerce Compatibility
  */
@@ -311,15 +308,6 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			$localize['qv_loader'] = $loader;
 			return $localize;
 		}
-		/****************/
-        // add to compare
-        /****************/
-        function th_shop_mania_add_to_compare($pid=''){
-        if( is_plugin_active('yith-woocommerce-compare/init.php') ){
-          return '<div class="thunk-compare"><span class="compare-list"><div class="woocommerce product compare-button"><a href="'.esc_url(home_url()).'?action=yith-woocompare-add-product&id='.esc_attr($pid).'" class="compare button" data-product_id="'.esc_attr($pid).'" rel="nofollow">'.__('compare','th-shop-mania').'</a></div></span></div>';
-
-           }
-        }
 		/**
 		 * Quick view on image
 		 */

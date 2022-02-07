@@ -59,7 +59,7 @@ $offcanvas = get_theme_mod('th_shop_mania_canvas_alignment','cnv-none');
           </div>
 					<div class="main-header-col3">
            <div class="thunk-icon-market">
-            <?php if ( is_plugin_active( 'yith-woocommerce-wishlist/init.php' ) ) { ?>
+            <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
               <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url','th_shop_mania_whishlist_url','','')); ?>">
        <i  class="fa fa-heart-o" aria-hidden="true"></i></a> 
      <?php } ?>
@@ -101,7 +101,7 @@ $offcanvas = get_theme_mod('th_shop_mania_canvas_alignment','cnv-none');
                        </div>
                     </button>
                 </div>
-                <?php if ( is_plugin_active( 'yith-woocommerce-wishlist/init.php' ) ) { ?>
+                <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
                 <div>
                   <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>">
                   <i  class="fa fa-heart-o" aria-hidden="true"></i></a>
