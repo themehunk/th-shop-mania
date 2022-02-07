@@ -65,6 +65,9 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
                 <div class="rp-two-column">
 
                     <div class="rcp theme_link th-row import-demo">
+                        <div class="import-image">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/import.png">
+                        </div>
                         <div class="title-plugin">
                             <h3><?php _e('Click Here To Import Demo Content', 'th-shop-mania'); ?></h3>
 
