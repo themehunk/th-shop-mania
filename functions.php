@@ -246,10 +246,7 @@ function th_shop_mania_scripts(){
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	wp_enqueue_style( 'jost-fonts', 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap', '', TH_SHOP_MANIA_THEME_VERSION );
 	wp_enqueue_style( 'font-awesome', th_shop_mania_THEME_URI . 'third-party/fonts/font-awesome/css/font-awesome.css', '', TH_SHOP_MANIA_THEME_VERSION );
-	wp_enqueue_style( 'animate', th_shop_mania_THEME_URI . 'css/animate.css','',TH_SHOP_MANIA_THEME_VERSION);
 	wp_enqueue_style( 'th-shop-mania-menu', th_shop_mania_THEME_URI . 'css/th-shop-mania-menu.css','',TH_SHOP_MANIA_THEME_VERSION);	
-
-	// wp_enqueue_style( 'th-shop-mania-main-style', th_shop_mania_THEME_URI . 'css/style.css','',TH_SHOP_MANIA_THEME_VERSION);
 
 	wp_enqueue_style( 'th-shop-mania-style', get_stylesheet_uri(), array(), TH_SHOP_MANIA_THEME_VERSION );
 	wp_add_inline_style('th-shop-mania-style', th_shop_mania_custom_style());

@@ -9,9 +9,6 @@
         bindEvents: function (){
               
              var $this = this;
-             // $this.sticky_header();
-             // $this.sticky_sidebar_hide_toggle();
-             // $this.sticky_product_search();
              $this.pre_loader();
              $this.sideabr_toggle();
              $this.CatMenu();
@@ -24,72 +21,7 @@
              $this.MobileMenuFunction();
              $this.mobile_menu_with_woocat();  
              $this.MoveToTop();
-             if($('.header__cat__item.dropdown').length!==0){
-             $this.cat_toggle();
-             }
-        },
-        sticky_sidebar_hide_toggle: function () {
-               if($('#sidebar-primary.bigstr-sticky-sidebar').length!==0){
-                      var lastScrollTop = 0;
-                      $(window).on('scroll', function() {
-                          st = $(this).scrollTop();
-                          if(st < lastScrollTop) {
-
-                             $('.product-cat-list').hide();
-                             
-                          }
-                          lastScrollTop = st;
-                      });
-            }
-        },
-    
-        sticky_header: function () {
-                    if(jot_shop.th_shop_mania_sticky_header_effect=='scrldwmn'){
-                    var position = jQuery(window).scrollTop(); 
-                    var $headerBar = jQuery('header').height();
-                    // should start at 0
-                    jQuery(window).scroll(function() {
-                        var scroll = jQuery(window).scrollTop();
-                        if(scroll > position || scroll < $headerBar) {
-                        jQuery(".sticky-header").removeClass("stick");
-                        $(".search-wrapper").removeClass("open");
-                        }else{
-                        jQuery(".sticky-header").addClass("stick");
-                        }
-                        position = scroll;
-                    });
-                  }else{
-                      jQuery(document).on("scroll", function(){
-                      var $headerBar = jQuery('header').height();
-                        if(jQuery(document).scrollTop() > $headerBar){
-                            jQuery(".sticky-header").addClass("stick");
-                          }else{
-                            $(".search-wrapper").removeClass("open");
-                            jQuery(".sticky-header").removeClass("stick");
-                        } 
-                       });
-                  }
-        },
-        sticky_product_search: function () {
- 
-                  $('.prd-search').on('click', function (e) {
-                     e.preventDefault();
-                    $(".search-wrapper").addClass("open");
-                  });
-                  $('.search-close-btn').on('click', function (e) {
-                     e.preventDefault();
-                    $(".search-wrapper").removeClass("open");
-                  });   
-            
-        },
-          cat_toggle : function () {
-                    $('.header__cat__item.dropdown').on('click', function (e) {
-                    e.preventDefault();
-                    $(this).toggleClass('open');
-                    });
-
-          },
-          
+        },    
           pre_loader : function (){
                                if(!$('body').hasClass('elementor-editor-active')){
                                 $(window).on('load', function(){
@@ -123,7 +55,7 @@
                          
         },
         
-        CatMenu : function () {
+         CatMenu : function () {
                  // category toggle
                               $(".cat-toggle").on("click keypress",function(e){
                               $(".product-cat-list").slideToggle();
@@ -142,12 +74,12 @@
                           }
 });
                            
-                           
-                             $("#mobile-nav-tab-category .mobile").ThunkCatMenu({
+                            $("#mobile-nav-tab-category .mobile").ThunkCatMenu({
                                  resizeWidth:'1024', // Set the same in Media query       
                                  animationSpeed:'fast', //slow, medium, fast
                                  accoridonExpAll:true//Expands all the accordion menu on click
                              });
+                             
                              $(".product-cat-list").ThunkCatMenu({
                                  resizeWidth:'767', // Set the same in Media query       
                                  animationSpeed:'fast', //slow, medium, fast

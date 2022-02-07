@@ -136,7 +136,7 @@ function th_shop_mania_not_a_shop_page() {
 //************************/
 if ( ! function_exists( 'th_shop_mania_product_list_categories' ) ){
 function th_shop_mania_product_list_categories( $args = '' ){
-$term = get_theme_mod('th_shop_mania_exclde_category');
+$term = get_theme_mod('th_shop_mania_exclde_category','');
 if(!empty($term[0])){
   $exclude_id = $term;
   }else{
@@ -145,7 +145,7 @@ if(!empty($term[0])){
 $defaults = array(
         'child_of'            => 0,
         'current_category'    => 0,
-        'depth'               => 5,
+        'depth'               => '5',
         'echo'                => 0,
         'exclude'             => $exclude_id,
         'exclude_tree'        => '',
@@ -170,8 +170,8 @@ $defaults = array(
         echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">'.$html.'</ul>';
   }
 }
-if ( ! function_exists( 'th_shop_mania_product_list_categories_mobile' ) ){
- function th_shop_mania_product_list_categories_mobile( $args = '' ){
+if ( !function_exists('th_shop_mania_product_list_categories_mobile') ) {
+function th_shop_mania_product_list_categories_mobile( $args = '' ){
   $term = get_theme_mod('th_shop_mania_exclde_category');
 if(!empty($term[0])){
   $exclude_id = $term;
@@ -203,7 +203,7 @@ if(!empty($term[0])){
         'use_desc_for_title'  => 0,
     );
  $html = wp_list_categories($defaults);
-        echo '<ul class="product-cat-list thunk-product-cat-list mobile" data-menu-style="accordion">'.$html.'</ul>';
+        echo '<ul class="mob-product-cat-list thunk-product-cat-list mobile" data-menu-style="accordion">'.$html.'</ul>';
   }
 }
 
