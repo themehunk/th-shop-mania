@@ -6,7 +6,7 @@
             <p>
             <b><?php _e('Pre-made premium templates','th-shop-mania'); ?> </b><br>
             <?php _e('Th Shop Mania Pro is one of the most popular eCommerce theme on WordPress.','th-shop-mania'); ?> </p>
-                <center><a class="button ztabtn" target="_blank" href="https://themehunk.com/product/th-shop-mania/"><?php _e('Coming Soon','th-shop-mania'); ?> </a></center>
+                <center><a class="button ztabtn" target="_blank" href="<?php echo esc_url('https://themehunk.com/th-shop-mania/'); ?>"><?php _e('Coming Soon','th-shop-mania'); ?> </a></center>
             </div>
             <hr>
             <div class="section">

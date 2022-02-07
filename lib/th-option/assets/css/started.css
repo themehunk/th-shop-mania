@@ -126,6 +126,7 @@
     font-weight: bold;
     cursor: pointer;
     position: relative;
+    text-decoration: none;
 }
 /*.th-import-tab-button p{
     position: absolute;
