@@ -2,6 +2,23 @@
 include_once(ABSPATH . 'wp-admin/includes/plugin-install.php');
 class Th_Shop_Mania_theme_option
 {
+
+  /**
+     * Menu page title
+     *
+     * @since 1.0
+     * @var array $menu_page_title
+     */
+    static public $menu_page_title = 'Zita Theme';
+
+    /**
+     * Current Slug
+     *
+     * @since 1.0
+     * @var array $current_slug
+     */
+    static public $current_slug = 'general';
+
   function __construct()
   {
     add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
@@ -15,8 +32,50 @@ class Th_Shop_Mania_theme_option
   {
     $menu_title = esc_html__('Get Started with Th Shop Mania Options', 'th-shop-mania');
     add_theme_page(esc_html__('Th Shop Mania', 'th-shop-mania'), $menu_title, 'edit_theme_options', 'th_shop_mania_thunk_started', array($this, 'tab_page'));
+
+    $menu_page_title = '';
+    $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
+    $capability     = 'manage_options';
+    // add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
   }
 
+static public function white_level_menu_callback() {
+
+      $current_slug = isset( $_GET['action'] ) ? esc_attr( $_GET['action'] ) : self::$current_slug;
+
+      $active_tab   = str_replace( '_', '-', $current_slug );
+      $current_slug = str_replace( '-', '_', $current_slug );
+
+      $ast_icon           = apply_filters( 'zita_page_top_icon', true );
+      $ast_visit_site_url = apply_filters( 'zita_site_url', 'https://wpzita.com' );
+      $ast_wrapper_class  = apply_filters( 'zita_welcome_wrapper_class', array( $current_slug ) );
+      $my_theme = wp_get_theme();
+      $zta_theme_version = $my_theme->get( 'Version' );
+            
+      ?>
+            <div class="zitastarter-page-content">  
+            <div class="zitastarter-container">
+      <div class="zta-menu-page-wrapper wrap zta-clear <?php echo esc_attr( implode( ' ', $ast_wrapper_class ) ); ?>">
+         <div class="zitastarter-header">
+            <header>
+                <div class="logo-wrap">
+                    <div class="logo"></div>
+                    <span class="zita-theme-version"><?php echo  esc_html(self::$menu_page_title.' '.$zta_theme_version); ?></span>
+                </div>
+                
+            </header>
+
+            </div>  
+      <?php 
+
+      do_action( 'zita_menu_white_label_action' ); ?>
+      </div>
+       </div>
+     </div>
+
+      <?php
+
+    }
 
   /**
    * Enqueue scripts for admin page only: Theme info page

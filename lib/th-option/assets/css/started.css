@@ -533,6 +533,19 @@ display: flex;
 .get-child{
     display: none!important;
 }
+.appearance_page_th_shop_mania_thunk_started #Import-Demo-Content .import-demo .theme_link{
+    width: initial;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#Import-Demo-Content .th-column:nth-of-type(1),
+#Import-Demo-Content .th-column .title-plugin{
+    display: none;
+}
+#Import-Demo-Content .importdemo{
+    float: left;
+}
 @media (min-width: 768px){
 .theme_link {
     width: 18%;

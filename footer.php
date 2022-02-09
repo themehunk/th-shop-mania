@@ -23,7 +23,7 @@ $th_shop_mania_disable_bottom_footer_dyn ='';
     th_shop_mania_footer_widget_post_meta($th_shop_mania_disable_footer_widget_dyn);
     th_shop_mania_footer_bottom_post_meta($th_shop_mania_disable_bottom_footer_dyn);
         ?>
-     </footer> <!-- end footer -->
+</footer> <!-- end footer -->
     </div> <!-- end th-shop-mania-site -->
 <?php wp_footer(); ?>
 </body>
