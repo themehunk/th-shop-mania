@@ -69,9 +69,9 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/import.png">
                         </div>
                         <div class="title-plugin">
-                            <h3><?php _e('Click Here To Import Demo Content', 'th-shop-mania'); ?></h3>
+                            <h3><?php _e('Import Demo Content', 'th-shop-mania'); ?></h3>
 
-                            <p> <?php _e('You need to Install required plugins mentioned below. After installing required plugins import button will activate.', 'th-shop-mania'); ?></p>
+                            <p> <?php _e('Install "Starter site plugin" mentioned below to activate import demo button.', 'th-shop-mania'); ?></p>
                             <a class="button disabled importdemo"><?php _e('Import Demo', 'th-shop-mania'); ?></a>
                             
                             <?php $this->plugin_install('import-demo-content'); ?>

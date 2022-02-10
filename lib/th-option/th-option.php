@@ -36,7 +36,7 @@ class Th_Shop_Mania_theme_option
     $menu_page_title = '';
     $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
     $capability     = 'manage_options';
-    // add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
+    add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
   }
 
 static public function white_level_menu_callback() {
