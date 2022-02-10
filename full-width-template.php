@@ -14,8 +14,6 @@ $th_shop_mania_sidebar = 'no-sidebar';
               <div class="main-area">
                 <div id="primary" class="primary-content-area">
                   <div class="primary-content-wrap">
-                    <div class="page-head">
-                    </div>
                         <div class="thunk-content-wrap">
                         <?php
                             while( have_posts() ) : the_post();

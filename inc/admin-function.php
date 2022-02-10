@@ -175,57 +175,9 @@ function th_shop_mania_get_page_title(){ ?>
    <?php 
 }
 
-/**************************/
-// Dynamic Social Link
-/**************************/
-function th_shop_mania_social_links(){
-$social='';
-$original_color = get_theme_mod('th_shop_mania_social_original_color',false);
-if($original_color==true){
-$class_original='original-social-icon';
-}else{
-$class_original='';	
-}
-$social.='<ul class="social-icon ' .esc_attr($class_original). ' ">';
-if($f_link = get_theme_mod('social_shop_link_facebook','#')) :
-	$social.='<li><a target="_blank" href="'.esc_url($f_link).'"><i class="fa fa-facebook"></i></a></li>';
-endif;
-if($l_link = get_theme_mod('social_shop_link_linkedin','#')) :
-	$social.='<li><a target="_blank" href="'.esc_url($l_link).'"><i class="fa fa-linkedin"></i></a></li>';
-endif;
-if($p_link = get_theme_mod('social_shop_link_pintrest','#')) :
-	$social.='<li><a target="_blank" href="'.esc_url($p_link).'"><i class="fa fa-pinterest"></i></a></li>';
-endif;
-if($t_link = get_theme_mod('social_shop_link_twitter','#')) :
-	$social.='<li><a target="_blank" href="'.esc_url($t_link).'"><i class="fa fa-twitter"></i></a></li>';
-endif;
-if($insta_link = get_theme_mod('social_shop_link_insta','#')) :
-	$social.='<li><a target="_blank" href="'.esc_url($insta_link).'"><i class="fa fa-instagram"></i></a></li>';
-endif;
-if($tum_link = get_theme_mod('social_shop_link_tumblr','#')) :
-	$social.='<li><a target="_blank" href="'.esc_url($tum_link).'"><i class="fa fa-tumblr"></i></a></li>';
-endif;
-if($y_link = get_theme_mod('social_shop_link_youtube','#')) :
-	$social.='<li><a target="_blank" href="'.esc_url($y_link).'"><i class="fa fa-youtube-play"></i></a></li>';
-endif;
-if($stumb_link = get_theme_mod('social_shop_link_stumbleupon','#')):
-	$social.='<li><a target="_blank" href="'.esc_url($stumb_link).'">
-	 <i class="fa fa-stumbleupon"></i></a></li>';
-endif;
-if($dribble_link = get_theme_mod('social_shop_link_dribble','#')):
-	$social.='<li><a target="_blank" href="'.esc_url($dribble_link).'">
-	 <i class="fa fa-dribbble"></i></a></li>';
-endif;
-if($skype_link = get_theme_mod('social_shop_link_skype','#')):
-	$social.='<li><a target="_blank" href="'.esc_url($skype_link).'">
-	 <i class="fa fa-skype"></i></a></li>';
-endif;
-$social.='</ul>';
-return $social;
-}
-
 /*****************************/
 //add class active
+/*****************************/
 function th_shop_mania_body_classes( $classes ){
 if(class_exists( 'WooCommerce' )):
 $classes[] = 'woocommerce';

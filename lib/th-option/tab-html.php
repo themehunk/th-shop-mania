@@ -73,13 +73,14 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 
                             <p> <?php _e('You need to Install required plugins mentioned below. After installing required plugins import button will activate.', 'th-shop-mania'); ?></p>
                             <a class="button disabled importdemo"><?php _e('Import Demo', 'th-shop-mania'); ?></a>
+                            
+                            <?php $this->plugin_install('import-demo-content'); ?>
+
 
                         </div>
 
                     </div>
 
-
-                    <?php $this->plugin_install('import-demo-content'); ?>
 
                 </div>
 

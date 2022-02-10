@@ -1505,6 +1505,9 @@ position:relative;
 .theme-th-shop-mania .page-content{
   margin-top: 30px;
 }
+.theme-th-shop-mania.alm-stick-ftr .page-content{
+  background: #FFF;
+}
 .right .primary-content-area{
     order: 1;
 }
@@ -1591,6 +1594,17 @@ ul.open-bottom-menu li {
     margin: 0;
 }
 ul.open-bottom-menu .sub-menu{display:none;}
+/*********************/
+/*Sticky Footer*/
+/*********************/
+.alm-stick-ftr footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index:-1;
+}
 /*social icon*/
 .content-social ul.social-icon{
 list-style: none;
@@ -1600,7 +1614,7 @@ list-style: none;
     flex-wrap: wrap;
 }
 .content-social ul.social-icon li{
-padding:5px;
+padding:5px 7px;
 }   
 .content-social ul.social-icon li i{
   padding:0;
@@ -1646,7 +1660,6 @@ line-height:1em;
 display:block;
 text-align:center;
 border:1px solid transparent;
-color: #fff;
 }
 .social-icon.original-social-icon a{
 background-color:transparent!important;
@@ -3484,7 +3497,7 @@ section.upsells.products h2,
   margin: 0;
 }
 .woocommerce-tabs.wc-tabs-wrapper{
-  margin-top: 80px;
+  padding-top: 80px;
 }
 .woocommerce div.product form.cart div.quantity{
     margin:0;
