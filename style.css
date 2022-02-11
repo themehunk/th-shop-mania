@@ -4,8 +4,8 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Th Shop Mania is a Free WooCommerce theme for creating clean online stores for your business. It has a stylish Homepage design for listing premium products and high-end experiences. Theme comes with powerful functionality like Section On/Off, Header & Footer layouts, Product styles, Ajax live search, Offcanvas sidebar, Quick view, Pagination options for Shop & Blog page, multiple widgets for sidebar & footer, Color & background options, etc. Theme also supports many Product sections to showcase your product in your homepage, Sections like - Tabbed Product carousel, Woo category section, Product Carousel, Product list carousel. Other than these sections theme has Top Slider layout, Ribbon section with Image & Video, Banner layouts and Service section. Theme is integrated with WooCommerce & Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store. If you’re looking for a highly flexible e-commerce theme, then Th Shop Mania could have everything you need.
-Version: 1.0.0
-Requires at least: 4.5
+Version: 1.0.1
+Requires at least: 5.0
 Tested up to: 5.9
 Requires PHP: 5.4
 License: GNU General Public License v3 or later
@@ -584,6 +584,15 @@ background: #ff3377;
     width: 100%;
     overflow: hidden !important;
 }
+.th-shop-mania-pre-loader{
+  width: 100%;
+  background: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 .th-shop-mania-pre-loader img{
   text-indent: -9999em;
   position: absolute;
@@ -596,7 +605,6 @@ background: #ff3377;
   animation-delay: -0.16s;
 }
 .th-shop-mania-pre-loader .th-loader {
-    position: absolute;
     border: 2px solid #D4B068;
     border-radius: 50%;
     border-top: 2px solid #f3f3f3!important;
@@ -604,9 +612,12 @@ background: #ff3377;
     height: 50px;
     -webkit-animation: spin .6s linear infinite;
     animation: spin .6s linear infinite;
+    /*
+    position: absolute;
     top: 50%;
     left: 50%;
-    margin: -50px 0px 0px -50px;
+    transform: translate(-50%, -50%);
+    margin: -50px 0 0 -50px;*/
     display: block;
     background-position: center;
 }

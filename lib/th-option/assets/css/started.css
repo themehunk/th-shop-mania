@@ -546,6 +546,12 @@ display: flex;
 #Import-Demo-Content .importdemo{
     float: left;
 }
+.appearance_page_th_shop_mania_thunk_started #Import-Demo-Content .import-demo .theme_link button[data-activated="Activated"]{
+    position: relative;
+}
+/*.appearance_page_th_shop_mania_thunk_started #Import-Demo-Content .import-demo .theme_link button[data-activated="Activated"]:after{
+
+}*/
 @media (min-width: 768px){
 .theme_link {
     width: 18%;
