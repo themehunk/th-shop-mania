@@ -2461,7 +2461,6 @@ color:#9c9c9c;
     list-style-type: none;
 }
 .sidebar-content-area .tagcloud {
-    border: solid 1px #eee;
     padding: 15px;
 }
 /* Cart Widget */ 
@@ -2484,8 +2483,8 @@ color:#9c9c9c;
 .widget.widget_media_gallery .gallery {
   margin-left: 0;
   margin-right: 0;
-  border: solid 1px #eee;
-    padding: 20px;
+  border: 0;
+  padding: 0;
 } 
 .woocommerce .woocommerce-widget-layered-nav-list {
     border: 1px solid #eee;

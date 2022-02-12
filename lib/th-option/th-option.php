@@ -23,20 +23,22 @@ class Th_Shop_Mania_theme_option
   {
     add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
     add_action('admin_menu', array($this, 'menu_tab'));
-
+    
+    self::save_settings();
     // AJAX.
     add_action('wp_ajax_th_activeplugin', array($this, 'th_activeplugin'));
     add_action('wp_ajax_default_home', array($this, 'default_home'));
+    add_action('after_switch_theme',__CLASS__ . '::activation_reset');  
   }
   function menu_tab()
   {
     $menu_title = esc_html__('Get Started with Th Shop Mania Options', 'th-shop-mania');
     add_theme_page(esc_html__('Th Shop Mania', 'th-shop-mania'), $menu_title, 'edit_theme_options', 'th_shop_mania_thunk_started', array($this, 'tab_page'));
 
-    $menu_page_title = '';
-    $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
-    $capability     = 'manage_options';
-    add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
+    // $menu_page_title = '';
+    // $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
+    // $capability     = 'manage_options';
+    // add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
   }
 
 static public function white_level_menu_callback() {
@@ -75,6 +77,49 @@ static public function white_level_menu_callback() {
 
       <?php
 
+    }
+
+     /**
+     * Save All admin settings here
+     */
+    static public function save_settings() {
+
+      // Only admins can save settings.
+      if ( ! current_user_can( 'manage_options' ) ){
+        return;
+      }
+
+      // Let extensions hook into saving.
+      do_action( 'zita_admin_settings_save' );
+    }
+
+    /**
+     * Activation Reset
+     */
+    static public function activation_reset() {
+
+      add_rewrite_endpoint( 'partial', EP_PERMALINK );
+      // flush rewrite rules.
+      flush_rewrite_rules();
+
+      if ( is_network_admin() ) {
+        $branding = get_site_option( '_zita_ext_white_label' );
+      } else {
+        $branding = get_option( '_zita_ext_white_label' );
+      }
+
+      if ( isset( $branding['zita-agency']['hide_branding'] ) && false != $branding['zita-agency']['hide_branding'] ) {
+
+        $branding['zita-agency']['hide_branding'] = false;
+
+        if ( is_network_admin() ) {
+
+          update_site_option( '_zita_ext_white_label', $branding );
+
+        } else {
+          update_option( '_zita_ext_white_label', $branding );
+        }
+      }
     }
 
   /**
