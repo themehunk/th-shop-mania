@@ -261,7 +261,7 @@ $th_shop_mania_mobile_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open'
 }
 add_action( 'th_shop_mania_below_header', 'th_shop_mania_cart_mobile_panel' );
 /***********************************************************
- *Header Post Meta Hide and show Function for Zita Theme
+ *Header Post Meta Hide and show Function for Theme
  ***************************************************************/
 if (!function_exists('th_shop_mania_header_abv_post_meta')) {
     function th_shop_mania_header_abv_post_meta($page_post_meta_set = '')

@@ -25,6 +25,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Changelog ==
 = Version 1.0.1 =
 * Import Demo text changed.	
+* White Label Link removed.
 
 = Version 1.0.0 =
 Initial release
