@@ -80,6 +80,20 @@ $meta_boxes = array(
                 'nameslug' => esc_html__('Disable Feature Image','th-shop-mania'),
                    
             ),
+              array(
+                'name' => '',
+                'id' => $prefix . 'disable_footer_widget_dyn',
+                'type' => 'checkbox',
+                'nameslug' => esc_html__('Disable Footer Widget Area','th-shop-mania'),
+                   
+            ),
+               array(
+                'name' => '',
+                'id' => $prefix . 'disable_above_footer_dyn',
+                'type' => 'checkbox',
+                'nameslug' => esc_html__('Disable Above Footer Area (Pro)','th-shop-mania'),
+                   
+            ),
              array(
                 'name' => '',
                 'id' => $prefix . 'disable_footer_widget_dyn',
