@@ -733,7 +733,7 @@ header{
     height: 100%;
     background: #111;
 }
-.top-header .top-header-bar{
+.top-header-bar{
   line-height:45px;
   color: #FFF;
   margin: 0 -10px;
@@ -1576,7 +1576,7 @@ text-align:start;
   position: relative;
 }
 .top-footer:before,
-.widget-footer-wrap:before,
+.widget-footer:before,
 .below-footer:before{
     content: "";
     position: absolute;
@@ -1586,8 +1586,7 @@ text-align:start;
     height: 100%;
     background: #f7f8f9;
 }
-.top-footer-bar:before,
-.widget-footer-wrap:before{
+.top-footer-bar:before{
   background: transparent;
 }
 .top-footer-bar *,
@@ -2299,7 +2298,7 @@ vertical-align: middle;
 .widget-title,
 .wp-block-group h2,
 .th-shop-mania-widget-content > h2{
-    color: #000000;
+    color: inherit;
     background: transparent;
     font-size: 18px;
     line-height: 25px;
@@ -2324,7 +2323,7 @@ footer .widget.woocommerce .widget-title,
 footer .th-shop-mania-widget-content .widget-title,.widget-title,
 footer .wp-block-group h2{
     background: none;
-    padding: 0;
+    padding: 0 0 15px 0;
 }
 footer .widget_block{
   margin-bottom: 15px;
@@ -2496,6 +2495,18 @@ color:#9c9c9c;
 /****************************/
 /*Off Canvas Sidebar*/
 /****************************/
+.th-shop-mania-off-canvas-sidebar {
+  background: #FFF;
+}
+.th-shop-mania-off-canvas-sidebar *:not(a){
+  color: #111;
+}
+.th-shop-mania-off-canvas-sidebar a:not(a.menu-close-btn){
+  color: #999;
+}
+.th-shop-mania-off-canvas-sidebar a *{
+  color: inherit;
+}
 .off-canvas-button span{
  display: block;
 background-color: #111;
