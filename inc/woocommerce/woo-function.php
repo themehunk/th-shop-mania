@@ -326,12 +326,18 @@ if ( ! function_exists( 'th_shop_mania_pro_shop_content_end' ) ){
    * add to cart start.
    */
  if ( ! function_exists( 'th_shop_mania_add_to_cart' ) ){
-  function th_shop_mania_add_to_cart(){
-
-    echo'<div class="th-add-to-cart">';
-    echo woocommerce_template_loop_add_to_cart();
-
-    echo '</div>';
+  function th_shop_mania_add_to_cart($layout=''){
+    if ($layout == 'tooltip') {
+     echo'<div class="th-add-to-cart"><div th-tooltip="'.__('Add To Cart','th-shop-mania').'">';
+        echo woocommerce_template_loop_add_to_cart();
+      echo '</div></div>';
+    }
+    else{
+      echo'<div class="th-add-to-cart">';
+        echo woocommerce_template_loop_add_to_cart();
+      echo '</div>';
+    }
+    
       
   }
 }
@@ -343,7 +349,7 @@ function th_shop_mania_add_to_compare_fltr($pid = ''){
   global $product;
   $product_id = $pid;
         if(class_exists('th_product_compare')){
-          echo '<div class="thunk-compare"><a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'">'.__('Compare','th-shop-mania').'</a></div>';
+          echo '<div class="thunk-compare"><div th-tooltip="'.__('Compare', 'th-shop-mania').'" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'">'.__('Compare','th-shop-mania').'</a></div></div>';
            }
         }
 }
@@ -353,32 +359,32 @@ function th_shop_mania_add_to_compare_fltr($pid = ''){
 if (!function_exists('th_shop_mania_whish_list')) {
 function th_shop_mania_whish_list($pid = ''){
        if( shortcode_exists( 'yith_wcwl_add_to_wishlist' )){
-       echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner">'.do_shortcode('[yith_wcwl_add_to_wishlist product_id='.$pid.' icon="fa fa-heart" label='.__('wishlist','th-shop-mania').' already_in_wishslist_text='.__('Already','th-shop-mania').' browse_wishlist_text='.__('Added','th-shop-mania').']' ).'</span></div>';
+       echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="'.__('Wishlist', 'th-shop-mania').'" class="wishlist-tooltip">'.do_shortcode('[yith_wcwl_add_to_wishlist product_id='.$pid.' icon="fa fa-heart" label='.__('wishlist','th-shop-mania').' already_in_wishslist_text='.__('Already','th-shop-mania').' browse_wishlist_text='.__('Added','th-shop-mania').']' ).'</div></span></div>';
        }
  } 
 }
-/**
-* Shop customization.
-*
-* @return void
-*/
-add_action( 'woocommerce_before_shop_loop_item', 'th_shop_mania_pro_product_meta_start', 10);
-add_action( 'woocommerce_after_shop_loop_item', 'th_shop_mania_pro_product_meta_end', 12 );
-add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_content_start',20);
-add_action( 'woocommerce_after_shop_loop_item_title', 'th_shop_mania_pro_product_content_end', 20 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'th_shop_mania_pro_product_hover_start',50);
-add_action( 'woocommerce_after_shop_loop_item', 'th_shop_mania_pro_product_hover_end',20);
-add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_open',0);
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price',0);
-add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_image_start', 0);
-add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_image_end',10 );
-// add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_sale_flash',4);
-add_action( 'woocommerce_before_shop_loop', 'th_shop_mania_pro_shop_content_start',1);
-add_action( 'woocommerce_after_shop_loop', 'th_shop_mania_pro_shop_content_end',1);
+// /**
+// * Shop customization.
+// *
+// * @return void
+// */
+// add_action( 'woocommerce_before_shop_loop_item', 'th_shop_mania_pro_product_meta_start', 10);
+// add_action( 'woocommerce_after_shop_loop_item', 'th_shop_mania_pro_product_meta_end', 12 );
+// add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_content_start',20);
+// add_action( 'woocommerce_after_shop_loop_item_title', 'th_shop_mania_pro_product_content_end', 20 );
+// add_action( 'woocommerce_after_shop_loop_item_title', 'th_shop_mania_pro_product_hover_start',50);
+// add_action( 'woocommerce_after_shop_loop_item', 'th_shop_mania_pro_product_hover_end',20);
+// add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_open',0);
+// add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price',0);
+// add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_image_start', 0);
+// add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_image_end',10 );
+// // add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_sale_flash',4);
+// add_action( 'woocommerce_before_shop_loop', 'th_shop_mania_pro_shop_content_start',1);
+// add_action( 'woocommerce_after_shop_loop', 'th_shop_mania_pro_shop_content_end',1);
 
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+// remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+// remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');
+// remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
 //To disable th compare button 
 remove_action('woocommerce_init','th_compare_add_action_shop_list');
@@ -392,3 +398,212 @@ function woocommerce_custom_sale_text($text, $post, $_product)
 {
     return '<span class="onsale">'.esc_html(get_theme_mod('th_shop_mania_woo_sale_text','Sale')).'</span>';
 }
+
+add_action('wp', 'shop_customization', 5);
+/**
+     * Shop customization.
+     *
+     * @return void
+     */
+    function shop_customization()
+    {
+      remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
+      remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10, 0);
+      remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+      remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+      remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+      remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+      remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+      /**
+       * Shop Page Product Content Sorting
+       */
+      add_action('woocommerce_after_shop_loop_item', 'zita_woo_woocommerce_shop_product_content',10);
+
+
+
+      // // ========================+++prev+++========================
+      // add_action( 'woocommerce_before_shop_loop_item', 'zita_woo_shop_thumbnail_wrap_start', 6 );
+      // add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash', 9 );
+      // add_action( 'woocommerce_after_shop_loop_item', 'zita_woo_shop_thumbnail_wrap_end', 8 );
+      // remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+      // /**
+      //  * Shop Page Product Content Sorting
+      //  */
+      // add_action( 'woocommerce_after_shop_loop_item', 'zita_woo_woocommerce_shop_product_content' );
+    }
+if (!function_exists('zita_woo_shop_product_price')) {
+  function zita_woo_shop_product_price($product)
+  {
+    $price_html = $product->get_price_html();
+    return $price_html ? '<span class="price">' . $price_html . '</span>' : '';
+  }
+}
+
+if (!function_exists('zita_woo_shop_product_on_sale')) {
+  function zita_woo_shop_product_on_sale()
+  {
+    global $post, $product;
+    return $product->is_on_sale() ?  apply_filters('woocommerce_sale_flash', '<span class="onsale">' . esc_html__('Sale!', 'woocommerce') . '</span>', $post, $product) : '';
+  }
+}
+if (!function_exists('zita_woo_shop_product_rating')) {
+  function zita_woo_shop_product_rating($product)
+  {
+    return wc_review_ratings_enabled() ? wc_get_rating_html($product->get_average_rating()) : '';
+  }
+}
+
+if (!function_exists('zita_woo_woocommerce_template_loop_product_title')) {
+  /**
+   * Show the product title in the product loop. By default this is an H2.
+   */
+  function zita_woo_woocommerce_template_loop_product_title()
+  {
+    return $html =  '<a href="' . esc_url(get_the_permalink()) . '" class="zta-loop-product__link"><h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2></a>';
+  }
+}
+    if (!function_exists('zita_woo_woocommerce_shop_product_content')) {
+  /**
+   * Show the product title in the product loop. By default this is an H2.
+   */
+  function zita_woo_woocommerce_shop_product_content()
+  {
+    $shop_th_shop_mania_woo_product_layout = get_theme_mod('th_shop_mania_woo_product_layout',1);
+    $shop_th_shop_mania_woo_product_layout = $shop_th_shop_mania_woo_product_layout ? $shop_th_shop_mania_woo_product_layout : 1;
+    global $product;
+    $productId = $product->get_id();
+    if ($shop_th_shop_mania_woo_product_layout == 1) {
+      th_shop_mania_woocommerce_product_layout_default($product, $productId);
+    }
+    else if ($shop_th_shop_mania_woo_product_layout == 2) {
+      th_shop_mania_woocommerce_product_layout2($product, $productId);
+    } else if ($shop_th_shop_mania_woo_product_layout == 3) {
+      th_shop_mania_woocommerce_product_layout3($product, $productId);
+    } else if ($shop_th_shop_mania_woo_product_layout == 4) {
+      zita_woocommerce_product_layout4($product, $productId);
+    } else if ($shop_th_shop_mania_woo_product_layout == 5) {
+      zita_woocommerce_product_layout5($product, $productId);
+    }
+  }
+}
+
+//woocommerce layouts--------------------------------------------
+//woocommerce layout 1------------
+function th_shop_mania_woocommerce_product_layout_default($product, $productId)
+{ 
+    ?>
+  <div class="th-shop-mania-shop-page-layout-default" id="zita-products-layouts">
+    <div class="thunk-product-wrap">
+      <div class="thunk-product">
+        <a href=" <?php echo esc_url(get_the_permalink()) .' ' ?>" target="_blank" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+          <div class="thunk-product-image">
+     <?php  echo zita_woo_shop_product_on_sale();
+            echo woocommerce_get_product_thumbnail();
+            do_action('quickview'); ?>
+          </div>
+          <div class="thunk-product-content">
+            <h2 class="woocommerce-loop-product__title">
+              <?php echo get_the_title(); ?>
+            </h2>
+            <?php echo zita_woo_shop_product_price($product); ?>
+          </div>
+        </a>
+        <div class="thunk-product-hover">
+          <?php  th_shop_mania_add_to_cart('layout1'); 
+                 th_shop_mania_whish_list($productId);
+                 th_shop_mania_add_to_compare_fltr($productId); ?>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+<?php }
+//woocommerce layout 2------------
+function th_shop_mania_woocommerce_product_layout2($product, $productId)
+{ ?>
+  <div class="shop-page-products-layouts th-shop-mania-shop-page-layout-2" id="shop-page-products-layouts">
+    <?php zita_woo_shop_product_on_sale(); ?>
+    <div class="zita-shop-product-image-container">
+      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="zita-shop-product-image">
+      <?php echo woocommerce_get_product_thumbnail(); ?>
+    </a>
+    <?php do_action('quickview'); ?>
+    <div id="zita-product-buttons" class="zita-product-buttons">
+      <?php
+                 th_shop_mania_whish_list($productId);
+                 th_shop_mania_add_to_compare_fltr($productId); ?>
+    </div>
+    </div>
+    <?php echo zita_woo_shop_product_rating($product); ?>
+    <div class="zita-shop-product-content">
+      <div>
+      <?php  echo zita_woo_woocommerce_template_loop_product_title(); 
+        echo zita_woo_shop_product_price($product);?>
+      </div>
+      <?php th_shop_mania_add_to_cart('tooltip'); ?>
+    </div>
+  </div>
+
+    
+<?php } 
+
+//woocommerce layout 3------------
+function th_shop_mania_woocommerce_product_layout3($product, $productId)
+{ ?>
+  <div class="shop-page-products-layouts th-shop-mania-shop-page-layout-3" id="shop-page-products-layouts">
+    <?php zita_woo_shop_product_on_sale(); ?>
+    <div class="zita-shop-product-image-container">
+      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="zita-shop-product-image">
+      <?php echo woocommerce_get_product_thumbnail(); ?>
+    </a>
+    </div>
+    <div class="zita-shop-product-content">
+<?php echo zita_woo_woocommerce_template_loop_product_title(); ?> 
+    <div class="zita-shop-product-price-title">
+      <?php  
+            echo zita_woo_shop_product_price($product);
+            echo zita_woo_shop_product_rating($product);
+      ?>
+    </div>
+      <div id="zita-product-buttons" class="zita-product-buttons">
+      <?php      th_shop_mania_add_to_cart('tooltip');
+                 do_action('quickview');
+                 th_shop_mania_whish_list($productId);
+                 th_shop_mania_add_to_compare_fltr($productId); ?>
+    </div>
+    </div>
+  </div>
+
+    
+<?php } 
+
+//woocommerce layout 4------------
+function th_shop_mania_woocommerce_product_layout4($product, $productId)
+{ ?>
+  <div class="shop-page-products-layouts th-shop-mania-shop-page-layout-2" id="shop-page-products-layouts">
+    <?php zita_woo_shop_product_on_sale(); ?>
+    <div class="zita-shop-product-image-container">
+      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="zita-shop-product-image">
+      <?php echo woocommerce_get_product_thumbnail(); ?>
+    </a>
+    <?php do_action('quickview'); ?>
+    <div id="zita-product-buttons" class="zita-product-buttons">
+      <?php
+                 th_shop_mania_whish_list($productId);
+                 th_shop_mania_add_to_compare_fltr($productId); ?>
+    </div>
+    </div>
+    <?php echo zita_woo_shop_product_rating($product); ?>
+    <div class="zita-shop-product-content">
+      <div>
+      <?php  echo zita_woo_woocommerce_template_loop_product_title(); 
+        echo zita_woo_shop_product_price($product);?>
+      </div>
+      <?php th_shop_mania_add_to_cart('tooltip'); ?>
+    </div>
+  </div>
+
+    
+<?php } 

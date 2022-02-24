@@ -2916,6 +2916,7 @@ border: 1px solid transparent;
 .thunk-compare{
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 12px;
 }
 .thunk-wishlist a{
@@ -2992,7 +2993,7 @@ border: 1px solid transparent;
 .thunk-product-image{
   position: relative;
 }
-.thunk-quik{
+.th-shop-mania-shop-page-layout-default .thunk-quik{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -5495,6 +5496,284 @@ border-color: #0177B5;
 .ea-simple-product-slider .elemento-product-outer-wrap .buttons_ > button i{
   font-family: "FontAwesome";
 }
+/*** tooltip  */
+.tooltip-show-with-title {
+  background-color: black;
+  position: absolute;
+  z-index: 100000;
+  border: 1px solid black;
+  padding: 4px 13px;
+  color: white;
+  border-radius: 3px;
+  text-align: center;
+  width: fit-content;
+  max-width: 182px;
+  transition: 0.2s transform ease, 0.2s opacity ease;
+  transform: translateY(-25px);
+  opacity: 0;
+}
+.tooltip-show-with-title.active {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+}
+.tooltip-show-with-title .pointer_ {
+  height: 10px;
+  width: 15px;
+  margin: auto;
+  display: block;
+  fill: black;
+  position: absolute;
+  bottom: -10px;
+  transform: translateX(-50%) rotateZ(180deg);
+  left: 50%;
+}
+/*** tooltip  */
+/*============================================================================
+*  product layouts style and layout 2
+==============================================================================*/
+  .th-shop-mania-shop-page-layout-2{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 6px;
+    padding: 10px;
+  }
+  .woocommerce .th-shop-mania-shop-page-layout-2 .star-rating{
+    margin: 7px auto;
+  }
+  .th-shop-mania-shop-page-layout-2 .zita-shop-product-image-container{
+    position: relative;
+    overflow: hidden;
+  }
+   .th-shop-mania-shop-page-layout-2 .zita-shop-product-content{
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 6px;
+  }
+  .th-shop-mania-shop-page-layout-2 .woocommerce-loop-product__title,
+  .th-shop-mania-shop-page-layout-2 .price{
+    text-align: left!important;
+    overflow: initial; 
+    text-overflow: initial; 
+    display: initial; 
+    -webkit-box-orient: initial; 
+    -webkit-line-clamp: initial; 
+     line-height: initial; 
+    max-height: initial;
+  }
+  .th-shop-mania-shop-page-layout-2 .thunk-quik{
+    position: absolute;
+    bottom: -54px;
+    left: 0;
+    right: 0;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+  }
+  .th-shop-mania-shop-page-layout-2:hover .thunk-quik{
+    bottom: 0;
+  }
+  .th-shop-mania-shop-page-layout-2 .thunk-quik a.opn-quick-view-text{
+    width: 100%;
+    display: block;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+     border-radius: 0;
+     font-size: 16px;
+  }
+  .shop-page-products-layouts .opn-quick-view-text span:before{
+    content: "\f177";
+    font-family: dashicons;
+    margin-right: 7px;
+  }
+  .shop-page-products-layouts .zita-product-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+.shop-page-products-layouts .thunk-wishlist a,
+.shop-page-products-layouts .thunk-compare a,
+.shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse,
+.woocommerce .zita-product-buttons a.button:hover{
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #008000;
+    color: #FFF;
+    border-radius: 0;
+}
+.shop-page-products-layouts .thunk-wishlist, 
+.shop-page-products-layouts .thunk-compare{
+  margin: 0 0 12px 0;
+}
+.shop-page-products-layouts .thunk-wishlist a,
+.shop-page-products-layouts .thunk-compare a,
+.shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse{
+
+}
+  /*.shop-page-products-layouts .zita-product-buttons > div{
+    width: 40px;
+    height: 40px;
+    
+    margin-top: 0;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #215e21;
+    color: #FFF;
+  }
+  .shop-page-products-layouts .zita-product-buttons > div a,
+  .shop-page-products-layouts .zita-product-buttons > div a:hover{
+    background: transparent;
+    color: #FFF;
+    font-weight: initial;
+  }*/
+  .shop-page-products-layouts .thunk-wishlist-inner span{
+    display: none;
+  }
+  .shop-page-products-layouts .yith-wcwl-wishlistaddedbrowse:before, 
+  .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse:before {
+    content: "\f004";
+    font-family: fontawesome;
+    color: #ff0052;
+    margin: 0;
+    font-size: 12px;
+}
+  .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse a{
+    display: none;
+  }
+  .shop-page-products-layouts .thunk-compare a:before{
+    margin-right: 0;
+    font-size: 12px;
+  }
+  .shop-page-products-layouts .thunk-compare a{
+    font-size: 0;
+  }
+  .woocommerce .shop-page-products-layouts .th-add-to-cart a{
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    position: relative;
+    border-radius: 0;
+    background: #008000;
+    color: #FFF;
+  }
+  .woocommerce .shop-page-products-layouts .th-add-to-cart a:after{
+    font-family: dashicons;
+    content: "\f174";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .woocommerce .shop-page-products-layouts .wc-forward{
+    display: none;
+  }
+  .woocommerce .shop-page-products-layouts .th-add-to-cart a.added:after{
+    margin: 0;
+    font-family: WooCommerce;
+    content: "\e017";
+  }
+  .woocommerce .shop-page-products-layouts .th-add-to-cart a.loading:after{
+    font-family: WooCommerce;
+    content: "\e01c";
+  }
+/*============================================================================
+*  product layouts style and layout 2
+==============================================================================*/
+/*============================================================================
+*  product layouts style and layout 3
+==============================================================================*/
+  
+  .th-shop-mania-shop-page-layout-3 .zita-shop-product-price-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .woocommerce .th-shop-mania-shop-page-layout-3 .zita-shop-product-price-title > *{
+    margin: 0;
+  }
+  .th-shop-mania-shop-page-layout-3 .woocommerce-loop-product__title,
+  .th-shop-mania-shop-page-layout-3 .price{
+    text-align: left!important;
+    overflow: initial; 
+    text-overflow: initial; 
+    display: initial; 
+    -webkit-box-orient: initial; 
+    -webkit-line-clamp: initial; 
+     line-height: initial; 
+    max-height: initial;
+  }
+  .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .zita-product-buttons{
+    flex-direction: initial;
+    position: relative;
+    justify-content: space-around;
+    top: initial;
+    right: initial;
+  }
+  .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .zita-product-buttons > div{
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .woocommerce .shop-page-products-layouts .th-add-to-cart > div{ 
+    display: flex;
+  }
+  .th-shop-mania-shop-page-layout-3 .thunk-quik a.opn-quick-view-text{
+    opacity: 1
+  }
+  .th-shop-mania-shop-page-layout-3 .opn-quick-view-text span{
+    font-size: 0;
+    height: 100%;
+  }
+  .th-shop-mania-shop-page-layout-3 .opn-quick-view-text span:before{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+  }
+  .th-shop-mania-shop-page-layout-3 .thunk-quik a.opn-quick-view-text{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-radius: 0;
+    justify-content: center;
+    padding: 0;
+  }
+  .th-shop-mania-shop-page-layout-3{
+    padding: 8px;
+    -webkit-box-shadow: 0 1px 3px -2px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0 1px 3px -2px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 10%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .th-shop-mania-shop-page-layout-3:hover{
+    -webkit-box-shadow: 0 10px 20px rgb(0 0 0 / 10%), 0 4px 8px rgb(0 0 0 / 10%);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%), 0 4px 8px rgb(0 0 0 / 10%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+/*============================================================================
+*  product layouts style and layout 3
+==============================================================================*/
+
 
 @media screen and (max-width: 1024px){
 .container > .content-wrap{

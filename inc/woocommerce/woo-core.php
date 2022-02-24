@@ -322,8 +322,9 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			$button.='<div class="thunk-quik">
 			             <div class="thunk-quickview">
                                <span class="quik-view">
-                                   <a href="#" class="opn-quick-view-text" data-product_id="' . esc_attr($product_id). '">
+                                   <a href="#" class="opn-quick-view-text" data-product_id="' . esc_attr($product_id). '"><div th-tooltip="'.__('Quick View', 'th-shop-mania').'" class="quik-view-tooltip">
                                       <span>'.esc_html($label).'</span>
+                                      </div>
                                     
                                    </a>
                             </span>
