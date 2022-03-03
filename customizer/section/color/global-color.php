@@ -15,7 +15,7 @@ $wp_customize->add_section('th-shop-mania-gloabal-color', array(
 
 // theme color
  $wp_customize->add_setting('th_shop_mania_theme_clr', array(
-        'default'        => '#ff3377',
+        'default'        => '#008000',
         'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'th_shop_mania_sanitize_color',
         'transport'         => 'postMessage',

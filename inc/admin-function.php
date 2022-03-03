@@ -181,7 +181,9 @@ function th_shop_mania_get_page_title(){ ?>
 function th_shop_mania_body_classes( $classes ){
 if(class_exists( 'WooCommerce' )):
 $classes[] = 'woocommerce';
-endif;     
+endif;
+$th_shop_mania_woo_product_layout = get_theme_mod('th_shop_mania_woo_product_layout',1);  
+$classes[] = 'th-product-style-'.$th_shop_mania_woo_product_layout; 
 return $classes;
 }
 add_filter( 'body_class', 'th_shop_mania_body_classes' );

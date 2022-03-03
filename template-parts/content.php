@@ -36,7 +36,7 @@
 						</div>
 					    </div>
 						<div class="thunk-post-excerpt">
-								<?php th_shop_mania_the_excerpt('full');?> 
+								<?php th_shop_mania_the_excerpt('excerpt');?> 
 						</div>
 					</div> <!-- thunk-posts-description end -->
 				</div> <!-- post-content-outer-wrapper end -->

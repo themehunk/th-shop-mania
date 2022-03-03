@@ -46,6 +46,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		   
 		    add_action( 'after_setup_theme', array( $this, 'th_shop_mania_common_actions' ), 999 );
 		    add_filter( 'open_theme_js_localize', array( $this, 'th_shop_mania_js_localize' ) );
+		    // In this theme product image gallery is inserted directly so this is commented
 		    // add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'th_shop_mania_product_flip_image' ), 10 );
 		    // Register Store Sidebars.
 			add_action( 'widgets_init', array( $this, 'th_shop_mania_store_widgets_init' ), 15 );
@@ -137,7 +138,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			add_theme_support( 'wc-product-gallery-slider' );
 		}
 		/**
-		 * Product Flip Image
+		 * Product Flip Image (with hook you can insert image gallery in product on shop page)
 		 */
 		function th_shop_mania_product_flip_image(){
 			global $product;
@@ -186,7 +187,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			if (is_shop() || is_product_taxonomy() ||  post_type_exists( 'product' )){
 				$hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
 				if ( '' !== $hover_style ) {
-					$classes[] = 'amaz-store-woo-hover-' . esc_attr($hover_style);
+					$classes[] = 'th-shop-mania-woo-hover-' . esc_attr($hover_style);
 				}
 				
 			}
@@ -212,7 +213,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
             global $product;
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
-                $classes[] ='amaz-store-swap-item-hover';
+                $classes[] ='th-shop-mania-swap-item-hover';
 			  }
 			
 		    }
@@ -220,10 +221,15 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
             global $product;
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
-                $classes[] ='amaz-store-slide-item-hover';
+                $classes[] ='th-shop-mania-slide-item-hover';
 			  }
 		
-		   }
+		   }	
+
+		   $single_product_style = get_theme_mod('th_shop_mania_single_product_alignment', 'left');
+		   if ('' !== $single_product_style) {
+				$classes[] = 'th-shop-mania-single-product-content-' . esc_attr($single_product_style);
+				}
 			return $classes;
 		}
 		/**
@@ -322,8 +328,9 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			$button.='<div class="thunk-quik">
 			             <div class="thunk-quickview">
                                <span class="quik-view">
-                                   <a href="#" class="opn-quick-view-text" data-product_id="' . esc_attr($product_id). '">
+                                   <a href="#" class="opn-quick-view-text" data-product_id="' . esc_attr($product_id). '"><div th-tooltip="'.__('Quick View', 'th-shop-mania').'" class="quik-view-tooltip">
                                       <span>'.esc_html($label).'</span>
+                                      </div>
                                     
                                    </a>
                             </span>
