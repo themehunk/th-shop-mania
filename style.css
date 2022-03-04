@@ -1812,6 +1812,7 @@ height: auto;
     border: 1px solid #f1f1f1;
     background: #ffffff;
     position: absolute;
+    border-radius: 5px;
     z-index: 9999;
 }
 .thunk-product-cat-list li:last-child  a{
@@ -3014,6 +3015,7 @@ border: 1px solid transparent;
     line-height: 19px;
     padding: 5px 7px;
     background: #008000;
+    border: 1px solid transparent;
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
@@ -4127,7 +4129,6 @@ top:0em!important;
   content: "\f021";
     font-family: FontAwesome;
     display: block;
-    color: #9c9c9c;
     font-size: 13px;
 }
 .woocommerce .entry-summary a.th-added-compare:before{
@@ -5699,7 +5700,7 @@ border-color: #0177B5;
     position: relative;
     overflow: hidden;
   }
-   .th-shop-mania-shop-page-layout-2 .zita-shop-product-content{
+   .th-shop-mania-shop-page-layout-2 .th_shop_mania-shop-product-content{
     display: flex;
     justify-content: space-between;
     grid-gap: 6px;
@@ -5744,7 +5745,7 @@ border-color: #0177B5;
     font-family: dashicons;
     margin-right: 7px;
   }
-  .shop-page-products-layouts .zita-product-buttons {
+  .shop-page-products-layouts .th_shop_mania-product-buttons {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -5754,7 +5755,7 @@ border-color: #0177B5;
 .shop-page-products-layouts .thunk-wishlist a,
 .shop-page-products-layouts .thunk-compare a,
 .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse,
-.woocommerce .zita-product-buttons a.button:hover{
+.woocommerce .th_shop_mania-product-buttons a.button:hover{
     width: 40px;
     height: 40px;
     margin: 0;
@@ -5762,6 +5763,7 @@ border-color: #0177B5;
     justify-content: center;
     align-items: center;
     background: #008000;
+    border: 1px solid transparent;
     color: #FFF;
     border-radius: 0;
 }
@@ -5774,7 +5776,7 @@ border-color: #0177B5;
 .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse{
 
 }
-  /*.shop-page-products-layouts .zita-product-buttons > div{
+  /*.shop-page-products-layouts .th_shop_mania-product-buttons > div{
     width: 40px;
     height: 40px;
     
@@ -5786,8 +5788,8 @@ border-color: #0177B5;
     background: #215e21;
     color: #FFF;
   }
-  .shop-page-products-layouts .zita-product-buttons > div a,
-  .shop-page-products-layouts .zita-product-buttons > div a:hover{
+  .shop-page-products-layouts .th_shop_mania-product-buttons > div a,
+  .shop-page-products-layouts .th_shop_mania-product-buttons > div a:hover{
     background: transparent;
     color: #FFF;
     font-weight: initial;
@@ -5819,6 +5821,7 @@ border-color: #0177B5;
     font-size: 0;
     position: relative;
     border-radius: 0;
+    border: 1px solid transparent;
     background: #008000;
     color: #FFF;
   }
@@ -5854,13 +5857,13 @@ border-color: #0177B5;
 *  product layouts style and layout 3
 ==============================================================================*/
   
-  .th-shop-mania-shop-page-layout-3 .zita-shop-product-price-title{
+  .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
   }
-  .woocommerce .th-shop-mania-shop-page-layout-3 .zita-shop-product-price-title > *{
+  .woocommerce .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title > *{
     margin: 0;
   }
   .th-shop-mania-shop-page-layout-3 .woocommerce-loop-product__title,
@@ -5874,14 +5877,14 @@ border-color: #0177B5;
      line-height: initial; 
     max-height: initial;
   }
-  .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .zita-product-buttons{
+  .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .th_shop_mania-product-buttons{
     flex-direction: initial;
     position: relative;
     justify-content: space-around;
     top: initial;
     right: initial;
   }
-  .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .zita-product-buttons > div{
+  .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .th_shop_mania-product-buttons > div{
     margin-bottom: 12px;
     margin-top: 12px;
   }
@@ -5931,7 +5934,7 @@ border-color: #0177B5;
 /*============================================================================
 *  product layouts style and layout 4
 ==============================================================================*/
-.th-shop-mania-shop-page-layout-4.shop-page-products-layouts .zita-product-buttons{
+.th-shop-mania-shop-page-layout-4.shop-page-products-layouts .th_shop_mania-product-buttons{
   flex-direction: row;
   justify-content: center;
   top: initial;
@@ -5945,7 +5948,7 @@ border-color: #0177B5;
   -ms-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-.th-shop-mania-shop-page-layout-4.shop-page-products-layouts:hover .zita-product-buttons{
+.th-shop-mania-shop-page-layout-4.shop-page-products-layouts:hover .th_shop_mania-product-buttons{
   opacity: 1;
 }
 .th-shop-mania-shop-page-layout-4 .thunk-quik a.opn-quick-view-text{
@@ -6104,7 +6107,7 @@ border-color: #0177B5;
     justify-content: center;
     padding: 0;
   }
-  .th-shop-mania-shop-page-layout-5 .zita-product-buttons{
+  .th-shop-mania-shop-page-layout-5 .th_shop_mania-product-buttons{
     width: 100%;
     flex-direction: row;
     justify-content: center;
@@ -6112,31 +6115,444 @@ border-color: #0177B5;
     right: initial;
     bottom: 2px;
   }
-  .th-shop-mania-shop-page-layout-5 .zita-product-buttons > *{
+  .th-shop-mania-shop-page-layout-5 .th_shop_mania-product-buttons > *{
     margin: 0 7px;
     transform: translateY(70px);
     opacity: 0;
   }
-  .th-shop-mania-shop-page-layout-5:hover .zita-product-buttons > *{
+  .th-shop-mania-shop-page-layout-5:hover .th_shop_mania-product-buttons > *{
     transform: translateY(0);
     opacity: 1;
   }
-  .th-shop-mania-shop-page-layout-5 .zita-product-buttons > *:nth-child(1){
+  .th-shop-mania-shop-page-layout-5 .th_shop_mania-product-buttons > *:nth-child(1){
    transition: 0.3s all ease;
   }
-  .th-shop-mania-shop-page-layout-5 .zita-product-buttons > *:nth-child(2){
+  .th-shop-mania-shop-page-layout-5 .th_shop_mania-product-buttons > *:nth-child(2){
    transition: 0.6s all ease;
   }
-  .th-shop-mania-shop-page-layout-5 .zita-product-buttons > *:nth-child(3){
+  .th-shop-mania-shop-page-layout-5 .th_shop_mania-product-buttons > *:nth-child(3){
    transition: 0.9s all ease;
   }
-  .th-shop-mania-shop-page-layout-5 .zita-product-buttons > *:nth-child(4){
+  .th-shop-mania-shop-page-layout-5 .th_shop_mania-product-buttons > *:nth-child(4){
    transition: 1.1s all ease !important;
   }
-
+.th-shop-mania-shop-page-layout-2,
+.th-shop-mania-shop-page-layout-3,
+.th-shop-mania-shop-page-layout-5{
+  border: 1px solid transparent;
+}
   /*============================================================================
 *  product layouts style and layout 5
 ==============================================================================*/
+/********************/
+/*effect-1*/
+/***********************/
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a::before {
+    margin-right: 5px;
+    content: '[';
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a::after {
+    margin-left: 5px;
+    content: ']';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+}
+
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a:hover::before, 
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a:hover::after, 
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a:focus::before, 
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a:focus::after,
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a::after,
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a::before,
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li.menu-active > a::after,
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li.menu-active > a::before{
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a::before, 
+.linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+/********************/
+/*effect-2*/
+/***********************/
+.linkeffect-2 .sider-inner ul.th-shop-mania-menu > li > a::before {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    color: transparent;
+    content: "•";
+    text-shadow: transparent 0px 0px;
+    font-size: 1.2em;
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition: text-shadow 0.3s ease 0s, color 0.3s ease 0s;
+}
+.linkeffect-2 .sider-inner ul.th-shop-mania-menu > li >  a {
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.linkeffect-2 .sider-inner ul.th-shop-mania-menu > li > a:hover::before,
+.linkeffect-2 .sider-inner ul.th-shop-mania-menu > li > a:focus::before,
+.linkeffect-2 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a::before,
+.linkeffect-2 .sider-inner ul.th-shop-mania-menu > li.menu-active > a::before{
+    color: #006799;
+    text-shadow: 10px 0 #006799, -10px 0 #006799;
+}
+/********************/
+/*effect-3*/
+/********************/
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span{
+    position:relative;
+}
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span::before {
+    color:#006799;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    content: attr(data-hover);
+    position: absolute;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+}
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    height: 2px;
+    background:#006799;
+    opacity: 0;
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    transform: translateY(5px);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+}
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span:hover::before, 
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span:focus::before,
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span::before, 
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span::before {
+    opacity: 0;
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    transform: translateY(-2px);
+}
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span:hover::after, 
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span:focus::after,
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span::after, 
+.linkeffect-3 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span::after{
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+/********************/
+/*effect-4*/
+/***********************/
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span{
+    position:relative;
+}
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span::before {
+    top: 0;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span::before, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #006799;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span::after {
+    bottom: 0;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    transform: translateY(10px);
+}
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:hover, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:focus,
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span{
+    color: #006799;
+}
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:hover::before, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:focus::before, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:hover::after, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:focus::after,
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span::after, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span::after,
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span::before, 
+.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span::before{
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+/********************/
+/*effect-5*/
+/***********************/
+.linkeffect-5 .sider-inner ul.th-shop-mania-menu > li > a span{
+position:relative;
+}
+.linkeffect-5 .sider-inner ul.th-shop-mania-menu > li > a span:after{
+    display: block;
+    background-color:#006799;
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    visibility: hidden;
+    -moz-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+.linkeffect-5 .sider-inner ul.th-shop-mania-menu > li > a:hover>span:after,
+.linkeffect-5 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a >span:after,
+.linkeffect-5 .sider-inner ul.th-shop-mania-menu > li.menu-active > a >span:after{
+    visibility: visible;
+    -moz-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+/********************/
+/*effect-6*/
+/***********************/
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a{
+display:block;
+margin:0px 5px;
+padding:5px 10px;
+}
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a::before {
+    top: 0;
+    left: 0;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a::before, 
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a::after{
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background:#006799;
+    content: '';
+    opacity: 0.2;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a::after{
+    right: 0;
+    bottom: 0;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+}
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:hover::before, 
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:focus::before,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a::before, 
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.menu-active > a::before {
+    left: 50%;
+    -webkit-transform: rotate(0deg) translateX(-50%);
+    -moz-transform: rotate(0deg) translateX(-50%);
+    transform: rotate(0deg) translateX(-50%);
+}
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:hover::before,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:hover::after,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:focus::before,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:focus::after,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a::before,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a::after,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.menu-active > a::before,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.menu-active > a::after{
+    opacity: 1;
+}
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:hover::after,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li > a:focus::after,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a::after,
+.linkeffect-6 .sider-inner ul.th-shop-mania-menu > li.menu-active > a::after{
+    right: 50%;
+    -webkit-transform: rotate(0deg) translateX(50%);
+    -moz-transform: rotate(0deg) translateX(50%);
+    transform: rotate(0deg) translateX(50%);
+  }
+/********************/
+/*effect-7*/
+/***********************/
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu *{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a{
+  padding: 0.5em 0.8em;
+  margin: 0.2em 0;
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:before,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:after {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:before {
+  left: 0;
+  top: 0;
+  border-left: 3px solid #006799;
+  border-top: 3px solid #006799;
+  -webkit-transform: translate(100%, 50%);
+  transform: translate(100%, 50%);
+}
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid #006799;
+  border-bottom: 3px solid #006799;
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:hover,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.menu-active > a{
+  color: #006799;
+}
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:hover:before,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:hover:after,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a:before,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a:after,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.menu-active > a:after,
+.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.menu-active > a:before{
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+}
+/************************/
+/*effect-8*/
+/************************/
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span{
+position:relative;
+}
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:before,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:after{
+  height:2px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color:#006799;
+  width: 0;
+}
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:before{
+  top: 0;
+  left: 0;
+}
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:after{
+  bottom: 0;
+  right: 0;
+}
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:hover,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span{
+  color:#006799;
+}
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:hover:before,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:hover:after,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span:before,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span:before,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span:after,
+.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span:after{
+  width: 100%;
+ }
+
+/************************/
+/*elementor plugin*/
+/************************/
+#elementor {
+  position: relative;
+  z-index: 99;
+}
+.elementor-editor-active header.zta-transparent-header {
+  z-index: 1;
+}
+.elementor-editor-active.mobile-menu-active header.zta-transparent-header,
+.elementor-editor-active.mobile-menu-active header .sider {
+  z-index: 999;
+}
+.elementor-editor-active
+  #content
+  .content-area
+  li.elementor-editor-element-setting {
+  margin-bottom: 0;
+  line-height: normal;
+}
+.elementor-widget-container section {
+  margin-bottom: 20px;
+}
+/************************/
+/*elementor plugin*/
+/************************/
+/*********************/
+/*Header Transparent*/
+/*********************/
+header.zta-transparent-header {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+header.zta-transparent-header.shrink {
+  position: fixed;
+}
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
   padding-top: 15px;
