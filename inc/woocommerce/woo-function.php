@@ -418,7 +418,7 @@ add_action('wp', 'shop_customization', 5);
       /**
        * Shop Page Product Content Sorting
        */
-      add_action('woocommerce_after_shop_loop_item', 'zita_woo_woocommerce_shop_product_content',10);
+      add_action('woocommerce_after_shop_loop_item', 'th_shop_mania_woo_woocommerce_shop_product_content',10);
 
 
 
@@ -432,42 +432,42 @@ add_action('wp', 'shop_customization', 5);
       //  */
       // add_action( 'woocommerce_after_shop_loop_item', 'zita_woo_woocommerce_shop_product_content' );
     }
-if (!function_exists('zita_woo_shop_product_price')) {
-  function zita_woo_shop_product_price($product)
+if (!function_exists('th_shop_mania_woo_shop_product_price')) {
+  function th_shop_mania_woo_shop_product_price($product)
   {
     $price_html = $product->get_price_html();
     return $price_html ? '<span class="price">' . $price_html . '</span>' : '';
   }
 }
 
-if (!function_exists('zita_woo_shop_product_on_sale')) {
-  function zita_woo_shop_product_on_sale()
+if (!function_exists('th_shop_mania_woo_shop_product_on_sale')) {
+  function th_shop_mania_woo_shop_product_on_sale()
   {
     global $post, $product;
     return $product->is_on_sale() ?  apply_filters('woocommerce_sale_flash', '<span class="onsale">' . esc_html__('Sale!', 'woocommerce') . '</span>', $post, $product) : '';
   }
 }
-if (!function_exists('zita_woo_shop_product_rating')) {
-  function zita_woo_shop_product_rating($product)
+if (!function_exists('th_shop_mania_woo_shop_product_rating')) {
+  function th_shop_mania_woo_shop_product_rating($product)
   {
     return wc_review_ratings_enabled() ? wc_get_rating_html($product->get_average_rating()) : '';
   }
 }
 
-if (!function_exists('zita_woo_woocommerce_template_loop_product_title')) {
+if (!function_exists('th_shop_mania_woo_woocommerce_template_loop_product_title')) {
   /**
    * Show the product title in the product loop. By default this is an H2.
    */
-  function zita_woo_woocommerce_template_loop_product_title()
+  function th_shop_mania_woo_woocommerce_template_loop_product_title()
   {
     return $html =  '<a href="' . esc_url(get_the_permalink()) . '" class="zta-loop-product__link"><h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2></a>';
   }
 }
-    if (!function_exists('zita_woo_woocommerce_shop_product_content')) {
+    if (!function_exists('th_shop_mania_woo_woocommerce_shop_product_content')) {
   /**
    * Show the product title in the product loop. By default this is an H2.
    */
-  function zita_woo_woocommerce_shop_product_content()
+  function th_shop_mania_woo_woocommerce_shop_product_content()
   {
     $shop_th_shop_mania_woo_product_layout = get_theme_mod('th_shop_mania_woo_product_layout',1);
     $shop_th_shop_mania_woo_product_layout = $shop_th_shop_mania_woo_product_layout ? $shop_th_shop_mania_woo_product_layout : 1;
@@ -498,7 +498,7 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
       <div class="thunk-product">
         <a href=" <?php echo esc_url(get_the_permalink()) .' ' ?>" target="_blank" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
           <div class="thunk-product-image">
-     <?php  echo zita_woo_shop_product_on_sale();
+     <?php  echo th_shop_mania_woo_shop_product_on_sale();
             echo woocommerce_get_product_thumbnail();
              $hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
                          // the_post_thumbnail();
@@ -529,8 +529,8 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
             <h2 class="woocommerce-loop-product__title">
               <?php echo get_the_title(); ?>
             </h2>
-            <?php echo zita_woo_shop_product_price($product);
-            echo zita_woo_shop_product_rating($product); ?>
+            <?php echo th_shop_mania_woo_shop_product_price($product);
+            echo th_shop_mania_woo_shop_product_rating($product); ?>
           </div>
         </a>
         <div class="thunk-product-hover">
@@ -548,9 +548,9 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
 function th_shop_mania_woocommerce_product_layout2($product, $productId)
 { ?>
   <div class="shop-page-products-layouts th-shop-mania-shop-page-layout-2" id="shop-page-products-layouts">
-    <?php zita_woo_shop_product_on_sale(); ?>
+    <?php th_shop_mania_woo_shop_product_on_sale(); ?>
     <div class="thunk-product-image">
-      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="zita-shop-product-image">
+      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="th_shop_mania-shop-product-image">
       <?php echo woocommerce_get_product_thumbnail();
       $hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
                          // the_post_thumbnail();
@@ -576,17 +576,17 @@ function th_shop_mania_woocommerce_product_layout2($product, $productId)
                            } ?>
     </a>
     <?php do_action('quickview'); ?>
-    <div id="zita-product-buttons" class="zita-product-buttons">
+    <div id="th_shop_mania-product-buttons" class="th_shop_mania-product-buttons">
       <?php
                  th_shop_mania_whish_list($productId);
                  th_shop_mania_add_to_compare_fltr($productId); ?>
     </div>
     </div>
-    <?php echo zita_woo_shop_product_rating($product); ?>
-    <div class="zita-shop-product-content">
+    <?php echo th_shop_mania_woo_shop_product_rating($product); ?>
+    <div class="th_shop_mania-shop-product-content">
       <div>
-      <?php  echo zita_woo_woocommerce_template_loop_product_title(); 
-        echo zita_woo_shop_product_price($product);?>
+      <?php  echo th_shop_mania_woo_woocommerce_template_loop_product_title(); 
+        echo th_shop_mania_woo_shop_product_price($product);?>
       </div>
       <?php th_shop_mania_add_to_cart('tooltip'); ?>
     </div>
@@ -599,9 +599,9 @@ function th_shop_mania_woocommerce_product_layout2($product, $productId)
 function th_shop_mania_woocommerce_product_layout3($product, $productId)
 { ?>
   <div class="shop-page-products-layouts th-shop-mania-shop-page-layout-3" id="shop-page-products-layouts">
-    <?php zita_woo_shop_product_on_sale(); ?>
+    <?php th_shop_mania_woo_shop_product_on_sale(); ?>
     <div class="thunk-product-image">
-      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="zita-shop-product-image">
+      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="th_shop_mania-shop-product-image">
       <?php echo woocommerce_get_product_thumbnail();
       $hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
                          // the_post_thumbnail();
@@ -627,15 +627,15 @@ function th_shop_mania_woocommerce_product_layout3($product, $productId)
                            } ?>
     </a>
     </div>
-    <div class="zita-shop-product-content">
-<?php echo zita_woo_woocommerce_template_loop_product_title(); ?> 
-    <div class="zita-shop-product-price-title">
+    <div class="th_shop_mania-shop-product-content">
+<?php echo th_shop_mania_woo_woocommerce_template_loop_product_title(); ?> 
+    <div class="th_shop_mania-shop-product-price-title">
       <?php  
-            echo zita_woo_shop_product_price($product);
-            echo zita_woo_shop_product_rating($product);
+            echo th_shop_mania_woo_shop_product_price($product);
+            echo th_shop_mania_woo_shop_product_rating($product);
       ?>
     </div>
-      <div id="zita-product-buttons" class="zita-product-buttons">
+      <div id="th_shop_mania-product-buttons" class="th_shop_mania-product-buttons">
       <?php      th_shop_mania_add_to_cart('tooltip');
                  do_action('quickview');
                  th_shop_mania_whish_list($productId);
@@ -656,7 +656,7 @@ function th_shop_mania_woocommerce_product_layout4($product, $productId)
         <div class="th-product-top">
         <a href=" <?php echo esc_url(get_the_permalink()) .' ' ?>" target="_blank" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
           <div class="thunk-product-image">
-     <?php  echo zita_woo_shop_product_on_sale();
+     <?php  echo th_shop_mania_woo_shop_product_on_sale();
             echo woocommerce_get_product_thumbnail();
             $hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
                          // the_post_thumbnail();
@@ -680,7 +680,7 @@ function th_shop_mania_woocommerce_product_layout4($product, $productId)
                                  }
                                
                            } ?>
-        <div id="zita-product-buttons" class="zita-product-buttons">
+        <div id="th_shop_mania-product-buttons" class="th_shop_mania-product-buttons">
            <?php do_action('quickview');
             th_shop_mania_whish_list($productId);
             th_shop_mania_add_to_compare_fltr($productId);  ?>
@@ -690,10 +690,10 @@ function th_shop_mania_woocommerce_product_layout4($product, $productId)
             <h2 class="woocommerce-loop-product__title">
               <?php echo get_the_title(); ?>
             </h2>
-            <div class="zita-shop-product-price-title">
+            <div class="th_shop_mania-shop-product-price-title">
               <?php  
-            echo zita_woo_shop_product_price($product);
-            echo zita_woo_shop_product_rating($product);
+            echo th_shop_mania_woo_shop_product_price($product);
+            echo th_shop_mania_woo_shop_product_rating($product);
                 ?>
           </div>
 
@@ -715,9 +715,9 @@ function th_shop_mania_woocommerce_product_layout4($product, $productId)
 function th_shop_mania_woocommerce_product_layout5($product, $productId)
 { ?>
   <div class="shop-page-products-layouts th-shop-mania-shop-page-layout-5" id="shop-page-products-layouts">
-    <?php zita_woo_shop_product_on_sale(); ?>
+    <?php th_shop_mania_woo_shop_product_on_sale(); ?>
     <div class="thunk-product-image">
-      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="zita-shop-product-image">
+      <a href="<?php echo esc_url(get_the_permalink()); ?>" target="_blank" class="th_shop_mania-shop-product-image">
       <?php echo woocommerce_get_product_thumbnail();
       $hover_style = get_theme_mod( 'th_shop_mania_woo_product_animation' );
                          // the_post_thumbnail();
@@ -742,19 +742,19 @@ function th_shop_mania_woocommerce_product_layout5($product, $productId)
                                
                            } ?>
     </a>
-     <div id="zita-product-buttons" class="zita-product-buttons">
+     <div id="th_shop_mania-product-buttons" class="th_shop_mania-product-buttons">
       <?php      th_shop_mania_add_to_cart('tooltip');
                  do_action('quickview');
                  th_shop_mania_whish_list($productId);
                  th_shop_mania_add_to_compare_fltr($productId); ?>
     </div>
     </div>
-    <div class="zita-shop-product-content">
-<?php echo zita_woo_woocommerce_template_loop_product_title(); ?> 
-    <div class="zita-shop-product-price-title">
+    <div class="th_shop_mania-shop-product-content">
+<?php echo th_shop_mania_woo_woocommerce_template_loop_product_title(); ?> 
+    <div class="th_shop_mania-shop-product-price-title">
       <?php  
-            echo zita_woo_shop_product_price($product);
-            echo zita_woo_shop_product_rating($product);
+            echo th_shop_mania_woo_shop_product_price($product);
+            echo th_shop_mania_woo_shop_product_rating($product);
       ?>
     </div>
     </div>

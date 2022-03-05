@@ -108,6 +108,18 @@ $meta_boxes = array(
                 'nameslug' => esc_html__('Disable Bottom Footer','th-shop-mania'),
                    
             ),
+             array(
+                'name' => esc_html__('Transparent Header','th-shop-mania'),
+                'id' => $prefix . 'transparent_header_dyn',
+                'type' => 'select',
+                'std' => 'default',
+                'options' => array( 
+                    array("value" => 'default',"name"  => esc_html__('Customizer Setting','th-shop-mania')),
+                    array("value" => 'enable',"name"   => esc_html__('Enable','th-shop-mania')),
+                    array("value" => 'disable',"name"  => esc_html__('Disable','th-shop-mania')),
+                    
+                )
+            ),
               
         )
     )

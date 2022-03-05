@@ -41,8 +41,9 @@ $main_header_opt = get_theme_mod('th_shop_mania_main_header_option','none');
 $th_shop_mania_menu_alignment = get_theme_mod('th_shop_mania_menu_alignment','center');
 $th_shop_mania_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left');
 $offcanvas = get_theme_mod('th_shop_mania_canvas_alignment','cnv-none');
+$th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 'linkeffect-none');
 ?>
-<div class="main-header <?php echo esc_attr($main_header_opt);?> <?php echo esc_attr($th_shop_mania_menu_alignment).'-menu';?>  <?php echo esc_attr($offcanvas);?>">
+<div class="main-header <?php echo esc_attr($main_header_opt);?> <?php echo esc_attr($th_shop_mania_menu_alignment).'-menu';?>  <?php echo esc_attr($offcanvas);?> <?php echo esc_attr($th_shop_mania_pro_menu_effect); ?>">
 			<div class="container">
         <div class="desktop-main-header">
 				<div class="main-header-bar thnk-col-3">
@@ -122,10 +123,13 @@ $offcanvas = get_theme_mod('th_shop_mania_canvas_alignment','cnv-none');
 <?php	}
 }
 add_action( 'th_shop_mania_main_header', 'th_shop_mania_main_header_markup' );
+
+//  Below Header Markup
 if ( ! function_exists( 'th_shop_mania_below_header_markup' ) ){  
 function th_shop_mania_below_header_markup(){
-$th_shop_mania_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left'); ?>
-  <div class="below-header <?php echo esc_attr($th_shop_mania_menu_open).'-menu'; ?>">
+$th_shop_mania_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left');
+$th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 'linkeffect-none'); ?>
+  <div class="below-header <?php echo esc_attr($th_shop_mania_menu_open).'-menu'; ?> <?php echo esc_attr($th_shop_mania_pro_menu_effect);?> ">
       <div class="container">
         <div class="below-header-bar thnk-col-1">
            <div class="below-header-col1">
@@ -309,3 +313,28 @@ if( ! function_exists( 'th_shop_mania_preloader' ) ){
 
 }
 add_action('th_shop_mania_site_preloader','th_shop_mania_preloader');
+
+
+/******************************/
+//Transparent header function
+/******************************/
+function th_shop_mania_header_transparent_class($th_shop_mania_transparent_post_meta)
+{
+    if ($th_shop_mania_transparent_post_meta == 'default' || $th_shop_mania_transparent_post_meta == '') {
+        $class = '';
+        $th_shop_mania_header_transparent_special_page_disable = get_theme_mod('th_shop_mania_header_transparent_special_page_disable', false);
+        $th_shop_mania_header_transparent = get_theme_mod('th_shop_mania_header_transparent', false);
+        if ($th_shop_mania_header_transparent == true) {
+            if (($th_shop_mania_header_transparent_special_page_disable == true) && (is_archive() || is_404() || is_search() || (class_exists('WooCommerce') && (is_shop() || is_product())))) {
+                $class = '';
+            } else {
+                $class = 'zta-transparent-header';
+            }
+        }
+        return $class;
+    } else {
+        if ($th_shop_mania_transparent_post_meta == 'enable') {
+            return $class = 'zta-transparent-header';
+        }
+    }
+}
