@@ -62,7 +62,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
            <div class="thunk-icon-market">
             <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
               <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url','th_shop_mania_whishlist_url','','')); ?>">
-       <i  class="fa fa-heart-o" aria-hidden="true"></i></a> 
+       <span class="th-icon th-icon-heart"></span></a> 
      <?php } ?>
 
         <?php do_action( 'th_shop_mania_account' ); 
@@ -330,6 +330,9 @@ function th_shop_mania_header_transparent_class($th_shop_mania_transparent_post_
             } else {
                 $class = 'zta-transparent-header';
             }
+            if (is_front_page() && is_home()) {
+             $class = '';
+            }
         }
         return $class;
     } else {
@@ -338,3 +341,4 @@ function th_shop_mania_header_transparent_class($th_shop_mania_transparent_post_
         }
     }
 }
+

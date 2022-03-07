@@ -10,7 +10,9 @@ if(empty(get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true ))){
 $th_shop_mania_sidebar = 'right';
 }else{
 $th_shop_mania_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true );
-} ?>
+}
+$th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_enable',false);
+?>
 <div id="content" class="page-content archive  <?php echo esc_attr($th_shop_mania_sidebar); ?>">
             <div class="content-wrap" >
                 <div class="container">
@@ -18,8 +20,10 @@ $th_shop_mania_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', 
                         <div id="primary" class="primary-content-area">
                             <div class="primary-content-wrap">
                             <div class="page-head">
-                   <?php th_shop_mania_get_page_title();?>
-                   <?php th_shop_mania_breadcrumb_trail();?>
+                   <?php if ($th_shop_mania_page_header_enable != true) { 
+                       th_shop_mania_get_page_title();
+                      }   
+                      th_shop_mania_breadcrumb_trail();?>
                     </div>
                             <div class="primary-content-wrap">
                                  <?php

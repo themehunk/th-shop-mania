@@ -70,4 +70,16 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
         ?> 
 		<!-- end below-header -->
 	</header> <!-- end header -->
-		
+
+	<?php 
+	//Page Header 
+		if (isset($post->ID)) {
+			$id = $post->ID;
+		}
+		else{
+			$id = '';
+		}
+		if (has_action('th_shop_mania_page_header_markup')) {
+
+		do_action( 'th_shop_mania_page_header_markup', $id );
+	}

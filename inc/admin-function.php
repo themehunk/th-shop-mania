@@ -153,7 +153,7 @@ add_action( 'wp_footer', 'th_shop_mania_mobile_menu_wrap' );
 /*************************/
 //Get Page Title
 /*************************/
-function th_shop_mania_get_page_title(){ ?>
+function th_shop_mania_get_page_title($id=''){ ?>
 			<?php if(is_search()){ ?> 
             <h2 class="thunk-page-top-title entry-title">
               	<?php printf( __( 'Search Results for: %s', 'th-shop-mania' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
@@ -170,11 +170,21 @@ function th_shop_mania_get_page_title(){ ?>
 			<?php }elseif(class_exists( 'WooCommerce' ) && is_shop()) { ?>
 				<h1 class="thunk-page-top-title entry-title"><?php woocommerce_page_title(); ?></h1> 
 			<?php }elseif(is_page()) { 
-				echo the_title('<h1 class="thunk-page-top-title entry-title">','</h1>'); ?>
+				echo esc_html(th_shop_mania_page_title_post_meta(get_post_meta($id, 'th_shop_mania_disable_title_dyn', true))); ?>
 			<?php } ?>
    <?php 
 }
 
+/******************/
+// Page Title
+/******************/
+if ( ! function_exists( 'th_shop_mania_page_title_post_meta' ) ){
+function th_shop_mania_page_title_post_meta($page_post_meta_set){
+if($page_post_meta_set!=='on'){?>
+<h1 class='entry-title'><?php the_title();?></h1>
+ <?php     }
+    }
+  }
 /*****************************/
 //add class active
 /*****************************/
