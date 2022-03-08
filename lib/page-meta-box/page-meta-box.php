@@ -109,6 +109,13 @@ $meta_boxes = array(
                    
             ),
              array(
+                'name' => '',
+                'id' => $prefix . 'disable_page_header_dyn',
+                'type' => 'checkbox',
+                'nameslug' => esc_html__('Disable Page Header','th-shop-mania'),
+                   
+            ),
+             array(
                 'name' => esc_html__('Transparent Header','th-shop-mania'),
                 'id' => $prefix . 'transparent_header_dyn',
                 'type' => 'select',
