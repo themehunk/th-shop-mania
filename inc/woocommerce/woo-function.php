@@ -41,7 +41,7 @@ function th_shop_mania_account(){
  if ( is_user_logged_in() ){?>
 <a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="th-icon th-icon-user"></span></a>
 <?php } else {?>
-<a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="th-icon th-icon-lock"></span></a>
+<a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="th-icon th-icon-lock1"></span></a>
 <?php }
  }
  add_action('th_shop_mania_account','th_shop_mania_account');
@@ -349,7 +349,7 @@ function th_shop_mania_add_to_compare_fltr($pid = ''){
   global $product;
   $product_id = $pid;
         if(class_exists('th_product_compare')){
-          echo '<div class="thunk-compare"><div th-tooltip="'.__('Compare', 'th-shop-mania').'" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'">'.__('Compare','th-shop-mania').'</a></div></div>';
+          echo '<div class="thunk-compare"><div th-tooltip="'.__('Compare', 'th-shop-mania').'" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="'.$pid.'"><span class="th-icon th-icon-repeat"></span><span class="text">'.__('Compare','th-shop-mania').'</span></a></div></div>';
            }
         }
 }
@@ -359,7 +359,7 @@ function th_shop_mania_add_to_compare_fltr($pid = ''){
 if (!function_exists('th_shop_mania_whish_list')) {
 function th_shop_mania_whish_list($pid = ''){
        if( shortcode_exists( 'yith_wcwl_add_to_wishlist' )){
-       echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="'.__('Wishlist', 'th-shop-mania').'" class="wishlist-tooltip">'.do_shortcode('[yith_wcwl_add_to_wishlist product_id='.$pid.' icon="fa fa-heart" label='.__('wishlist','th-shop-mania').' already_in_wishslist_text='.__('Already','th-shop-mania').' browse_wishlist_text='.__('Added','th-shop-mania').']' ).'</div></span></div>';
+       echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="'.__('Wishlist', 'th-shop-mania').'" class="wishlist-tooltip">'.do_shortcode('[yith_wcwl_add_to_wishlist product_id='.$pid.' icon="th-icon th-icon-heart1" label='.__('wishlist','th-shop-mania').' already_in_wishslist_text='.__('Already','th-shop-mania').' browse_wishlist_text='.__('Added','th-shop-mania').']' ).'</div></span></div>';
        }
  } 
 }

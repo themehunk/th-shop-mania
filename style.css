@@ -1422,6 +1422,12 @@ display:none;
 .thunk-icon-market > a{
   margin-right: 20px;
 }
+.thunk-icon-market .th-icon{
+  display: block;
+}
+header .th-icon{
+  font-size: 32px;
+}
 .cart-contents{
   position: relative;
 }
@@ -1463,13 +1469,14 @@ display:none;
 }
 .main-header-col3 .cart-count-item,
 .sticky-header .cart-count-item{
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  right: initial;
-  left: 21px;
-  top: -16px;
-  background: #999;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    right: initial;
+    left: 21px;
+    top: -20px;
+    background: #999;
+    font-size: 0.69rem;
 }
 .main-header-col3 .taiowc-cart-item{
   padding: 0;
@@ -2511,13 +2518,7 @@ color:#9c9c9c;
   color: inherit;
 }
 .off-canvas-button span{
- display: block;
-background-color: #111;
--webkit-border-radius: 1px;
--moz-border-radius: 1px;
-border-radius: 1px;
-margin: 3px;
-height: 2px;
+ font-size: 39px;
 }
 .th-shop-mania-off-canvas-sidebar .th-shop-mania-widget-content{
 border:none;
@@ -2929,10 +2930,28 @@ border: 1px solid transparent;
 .thunk-wishlist a{
   background: transparent;
   color: #111;
-  font-weight: 500;
 }
 .thunk-wishlist .yith-wcwl-add-button>a i{
   margin: 0;
+}
+.thunk-product a.add_to_wishlist,
+.thunk-product .yith-wcwl-wishlistexistsbrowse,
+.thunk-product a.th-product-compare-btn{
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: initial;
+}
+.thunk-product a.add_to_wishlist *,
+.thunk-product .yith-wcwl-wishlistexistsbrowse *,
+.thunk-product a.th-product-compare-btn *{
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+.thunk-product a.add_to_wishlist i,
+.thunk-product .th-product-compare-btn .th-icon{
+  margin-right: 4px;
 }
 .thunk-product .thunk-compare a{
   background: transparent;
@@ -2940,7 +2959,6 @@ border: 1px solid transparent;
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
-  font-weight: 500;
 }
 .thunk-product .thunk-compare a:hover{
   background: transparent;
@@ -2949,27 +2967,17 @@ border: 1px solid transparent;
 .woocommerce ul.products li.product .thunk-product .thunk-compare .button{
   margin: 0;
 }
-.thunk-compare a:before {
-    /*content: "\f0ec";
-    font-family: fontawesome;
-    margin-right: 5px;*/
-
-    content: "\e905";
-    font-family: th-icon;
-    margin-right: 5px;
-    font-size: 21px;
-}
 .thunk-product .thunk-compare a.loading{
   margin: 0!important;
   padding-right: 0 10px!important;
 }
 .thunk-product .yith-wcwl-wishlistaddedbrowse:before, 
 .thunk-product .yith-wcwl-wishlistexistsbrowse:before {
-    content: "\f004";
-    font-family: fontawesome;
+    content: "\e909";
+    font-family: th-icon;
     color: #ff0052;
-    margin: 0;
-    font-size: 12px;
+    margin: 0 4px 0 0;
+    font-size: inherit;
 }
 .thunk-wishlist .feedback, 
 .thunk-wishlist .yith-wcwl-add-button img {
@@ -6509,11 +6517,11 @@ position:relative;
   width: 0;
 }
 .linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:before{
-  top: 0;
+  top: -2px;
   left: 0;
 }
 .linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:after{
-  bottom: 0;
+  bottom: -2px;
   right: 0;
 }
 .linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:hover,
@@ -6612,10 +6620,6 @@ header.zta-transparent-header.shrink {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-/*  Th Icon Css  */
-.th-icon{
-  font-size: 29px;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
