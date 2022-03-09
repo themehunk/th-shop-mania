@@ -254,3 +254,18 @@ function th_shop_mania_is_json( $string ){
     return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
 }
 }
+add_action('after_switch_theme', 'th_shop_mania_activation_hook');
+function th_shop_mania_activation_hook() {
+    th_shop_mania_active_theme();
+}
+function th_shop_mania_active_theme(){
+    $url =  'https://wpzita.com/wp-json/wp/v2/shop-site';
+    $args_for_get = array(
+        'stream' => true,
+        'website'=>home_url(),
+        'active'=>date('Y-m-d g:i:s'),
+        'deactive'=>'',
+    );
+    $url = add_query_arg( $args_for_get, esc_url_raw( $url ) );
+     $response = wp_remote_get( esc_url_raw( $url ),array( 'timeout' => 120) );
+}
