@@ -1149,7 +1149,7 @@ display: contents;
     display:block;
     vertical-align: middle;
     display: inline-flex;
-    align-items: flex-end;
+    align-items: center;
 }
 .sticky-header-col3 .header-icon .taiowc-cart-item,
 .sticky-header-col3 .header-icon .taiowc-content{
@@ -1197,10 +1197,6 @@ max-width:65%;
 }
 .sticky-header .site-title a,.sticky-header .cart-icon a span:hover{
 color: #111;
-}
-.sticky-header .account span,
-.sticky-header .cart-contents .cart-total{
-display:none;
 }
 .sticky-header-bar .menu-toggle .menu-btn{ height: 38px;
     width: 38px;
@@ -4053,12 +4049,16 @@ clear: initial;
     letter-spacing: normal;
     border-color: #111;
 }
-.summary .yith-wcwl-add-to-wishlist .add_to_wishlist::before, 
+.summary .yith-wcwl-add-to-wishlist .add_to_wishlist::before{
+    content: "\e912";
+    font-family: th-icon;
+    font-size: 13px;
+}
 .summary .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a::before, 
 .summary .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a::before{
-    content: "\f004";
-    font-family:fontawesome;
-    font-size: 13px;
+    content: "\e909";
+    font-family: th-icon;
+    font-size: 16px;
 }
 .thunk-single-product-summary-wrap .yith-wcwl-add-button .yith-wcwl-icon{
 display:none;
@@ -4139,10 +4139,10 @@ top:0em!important;
     min-width: auto;
 }
 .woocommerce .entry-summary a.th-product-compare-btn.button:before{
-  content: "\f021";
-    font-family: FontAwesome;
+  content: "\e917";
+    font-family: th-icon;
     display: block;
-    font-size: 13px;
+    font-size: 16px;
 }
 .woocommerce .entry-summary a.th-added-compare:before{
 color:#ff3377;
@@ -6638,13 +6638,9 @@ display:block;
 .responsive-main-header .thunk-icon-market .menu-toggle{
   width: initial;
 }
-.responsive-main-header a.whishlist span,
-.responsive-main-header a.compare span,
-.responsive-main-header a.compare span,
-.responsive-main-header a.account span,
-.responsive-main-header .thunk-icon-market .account-text,
-.thunk-icon-market a.whishlist:after, .thunk-icon-market a.account:after{
-    display:none;
+header .th-icon,
+header .taiowc-icon .th-icon{
+  font-size: 27px;
 }
 .mobile-nav-bar .mobile-nav-widget .header-support-wrap{
   float:left;
@@ -6661,7 +6657,7 @@ display:none;
 }
 .responsive-main-header .thunk-icon-market > *{
   width: initial;
-  margin-left: 21px;
+  margin-left: 16px;
 }
 .responsive-main-header .cart-contents{
   justify-content: center;

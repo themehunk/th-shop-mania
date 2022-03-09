@@ -61,7 +61,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
 					<div class="main-header-col3">
            <div class="thunk-icon-market">
             <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
-              <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url','th_shop_mania_whishlist_url','','')); ?>">
+              <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>">
        <span class="th-icon th-icon-heartline"></span></a> 
      <?php } ?>
 
@@ -96,9 +96,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
                 <div class="menu-toggle">
                     <button type="button" class="menu-btn" id="menu-btn">
                         <div class="btn">
-                           <span class="icon-bar"></span>
-                           <span class="icon-bar"></span>
-                           <span class="icon-bar"></span>
+                           <span class="th-icon th-icon-TextEditor-Icons-01"></span>
                        </div>
                     </button>
                 </div>

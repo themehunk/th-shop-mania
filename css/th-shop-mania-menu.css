@@ -671,7 +671,7 @@ display:flex;
 align-items: center;
 }
 .menu-toggle .menu-btn span{
-    color: #FFF;
+    color: #111;
 }
 .menu-toggle .menu-btn .text span,.bar-menu-toggle .menu-btn .text span{
 margin-left:5px;
