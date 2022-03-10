@@ -45,7 +45,7 @@
           sideabr_toggle: function () {
                     $(document).ready(function() {
                           if ($(window).width() <= 990) { 
-                          $('.sidebar-content-area .widget-title, .sidebar-content-area .wp-block-group h2').click(function() {
+                          $('.sidebar-content-area .widget-title, .sidebar-content-area .wp-block-group h2,.sidebar-main').click(function() {
                           $(this).next().slideToggle();
                           $(this).toggleClass("open");
                           });
@@ -223,7 +223,7 @@
                       /**************************************************/
                       // Show-hide Scroll to top & move-to-top arrow
                       /**************************************************/
-                        jQuery("body").prepend("<a id='move-to-top' class='animate' href='#'><i class='fa fa-angle-up'></i></a>"); 
+                        jQuery("body").prepend("<a id='move-to-top' class='animate' href='#'><span class='th-icon th-icon-angle-up'></span></a>"); 
                         var scrollDes = 'html,body';  
                         /*Opera does a strange thing if we use 'html' and 'body' together so my solution is to do the UA sniffing thing*/
                         if(navigator.userAgent.match(/opera/i)){

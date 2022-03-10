@@ -1446,13 +1446,6 @@ header .th-icon{
     z-index: 9;
     background: #ff3377;
 }
-.thunk-icon-market a i {
-    font-size: 21px;
-    line-height: inherit;
-    font-weight: 700;
-    margin-left: 5px;
-    font-family: "FontAwesome";
-}
 .thunk-icon-market .taiowc-icon svg, 
 .thunk-icon-market .taiowc-icon img,
 .sticky-header .taiowc-icon svg,
@@ -1719,20 +1712,20 @@ display:none;
 }
 .no-sidebar .toggle-icon:before,.toogleclose .toggle-icon:before,
 .toggle-icon.icon-circle-arrow-down:before{
-    content: "\f107";
+    content: "\f347";
 }
 .toggle-icon:before,
 .no-sidebar .toggle-icon.icon-circle-arrow-down:before,
 .toogleclose .toggle-icon.icon-circle-arrow-down:before{
-    content: "\f106";
+    content: "\f347";
 }
 .toggle-icon:before,
 .toggle-icon.icon-circle-arrow-down:before,
 .no-sidebar .toggle-icon.icon-circle-arrow-down:before {
-height: auto;
+    height: auto;
     text-shadow: none;
     width: 10px;
-    font-family: "FontAwesome";
+    font-family: "dashicons";
 }
 .cat-icon span {
     display: block !important;
@@ -1829,8 +1822,8 @@ border:0;
 }
 .menu-category-list ul[data-menu-style="vertical"]  li  a  .arrow:before{
     float: right;
-    content: "\f105";
-    font-family: FontAwesome;
+    content: "\e904";
+    font-family: th-icon;
 }
 .menu-category-list ul[data-menu-style="vertical"] li.menu-active {
     position:relative;
@@ -1955,9 +1948,9 @@ margin-right:10px;
     float: right;
     margin-right: 0px;
     display: inline;
-    font-family: FontAwesome;
+    font-family: th-icon;
     height: auto;
-    content: "\f105";
+    content: "\e904";
     text-shadow: none;
 }
 .thunk-product-cat-list li ul.sub-menu {
@@ -2852,7 +2845,7 @@ text-align: center;
     opacity: 1;
     box-shadow: 0 7px 5px #eee;
     border-color: #f1f1f1;
-    padding-bottom:10px;
+    padding-bottom:15px;
     -webkit-transform: translate(0,0);
     -ms-transform: translate(0,0);
     -o-transform: translate(0,0);
@@ -2874,7 +2867,7 @@ border: 1px solid transparent;
    box-shadow: 0 0 15px #eee;
    border-color: #f1f1f1;
 }
-.thunk-product:hover .thunk-product-hover::before {
+/*.thunk-product:hover .thunk-product-hover::before {
     position: absolute;
     content: '';
     bottom: 100%;
@@ -2882,7 +2875,7 @@ border: 1px solid transparent;
     right: 0;
     height: 9px;
     background-color: #fff;
-}
+}*/
 .thunk-product .th-add-to-cart{
   width: 100%;
 }
@@ -2983,8 +2976,11 @@ border: 1px solid transparent;
 .woocommerce .thunk-compare .compare-button a.compare.button{
   margin-top: 0;
 }
+.th-shop-mania-shop-page-layout-default .thunk-quickview .th-icon{
+  display: none;
+}
 .woocommerce .products .star-rating{
-  margin-bottom: 15px;
+  margin-bottom: 21px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -3011,6 +3007,7 @@ border: 1px solid transparent;
 .thunk-product-image{
   position: relative;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 .th-shop-mania-shop-page-layout-default .thunk-quik{
   position: absolute;
@@ -3046,6 +3043,13 @@ border: 1px solid transparent;
     font-size: 24px;
     line-height: 31px;
     color: #111;
+}
+.woocommerce ul.products li.product #shop-page-products-layouts a img{
+  margin: 0;
+  display: block;
+}
+.woocommerce ul.products li.product .button{
+  margin: 0;
 }
 /****************************/
 /*woocommerce product style*/
@@ -3252,6 +3256,7 @@ position:relative;
     line-height: 23px;
     color: #767676;
     font-family: 'Jost';font-weight: 500;
+    margin-bottom: 15px;
 }
 .woocommerce ul.products li.product.thunk-woo-product-list .price del {
     color: #a6a6a6;
@@ -3297,7 +3302,7 @@ padding-top:15px;
     font-family: 'Jost';font-weight: 500;
     color: #111;
     padding: 0;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .thunk-list-view .os-product-excerpt{
   display: -webkit-box;
@@ -4842,13 +4847,13 @@ background-color:#f1f1f1;
     color:#fff;
 }
 .nav-links .page-numbers.next:before {
-    content: "\f105";
-    font-family: fontAwesome;
+    content: "\e904";
+    font-family: th-icon;
     line-height: 1;
 }
 .nav-links .page-numbers.prev:before {
-    content: "\f104";
-    font-family: fontAwesome;
+    content: "\e903";
+    font-family: th-icon;
     line-height: 1;
 }
 .woocommerce nav.woocommerce-pagination{
@@ -5550,10 +5555,6 @@ span.product-title{
     opacity: 0;
     visibility: hidden;
 }
-#move-to-top i{
-    font-family: fontawesome;
-    font-weight: normal;
-}
 #move-to-top:hover{
     opacity:1;
 }
@@ -5605,7 +5606,7 @@ display:inline;
     min-height: 30px;
     margin: 0 4px 4px 0;
     border: 1px solid;
-    font: normal normal normal 12px/30px FontAwesome;
+    font: normal normal normal 12px/30px th-icon;
     text-decoration: none;
     text-align: center;
     -webkit-transition: border-color .2s ease;
@@ -5647,16 +5648,12 @@ border-color: #0177B5;
     color: #00A0D0;
 }
 .single-product .social-share .pinterest-icon a:before {
-    content: "\f0d2";
+    content: "\f231";
     color: #CB211D;
 }
 .single-product .social-share .linked-icon a:before {
     content: "\f0e1";
     color: #0177B5;
-}
-.ea-simple-product-slider .elemento-product-outer-wrap .buttons_ > button,
-.ea-simple-product-slider .elemento-product-outer-wrap .buttons_ > button i{
-  font-family: "FontAwesome";
 }
 /*** tooltip  */
 .tooltip-show-with-title {
@@ -5753,16 +5750,6 @@ border-color: #0177B5;
      border-radius: 0;
      font-size: 16px;
   }
-  .shop-page-products-layouts .opn-quick-view-text span:before{
-    /*content: "\f177";
-    font-family: dashicons;
-    margin-right: 7px;*/
-
-    content: "\e901";
-    font-family: th-icon;
-    margin-right: 7px;
-    font-size: 21px;
-  }
   .shop-page-products-layouts .th_shop_mania-product-buttons {
     display: flex;
     flex-direction: column;
@@ -5817,11 +5804,10 @@ border-color: #0177B5;
   }
   .shop-page-products-layouts .yith-wcwl-wishlistaddedbrowse:before, 
   .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse:before {
-    content: "\f004";
-    font-family: fontawesome;
-    color: #ff0052;
+    content: "\e909";
+    font-family: th-icon;
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
 }
   .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse a{
     display: none;
@@ -5830,8 +5816,11 @@ border-color: #0177B5;
     margin-right: 0;
     font-size: 12px;
   }
-  .shop-page-products-layouts .thunk-compare a{
-    font-size: 0;
+  .shop-page-products-layouts .thunk-compare .text{
+    display: none;
+  }
+  .woocommerce ul.products li.product .shop-page-products-layouts .button{
+    margin: 0;
   }
   .woocommerce .shop-page-products-layouts .th-add-to-cart a{
     width: 40px;
@@ -5844,19 +5833,15 @@ border-color: #0177B5;
     color: #FFF;
   }
   .woocommerce .shop-page-products-layouts .th-add-to-cart a:after{
-    /*font-family: dashicons;
-    content: "\f174";*/
-
-    content: "\e910";
+    content: "\e919";
     font-family: th-icon;
-    font-size: 21px;
-
+    font-size: 14px;
+    line-height: 21px;
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
-    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6013,6 +5998,7 @@ border-color: #0177B5;
      height: initial;
      font-size: initial;  
      font-weight: initial;
+     padding: 7px 9px;
 }
 .woocommerce .th-shop-mania-shop-page-layout-4.shop-page-products-layouts .th-add-to-cart a:after,
 .woocommerce .th-shop-mania-shop-page-layout-4.shop-page-products-layouts .th-add-to-cart a.added:after{
@@ -6164,7 +6150,7 @@ border-color: #0177B5;
 .th-shop-mania-shop-page-layout-5{
   border: 1px solid transparent;
 }
-  /*============================================================================
+/*============================================================================
 *  product layouts style and layout 5
 ==============================================================================*/
 /********************/
@@ -6898,18 +6884,6 @@ margin-right:0;
 .responsive-main-header .main-header-col3{
   width: 27%;
 }
-#search-button{
-font-size:0;
-width:45px;
-}
-.search-wrapper #search-button{
-width:65px;
-}
-#search-button:before {
-content: "\f002";
-font-family: FontAwesome;
-font-size:15px;
-}
 .woocommerce .entry-summary a.th-product-compare-btn.button{
   margin-left: 5px;
 }
@@ -7135,13 +7109,13 @@ width:50%;
 .sidebar-content-area .widget-title:after,
 .sidebar-content-area .wp-block-group h2:after{
   position: absolute;
-  font-family: 'fontAwesome';
-  content: "\f107";
+  font-family: 'dashicons';
+  content: "\f347";
   right: 10px;
 }
 .sidebar-content-area .widget-title.open:after,
 .sidebar-content-area .wp-block-group  h2.open:after{
-  content: "\f106";
+  content: "\f343";
 }
 .thunk-title .title:before, .slider-cat-title a:before{
     line-height:23px;
@@ -7172,8 +7146,8 @@ border:none;
 }
 .menu-category-list ul[data-menu-style="accordion"] > li > a > .arrow:before {
     float: right;
-    content: "\f105";
-font-family: FontAwesome;
+    content: "\f345";
+    font-family: dashicons;
 }
 .menu-category-list ul[data-menu-style="accordion"] span.arrow {
     position: absolute;
@@ -7197,8 +7171,8 @@ right:15px
     height: auto;
     text-shadow: none;
     width: 10px;
-    font-family: FontAwesome;    
-   content: "\f107";
+    font-family: dashicons;    
+   content: "\f347";
 }
 .sidebar-widget-wrap{
   display:none;
@@ -7287,9 +7261,6 @@ padding:7.5px
 }
 #search-box input[type="text"]{
   height: 35px;
-}
-#search-button:before {
-    font-size: 12px;
 }
 .toggle-cat-wrap{
   height: 34px;
