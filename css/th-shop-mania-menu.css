@@ -56,7 +56,7 @@ font-weight: 400;
 }
 .th-shop-mania-menu > li > a > .arrow:before {  
     margin-left:5px;
-    font-family: FontAwesome;
+    font-family: th-icon;
     height: auto;
     content: "\f107";
     font-weight: 300;
@@ -64,7 +64,7 @@ font-weight: 400;
     width: 10px;
 }
 .th-shop-mania-menu li ul.sub-menu li > a > .arrow:before {
-    content: "\f105" !important;
+    content: "\e904" !important;
 }
 
 .th-shop-mania-menu  ul.sub-menu {
@@ -115,9 +115,9 @@ background-color: #FFF;
     margin-right: 0px;
     display: inline;
     font-size: 16px;
-    font-family: FontAwesome;
+    font-family: th-icon;
     height: auto;
-    content: "\f104";
+    content: "\e904";
     text-shadow: none;
 }
 .th-shop-mania-menu > li > ul.sub-menu > li ul.sub-menu {
@@ -186,12 +186,12 @@ ul[data-menu-style="accordion"] > li > a > .arrow:before {
     width: 40px;
     text-align: center;
     float: right;
-    content: "\f107";
-    font-family: 'FontAwesome';
+    content: "\f347";
+    font-family: 'dashicons';
 }
 ul[data-menu-style="accordion"] li.menu-active > a > .arrow:before {
-    content: "\f106" !important;
-    font-family: 'FontAwesome';
+    content: "\f343" !important;
+    font-family: 'dashicons';
 }
 ul[data-menu-style="accordion"] > li > ul.sub-menu {
     position: static;
@@ -244,16 +244,18 @@ transition: all 0.2s ease-in-out;
     left:-100%;
 }
 .th-shop-mania-menu-hide .menu-close{display:none;}
+.sider .menu-close{
+    display: none;
+}
 /****************************/
 /*end hamburger menu*/
 /****************************/
 @media screen and (max-width: 1024px){
 .main-header #open-above-menu,.below-header #open-above-menu{
    display:block;
-}   
-.mhdfull .top-header .menu-toggle,
-.mhdfull .bottom-header .menu-toggle{
-display:block!important;
+}
+.sider .menu-close{
+    display: block;
 }
 .sticky-mobile-menu-active .left,
 .mobile-menu-active .sider.th-shop-mania-menu-hide.left,
@@ -671,28 +673,31 @@ display:flex;
 align-items: center;
 }
 .menu-toggle .menu-btn span{
-    color: #FFF;
+    color: #111;
 }
 .menu-toggle .menu-btn .text span,.bar-menu-toggle .menu-btn .text span{
 margin-left:5px;
 }
-.th-shop-mania-menu.collapse span.arrow{
+.th-shop-mania-menu.collapse span.arrow,
+.mobile-nav-tab-category span.arrow{
  position: absolute;
     right: 20px;
     height: 25px;
     width: 50px;
     line-height: 25px;
-        top: 7px;
+    top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .header-support-content {
     padding: 0px 15px 0px 15px;
 }
 .th-shop-mania-menu.collapse li a .arrow:before{
-margin-right: 12px;
-font-size: 13px;
+    margin: 0;
+    font-size: 13px;
 }
 .th-shop-mania-menu.collapse > li > ul.sub-menu li > a > .arrow:before{
-    margin-right: 10px;
     font-size: 12px;
 
 }
@@ -907,22 +912,6 @@ right:270px!important;
 -webkit-transition: right .2s ease-in-out;
     -moz-transition: right .2s ease-in-out;
     transition: right .2s ease-in-out;
-}
-.open-site .mhdrleftpan .pan-icon:before{
-content: "\f101";
-font-family:FontAwesome;
-}
-.mobile-pan-active .open-site .mhdrleftpan .pan-icon:before{
-content: "\f100";
-font-family:FontAwesome;
-}
-.open-site .mhdrrightpan .pan-icon:before{
-content: "\f100";
-font-family:FontAwesome;
-}
-.mobile-pan-active .open-site .mhdrrightpan .pan-icon:before{
-content: "\f101";
-font-family:FontAwesome;
 }
 .mhdrleftpan .site-content #primary,
 .mhdrrightpan .site-content #primary {

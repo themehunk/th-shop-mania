@@ -1,10 +1,9 @@
 @font-face {
   font-family: 'th-icon';
-  src:  url('fonts/th-icon.eot?aqfnou');
-  src:  url('fonts/th-icon.eot?aqfnou#iefix') format('embedded-opentype'),
-    url('fonts/th-icon.ttf?aqfnou') format('truetype'),
-    url('fonts/th-icon.woff?aqfnou') format('woff'),
-    url('fonts/th-icon.svg?aqfnou#th-icon') format('svg');
+  src:  url('fonts/th-icon.eot?stlo25');
+  src:  url('fonts/th-icon.eot?stlo25#iefix') format('embedded-opentype'),
+    url('fonts/th-icon.ttf?stlo25') format('truetype'),
+    url('fonts/th-icon.woff?stlo25') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +24,90 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.th-icon-th-col:before {
+  content: "\f00a";
+}
+.th-icon-th-list:before {
+  content: "\f00b";
+}
+.th-icon-home1:before {
+  content: "\f015";
+}
+.th-icon-download:before {
+  content: "\f019";
+}
+.th-icon-calendar:before {
+  content: "\f073";
+}
+.th-icon-twitter:before {
+  content: "\f099";
+}
+.th-icon-facebook:before {
+  content: "\f09a";
+}
+.th-icon-linkedin:before {
+  content: "\f0e1";
+}
+.th-icon-comment-o:before {
+  content: "\f0e5";
+}
+.th-icon-comments-o:before {
+  content: "\f0e6";
+}
+.th-icon-angle-double-left:before {
+  content: "\f100";
+}
+.th-icon-angle-double-right:before {
+  content: "\f101";
+}
+.th-icon-angle-double-up:before {
+  content: "\f102";
+}
+.th-icon-angle-double-down:before {
+  content: "\f103";
+}
+.th-icon-angle-left:before {
+  content: "\f104";
+}
+.th-icon-angle-right:before {
+  content: "\f105";
+}
+.th-icon-angle-up:before {
+  content: "\f106";
+}
+.th-icon-angle-down:before {
+  content: "\f107";
+}
+.th-icon-youtube-play:before {
+  content: "\f16a";
+}
+.th-icon-instagram:before {
+  content: "\f16d";
+}
+.th-icon-tumblr:before {
+  content: "\f173";
+}
+.th-icon-dribbble:before {
+  content: "\f17d";
+}
+.th-icon-skype:before {
+  content: "\f17e";
+}
+.th-icon-stumbleupon:before {
+  content: "\f1a4";
+}
+.th-icon-pinterest-p:before {
+  content: "\f231";
+}
+.th-icon-whatsapp:before {
+  content: "\f232";
+}
+.th-icon-opencart:before {
+  content: "\f23d";
+}
+.th-icon-vimeo:before {
+  content: "\f27d";
+}
 .th-icon-vector-search:before {
   content: "\e92f";
 }

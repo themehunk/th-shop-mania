@@ -228,8 +228,8 @@ display:none;
     border-radius: 9px;
 }
 #customize-control-amaz_store_sticky_header label:after{
-  content: "\f023";
-    font-family: "FontAwesome";
+  content: "\f345";
+    font-family: "dashicons";
     margin-left: 7px;
     font-size: 21PX;
 }
