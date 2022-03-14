@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Th Shop Mania is a Free WooCommerce theme for creating clean online stores for your business. It has a stylish Homepage design for listing premium products and high-end experiences. Theme comes with powerful functionality like Section On/Off, Header & Footer layouts, Product styles, Ajax live search, Offcanvas sidebar, Quick view, Pagination options for Shop & Blog page, multiple widgets for sidebar & footer, Color & background options, etc. Theme also supports many Product sections to showcase your product in your homepage, Sections like - Tabbed Product carousel, Woo category section, Product Carousel, Product list carousel. Other than these sections theme has Top Slider layout, Ribbon section with Image & Video, Banner layouts and Service section. Theme is integrated with WooCommerce & Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store. If you’re looking for a highly flexible e-commerce theme, then Th Shop Mania could have everything you need.
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 5.0
 Tested up to: 5.9
 Requires PHP: 5.4
@@ -1421,7 +1421,8 @@ display:none;
 .thunk-icon-market .th-icon{
   display: block;
 }
-header .th-icon{
+header .th-icon,
+header .taiowc-icon .th-icon{
   font-size: 32px;
 }
 .cart-contents{
@@ -1538,7 +1539,7 @@ position:relative;
 .th-shop-mania-widget-content {
     position:relative; 
 }
-.main-header-col3 a{
+.main-header-col3 a:not(.taiowc-cart-close){
 position:relative;
 }
 .main-header-col3 .account{
@@ -2501,7 +2502,7 @@ color:#9c9c9c;
   color: #111;
 }
 .th-shop-mania-off-canvas-sidebar a:not(a.menu-close-btn){
-  color: #999;
+  color: #161616;
 }
 .th-shop-mania-off-canvas-sidebar a *{
   color: inherit;

@@ -339,4 +339,3 @@ function th_shop_mania_header_transparent_class($th_shop_mania_transparent_post_
         }
     }
 }
-
