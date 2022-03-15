@@ -29,6 +29,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* (8)Sticky Header */
 /* (9)New Style */
 /* (10)404 page & no-result page */
+/* (12)Header Layouts */
 /*Back to top Start*/
 
 
@@ -830,11 +831,22 @@ flex-basis: initial;
 /*below header special css*/
 .below-header-col1{
   position: relative;
+  margin-right: 2%;
 }
 .below-header-col2{
 flex:4;
 text-align:center;
-margin-left: 2%;
+}
+.below-header-col3{
+  margin-left: 2%;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-main-header{
+  padding: 7px 21px;
+  border: 1px solid #008000;
+  color: inherit;
+  border-radius: 5px;
 }
 /********************/
 /*(6)thnk-col csss*/
@@ -1104,7 +1116,8 @@ header .mobile-nav-bar.sider.right {
     width: 25%;
 }
 .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents,
-.sticky-header-col3 .header-icon a,a.prd-search{
+.sticky-header-col3 .header-icon a,
+.sticky-header a.prd-search{
   /*height: 38px;
   width: 38px;
   line-height: 38px;
@@ -1418,10 +1431,17 @@ display:none;
 .thunk-icon-market > a{
   margin-right: 20px;
 }
+.thunk-icon-market > :last-child{
+  margin-right: 0;
+  margin-left: 20px;
+}
+.thunk-icon-market > :nth-last-child(2){
+  margin-right: 0;
+}
 .thunk-icon-market .th-icon{
   display: block;
 }
-header .th-icon,
+header .th-icon:not(.header-support-wrap .th-icon),
 header .taiowc-icon .th-icon{
   font-size: 32px;
 }
@@ -1544,6 +1564,64 @@ position:relative;
 }
 .main-header-col3 .account{
   display: block;
+}
+.header-support-content{
+  display: flex;
+  align-items: center;
+}
+.header-support-content .th-icon{
+  font-size: 32px;
+  margin-right: 5px;
+  transform: rotate(115deg);
+}
+/***********************/
+/* (12)Header Layouts */
+/**********************/
+  /* mhdrthree */
+.mhdrthree .main-header-col2{
+  justify-content: initial;
+}
+.mhdrthree .main-header-col2 nav{
+  width: 100%;
+}
+.mhdrthree .thaps-search-box{
+  padding: 7px 0;
+} 
+.mhdrthree .below-header-col2{
+  display: flex;
+  justify-content: center;
+}
+/* mhdrfour */
+.mhdrfour .below-header-col1{
+  width: initial;
+}
+.mhdrfour .content-social ul.social-icon li:last-child,
+.main-header.mhdrfour a.prd-search,
+.mhdrfour .main-header-col1{
+  padding-right: 0;
+}
+/* mhdrfive */
+.mhdrfive a.prd-search{
+  padding-right: 0;
+}
+.mhdrfive .main-header-col1 a:nth-of-type(1){
+  margin-right: 21px;
+}
+/* mhdrsix */
+.mhdrsix .main-header-col1{
+  width: 40%;
+  flex: initial;
+}
+.mhdrsix .main-header-col2{
+  width: 20%;
+  flex: initial;
+}
+.mhdrsix .main-header-col3{
+  width: 40%;
+  flex: initial;
+}
+.mhdrsix .header-support-wrap{
+  margin-right: 10px;
 }
 /*****************/
 /*Menu Alignment*/
@@ -6607,6 +6685,9 @@ header.zta-transparent-header.shrink {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+.thaps-autocomplete-suggestions{
+  z-index: 999997!important;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{

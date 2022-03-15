@@ -127,7 +127,7 @@ if ( ! function_exists( 'th_shop_mania_below_header_markup' ) ){
 function th_shop_mania_below_header_markup(){
 $th_shop_mania_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left');
 $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 'linkeffect-none'); ?>
-  <div class="below-header <?php echo esc_attr($th_shop_mania_menu_open).'-menu'; ?> <?php echo esc_attr($th_shop_mania_pro_menu_effect);?> ">
+  <div class="below-header <?php echo (esc_attr($th_shop_mania_menu_open).'-menu '.esc_attr($th_shop_mania_pro_menu_effect));?> ">
       <div class="container">
         <div class="below-header-bar thnk-col-1">
            <div class="below-header-col1">
@@ -278,7 +278,12 @@ if (!function_exists('th_shop_mania_header_main_post_meta')) {
     function th_shop_mania_header_main_post_meta($page_post_meta_set = '')
     {
         if ($page_post_meta_set !== 'on') {
-          do_action( 'th_shop_mania_main_header' );
+          if (function_exists('th_shop_mania_pro_load_plugin')) {
+           do_action( 'th_shop_mania_pro_main_header' );
+          }
+          else{
+            do_action( 'th_shop_mania_main_header' );
+          }
         }
     }
 }
@@ -287,8 +292,15 @@ if (!function_exists('th_shop_mania_header_btm_post_meta')) {
     function th_shop_mania_header_btm_post_meta($page_post_meta_set = '')
     {
         if ($page_post_meta_set !== 'on') {
+          if (function_exists('th_shop_mania_pro_load_plugin')) {
+          add_action( 'th_shop_mania_pro_below_header', 'th_shop_mania_cart_mobile_panel' );
+          do_action( 'th_shop_mania_pro_below_header' );
+
+        }
+        else{
           do_action( 'th_shop_mania_below_header' );
         }
+      }
     }
 }
 /**************************/
