@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Th Shop Mania is a Free WooCommerce theme for creating clean online stores for your business. It has a stylish Homepage design for listing premium products and high-end experiences. Theme comes with powerful functionality like Section On/Off, Header & Footer layouts, Product styles, Ajax live search, Offcanvas sidebar, Quick view, Pagination options for Shop & Blog page, multiple widgets for sidebar & footer, Color & background options, etc. Theme also supports many Product sections to showcase your product in your homepage, Sections like - Tabbed Product carousel, Woo category section, Product Carousel, Product list carousel. Other than these sections theme has Top Slider layout, Ribbon section with Image & Video, Banner layouts and Service section. Theme is integrated with WooCommerce & Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store. If you’re looking for a highly flexible e-commerce theme, then Th Shop Mania could have everything you need.
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 5.0
 Tested up to: 5.9
 Requires PHP: 5.4
@@ -29,6 +29,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* (8)Sticky Header */
 /* (9)New Style */
 /* (10)404 page & no-result page */
+/* (12)Header Layouts */
 /*Back to top Start*/
 
 
@@ -830,11 +831,22 @@ flex-basis: initial;
 /*below header special css*/
 .below-header-col1{
   position: relative;
+  margin-right: 2%;
 }
 .below-header-col2{
 flex:4;
 text-align:center;
-margin-left: 2%;
+}
+.below-header-col3{
+  margin-left: 2%;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-main-header{
+  padding: 7px 21px;
+  border: 1px solid #008000;
+  color: inherit;
+  border-radius: 5px;
 }
 /********************/
 /*(6)thnk-col csss*/
@@ -1104,7 +1116,8 @@ header .mobile-nav-bar.sider.right {
     width: 25%;
 }
 .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents,
-.sticky-header-col3 .header-icon a,a.prd-search{
+.sticky-header-col3 .header-icon a,
+.sticky-header a.prd-search{
   /*height: 38px;
   width: 38px;
   line-height: 38px;
@@ -1418,10 +1431,18 @@ display:none;
 .thunk-icon-market > a{
   margin-right: 20px;
 }
+.thunk-icon-market > :last-child{
+  margin-right: 0;
+  margin-left: 20px;
+}
+.thunk-icon-market > :nth-last-child(2){
+  margin-right: 0;
+}
 .thunk-icon-market .th-icon{
   display: block;
 }
-header .th-icon{
+header .th-icon:not(.header-support-wrap .th-icon),
+header .taiowc-icon .th-icon{
   font-size: 32px;
 }
 .cart-contents{
@@ -1538,11 +1559,69 @@ position:relative;
 .th-shop-mania-widget-content {
     position:relative; 
 }
-.main-header-col3 a{
+.main-header-col3 a:not(.taiowc-cart-close){
 position:relative;
 }
 .main-header-col3 .account{
   display: block;
+}
+.header-support-content{
+  display: flex;
+  align-items: center;
+}
+.header-support-content .th-icon{
+  font-size: 32px;
+  margin-right: 5px;
+  transform: rotate(115deg);
+}
+/***********************/
+/* (12)Header Layouts */
+/**********************/
+  /* mhdrthree */
+.mhdrthree .main-header-col2{
+  justify-content: initial;
+}
+.mhdrthree .main-header-col2 nav{
+  width: 100%;
+}
+.mhdrthree .thaps-search-box{
+  padding: 7px 0;
+} 
+.mhdrthree .below-header-col2{
+  display: flex;
+  justify-content: center;
+}
+/* mhdrfour */
+.mhdrfour .below-header-col1{
+  width: initial;
+}
+.mhdrfour .content-social ul.social-icon li:last-child,
+.main-header.mhdrfour a.prd-search,
+.mhdrfour .main-header-col1{
+  padding-right: 0;
+}
+/* mhdrfive */
+.mhdrfive a.prd-search{
+  padding-right: 0;
+}
+.mhdrfive .main-header-col1 a:nth-of-type(1){
+  margin-right: 21px;
+}
+/* mhdrsix */
+.mhdrsix .main-header-col1{
+  width: 40%;
+  flex: initial;
+}
+.mhdrsix .main-header-col2{
+  width: 20%;
+  flex: initial;
+}
+.mhdrsix .main-header-col3{
+  width: 40%;
+  flex: initial;
+}
+.mhdrsix .header-support-wrap{
+  margin-right: 10px;
 }
 /*****************/
 /*Menu Alignment*/
@@ -2501,7 +2580,7 @@ color:#9c9c9c;
   color: #111;
 }
 .th-shop-mania-off-canvas-sidebar a:not(a.menu-close-btn){
-  color: #999;
+  color: #161616;
 }
 .th-shop-mania-off-canvas-sidebar a *{
   color: inherit;
@@ -6606,6 +6685,9 @@ header.zta-transparent-header.shrink {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+.thaps-autocomplete-suggestions{
+  z-index: 999997!important;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{

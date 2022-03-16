@@ -444,7 +444,7 @@ if (!function_exists('th_shop_mania_woo_shop_product_on_sale')) {
   function th_shop_mania_woo_shop_product_on_sale()
   {
     global $post, $product;
-    return $product->is_on_sale() ?  apply_filters('woocommerce_sale_flash', '<span class="onsale">' . esc_html__('Sale!', 'woocommerce') . '</span>', $post, $product) : '';
+    return $product->is_on_sale() ?  apply_filters('woocommerce_sale_flash', '<span class="onsale">' . esc_html__('Sale!', 'th-shop-mania') . '</span>', $post, $product) : '';
   }
 }
 if (!function_exists('th_shop_mania_woo_shop_product_rating')) {
