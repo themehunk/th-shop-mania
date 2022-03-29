@@ -695,6 +695,7 @@ background: #ff3377;
 /***************************/
 header{
   background: transparent;
+  position: relative;
 }
 .top-header-bar,
 .main-header-bar,
@@ -1099,7 +1100,7 @@ header .mobile-nav-bar.sider.right {
 }
 .sticky-header-col1{
     justify-content: flex-start;
-    width: 21%;
+    width: auto;
     padding:0px;
     align-items: center;
     display: inline-flex;
@@ -1109,19 +1110,16 @@ header .mobile-nav-bar.sider.right {
     -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
-    width: 54%;
+    width: auto;
+    padding: 0 20px;
 }
 .sticky-header-col3 {
     text-align: right;
-    width: 25%;
+    width: auto;
 }
 .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents,
 .sticky-header-col3 .header-icon a,
 .sticky-header a.prd-search{
-  /*height: 38px;
-  width: 38px;
-  line-height: 38px;
-  margin: 0px 8px 0px 0px;*/
   padding-right: 21px;
   display: block;
 }
@@ -1446,8 +1444,9 @@ display:none;
   min-width: initial;
   padding: 0;
 }
-.th-icon-searchview{
+.thunk-icon-market .thaps-search-box .th-icon{
   margin-right: 20px;
+  color: #111!important;
 }
 header .th-icon:not(.header-support-wrap .th-icon),
 header .taiowc-icon .th-icon{
@@ -2233,6 +2232,15 @@ vertical-align: middle;
     font-family: 'Jost';font-weight: 400;
     color: #111;
     padding-right: 20px;
+}
+.sticky-header .th-icon-searchview{
+  margin-right: 20px;
+}
+.sticky-header .th-icon-searchview .th-icon{
+  color: #111!important;
+}
+.th-icon-searchview{
+  z-index: 2;
 }
 /*header-icon*/
 .header-icon a:hover{
@@ -3024,6 +3032,9 @@ border: 1px solid transparent;
 .thunk-product a.add_to_wishlist i,
 .thunk-product .th-product-compare-btn .th-icon{
   margin-right: 4px;
+}
+.wishlist-title-container{
+  display: none;
 }
 .thunk-product .thunk-compare a{
   background: transparent;
@@ -6665,19 +6676,20 @@ header.zta-transparent-header.shrink {
   display: flex;
   justify-content: center;
 }
-.th-shop-mania-pageheader-content .page-head * {
+.th-shop-mania-pageheader-content .page-head .entry-title,
+.th-shop-mania-pageheader-content .page-head nav *{
   color: #fff;
   z-index: 9;
 }
 .th-shop-mania-pageheader:after {
+  content: " ";
   background: #111;
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  opacity: 0.7;
-  content: " ";
+  opacity: 0.7;  
 }
 .th-shop-mania-pageheader-img {
   position: absolute;
@@ -6692,6 +6704,9 @@ header.zta-transparent-header.shrink {
 }
 .thaps-autocomplete-suggestions{
   z-index: 999997!important;
+}
+.dokan-store-products-filter-area .orderby-search{
+  margin-top: 21px;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
@@ -6748,6 +6763,7 @@ display:none;
 .sticky-header-col2{
   width: auto;
   padding-left: 12px;
+  padding-right: 0;
   order: 3;
 }
 .sticky-header-col3{
