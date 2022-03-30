@@ -24,6 +24,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Changelog ==
 = Version 1.0.4 =
+* Theme Update checker feature added.
 * Header Icon style.
 * Mobile Menu issue rsolved.
 
