@@ -23,9 +23,10 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
-
 = Version 1.0.4 =
 * Theme Update checker feature added.
+* Header Icon style.
+* Mobile Menu issue rsolved.
 
 = Version 1.0.3 =
 * Latest update
@@ -41,7 +42,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-* Import Demo text changed.	
+= Version 1.0.4 =
+* Header Icon style.
+* Mobile Menu issue rsolved.
 
 == Resources ==
  
@@ -51,7 +54,7 @@ License for images:
 
 == Theme License & Copyright ==
 Th Shop Mania is distributed under the terms of the GNU GPL
-amaz-store-Pro-Copyright 2021, themehunk.com
+Th-Shop-Mania-Copyright 2021, themehunk.com
 License : GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
