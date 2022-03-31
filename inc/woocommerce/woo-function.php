@@ -396,8 +396,11 @@ function woocommerce_custom_sale_text($text, $post, $_product)
 {
     return '<span class="onsale">'.esc_html(get_theme_mod('th_shop_mania_woo_sale_text','Sale')).'</span>';
 }
-
+// This Action for product style in shop page
 add_action('wp', 'shop_customization', 5);
+
+// This Action for product style in shop page with ajax
+add_action('th_shop_mania_pagination_infinite','shop_customization');
 /**
      * Shop customization.
      *
