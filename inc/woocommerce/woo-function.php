@@ -277,8 +277,6 @@ if ( ! function_exists( 'th_shop_mania_pro_product_content_end' ) ){
     $pid = $product->get_id();
 
     echo'<div class="thunk-product-hover">';
-    // do_action('th_shop_mania_wishlist');
-    // do_action('th_shop_mania_compare');
       th_shop_mania_add_to_cart();
       th_shop_mania_whish_list($pid);
       th_shop_mania_add_to_compare_fltr($pid);
@@ -379,8 +377,8 @@ function th_shop_mania_whish_list($pid = ''){
 // add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_image_start', 0);
 // add_action( 'woocommerce_before_shop_loop_item_title', 'th_shop_mania_pro_product_image_end',10 );
 // // add_action( 'woocommerce_after_single_product_summary', 'woocommerce_show_product_sale_flash',4);
-// add_action( 'woocommerce_before_shop_loop', 'th_shop_mania_pro_shop_content_start',1);
-// add_action( 'woocommerce_after_shop_loop', 'th_shop_mania_pro_shop_content_end',1);
+add_action( 'woocommerce_before_shop_loop', 'th_shop_mania_pro_shop_content_start',1);
+add_action( 'woocommerce_after_shop_loop', 'th_shop_mania_pro_shop_content_end',1);
 
 // remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 // remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');

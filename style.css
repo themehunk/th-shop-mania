@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Th Shop Mania is a Free WooCommerce theme for creating clean online stores for your business. It has a stylish Homepage design for listing premium products and high-end experiences. Theme comes with powerful functionality like Section On/Off, Header & Footer layouts, Product styles, Ajax live search, Offcanvas sidebar, Quick view, Pagination options for Shop & Blog page, multiple widgets for sidebar & footer, Color & background options, etc. Theme also supports many Product sections to showcase your product in your homepage, Sections like - Tabbed Product carousel, Woo category section, Product Carousel, Product list carousel. Other than these sections theme has Top Slider layout, Ribbon section with Image & Video, Banner layouts and Service section. Theme is integrated with WooCommerce & Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store. If you’re looking for a highly flexible e-commerce theme, then Th Shop Mania could have everything you need.
-Version: 1.0.4
+Version: 1.0.5
 Requires at least: 5.0
 Tested up to: 5.9
 Requires PHP: 5.4
@@ -476,6 +476,9 @@ body{
     text-rendering: optimizeLegibility; 
     -moz-font-feature-settings: "liga" on; 
 }
+img{
+  display: block;
+}
 .thunk-post-excerpt a,.thunk-content-wrap .entry-content a,
 .widget .textwidget a,
 .comment-content a{
@@ -613,12 +616,6 @@ background: #ff3377;
     height: 50px;
     -webkit-animation: spin .6s linear infinite;
     animation: spin .6s linear infinite;
-    /*
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: -50px 0 0 -50px;*/
     display: block;
     background-position: center;
 }
@@ -771,6 +768,7 @@ header{
 }
 .main-header-col1{
   width: auto;
+  min-width: 21%;
   justify-content: flex-start;
   padding: 30px 15px 30px 0;
   align-items: center;
@@ -1084,19 +1082,8 @@ header .mobile-nav-bar.sider.right {
   background: #fbfdf6;
 }
 .sticky-header-bar{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
 }
 .sticky-header-col1{
     justify-content: flex-start;
@@ -1112,10 +1099,12 @@ header .mobile-nav-bar.sider.right {
     text-align: center;
     width: auto;
     padding: 0 20px;
+    flex-grow: 2;
 }
 .sticky-header-col3 {
-    text-align: right;
     width: auto;
+    display: flex;
+    justify-content: flex-end;
 }
 .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents,
 .sticky-header-col3 .header-icon a,
@@ -1200,11 +1189,10 @@ display: contents;
     transform: none;
 }
 .sticky-header .logo-content{
-width:100%;
-padding: 10px 0px;
+padding: 30px 0px;
 }
 .sticky-header .logo-content img{
-max-width:70%;
+max-width: 100%;
 }
 .sticky-header .site-title a,.sticky-header .cart-icon a span:hover{
 color: #111;
@@ -1436,7 +1424,8 @@ display:none;
 .thunk-icon-market > :nth-last-child(2){
   margin-right: 0;
 }
-.thunk-icon-market .th-icon{
+.thunk-icon-market .th-icon,
+header .th-icon{
   display: block;
 }
 .thunk-icon-market .thaps-search-box,
@@ -1650,7 +1639,6 @@ text-align:start;
     border-bottom-width: 0px;
      position: relative;
      border-color: #EBEBEB;
-
 }
 .widget-footer{
   position:relative;
@@ -2635,7 +2623,7 @@ justify-content: flex-start;
     margin-left: 15px;
 }
 .off-canvas-button{
-  display: block;
+  display: flex;
 }
 .off-canvas-button:focus{
   outline: 2px solid thin;
@@ -6752,6 +6740,9 @@ display:none;
 .below-header,.desktop-main-header {
  display:none;
 }
+.responsive-main-header #thaps-search-button{
+  margin: 0.2rem;
+}
 .toggle-cat-wrap {
   width: auto;
 }
@@ -6782,6 +6773,12 @@ margin-right:10px;
     visibility:inherit;
     opacity:inherit;
     display:block;
+}
+.sticky-header .logo-content{
+  padding: 12px 0;
+}
+.sticky-header-col2{
+  flex-grow: initial;
 }
 /*header icon*/
 .thunk-icon .cart-icon a.cart-contents{
@@ -6977,16 +6974,16 @@ margin-right:0;
 
 @media screen and (min-width: 768px) and (max-width: 980px){
 .responsive-main-header .main-header-col1{
-  width: 20%;
+  width: auto;
   margin-right: 1%;
   padding: 7px 0;
 }
 .responsive-main-header .main-header-col2{
-  width: 51%;
+  width: auto;
   margin-right: 1%;
 }
 .responsive-main-header .main-header-col3{
-  width: 27%;
+  width: auto;
 }
 .woocommerce .entry-summary a.th-product-compare-btn.button{
   margin-left: 5px;
@@ -7234,6 +7231,7 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 .responsive-main-header .taiowc-content .taiowc-total,
 .sticky-header-bar .taiowc-content .taiowc-total{
   font-size: 12px;
+  display: none;
 }
 /*sidebar slide CSS Start  */
 .sidebar-content-area .widget-title+ul,
@@ -7349,6 +7347,15 @@ width:50%;
 }
 .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents, .sticky-header-col3 .header-icon a, a.prd-search{
   padding-right: 12px;
+}
+.sticky-header .th-icon-searchview{
+  margin-right: 12px;
+}
+.sticky-header .taiowc-content .taiowc-total{
+  display: none;
+}
+.sticky-header .logo-content img{
+  max-width: 65%;
 }
 .thunk-cat-tab ul.dropdown-link {
     right: auto!important;

@@ -82,7 +82,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 			// add share button
 			
-			add_action( 'woocommerce_single_product_summary', array( $this, 'th_shop_mania_product_sahre_button_func'),90 );
+			add_action( 'woocommerce_single_product_summary', array( $this, 'th_shop_mania_product_share_button_func'),90 );
 
 		 }
 		 // woocommerce sidebar
@@ -243,8 +243,8 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			global $wp_query;
 			$th_shop_mania_pagination                   = get_theme_mod( 'th_shop_mania_pagination' );
 			$localize['ajax_url']                   = admin_url( 'admin-ajax.php' );
-			// $localize['is_cart']                    = is_cart();
-			// $localize['is_single_product']          = is_product();
+			$localize['is_cart']                    = is_cart();
+			$localize['is_single_product']          = is_product();
 			$localize['query_vars']                 = json_encode( $wp_query->query );
 			$localize['shop_quick_view_enable']     = get_theme_mod('th_shop_mania_woo_quickview_enable',false );
 			$localize['shop_infinite_nonce']        = wp_create_nonce( 'opn-shop-load-more-nonce' );
@@ -612,7 +612,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		}
 
 		//Share Icon on Product Single Page
-		function th_shop_mania_product_sahre_button_func() {
+		function th_shop_mania_product_share_button_func() {
 		echo'<div class="social-share"><h3>'.__('Share','th-shop-mania').'</h3><ul>'?>
 		 <li class="fb-icon"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink()); ?>"></a></li>
 		 <li class="twt-icon"><a target="_blank" href="https://twitter.com/home?status=<?php the_title(); ?>-<?php esc_url(the_permalink()); ?>"></a></li>
