@@ -737,6 +737,9 @@ header{
   color: #FFF;
   margin: 0 -10px;
 }
+.top-header-bar a{
+  color: #FFF;
+}
 .top-header{
     border-bottom: 1px solid #ebebeb;
 }
@@ -822,6 +825,16 @@ flex-basis: initial;
 .th-shop-mania-site .thaps-search-box{
   margin: initial;
 }
+.thaps-search-form .thaps-search-autocomplete,
+.cat-toggle,
+.btn-main-header{
+  height: 45px;
+  line-height: 45px;
+}
+.th-shop-mania-menu{
+  display: flex;
+  flex-wrap: wrap;
+}
 /*mobile header*/
 .responsive-main-header{display:none;}
 .below-footer .below-footer-bar{
@@ -846,6 +859,9 @@ text-align:center;
   border: 1px solid #008000;
   color: inherit;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /********************/
 /*(6)thnk-col csss*/
@@ -1214,6 +1230,7 @@ color: #111;
 }
 .sticky-header-bar .menu-toggle .menu-btn span {
     display: block !important;
+    color: #111;
 }
 /*search wrapper*/
 .search-wrapper{
@@ -1701,37 +1718,34 @@ padding:5px 7px;
 .content-social ul.social-icon li i{
   padding:0;
 }
-.social-icon.original-social-icon i.fa-facebook{
+.social-icon.original-social-icon .th-icon-facebook{
 color:#4867AA;
 }
-.social-icon.original-social-icon i.fa-google-plus{
-color:#DE564A;
-}
-.social-icon.original-social-icon i.fa-linkedin{
+.social-icon.original-social-icon .th-icon-linkedin{
 color:#007BB6;
 }
-.social-icon.original-social-icon i.fa-twitter{
+.social-icon.original-social-icon .th-icon-twitter{
 color:#00ACED;
 }
-.social-icon.original-social-icon i.fa-instagram{
+.social-icon.original-social-icon .th-icon-instagram{
 color:#C50067;
 }
-.social-icon.original-social-icon i.fa-pinterest{
+.social-icon.original-social-icon .th-icon-pinterest{
 color:#BD081B;
 }
-.social-icon.original-social-icon i.fa-youtube-play{
+.social-icon.original-social-icon .th-icon-youtube-play{
 color:#FF0000;
 }
-.social-icon.original-social-icon i.fa-tumblr{
+.social-icon.original-social-icon .th-icon-tumblr{
 color:#36465D;
 }
-.social-icon.original-social-icon i.fa-stumbleupon{
+.social-icon.original-social-icon .th-icon-stumbleupon{
 color:#EB4823;
 }
-.social-icon.original-social-icon i.fa-dribbble{
+.social-icon.original-social-icon .th-icon-dribbble{
 color:#EA4C89;
 }
-.social-icon.original-social-icon i.fa-skype{
+.social-icon.original-social-icon .th-icon-skype{
 color:#00aff0;
 }
 .content-social .social-icon a{
@@ -2536,6 +2550,16 @@ margin-bottom: 5px;
 .widget.widget_categories li{
 color:#9c9c9c;
 }
+header .widget.widget_categories ul,
+footer .widget.widget_categories ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+header .widget.widget_categories ul li,
+footer .widget.widget_categories ul li{
+  margin: 7px;
+}
 .widget-footer .widget ul {
     margin: 0;
     border: 0;
@@ -2614,7 +2638,6 @@ width: 18px;
 .bfr-logo .main-header-col1 {
 justify-content: flex-start;
 }
-
 .aftr-logo .logo-content {
     order: 1;
 }
@@ -4241,10 +4264,9 @@ color:#ff3377;
 clear: initial;
 }
 .woocommerce #content div.product .prev_next_buttons{
-position:absolute;
-top:-54px;
-right:0;
-z-index: 9;
+  display: inline-flex;
+  float: right;
+  z-index: 9;
 }
 .woocommerce #content div.product .prev_next_buttons a{
 border: 1px solid #eee;
@@ -7218,7 +7240,7 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
     width: 21px;
     height: 21px;
     line-height: 21px;
-    left: 12px;
+    left: 7px;
     top: -18px;    
 }
 .responsive-main-header .thaps-search-form .thaps-search-autocomplete{
@@ -7232,6 +7254,9 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 .sticky-header-bar .taiowc-content .taiowc-total{
   font-size: 12px;
   display: none;
+}
+.responsive-main-header .thaps-search-box{
+  max-width: initial;
 }
 /*sidebar slide CSS Start  */
 .sidebar-content-area .widget-title+ul,

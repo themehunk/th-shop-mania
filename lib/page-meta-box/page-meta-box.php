@@ -33,8 +33,8 @@ $meta_boxes = array(
                 'type' => 'select',
                 'std' => 'right',
                 'options' => array( 
-                    array("value" => 'right',"name" => esc_html__('Right Sidebar','th-shop-mania')),
                     array("value" => 'no-sidebar',"name" => esc_html__('No Sidebar','th-shop-mania')),
+                    array("value" => 'right',"name" => esc_html__('Right Sidebar','th-shop-mania')),
                     array("value" => 'left',"name" =>  esc_html__('Left Sidebar','th-shop-mania')),
                     
                  )
