@@ -19,15 +19,17 @@ if (!function_exists('th_shop_mania_top_header_markup')) {
 
     function th_shop_mania_top_header_markup() {
         if (is_active_sidebar('top-header-widget-col1')) {
+
+           if ((! wp_is_mobile() ) || wp_is_mobile() && ( !get_theme_mod('th_shop_mania_above_header_disable',false ))) {
             ?>
             <div class="top-header">
               <div class="container">
                 <div class="top-header-bar thnk-col-3">
-                        <?php dynamic_sidebar('top-header-widget-col1'); ?>
+            <?php dynamic_sidebar('top-header-widget-col1'); ?>
                 </div>
               </div>
             </div>
-            <?php
+            <?php }
         }
     }
 
