@@ -4371,7 +4371,8 @@ line-height: 21px;
     border:0;
 }
 .woocommerce table.shop_table thead th{
-    border-bottom:1px solid #f1f1f1!important;
+    border-bottom:1px solid!important;
+    border-color:#f1f1f1;
 }
 .woocommerce-cart table.shop_table thead th,
 .woocommerce-cart .cart-subtotal,
@@ -4736,13 +4737,6 @@ input[type="text"], input[type="email"],input[type="url"],
     margin-bottom: 20px;
 }
 .woocommerce-input-wrapper textarea.input-text {
-    background: #f7f8f9;
-    border: 1px solid #eaeaea;
-    color: #898989;
-    width: 100%;
-}
-
-.woocommerce-input-wrapper textarea.input-text {
     background: #FFF;
     border: 1px solid #eaeaea;
     color: #898989;
@@ -4771,7 +4765,7 @@ input[type="text"], input[type="email"],input[type="url"],
     background: #FFFF;
 }
 .woocommerce form .form-row input.input-text{
-    background: #FFF;
+    background: transparent;
     border: 1px solid #cccc;
     height:45px;
     width: 100%;
