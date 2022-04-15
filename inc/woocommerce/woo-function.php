@@ -37,13 +37,9 @@ if ( ! function_exists( 'th_shop_mania_cart_total_item' ) ){
 }
 /** My Account Menu **/
 if ( ! function_exists( 'th_shop_mania_account' ) ){
-function th_shop_mania_account(){
- if ( is_user_logged_in() ){?>
+function th_shop_mania_account(){ ?>
 <a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="th-icon th-icon-user"></span></a>
-<?php } else {?>
-<a class="account" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') ));?>"><span class="th-icon th-icon-lock1"></span></a>
-<?php }
- }
+ <?php }
  add_action('th_shop_mania_account','th_shop_mania_account');
 }
 /***************/
