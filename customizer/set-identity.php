@@ -39,6 +39,26 @@ $wp_customize->add_control('tagline_disable', array(
         ),
     ));
 
+/**
+* Option: Retina logo selector
+*/
+$wp_customize->add_setting('th_shop_mania_header_retina_logo', array(
+            'default'           => '',
+            'type'              => 'option',
+            'sanitize_callback' => 'th_shop_mania_sanitize_upload',
+        )
+    );
+$wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,'th_shop_mania_header_retina_logo', array(
+                'section'        => 'title_tagline',
+                'priority'       => 8,
+                'label'          => __( 'Retina Logo', 'th-shop-mania' ),
+                'library_filter' => array( 'gif', 'jpg', 'jpeg', 'png', 'ico' ),
+            )
+        )
+    );
+
 $wp_customize->add_section('th-shop-mania-bottom-footer', array(
     'title'    => __('Footer Copyright', 'th-shop-mania'),
 ));

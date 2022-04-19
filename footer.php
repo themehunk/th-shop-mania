@@ -7,10 +7,20 @@
  * @package  Th Shop Mania
  * @since 1.0.0
  */ 
-if ( is_single() || is_page() ){
-$th_shop_mania_disable_above_footer_dyn  = get_post_meta( $post->ID, 'th_shop_mania_disable_above_footer_dyn', true );
-$th_shop_mania_disable_footer_widget_dyn = get_post_meta( $post->ID, 'th_shop_mania_disable_footer_widget_dyn', true ); 
-$th_shop_mania_disable_bottom_footer_dyn = get_post_meta( $post->ID, 'th_shop_mania_disable_bottom_footer_dyn', true ); 
+if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocommerce() || is_checkout() || is_cart() || is_account_page()))
+||  is_front_page() || is_home()) {
+    if (class_exists('WooCommerce') && is_shop()) {
+        $shop_page_id = get_option('woocommerce_shop_page_id');
+        $postid = $shop_page_id;
+    } elseif(th_shop_mania_is_blog()){
+        echo $blog_page_id = get_option('page_for_posts');
+        $postid = $blog_page_id;
+    } else {
+        $postid = $post->ID;
+    }
+$th_shop_mania_disable_above_footer_dyn  = get_post_meta( $postid, 'th_shop_mania_disable_above_footer_dyn', true );
+$th_shop_mania_disable_footer_widget_dyn = get_post_meta( $postid, 'th_shop_mania_disable_footer_widget_dyn', true ); 
+$th_shop_mania_disable_bottom_footer_dyn = get_post_meta( $postid, 'th_shop_mania_disable_bottom_footer_dyn', true ); 
 }else{
 $th_shop_mania_disable_above_footer_dyn  ='';
 $th_shop_mania_disable_footer_widget_dyn ='';
