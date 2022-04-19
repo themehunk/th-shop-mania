@@ -78,8 +78,12 @@ if ( ! function_exists( 'th_shop_mania_check_is_ie' ) ) :
 	function th_shop_mania_check_is_ie() {
 
 		$is_ie = false;
-
+		if (isset($_SERVER['HTTP_USER_AGENT'])) {
 		$ua = htmlentities( $_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8' );
+		}
+		else{
+		$ua = '';
+		}
 		if ( strpos( $ua, 'Trident/7.0' ) !== false ) {
 			$is_ie = true;
 		}
@@ -106,7 +110,7 @@ if ( ! function_exists( 'th_shop_mania_replace_header_attr' ) ) :
 		if ( $custom_logo_id == $attachment->ID ){
 			$attach_data = array();
 			if ( ! is_customize_preview() ){
-				$attach_data = wp_get_attachment_image_src( $attachment->ID, 'open-logo-size' );
+				$attach_data = wp_get_attachment_image_src( $attachment->ID, 'th-shop-mania-logo-size' );
 
 
 				if ( isset( $attach_data[0] ) ) {
@@ -121,7 +125,7 @@ if ( ! function_exists( 'th_shop_mania_replace_header_attr' ) ) :
 			}
 			$retina_logo = get_theme_mod( 'th_shop_mania_header_retina_logo' );
 			$attr['srcset'] = '';
-			if ( apply_filters( 'open_main_header_retina', true ) && '' !== $retina_logo ) {
+			if ( apply_filters( 'th_shop_mania_main_header_retina', true ) && '' !== $retina_logo ) {
 				$cutom_logo     = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 				$cutom_logo_url = $cutom_logo[0];
 

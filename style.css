@@ -3010,6 +3010,10 @@ border: 1px solid transparent;
 .woocommerce .added_to_cart a.button.loading{
   padding-right: 10px;
 }
+/* Elementor Laoding in product */
+.elementor-page .th-add-to-cart a.button.loading::before{
+  display: none;
+}
 .thunk-wishlist,
 .thunk-compare{
   display: flex;

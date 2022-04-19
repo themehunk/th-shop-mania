@@ -9,6 +9,8 @@ if ( ! class_exists( 'WooCommerce' ) ){
     return;
 }
 get_header();
+$shoppage_id = '';
+$id = '';
     if(class_exists( 'WooCommerce' ) && is_shop()){
 $shoppage_id = get_option( 'woocommerce_shop_page_id' );
 $id = $shoppage_id;
@@ -22,8 +24,6 @@ elseif(class_exists( 'WooCommerce' ) && is_product() && (get_theme_mod('th_shop_
 }
 elseif(class_exists( 'WooCommerce' ) && is_product_category()){
     // To make woocommerce archive or category page same as Woocommerce Shop Page
-$shoppage_id = get_option( 'woocommerce_shop_page_id' );
-
 $th_shop_mania_sidebar = get_post_meta( $shoppage_id, 'th_shop_mania_sidebar_dyn', true );
 }
   else{
