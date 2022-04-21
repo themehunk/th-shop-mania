@@ -13,7 +13,7 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
         $shop_page_id = get_option('woocommerce_shop_page_id');
         $postid = $shop_page_id;
     } elseif(th_shop_mania_is_blog()){
-        echo $blog_page_id = get_option('page_for_posts');
+        $blog_page_id = get_option('page_for_posts');
         $postid = $blog_page_id;
     } else {
         $postid = $post->ID;
