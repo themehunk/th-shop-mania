@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'th-icon';
-  src:  url('fonts/th-icon.eot?n5qetk');
-  src:  url('fonts/th-icon.eot?n5qetk#iefix') format('embedded-opentype'),
-    url('fonts/th-icon.ttf?n5qetk') format('truetype'),
-    url('fonts/th-icon.woff?n5qetk') format('woff'),
-    url('fonts/th-icon.svg?n5qetk#th-icon') format('svg');
+  src:  url('fonts/th-icon.eot?4hvsi7');
+  src:  url('fonts/th-icon.eot?4hvsi7#iefix') format('embedded-opentype'),
+    url('fonts/th-icon.ttf?4hvsi7') format('truetype'),
+    url('fonts/th-icon.woff?4hvsi7') format('woff'),
+    url('fonts/th-icon.svg?4hvsi7#th-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.th-icon-CursorAndSelection-Icons-17-converted:before {
+  content: "\e935";
+}
 .th-icon-Photography-Icons-19-converted:before {
   content: "\e931";
 }
