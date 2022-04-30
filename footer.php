@@ -27,7 +27,7 @@ $th_shop_mania_disable_footer_widget_dyn ='';
 $th_shop_mania_disable_bottom_footer_dyn ='';
 }
 ?>
-<footer>
+<footer class="thsm-footer">
          <?php        
 	th_shop_mania_footer_abv_post_meta($th_shop_mania_disable_above_footer_dyn);
     th_shop_mania_footer_widget_post_meta($th_shop_mania_disable_footer_widget_dyn);
