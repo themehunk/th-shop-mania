@@ -22,7 +22,7 @@ class Th_Shop_Mania_theme_option
   function __construct()
   {
     add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
-    add_action('admin_menu', array($this, 'menu_tab'));
+    add_action('admin_menu', array($this, 'menu_tab'),99);
     
     // self::save_settings();
     // AJAX.
@@ -40,14 +40,16 @@ class Th_Shop_Mania_theme_option
       }
   function menu_tab()
   {
-    $menu_title = sprintf( esc_html__( 'Get Started with %s Options', 'th-shop-mania' ), apply_filters( 'zita_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) );
+    $menu_title = sprintf( esc_html__( 'Get Started with %s Options', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) );
     add_theme_page(esc_html__('Th Shop Mania', 'th-shop-mania'), $menu_title, 'edit_theme_options', 'th_shop_mania_thunk_started', array($this, 'tab_page'));
 
     $menu_page_title = '';
     $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
     $capability     = 'manage_options';
+    if ( class_exists('Th_Shop_Mania_Ext_White_Label_Markup') && Th_Shop_Mania_Ext_White_Label_Markup::show_branding() ) {
     add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
   }
+}
 
 static public function white_level_menu_callback() {
 
