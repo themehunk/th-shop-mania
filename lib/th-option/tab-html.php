@@ -23,7 +23,8 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
                 </div>
                 <div class="col-2">
                     <div class="th-option-heading">
-                        <h2><?php echo $theme_header['welcome']; ?></h2>
+                        <h2><?php printf( esc_html__( 'Welcome To %s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) ); ?>
+                        </h2>
                         <span><?php echo $theme_header['welcome_desc']; ?></span>
                     </div>
                     <span class="version"><?php echo $theme_header['v']; ?></span>

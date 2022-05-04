@@ -22,24 +22,34 @@ class Th_Shop_Mania_theme_option
   function __construct()
   {
     add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
-    add_action('admin_menu', array($this, 'menu_tab'));
+    add_action('admin_menu', array($this, 'menu_tab'),99);
     
-    self::save_settings();
+    // self::save_settings();
     // AJAX.
     add_action('wp_ajax_th_activeplugin', array($this, 'th_activeplugin'));
     add_action('wp_ajax_default_home', array($this, 'default_home'));
-    add_action('after_switch_theme',__CLASS__ . '::activation_reset');  
+    add_action( 'after_setup_theme', __CLASS__ . '::init_admin_settings', 99 );
+      
   }
+   /**
+     * Admin settings init
+     */
+      static public function init_admin_settings() {
+        self::save_settings();
+        add_action('after_switch_theme',__CLASS__ . '::activation_reset');
+      }
   function menu_tab()
   {
-    $menu_title = esc_html__('Get Started with Th Shop Mania Options', 'th-shop-mania');
+    $menu_title = sprintf( esc_html__( 'Get Started with %s Options', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) );
     add_theme_page(esc_html__('Th Shop Mania', 'th-shop-mania'), $menu_title, 'edit_theme_options', 'th_shop_mania_thunk_started', array($this, 'tab_page'));
 
-    // $menu_page_title = '';
-    // $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
-    // $capability     = 'manage_options';
-    // add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
+    $menu_page_title = '';
+    $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
+    $capability     = 'manage_options';
+    if ( class_exists('Th_Shop_Mania_Ext_White_Label_Markup') && Th_Shop_Mania_Ext_White_Label_Markup::show_branding() ) {
+    add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
   }
+}
 
 static public function white_level_menu_callback() {
 
@@ -49,7 +59,7 @@ static public function white_level_menu_callback() {
       $current_slug = str_replace( '-', '_', $current_slug );
 
       $ast_icon           = apply_filters( 'zita_page_top_icon', true );
-      $ast_visit_site_url = apply_filters( 'zita_site_url', 'https://wpzita.com' );
+      $ast_visit_site_url = apply_filters( 'thsm_site_url', 'https://wpzita.com' );
       $ast_wrapper_class  = apply_filters( 'zita_welcome_wrapper_class', array( $current_slug ) );
       $my_theme = wp_get_theme();
       $zta_theme_version = $my_theme->get( 'Version' );

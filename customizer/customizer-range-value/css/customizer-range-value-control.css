@@ -155,3 +155,7 @@ input::-moz-focus-inner, input::-moz-focus-outer {
 .customize-control .responsive-switchers li button:hover { background-color: #c2cbd2; }
 .customize-control .responsive-switchers li button.active { background-color: #13aff0; }
 .customize-control .responsive-switchers li button i { width: auto; height: auto; font-size: inherit; line-height: 18px; }
+
+.customize-control input.range-slider-value{
+	margin-top: 9px;
+}

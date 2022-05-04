@@ -573,9 +573,9 @@ background: #ff3377;
 }
 .gallery-caption {}
 .bypostauthor{}
-/*************/
+/********************/
 /* (3)Pre-loader */
-/*************/
+/********************/
 .th_shop_mania_overlayloader{
     position: fixed;
     top: 0;
@@ -3619,7 +3619,7 @@ section.upsells.products h2,
 .single-product div.product form.cart button.plus {
     display: inline-block;
     float: left;
-    font-size: 18px;
+    font-size: 30px;
     line-height: 56px;
     max-height: 56px;
     text-align: center;
@@ -3630,7 +3630,7 @@ section.upsells.products h2,
 .single-product div.product form.cart button.minus {
     display: inline-block;
     float: left;
-    font-size: 18px;
+    font-size: 30px;
     line-height: 56px;
     max-height: 56px;
     text-align: center;
@@ -4277,7 +4277,7 @@ clear: initial;
 }
 .woocommerce #content div.product .prev_next_buttons a{
 border: 1px solid #eee;
-padding:7px 7px 10px 7px;
+padding: 2px 10px 1px 10px;
 font-size: 16px;
 margin:3px;
 line-height: 21px;
@@ -5634,7 +5634,6 @@ span.product-title{
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px; 
-    border: solid 3px #fff;  
     z-index: 9999;
 }
 #move-to-top:not(.filling){
@@ -6331,7 +6330,7 @@ border-color: #0177B5;
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -9px;
     width:100%;
     height: 2px;
     background:#006799;
@@ -6395,12 +6394,6 @@ border-color: #0177B5;
     -webkit-transform: translateY(10px);
     -moz-transform: translateY(10px);
     transform: translateY(10px);
-}
-.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:hover, 
-.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:focus,
-.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span, 
-.linkeffect-4 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span{
-    color: #006799;
 }
 .linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:hover::before, 
 .linkeffect-4 .sider-inner ul.th-shop-mania-menu > li > a span:focus::before, 
@@ -6561,11 +6554,6 @@ padding:5px 10px;
   -webkit-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 }
-.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:hover,
-.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a,
-.linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.menu-active > a{
-  color: #006799;
-}
 .linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:hover:before,
 .linkeffect-7 .sider-inner ul.th-shop-mania-menu > li > a:hover:after,
 .linkeffect-7 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a:before,
@@ -6599,11 +6587,6 @@ position:relative;
 .linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:after{
   bottom: -2px;
   right: 0;
-}
-.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:hover,
-.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.current-menu-item > a span,
-.linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span{
-  color:#006799;
 }
 .linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:hover:before,
 .linkeffect-8 .sider-inner ul.th-shop-mania-menu > li > a span:hover:after,

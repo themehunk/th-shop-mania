@@ -32,6 +32,7 @@ get_template_part('customizer/extend-customizer/class-th-shop-mania-wp-customize
 get_template_part('customizer/customizer-radio-image/class/class-th-shop-mania-customize-control-radio-image');
 get_template_part('customizer/customizer-range-value/class/class-th-shop-mania-customizer-range-value-control');
 get_template_part('customizer/customizer-toggle/class-th-shop-mania-toggle-control');
+get_template_part('customizer/pro-button/class-customize');
 get_template_part('customizer/custom-customizer');
 get_template_part('customizer/customizer');
 }

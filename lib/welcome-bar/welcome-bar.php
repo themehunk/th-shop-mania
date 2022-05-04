@@ -17,13 +17,13 @@ function th_shop_mania_started_admin_notice() {
       <h1>
         <?php
         /* translators: %1$s: theme name, %2$s theme version */
-        printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'th-shop-mania' ), esc_html( $theme_data->Name ), esc_html( $theme_data->Version ) );
+        printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) );
         ?>
       </h1>
       <p>
         <?php
         /* translators: %1$s: theme name, %2$s link */
-        printf( __( 'Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'th-shop-mania' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=th_shop_mania_thunk_started' ) ) );
+        printf( __( 'Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_url( admin_url( 'themes.php?page=th_shop_mania_thunk_started' ) ) );
         printf( '<a href="%1$s" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>', '?' . esc_html( $theme_data->get( 'TextDomain' ) ) . '_notice_ignore=0' );
         ?>
       </p>
@@ -31,7 +31,7 @@ function th_shop_mania_started_admin_notice() {
         <a href="<?php echo esc_url( admin_url( 'themes.php?page=th_shop_mania_thunk_started' ) ) ?>" class="button button-primary button-hero" style="text-decoration: none;">
           <?php
           /* translators: %s theme name */
-          printf( esc_html__( 'Get started with %s', 'th-shop-mania' ), esc_html( $theme_data->Name ) )
+          printf( esc_html__( 'Get started with %s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) )
           ?>
         </a>
         
