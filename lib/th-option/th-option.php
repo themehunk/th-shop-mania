@@ -9,7 +9,7 @@ class Th_Shop_Mania_theme_option
      * @since 1.0
      * @var array $menu_page_title
      */
-    static public $menu_page_title = 'Zita Theme';
+    static public $menu_page_title = 'Th Shop Mania';
 
     /**
      * Current Slug
@@ -58,21 +58,21 @@ static public function white_level_menu_callback() {
       $active_tab   = str_replace( '_', '-', $current_slug );
       $current_slug = str_replace( '-', '_', $current_slug );
 
-      $ast_icon           = apply_filters( 'zita_page_top_icon', true );
-      $ast_visit_site_url = apply_filters( 'thsm_site_url', 'https://wpzita.com' );
-      $ast_wrapper_class  = apply_filters( 'zita_welcome_wrapper_class', array( $current_slug ) );
+      $ast_icon           = apply_filters( 'th_shop_mania_page_top_icon', true );
+      $ast_visit_site_url = apply_filters( 'thsm_site_url', 'https:/themehunk.com' );
+      $ast_wrapper_class  = apply_filters( 'th_shop_mania_welcome_wrapper_class', array( $current_slug ) );
       $my_theme = wp_get_theme();
       $zta_theme_version = $my_theme->get( 'Version' );
             
       ?>
-            <div class="zitastarter-page-content">  
-            <div class="zitastarter-container">
+            <div class="thsmstarter-page-content">  
+            <div class="thsmstarter-container">
       <div class="zta-menu-page-wrapper wrap zta-clear <?php echo esc_attr( implode( ' ', $ast_wrapper_class ) ); ?>">
-         <div class="zitastarter-header">
+         <div class="thsmstarter-header">
             <header>
                 <div class="logo-wrap">
                     <div class="logo"></div>
-                    <span class="zita-theme-version"><?php echo  esc_html(self::$menu_page_title.' '.$zta_theme_version); ?></span>
+                    <span class="thsm-theme-version"><?php echo  esc_html(self::$menu_page_title.' '.$zta_theme_version); ?></span>
                 </div>
                 
             </header>
@@ -80,7 +80,7 @@ static public function white_level_menu_callback() {
             </div>  
       <?php 
 
-      do_action( 'zita_menu_white_label_action' ); ?>
+      do_action( 'th_shop_mania_menu_white_label_action' ); ?>
       </div>
        </div>
      </div>
@@ -100,7 +100,7 @@ static public function white_level_menu_callback() {
       }
 
       // Let extensions hook into saving.
-      do_action( 'zita_admin_settings_save' );
+      do_action( 'th_shop_mania_admin_settings_save' );
     }
 
     /**
@@ -113,21 +113,21 @@ static public function white_level_menu_callback() {
       flush_rewrite_rules();
 
       if ( is_network_admin() ) {
-        $branding = get_site_option( '_zita_ext_white_label' );
+        $branding = get_site_option( '_th_shop_mania_ext_white_label' );
       } else {
-        $branding = get_option( '_zita_ext_white_label' );
+        $branding = get_option( '_th_shop_mania_ext_white_label' );
       }
 
-      if ( isset( $branding['zita-agency']['hide_branding'] ) && false != $branding['zita-agency']['hide_branding'] ) {
+      if ( isset( $branding['th-shop-mania-agency']['hide_branding'] ) && false != $branding['th-shop-mania-agency']['hide_branding'] ) {
 
-        $branding['zita-agency']['hide_branding'] = false;
+        $branding['th-shop-mania-agency']['hide_branding'] = false;
 
         if ( is_network_admin() ) {
 
-          update_site_option( '_zita_ext_white_label', $branding );
+          update_site_option( '_th_shop_mania_ext_white_label', $branding );
 
         } else {
-          update_option( '_zita_ext_white_label', $branding );
+          update_option( '_th_shop_mania_ext_white_label', $branding );
         }
       }
     }

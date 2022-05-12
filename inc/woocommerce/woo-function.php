@@ -440,14 +440,7 @@ function shop_customization()
 
 
   // // ========================+++prev+++========================
-  // add_action( 'woocommerce_before_shop_loop_item', 'zita_woo_shop_thumbnail_wrap_start', 6 );
-  // add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_show_product_loop_sale_flash', 9 );
-  // add_action( 'woocommerce_after_shop_loop_item', 'zita_woo_shop_thumbnail_wrap_end', 8 );
-  // remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-  // /**
-  //  * Shop Page Product Content Sorting
-  //  */
-  // add_action( 'woocommerce_after_shop_loop_item', 'zita_woo_woocommerce_shop_product_content' );
+
 }
 if (!function_exists('th_shop_mania_woo_shop_product_price')) {
   function th_shop_mania_woo_shop_product_price($product)

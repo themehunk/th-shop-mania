@@ -3158,6 +3158,7 @@ border: 1px solid transparent;
 .woocommerce ul.products li.product .button{
   margin: 0;
 }
+
 /****************************/
 /*woocommerce product style*/
 /****************************/
@@ -6633,6 +6634,7 @@ position:relative;
 header.zta-transparent-header {
   position: absolute;
   width: 100%;
+  left: 0;
   z-index: 999;
 }
 header.zta-transparent-header.shrink {
@@ -6686,6 +6688,12 @@ header.zta-transparent-header.shrink {
 }
 .dokan-store-products-filter-area .orderby-search{
   margin-top: 21px;
+}
+.elemento-quickview-wrapper .left-content img{
+  margin: 0 auto;
+}
+.woocommerce a.th-product-compare-btn.button.loading::after{
+  top: initial;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
