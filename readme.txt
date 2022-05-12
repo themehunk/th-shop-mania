@@ -4,13 +4,13 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.0
 Requires PHP: 5.4
 Tested up to: 5.9
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 
 == Description ==
-Th Shop Mania is a cool and modern eCommerce WordPress theme with lots of great features to sell your products online. It comes with uniquely outstanding and visually appealing Homepage sections. Ready to import pre made demos which makes your web designing more easy. It has Product sections to showcase your product in your homepage, Sections like – Tabbed Product carousel, Woo category section, Product Carousel, Product list carousel etc. Other than these sections theme has Frontpage Header Slider layout, Ribbon section with Image & Video, Banner layouts and Service section. Theme is integrated with Th advanced Product Search, Th Variation Swatches plugin and lead form builder.  WooCommerce plugin integration helps you promote your fashion items in style and sell them with ease.
+Th Shop mania is an Elementor based eCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
 
 For more information about Theme https://www.themehunk.com
 
@@ -23,6 +23,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= Version 1.0.8 =
+* Issues resolved.
+
 = Version 1.0.7 =
 * Style Issues resolved.
 
@@ -51,8 +54,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= Version 1.0.7 =
-* Style Issues resolved.
+= Version 1.0.8 =
+* Issues resolved.
 
 == Resources ==
  
