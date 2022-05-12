@@ -14,11 +14,12 @@
     width: 100%;
     margin-bottom: 40px;
     padding:0;
-    background: #fff;
+    background: transparent;
     z-index: -1;
 }
 #alm-quick-view-content .slides img{
   width:100%!important;
+  margin: 0 auto;
 }
 #alm-quick-view-content .product_meta > span {
     display: table-cell;
@@ -29,6 +30,9 @@
 .woocommerce .alm-woo-product .quantity .qty{
 height:38px;
 border:0;
+}
+#alm-quick-view-content .product_meta > span a{
+  color: inherit;
 }
 html.alm-quick-view-is-open,
 html.alm-quick-view-is-open body {
@@ -319,7 +323,7 @@ body #alm-quick-view-modal div.product .flex-viewport {
   #alm-quick-view-content div.summary form.cart {
     position: relative;
     bottom: 0;
-    background: #fff;
+    background: transparent;
     margin: 0;
     padding: 20px 0;
     width: 100%;

@@ -3,8 +3,8 @@ Theme Name: Th Shop Mania
 Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
-Description: Th Shop Mania is a Free WooCommerce theme for creating clean online stores for your business. It has a stylish Homepage design for listing premium products and high-end experiences. Theme comes with powerful functionality like Section On/Off, Header & Footer layouts, Product styles, Ajax live search, Offcanvas sidebar, Quick view, Pagination options for Shop & Blog page, multiple widgets for sidebar & footer, Color & background options, etc. Theme also supports many Product sections to showcase your product in your homepage, Sections like - Tabbed Product carousel, Woo category section, Product Carousel, Product list carousel. Other than these sections theme has Top Slider layout, Ribbon section with Image & Video, Banner layouts and Service section. Theme is integrated with WooCommerce & Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store. If you’re looking for a highly flexible e-commerce theme, then Th Shop Mania could have everything you need.
-Version: 1.0.7
+Description: Th Shop mania is an Elementor based eCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
+Version: 1.0.8
 Requires at least: 5.0
 Tested up to: 5.9
 Requires PHP: 5.4
@@ -3158,6 +3158,7 @@ border: 1px solid transparent;
 .woocommerce ul.products li.product .button{
   margin: 0;
 }
+
 /****************************/
 /*woocommerce product style*/
 /****************************/
@@ -6633,6 +6634,7 @@ position:relative;
 header.zta-transparent-header {
   position: absolute;
   width: 100%;
+  left: 0;
   z-index: 999;
 }
 header.zta-transparent-header.shrink {
@@ -6686,6 +6688,12 @@ header.zta-transparent-header.shrink {
 }
 .dokan-store-products-filter-area .orderby-search{
   margin-top: 21px;
+}
+.elemento-quickview-wrapper .left-content img{
+  margin: 0 auto;
+}
+.woocommerce a.th-product-compare-btn.button.loading::after{
+  top: initial;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
