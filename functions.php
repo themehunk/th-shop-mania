@@ -237,17 +237,6 @@ add_action( 'wp_enqueue_scripts', 'th_shop_mania_load_dashicons_front_end' );
 function th_shop_mania_load_dashicons_front_end(){
   wp_enqueue_style( 'dashicons' );
 }
-// theme update checker
- require plugin_dir_path(__FILE__).'lib/update-checker/update-checker.php';
-
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/themehunk/th-shop-mania',
-	__FILE__,
-	'th-shop-mania'
-);
-
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
 
 /**
  * Load init.
