@@ -170,7 +170,7 @@ static public function white_level_menu_callback() {
   {
     $text_array = $this->tab_constant();
     $theme_header = $text_array['header'];
-    include('tab-html.php');
+    require_once('tab-html.php');
   }
 
 
