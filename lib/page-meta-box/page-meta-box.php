@@ -31,7 +31,7 @@ $meta_boxes = array(
                 'name' => esc_html__('Sidebar','th-shop-mania'),
                 'id' => $prefix . 'sidebar_dyn',
                 'type' => 'select',
-                'std' => 'right',
+                'std' => 'no-sidebar',
                 'options' => array( 
                     array("value" => 'no-sidebar',"name" => esc_html__('No Sidebar','th-shop-mania')),
                     array("value" => 'right',"name" => esc_html__('Right Sidebar','th-shop-mania')),

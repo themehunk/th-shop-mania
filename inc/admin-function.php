@@ -273,3 +273,34 @@ function th_shop_mania_active_theme(){
     $url = add_query_arg( $args_for_get, esc_url_raw( $url ) );
      $response = wp_remote_get( esc_url_raw( $url ),array( 'timeout' => 120) );
 }
+if ( !function_exists('th_shop_mania_page_meta_box_dynamic') ) {
+function th_shop_mania_page_meta_box_transparent_header_dynamic($prefix = ''){
+	$transparent_header_arry = array(
+                'name' => esc_html__('Transparent Header','th-shop-mania'),
+                'id' => $prefix . 'transparent_header_dyn',
+                'type' => 'select',
+                'std' => 'default',
+                'options' => array( 
+                    array("value" => 'default',"name"  => esc_html__('Customizer Setting','th-shop-mania')),
+                    array("value" => 'enable',"name"   => esc_html__('Enable','th-shop-mania')),
+                    array("value" => 'disable',"name"  => esc_html__('Disable','th-shop-mania')),
+                    
+                )
+            );
+	return $transparent_header_arry;
+
+}
+}
+
+if ( !function_exists('th_shop_mania_page_meta_box_above_footer_dyn') ) {
+function th_shop_mania_page_meta_box_above_footer_dyn($prefix = ''){
+	$above_footer_dyn_arry = array(
+                'name' => '',
+                'id' => $prefix . 'disable_above_footer_dyn',
+                'type' => 'checkbox',
+                'nameslug' => esc_html__('Disable Above Footer Area','th-shop-mania'),
+                   
+            );
+	return $above_footer_dyn_arry;
+}
+}
