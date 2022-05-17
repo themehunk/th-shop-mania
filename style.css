@@ -3978,6 +3978,9 @@ margin:0px 0px 0px 10px;
 .comment-form  .form-submit{
   margin-top:20px;
 }
+.comment-form select{
+  background: transparent;
+}
 .comment-respond{
   display: flow-root;
 }
@@ -6692,8 +6695,16 @@ header.zta-transparent-header.shrink {
 .elemento-quickview-wrapper .left-content img{
   margin: 0 auto;
 }
-.woocommerce a.th-product-compare-btn.button.loading::after{
+.theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading{
+  padding: 0;
+}
+
+.theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading::after{
   top: initial;
+  right: initial;
+  left: initial;
+  padding: 0;
+  font-size: 16px;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{

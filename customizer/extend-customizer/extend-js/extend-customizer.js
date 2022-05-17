@@ -6,7 +6,7 @@
 ( function( $ ) {
 
   var api = wp.customize;
-
+    
   api.bind( 'pane-contents-reflowed', function() {
 
     // Reflow sections
