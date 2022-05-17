@@ -97,7 +97,7 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 
             <div id="Free-Vs-Pro" class="tabcontent <?php echo esc_attr($tabActiveFreePRo) ?>">
                 <div class="rp-two-column">
-                    <?php include('free-pro.php'); ?>
+                    <?php require_once('free-pro.php'); ?>
 
                 </div>
             </div>
@@ -112,7 +112,7 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 
             <div id="Help" class="tabcontent <?php echo esc_attr($tabActiveHelp) ?>">
                 <div class="rp-two-column">
-                    <?php include('need-help.php'); ?>
+                    <?php require_once('need-help.php'); ?>
 
                 </div>
             </div>
@@ -124,7 +124,7 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 
         <div class="sidebar-wrap">
             <div class="sidebar">
-                <?php include('sidebar.php'); ?>
+                <?php require_once('sidebar.php'); ?>
             </div>
         </div>
 
