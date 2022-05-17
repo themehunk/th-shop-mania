@@ -31,7 +31,7 @@ $meta_boxes = array(
                 'name' => esc_html__('Sidebar','th-shop-mania'),
                 'id' => $prefix . 'sidebar_dyn',
                 'type' => 'select',
-                'std' => 'right',
+                'std' => 'no-sidebar',
                 'options' => array( 
                     array("value" => 'no-sidebar',"name" => esc_html__('No Sidebar','th-shop-mania')),
                     array("value" => 'right',"name" => esc_html__('Right Sidebar','th-shop-mania')),
@@ -87,13 +87,7 @@ $meta_boxes = array(
                 'nameslug' => esc_html__('Disable Footer Widget Area','th-shop-mania'),
                    
             ),
-               array(
-                'name' => '',
-                'id' => $prefix . 'disable_above_footer_dyn',
-                'type' => 'checkbox',
-                'nameslug' => esc_html__('Disable Above Footer Area (Pro)','th-shop-mania'),
-                   
-            ),
+
              array(
                 'name' => '',
                 'id' => $prefix . 'disable_footer_widget_dyn',
@@ -115,7 +109,20 @@ $meta_boxes = array(
                 'nameslug' => esc_html__('Disable Page Header','th-shop-mania'),
                    
             ),
-             array(
+           
+              
+        )
+    )
+);
+ if (function_exists('th_shop_mania_pro_load_plugin')) {
+$meta_boxes[0]['fields'][] =  array(
+                'name' => '',
+                'id' => $prefix . 'disable_above_footer_dyn',
+                'type' => 'checkbox',
+                'nameslug' => esc_html__('Disable Above Footer Area','th-shop-mania'),
+                   
+            );
+$meta_boxes[0]['fields'][] =    array(
                 'name' => esc_html__('Transparent Header','th-shop-mania'),
                 'id' => $prefix . 'transparent_header_dyn',
                 'type' => 'select',
@@ -126,11 +133,8 @@ $meta_boxes = array(
                     array("value" => 'disable',"name"  => esc_html__('Disable','th-shop-mania')),
                     
                 )
-            ),
-              
-        )
-    )
-);
+            );
+}
 foreach ($meta_boxes as $meta_box){
     $my_box = new th_shop_mania_thMetaDataClass($meta_box);
 }

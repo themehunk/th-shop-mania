@@ -16,6 +16,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
 /********************************************************/
 /* Style Indexing */
 /********************************************************/
@@ -31,10 +32,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* (10)404 page & no-result page */
 /* (12)Header Layouts */
 /*Back to top Start*/
-
-
-
-
 /********************************************************/
 /* */
 /********************************************************/
@@ -164,8 +161,7 @@ h5 {
   font-size: 16px;
   line-height:25px;
 }
-a {
-    
+a {   
     text-decoration: none;
     cursor: pointer;
 }
@@ -184,7 +180,6 @@ embed, iframe, object, video {
 }
 iframe{
 width:100%;
-
 }
 hr{
   -webkit-box-sizing: content-box;
@@ -235,11 +230,9 @@ mark {
   background-color: #eee;
   color: #222;
 }
-
 small {
   font-size: 80%;
 }
-
 sub,
 sup {
   font-size: 75%;
@@ -264,7 +257,7 @@ audio:not([controls]) {
 img {
     border-style: none;
     max-width: 100%;
-        height: auto;
+    height: auto;
 }
 svg:not(:root) {
   overflow: hidden;
@@ -317,7 +310,6 @@ fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
-
 legend {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -328,7 +320,6 @@ legend {
   padding: 0;
   white-space: normal;
 }
-
 progress {
   display: inline-block;
   vertical-align: baseline;
@@ -341,7 +332,6 @@ progress {
 textarea {
   overflow: auto;
 }
-
 [type="checkbox"],
 [type="radio"] {
   -webkit-box-sizing: border-box;
@@ -364,25 +354,20 @@ textarea {
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
 }
-
 details,
 menu {
   display: block;
 }
-
 summary {
   display: list-item;
 }
-
 canvas {
   display: inline-block;
 }
-
 template {
   display: none;
 }
@@ -393,7 +378,6 @@ table {
     margin: 0 0 1.5em;
     width: 100%;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -403,7 +387,6 @@ td, th {
     text-align: left;
     border-width: 0 1px 1px 0;
 }
-
 th,th a,dt,b, strong{
     font-family: 'Jost';font-weight: 700;
     font-weight: 700;
@@ -511,7 +494,6 @@ background: #ff3377;
 }
 /* WordPress Gallery (2)WordPress Gallery 
 ------------------------------------------ */
-
 .gallery {
   margin-left: -0.5em;
   margin-right: -0.5em;  
@@ -560,7 +542,6 @@ background: #ff3377;
 .gallery-columns-9 .gallery-item {
     width: 11.1111%
 }
-
 .gallery-columns-2 .gallery-item:nth-child(2n+1),
 .gallery-columns-3 .gallery-item:nth-child(3n+1),
 .gallery-columns-4 .gallery-item:nth-child(4n+1),
@@ -2562,10 +2543,6 @@ footer .widget.widget_categories ul li{
 .sidebar-content-area .tagcloud {
     padding: 15px;
 }
-/* Sidebar widgets color css */
-#sidebar-primary .woocommerce-Price-amount{
-  color: #ff3377;
-}
 /* Cart Widget */ 
 .widget.woocommerce.widget_shopping_cart li a:first-child{
   left: 100%;
@@ -3978,6 +3955,9 @@ margin:0px 0px 0px 10px;
 .comment-form  .form-submit{
   margin-top:20px;
 }
+.comment-form select{
+  background: transparent;
+}
 .comment-respond{
   display: flow-root;
 }
@@ -4179,6 +4159,7 @@ display:none;
 } 
 .summary .yith-wcwl-wishlistaddedbrowse a, .summary .yith-wcwl-wishlistexistsbrowse a{
   color:#ff3377;
+  margin-left: 0;
 }
 .summary .yith-wcwl-add-to-wishlist .ajax-loading {
 box-shadow: none !important;
@@ -6692,8 +6673,19 @@ header.zta-transparent-header.shrink {
 .elemento-quickview-wrapper .left-content img{
   margin: 0 auto;
 }
-.woocommerce a.th-product-compare-btn.button.loading::after{
+.theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading{
+  padding: 0;
+}
+
+.theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading::after{
   top: initial;
+  right: initial;
+  left: initial;
+  padding: 0;
+  font-size: 16px;
+}
+.widget_search label{
+  display: none;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{

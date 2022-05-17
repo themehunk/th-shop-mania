@@ -133,6 +133,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
       <div class="container">
         <div class="below-header-bar thnk-col-1">
            <div class="below-header-col1">
+            <?php if(class_exists( 'WooCommerce' )){ ?>
               <div class="menu-category-list toogleclose">
               <div class="toggle-cat-wrap">
                   <p class="cat-toggle" tabindex="0">
@@ -147,10 +148,11 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
                     
                   </p>
               </div>
-              <?php if(class_exists( 'WooCommerce' )){
+              <?php 
               th_shop_mania_product_list_categories();
-              } ?>
+              ?>
              </div><!-- menu-category-list -->    
+         <?php } ?>
             </div>
           <div class="below-header-col2">
               <nav>
