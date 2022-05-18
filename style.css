@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Th Shop mania is an Elementor based eCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
-Version: 1.1.0
+Version: 1.1.1
 Requires at least: 5.0
 Tested up to: 5.9
 Requires PHP: 5.4
@@ -3051,6 +3051,13 @@ border: 1px solid transparent;
     color: #ff0052;
     margin: 0 4px 0 0;
     font-size: inherit;
+}
+.th-product-compare-btn.loading .th-icon{
+  -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+.th-product-compare-btn.loading:after{
+  display: none!important;
 }
 .thunk-wishlist .feedback, 
 .thunk-wishlist .yith-wcwl-add-button img {
@@ -6676,7 +6683,9 @@ header.zta-transparent-header.shrink {
 .theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading{
   padding: 0;
 }
-
+.theme-th-shop-mania.woocommerce .th-shop-mania-shop-page-layout-default a.th-product-compare-btn.button.loading{
+  padding: 0 1em;
+}
 .theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading::after{
   top: initial;
   right: initial;

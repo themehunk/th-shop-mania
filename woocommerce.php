@@ -11,7 +11,9 @@ if ( ! class_exists( 'WooCommerce' ) ){
 get_header();
 $shoppage_id = '';
 $id = '';
-    if(class_exists( 'WooCommerce' ) && is_shop()){
+
+    if(class_exists( 'WooCommerce' ) && is_shop() || class_exists( 'WooCommerce' ) && is_product_category()){
+            // To make woocommerce archive or category page same as Woocommerce Shop Page
 $shoppage_id = get_option( 'woocommerce_shop_page_id' );
 $id = $shoppage_id;
 $th_shop_mania_sidebar = get_post_meta( $shoppage_id, 'th_shop_mania_sidebar_dyn', true );
@@ -22,11 +24,7 @@ elseif(class_exists( 'WooCommerce' ) && is_product() && get_theme_mod('th_shop_m
 elseif(class_exists( 'WooCommerce' ) && is_product() && (get_theme_mod('th_shop_mania_product_single_sidebar_disable',false)) ==true){
     $th_shop_mania_sidebar = 'no-sidebar';
 }
-elseif(class_exists( 'WooCommerce' ) && is_product_category()){
-    // To make woocommerce archive or category page same as Woocommerce Shop Page
-$th_shop_mania_sidebar = get_post_meta( $shoppage_id, 'th_shop_mania_sidebar_dyn', true );
-}
-  else{
+else{
 $th_shop_mania_sidebar = 'right';
 } 
 $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_enable',false);
@@ -39,7 +37,7 @@ if (class_exists('WooCommerce') && is_product()) {
           <div class="content-wrap" >
         			<div class="main-area">
                  <?php 
-                if($th_shop_mania_sidebar != 'no-sidebar' ):
+                if($th_shop_mania_sidebar !== 'no-sidebar' ):
                 get_sidebar();
                 endif;
                  ?><!-- end sidebar-primary  sidebar-content-area-->
