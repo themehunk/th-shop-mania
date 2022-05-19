@@ -6,7 +6,6 @@ jQuery(document).ready(function($){
 
 	    var alm_qv_loader_url   = thlocalizeqv.qv_loader,
 		alm_quick_view_bg   = $(document).find( '.alm-quick-view-bg' ),
-
 		alm_qv_modal    	= $(document).find( '#alm-quick-view-modal' ),
 		alm_qv_content  	= alm_qv_modal.find( '#alm-quick-view-content' ),
 		alm_qv_close_btn 	= alm_qv_modal.find( '#alm-quick-view-close' ),
@@ -212,7 +211,7 @@ jQuery(document).ready(function($){
 
 		return (w1 - w2); 
 	}
-
+	
 	window.addEventListener("resize", function(event){
 		alm_update_summary_height();
 	});

@@ -6,11 +6,11 @@
  * @return mixed|string
  */
 function th_shop_mania_customize_register( $wp_customize ){
-require th_shop_mania_THEME_DIR . 'customizer/section/woo/single-product.php';	
+require TH_SHOP_MANIA_THEME_DIR . 'customizer/section/woo/single-product.php';	
 //site identity
-require th_shop_mania_THEME_DIR . 'customizer/set-identity.php';
+require TH_SHOP_MANIA_THEME_DIR . 'customizer/set-identity.php';
 //Color Option
-require th_shop_mania_THEME_DIR . 'customizer/section/color/global-color.php';
+require TH_SHOP_MANIA_THEME_DIR . 'customizer/section/color/global-color.php';
 
 }
 add_action('customize_register','th_shop_mania_customize_register');
