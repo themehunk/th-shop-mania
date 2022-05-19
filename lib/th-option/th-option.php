@@ -40,7 +40,7 @@ class Th_Shop_Mania_theme_option
       }
   function menu_tab()
   {
-    $menu_title = sprintf( esc_html__( 'Get Started with %s Options', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) );
+    $menu_title = sprintf( esc_html__( '%s Options', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'TH Shop Mania', 'th-shop-mania' ) ) );
     add_theme_page(esc_html__('Th Shop Mania', 'th-shop-mania'), $menu_title, 'edit_theme_options', 'th_shop_mania_thunk_started', array($this, 'tab_page'));
 
     $menu_page_title = '';
