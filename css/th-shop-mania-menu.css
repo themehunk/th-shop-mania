@@ -204,12 +204,12 @@ ul[data-menu-style="accordion"] > li > a > .arrow:before {
     width: 40px;
     text-align: center;
     float: right;
-    content: "\f347";
-    font-family: 'dashicons';
+    content: "\f107";
+    font-family: th-icon;
 }
 ul[data-menu-style="accordion"] li.menu-active > a > .arrow:before {
-    content: "\f343" !important;
-    font-family: 'dashicons';
+    content: "\f106" !important;
+    font-family: th-icon;
 }
 ul[data-menu-style="accordion"] > li > ul.sub-menu {
     position: static;
