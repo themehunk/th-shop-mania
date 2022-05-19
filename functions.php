@@ -89,7 +89,6 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
 				'video'          => false,
 		) 
 
-
 		) );
 		// Add support for Custom Background.
          $args = array(
@@ -218,9 +217,7 @@ function th_shop_mania_scripts(){
 	wp_add_inline_style('th-shop-mania-style', th_shop_mania_custom_style());
 	
     //enqueue js
-    wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
-    wp_enqueue_script( 'jquery-ui-autocomplete',array( 'jquery' ),'',true );
-    wp_enqueue_script('imagesloaded');
+    // wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
     wp_enqueue_script('th-shop-mania-menu-js', th_shop_mania_THEME_URI .'js/th-shop-mania-menu.js', array( 'jquery' ), '1.0.0', true );
     wp_enqueue_script('th-shop-mania-accordian-menu-js', th_shop_mania_THEME_URI .'js/th-shop-mania-accordian-menu.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , true );
 
@@ -230,29 +227,16 @@ function th_shop_mania_scripts(){
 	}
 }
 add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts' );
-/********************************************************/
-// Adding Dashicons in WordPress Front-end
-/********************************************************/
-add_action( 'wp_enqueue_scripts', 'th_shop_mania_load_dashicons_front_end' );
-function th_shop_mania_load_dashicons_front_end(){
-  wp_enqueue_style( 'dashicons' );
-}
-
 /**
  * Load init.
  */
 require_once trailingslashit(th_shop_mania_THEME_DIR).'inc/init.php';
 
-
-
 //custom function conditional check for blog page
 function th_shop_mania_is_blog (){
     return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
 }
-
-
 if ( ! function_exists( 'wp_body_open' ) ) {
-
 	/**
 	 * Shim for wp_body_open, ensuring backward compatibility with versions of WordPress older than 5.2.
 	 */

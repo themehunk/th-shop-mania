@@ -3,8 +3,8 @@ Theme Name: Th Shop Mania
 Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
-Description: Th Shop mania is an Elementor based eCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
-Version: 1.1.1
+Description: Th Shop mania is a builder based free WooCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
+Version: 1.1.2
 Requires at least: 5.0
 Tested up to: 5.9
 Requires PHP: 5.4
@@ -1784,12 +1784,12 @@ display:none;
 }
 .no-sidebar .toggle-icon:before,.toogleclose .toggle-icon:before,
 .toggle-icon.icon-circle-arrow-down:before{
-    content: "\f347";
+    content: "\f107";
 }
 .toggle-icon:before,
 .no-sidebar .toggle-icon.icon-circle-arrow-down:before,
 .toogleclose .toggle-icon.icon-circle-arrow-down:before{
-    content: "\f347";
+    content: "\f107";
 }
 .toggle-icon:before,
 .toggle-icon.icon-circle-arrow-down:before,
@@ -1797,7 +1797,7 @@ display:none;
     height: auto;
     text-shadow: none;
     width: 10px;
-    font-family: "dashicons";
+    font-family: th-icon;
 }
 .cat-icon span {
     display: block !important;
@@ -6231,6 +6231,10 @@ border-color: #0177B5;
 /*============================================================================
 *  product layouts style and layout 5
 ==============================================================================*/
+.th-shop-mania-site .linkeffect-none .sider-inner ul.th-shop-mania-menu > li > a span::after,
+.th-shop-mania-site .linkeffect-none .sider-inner ul.th-shop-mania-menu > li > a span::before{
+  background: transparent;
+}
 /********************/
 /*effect-1*/
 /***********************/
@@ -6277,7 +6281,7 @@ border-color: #0177B5;
 /***********************/
 .linkeffect-2 .sider-inner ul.th-shop-mania-menu > li > a::before {
     position: absolute;
-    top: 55%;
+    top: 70%;
     left: 50%;
     color: transparent;
     content: "•";
@@ -6826,6 +6830,10 @@ color:#1c1d1e;
 justify-content: flex-start;
 margin-top: 5px;
 }
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span::after,
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span::before{
+    background: transparent;
+ }
 /********************/
 /*product style*/
 /********************/
@@ -7249,8 +7257,8 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 .sidebar-content-area .widget-title:after,
 .sidebar-content-area .wp-block-group h2:after{
   position: absolute;
-  font-family: 'dashicons';
-  content: "\f347";
+  font-family: th-icon;
+  content: "\f107";
   right: 10px;
 }
 .sidebar-content-area .widget-title.open:after,
@@ -7286,8 +7294,8 @@ border:none;
 }
 .menu-category-list ul[data-menu-style="accordion"] > li > a > .arrow:before {
     float: right;
-    content: "\f345";
-    font-family: dashicons;
+    content: "\f105";
+    font-family: th-icon;
 }
 .menu-category-list ul[data-menu-style="accordion"] span.arrow {
     position: absolute;
@@ -7311,8 +7319,8 @@ right:15px
     height: auto;
     text-shadow: none;
     width: 10px;
-    font-family: dashicons;    
-   content: "\f347";
+    font-family: th-icon;
+   content: "\f107";
 }
 .sidebar-widget-wrap{
   display:none;
