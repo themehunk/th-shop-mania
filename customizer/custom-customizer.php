@@ -507,13 +507,14 @@ $wp_customize->register_section_type( 'th_shop_mania_Toggle_Control' );
 }
 add_action('customize_register','th_shop_mania_customize_function_register');
 function th_shop_mania_customizer_script_registers(){
-  wp_enqueue_script( 'open_customizer_script', th_shop_mania_THEME_URI .'customizer/extend-customizer/extend-js/extend-customizer.js', array("jquery"), '', true );  
+  wp_enqueue_script( 'open_customizer_script', TH_SHOP_MANIA_THEME_URI .'customizer/extend-customizer/extend-js/extend-customizer.js', array("jquery"), '', true );  
 }
 add_action('customize_controls_enqueue_scripts', 'th_shop_mania_customizer_script_registers' );
 
 // style
 function th_shop_mania_customizer_style_registers(){
-  wp_enqueue_style('th_shop_mania_customizer_styles', th_shop_mania_THEME_URI .'customizer/extend-customizer/extend-css/extend-customizer.css');
+    
+  wp_enqueue_style('th_shop_mania_customizer_styles', TH_SHOP_MANIA_THEME_URI .'customizer/extend-customizer/extend-css/extend-customizer.css');
 }
 add_action('customize_controls_print_styles', 'th_shop_mania_customizer_style_registers');
 

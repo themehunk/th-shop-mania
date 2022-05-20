@@ -13,8 +13,8 @@
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
 define( 'TH_SHOP_MANIA_THEME_VERSION','1.0.0');
-define( 'th_shop_mania_THEME_DIR', get_template_directory() . '/' );
-define( 'th_shop_mania_THEME_URI', get_template_directory_uri() . '/' );
+define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
+define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -144,18 +144,14 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'active_filename' => 'yith-woocommerce-wishlist/init.php',
              ),
             
-
-        ) );
-           
+        ) );         
         // Import Data Content plugins
         add_theme_support( 'import-demo-content', array(
              'hunk-companion' => array(
                 'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
                  'img' => 'icon-128x128.png',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
-            ),
-
-           
+            ),    
 
         ));
 remove_theme_support( 'widgets-block-editor' );
@@ -208,20 +204,20 @@ add_action( 'widgets_init', 'th_shop_mania_widgets_init' );
  */
 function th_shop_mania_scripts(){
 	// enqueue css
-	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$dir_name    = defined( 'SCRIPT_DEBUG' ) && ( SCRIPT_DEBUG ) ? 'unminified' : 'minified';
+	$prefix = defined( 'SCRIPT_DEBUG' ) && ( SCRIPT_DEBUG ) ? '' : '.min';
 	wp_enqueue_style( 'jost-fonts', 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap', '', TH_SHOP_MANIA_THEME_VERSION );
-	wp_enqueue_style( 'th-icon', th_shop_mania_THEME_URI . 'third-party/fonts/th-icon/style.css', '', TH_SHOP_MANIA_THEME_VERSION );
-	wp_enqueue_style( 'th-shop-mania-menu', th_shop_mania_THEME_URI . 'css/th-shop-mania-menu.css','',TH_SHOP_MANIA_THEME_VERSION);	
+	wp_enqueue_style( 'th-icon', TH_SHOP_MANIA_THEME_URI . 'third-party/fonts/th-icon/style.css', '', TH_SHOP_MANIA_THEME_VERSION );
+	wp_enqueue_style( 'th-shop-mania-menu', TH_SHOP_MANIA_THEME_URI . 'css/th-shop-mania-menu.css','',TH_SHOP_MANIA_THEME_VERSION);	
 
-	wp_enqueue_style( 'th-shop-mania-style', get_stylesheet_uri(), array(), TH_SHOP_MANIA_THEME_VERSION );
+	wp_enqueue_style('th-shop-mania-style', get_template_directory_uri() . '/style.css', array(), TH_SHOP_MANIA_THEME_VERSION);
 	wp_add_inline_style('th-shop-mania-style', th_shop_mania_custom_style());
 	
     //enqueue js
-    // wp_enqueue_script("jquery-effects-core",array( 'jquery' ));
-    wp_enqueue_script('th-shop-mania-menu-js', th_shop_mania_THEME_URI .'js/th-shop-mania-menu.js', array( 'jquery' ), '1.0.0', true );
-    wp_enqueue_script('th-shop-mania-accordian-menu-js', th_shop_mania_THEME_URI .'js/th-shop-mania-accordian-menu.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , true );
+    wp_enqueue_script('th-shop-mania-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-menu.js', array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_script('th-shop-mania-accordian-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-accordian-menu.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , true );
 
-    wp_enqueue_script( 'th-shop-mania-custom-js', th_shop_mania_THEME_URI .'js/th-shop-mania-custom.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , true );
+    wp_enqueue_script( 'th-shop-mania-custom-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-custom.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -230,7 +226,7 @@ add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts' );
 /**
  * Load init.
  */
-require_once trailingslashit(th_shop_mania_THEME_DIR).'inc/init.php';
+require_once trailingslashit(TH_SHOP_MANIA_THEME_DIR).'inc/init.php';
 
 //custom function conditional check for blog page
 function th_shop_mania_is_blog (){

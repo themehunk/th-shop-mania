@@ -81,8 +81,8 @@ class Th_Shop_Mania_WP_Customizer_Range_Value_Control extends WP_Customize_Contr
 	 * @access public
 	 */
 	public function enqueue(){
-		wp_enqueue_script( 'customizer-range-value-control', th_shop_mania_THEME_URI . 'customizer/customizer-range-value/js/customizer-range-value-control.js', array( 'jquery', 'customize-base' ), '1.0.0', true );
-		wp_enqueue_style( 'customizer-range-value-control', th_shop_mania_THEME_URI . 'customizer/customizer-range-value/css/customizer-range-value-control.css', array(), '1.0.0' );
+		wp_enqueue_script( 'customizer-range-value-control', TH_SHOP_MANIA_THEME_URI . 'customizer/customizer-range-value/js/customizer-range-value-control.js', array( 'jquery', 'customize-base' ), '1.0.0', true );
+		wp_enqueue_style( 'customizer-range-value-control', TH_SHOP_MANIA_THEME_URI . 'customizer/customizer-range-value/css/customizer-range-value-control.css', array(), '1.0.0' );
 	}
 	/**
 	 * Handles input value.

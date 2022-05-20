@@ -151,9 +151,6 @@ function th_shop_mania_mobile_menu_wrap(){
 echo '<div class="th-shop-mania-mobile-menu-wrapper"></div>';
 }
 add_action( 'wp_footer', 'th_shop_mania_mobile_menu_wrap' );
-
-
-
 /*************************/
 //Get Page Title
 /*************************/
@@ -178,7 +175,6 @@ function th_shop_mania_get_page_title($id=''){ ?>
 			<?php } ?>
    <?php 
 }
-
 /******************/
 // Page Title
 /******************/
@@ -251,8 +247,6 @@ function th_shop_mania_add_media_query( $dimension, $custom_css ){
       return $custom_css;
 }
 endif;
-
-
 if ( !function_exists('th_shop_mania_is_json') ) {
 function th_shop_mania_is_json( $string ){
     return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;

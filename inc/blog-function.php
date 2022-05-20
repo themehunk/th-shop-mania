@@ -6,7 +6,6 @@
  * @copyright   Copyright (c) 2018, ThemeHunk
  * @since       ThemeHunk 1.0.0
  */
-
         /**
 		 * Excerpt count.
 		 *
@@ -47,24 +46,6 @@ if ( ! function_exists( 'th_shop_mania_the_excerpt' ) ){
 		</div>	
 	<?php }
 }
-
-// /**
-// 		 * Read more text.
-// 		 *
-// 		 * @param string $text default read more text.
-// 		 * @return string read more text
-// 		 */
-// 		function th_shop_mania_read_more_text( $text ) {
-
-// 			$read_more = esc_html(get_theme_mod( 'th_shop_mania_blog_read_more_txt' ));
-
-// 			if ( '' != $read_more ) {
-// 				$text = $read_more;
-// 			}
-
-// 			return $text;
-// 		}
-//       add_filter( 'open_post_read_more', 'th_shop_mania_read_more_text');
 /**
  * Function to get Read More Link of Post
  *

@@ -37,8 +37,8 @@ class th_shop_mania_WP_Customize_Control_Radio_Image extends WP_Customize_Contro
      */
     public function enqueue() {
         wp_enqueue_script( 'jquery-ui-button' );
-		wp_enqueue_script( 'th-shop-mania-radio-customize-controls', th_shop_mania_THEME_URI . 'customizer/customizer-radio-image/radio-image.js', array( 'jquery' ), '1.0.0', true  );
-		wp_enqueue_style( 'th-shop-mania-radio-customize-controls', th_shop_mania_THEME_URI . 'customizer/customizer-radio-image/radio-image.css' );
+		wp_enqueue_script( 'th-shop-mania-radio-customize-controls', TH_SHOP_MANIA_THEME_URI . 'customizer/customizer-radio-image/radio-image.js', array( 'jquery' ), '1.0.0', true  );
+		wp_enqueue_style( 'th-shop-mania-radio-customize-controls', TH_SHOP_MANIA_THEME_URI . 'customizer/customizer-radio-image/radio-image.css' );
     }
 
     /**
