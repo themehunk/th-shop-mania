@@ -515,6 +515,7 @@ add_action('customize_controls_enqueue_scripts', 'th_shop_mania_customizer_scrip
 function th_shop_mania_customizer_style_registers(){
     
   wp_enqueue_style('th_shop_mania_customizer_styles', TH_SHOP_MANIA_THEME_URI .'customizer/extend-customizer/extend-css/extend-customizer.css');
+  wp_enqueue_style('th_shop_mania_customizer_custom_styles', TH_SHOP_MANIA_THEME_URI .'customizer/customizer.css');
 }
 add_action('customize_controls_print_styles', 'th_shop_mania_customizer_style_registers');
 

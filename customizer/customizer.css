@@ -1,0 +1,17 @@
+.customize-pane-parent{
+	background: #FFF;
+}
+#customize-theme-controls .accordion-section-title{
+	background: transparent;
+    margin: 9px 21px;
+    color: #111;
+    border: 0;
+    border-radius: 7px;
+}
+#customize-controls .control-section .accordion-section-title:hover{
+	background: #eeebeb;
+	color: #111;
+}
+#accordion-section-Docs_button .pro-button-secondary{
+	position: absolute;
+}
