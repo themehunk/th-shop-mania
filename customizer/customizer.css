@@ -21,3 +21,43 @@
 #customize-controls .control-section.control-section-alm_section .accordion-section-title:after{
 	color: #111;
 }
+#customize-controls .control-section.control-section-alm_section .accordion-section-title{
+	border-bottom: 0;
+}
+.wp-full-overlay-sidebar-content{
+	/*background: #fdfbfb;*/
+	background: #FFF;
+}
+#customize-controls .control-section.control-section-alm_section .accordion-section-title:hover, #customize-controls .control-section.control-section-alm_section .accordion-section-title:focus{
+	border-left-color: transparent;
+}
+#customize-controls .control-section.control-section-alm_section .accordion-section-title:hover{
+	color: #111;
+}
+.customize-control-title{
+	background: #FFF;
+	color: #111;
+}
+/* Multiple Checkbox */
+.customize-control .customize-inside-control-row label{
+	font-size: 16px;
+	line-height: 16px;
+	color: #111;
+	margin-top: 21px;
+	margin-bottom: 21px;
+}
+.opn-doc-link{
+	font-size: 16px;
+	line-height: 21px;
+	color: #111;
+}
+li.customize-control.customize-control-custom_message .description{
+	color: #111;
+    /*background: #f6f5f5;*/
+    background: #f9fff6;
+    padding: 7px;
+    font-weight: 500;
+}
+#customize-controls .description{
+	font-weight: normal;
+}
