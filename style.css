@@ -4250,6 +4250,14 @@ top:0em!important;
     top: 50%;
     transform: translate(-50%,-50%);
 }
+.woocommerce .entry-summary a.th-product-compare-btn.button.loading:before{
+  animation: spin 2s linear infinite;
+  top: initial;
+  left: 0;
+  right: 0;
+  bottom: initial;
+  transform: initial;
+}
 .woocommerce .entry-summary a.th-added-compare:before{
 color:#ff3377;
 }

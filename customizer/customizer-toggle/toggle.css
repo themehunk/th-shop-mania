@@ -1,5 +1,5 @@
 .components-base-control {
-  margin: 0 0 1.5em;
+  margin: 21px 0 1.5em;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
     Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   font-size: 13px;
@@ -74,6 +74,7 @@
 .components-toggle-control .components-base-control__field {
   display: flex;
   margin-bottom: 12px;
+  align-items: center;
 }
 .components-toggle-control
   .components-base-control__field
@@ -140,6 +141,9 @@
   .components-toggle-control__label {
   display: block;
   margin-bottom: 4px;
+  font-size: 19px;
+  margin-left: 9px;
+  color: #111;
 }
 .components-base-control .components-base-control__help {
   font-style: italic;
