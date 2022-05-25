@@ -37,6 +37,8 @@
 .customize-control-title{
 	background: #FFF;
 	color: #111;
+	Padding: 8px 0;
+	text-transform: capitalize;
 }
 /* Multiple Checkbox */
 .customize-control .customize-inside-control-row label{
@@ -60,4 +62,18 @@ li.customize-control.customize-control-custom_message .description{
 }
 #customize-controls .description{
 	font-weight: normal;
+	font-size: 14px;
+	line-height: 21px;
+	color: #111;
+}
+.customize-control input[type=email], 
+.customize-control input[type=number], 
+.customize-control input[type=password], 
+.customize-control input[type=search], 
+.customize-control input[type=text], 
+.customize-control input[type=url]{
+	height: 40px;
+}
+body.wp-customizer .wp-picker-container{
+	max-width: 290px;
 }
