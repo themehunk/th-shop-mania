@@ -10,6 +10,8 @@
 /*************************/
 /*Site Identity*/
 /*************************/
+$wp_customize->get_section( 'title_tagline' )->priority = 3;
+
    $wp_customize->add_setting('title_disable', array(
         'default'           => 'enable',
         'capability'        => 'edit_theme_options',
