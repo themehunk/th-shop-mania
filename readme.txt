@@ -4,7 +4,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.0
 Requires PHP: 5.4
 Tested up to: 6.0
-Stable tag: 1.1.3
+Stable tag: 1.1.2
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,10 +23,6 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
-
-= Version 1.1.3 =
-* Preview Css Added.
-
 
 = Version 1.1.2 =
 * Theme optimisation work and icons changed.
@@ -69,8 +65,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= Version 1.1.3 =
-* Preview Css Added.
+= Version 1.1.2 =
+* Theme optimisation work and icons changed.
+* Comments removed from specific files.
 
 == Resources ==
  

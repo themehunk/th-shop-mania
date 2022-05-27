@@ -150,7 +150,6 @@ static public function white_level_menu_callback() {
       );
       wp_localize_script('th-shop-mania-admin-load', 'THAdmin', $data);
     }
-    wp_enqueue_style('thunk-preview-css', get_template_directory_uri() . '/lib/th-option/assets/css/preview.css');
   }
   function tab_constant()
   {
