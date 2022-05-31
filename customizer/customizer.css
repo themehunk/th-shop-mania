@@ -22,7 +22,7 @@
 	color: #111;
 }
 #customize-controls .control-section.control-section-alm_section .accordion-section-title{
-	border-bottom: 0;
+	border: 0;
 }
 .wp-full-overlay-sidebar-content{
 	/*background: #fdfbfb;*/
@@ -53,12 +53,13 @@
 	line-height: 21px;
 	color: #111;
 }
-li.customize-control.customize-control-custom_message .description{
+#customize-controls li.customize-control.customize-control-custom_message .description{
 	color: #111;
-    /*background: #f6f5f5;*/
-    background: #f9fff6;
-    padding: 7px;
+    /*background: #f9fff6;*/
+    background: transparent;
+    padding: 9px 0;
     font-weight: 500;
+    font-style: italic;
 }
 #customize-controls .description{
 	font-weight: normal;

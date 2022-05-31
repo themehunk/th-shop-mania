@@ -549,6 +549,9 @@ display: flex;
 .appearance_page_th_shop_mania_thunk_started #Import-Demo-Content .import-demo .theme_link button[data-activated="Activated"]{
     position: relative;
 }
+.themehunk-site-library-theme-preview .theme-install-overlay iframe{
+  max-width: 100%;
+}
 /*.appearance_page_th_shop_mania_thunk_started #Import-Demo-Content .import-demo .theme_link button[data-activated="Activated"]:after{
 
 }*/
