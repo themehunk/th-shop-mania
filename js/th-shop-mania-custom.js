@@ -9,8 +9,8 @@
         bindEvents: function (){
               
              var $this = this;
-             $this.pre_loader();
-             $this.sideabr_toggle();
+             $this.PreLoader();
+             $this.SidebarToggle();
              $this.CatMenu();
              $this.DefaultMenu();
              $this.MainMenu();
@@ -27,7 +27,7 @@
              $this.MoveToTop();
            }
         },    
-          pre_loader : function (){
+          PreLoader : function (){
                                if(!$('body').hasClass('elementor-editor-active')){
                                 $(window).on('load', function(){
                                 setTimeout(removeLoader); //wait for page load PLUS two seconds.
@@ -47,7 +47,7 @@
 
           },
 
-          sideabr_toggle: function () {
+          SidebarToggle: function () {
                     $(document).ready(function() {
                           if ($(window).width() <= 990) { 
                           $('.sidebar-content-area .widget-title, .sidebar-content-area .wp-block-group h2,.sidebar-main').click(function() {
@@ -59,7 +59,7 @@
                 });
                          
         },
-        
+  
          CatMenu : function () {
                  // category toggle
                               $(".cat-toggle").on("click keypress",function(e){
