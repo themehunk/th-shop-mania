@@ -12,9 +12,6 @@
 	background: #eeebeb;
 	color: #111;
 }
-#accordion-section-Docs_button .pro-button-secondary{
-	position: absolute;
-}
 #customize-outer-theme-controls .accordion-section-title:after, 
 #customize-theme-controls .accordion-section-title:after,
 #customize-controls .control-section.control-section-alm_section .accordion-section-title,
@@ -77,4 +74,46 @@
 }
 body.wp-customizer .wp-picker-container{
 	max-width: 290px;
+}
+#customize-theme-controls .control-panel-themes>.accordion-section-title, #customize-theme-controls .control-panel-themes>.accordion-section-title:hover,
+.control-panel-themes #accordion-section-installed_themes,
+.control-panel-themes .theme-section button{
+	border: 0;
+}
+#customize-theme-controls .control-panel-content:not(.control-panel-nav_menus) .control-section:nth-child(2), #customize-theme-controls .control-panel-nav_menus .control-section-nav_menu, #customize-theme-controls .control-section-nav_menu_locations .accordion-section-title{
+	border: 0;
+}
+.customize-control .wp-picker-input-wrap input[type=text]{
+	height: 30px;
+	margin-left: 2px;
+}
+.control-panel-themes .theme-section,
+#customize-theme-controls .control-panel-themes>.accordion-section-title, #customize-theme-controls .control-panel-themes>.accordion-section-title:hover{
+	margin:  9px 21px;
+	padding: 10px 10px 11px 14px;
+}
+.control-panel-themes .theme-section button{
+	border-radius: 7px;
+}
+.control-panel-themes .theme-section button:hover{
+	color: #111;
+}
+#customize-theme-controls .control-section.open{
+	border-bottom: 0;
+}
+#customize-theme-controls .panel-meta .accordion-section-title{
+	margin: 0;
+}
+.wp-picker-container .iris-picker.iris-border{
+	border: 0;
+}
+.button-link.add-new-toggle{
+	margin-top: 10px;
+}
+body.wp-customizer .wp-picker-input-wrap{
+	overflow: visible;
+}
+.customize-control .wp-picker-input-wrap input[type=text],
+.wp-customizer .wp-picker-input-wrap .button.wp-picker-default{
+	height: 38px;
 }
