@@ -445,7 +445,7 @@ body{
     color:#1c1d1e;
     background: #FFF;
     font-style: normal;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 25px;
     letter-spacing:0.5px;
     margin: 0;
@@ -3005,6 +3005,7 @@ border: 1px solid transparent;
 }
 .thunk-product a.add_to_wishlist,
 .thunk-product .yith-wcwl-wishlistexistsbrowse,
+.thunk-product .thunk-wishlist-inner,
 .thunk-product a.th-product-compare-btn{
   display: inline-flex;
   font-size: 14px;
@@ -3455,7 +3456,7 @@ display:none;
 }
 .thunk-breadcrumb li{
   display: inline;
-  font-size: 14px;
+  font-size: 16px;
 }
 /* Add a slash symbol (/) before/behind each list item */
 .thunk-breadcrumb li+li:before{
@@ -3581,10 +3582,10 @@ section.upsells.products h2,
 .summary.entry-summary p,
 .woocommerce div.product .woocommerce-tabs .panel p{
   font-size: 16px;
-  line-height: 24px;
-  color: #525252;
+  line-height: 34px;
+  color: #1c1d1e;
   font-weight: 400;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.5px;
 }
 .single-product div.product form.cart input[type="number"]{
   border-color: #9c9c9c;
@@ -4533,9 +4534,17 @@ border: 1px solid #f1f1f1;
   justify-content: space-between;
   border-bottom: 1px solid #E2E2E2;
 }
+.woocommerce.woocommerce-checkout table.shop_table thead tr{
+  display: table-row;
+}
 .woocommerce table.shop_table thead tr th{
   margin: 0;
   color: #111;
+}
+.woocommerce .return-to-shop a.button{
+  font-weight: normal;
+  color: #111;
+  text-decoration: none;
 }
 /************************/
 /*woocommerce cart page*/
@@ -4556,6 +4565,12 @@ border: 1px solid #f1f1f1;
   margin: 80px auto 50px auto;
   background: #f5f5f5;
   font-weight: 500;
+}
+.woocommerce-checkout form .form-row input.input-text, 
+.woocommerce-checkout form .form-row textarea{
+  font-size: 16px;
+  line-height: 23px;
+  color: #111;
 }
 .woocommerce.woocommerce-checkout table.shop_table td{
   font-weight: 400;
@@ -4625,6 +4640,8 @@ input[type="text"], input[type="email"],input[type="url"],
 .woocommerce .woocommerce-checkout #customer_details p.form-row label {
     margin: 0 0 5px;
     display: block;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 .woocommerce-checkout>.col2-set>.col-2 {
     float: none;
@@ -4796,6 +4813,18 @@ input[type="text"], input[type="email"],input[type="url"],
     overflow: hidden;
     width: 100%;
     margin-bottom: 20px;
+}
+.woocommerce-checkout .woocommerce-additional-fields h3{
+  font-size: 29px;
+  line-height: 36px;
+  margin-bottom: 25px;
+}
+.woocommerce-checkout form .woocommerce-additional-fields__field-wrapper textarea{
+  min-height: 170px;
+  margin-top: 12px;
+}
+.woocommerce-checkout form ::placeholder{
+  color: #767676;
 }
 /************************/
 /*checkout page style*/

@@ -73,7 +73,7 @@ final class Th_Shop_Mania_Lite_Pro_Button_Customize {
 				array(
 					'title'    => esc_html__( 'Unlock Pro Features', 'th-shop-mania' ),
 					'pro_text' => esc_html__( 'Go Pro',         'th-shop-mania' ),
-					'pro_url'  => 'https://themehunk.com/th-shop-mania/',
+					'pro_url'  => esc_url('https://themehunk.com/th-shop-mania/'),
 					'priority' => 1,
 				)
 			)
@@ -85,7 +85,7 @@ final class Th_Shop_Mania_Lite_Pro_Button_Customize {
 				array(
 					'title'    => esc_html__( 'View Documentation', 'th-shop-mania' ),
 					'pro_text' => esc_html__( 'View Docs',         'th-shop-mania' ),
-					'pro_url'  => 'https://themehunk.com/docs/th-shop-mania/',
+					'pro_url'  => esc_url(apply_filters('th_shop_mania_doc_link', 'https://themehunk.com/docs/th-shop-mania/')),
 					'priority' => 2,
 				)
 			)
