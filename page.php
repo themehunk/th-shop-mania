@@ -1,7 +1,7 @@
 <?php
 get_header();
 if(empty(get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true ))){
-$th_shop_mania_sidebar = 'right';
+$th_shop_mania_sidebar = 'no-sidebar';
 }else{
 $th_shop_mania_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true );
 $id = $post->ID;
