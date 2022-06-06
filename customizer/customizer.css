@@ -114,6 +114,14 @@ body.wp-customizer .wp-picker-input-wrap{
 	overflow: visible;
 }
 .customize-control .wp-picker-input-wrap input[type=text],
-.wp-customizer .wp-picker-input-wrap .button.wp-picker-default{
+.wp-customizer .wp-picker-input-wrap .button.wp-picker-default,
+.wp-customizer .wp-picker-input-wrap .button.wp-picker-clear{
 	height: 38px;
+}
+.wp-full-overlay-sidebar .wp-full-overlay-header,
+.wp-full-overlay-sidebar .wp-full-overlay-header .customize-controls-close{
+	background: #FFF;
+}
+.customize-controls-close{
+	border-top-color: transparent;
 }
