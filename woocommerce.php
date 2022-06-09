@@ -25,7 +25,7 @@ elseif(class_exists( 'WooCommerce' ) && is_product() && (get_theme_mod('th_shop_
     $th_shop_mania_sidebar = 'no-sidebar';
 }
 else{
-$th_shop_mania_sidebar = 'right';
+$th_shop_mania_sidebar = 'no-sidebar';
 } 
 $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_enable',false);
 if (class_exists('WooCommerce') && is_product()) {

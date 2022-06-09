@@ -138,18 +138,28 @@ if (!function_exists('th_shop_mania_product_list_categories')) {
   function th_shop_mania_product_list_categories($args = '')
   {
     $term = get_theme_mod('th_shop_mania_exclde_category', '');
-    if (!empty($term[0])) {
-      $exclude_id = $term;
-    } else {
-      $exclude_id = '';
-    }
+    if(!empty($term['0'])){
+
+  $exclude_id = $term;
+
+  $list_pluck = wp_list_pluck(get_terms(), 'term_id');
+
+  $list_pluck_include  = array_diff($list_pluck, $exclude_id);
+
+  }else{
+
+  $exclude_id = '';
+  $list_pluck_include = 'all';
+
+  }
     $defaults = array(
+      'include' => $list_pluck_include,
       'child_of'            => 0,
       'current_category'    => 0,
       'depth'               => '5',
       'echo'                => 0,
       'exclude'             => $exclude_id,
-      'exclude_tree'        => '',
+      'exclude_tree'        => $exclude_id,
       'feed'                => '',
       'feed_image'          => '',
       'feed_type'           => '',
@@ -175,18 +185,28 @@ if (!function_exists('th_shop_mania_product_list_categories_mobile')) {
   function th_shop_mania_product_list_categories_mobile($args = '')
   {
     $term = get_theme_mod('th_shop_mania_exclde_category');
-    if (!empty($term[0])) {
-      $exclude_id = $term;
-    } else {
-      $exclude_id = '';
-    }
+    if(!empty($term['0'])){
+
+  $exclude_id = $term;
+
+  $list_pluck = wp_list_pluck(get_terms(), 'term_id');
+
+  $list_pluck_include  = array_diff($list_pluck, $exclude_id);
+
+  }else{
+
+  $exclude_id = '';
+  $list_pluck_include = 'all';
+
+  }
     $defaults = array(
+      'include' => $list_pluck_include,
       'child_of'            => 0,
       'current_category'    => 0,
       'depth'               => 5,
       'echo'                => 0,
       'exclude'             => $exclude_id,
-      'exclude_tree'        => '',
+      'exclude_tree'        => $exclude_id,
       'feed'                => '',
       'feed_image'          => '',
       'feed_type'           => '',
@@ -509,3 +529,17 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
     </div>
   </div>
 <?php }
+
+/************************/
+// description Menu
+/************************/
+if ( !function_exists('th_shop_mania_nav_description') ) {
+function th_shop_mania_nav_description( $item_output, $item, $depth, $args ){
+    if ( !empty( $item->description ) ) {
+        $item_output = str_replace( $args->link_after . '</a>', '<p class="menu-item-description">' . esc_html($item->description) . '</p>' . $args->link_after . '</a>', $item_output );
+    }
+ 
+    return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'th_shop_mania_nav_description', 10, 4 );
+}

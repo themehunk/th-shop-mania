@@ -28,6 +28,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Theme optimisation work and icons changed.
 * Comments removed from specific files.
 
+
 = Version 1.1.1 =
 * Issues resolved.
 
@@ -95,6 +96,10 @@ Source: https://necolas.github.io/normalize.css/
 
 == breadcrumb.php ==
 breadcrumbs.php, Copyright Justin Tadlock License: GNU GPL License, version 0.2.1 Source: https://github.com/justintadlock/breadcrumb-trail/
+
+= Webfonts Loader =
+Th Shop Mania local fonts feature is based on Webfonts Loader by WordPress Themes Team (WPTT). (https://github.com/WPTT/webfont-loader)
+Licensed under MIT ( https://github.com/WPTT/webfont-loader/blob/master/LICENSE )
 
 ==  Other Licenses ==
 Other js files are self coded.
