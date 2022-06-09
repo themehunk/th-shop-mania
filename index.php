@@ -12,11 +12,10 @@
  * @since 1.0.0
  */
 get_header();
-// $th_shop_mania_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true );
 if(th_shop_mania_is_blog()){
 $th_shop_mania_blog_page_sidebar = get_post_meta( get_option( 'page_for_posts' ), 'th_shop_mania_sidebar_dyn', true );
 }elseif(empty(get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true ))){
-    $th_shop_mania_blog_page_sidebar = 'right';
+    $th_shop_mania_blog_page_sidebar = 'no-sidebar';
 }
 else{
     $th_shop_mania_blog_page_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true );

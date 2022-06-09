@@ -35,6 +35,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /********************************************************/
 /* */
 /********************************************************/
+:root {
+  --white: #ffffff;
+  --single-pro-text-color: #323232;
+  --body-text: #1c1d1e;
+}
 .ui-autocomplete-loading { 
 background:#fff;  
 transition: none!important;
@@ -395,7 +400,7 @@ table, td, th {
     border: 1px solid rgba(0,0,0,.1);
 }
 a{
- color: #1c1d1e;
+ color: var(--body-text);
 }
 a:hover{
  color: #ff3377;
@@ -442,7 +447,7 @@ code, kbd, pre, samp {
     box-sizing: inherit;
 }
 body{
-    color:#1c1d1e;
+    color: var(--body-text);
     background: #FFF;
     font-style: normal;
     font-size: 16px;
@@ -1111,7 +1116,7 @@ header .mobile-nav-bar.sider.right {
 position: relative;
 padding: 0;
 text-align:center;
-    color:#1c1d1e;
+    color: var(--body-text);;
     padding:0;
     margin: 0;
 -webkit-border-radius: 5px;;
@@ -1263,7 +1268,7 @@ margin-top:18px
     transition: all .3s linear;
     transition-property: transform;
     -webkit-backface-visibility: hidden;
-       color: #1c1d1e;
+       color: var(--body-text);
 }
 .search-close-btn:before, .search-close-btn:after {
     content: '';
@@ -3153,7 +3158,7 @@ border: 1px solid transparent;
 /*******************/
 .tagcloud a,.thunk-tags-wrapper a{
     background: #f7f7f7 none repeat scroll 0 0;
-    color: #1c1d1e;
+    color: var(--body-text);
     display: inline-block;
     padding: 4px 6px;
     text-transform: capitalize;
@@ -3509,6 +3514,9 @@ text-align:left;
     padding: 10px;
    
 }
+.woocommerce div.product div.images .flex-control-thumbs .owl-stage-outer li{
+  width: initial;
+}
 .woocommerce div.product div.images .flex-control-thumbs li img {
     border: 1px solid #dddddd;
 }
@@ -3547,7 +3555,7 @@ text-align:left;
 .woocommerce div.product .product_title,
 section.related.products h2,
 section.upsells.products h2,
-.woocommerce #reviews #comments h2{color:#1c1d1e;}
+.woocommerce #reviews #comments h2{color:var(--body-text);}
 
 .single-product .summary .product_title{
   max-width: 390px;
@@ -3581,11 +3589,11 @@ section.upsells.products h2,
 }
 .summary.entry-summary p,
 .woocommerce div.product .woocommerce-tabs .panel p{
-  font-size: 16px;
-  line-height: 34px;
-  color: #1c1d1e;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--single-pro-text-color);
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 .single-product div.product form.cart input[type="number"]{
   border-color: #9c9c9c;
@@ -3664,6 +3672,9 @@ section.upsells.products h2,
 }
 .woocommerce .variations_form .reset_variations{
   display: none!important;
+}
+.single-product .summary .woocommerce-variation-add-to-cart{
+  display: flex;
 }
 .woocommerce div.product form.cart .variations select {
     z-index: 1;
@@ -3814,7 +3825,7 @@ body .woocommerce-tabs .tabs li.active a::before, body .woocommerce-tabs .tabs l
     width: 100%;
     padding:15px;
     position: relative;
-    color: #1c1d1e;
+    color: var(--body-text);
     font-family: 'Jost';font-weight: 500;
     font-size:15px;
 }
@@ -3871,7 +3882,7 @@ section.upsells.products > h2,
 .woocommerce div.product .product_title{
   font-size: 28px;
     line-height: 35px;
-    color: #1c1d1e;
+    color: var(--body-text);
     display: inline-block;
     letter-spacing: 0.5px;
     position: relative;
@@ -4021,6 +4032,26 @@ padding-right:20px!important;
 }
 .single-product .yith-wcwl-wishlistexistsbrowse .feedback{
   display: none;
+}
+/* product-thumb-slider-css */
+.flex-control-thumbs.owl-carousel .owl-nav{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  top: 42%;
+  transform: translateY(-50%);
+}
+.woocommerce .flex-control-thumbs.owl-carousel .owl-nav button{
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  background: #EAEAEA;
+  color: #111;
+  border-radius: 50%;
+}
+.flex-control-thumbs.owl-carousel .owl-nav button.owl-next{
+  float: right;
 }
 /*woocommerce meassage */
 .woocommerce-error, .woocommerce-info, .woocommerce-message {
@@ -4272,6 +4303,10 @@ clear: initial;
 .woocommerce #content div.product .prev_next_buttons{
   display: inline-flex;
   float: right;
+  position: absolute;
+  top: -63px;
+  left: initial;
+  right: 0;
   z-index: 9;
 }
 .woocommerce #content div.product .prev_next_buttons a{
@@ -4379,7 +4414,7 @@ line-height: 21px;
 .woocommerce-cart .cart-subtotal,
 .woocommerce-cart .order-total {
     border:none;
-    color:#1c1d1e;
+    color: var(--body-text);
     display: flex!important;
     justify-content: space-between;
     font-size: 18px;
@@ -5632,7 +5667,7 @@ span.product-title{
    -webkit-line-clamp:1; 
    line-height:21px; 
     max-height:42px;
-    color: #1c1d1e;
+    color: var(--body-text);
 }
 .slide-content h2{
    overflow: hidden;
@@ -6870,7 +6905,7 @@ text-align:center;
 font-size: 1.1rem;
 }
 .mobile-nav-bar .header-support-content a,.mobile-nav-bar .header-support-content .sprt-tel{
-color:#1c1d1e;
+color: var(--body-text);
 }
 .mobile-nav-bar .header-support-wrap {
     margin-top: 10px;
