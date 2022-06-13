@@ -38,3 +38,8 @@ margin-top:15px;
     border-color: #FF6E24 #FF6E24 #FF6E24;
     color: #FFF;
  }
+ .th-product-compare-notice,
+.taiowc-notice,
+.th-advance-product-search-notice{
+  display: none!important;
+}
