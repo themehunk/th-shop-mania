@@ -27,6 +27,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = Version 1.1.2 =
 * Theme optimisation work and icons changed.
 * Comments removed from specific files.
+* New - Product Gallery slider added.
 
 
 = Version 1.1.1 =

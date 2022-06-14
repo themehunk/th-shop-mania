@@ -3527,6 +3527,7 @@ text-align:left;
     text-indent: initial;
     border-radius: initial;
     box-sizing: initial;
+    padding: 0;
 }
 .single-product .flex-control-thumbs .flex-active{
   outline: 1px solid #111;
@@ -4055,24 +4056,25 @@ padding-right:20px!important;
   display: none;
 }
 /* product-thumb-slider-css */
-.flex-control-thumbs.owl-carousel .owl-nav{
+.woocommerce .flex-control-thumbs button.th-icon{
   position: absolute;
-  left: 0;
-  right: 0;
-  height: 0;
   top: 42%;
-  transform: translateY(-50%);
-}
-.woocommerce .flex-control-thumbs.owl-carousel .owl-nav button{
   width: 25px;
   height: 25px;
   line-height: 25px;
   background: #EAEAEA;
   color: #111;
   border-radius: 50%;
+  z-index: 108;
 }
-.flex-control-thumbs.owl-carousel .owl-nav button.owl-next{
-  float: right;
+.woocommerce .flex-control-thumbs .slick-slide{
+  padding: 9px;
+}
+.woocommerce .flex-control-thumbs button.th-icon.slick-next{
+  right: 0;
+}
+.woocommerce .flex-control-thumbs button.th-icon:focus{
+  outline: 0;
 }
 /*woocommerce meassage */
 .woocommerce-error, .woocommerce-info, .woocommerce-message {
@@ -4359,6 +4361,44 @@ line-height: 21px;
 .woocommerce-page #content div.product.th-shop-mania-single-product-content-center div.summary, 
 .woocommerce-page div.product.th-shop-mania-single-product-content-center div.summary{
   margin: 50px auto 0 auto;
+}
+/* Single Product Gallery Options*/
+.verticalslide-gallery .woocommerce-product-gallery,
+.verticallightboxslide-gallery .woocommerce-product-gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.woocommerce.verticalslide-gallery div.product .flex-viewport,
+.woocommerce.verticallightboxslide-gallery div.product .flex-viewport{
+  width: 79%;
+  order: 2;
+}
+.verticalslide-gallery.woocommerce div.product div.images .flex-control-thumbs,
+.verticallightboxslide-gallery.woocommerce div.product div.images .flex-control-thumbs{
+  width: 21%;
+  order: 1;
+}
+.verticalslide-gallery.single-product ul.flex-direction-nav,
+.verticallightboxslide-gallery.single-product ul.flex-direction-nav{
+  left: 21%; 
+  right: 0;
+  width: initial;
+}
+.woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon,
+.woocommerce.verticallightboxslide-gallery .flex-control-thumbs button.th-icon{
+  right: initial;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+.woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon.slick-prev,
+.woocommerce.verticallightboxslide-gallery .flex-control-thumbs button.th-icon.slick-prev{
+  top: 0;
+}
+.woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon.slick-next,
+.woocommerce.verticallightboxslide-gallery .flex-control-thumbs button.th-icon.slick-next{
+  top: initial;
+  bottom: 0;
 }
     /* Carousel in sinleproduct*/
     .single-product ul.flex-direction-nav {
@@ -7683,7 +7723,6 @@ h2,
     font-size: 15px;
     line-height: 21px;
 }
-
 .entry-content p {
     margin-bottom: 10px;
     line-height: 1.8;
@@ -7715,7 +7754,6 @@ article.thunk-article, article.thunk-post-article, .single article, .no-results.
     padding: 10px 20px 10px 0px!important;
     font-size: 12px;
 }
-
   #page.th-shop-mania-site .owl-nav button.owl-prev, 
   #page.th-shop-mania-site .owl-nav button.owl-next {
     width: 25px;
@@ -7723,7 +7761,6 @@ article.thunk-article, article.thunk-post-article, .single article, .no-results.
     line-height: 25px;
     font-size: 15px;
   }
- 
 /*single page*/
 .woocommerce div.product div.images .flex-control-thumbs li,
 .woocommerce div.product div.images .flex-control-thumbs li {
@@ -7930,6 +7967,28 @@ font-size:12px;
 }
 .cross-sells h2, .cart_totals h2{
   padding: 0;
+}
+.verticalslide-gallery.woocommerce div.product div.images .flex-control-thumbs, .verticallightboxslide-gallery.woocommerce div.product div.images .flex-control-thumbs,
+.woocommerce.verticalslide-gallery div.product .flex-viewport, .woocommerce.verticallightboxslide-gallery div.product .flex-viewport{
+  width: 100%;
+  order: 1;
+}
+.woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon.slick-prev,
+.woocommerce.verticallightboxslide-gallery .flex-control-thumbs button.th-icon.slick-prev{
+  top: 50%;
+  left: 0;
+  right: initial;
+  transform: translateY(-50%);
+}
+.woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon.slick-next,
+.woocommerce.verticallightboxslide-gallery .flex-control-thumbs button.th-icon.slick-next{
+  top: 45%;
+  left: initial;
+  right: 0;
+  transform: translateY(-50%);
+}
+.single-product .woocommerce-product-gallery:hover ul.flex-direction-nav{
+  display: none;
 }
 }
 @media screen and (max-width:550px){
