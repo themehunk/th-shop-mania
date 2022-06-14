@@ -4366,6 +4366,7 @@ line-height: 21px;
 .verticalslide-gallery .woocommerce-product-gallery,
 .verticallightboxslide-gallery .woocommerce-product-gallery{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .woocommerce.verticalslide-gallery div.product .flex-viewport,
@@ -7722,7 +7723,6 @@ h2,
     font-size: 15px;
     line-height: 21px;
 }
-
 .entry-content p {
     margin-bottom: 10px;
     line-height: 1.8;
@@ -7754,7 +7754,6 @@ article.thunk-article, article.thunk-post-article, .single article, .no-results.
     padding: 10px 20px 10px 0px!important;
     font-size: 12px;
 }
-
   #page.th-shop-mania-site .owl-nav button.owl-prev, 
   #page.th-shop-mania-site .owl-nav button.owl-next {
     width: 25px;
@@ -7762,7 +7761,6 @@ article.thunk-article, article.thunk-post-article, .single article, .no-results.
     line-height: 25px;
     font-size: 15px;
   }
- 
 /*single page*/
 .woocommerce div.product div.images .flex-control-thumbs li,
 .woocommerce div.product div.images .flex-control-thumbs li {
@@ -7969,6 +7967,28 @@ font-size:12px;
 }
 .cross-sells h2, .cart_totals h2{
   padding: 0;
+}
+.verticalslide-gallery.woocommerce div.product div.images .flex-control-thumbs, .verticallightboxslide-gallery.woocommerce div.product div.images .flex-control-thumbs,
+.woocommerce.verticalslide-gallery div.product .flex-viewport, .woocommerce.verticallightboxslide-gallery div.product .flex-viewport{
+  width: 100%;
+  order: 1;
+}
+.woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon.slick-prev,
+.woocommerce.verticallightboxslide-gallery .flex-control-thumbs button.th-icon.slick-prev{
+  top: 50%;
+  left: 0;
+  right: initial;
+  transform: translateY(-50%);
+}
+.woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon.slick-next,
+.woocommerce.verticallightboxslide-gallery .flex-control-thumbs button.th-icon.slick-next{
+  top: 45%;
+  left: initial;
+  right: 0;
+  transform: translateY(-50%);
+}
+.single-product .woocommerce-product-gallery:hover ul.flex-direction-nav{
+  display: none;
 }
 }
 @media screen and (max-width:550px){
