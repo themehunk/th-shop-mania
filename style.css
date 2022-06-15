@@ -4456,18 +4456,25 @@ line-height: 21px;
   visibility:visible;content: '\f105';
   font-family: 'th-icon';
   font-size: 16px;   
-  font-weight: bold;
   color: #111;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .single-product a.flex-prev::before {
     visibility:visible;
     content: '\f104';
   font-family: 'th-icon';   
   font-size: 16px;
-  font-weight: bold;
   color: #111;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .single-product ul.flex-direction-nav li a {
+    position: relative;
     background: #EAEAEA;
     border-radius: 50%;
     color: #ccc;
