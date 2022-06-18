@@ -3572,6 +3572,9 @@ text-align:left;
 .pswp__bg{
   opacity: 0.8!important;
 }
+.pswp{
+  z-index: 10000000009;
+}
 button.pswp__button--arrow--left::before, 
 button.pswp__button--arrow--right::before,
 .pswp__top-bar{
@@ -4233,7 +4236,9 @@ clear: initial;
     border: 1px solid;
     border-radius: 0;
     color: #9c9c9c;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0;
     height: 56px;
     line-height: 56px;
@@ -4367,14 +4372,16 @@ clear: initial;
   right: 0;
   z-index: 9;
 }
+.woocommerce .th-shop-mania-pageheader + #content div.product .prev_next_buttons{
+  top: -40px;
+}
 .woocommerce #content div.product .prev_next_buttons a{
 border: 1px solid #eee;
-padding: 2px 10px 1px 10px;
+padding: 2px 12px 5px 12px;
 font-size: 16px;
 margin:3px;
-line-height: 21px;
+line-height: 25px;
 }
-
 .woocommerce #content div.product.th-shop-mania-single-product-content-right div.images, 
 .woocommerce div.product.th-shop-mania-single-product-content-right div.images, 
 .woocommerce-page #content div.product.th-shop-mania-single-product-content-right div.images, 
@@ -4403,6 +4410,7 @@ line-height: 21px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .woocommerce.verticalslide-gallery div.product .flex-viewport,
 .woocommerce.verticallightboxslide-gallery div.product .flex-viewport{
@@ -7942,13 +7950,12 @@ font-size:12px;
   font-size:12px;
   line-height: 19px; 
 }
-
 .woocommerce div.entry-summary form.cart button[type=submit] {
     padding: 0 10px;
     color: #fff;
     border-radius: 0;
     font-size: 12px;
-    height: 32px;
+    height: 35px;
     line-height: normal;
     letter-spacing: .1em;
     width: 90px;
