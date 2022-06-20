@@ -29,7 +29,15 @@
         },    
           PreLoader : function (){
                                if(!$('body').hasClass('elementor-editor-active')){
+                                const myTimeout = setTimeout(removeLoader, 10000);
+
+                                  function myStopFunction() {
+                                    clearTimeout(myTimeout);
+                                  }
                                 $(window).on('load', function(){
+                                  var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart; 
+                                  console.log(loadTime);
+                                  if (loadTime <= 10000) { myStopFunction(); }
                                 setTimeout(removeLoader); //wait for page load PLUS two seconds.
                                 });
                                 function removeLoader(){
