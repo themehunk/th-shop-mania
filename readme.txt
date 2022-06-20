@@ -4,7 +4,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.0
 Requires PHP: 5.4
 Tested up to: 6.0
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,6 +23,15 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= Version 1.1.3 =
+* New - Slider in single product page added.
+* New - Option for button size in single product added.
+* New - Loader Time is set 10second for default.
+* New - Max Mega Menu Plugin Compatibility Addedd.
+* New - WPML Plugin Compatibility Addedd.
+* Update - Style issues resolved.
+* Update - Plugin Ads removed from admin area.
+* Update - Single product page by default no-sidebar issue resolved.
 
 = Version 1.1.2 =
 * Theme optimisation work and icons changed.
@@ -67,9 +76,15 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 Initial release
 
 == Upgrade Notice ==
-= Version 1.1.2 =
-* Theme optimisation work and icons changed.
-* Comments removed from specific files.
+= Version 1.1.3 =
+* New - Slider in single product page added.
+* New - Option for button size in single product added.
+* New - Loader Time is set 10second for default.
+* New - Max Mega Menu Plugin Compatibility Addedd.
+* New - WPML Plugin Compatibility Addedd.
+* Update - Style issues resolved.
+* Update - Plugin Ads removed from admin area.
+* Update - Single product page by default no-sidebar issue resolved.
 
 == Resources ==
  
