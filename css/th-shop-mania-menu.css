@@ -272,7 +272,7 @@ transition: all 0.2s ease-in-out;
 .sider .menu-close{
     display: block;
 }
-.sticky-mobile-menu-active .left,
+/*.sticky-mobile-menu-active .left,*/
 .mobile-menu-active .sider.th-shop-mania-menu-hide.left,
 .mobile-bottom-menu-active .sider.th-shop-mania-menu-hide.left{
 left: -300px;
@@ -808,6 +808,10 @@ transition: inherit;
     -webkit-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
     z-index: 1001;
+}
+.mobile-tab-wrap .th-shop-mania-menu.collapse span.arrow{
+    top: 50%;
+    transform: translateY(-50%);
 }
 .mobile-menu-active .th-shop-mania-mobile-menu-wrapper,.sticky-mobile-menu-active .th-shop-mania-mobile-menu-wrapper  {
     visibility: visible;
