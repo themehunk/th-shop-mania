@@ -125,3 +125,6 @@ body.wp-customizer .wp-picker-input-wrap{
 .customize-controls-close{
 	border-top-color: transparent;
 }
+.wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary{
+	border-radius: 4px;
+}

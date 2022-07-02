@@ -100,8 +100,8 @@ function th_shop_mania_prev_next_product()
 {
   echo '<div class="prev_next_buttons">';
   // 'product_cat' will make sure to return next/prev from current category
-  $previous = next_post_link('%link', '&larr;', TRUE, ' ', 'product_cat');
-  $next = previous_post_link('%link', '&rarr;', TRUE, ' ', 'product_cat');
+  $previous = next_post_link('%link', '&larr;', false, ' ', 'product_cat');
+  $next = previous_post_link('%link', '&rarr;', false, ' ', 'product_cat');
 
   echo $previous;
   echo $next;
