@@ -4519,6 +4519,43 @@ line-height: 25px;
 .single-product .woocommerce-review-link .count{
   font-size: 16px;
 }
+/* Single Product Two Column Layout*/
+.single-product .left-side{
+  width: 45%;
+  float: left;
+}
+.woocommerce #content div.product .left-side div.images{
+  width: 100%;
+  border: 1px solid #e1e3e4;
+  margin-bottom: 20px;
+  padding: 30px;
+}
+.left-side .woocommerce-tabs.wc-tabs-wrapper{
+  border: 1px solid #e1e3e4;
+  padding: 20px 0;
+}
+.woocommerce div.product .left-side .woocommerce-tabs ul.tabs{
+  border: 0;
+  text-align: left;
+}
+.woocommerce div.product .left-side .woocommerce-tabs .panel{
+  padding: 0 30px;
+}
+.woocommerce #content div.product .left-side + div.summary{
+  border: 1px solid #e1e3e4;
+  padding: 30px;
+}
+.woocommerce div.product .left-side + div.summary form.cart{
+  flex-direction: column;
+}
+.woocommerce div.product .left-side + div.summary .th-shop-mania-quantity{
+  height: 35px;
+}
+.single-product.woocommerce div.product .left-side div.images .woocommerce-product-gallery__trigger,
+.verticalslide-gallery.single-product .left-side ul.flex-direction-nav, 
+.verticallightboxslide-gallery.single-product .left-side ul.flex-direction-nav{
+  right: 30px;
+}
 /***************************************/
 /*woocommerce single product page style*/
 /***************************************/
