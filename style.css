@@ -4521,7 +4521,7 @@ line-height: 25px;
 }
 /* Single Product Two Column Layout*/
 .single-product .left-side{
-  width: 45%;
+  width: 49%;
   float: left;
 }
 .woocommerce #content div.product .left-side div.images{
@@ -4541,20 +4541,32 @@ line-height: 25px;
 .woocommerce div.product .left-side .woocommerce-tabs .panel{
   padding: 0 30px;
 }
-.woocommerce #content div.product .left-side + div.summary{
+.woocommerce #content div.product .right-side div.summary{
   border: 1px solid #e1e3e4;
   padding: 30px;
 }
-.woocommerce div.product .left-side + div.summary form.cart{
+.woocommerce div.product .right-side div.summary form.cart{
   flex-direction: column;
 }
-.woocommerce div.product .left-side + div.summary .th-shop-mania-quantity{
+.woocommerce div.product .right-side div.summary .th-shop-mania-quantity{
   height: 35px;
 }
 .single-product.woocommerce div.product .left-side div.images .woocommerce-product-gallery__trigger,
 .verticalslide-gallery.single-product .left-side ul.flex-direction-nav, 
 .verticallightboxslide-gallery.single-product .left-side ul.flex-direction-nav{
   right: 30px;
+}
+.thunk-single-product-summary-wrap{
+  display: inline-block;
+}
+.woocommerce .right-side{
+  width: 49%;
+  position: sticky;
+  top: 45px;
+  float: right;
+}
+.woocommerce #content div.product .right-side div.summary{
+  width: 100%;
 }
 /***************************************/
 /*woocommerce single product page style*/

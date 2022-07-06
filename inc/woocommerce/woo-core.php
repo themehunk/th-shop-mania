@@ -472,6 +472,17 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 				function th_shop_mania_end_left_side() {
 				  echo '</div>'.PHP_EOL;
 				}
+
+				add_action( 'woocommerce_before_single_product_summary', 'th_shop_mania_start_right_side', 41 );
+				function th_shop_mania_start_right_side() {
+				  echo '<div class="right-side">'.PHP_EOL;
+				
+				  
+				}
+				add_action( 'woocommerce_after_single_product_summary', 'th_shop_mania_end_right_side', 7 );
+				function th_shop_mania_end_right_side() {
+				  echo '</div>'.PHP_EOL;
+				}
 				
 		}
 	    /*****************/
