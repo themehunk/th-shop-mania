@@ -27,11 +27,12 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * New - Slider in single product page added.
 * New - Option for button size in single product added.
 * New - Loader Time is set 10second for default.
-* New - Max Mega Menu Plugin Compatibility Addedd.
-* New - WPML Plugin Compatibility Addedd.
+* New - Max Mega Menu Plugin Compatibility Added.
+* New - WPML Plugin Compatibility Added.
 * Update - Style issues resolved.
 * Update - Plugin Ads removed from admin area.
 * Update - Single product page by default no-sidebar issue resolved.
+* New - Two Column Single Page Layot Added.
 
 = Version 1.1.2 =
 * Theme optimisation work and icons changed.
@@ -85,6 +86,7 @@ Initial release
 * Update - Style issues resolved.
 * Update - Plugin Ads removed from admin area.
 * Update - Single product page by default no-sidebar issue resolved.
+* New - Two Column Single Page Layot Added.
 
 == Resources ==
  
