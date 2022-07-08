@@ -3639,6 +3639,7 @@ section.upsells.products h2,
     margin-right: 15px;
     float: left;
     border: 1px solid #9c9c9c;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     margin-bottom: 21px;
@@ -4245,7 +4246,7 @@ clear: initial;
 .summary .yith-wcwl-wishlistaddedbrowse a,
  .summary .yith-wcwl-wishlistexistsbrowse a{
     border: 1px solid;
-    border-radius: 0;
+    border-radius: 5px;
     color: #9c9c9c;
     display: inline-flex;
     justify-content: center;
@@ -4320,7 +4321,7 @@ top:0em!important;
 .woocommerce div.entry-summary form.cart button[type=submit] {
     padding:0 10px;
     color: #fff;
-    border-radius: 0;
+    border-radius: 5px;
     font-size: 14px;
     max-height:56px;
     line-height: 56px;
@@ -4332,7 +4333,7 @@ top:0em!important;
 /*compare style*/
 .woocommerce .entry-summary a.th-product-compare-btn.button{
     border: 1px solid #9c9c9c;
-    border-radius: 0;
+    border-radius: 5px;
     color: #9c9c9c;
     display: flex;
     justify-content: center;
@@ -4520,6 +4521,12 @@ line-height: 25px;
   font-size: 16px;
 }
 /* Single Product Two Column Layout*/
+.single-product .th-shop-mania-single-product-content-right .left-side{
+  float: right;
+}
+.single-product .th-shop-mania-single-product-content-right .right-side{
+  float: left;
+}
 .single-product .left-side{
   width: 49%;
   float: left;
@@ -4541,6 +4548,13 @@ line-height: 25px;
 .woocommerce div.product .left-side .woocommerce-tabs .panel{
   padding: 0 30px;
 }
+/*.woocommerce div.product .left-side div.images .flex-control-thumbs li{
+  padding: 10px 0;
+}
+.woocommerce.verticalslide-gallery .left-side .flex-control-thumbs .slick-slide, 
+.woocommerce.verticallightboxslide-gallery .left-side .flex-control-thumbs .slick-slide{
+  padding: 5px 0;
+}*/
 .woocommerce #content div.product .right-side div.summary{
   border: 1px solid #e1e3e4;
   padding: 30px;
@@ -4551,7 +4565,7 @@ line-height: 25px;
 .woocommerce div.product .right-side div.summary .th-shop-mania-quantity{
   height: 35px;
 }
-.single-product.woocommerce div.product .left-side div.images .woocommerce-product-gallery__trigger,
+.single-product.woocommerce div.product .left-side div.images a.woocommerce-product-gallery__trigger,
 .verticalslide-gallery.single-product .left-side ul.flex-direction-nav, 
 .verticallightboxslide-gallery.single-product .left-side ul.flex-direction-nav{
   right: 30px;
@@ -4567,6 +4581,10 @@ line-height: 25px;
 }
 .woocommerce #content div.product .right-side div.summary{
   width: 100%;
+  margin-bottom: 0;
+}
+.theme-th-shop-mania.th-single-twocolumn .page-content{
+  padding-top: 45px;
 }
 /***************************************/
 /*woocommerce single product page style*/
@@ -6062,6 +6080,7 @@ display:inline;
     min-height: 30px;
     margin: 0 4px 4px 0;
     border: 1px solid;
+    border-radius: 5px;
     font: normal normal normal 12px/30px th-icon;
     text-decoration: none;
     text-align: center;
@@ -7972,6 +7991,9 @@ article.thunk-article, article.thunk-post-article, .single article, .no-results.
     font-size: 15px;
   }
 /*single page*/
+.thunk-single-product-summary-wrap{
+  display: block;
+}
 .woocommerce div.product div.images .flex-control-thumbs li,
 .woocommerce div.product div.images .flex-control-thumbs li {
     margin-right:0px;
@@ -8123,6 +8145,21 @@ font-size:12px;
 #yith-wcwl-form a.add_to_cart_button.ajax_add_to_cart{
   padding: 5px;
   font-size: 9px;
+}
+/* single page two column */
+.single-product .left-side,
+.single-product .right-side{
+  width: 100%;
+}
+.woocommerce #content div.product .left-side div.images,
+.woocommerce #content div.product .right-side div.summary,
+.left-side .woocommerce-tabs.wc-tabs-wrapper,
+.woocommerce div.product .left-side .woocommerce-tabs .panel{
+  padding: 0;
+  border: 0;
+}
+.woocommerce div.product .right-side div.summary form.cart{
+  flex-direction: row;
 }
 /* Checkout page */
 .page-head h1{
