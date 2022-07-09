@@ -7,6 +7,7 @@
  * @package  Th Shop Mania
  * @since 1.0.0
  */ 
+global $post;
 if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocommerce() || is_checkout() || is_cart() || is_account_page()))
 ||  is_front_page() || is_home()) {
     if (class_exists('WooCommerce') && is_shop()) {
