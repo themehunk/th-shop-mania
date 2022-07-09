@@ -24,9 +24,10 @@
 </head>
 <?php
 // page post meta
-if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocommerce() || is_checkout() || is_cart() || is_account_page()))
+global $post;
+if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_product() || is_checkout() || is_cart() || is_account_page()))
 ||  is_front_page() || is_home()) {
-	if (class_exists('WooCommerce') && is_shop()) {
+	if (is_shop()) {
 		$shop_page_id = get_option('woocommerce_shop_page_id');
 		$postid = $shop_page_id;
 	} elseif(th_shop_mania_is_blog()){
@@ -76,12 +77,7 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
 
 	<?php 
 	//Page Header 
-		if (isset($post->ID)) {
-			$id = $post->ID;
-		}
-		else{
-			$id = '';
-		}
+		$id = (isset($post->ID)) ? $post->ID : '';
 		if (has_action('th_shop_mania_page_header_markup')) {
 
 		do_action( 'th_shop_mania_page_header_markup', $id );

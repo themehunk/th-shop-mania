@@ -33,6 +33,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update - Plugin Ads removed from admin area.
 * Update - Single product page by default no-sidebar issue resolved.
 * New - Two Column Single Page Layot Added.
+* Resolved - Warning Attempt to read property "ID" on Header & Footer.
 
 = Version 1.1.2 =
 * Theme optimisation work and icons changed.
