@@ -191,6 +191,8 @@ if($page_post_meta_set!=='on'){?>
 function th_shop_mania_body_classes( $classes ){
 if(class_exists( 'WooCommerce' )):
 $classes[] = 'woocommerce';
+$th_shop_mania_pro_single_product_layout = get_theme_mod('th_shop_mania_pro_single_product_layout','standard');  
+$classes[] = 'th-single-'.$th_shop_mania_pro_single_product_layout;
 endif;
 $th_shop_mania_woo_product_layout = get_theme_mod('th_shop_mania_woo_product_layout',1);  
 $classes[] = 'th-product-style-'.$th_shop_mania_woo_product_layout; 

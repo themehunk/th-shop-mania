@@ -249,7 +249,7 @@ if ( ! class_exists( 'th_shop_mania_Customizer_Sanitizes' ) ){
          * @return number        Return number.
          * @since  1.2.1
          */
-        static public function open_sanitize_responsive_spacing( $val ) {
+        static public function th_shop_mania_sanitize_responsive_spacing( $val ) {
 
             $spacing = array(
                 'desktop'      => array(
