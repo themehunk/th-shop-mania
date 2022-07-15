@@ -128,3 +128,6 @@ body.wp-customizer .wp-picker-input-wrap{
 .wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary{
 	border-radius: 4px;
 }
+#customize-control-th_shop_mania_pro_single_product_layout.customize-control-radio-image label{
+	max-width: 50%;
+}
