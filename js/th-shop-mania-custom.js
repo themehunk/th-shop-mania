@@ -58,7 +58,7 @@
           SidebarToggle: function () {
                     $(document).ready(function() {
                           if ($(window).width() <= 990) { 
-                          $('.sidebar-content-area .widget-title, .sidebar-content-area .wp-block-group h2,.sidebar-main').click(function() {
+                          $('.sidebar-content-area .widget-title, .sidebar-content-area .wp-block-group h4,.sidebar-main').click(function() {
                           $(this).next().slideToggle();
                           $(this).toggleClass("open");
                           });

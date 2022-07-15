@@ -90,8 +90,8 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		              'description'   => esc_html__( 'Add widgets here to appear in your WooCommerce Sidebar.', 'th-shop-mania' ),
 		              'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="th-shop-mania-widget-content">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	        ) );
 			register_sidebar(array(
 		              'name'          => esc_html__( 'Product Page Sidebar', 'th-shop-mania' ),
@@ -99,8 +99,8 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		              'description'   => esc_html__( 'This sidebar will be used on Single Product page.', 'th-shop-mania' ),
 		              'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="th-shop-mania-widget-content">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	        ) );    
 		}
 		/**
@@ -543,7 +543,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
         // shop page content
         function th_shop_mania_list_after_shop_loop_item(){
         ?>
-           <div class="os-product-excerpt"><?php the_excerpt(); ?></div>
+         <div class="os-product-excerpt"><?php the_excerpt(); ?></div>
         <?php   
         }
 		/**

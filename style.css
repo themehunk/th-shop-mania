@@ -2372,7 +2372,7 @@ vertical-align: middle;
   list-style: none;
 }
 .th-shop-mania-widget-content .textwidget,
-.th-shop-mania-widget-content .wp-block-group h2 + *,
+.th-shop-mania-widget-content .wp-block-group h4 + *,
 .th-shop-mania-widget-content .widget-title + *{
    padding: 20px 0;
 }
@@ -2392,8 +2392,8 @@ vertical-align: middle;
 .widget.woocommerce .widget-title,
 .th-shop-mania-widget-content .widget-title,
 .widget-title,
-.wp-block-group h2,
-.th-shop-mania-widget-content > h2{
+.wp-block-group h4,
+.th-shop-mania-widget-content > h4{
     font-size: 18px;
     line-height: 25px;
     font-weight: 500;
@@ -2402,7 +2402,7 @@ vertical-align: middle;
     margin: 0;
     position: relative;
 }
-.sidebar-content-area h2{
+.sidebar-content-area h4{
     font-size: 18px;
     line-height: 25px;
     font-weight: normal;
@@ -2410,13 +2410,13 @@ vertical-align: middle;
     background: transparent;
 }
 .sidebar-content-area .th-shop-mania-widget-content .widget-title,
-.sidebar-content-area .wp-block-group h2,
-.sidebar-content-area .th-shop-mania-widget-content > h2{
+.sidebar-content-area .wp-block-group h4,
+.sidebar-content-area .th-shop-mania-widget-content > h4{
   border-bottom: 1px solid #e2e2e2;
 }
 footer .widget.woocommerce .widget-title,
 footer .th-shop-mania-widget-content .widget-title,.widget-title,
-footer .wp-block-group h2{
+footer .wp-block-group h4{
     background: none;
     padding: 0 0 15px 0;
 }
@@ -7672,11 +7672,11 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 .sidebar-content-area .widget-title+ul,
 .sidebar-content-area .widget-title+div,
 .sidebar-content-area .widget-title+form,
-.wp-block-group h2 + *{
+.wp-block-group h4 + *{
   display: none;
 }
 .sidebar-content-area .widget-title:after,
-.sidebar-content-area .wp-block-group h2:after{
+.sidebar-content-area .wp-block-group h4:after{
   position: absolute;
   font-family: th-icon;
   content: "\f107";
@@ -7814,14 +7814,14 @@ width:50%;
 .left .primary-content-area{
   order: 1;
 }
-#sidebar-primary h2.widget-title:hover,.slide-toogle:hover,
-#sidebar-primary .wp-block-group h2:hover{
+#sidebar-primary h4.widget-title:hover,.slide-toogle:hover,
+#sidebar-primary .wp-block-group h4:hover{
 cursor:pointer;
 }
 .sidebar-content-area .sidebar-main .sidebar-widget-wrap{
 padding:7.5px
 }
-#sidebar-primary h2.widget-title {
+#sidebar-primary h4.widget-title {
     padding-bottom: 15px;
 }
 .primary-content-area {
@@ -7948,7 +7948,7 @@ margin-bottom: 10px!important;
 }
 /*blog page*/
 h2,
-.sidebar-content-area h2 {
+.sidebar-content-area h4 {
     font-size: 15px;
     line-height: 21px;
 }

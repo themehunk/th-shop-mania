@@ -154,7 +154,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ),    
 
         ));
-remove_theme_support( 'widgets-block-editor' );
+// remove_theme_support( 'widgets-block-editor' );
 	}
 endif;
 add_action( 'after_setup_theme', 'th_shop_mania_setup' );
@@ -173,8 +173,8 @@ function th_shop_mania_widgets_init(){
 		'description'   => esc_html__( 'Add widgets here to appear in your primary sidebar.', 'th-shop-mania' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="th-shop-mania-widget-content">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 	register_sidebar(array(
 		'name'          => esc_html__( 'Above Header Widget', 'th-shop-mania' ),
@@ -182,8 +182,8 @@ function th_shop_mania_widgets_init(){
 		'description'   => esc_html__( 'Add widgets here to appear in top header.', 'th-shop-mania' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s th-sm-col-3">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 	
 	for ( $i = 1; $i <= 4; $i++ ){
@@ -192,8 +192,8 @@ function th_shop_mania_widgets_init(){
 			'id'            => 'footer-' . $i,
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		) );
 	}
 	
