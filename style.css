@@ -1528,6 +1528,7 @@ font-size:30px;
   padding: 0;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 auto;
 }
 .sidebar-content-area{
     width: 21%;
@@ -8233,6 +8234,7 @@ font-size:12px;
 .cross-sells h2, .cart_totals h2{
   padding: 0;
 }
+/* Product Gallery*/
 .verticalslide-gallery.woocommerce div.product div.images .flex-control-thumbs, .verticallightboxslide-gallery.woocommerce div.product div.images .flex-control-thumbs,
 .woocommerce.verticalslide-gallery div.product .flex-viewport, .woocommerce.verticallightboxslide-gallery div.product .flex-viewport{
   width: 100%;
