@@ -130,7 +130,12 @@ body.wp-customizer .wp-picker-input-wrap{
 }
 #customize-control-th_shop_mania_pro_single_product_layout.customize-control-radio-image label,
 #customize-control-th_shop_mania_checkout_page_layout.customize-control-radio-image label{
-	max-width: 50%;
+	max-width: 49%;
+	margin-right: 2%;
+}
+#customize-control-th_shop_mania_pro_single_product_layout.customize-control-radio-image label:nth-of-type(2n+2),
+#customize-control-th_shop_mania_checkout_page_layout.customize-control-radio-image label:nth-of-type(2n+2){
+	margin-right: 0;
 }
 #customize-control-th_shop_mania_checkout_page_layout .ui-checkboxradio-label:after{
 	display: block;
