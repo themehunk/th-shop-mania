@@ -4836,6 +4836,15 @@ border: 1px solid #f1f1f1;
 /************************/
 /*checkout page style*/
 /************************/
+.woocommerce-checkout .main-area{
+  max-width: 60%;
+}
+.woocommerce-checkout .woocommerce-billing-fields h3,
+.woocommerce-checkout #order_review_heading,
+.woocommerce-checkout .woocommerce-additional-fields h3,
+.woocommerce-checkout .step-label{
+  font-weight: 600;
+}
 .woocommerce-checkout .page-head{
   justify-content: center;
   margin-top: 70px;
@@ -5097,11 +5106,11 @@ input[type="text"], input[type="email"],input[type="url"],
     width: 100%;
     margin-bottom: 20px;
 }
-.woocommerce-checkout .woocommerce-additional-fields h3{
+/*.woocommerce-checkout .woocommerce-additional-fields h3{
   font-size: 29px;
   line-height: 36px;
   margin-bottom: 25px;
-}
+}*/
 .woocommerce-checkout form .woocommerce-additional-fields__field-wrapper textarea{
   min-height: 170px;
   margin-top: 12px;
