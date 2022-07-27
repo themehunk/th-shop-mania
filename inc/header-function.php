@@ -199,9 +199,17 @@ th_shop_mania_custom_logo();
 if($title_disable!='' || $tagline_disable!=''){
 if($title_disable!=''){ 
 ?>
-<div class="site-title"><span>
+<div class="site-title">
+   <?php //latest post
+   if ( is_home() || is_front_page() ) { ?>
+    <h1>
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-</span>
+    </h1>
+<?php } else { ?>
+    <span>
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+    </span>
+<?php } ?>
 </div>
 <?php
 }
