@@ -4839,6 +4839,9 @@ border: 1px solid #f1f1f1;
 .woocommerce-checkout .main-area{
   max-width: 60%;
 }
+.woocommerce-checkout.thsm-checkout-layout-standard .main-area{
+  max-width:  100%;
+}
 .woocommerce-checkout .woocommerce-billing-fields h3,
 .woocommerce-checkout #order_review_heading,
 .woocommerce-checkout .woocommerce-additional-fields h3,
@@ -5166,6 +5169,10 @@ input[type="text"], input[type="email"],input[type="url"],
 .woocommerce-checkout.thsm-checkout-layout-stepped #order_review{
   border: 0;
 }
+.woocommerce-checkout.thsm-checkout-layout-stepped #order_review table.shop_table{
+  border: 1px solid;
+  border-radius: 0;
+}
 .woocommerce-checkout .next-step-button-wrapper a,
 .woocommerce-checkout .next-step-button-wrapper a:hover{
   min-width: 187px;
@@ -5178,6 +5185,19 @@ input[type="text"], input[type="email"],input[type="url"],
   padding-top: 1em;
   padding-bottom: 1em;
 }
+.woocommerce-checkout.thsm-checkout-layout-stepped .woocommerce-billing-fields h3{
+  display: none;
+}
+#billing_city_field,
+#billing_country_field,
+#billing_address_1_field,
+#billing_address_2_field,
+#billing_state_field,
+#billing_postcode_field,
+.col-2{
+  display: none;
+}
+
 /* thsm-checkout-layout-vertical CSS */
 .thsm-checkout-layout-vertical .woocommerce-checkout>.col2-set,
 .thsm-checkout-layout-vertical .woocommerce-checkout #order_review{
@@ -5234,13 +5254,28 @@ border:0;
     border: none;
     width: 50%;
 }
-.woocommerce form.checkout_coupon{
+.woocommerce form.checkout_coupon {
     margin: 0 auto 80px auto;
     border: 1px solid #cccc;
-    padding: 21px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 15px;
     border-radius: 0;
-  }
+}
+.woocommerce form.checkout_coupon > p:first-child{
+  text-align: center;
+}
+.woocommerce-checkout form.checkout_coupon .form-row-first {
+    float: left;
+    width: 55%;
+    margin-left: 10px;
+}
+p.form-row.form-row-first {
+    margin-right: 15px;
+}
+.woocommerce-checkout form.checkout_coupon .form-row-last {
+    float: unset;
+    width: 100%;
+}
 .woocommerce-MyAccount-content .woocommerce-info {
 line-height: 34px;
 }
