@@ -5171,7 +5171,7 @@ input[type="text"], input[type="email"],input[type="url"],
   border: 0;
 }
 .woocommerce-checkout.thsm-checkout-layout-stepped #order_review table.shop_table{
-  border: 1px solid;
+  border: 1px solid #ededed;
   border-radius: 0;
 }
 .woocommerce-checkout .next-step-button-wrapper a,
