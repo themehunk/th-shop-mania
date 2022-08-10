@@ -3991,7 +3991,8 @@ margin-bottom:8px;
 }
 .woocommerce #reviews #comments .star-rating span ,
 .woocommerce p.stars a,
-.woocommerce .woocommerce-product-rating .star-rating{
+.woocommerce .woocommerce-product-rating .star-rating,
+.wc-block-grid__product-rating{
 color: #f78686;
 }
 .woocommerce div.product p.price, .woocommerce div.product span.price{
@@ -5621,7 +5622,6 @@ a img.aligncenter {
     padding: 0;
     width: auto;
 }
-
 .wp-caption p.wp-caption-text {
     font-size: 11px;
     line-height: 17px;
@@ -7153,6 +7153,26 @@ header.zta-transparent-header.shrink {
 }
 #mega-menu-wrap-th-shop-mania-main-menu #mega-menu-th-shop-mania-main-menu > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-th-shop-mania-main-menu #mega-menu-th-shop-mania-main-menu > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link{
   color: #111;
+}
+/* Block Design */
+.wc-block-components-product-sale-badge,
+.wc-block-grid__product-onsale{
+  border-radius: 4px;
+  background: GREEN;
+  color: #FFF;
+}
+.wc-block-grid__product-onsale{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.wc-block-grid__product{
+  border: 1px solid transparent;
+  padding-bottom: 16px;
+}
+.wc-block-grid__product:hover{
+  box-shadow: 0 0 15px #eee;
+  border: 1px solid #F1F1F1;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
