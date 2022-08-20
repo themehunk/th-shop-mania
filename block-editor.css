@@ -1,0 +1,18 @@
+.wc-block-components-product-sale-badge, .wc-block-grid__product-onsale {
+    border-radius: 4px;
+    background: GREEN;
+    color: #FFF;
+    border: 0;
+}
+.wc-block-grid__product-onsale {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.wc-block-grid__product:hover {
+    box-shadow: 0 0 15px #eee;
+    border: 1px solid #F1F1F1;
+}
+.wc-block-grid__product-title a{
+    text-decoration: none;
+}

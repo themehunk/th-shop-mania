@@ -7160,6 +7160,7 @@ header.zta-transparent-header.shrink {
   border-radius: 4px;
   background: GREEN;
   color: #FFF;
+  border: 0;
 }
 .wc-block-grid__product-onsale{
   position: absolute;
@@ -7174,6 +7175,17 @@ header.zta-transparent-header.shrink {
   box-shadow: 0 0 15px #eee;
   border: 1px solid #F1F1F1;
 }
+.wc-block-components-drawer__screen-overlay{
+  z-index: 999999;
+}
+.wp-block-woocommerce-mini-cart-contents .wc-block-components-sale-badge,
+.wp-block-woocommerce-mini-cart-contents .wc-block-components-product-metadata{
+  display: none;
+}
+ table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity .wc-block-cart-item__remove-link{
+  font-size: .95em;
+  text-decoration: none;
+ }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
   padding-top: 15px;

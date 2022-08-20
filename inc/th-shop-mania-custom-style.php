@@ -28,3 +28,12 @@ $th_shop_mania_style.=".loader{
 
 return $th_shop_mania_style;
 }
+
+function th_shop_mania_block_editor_custom_style(){
+$th_shop_mania_theme_clr = esc_html(get_theme_mod('th_shop_mania_theme_clr','#008000'));
+$th_shop_mania_block_editor_style=".wp-block-button__link{
+    background: {$th_shop_mania_theme_clr};
+}"; 
+
+return $th_shop_mania_block_editor_style;
+}
