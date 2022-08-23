@@ -65,7 +65,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
         add_theme_support( 'editor-styles' );
 
         // Enqueue editor styles.
-        add_editor_style( 'style-editor.css' );
+        add_editor_style( 'block-editor.css' );
         // Add support for responsive embedded content.
         add_theme_support( 'responsive-embeds' );
 		// Add theme support for selective refresh for widgets.
@@ -230,6 +230,15 @@ function th_shop_mania_scripts(){
 	}
 }
 add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts' );
+
+add_action( 'enqueue_block_editor_assets', function() {
+    wp_enqueue_style('th-shop-mania-block-editor-style', get_template_directory_uri() . '/block-editor.css', array(), TH_SHOP_MANIA_THEME_VERSION);
+
+    wp_add_inline_style('th-shop-mania-block-editor-style', th_shop_mania_block_editor_custom_style());
+} );
+
+
+
 /**
  * Load init.
  */
