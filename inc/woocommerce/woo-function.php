@@ -488,7 +488,7 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
   <div class="th-shop-mania-shop-page-layout-default" id="shop-page-products-layouts">
     <div class="thunk-product-wrap">
       <div class="thunk-product">
-        <a href=" <?php echo esc_url(get_the_permalink()) . ' ' ?>" target="_blank" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+        <a href=" <?php echo esc_url(get_the_permalink()) . ' ' ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
           <div class="thunk-product-image">
             <?php echo th_shop_mania_woo_shop_product_on_sale();
             echo woocommerce_get_product_thumbnail();

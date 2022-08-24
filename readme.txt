@@ -36,6 +36,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Resolved - Warning Attempt to read property "ID" on Header & Footer.
 * New - WooCommerce new block style.
 * Padding option added.
+* Update - WooCommerce new block style improved.
 
 = Version 1.1.2 =
 * Theme optimisation work and icons changed.

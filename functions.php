@@ -232,12 +232,15 @@ function th_shop_mania_scripts(){
 add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts' );
 
 add_action( 'enqueue_block_editor_assets', function() {
+	require_once trailingslashit(TH_SHOP_MANIA_THEME_DIR).'third-party/fonts/wptt-webfont-loader.php';
+	wp_enqueue_style('jost-fonts',wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap' ),
+		array(),
+		'1.0'
+	);
     wp_enqueue_style('th-shop-mania-block-editor-style', get_template_directory_uri() . '/block-editor.css', array(), TH_SHOP_MANIA_THEME_VERSION);
 
     wp_add_inline_style('th-shop-mania-block-editor-style', th_shop_mania_block_editor_custom_style());
 } );
-
-
 
 /**
  * Load init.
