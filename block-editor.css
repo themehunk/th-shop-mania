@@ -11,6 +11,9 @@ html {
     color: #FFF;
     border: 0;
 }
+.wc-block-grid__product{
+    margin-bottom: 25px;
+}
 .wc-block-grid__product-onsale {
     position: absolute;
     top: 0;
@@ -46,4 +49,8 @@ html {
 }
 .wc-block-grid__product-rating{
     color: #f78686;
+}
+.wc-block-components-product-image img,
+.wc-block-grid__product-image img{
+  margin: 0 auto;
 }

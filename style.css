@@ -7171,7 +7171,7 @@ header.zta-transparent-header.shrink {
 }
 .wc-block-grid__product{
   border: 1px solid transparent;
-  padding-bottom: 16px;
+  margin-bottom: 25px;
 }
 .wc-block-grid__product:hover{
   box-shadow: 0 0 15px #eee;
@@ -7193,6 +7193,10 @@ header.zta-transparent-header.shrink {
 }
 h2.wc-block-mini-cart__title{
   font-size: 1.2em;
+}
+.wc-block-components-product-image img,
+.wc-block-grid__product-image img{
+  margin: 0 auto;
 }
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
