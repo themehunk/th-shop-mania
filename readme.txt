@@ -27,6 +27,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Version Updated.
 * Update - Product Image in block style added.
 * New - TH Product Compare pro plugin integrated.
+* TH Advance Search z-index increased.
 
 = Version 1.1.3 =
 * New - Slider in single product page added.

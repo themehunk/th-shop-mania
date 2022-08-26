@@ -7124,7 +7124,7 @@ header.zta-transparent-header.shrink {
   background-position: center;
 }
 .thaps-autocomplete-suggestions{
-  z-index: 999997!important;
+  z-index: 9999997!important;
 }
 .dokan-store-products-filter-area .orderby-search{
   margin-top: 21px;
