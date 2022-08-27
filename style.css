@@ -7198,6 +7198,63 @@ h2.wc-block-mini-cart__title{
 .wc-block-grid__product-image img{
   margin: 0 auto;
 }
+/*****************/
+/*mobile nav bar*/
+/*****************/
+#th-shop-mania-mobile-bar{
+  display:none;
+}
+#th-shop-mania-mobile-bar{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    min-width: 100%;
+    min-height: 35px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.2);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.2s;
+    visibility: hidden;
+    display:block;
+    padding: 4px;
+}
+#th-shop-mania-mobile-bar.active {
+    opacity: 1;
+    transition: opacity 0.2s, visibility 0.3s;
+    visibility: visible;
+}
+#th-shop-mania-mobile-bar ul{
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+}
+#th-shop-mania-mobile-bar li{
+    list-style: none;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0;
+    flex: 1 0;
+    text-align: center;
+}
+#th-shop-mania-mobile-bar li a{
+  color: #FFF;
+}
+#th-shop-mania-mobile-bar li a,
+#th-shop-mania-mobile-bar .taiowc-icon .th-icon{
+  font-size: 25px;
+  line-height: 32px;
+}
+#th-shop-mania-mobile-bar .menu-btn{
+  background: transparent;
+}
+#th-shop-mania-mobile-bar .taiowc-total{
+  display: none;
+}
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
   padding-top: 15px;

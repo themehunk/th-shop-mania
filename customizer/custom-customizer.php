@@ -151,7 +151,7 @@ function th_shop_mania_sanitize_radio( $input='', $setting='' ){
   }
 }
 // MULTI-CHOICE
-function open_sanitize_multi_choices( $input, $setting ){
+function sanitize_multi_choices( $input, $setting ){
 
       // Get list of choices from the control
       // associated with the setting.
