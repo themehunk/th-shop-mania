@@ -370,7 +370,7 @@ if (!function_exists('th_shop_mania_add_to_cart')) {
 if (!function_exists('th_shop_mania_add_to_compare_fltr')) {
   function th_shop_mania_add_to_compare_fltr($pid = '')
   {
-    if (class_exists('th_product_compare')) {
+    if (class_exists('th_product_compare') || class_exists('Tpcp_product_compare')) {
       echo '<div class="thunk-compare"><div th-tooltip="' . __('Compare', 'th-shop-mania') . '" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="' . $pid . '"><span class="th-icon th-icon-repeat"></span><span class="text">' . __('Compare', 'th-shop-mania') . '</span></a></div></div>';
     }
   }
@@ -393,6 +393,9 @@ add_action('woocommerce_after_shop_loop', 'th_shop_mania_pro_shop_content_end', 
 
 //To disable th compare button 
 remove_action('woocommerce_init', 'th_compare_add_action_shop_list');
+
+//To disable th compare Pro button 
+remove_action('woocommerce_init', 'tpcp_add_action_shop_list');
 
 // Woocommerce Cart Page Customisation
 remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
