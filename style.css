@@ -8475,3 +8475,7 @@ font-size:12px;
   margin-left: 0;
 }
 }
+.thaps-autocomplete-suggestions,
+.tapsp-autocomplete-suggestions{
+  z-index: 9999997!important;
+}
