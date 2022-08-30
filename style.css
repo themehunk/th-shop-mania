@@ -1438,6 +1438,9 @@ display:none;
 .thunk-icon-market > :nth-last-child(2){
   margin-right: 0;
 }
+.thunk-icon-market a{
+  display: inline-flex;
+}
 .thunk-icon-market .th-icon,
 header .th-icon{
   display: block;
@@ -7255,6 +7258,9 @@ h2.wc-block-mini-cart__title{
 #th-shop-mania-mobile-bar .taiowc-total{
   display: none;
 }
+#wpadminbar {
+  z-index: 9999999;
+}
 @media screen and (max-width: 1024px){
 .container > .content-wrap{
   padding-top: 15px;
@@ -7805,6 +7811,12 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 }
 .responsive-main-header #thaps-search-button{
   margin: 0;
+}
+.responsive-main-header #thaps-search-button:focus{
+  outline: 2px dotted #999;
+}
+.responsive-main-header .thaps-search-autocomplete:focus{
+  outline: thin dotted;
 }
 .responsive-main-header .taiowc-content .taiowc-total,
 .sticky-header-bar .taiowc-content .taiowc-total{
