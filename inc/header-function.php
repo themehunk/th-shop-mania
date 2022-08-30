@@ -227,9 +227,12 @@ if( $description || is_customize_preview() ):?>
 // Product search
 /***************************/
 function th_shop_mania_product_search_box(){  
-  if (shortcode_exists( 'th-aps' )) {
+  if ( shortcode_exists( 'th-aps' ) ) {
     echo do_shortcode('[th-aps]');          
-  }       
+  }
+  elseif ( shortcode_exists('tapsp') ){
+    echo do_shortcode('[tapsp]');
+    }       
 }
 // mobile panel
 function th_shop_mania_cart_mobile_panel(){
