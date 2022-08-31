@@ -184,9 +184,6 @@ embed, iframe, object, video {
    max-width: 100%;
    vertical-align: middle;
 }
-iframe{
-width:100%;
-}
 hr{
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
