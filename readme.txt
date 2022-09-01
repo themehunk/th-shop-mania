@@ -24,16 +24,18 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Changelog ==
 = Version 1.1.5 =
-* TH Search Suggestion issue resolved.
+* Update - TH Search Suggestion issue resolved.
+* Update - Iframe CSS Removed.
+* Update - Z-Index Removed from header.
 
 = Version 1.1.4 =
 * Version Updated.
 * Update - Product Image in block style added.
 * New - TH Product Compare pro plugin integrated.
-* TH Advance Search z-index increased.
-* TH Search Pro Integrated.
-* Admin Bar style.
-* Search Issue resolved.
+* Update - TH Advance Search z-index increased.
+* Update - TH Search Pro Integrated.
+* Update - Admin Bar style.
+* Update - Search Issue resolved.
 
 = Version 1.1.3 =
 * New - Slider in single product page added.
@@ -94,7 +96,8 @@ Initial release
 
 == Upgrade Notice ==
 = Version 1.1.5 =
-* TH Search Suggestion issue resolved.
+* Update - TH Search Suggestion issue resolved.
+* Update - Iframe CSS Removed.
 
 == Resources ==
  
