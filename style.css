@@ -676,7 +676,6 @@ background: #ff3377;
 header{
   background: transparent;
   position: relative;
-  z-index: 999999;
 }
 .top-header-bar,
 .main-header-bar,
@@ -1186,6 +1185,7 @@ display: contents;
     transform: translateY(-100%);
     -webkit-animation: none;
     animation: none;
+    z-index: 999999;
 }
 .sticky-header.stick{
     visibility: visible;
@@ -1443,7 +1443,9 @@ header .th-icon{
   display: block;
 }
 .thunk-icon-market .thaps-search-box,
-.sticky-header-bar .thaps-search-box{
+.sticky-header-bar .thaps-search-box,
+.thunk-icon-market .tapsp-search-box,
+.sticky-header-bar .tapsp-search-box{
   min-width: initial;
   padding: 0;
 }

@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.
 * Update - Iframe CSS Removed.
+* Update - Z-Index Removed from header.
 
 = Version 1.1.4 =
 * Version Updated.
