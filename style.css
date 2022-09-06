@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Th Shop mania is a builder based free WooCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
-Version: 1.1.5
+Version: 1.1.6
 Requires at least: 5.0
 Tested up to: 6.0
 Requires PHP: 5.4
@@ -1436,7 +1436,7 @@ display:none;
   margin-right: 0;
 }
 .thunk-icon-market a{
-  display: inline-flex;
+  display: flex;
 }
 .thunk-icon-market .th-icon,
 header .th-icon{
@@ -3726,7 +3726,7 @@ section.upsells.products h2,
   margin: 0;
 }
 .woocommerce-tabs.wc-tabs-wrapper{
-  padding-top: 80px;
+  padding: 60px 0;
 }
 .woocommerce div.product form.cart div.quantity{
     margin:0;
@@ -3894,9 +3894,8 @@ body .woocommerce-tabs .tabs li.active a::before, body .woocommerce-tabs .tabs l
     max-width: 790px;
     background: transparent;
     position: relative;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     display: none;
-    padding: 45px 20px;
 }
 .product_meta {
     width: 100%;
@@ -3945,14 +3944,15 @@ margin:0;
 }
 section.related.products ul.products,
 section.upsells.products ul.products{
-  padding: 60px 0;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 section.related.products,
 section.upsells.products{
-  padding: 60px 0;
+  padding: 0 0 60px 0;
 }
 section.related.products > h2, 
 section.upsells.products > h2,
@@ -3964,7 +3964,7 @@ section.upsells.products > h2,
     letter-spacing: 0.5px;
     position: relative;
     vertical-align: top;
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
     width: 100%;
     padding: 0;
 }
@@ -4341,7 +4341,6 @@ top:0em!important;
     border: 1px solid #9c9c9c;
     border-radius: 5px;
     color: #9c9c9c;
-    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0;
@@ -4535,6 +4534,8 @@ line-height: 25px;
 }
 .single-product .left-side{
   width: 49%;
+  position: sticky;
+  top: 45px;
   float: left;
 }
 .woocommerce #content div.product .left-side div.images{
@@ -4569,7 +4570,8 @@ line-height: 25px;
   flex-direction: column;
 }
 .woocommerce div.product .right-side div.summary .th-shop-mania-quantity{
-  height: 35px;
+  height: 56px;
+  justify-content: space-around;
 }
 .single-product.woocommerce div.product .left-side div.images a.woocommerce-product-gallery__trigger,
 .verticalslide-gallery.single-product .left-side ul.flex-direction-nav, 
@@ -4581,8 +4583,6 @@ line-height: 25px;
 }
 .woocommerce .right-side{
   width: 49%;
-  position: sticky;
-  top: 45px;
   float: right;
 }
 .woocommerce #content div.product .right-side div.summary{
@@ -4855,14 +4855,14 @@ border: 1px solid #f1f1f1;
 }
 .woocommerce-checkout .page-head{
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
   width: 50%;
   border: 0;
   padding: 21px;
   text-align: center;
-  margin: 80px auto 50px auto;
+  margin: 15px auto 60px auto;
   background: #f5f5f5;
   font-weight: 500;
 }
@@ -5052,7 +5052,7 @@ input[type="text"], input[type="email"],input[type="url"],
 .woocommerce-checkout form.checkout_coupon .form-row-first {
     float: left;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 9px;
 }
 .woocommerce-checkout form.checkout_coupon .form-row-last {
     float: left;
@@ -5193,13 +5193,13 @@ input[type="text"], input[type="email"],input[type="url"],
 .woocommerce-checkout.thsm-checkout-layout-stepped .woocommerce-billing-fields h3{
   display: none;
 }
-#billing_city_field,
-#billing_country_field,
-#billing_address_1_field,
-#billing_address_2_field,
-#billing_state_field,
-#billing_postcode_field,
-.col-2{
+.woocommerce-checkout.thsm-checkout-layout-stepped #billing_city_field,
+.woocommerce-checkout.thsm-checkout-layout-stepped #billing_country_field,
+.woocommerce-checkout.thsm-checkout-layout-stepped #billing_address_1_field,
+.woocommerce-checkout.thsm-checkout-layout-stepped #billing_address_2_field,
+.woocommerce-checkout.thsm-checkout-layout-stepped #billing_state_field,
+.woocommerce-checkout.thsm-checkout-layout-stepped #billing_postcode_field,
+.woocommerce-checkout.thsm-checkout-layout-stepped .col-2{
   display: none;
 }
 
@@ -5267,6 +5267,7 @@ border:0;
     border-radius: 0;
 }
 .woocommerce form.checkout_coupon > p:first-child{
+  margin-top: 18px;
   text-align: center;
 }
 .woocommerce-checkout form.checkout_coupon .form-row-first {
@@ -7533,7 +7534,7 @@ margin-right:0;
 @media screen and (max-width: 990px){
   section.related.products ul.products, 
   section.upsells.products ul.products{
-    padding: 40px 0;
+    padding: 0;
   }
   .responsive-main-header .main-header-col1{
     max-width: 21%;
@@ -7574,7 +7575,7 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 }
 @media screen and (min-width: 769px) and (max-width: 850px){
   .woocommerce div.entry-summary form.cart button[type=submit]{
-    width: 180px;
+    width: 148px;
   }
 }
 
@@ -7686,9 +7687,15 @@ h5 {
   .page-head h1{
   width:100%;
 }
-
 .woocommerce #content table.cart td.actions .coupon .input-text+.button{
   margin:0;
+}
+.woocommerce-checkout form.checkout_coupon .form-row-first{
+  width: 100%;
+  margin-left: 0;
+}
+.woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info .showcoupon{
+  display: block;
 }
 /* Cart Page */
 .woocommerce-cart .page-head h1{
@@ -8196,21 +8203,25 @@ padding: 0px 0px 0px 0px;
     padding: 10px 10px;
 }
 .woocommerce div.product .woocommerce-tabs .panel {
-margin: 0 0 15px;
+    margin: 15px 0 0 0;
+}
+.woocommerce-tabs.wc-tabs-wrapper{
+  padding: 30px 0;
 }
 section.related.products h2, 
 section.upsells.products h2,
 .woocommerce div.product .product_title {
-  margin-bottom: 15px;
     font-size: 28px;
     margin: 0px 0px 15px 0px;
-    padding: 0px 0px 15px;
+}
+section.related.products, section.upsells.products{
+  padding: 0 0 30px 0;
 }
 .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
     width: 49%;
 }
 .woocommerce div.product .woocommerce-tabs .panel{
-  padding: 45px 10px;
+  padding: 0 10px;
 }
 .thunk-list-grid-switcher a {
     width: 30px;
@@ -8324,6 +8335,7 @@ font-size:12px;
   width: initial;
   font-size: 32px;
   line-height: 39px;
+  margin-bottom: 15px;
 }
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
   width: 100%;
@@ -8346,6 +8358,9 @@ font-size:12px;
 .thsm-checkout-step .step-label{
   display: block;
   margin-top: 12px;
+}
+.woocommerce-checkout .page-head{
+  margin-top: 0;
 }
 /* cart page */
 .woocommerce-cart table.shop_table .product-thumbnail a{
