@@ -25,6 +25,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Changelog ==
 = Version 1.1.6 =
 * Update - Standard Checkout page issue resolved.
+* Update - Style issues resolved.
 
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.
@@ -100,6 +101,7 @@ Initial release
 == Upgrade Notice ==
 = Version 1.1.6 =
 * Update - Standard Checkout page issue resolved.
+* Update - Style issues resolved.
 
 == Resources ==
  

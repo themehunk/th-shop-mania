@@ -4817,6 +4817,9 @@ border: 1px solid #f1f1f1;
   text-align: center;
   padding-bottom: 20px;
 }
+.woocommerce table.shop_table.wishlist_table  thead tr{
+  display: contents;
+}
 .woocommerce table.shop_table thead tr{
   display: flex;
   justify-content: space-between;
@@ -6286,7 +6289,8 @@ border-color: #0177B5;
 .shop-page-products-layouts .thunk-wishlist a,
 .shop-page-products-layouts .thunk-compare a,
 .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse,
-.woocommerce .th_shop_mania-product-buttons a.button:hover{
+.woocommerce .th_shop_mania-product-buttons a.button:hover,
+.shop-page-products-layouts .yith-wcwl-wishlistaddedbrowse{
     width: 40px;
     height: 40px;
     margin: 0;
@@ -6325,7 +6329,8 @@ border-color: #0177B5;
     color: #FFF;
     font-weight: initial;
   }*/
-  .shop-page-products-layouts .thunk-wishlist-inner span{
+  .shop-page-products-layouts .thunk-wishlist-inner span,
+  .shop-page-products-layouts .thunk-wishlist-inner span + a{
     display: none;
   }
   .shop-page-products-layouts .yith-wcwl-wishlistaddedbrowse:before, 
@@ -6616,6 +6621,9 @@ border-color: #0177B5;
     border-top: none;
     z-index: 15;
   }
+.th-shop-mania-shop-page-layout-4 .thunk-wishlist .woocommerce-loop-product__link{
+  display: none;
+}
 /*============================================================================
 *  product layouts style and layout 4
 ==============================================================================*/
