@@ -235,7 +235,7 @@ transition: all 0.2s ease-in-out;
     top: 0;
     height: 100vh;
     z-index: 999999;
-    width: 350px;
+    width: 318px;
     max-width: 100%;
     -webkit-box-shadow: 0 0 12px 0 rgba(0,0,0,.4);
     box-shadow: 0 0 12px 0 rgba(0,0,0,.4);
