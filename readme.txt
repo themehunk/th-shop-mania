@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = Version 1.1.6 =
 * Update - Standard Checkout page issue resolved.
 * Update - Style issues resolved.
+* New - Popup Login 2nd layout integrated.
 
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.
@@ -102,6 +103,7 @@ Initial release
 = Version 1.1.6 =
 * Update - Standard Checkout page issue resolved.
 * Update - Style issues resolved.
+* New - Popup Login 2nd layout integrated.
 
 == Resources ==
  

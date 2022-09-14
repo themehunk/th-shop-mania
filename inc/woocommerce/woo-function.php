@@ -42,7 +42,12 @@ if (!function_exists('th_shop_mania_cart_total_item')) {
 if (!function_exists('th_shop_mania_account')) {
   function th_shop_mania_account()
   { ?>
-    <a class="account" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"><span class="th-icon th-icon-user"></span></a>
+    <a class="account" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"><span class="th-icon th-icon-user"></span>
+      </a>
+
+        <?php  if( shortcode_exists( 'thsmw-popup' ) ){
+              do_shortcode("[thsmw-popup popup='Popup 2']");
+          } ?>
   <?php }
   add_action('th_shop_mania_account', 'th_shop_mania_account');
 }
