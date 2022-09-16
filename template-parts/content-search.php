@@ -5,9 +5,13 @@
  * @package  Th Shop Mania
  * @since 1.0.0
  */
+$no_thumb = 'no-thumb';
+if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) {
+$no_thumb = 'thumb';
+}
 ?>
 <article id="post-<?php the_ID(); ?>" class="thunk-post-article">
-					<div class="post-content-outer-wrapper">
+					<div class="post-content-outer-wrapper <?php echo esc_attr($no_thumb); ?>">
 					<?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) {?>
 						<div class="thunk-post-img-wrapper">
 							<div class="thunk-post-img">
