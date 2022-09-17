@@ -9,6 +9,7 @@ $no_thumb = 'no-thumb';
 if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) {
 $no_thumb = 'thumb';
 }
+$th_shop_mania_pro_blog_layout = esc_html(get_theme_mod('th_shop_mania_pro_blog_layout','thsm-blog-layout-1'));
 ?>
 <article id="post-<?php the_ID(); ?>" class="thunk-post-article">
 					<div class="post-content-outer-wrapper <?php echo esc_attr($no_thumb); ?>">
@@ -16,7 +17,7 @@ $no_thumb = 'thumb';
 						<div class="thunk-post-img-wrapper">
 							<div class="thunk-post-img">
 								<a href="<?php the_permalink() ?>" class="post-thumb-link">
-									<?php the_post_thumbnail('post_thumbnail_loop'); ?>
+									<?php th_shop_blog_image($th_shop_mania_pro_blog_layout);  ?>
 								</a>
 							</div>
 						</div>
@@ -40,7 +41,7 @@ $no_thumb = 'thumb';
 						</div>
 					    </div>
 						<div class="thunk-post-excerpt">
-								<?php th_shop_mania_the_excerpt('excerpt');?> 
+								<?php th_shop_mania_the_excerpt();?> 
 						</div>
 					</div> <!-- thunk-posts-description end -->
 				</div> <!-- post-content-outer-wrapper end -->

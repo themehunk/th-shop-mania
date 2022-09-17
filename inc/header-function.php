@@ -239,6 +239,7 @@ function th_shop_mania_cart_mobile_panel(){
 $th_shop_mania_mobile_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left');
   ?>
       <div class="mobile-nav-bar sider main  th-shop-mania-menu-hide <?php echo esc_attr($th_shop_mania_mobile_menu_open); ?>">
+        <?php th_shop_mania_product_search_box(); ?>
         <div class="sider-inner">
         
           <div class="mobile-tab-wrap">
