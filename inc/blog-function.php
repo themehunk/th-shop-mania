@@ -33,19 +33,39 @@ if ( ! function_exists( 'th_shop_mania_the_excerpt' ) ){
 	 *
 	 * @since 1.0.0
 	 */
-	function th_shop_mania_the_excerpt($excerpt_type=''){?>
+	function th_shop_mania_the_excerpt($excerpt_type=''){ ?>
 		<div class="entry-content">
-		<?php
+		<?php $excerpt_type = get_theme_mod( 'th_shop_mania_blog_post_content','excerpt');
 		if ( 'full' == $excerpt_type ){
 			the_content();
-		} elseif('excerpt' == $excerpt_type ){
+		} 
+		elseif('excerpt' == $excerpt_type ){
 			the_excerpt();
+
 		} else {
           return false;
 		}?>
 		</div>	
 	<?php }
 }
+/**
+		 * Read more text.
+		 *
+		 * @param string $text default read more text.
+		 * @return string read more text
+		 */
+		function th_shop_mania_read_more_text( $text ) {
+
+			$read_more = get_theme_mod( 'th_shop_mania_blog_read_more_txt' );
+
+			if ( '' != $read_more ) {
+				$text = $read_more;
+			}
+
+			return $text;
+		}
+      add_filter( 'th_shop_mania_blog_read_more_txt', 'th_shop_mania_read_more_text');
+
 /**
  * Function to get Read More Link of Post
  *
@@ -65,11 +85,11 @@ if ( ! function_exists( 'th_shop_mania_post_link' ) ){
 		if ( ( is_admin() && ! wp_doing_ajax() ) || ! $enabled ){
 			return $output_filter;
 		}
-		$th_shop_mania_read_more_text = apply_filters( 'open_post_read_more', __( 'Read More', 'th-shop-mania' ) );
-		$read_more_classes        = apply_filters( 'open_post_read_more_class', array() );
+		$read_more_text = apply_filters( 'th_shop_mania_blog_read_more_txt', __( 'Read More', 'th-shop-mania' ) );
+		$read_more_classes        = apply_filters( 'th_shop_mania_blog_read_more_txt_class', array() );
 		$post_link = sprintf(
 			esc_html( '%s' ),
-			'<a class="' . implode( ' ', $read_more_classes ) . ' thunk-readmore button " href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . $th_shop_mania_read_more_text . '</a>'
+			'<a class="' . implode( ' ', $read_more_classes ) . ' thunk-readmore button " href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . $read_more_text . '</a>'
 		);
 		$output = ' &hellip;<p class="read-more"> ' . $post_link . '</p>';
 		return apply_filters( 'th_shop_mania_post_link', $output, $output_filter );
@@ -88,3 +108,22 @@ the_posts_pagination(array(
 ));
 }
 endif;
+
+if ( ! function_exists( 'th_shop_blog_image' ) ){
+function th_shop_blog_image($layout = ''){
+
+	if (!wp_is_mobile() && ($layout == 'thsm-blog-layout-2' || $layout == 'thsm-blog-layout-3' || $layout == 'thsm-blog-layout-4')) {
+		the_post_thumbnail( 'medium' );  
+	} 
+	elseif(!wp_is_mobile() && $layout == 'thsm-blog-layout-5'){
+		the_post_thumbnail( 'medium_large' );
+	}
+	elseif (!wp_is_mobile() && $layout == 'thsm-blog-layout-1') {
+	// Full resolution (original size uploaded)
+		the_post_thumbnail( 'full' ); 
+	}
+	elseif(wp_is_mobile()){
+		the_post_thumbnail( 'thumbnail' );
+	}
+}
+}
