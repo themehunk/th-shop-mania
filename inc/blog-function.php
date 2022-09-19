@@ -126,7 +126,7 @@ function th_shop_blog_image($layout = ''){
 		the_post_thumbnail( 'full' ); 
 	}
 	elseif(wp_is_mobile()){
-		the_post_thumbnail( 'thumbnail' );
+		the_post_thumbnail( 'post-thumbnail' );
 	}
 }
 }

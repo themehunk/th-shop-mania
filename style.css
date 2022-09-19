@@ -5306,8 +5306,14 @@ margin-bottom:42px;
 .thunk-post-img-wrapper{
 margin-bottom:15px
 }
+.thunk-posts-description {
+  width: 100%;
+}
 h2.thunk-post-title,h1.thunk-post-title{
 margin-bottom: 9px
+}
+h2.entry-title.thunk-post-title {
+    letter-spacing: 0;
 }
 .thunk-post-meta{
 margin-bottom:15px;
@@ -5318,6 +5324,7 @@ display: flex;
     line-height: 1.8;
 }
 .th-post-categ{
+  margin-top: 15px;
   margin-bottom: 9px;
 }
 article.thunk-post-article .thunk-readmore.button,.comment-respond [type="submit"] {
@@ -5354,7 +5361,12 @@ margin-bottom:10px;
     display: inline-block;
 }
 .thunk-comments span,.thunk-comments a{
-  color:#fff;
+  color: #fff;
+}
+.thunk-post-info,.thunk-post-info a {
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #767676;
 }
 .thunk-post-info{
     width: 80%;
@@ -5376,7 +5388,7 @@ margin-bottom:10px;
     font-family: th-icon;
     margin-right: 9px;
     font-weight: 700;
-    font-size: 21px;
+    font-size: 16px;
 }
 .thunk-post-info span:last-child:before {
     content: "\f073";
@@ -7904,6 +7916,9 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
     width: 100px;
     height: 2px;
   }
+  .thunk-post-info span:nth-of-type(2){
+    margin: 0;
+  }
 .menu-category-list ul[data-menu-style="accordion"] {
     position: absolute;
     float: none;
@@ -8175,7 +8190,7 @@ p.read-more {
     font-size: 15px;
 }
 article.thunk-article, article.thunk-post-article, .single article, .no-results.not-found, #error-404 {
-    padding: 7.5px;
+    padding: 7.5px 0;
     margin-bottom: 7.5px;
 }
 .widget.woocommerce .widget-title, .th-shop-mania-widget-content .widget-title, .widget-title {
