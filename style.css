@@ -148,7 +148,7 @@ h1 {
  }
 h2 { 
   font-size: 22px;
-  line-height:35px;
+  line-height:32px;
  }
 h3 {
   font-size: 20px;
@@ -5301,13 +5301,13 @@ line-height: 34px;
 }
 article.thunk-article,article.thunk-post-article,.single article,.no-results.not-found,#error-404{
 background: transparent;
-margin-bottom:30px;
+margin-bottom:42px;
 }
 .thunk-post-img-wrapper{
 margin-bottom:15px
 }
 h2.thunk-post-title,h1.thunk-post-title{
-margin-bottom:5px
+margin-bottom: 9px
 }
 .thunk-post-meta{
 margin-bottom:15px;
@@ -5316,6 +5316,9 @@ display: flex;
 .entry-content p {
     margin-bottom:25px;
     line-height: 1.8;
+}
+.th-post-categ{
+  margin-bottom: 9px;
 }
 article.thunk-post-article .thunk-readmore.button,.comment-respond [type="submit"] {
     font-weight: normal;
@@ -5368,17 +5371,20 @@ margin-bottom:10px;
     left: 5px;
     position: absolute;
 }
-.thunk-post-info span:after{
-content: " ";
-    width: 10px;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    display: inline-block;
-    margin: 0px 5px;
-    vertical-align: middle;
+.thunk-post-info span:before{
+    content: "\e91c";   
+    font-family: th-icon;
+    margin-right: 9px;
+    font-weight: 700;
+    font-size: 21px;
 }
-.thunk-post-info span:last-child:after {
-display:none;
+.thunk-post-info span:last-child:before {
+    content: "\f073";
+    font-weight: 500;
+    font-size: 16px;
+}
+.thunk-post-info span:nth-of-type(2){
+    margin-left: 16px;
 }
 /*post pagination*/
 .navigation.pagination{

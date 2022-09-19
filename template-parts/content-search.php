@@ -23,15 +23,12 @@ $th_shop_mania_pro_blog_layout = esc_html(get_theme_mod('th_shop_mania_pro_blog_
 						</div>
 					<?php } ?>
 					<div class="thunk-posts-description ">
-						
+						<div class="th-post-categ"><span><?php the_category(' '); ?></span></div>
 						<?php the_title( '<h2 class="entry-title thunk-post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 						<div class="thunk-post-meta">
 						<div class="thunk-post-info">
-							<span><?php the_author_posts_link(); ?></span>
-						    
-							<span><?php the_category(' '); ?></span>
-						    
+							<span><?php the_author_posts_link(); ?></span>				    
 						    <span><?php echo get_the_date(); ?></span>
 					     </div>
 						<div class="thunk-post-comments">
