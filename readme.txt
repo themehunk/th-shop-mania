@@ -28,6 +28,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update - Style issues resolved.
 * New - Popup Login 2nd layout integrated.
 * New - Blog Excerpt work.
+* Update - Blog Layout Modification.
 
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.
@@ -105,6 +106,8 @@ Initial release
 * Update - Standard Checkout page issue resolved.
 * Update - Style issues resolved.
 * New - Popup Login 2nd layout integrated.
+* New - Blog Excerpt work.
+* Update - Blog Layout Modification.
 
 == Resources ==
  

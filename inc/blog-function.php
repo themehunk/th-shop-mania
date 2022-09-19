@@ -56,11 +56,11 @@ if ( ! function_exists( 'th_shop_mania_the_excerpt' ) ){
 		 */
 		function th_shop_mania_read_more_text( $text ) {
 
-			$read_more = get_theme_mod( 'th_shop_mania_blog_read_more_txt' );
+			$read_more = get_theme_mod( 'th_shop_mania_blog_read_more_txt','Read More' );
 
-			if ( '' != $read_more ) {
+			
 				$text = $read_more;
-			}
+			
 
 			return $text;
 		}
@@ -86,6 +86,9 @@ if ( ! function_exists( 'th_shop_mania_post_link' ) ){
 			return $output_filter;
 		}
 		$read_more_text = apply_filters( 'th_shop_mania_blog_read_more_txt', __( 'Read More', 'th-shop-mania' ) );
+		if ($read_more_text == '') {
+			return;
+		}
 		$read_more_classes        = apply_filters( 'th_shop_mania_blog_read_more_txt_class', array() );
 		$post_link = sprintf(
 			esc_html( '%s' ),
@@ -112,10 +115,10 @@ endif;
 if ( ! function_exists( 'th_shop_blog_image' ) ){
 function th_shop_blog_image($layout = ''){
 
-	if (!wp_is_mobile() && ($layout == 'thsm-blog-layout-2' || $layout == 'thsm-blog-layout-3' || $layout == 'thsm-blog-layout-4')) {
+	if (!wp_is_mobile() && ($layout == 'thsm-blog-layout-4')) {
 		the_post_thumbnail( 'medium' );  
 	} 
-	elseif(!wp_is_mobile() && $layout == 'thsm-blog-layout-5'){
+	elseif(!wp_is_mobile() && ($layout == 'thsm-blog-layout-2' || $layout == 'thsm-blog-layout-3' || $layout == 'thsm-blog-layout-5')){
 		the_post_thumbnail( 'medium_large' );
 	}
 	elseif (!wp_is_mobile() && $layout == 'thsm-blog-layout-1') {
