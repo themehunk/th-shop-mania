@@ -29,6 +29,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * New - Popup Login 2nd layout integrated.
 * New - Blog Excerpt work.
 * Update - Blog Layout Modification.
+* Update - Blog Single style Work.
 
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.
