@@ -12,8 +12,8 @@ $th_shop_mania_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', 
         			<div class="main-area">
         				<div id="primary" class="primary-content-area">
                    <div class="page-head">
-                    <?php the_title( '<h1 class="entry-title thunk-post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
-                   <?php th_shop_mania_breadcrumb_trail();?>
+                    <?php th_shop_mania_breadcrumb_trail();
+                    the_title( '<h1 class="entry-title thunk-post-title">', '</h1>' ); ?>
                     </div>
         					<div class="primary-content-wrap">
                                   <?php

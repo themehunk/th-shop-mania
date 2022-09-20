@@ -140,7 +140,6 @@ section{
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Jost';font-weight: 500;
-    letter-spacing: 1px;  
 }
 h1 {
   font-size: 32px;
@@ -5304,7 +5303,7 @@ background: transparent;
 margin-bottom:42px;
 }
 .thunk-post-img-wrapper{
-margin-bottom:15px
+margin-bottom: 30px
 }
 .thunk-posts-description {
   width: 100%;
@@ -5318,14 +5317,15 @@ h2.entry-title.thunk-post-title {
 .thunk-post-meta{
 margin-bottom:15px;
 display: flex;
+flex-wrap: wrap;
 }
 .entry-content p {
     margin-bottom:25px;
     line-height: 1.8;
 }
 .th-post-categ{
-  margin-top: 15px;
-  margin-bottom: 9px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 article.thunk-post-article .thunk-readmore.button,.comment-respond [type="submit"] {
     font-weight: normal;
@@ -5370,6 +5370,7 @@ margin-bottom:10px;
 }
 .thunk-post-info{
     width: 80%;
+    margin-bottom: 15px;
 }
 .thunk-post-comments {
     width: 20%;
@@ -5727,6 +5728,11 @@ form p label{
 .thunk-single-page .logged-in-as{
   margin: 20px 0;
 }
+.thunk-single-post .logged-in-as .required-field-message,
+.thunk-single-page .logged-in-as .required-field-message{
+  display: block;
+  margin-top: 12px;
+}
 .thunk-single-post .logged-in-as a:nth-of-type(2),
 .thunk-single-page .logged-in-as a:nth-of-type(2){
 
@@ -5794,6 +5800,9 @@ color: #111;
 }
 .thunk-breadcrumb {
 padding-bottom:0;
+}
+.single .breadcrumb-trail{
+  margin-bottom: 10px;
 }
 .thunk-page-top-title + .breadcrumb-trail{
   margin-top: 20px;
@@ -7293,7 +7302,18 @@ h2.wc-block-mini-cart__title{
 #wpadminbar {
   z-index: 9999999;
 }
+.single .page-head h1{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.single article.thunk-article{
+  padding: 0;
+}
 @media screen and (max-width: 1024px){
+.main-area{
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .container > .content-wrap{
   padding-top: 15px;
 }
@@ -7677,6 +7697,12 @@ h5 {
 .page-head .breadcrumb-trail.breadcrumbs {
     flex: inherit;
 }
+.comment-form,
+.comment-form input[type="text"], 
+.comment-form input[type="email"], 
+.comment-form input[type="url"]{
+  width: 100%;
+}
 .woocommerce #content div.product div.summary, 
 .woocommerce div.product div.summary,
 .woocommerce-page #content div.product div.summary,
@@ -7917,8 +7943,11 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
     height: 2px;
   }
   .thunk-post-info span:nth-of-type(2){
-    margin: 0;
+    margin: 0 0 0 9px;
   }
+  .thunk-post-info span:before{
+  margin-right: 9px;
+}
 .menu-category-list ul[data-menu-style="accordion"] {
     position: absolute;
     float: none;
@@ -8119,6 +8148,9 @@ padding:7.5px
     line-height: 30px;
     font-size:12px;
   }
+.comment-form{
+  width: 100%;
+}
 /*shop page*/
 .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
     float: left;
@@ -8175,12 +8207,12 @@ margin-bottom: 10px!important;
 h2,
 .sidebar-content-area h4 {
     font-size: 15px;
-    line-height: 21px;
+    line-height: 25px;
 }
 .entry-content p {
     margin-bottom: 10px;
     line-height: 1.8;
-    font-size: 12px;
+    font-size: 16px;
 }
 p.read-more {
     margin-bottom: 0;
@@ -8191,7 +8223,7 @@ p.read-more {
 }
 article.thunk-article, article.thunk-post-article, .single article, .no-results.not-found, #error-404 {
     padding: 7.5px 0;
-    margin-bottom: 7.5px;
+    margin-bottom: 25px;
 }
 .widget.woocommerce .widget-title, .th-shop-mania-widget-content .widget-title, .widget-title {
     font-size: 15px;
@@ -8405,9 +8437,9 @@ font-size:12px;
 /* Checkout page */
 .page-head h1{
   width: initial;
-  font-size: 32px;
-  line-height: 39px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  line-height: 33px;
+  margin-bottom: 0;
 }
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
   width: 100%;
