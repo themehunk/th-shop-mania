@@ -419,18 +419,17 @@ top:0;
     width: 5px;
 }
 .mobile-nav-bar .sider-inner .panel{
-    padding: 15px;
-    
+    padding: 15px;   
 }
 .mobile-menu-active .sider.left,
 .sticky-mobile-menu-active .sider.left,
 .mobile-bottom-menu-active .sider.left{
-    left:-12px;
+    left: 0;
 }
 .mobile-nav-widget{
-position: fixed;
+    position: fixed;
     bottom: 0;
-       padding: 15px;
+    padding: 15px;
     max-width: 100%;
 }
 body{

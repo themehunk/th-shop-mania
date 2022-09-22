@@ -1508,7 +1508,7 @@ header .taiowc-icon .th-icon{
 }
 /* (10)404 page & no-result page*/
 #no-results .page-content p, #error-404 .page-content p{
-margin:15px 0px;
+  margin: 0;
 }
 
 #no-results .form-content input[type="text"],#error-404 .form-content input[type="text"]{
@@ -5749,7 +5749,7 @@ form p label{
 #searchform [type="submit"],
 .widget_product_search button[type="submit"] {
     line-height: 30px;
-    font-size: 11px;
+    font-size: 12px;
     padding: 0px 12px;
    border:1px solid #141415;
     background: #141415;
@@ -7309,6 +7309,24 @@ h2.wc-block-mini-cart__title{
 .single article.thunk-article{
   padding: 0;
 }
+.theme-button{
+  padding: 7px 12px;
+  display: inline-flex;
+  background: GREEN;
+  color: #FFF;
+  border-radius: 4px;
+  align-items: center;
+}
+.theme-button:hover{
+  color: #FFF;
+}
+.theme-button span{
+  margin-right: 9px;
+}
+.error-404 .theme-button,
+.error-404 #searchform{
+  margin-top: 30px;
+}
 @media screen and (max-width: 1024px){
 .main-area{
   padding-left: 10px;
@@ -7597,6 +7615,10 @@ margin-right:0;
 }
 .woocommerce-checkout .main-area {
     max-width: 70%;
+}
+.thaps-autocomplete-suggestions{
+  width: 312px!important;
+  left: 0!important;
 }
 }
 @media screen and (max-width: 990px){
@@ -8535,6 +8557,10 @@ font-size:12px;
 }
 .single-product .woocommerce-product-gallery:hover ul.flex-direction-nav{
   display: none;
+}
+#error-404 .form-content input[type="text"]{
+  width: 100%;
+  margin-bottom: 30px;
 }
 }
 @media screen and (max-width:550px){

@@ -30,6 +30,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * New - Blog Excerpt work.
 * Update - Blog Layout Modification.
 * Update - Blog Single style Work.
+* 404 Page layout Added.
 
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.

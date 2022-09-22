@@ -8,8 +8,13 @@
  * @subpackage Th Shop Mania
  * @since 1.0.0
  */
+$th_shop_mania_pro_404_layout = get_theme_mod('th_shop_mania_pro_404_layout','thsm-404-layout-2');
+$th_shop_mania_404_title = get_theme_mod('th_shop_mania_404_title','404');
+$th_shop_mania_404_subtitle = get_theme_mod('th_shop_mania_404_subtitle','Oops! That page can’t be found.');
+$th_shop_mania_404_description = get_theme_mod('th_shop_mania_404_description','It looks like nothing was found at this location. Maybe try a search?');
+$th_shop_mania_404_shortcode = get_theme_mod('th_shop_mania_404_shortcode','[featured_products]');
 get_header();?>
-<div id="content" class="page-content">
+<div id="content" class="page-content <?php echo esc_attr($th_shop_mania_pro_404_layout); ?>">
         	<div class="content-wrap" >
         		<div class="container">
         			<div class="main-area">
@@ -19,13 +24,15 @@ get_header();?>
                                 <article id="error-404" >
 			<div class="error-404 not-found">
 				<div class="error-heading">
-					<h2 class="thunk-page-top-title entry-title"><?php esc_html_e( '404', 'th-shop-mania' ); ?></h2>
-					<h3><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'th-shop-mania' ); ?></h3>
+					<h2 class="thunk-page-top-title entry-title"><?php echo esc_html($th_shop_mania_404_title); ?></h2>
+					<h3><?php echo esc_html($th_shop_mania_404_subtitle); ?></h3>
 				</div><!-- .error-heading -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'th-shop-mania' ); ?></p>
+					<p><?php echo esc_html($th_shop_mania_404_description); ?></p>
 					<?php get_search_form(); ?>
+
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="theme-button"><span class="th-icon th-icon-arrow-left"></span><?php echo __('Back To Home','th-shop-mania'); ?></a>
 				</div><!-- .page-content -->
 
 				<?php
@@ -41,8 +48,16 @@ get_header();?>
           </article>
           					</div>
                            </div> <!-- end primary-content-wrap-->
+
+                           <?php if ($th_shop_mania_pro_404_layout == 'thsm-404-layout-2') {
+                            echo do_shortcode(esc_html($th_shop_mania_404_shortcode));
+                        }
+                            ?>
         				</div> <!-- end primary primary-content-area-->
-        				<?php get_sidebar(); ?><!-- end sidebar-primary  sidebar-content-area-->
+        				<?php 
+        				if ($th_shop_mania_pro_404_layout == 'thsm-404-layout-1') {
+        				 	get_sidebar();
+        				 }  ?><!-- end sidebar-primary  sidebar-content-area-->
         			</div> <!-- end main-area -->
         		</div>
         	</div> <!-- end content-wrap -->
