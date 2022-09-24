@@ -4393,7 +4393,7 @@ clear: initial;
   z-index: 9;
 }
 .woocommerce .th-shop-mania-pageheader + #content div.product .prev_next_buttons{
-  top: -40px;
+  top: -29px;
 }
 .woocommerce #content div.product .prev_next_buttons a{
 border: 1px solid #eee;
@@ -8298,9 +8298,9 @@ min-width:70px;
 }
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, .summary .yith-wcwl-wishlistexistsbrowse a,
 .woocommerce .entry-summary a.th-product-compare-btn.button {
-    height: 30px;
-    line-height: 30px;
-    width: 30px;
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
     display: block;
 }
 .woocommerce .entry-summary .th-product-compare-btn-wrap{
