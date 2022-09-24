@@ -13,6 +13,9 @@ $th_shop_mania_404_title = get_theme_mod('th_shop_mania_404_title','404');
 $th_shop_mania_404_subtitle = get_theme_mod('th_shop_mania_404_subtitle','Oops! That page can’t be found.');
 $th_shop_mania_404_description = get_theme_mod('th_shop_mania_404_description','It looks like nothing was found at this location. Maybe try a search?');
 $th_shop_mania_404_shortcode = get_theme_mod('th_shop_mania_404_shortcode','[featured_products]');
+$th_shop_mania_404_image = esc_url(get_theme_mod('th_shop_mania_404_image',''));
+$th_shop_mania_404_button_text = get_theme_mod('th_shop_mania_404_button_text','Back To Home');
+$th_shop_mania_404_button_link = esc_url(get_theme_mod('th_shop_mania_404_button_link',home_url( '/' )));
 get_header();?>
 <div id="content" class="page-content <?php echo esc_attr($th_shop_mania_pro_404_layout); ?>">
         	<div class="content-wrap" >
@@ -24,15 +27,27 @@ get_header();?>
                                 <article id="error-404" >
 			<div class="error-404 not-found">
 				<div class="error-heading">
-					<h2 class="thunk-page-top-title entry-title"><?php echo esc_html($th_shop_mania_404_title); ?></h2>
-					<h3><?php echo esc_html($th_shop_mania_404_subtitle); ?></h3>
+			<?php if ($th_shop_mania_404_title != '') { ?>
+				<h2 class="thunk-page-top-title entry-title"><?php echo esc_html($th_shop_mania_404_title); ?></h2>
+			<?php	} 
+
+			if ($th_shop_mania_404_subtitle != '') { ?>
+				<h3><?php echo esc_html($th_shop_mania_404_subtitle); ?></h3>
+			<?php	} ?>	
 				</div><!-- .error-heading -->
 
 				<div class="page-content">
-					<p><?php echo esc_html($th_shop_mania_404_description); ?></p>
-					<?php get_search_form(); ?>
-
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="theme-button"><span class="th-icon th-icon-arrow-left"></span><?php echo __('Back To Home','th-shop-mania'); ?></a>
+					<?php if ($th_shop_mania_404_description != '') { ?>
+						<p><?php echo esc_html($th_shop_mania_404_description); ?></p>
+				<?php	} 
+					
+				if ($th_shop_mania_404_image != '') { ?>
+						<img src="<?php echo $th_shop_mania_404_image; ?>" class="404-image">
+				<?php	} 
+					get_search_form(); 
+					if ($th_shop_mania_404_button_text != '') { ?>
+						<a href="<?php echo $th_shop_mania_404_button_link; ?>" rel="home" class="theme-button back-to"><span class="th-icon th-icon-arrow-left"></span><?php echo esc_html($th_shop_mania_404_button_text); ?></a>
+				<?php	} ?>			
 				</div><!-- .page-content -->
 
 				<?php

@@ -7139,6 +7139,7 @@ header.zta-transparent-header.shrink {
 .th-shop-mania-pageheader .thunk-breadcrumb{
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 .th-shop-mania-pageheader-content .page-head .entry-title,
 .th-shop-mania-pageheader-content .page-head nav *{
@@ -7326,6 +7327,12 @@ h2.wc-block-mini-cart__title{
 .error-404 .theme-button,
 .error-404 #searchform{
   margin-top: 30px;
+}
+.page-head h1{
+  margin-bottom: 21px;
+}
+.resp-mobileh-below-header .thaps-search-box{
+  max-width: 100%;
 }
 @media screen and (max-width: 1024px){
 .main-area{
@@ -8461,7 +8468,7 @@ font-size:12px;
   width: initial;
   font-size: 26px;
   line-height: 33px;
-  margin-bottom: 0;
+  margin-bottom: 9px;
 }
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
   width: 100%;
