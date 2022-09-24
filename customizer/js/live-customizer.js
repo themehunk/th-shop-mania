@@ -238,4 +238,5 @@ wp.customize( 'th_shop_mania_theme_clr', function( setting ){
         } );
     } );
 
+
 })( jQuery );

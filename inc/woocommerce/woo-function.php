@@ -523,7 +523,7 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
           </div>
           <div class="thunk-product-content">
             <h2 class="woocommerce-loop-product__title">
-              <?php echo get_the_title(); ?>
+              <?php echo th_shop_mania_woo_woocommerce_template_loop_product_title(); ?>
             </h2>
             <?php echo th_shop_mania_woo_shop_product_price($product);
             echo th_shop_mania_woo_shop_product_rating($product); ?>
