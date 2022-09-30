@@ -7300,9 +7300,6 @@ h2.wc-block-mini-cart__title{
 #th-shop-mania-mobile-bar .taiowc-total{
   display: none;
 }
-#wpadminbar {
-  z-index: 9999999;
-}
 .single .page-head h1{
   padding-bottom: 0;
   margin-bottom: 0;
