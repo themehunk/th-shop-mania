@@ -16,6 +16,7 @@ $th_shop_mania_404_shortcode = get_theme_mod('th_shop_mania_404_shortcode','[fea
 $th_shop_mania_404_image = esc_url(get_theme_mod('th_shop_mania_404_image',''));
 $th_shop_mania_404_button_text = get_theme_mod('th_shop_mania_404_button_text','Back To Home');
 $th_shop_mania_404_button_link = esc_url(get_theme_mod('th_shop_mania_404_button_link',home_url( '/' )));
+$th_shop_mania_404_type = esc_html(get_theme_mod('th_shop_mania_404_type','text'));
 get_header();?>
 <div id="content" class="page-content <?php echo esc_attr($th_shop_mania_pro_404_layout); ?>">
         	<div class="content-wrap" >
@@ -26,8 +27,11 @@ get_header();?>
         					<div class="thunk-content-wrap">
                                 <article id="error-404" >
 			<div class="error-404 not-found">
+				<?php	if ($th_shop_mania_404_type == 'image') { ?>
+						<img src="<?php echo $th_shop_mania_404_image; ?>" class="error-404-image">
+				<?php	} ?>
 				<div class="error-heading">
-			<?php if ($th_shop_mania_404_title != '') { ?>
+			<?php if ($th_shop_mania_404_type == 'text' && $th_shop_mania_404_title != '') { ?>
 				<h2 class="thunk-page-top-title entry-title"><?php echo esc_html($th_shop_mania_404_title); ?></h2>
 			<?php	} 
 
@@ -40,10 +44,7 @@ get_header();?>
 					<?php if ($th_shop_mania_404_description != '') { ?>
 						<p><?php echo esc_html($th_shop_mania_404_description); ?></p>
 				<?php	} 
-					
-				if ($th_shop_mania_404_image != '') { ?>
-						<img src="<?php echo $th_shop_mania_404_image; ?>" class="404-image">
-				<?php	} 
+					 
 					get_search_form(); 
 					if ($th_shop_mania_404_button_text != '') { ?>
 						<a href="<?php echo $th_shop_mania_404_button_link; ?>" rel="home" class="theme-button back-to"><span class="th-icon th-icon-arrow-left"></span><?php echo esc_html($th_shop_mania_404_button_text); ?></a>

@@ -31,6 +31,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update - Blog Layout Modification.
 * Update - Blog Single style Work.
 * 404 Page layout Added.
+* 404 Page Modification.
 
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.
