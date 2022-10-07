@@ -237,8 +237,9 @@ function th_shop_mania_product_search_box(){
 // mobile panel
 function th_shop_mania_cart_mobile_panel(){
 $th_shop_mania_mobile_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left');
+$th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_resp_mobile_header_layout','respmobile-layout-1');
   ?>
-      <div class="mobile-nav-bar sider main  th-shop-mania-menu-hide <?php echo esc_attr($th_shop_mania_mobile_menu_open); ?>">
+      <div class="mobile-nav-bar sider main  th-shop-mania-menu-hide <?php echo esc_attr($th_shop_mania_mobile_menu_open).' '.esc_attr($th_shop_mania_pro_resp_mobile_header_layout); ?>">
         <?php th_shop_mania_product_search_box(); ?>
         <div class="sider-inner">
         

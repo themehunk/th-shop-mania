@@ -280,6 +280,9 @@ body #alm-quick-view-modal div.product .flex-viewport {
 #alm-quick-view-content .product_meta > span{
     padding: 9px 0;
 }
+#alm-quick-view-content div.product .summary .woocommerce-product-rating{
+  float: initial;
+}
 @media (max-width: 768px) {
   #alm-quick-view-content div.summary form.cart .button {
     padding: 10px;

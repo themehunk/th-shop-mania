@@ -7338,6 +7338,9 @@ h2.wc-block-mini-cart__title{
 .resp-mobileh-below-header .thaps-search-box{
   max-width: 100%;
 }
+.woocommerce div.product p.price ins, .woocommerce div.product span.price ins{
+  font-weight: 500;
+}
 @media screen and (max-width: 1024px){
 .main-area{
   padding-left: 10px;
@@ -7472,6 +7475,17 @@ margin-top: 5px;
 .theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span::after,
 .theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span::before{
     background: transparent;
+ }
+ /* Responsive Mobile Header */
+ .theme-th-shop-mania .tapsp-content-wrapp{
+  flex-wrap: wrap;
+  text-align: initial;
+  justify-content: flex-start;
+  align-items: center;
+ }
+.theme-th-shop-mania .tapsp-content-left{
+  width: 100%;
+  margin-bottom: 4px;
  }
 /********************/
 /*product style*/
