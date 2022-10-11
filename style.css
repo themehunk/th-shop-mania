@@ -7963,6 +7963,9 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 .responsive-main-header .thaps-search-box{
   max-width: initial;
 }
+.logo-content img{
+  max-width: 108px;
+}
 /*sidebar slide CSS Start  */
 .sidebar-content-area .widget-title+ul,
 .sidebar-content-area .widget-title+div,
