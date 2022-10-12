@@ -843,6 +843,8 @@ text-align:center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  line-height: initial;
 }
 /********************/
 /*(6)thnk-col csss*/
@@ -1418,7 +1420,6 @@ display:none;
   color: inherit;
 }
 .thunk-icon-market{
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -3168,7 +3169,7 @@ border: 1px solid transparent;
 .woocommerce ul.products li.product .button{
   margin: 0;
 }
-.woocommerce-product-details__short-description{
+.alm-content-main-wrapper .woocommerce-product-details__short-description{
   max-height: 178px;
   overflow: auto;
 }
@@ -7962,6 +7963,9 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 }
 .responsive-main-header .thaps-search-box{
   max-width: initial;
+}
+.logo-content img{
+  max-width: 108px;
 }
 /*sidebar slide CSS Start  */
 .sidebar-content-area .widget-title+ul,
