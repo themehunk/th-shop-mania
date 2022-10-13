@@ -423,7 +423,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
             add_filter('woocommerce_product_reviews_heading', '__return_empty_string');
             remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 
-				add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs',40 );
+				add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs',108 );
 
 
 				add_action( 'woocommerce_before_single_product_summary', 'th_shop_mania_start_left_side', 5 );
