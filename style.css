@@ -1635,7 +1635,7 @@ position:relative;
 .mhdrfive a.prd-search{
   padding-right: 0;
 }
-.mhdrfive .main-header-col1 a:nth-of-type(1){
+.mhdrfive .main-header-col1 .thunk-icon-market a.whishlist{
   margin-right: 21px;
 }
 /* mhdrsix */
@@ -1644,15 +1644,23 @@ position:relative;
   flex: initial;
 }
 .mhdrsix .desktop-main-header .main-header-col2{
-  width: 20%;
+  width: 16%;
   flex: initial;
 }
 .mhdrsix .desktop-main-header .main-header-col3{
-  width: 40%;
+  width: 44%;
   flex: initial;
 }
-.mhdrsix .header-support-wrap{
+.mhdrsix .header-support-wrap,
+.mhdrsix .menu-category-list{
   margin-right: 20px;
+}
+/*.mhdrsix .menu-category-list{
+  width: initial;
+}*/
+/* mhdrseven */
+.mhdrseven .menu-category-list{
+  margin-left: 20px;
 }
 /*****************/
 /*Menu Alignment*/
@@ -1908,7 +1916,7 @@ display:none;
 /* Vertical Menu Styles
 ----------------------------------------*/
 .menu-category-list{
-  width: 209px;
+  min-width: 127px;
   position: relative;
 }
 .menu-category-list ul[data-menu-style="vertical"] {
