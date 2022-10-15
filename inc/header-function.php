@@ -23,6 +23,10 @@ if (!function_exists('th_shop_mania_top_header_markup')) {
            if ((! wp_is_mobile() ) || wp_is_mobile() && ( !get_theme_mod('th_shop_mania_above_header_disable',false ))) {
             ?>
             <div class="top-header">
+                <?php 
+                if (function_exists('th_shop_mania_display_color_customizer_shortcut')) {
+                th_shop_mania_display_color_customizer_shortcut( 'th-shop-mania-abv-header-clr' );
+                } ?>
               <div class="container">
                 <div class="top-header-bar thnk-col-3">
             <?php dynamic_sidebar('top-header-widget-col1'); ?>
