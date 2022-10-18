@@ -3661,7 +3661,8 @@ button.pswp__button--arrow--right::before,
 .woocommerce div.product .product_title,
 section.related.products h2,
 section.upsells.products h2,
-.woocommerce #reviews #comments h2{color:var(--body-text);}
+.woocommerce #reviews #comments h2,
+.thwbt-wrapper > h2{color:var(--body-text);}
 
 .single-product .summary .product_title{
   max-width: 390px;
@@ -3963,7 +3964,8 @@ text-align:left;
 .woocommerce-Tabs-panel .woocommerce-Reviews .comment-form{
   width: 100%;
 }
-section.related.products h2,section.upsells.products h2{
+section.related.products h2,section.upsells.products h2,
+.thwbt-wrapper > h2{
 margin-bottom:30px;
 }
 section.related.products .thunk-woo-product-list,section.upsells.products .thunk-woo-product-list{
@@ -3990,7 +3992,8 @@ section.upsells.products{
 }
 section.related.products > h2, 
 section.upsells.products > h2,
-.woocommerce div.product .product_title{
+.woocommerce div.product .product_title,
+.thwbt-wrapper > h2{
   font-size: 28px;
     line-height: 35px;
     color: var(--body-text);
@@ -4003,7 +4006,8 @@ section.upsells.products > h2,
     padding: 0;
 }
 section.related.products > h2, 
-section.upsells.products > h2{
+section.upsells.products > h2,
+.thwbt-wrapper > h2{
   text-align: center;
   border-bottom: 0;
 }
@@ -8405,7 +8409,8 @@ padding: 0px 0px 0px 0px;
 }
 section.related.products h2, 
 section.upsells.products h2,
-.woocommerce div.product .product_title {
+.woocommerce div.product .product_title,
+.thwbt-wrapper > h2 {
     font-size: 28px;
     margin: 0px 0px 15px 0px;
 }
