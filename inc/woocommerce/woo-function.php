@@ -376,7 +376,7 @@ if (!function_exists('th_shop_mania_add_to_compare_fltr')) {
   function th_shop_mania_add_to_compare_fltr($pid = '')
   {
     if (class_exists('th_product_compare') || class_exists('Tpcp_product_compare')) {
-      echo '<div class="thunk-compare"><div th-tooltip="' . __('Compare', 'th-shop-mania') . '" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="' . $pid . '"><span class="th-icon th-icon-repeat"></span><span class="text">' . __('Compare', 'th-shop-mania') . '</span></a></div></div>';
+      echo '<div class="thunk-compare"><div th-tooltip="' . __('Compare', 'th-shop-mania') . '" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="' . esc_attr($pid) . '"><span class="th-icon th-icon-repeat"></span><span class="text">' . __('Compare', 'th-shop-mania') . '</span></a></div></div>';
     }
   }
 }
@@ -485,6 +485,9 @@ if (!function_exists('th_shop_mania_woo_woocommerce_shop_product_content')) {
       th_shop_mania_woocommerce_product_layout4($product, $productId);
     } else if ($shop_th_shop_mania_woo_product_layout == 5) {
       th_shop_mania_woocommerce_product_layout5($product, $productId);
+    }
+      else if ($shop_th_shop_mania_woo_product_layout == 6) {
+      th_shop_mania_woocommerce_product_layout6($product, $productId);
     }
   }
 }
