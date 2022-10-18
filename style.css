@@ -3129,6 +3129,7 @@ border: 1px solid transparent;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  color: #ffbd27;
 }
 .woocommerce span.onsale,
 .woocommerce ul.products li.product .onsale{
