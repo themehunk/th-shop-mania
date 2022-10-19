@@ -3129,6 +3129,7 @@ border: 1px solid transparent;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  color: #ffbd27;
 }
 .woocommerce span.onsale,
 .woocommerce ul.products li.product .onsale{
@@ -6293,7 +6294,8 @@ border-color: #0177B5;
   left: 50%;
 }
 /*** tooltip  */
-.th-product-style-1 .tooltip-show-with-title{
+.th-product-style-1 .tooltip-show-with-title,
+.th-product-style-6 .tooltip-show-with-title{
   display: none!important;
 }
 .th-shop-mania-shop-page-layout-default .thunk-product-hover{

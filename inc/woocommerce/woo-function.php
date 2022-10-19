@@ -501,7 +501,7 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
       <div class="thunk-product">
         <a href=" <?php echo esc_url(get_the_permalink()) . ' ' ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
           <div class="thunk-product-image">
-            <?php echo th_shop_mania_woo_shop_product_on_sale();
+            <?php echo wp_kses_post(th_shop_mania_woo_shop_product_on_sale());
             echo woocommerce_get_product_thumbnail();
             $hover_style = get_theme_mod('th_shop_mania_woo_product_animation');
             // the_post_thumbnail();
@@ -524,10 +524,8 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
             do_action('quickview');
             ?>
           </div>
-          <div class="thunk-product-content">
-            <h2 class="woocommerce-loop-product__title">
+          <div class="thunk-product-content"> 
               <?php echo th_shop_mania_woo_woocommerce_template_loop_product_title(); ?>
-            </h2>
             <?php echo th_shop_mania_woo_shop_product_price($product);
             echo th_shop_mania_woo_shop_product_rating($product); ?>
           </div>
