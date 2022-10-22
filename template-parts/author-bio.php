@@ -10,7 +10,7 @@
 	<div class="thunk-author-bio">
 	<?php if ( get_option( 'show_avatars' ) ) : ?>
 		<div class="author-avatar">
-			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '110', '' ); ?>
+			<?php echo wp_kses_post(get_avatar( get_the_author_meta( 'user_email' ), '110', '' )); ?>
 		</div><!-- .author-avatar -->
 <?php endif; ?>
 	<div class="author-info">

@@ -30,7 +30,7 @@ $th_shop_mania_pro_blog_layout = esc_html(get_theme_mod('th_shop_mania_pro_blog_
 						<div class="thunk-post-info">
 							<span><?php the_author_posts_link(); ?></span>
 						    
-						    <span><?php echo get_the_date(); ?></span>
+						    <span><?php echo wp_kses_post(get_the_date()); ?></span>
 					     </div>
 						<div class="thunk-post-comments">
 							<div class="thunk-comments-icon">

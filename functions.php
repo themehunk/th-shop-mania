@@ -237,7 +237,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 		array(),
 		'1.0'
 	);
-    wp_enqueue_style('th-shop-mania-block-editor-style', get_template_directory_uri() . '/block-editor.css', array(), TH_SHOP_MANIA_THEME_VERSION);
+    wp_enqueue_style('th-shop-mania-block-editor-style', get_template_directory_uri() . '/css/block-editor.css', array(), TH_SHOP_MANIA_THEME_VERSION);
 
     wp_add_inline_style('th-shop-mania-block-editor-style', th_shop_mania_block_editor_custom_style());
 } );

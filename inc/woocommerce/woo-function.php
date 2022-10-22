@@ -231,7 +231,7 @@ if (!function_exists('th_shop_mania_product_list_categories_mobile')) {
       'use_desc_for_title'  => 0,
     );
     $html = wp_list_categories($defaults);
-    echo '<ul class="mob-product-cat-list thunk-product-cat-list mobile" data-menu-style="accordion">' . $html . '</ul>';
+    echo '<ul class="mob-product-cat-list thunk-product-cat-list mobile" data-menu-style="accordion">' .wp_kses_post($html). '</ul>';
   }
 }
 /**********************************/
@@ -387,7 +387,7 @@ if (!function_exists('th_shop_mania_whish_list')) {
   function th_shop_mania_whish_list($pid = '')
   {
     if (shortcode_exists('yith_wcwl_add_to_wishlist')) {
-      echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="' . __('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . do_shortcode('[yith_wcwl_add_to_wishlist product_id=' . $pid . ' icon="th-icon th-icon-heart1" label=' . __('wishlist', 'th-shop-mania') . ' already_in_wishslist_text=' . __('Already', 'th-shop-mania') . ' browse_wishlist_text=' . __('Added', 'th-shop-mania') . ']') . '</div></span></div>';
+      echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="' . __('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . do_shortcode('[yith_wcwl_add_to_wishlist product_id=' . esc_attr($pid) . ' icon="th-icon th-icon-heart1" label=' . __('wishlist', 'th-shop-mania') . ' already_in_wishslist_text=' . __('Already', 'th-shop-mania') . ' browse_wishlist_text=' . __('Added', 'th-shop-mania') . ']') . '</div></span></div>';
     }
   }
 }
@@ -440,7 +440,7 @@ if (!function_exists('th_shop_mania_woo_shop_product_price')) {
   function th_shop_mania_woo_shop_product_price($product)
   {
     $price_html = $product->get_price_html();
-    return $price_html ? '<span class="price">' . $price_html . '</span>' : '';
+    echo $price_html ? '<span class="price">' .wp_kses_post($price_html). '</span>' : '';
   }
 }
 if (!function_exists('th_shop_mania_woo_shop_product_on_sale')) {
@@ -461,9 +461,9 @@ if (!function_exists('th_shop_mania_woo_woocommerce_template_loop_product_title'
    * Show the product title in the product loop. By default this is an H2.
    */
   function th_shop_mania_woo_woocommerce_template_loop_product_title()
-  {
-    return $html =  '<a href="' . esc_url(get_the_permalink()) . '" class="zta-loop-product__link"><h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2></a>';
-  }
+  { ?>
+    <a href="<?php echo esc_url(get_the_permalink()); ?>" class="zta-loop-product__link"><h2 class="woocommerce-loop-product__title"><?php echo esc_html(get_the_title()); ?></h2></a>
+<?php  }
 }
 if (!function_exists('th_shop_mania_woo_woocommerce_shop_product_content')) {
   /**
@@ -501,8 +501,9 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
       <div class="thunk-product">
         <a href=" <?php echo esc_url(get_the_permalink()) . ' ' ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
           <div class="thunk-product-image">
-            <?php echo wp_kses_post(th_shop_mania_woo_shop_product_on_sale());
-            echo woocommerce_get_product_thumbnail();
+            <?php echo wp_kses(th_shop_mania_woo_shop_product_on_sale(),th_shop_mania_wp_kses_allowed_html()
+          );
+            echo wp_kses_post(woocommerce_get_product_thumbnail());
             $hover_style = get_theme_mod('th_shop_mania_woo_product_animation');
             // the_post_thumbnail();
             if ('swap' === $hover_style) {
@@ -510,7 +511,8 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
               if (!empty($attachment_ids)) {
 
                 $glr = wp_get_attachment_image($attachment_ids[0], 'shop_catalog', false, array('class' => 'show-on-hover'));
-                echo $category_product['glr'] = $glr;
+                $category_product['glr'] = $glr;
+                echo wp_kses_post($category_product['glr']);
               }
             }
             if ('slide' === $hover_style) {
@@ -518,15 +520,16 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
               if (!empty($attachment_ids)) {
 
                 $glr = wp_get_attachment_image($attachment_ids[0], 'shop_catalog', false, array('class' => 'show-on-slide'));
-                echo $category_product['glr'] = $glr;
+                $category_product['glr'] = $glr;
+                echo wp_kses_post($category_product['glr']);
               }
             }
             do_action('quickview');
             ?>
           </div>
           <div class="thunk-product-content"> 
-              <?php echo th_shop_mania_woo_woocommerce_template_loop_product_title(); ?>
-            <?php echo th_shop_mania_woo_shop_product_price($product);
+              <?php th_shop_mania_woo_woocommerce_template_loop_product_title(); ?>
+            <?php th_shop_mania_woo_shop_product_price($product);
             echo th_shop_mania_woo_shop_product_rating($product); ?>
           </div>
         </a>

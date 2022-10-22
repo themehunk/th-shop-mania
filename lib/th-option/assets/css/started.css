@@ -58,7 +58,7 @@
     100% { background-position: 0 0; }
 }
 .rp-two-column.welcome-tabs{
-    height: 849px!important;
+    height: auto;
 }
 /* This css will remove when pro version ready */
 .wrap-th {

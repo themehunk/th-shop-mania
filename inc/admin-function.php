@@ -58,7 +58,7 @@ add_filter( 'wp_page_menu', 'th_shop_mania_add_classes_to_page_menu_default' );
 /************************/
 function th_shop_mania_nav_description( $item_output, $item, $depth, $args ){
     if ( !empty( $item->description ) ) {
-        $item_output = str_replace( $args->link_after . '</a>', '<p class="menu-item-description">' . esc_html($item->description) . '</p>' . $args->link_after . '</a>', $item_output );
+        $item_output = str_replace( $args->link_after . '</a>', '<p class="menu-item-description">' . esc_html($item->description) . '</p>' . wp_kses_post($args->link_after) . '</a>', $item_output );
     }
  
     return $item_output;
@@ -191,10 +191,10 @@ if($page_post_meta_set!=='on'){?>
 function th_shop_mania_body_classes( $classes ){
 if(class_exists( 'WooCommerce' )):
 $classes[] = 'woocommerce';
-$th_shop_mania_pro_single_product_layout = get_theme_mod('th_shop_mania_pro_single_product_layout','standard');  
+$th_shop_mania_pro_single_product_layout = esc_attr(get_theme_mod('th_shop_mania_pro_single_product_layout','standard'));  
 $classes[] = 'th-single-'.$th_shop_mania_pro_single_product_layout;
 endif;
-$th_shop_mania_woo_product_layout = get_theme_mod('th_shop_mania_woo_product_layout',1);  
+$th_shop_mania_woo_product_layout = esc_attr(get_theme_mod('th_shop_mania_woo_product_layout',1));  
 $classes[] = 'th-product-style-'.$th_shop_mania_woo_product_layout; 
 return $classes;
 }
@@ -268,4 +268,19 @@ function th_shop_mania_active_theme(){
     );
     $url = add_query_arg( $args_for_get, esc_url_raw( $url ) );
      $response = wp_remote_get( esc_url_raw( $url ),array( 'timeout' => 120) );
+}
+if (!function_exists('th_shop_mania_wp_kses_allowed_html')) {
+function th_shop_mania_wp_kses_allowed_html() {
+	return array(
+		'img' => array(
+			'title' => array(),
+			'src'	=> array(),
+			'alt'	=> array(),
+		),
+		'span' => array(
+            'class' => array(),
+       )
+
+	);
+}
 }

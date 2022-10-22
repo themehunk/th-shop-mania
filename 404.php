@@ -28,7 +28,7 @@ get_header();?>
                                 <article id="error-404" >
 			<div class="error-404 not-found">
 				<?php	if ($th_shop_mania_404_type == 'image') { ?>
-						<img src="<?php echo $th_shop_mania_404_image; ?>" class="error-404-image">
+						<img src="<?php echo esc_url($th_shop_mania_404_image); ?>" class="error-404-image">
 				<?php	} ?>
 				<div class="error-heading">
 			<?php if ($th_shop_mania_404_type == 'text' && $th_shop_mania_404_title != '') { ?>
@@ -47,7 +47,7 @@ get_header();?>
 					 
 					get_search_form(); 
 					if ($th_shop_mania_404_button_text != '') { ?>
-						<a href="<?php echo $th_shop_mania_404_button_link; ?>" rel="home" class="theme-button back-to"><span class="th-icon th-icon-arrow-left"></span><?php echo esc_html($th_shop_mania_404_button_text); ?></a>
+						<a href="<?php echo esc_url($th_shop_mania_404_button_link); ?>" rel="home" class="theme-button back-to"><span class="th-icon th-icon-arrow-left"></span><?php echo esc_html($th_shop_mania_404_button_text); ?></a>
 				<?php	} ?>			
 				</div><!-- .page-content -->
 
