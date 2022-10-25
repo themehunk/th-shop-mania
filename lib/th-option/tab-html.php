@@ -18,17 +18,17 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
             <div class="th-option-top-hdr">
                 <div class="col-1">
                     <div class="logo-img">
-                        <a target="_blank" href="<?php echo $theme_header['theme_brand_url']; ?>/?wp=th-shop-mania" class=""> <span class="logo-image"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/icon.png" /><?php echo $theme_header['theme_brand']; ?></span></a>
+                        <a target="_blank" href="<?php echo esc_url($theme_header['theme_brand_url']); ?>/?wp=th-shop-mania" class=""> <span class="logo-image"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/icon.png" /><?php echo esc_html($theme_header['theme_brand']); ?></span></a>
                     </div>
                 </div>
                 <div class="col-2">
                     <div class="th-option-heading">
                         <h2><?php printf( esc_html__( 'Welcome To %s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) ); ?>
                         </h2>
-                        <span><?php echo $theme_header['welcome_desc']; ?></span>
+                        <span><?php echo esc_html($theme_header['welcome_desc']); ?></span>
                     </div>
-                    <span class="version"><?php echo $theme_header['v']; ?></span>
-                    <span><?php echo _e('FREE THEME', 'th-shop-mania'); ?></span>
+                    <span class="version"><?php echo esc_html($theme_header['v']); ?></span>
+                    <span class="lite-versionlabel"><?php echo _e('FREE THEME', 'th-shop-mania'); ?></span>
                 </div>
             </div>
             <div class="th-option-bottom-hdr">
@@ -47,11 +47,7 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 
 <div class="content-wrap">
     <div class="main">
-
         <div class="tab-left">
-
-
-
             <!-- Tab content -->
             <div id="Welcome" class="tabcontent <?php echo esc_attr($tabActiveWl) ?>">
                 <div class="rp-two-column welcome-tabs">
@@ -76,8 +72,6 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
                             <a class="button disabled importdemo"><?php _e('Import Demo', 'th-shop-mania'); ?></a>
                             
                             <?php $this->plugin_install('import-demo-content'); ?>
-
-
                         </div>
 
                     </div>
@@ -119,6 +113,8 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 
 
         </div> <!-- tab div close -->
+
+
 
 
 

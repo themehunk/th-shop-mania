@@ -29,7 +29,7 @@ $meta_boxes = array(
         'fields' => array(
             array(
                 'name' => esc_html__('Sidebar','th-shop-mania'),
-                'id' => $prefix . 'sidebar_dyn',
+                'id' => esc_attr($prefix) . 'sidebar_dyn',
                 'type' => 'select',
                 'std' => 'no-sidebar',
                 'options' => array( 
@@ -41,48 +41,48 @@ $meta_boxes = array(
              ),
             array(
                 'name' => esc_html__('Disable section','th-shop-mania'),
-                'id' => $prefix . 'disable_section_dyn',
+                'id' => esc_attr($prefix) . 'disable_section_dyn',
                 'type' => '',
                    
             ),
             array(
                 'name' => '',
-                'id' => $prefix . 'disable_above_header_dyn',
+                'id' => esc_attr($prefix) . 'disable_above_header_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Above Header','th-shop-mania'),
                    
             ),
             array(
                 'name' => '',
-                'id' => $prefix . 'disable_main_header_dyn',
+                'id' => esc_attr($prefix) . 'disable_main_header_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Main Header','th-shop-mania'),
                    
             ),
             array(
                 'name' => '',
-                'id' => $prefix . 'disable_bottom_header_dyn',
+                'id' => esc_attr($prefix) . 'disable_bottom_header_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Bottom Header','th-shop-mania'),
                    
             ),
              array(
                 'name' => '',
-                'id' => $prefix . 'disable_title_dyn',
+                'id' => esc_attr($prefix) . 'disable_title_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable title','th-shop-mania'),
                    
             ),
              array(
                 'name' => '',
-                'id' => $prefix . 'disable_feature_image_dyn',
+                'id' => esc_attr($prefix) . 'disable_feature_image_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Feature Image','th-shop-mania'),
                    
             ),
               array(
                 'name' => '',
-                'id' => $prefix . 'disable_footer_widget_dyn',
+                'id' => esc_attr($prefix) . 'disable_footer_widget_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Footer Widget Area','th-shop-mania'),
                    
@@ -90,21 +90,21 @@ $meta_boxes = array(
 
              array(
                 'name' => '',
-                'id' => $prefix . 'disable_footer_widget_dyn',
+                'id' => esc_attr($prefix) . 'disable_footer_widget_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Footer Widget Area','th-shop-mania'),
                    
             ),
              array(
                 'name' => '',
-                'id' => $prefix . 'disable_bottom_footer_dyn',
+                'id' => esc_attr($prefix) . 'disable_bottom_footer_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Bottom Footer','th-shop-mania'),
                    
             ),
              array(
                 'name' => '',
-                'id' => $prefix . 'disable_page_header_dyn',
+                'id' => esc_attr($prefix) . 'disable_page_header_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Page Header','th-shop-mania'),
                    
@@ -117,14 +117,14 @@ $meta_boxes = array(
  if (function_exists('th_shop_mania_pro_load_plugin')) {
 $meta_boxes[0]['fields'][] =  array(
                 'name' => '',
-                'id' => $prefix . 'disable_above_footer_dyn',
+                'id' => esc_attr($prefix) . 'disable_above_footer_dyn',
                 'type' => 'checkbox',
                 'nameslug' => esc_html__('Disable Above Footer Area','th-shop-mania'),
                    
             );
 $meta_boxes[0]['fields'][] =    array(
                 'name' => esc_html__('Transparent Header','th-shop-mania'),
-                'id' => $prefix . 'transparent_header_dyn',
+                'id' => esc_attr($prefix) . 'transparent_header_dyn',
                 'type' => 'select',
                 'std' => 'default',
                 'options' => array( 

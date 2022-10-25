@@ -54,9 +54,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 						if ( ! $product_permalink ) {
-							echo $thumbnail; // PHPCS: XSS ok.
+							echo wp_kses_post($thumbnail); // PHPCS: XSS ok.
 						} else {
-							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses_post($thumbnail) ); // PHPCS: XSS ok.
 						}
 						?>
 						</td>

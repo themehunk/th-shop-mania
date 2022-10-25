@@ -201,7 +201,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 					$classes[] = 'open-shadow-hover-' . esc_attr($shadow_hvr_style);
 				}	
 			}
-			if ( 'swap' === $hover_style && !is_page_template('frontpage.php') && (!is_admin()) && !th_shop_mania_is_blog()){
+			if ( 'swap' === $hover_style && !is_front_page() && (!is_admin()) && !th_shop_mania_is_blog()){
             global $product;
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
@@ -209,7 +209,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			  }
 			
 		    }
-		     if('slide' === $hover_style && !is_page_template('frontpage.php') &&  (!is_admin()) && !th_shop_mania_is_blog()){
+		     if('slide' === $hover_style && !is_front_page() &&  (!is_admin()) && !th_shop_mania_is_blog()){
             global $product;
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
@@ -231,12 +231,12 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 */
 		function th_shop_mania_js_localize( $localize ){
 			global $wp_query;
-			$th_shop_mania_pagination                   = get_theme_mod( 'th_shop_mania_pagination' );
-			$localize['ajax_url']                   = admin_url( 'admin-ajax.php' );
+			$th_shop_mania_pagination               = (string)get_theme_mod( 'th_shop_mania_pagination' );
+			$localize['ajax_url']                   = esc_url(admin_url( 'admin-ajax.php' ));
 			$localize['is_cart']                    = is_cart();
 			$localize['is_single_product']          = is_product();
 			$localize['query_vars']                 = json_encode( $wp_query->query );
-			$localize['shop_quick_view_enable']     = get_theme_mod('th_shop_mania_woo_quickview_enable',false );
+			$localize['shop_quick_view_enable']     = (bool)get_theme_mod('th_shop_mania_woo_quickview_enable',false );
 			$localize['shop_infinite_nonce']        = wp_create_nonce( 'opn-shop-load-more-nonce' );
 			$localize['shop_infinite_count']        = 2;
 			$localize['shop_infinite_total']        = $wp_query->max_num_pages;
@@ -311,21 +311,22 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 			// Get label.
 			$label = __( 'Quick View', 'th-shop-mania' );
-
-			$button.='<div class="thunk-quik">
+			?>
+			<div class="thunk-quik">
 			             <div class="thunk-quickview">
                                <span class="quik-view">
-                                   <a href="#" class="opn-quick-view-text" data-product_id="' . esc_attr($product_id). '"><div th-tooltip="'.__('Quick View', 'th-shop-mania').'" class="quik-view-tooltip">
+                                   <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($product_id); ?>"><div th-tooltip="<?php echo __('Quick View', 'th-shop-mania'); ?>" class="quik-view-tooltip">
                                    	  <span class="th-icon th-icon-eye"></span>
-                                      <span class="qv-text">'.esc_html($label).'</span>
+                                      <span class="qv-text"><?php echo esc_html($label); ?></span>
                                       </div>
                                     
                                    </a>
                             </span>
-                          </div>';
-            $button.= '</div>';
-			$button = apply_filters( 'open_woo_add_quick_view_text_html', $button, $label, $product );
-			echo $button;
+                          </div>
+            </div>
+            <?php
+			// $button = apply_filters( 'open_woo_add_quick_view_text_html', $button, $label, $product );
+			// echo $button;
 		}
 		/**
 		 * Quick view html

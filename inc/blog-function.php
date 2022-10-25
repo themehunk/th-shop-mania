@@ -56,7 +56,7 @@ if ( ! function_exists( 'th_shop_mania_the_excerpt' ) ){
 		 */
 		function th_shop_mania_read_more_text( $text ) {
 
-			$read_more = get_theme_mod( 'th_shop_mania_blog_read_more_txt','Read More' );
+			$read_more = esc_html(get_theme_mod( 'th_shop_mania_blog_read_more_txt','Read More' ));
 
 			
 				$text = $read_more;
@@ -92,7 +92,7 @@ if ( ! function_exists( 'th_shop_mania_post_link' ) ){
 		$read_more_classes        = apply_filters( 'th_shop_mania_blog_read_more_txt_class', array() );
 		$post_link = sprintf(
 			esc_html( '%s' ),
-			'<a class="' . implode( ' ', $read_more_classes ) . ' thunk-readmore button " href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . $read_more_text . '</a>'
+			'<a class="' . implode( ' ', $read_more_classes ) . ' thunk-readmore button " href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . esc_html($read_more_text) . '</a>'
 		);
 		$output = ' &hellip;<p class="read-more"> ' . $post_link . '</p>';
 		return apply_filters( 'th_shop_mania_post_link', $output, $output_filter );

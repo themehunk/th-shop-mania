@@ -26,7 +26,7 @@ $th_shop_mania_blog_single_image = get_theme_mod('th_shop_mania_blog_single_imag
 						<div class="thunk-post-info">
 							<span><?php the_author_posts_link(); ?></span>
 						    
-						    <span><?php echo get_the_date(); ?></span>
+						    <span><?php echo wp_kses_post(get_the_date()); ?></span>
 					     </div>
 					   </div>
 					<div class="thunk-post-excerpt">

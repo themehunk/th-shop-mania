@@ -44,7 +44,7 @@ class th_shop_mania_Button_Customize_Section extends WP_Customize_Section {
 	public function json() {
 		$json = parent::json();
 
-		$json['pro_text'] = $this->pro_text;
+		$json['pro_text'] = esc_html($this->pro_text);
 		$json['pro_url']  = esc_url( $this->pro_url );
 
 		return $json;

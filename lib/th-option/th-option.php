@@ -95,7 +95,7 @@ static public function white_level_menu_callback() {
     static public function save_settings() {
 
       // Only admins can save settings.
-      if ( ! current_user_can( 'manage_options' ) ){
+      if ( ! current_user_can( 'edit_theme_options' ) ){
         return;
       }
 
@@ -141,10 +141,13 @@ static public function white_level_menu_callback() {
       wp_enqueue_style('thunk-started-css', get_template_directory_uri() . '/lib/th-option/assets/css/started.css');
       wp_enqueue_script('th-shop-mania-admin-load', get_template_directory_uri() . '/lib/th-option/assets/js/th-options.js', array('jquery', 'updates'), '1', true);
 
+      
+
       $data = apply_filters(
         'th_option_localize_vars',
         array(
           'oneClickDemo' => esc_url(admin_url('themes.php?page=themehunk-site-library')),
+          'wpnonce'    => wp_create_nonce( "ajaxnonce" ),
 
         )
       );
@@ -223,6 +226,14 @@ static public function white_level_menu_callback() {
           */
   public function th_activeplugin()
   {
+    if ( ! current_user_can( 'administrator' ) ) {
+
+                wp_die( - 1, 403 );
+                
+          } 
+
+    check_ajax_referer( 'ajaxnonce', 'nonce' );
+
     if (!current_user_can('install_plugins') || !isset($_POST['init']) || !$_POST['init']) {
       wp_send_json_error(
         array(

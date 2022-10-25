@@ -24,7 +24,7 @@
 
         }
         ?>
-        <button style="<?php echo $Bstyle; ?>" class="button activate-now <?php echo $class; ?>"><?php echo esc_html($btn_text); ?></button>
+        <button style="<?php echo esc_attr($Bstyle); ?>" class="button activate-now <?php echo esc_attr($class); ?>"><?php echo esc_html($btn_text); ?></button>
 		
          </p>
 		 	 
