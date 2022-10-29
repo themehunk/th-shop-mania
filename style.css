@@ -4437,10 +4437,13 @@ clear: initial;
 }
 .woocommerce #content div.product .prev_next_buttons a{
 border: 1px solid #eee;
-padding: 2px 12px 5px 12px;
+padding: 2px 12px;
 font-size: 16px;
 margin:3px;
-line-height: 25px;
+line-height: initial;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 .woocommerce #content div.product.th-shop-mania-single-product-content-right div.images, 
 .woocommerce div.product.th-shop-mania-single-product-content-right div.images, 
