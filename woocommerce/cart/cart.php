@@ -16,6 +16,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+$th_shop_mania_woo_cart_crosssell_enable = get_theme_mod('th_shop_mania_woo_cart_crosssell_enable',true);
 
 do_action( 'woocommerce_before_cart' ); ?>
 <div class="th-cartpage-wrapper">
@@ -178,4 +179,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	?>
 </div>
 </div>
-<?php do_action( 'woocommerce_after_cart' ); ?>
+<?php 
+if ($th_shop_mania_woo_cart_crosssell_enable) {
+	do_action( 'woocommerce_after_cart' );
+	} ?>
