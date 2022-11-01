@@ -46,7 +46,7 @@ if (!function_exists('th_shop_mania_account')) {
       </a>
 
         <?php  if( shortcode_exists( 'thsmw-popup' ) ){
-              do_shortcode("[thsmw-popup popup='Popup 2']");
+              do_shortcode("[thsmw-popup popup='Popup-2']");
           } ?>
   <?php }
   add_action('th_shop_mania_account', 'th_shop_mania_account');

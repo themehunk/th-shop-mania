@@ -3537,8 +3537,8 @@ margin:0;
 .thunk-single-product-summary-wrap.single span.onsale{
 position: absolute;
 border-radius:4px;
-top: 1px;
-left:0 !important;
+top: 7px;
+left:7px!important;
 right: auto !important;
 padding:5px 10px;
 line-height:normal;
@@ -3550,7 +3550,7 @@ z-index: 9;
 .thunk-single-product-summary-wrap{
 position:relative;
 display: block;
-margin-bottom: 20px;
+margin-bottom: 60px;
 }
 .single-product .thunk-woo-product-list{
 text-align:left;
@@ -4437,7 +4437,7 @@ clear: initial;
 }
 .woocommerce #content div.product .prev_next_buttons a{
 border: 1px solid #eee;
-padding: 2px 12px;
+padding: 5px 12px;
 font-size: 16px;
 margin:3px;
 line-height: initial;
@@ -4914,6 +4914,9 @@ border: 1px solid #f1f1f1;
   justify-content: center;
   margin-top: 30px;
 }
+.woocommerce-checkout .thunk-breadcrumb{
+  text-align: center;
+}
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
   width: 50%;
   border: 0;
@@ -5322,22 +5325,24 @@ border:0;
     padding: 12px;
     font-size: 15px;
     border-radius: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .woocommerce form.checkout_coupon > p:first-child{
-  margin-top: 18px;
+  width: 100%;
   text-align: center;
 }
 .woocommerce-checkout form.checkout_coupon .form-row-first {
-    float: left;
     width: 55%;
     margin-left: 10px;
+    flex-grow: 2;
 }
 p.form-row.form-row-first {
     margin-right: 15px;
 }
 .woocommerce-checkout form.checkout_coupon .form-row-last {
-    float: unset;
-    width: 100%;
+    width: auto;
 }
 .woocommerce-MyAccount-content .woocommerce-info {
 line-height: 34px;
@@ -6392,7 +6397,10 @@ border-color: #0177B5;
 .shop-page-products-layouts .thunk-wishlist a,
 .shop-page-products-layouts .thunk-compare a,
 .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse{
-
+}
+.woocommerce ul.products li.product .th-shop-mania-shop-page-layout-2 .onsale{
+  right: initial;
+  line-height: 9px;
 }
   /*.shop-page-products-layouts .th_shop_mania-product-buttons > div{
     width: 40px;
@@ -6705,6 +6713,10 @@ border-color: #0177B5;
     z-index: 15;
   }
 .th-shop-mania-shop-page-layout-4 .thunk-wishlist .woocommerce-loop-product__link{
+  display: none;
+}
+.shop-page-products-layouts.th-shop-mania-shop-page-layout-4 .yith-wcwl-add-to-wishlist span,
+.shop-page-products-layouts.th-shop-mania-shop-page-layout-4 .yith-wcwl-wishlistaddedbrowse a{
   display: none;
 }
 /*============================================================================
@@ -7305,7 +7317,6 @@ h2.wc-block-mini-cart__title{
     z-index: 9999;
     width: 100%;
     min-width: 100%;
-    min-height: 35px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -7314,7 +7325,7 @@ h2.wc-block-mini-cart__title{
     transition: opacity 0.3s, visibility 0.2s;
     visibility: hidden;
     display:block;
-    padding: 4px;
+    padding: 9px 4px;
 }
 #th-shop-mania-mobile-bar.active {
     opacity: 1;
@@ -7350,6 +7361,13 @@ h2.wc-block-mini-cart__title{
 }
 #th-shop-mania-mobile-bar .taiowc-total{
   display: none;
+}
+#th-shop-mania-mobile-bar li a span,
+#th-shop-mania-mobile-bar .taiowc-icon .th-icon{
+  display: block;
+}
+#th-shop-mania-mobile-bar li a.menu-btn{
+  -webkit-appearance: initial;
 }
 .single .page-head h1{
   padding-bottom: 0;
@@ -7749,6 +7767,10 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
   form.woocommerce-checkout p.form-row.form-row-first{
     margin-right: 12px;
   }
+  .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info,
+.woocommerce form.checkout_coupon{
+  width: 70%;
+}
 }
 
 @media screen and (max-width: 768px){
@@ -7869,7 +7891,6 @@ h5 {
   margin:0;
 }
 .woocommerce-checkout form.checkout_coupon .form-row-first{
-  width: 100%;
   margin-left: 0;
 }
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info .showcoupon{
@@ -8016,6 +8037,9 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 }
 .logo-content img{
   max-width: 108px;
+}
+.aftr-logo .canvas-icon{
+  margin-left: 2px;
 }
 /*sidebar slide CSS Start  */
 .sidebar-content-area .widget-title+ul,
@@ -8382,6 +8406,9 @@ font-size:13px
 line-height: 36px;
 min-width:70px;
 }
+.woocommerce.woocommerce-checkout button.button{
+  line-height: 45px;
+}
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, .summary .yith-wcwl-wishlistexistsbrowse a,
 .woocommerce .entry-summary a.th-product-compare-btn.button {
     height: 35px;
@@ -8473,6 +8500,9 @@ font-size:12px;
 .woocommerce-checkout h3#order_review_heading {
     float: left;
     width: 100%;
+}
+.woocommerce-checkout form.checkout_coupon .form-row-first{
+  margin-right: 0;
 }
 .woocommerce-billing-fields h3 {
     margin: 0 0 10px;
@@ -8704,11 +8734,11 @@ font-size:12px;
 }
 @media screen and (max-width: 390px){
 .responsive-main-header .main-header-col1{
-  width: 42%;
-  max-width: 42%;
+  width: 48%;
+  max-width: 48%;
 }
 .responsive-main-header .main-header-col3{
-  width: 58%
+  width: 52%
 }
 /*.woocommerce div.product .summary form{
   float: initial;
