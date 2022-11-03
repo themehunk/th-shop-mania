@@ -2690,12 +2690,11 @@ justify-content: flex-start;
     position: fixed;
     height: 100%;
     background: rgba(0,0,0,.4);
-    z-index: 99;
     visibility: hidden;
     opacity: 0;
     -webkit-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
-    z-index: 1001;
+    z-index: 999999;
 }
 .th-shop-mania-enabled-overlay  .th-shop-mania-off-canvas-sidebar-wrapper .th-shop-mania-off-canvas-sidebar{
     right: 0;
@@ -6513,13 +6512,14 @@ border-color: #0177B5;
   .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .th_shop_mania-product-buttons{
     flex-direction: initial;
     position: relative;
-    justify-content: space-around;
+    justify-content: flex-start;
     top: initial;
     right: initial;
   }
   .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .th_shop_mania-product-buttons > div{
     margin-bottom: 12px;
     margin-top: 12px;
+    margin-right: 9px;
   }
   .woocommerce .shop-page-products-layouts .th-add-to-cart > div{ 
     display: flex;
