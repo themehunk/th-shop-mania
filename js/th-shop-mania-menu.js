@@ -30,8 +30,10 @@ Th Shop Mania Responsive Menu script
         }
         $(window).resize(function(){
         menuCollapse();
+        if ($(window).width() > 480) {
         $('body').removeClass('mobile-menu-active');
         $('body').removeClass('sticky-mobile-menu-active');
+    }
         });
         $('#menu-btn,#mob-menu-btn,#menu-btn-abv,#menu-btn-btm,#menu-btn-stk').click(function(e){ 
             e.stopPropagation();
@@ -49,11 +51,11 @@ Th Shop Mania Responsive Menu script
         //   $('body').removeClass('sticky-mobile-menu-active');
         // });
 
-        //  jQuery(".th-shop-mania-mobile-menu-wrapper").on("click", function(e){
-        //     e.stopPropagation();
-        //     $('body').removeClass('mobile-menu-active'); 
-        //     $('body').removeClass('sticky-mobile-menu-active');
-        // });
+         jQuery(".th-shop-mania-mobile-menu-wrapper").on("click", function(e){
+            e.stopPropagation();
+            $('body').removeClass('mobile-menu-active'); 
+            $('body').removeClass('sticky-mobile-menu-active');
+        });
 
         // Menu Toggle
         function menuCollapse(){
