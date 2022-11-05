@@ -39,7 +39,7 @@
 }
 /* Multiple Checkbox */
 .customize-control .customize-inside-control-row label{
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 16px;
 	color: #111;
 	margin-top: 21px;
@@ -152,4 +152,7 @@ body.wp-customizer .wp-picker-input-wrap{
 }
 #customize-control-th_shop_mania_checkout_page_layout .ui-checkboxradio-label:nth-of-type(3):after{
 	content: 'Stepped';
+}
+input[type=checkbox]{
+	margin-bottom: 2px;
 }
