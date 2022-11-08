@@ -4,7 +4,7 @@
  *
  * @package     Th Shop Mania
  * @author      ThemeHunk
- * @copyright   Copyright (c) 2019, Th Shop Mania
+ * @copyright   Copyright (c) 2022, Th Shop Mania
  * @since       Th Shop Mania 1.0.0
  */
  if ( ! function_exists( 'th_shop_mania_custom_logo' ) ) :

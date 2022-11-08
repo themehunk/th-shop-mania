@@ -33,6 +33,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * New - 404 Page layout Added.
 * Update - 404 Page Modification.
 * Update - Logo Max-width added in responsive.
+* Update - issues resolved.
 
 = Version 1.1.5 =
 * Update - TH Search Suggestion issue resolved.
@@ -112,6 +113,11 @@ Initial release
 * New - Popup Login 2nd layout integrated.
 * New - Blog Excerpt work.
 * Update - Blog Layout Modification.
+* Update - Blog Single style Work.
+* New - 404 Page layout Added.
+* Update - 404 Page Modification.
+* Update - Logo Max-width added in responsive.
+* Update - issues resolved.
 
 == Resources ==
  
