@@ -146,6 +146,28 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             
         ) );         
         // Import Data Content plugins
+        // add_theme_support( 'import-demo-content', array(
+        //      'hunk-companion' => array(
+        //         'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
+        //          'img' => 'icon-128x128.png',
+        //         'active_filename' => 'hunk-companion/hunk-companion.php',
+        //     ),    
+
+        // ));
+        
+        if (!function_exists('hunk_companion_load_plugin')) {
+
+        add_theme_support( 'import-demo-content', array(
+             'mania-companion' => array(
+                'name' => esc_html__( 'Mania Companion', 'th-shop-mania' ),
+                 'img' => 'icon-128x128.png',
+                'active_filename' => 'mania-companion/mania-companion.php',
+            ),    
+
+        ));
+
+        } else{
+
         add_theme_support( 'import-demo-content', array(
              'hunk-companion' => array(
                 'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
@@ -154,6 +176,8 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ),    
 
         ));
+
+        }
 // remove_theme_support( 'widgets-block-editor' );
 	}
 endif;
