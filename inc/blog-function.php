@@ -3,7 +3,7 @@
  * Blog Function
  * @package     Th Shop Mania
  * @author      ThemeHunk
- * @copyright   Copyright (c) 2018, ThemeHunk
+ * @copyright   Copyright (c) 2022, ThemeHunk
  * @since       ThemeHunk 1.0.0
  */
         /**

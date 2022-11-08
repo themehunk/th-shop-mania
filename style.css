@@ -3064,7 +3064,7 @@ border: 1px solid transparent;
   display: inline-flex;
   font-size: 14px;
   line-height: 21px;
-  font-weight: initial;
+  font-weight: 500;
 }
 .thunk-product a.add_to_wishlist *,
 .thunk-product .yith-wcwl-wishlistexistsbrowse *,
