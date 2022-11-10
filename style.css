@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Th Shop mania is a builder based free WooCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
-Version: 1.1.7
+Version: 1.1.8
 Requires at least: 5.0
 Tested up to: 6.1
 Requires PHP: 5.4
@@ -168,7 +168,7 @@ h5 {
 a {   
     text-decoration: none;
     cursor: pointer;
-    text-decoration: none!important;
+    /*text-decoration: none!important;*/
 }
 figcaption,
 main {
@@ -804,10 +804,12 @@ flex-basis: initial;
 .right-menu .th-shop-mania-menu{
   text-align: right;
 }
-.th-shop-mania-site .thaps-search-box{
+.th-shop-mania-site .thaps-search-box,
+.th-shop-mania-site .tapsp-search-box{
   margin: initial;
 }
 .thaps-search-form .thaps-search-autocomplete,
+.tapsp-search-form .tapsp-search-autocomplete,
 .cat-toggle,
 .btn-main-header{
   height: 45px;
@@ -990,6 +992,9 @@ order: 2;
 }
 .widget-footer .widget.widget_text{
 margin-bottom:15px;
+}
+footer .widget .textwidget a{
+  text-decoration: none!important;
 }
 /************************/
 /* (7)Menu & menu description style*/
@@ -1450,7 +1455,8 @@ header .th-icon{
   min-width: initial;
   padding: 0;
 }
-.thunk-icon-market .thaps-search-box .th-icon{
+.thunk-icon-market .thaps-search-box .th-icon,
+.thunk-icon-market .tapsp-search-box .th-icon{
   color: #111!important;
 }
 .thunk-icon-market .th-icon-searchview{
@@ -1616,7 +1622,8 @@ position:relative;
 .mhdrthree .main-header-col2 nav{
   width: 100%;
 }
-.mhdrthree .thaps-search-box{
+.mhdrthree .thaps-search-box,
+.mhdrthree .tapsp-search-box{
   padding: 7px 0;
 } 
 .mhdrthree .below-header-col2{
@@ -1656,9 +1663,6 @@ position:relative;
 .mhdrsix .menu-category-list{
   margin-right: 20px;
 }
-/*.mhdrsix .menu-category-list{
-  width: initial;
-}*/
 /* mhdrseven */
 .mhdrseven .menu-category-list{
   margin-left: 20px;
@@ -1867,6 +1871,9 @@ display:none;
 .cat-toggle:hover{
     cursor: pointer;
 }
+.cat-toggle:focus{
+  outline: 2px dotted #999;
+}
 .cate-text{
   margin-left: 7px;
   font-size: 18px;
@@ -2035,7 +2042,6 @@ margin-right:10px;
     text-shadow: none;
     color: #FF5737;
 }
-
 .thunk-product-cat-list > li > ul.sub-menu {
     display: none;
     list-style: none;
@@ -2477,7 +2483,6 @@ header .widget_block{
 }
 .woocommerce .widget_price_filter .th-shop-mania-widget-content .price_slider_wrapper .ui-widget-content{
   background-color: #e4e6eb;
-
 }
 .widget.woocommerce.widget_price_filter .th-shop-mania-widget-content .ui-slider-horizontal{
   height: 2px;
@@ -2985,9 +2990,6 @@ text-align: center;
     border-top:none;
     z-index:15;
 }
-/*.thunk-product-hover{
-border: 1px solid transparent;
-}*/
 .thunk-woo-product-list .thunk-product-wrap:hover .thunk-product{
     box-shadow: 0 0 15px #eee;
     border-color: #f1f1f1;
@@ -2997,15 +2999,6 @@ border: 1px solid transparent;
    box-shadow: 0 0 15px #eee;
    border-color: #f1f1f1;
 }
-/*.thunk-product:hover .thunk-product-hover::before {
-    position: absolute;
-    content: '';
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    height: 9px;
-    background-color: #fff;
-}*/
 .thunk-product .th-add-to-cart{
   width: 100%;
 }
@@ -3032,7 +3025,6 @@ border: 1px solid transparent;
 }
 .woocommerce .added_to_cart a.button.loading::after,
 .woocommerce .th-add-to-cart a.button.loading::after{
-    /*right: 40%;*/
     padding: 0;
     top: initial;
 }
@@ -3348,7 +3340,6 @@ margin-right:0px;
   position: relative;
   order: 2;
 }
-
 .thunk-list-view .thunk-product{
 border:none;
 }
@@ -4600,13 +4591,6 @@ justify-content: center;
 .woocommerce div.product .right-side .woocommerce-tabs .panel{
   padding: 0 30px;
 }
-/*.woocommerce div.product .left-side div.images .flex-control-thumbs li{
-  padding: 10px 0;
-}
-.woocommerce.verticalslide-gallery .left-side .flex-control-thumbs .slick-slide, 
-.woocommerce.verticallightboxslide-gallery .left-side .flex-control-thumbs .slick-slide{
-  padding: 5px 0;
-}*/
 .woocommerce #content div.product .right-side div.summary{
   border: 1px solid #e1e3e4;
   padding: 30px;
@@ -5173,11 +5157,6 @@ input[type="text"], input[type="email"],input[type="url"],
     width: 100%;
     margin-bottom: 20px;
 }
-/*.woocommerce-checkout .woocommerce-additional-fields h3{
-  font-size: 29px;
-  line-height: 36px;
-  margin-bottom: 25px;
-}*/
 .woocommerce-checkout form .woocommerce-additional-fields__field-wrapper textarea{
   min-height: 170px;
   margin-top: 12px;
@@ -5261,7 +5240,6 @@ input[type="text"], input[type="email"],input[type="url"],
 .woocommerce-checkout.thsm-checkout-layout-stepped .col-2{
   display: none;
 }
-
 /* thsm-checkout-layout-vertical CSS */
 .thsm-checkout-layout-vertical .woocommerce-checkout>.col2-set,
 .thsm-checkout-layout-vertical .woocommerce-checkout #order_review{
@@ -5564,9 +5542,6 @@ display: flex;
     align-self: center;
     margin-left: 20px;
 }
-/*.author-header a{
-color:#626060;
-}*/
 .comment-list{
 margin:0;
 padding:0;
@@ -6039,7 +6014,6 @@ div.product.th-shop-mania-woo-hover-zoom .thunk-product:hover img  {
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-
 .th-shop-mania-slide-item-hover.th-shop-mania-woo-hover-slide 
  .thunk-product-image > a{
     overflow: hidden;
@@ -6050,7 +6024,6 @@ div.product.th-shop-mania-woo-hover-zoom .thunk-product:hover img  {
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
 }
-
 .th-shop-mania-slide-item-hover.th-shop-mania-woo-hover-slide 
 img:first-of-type{
     -webkit-transition: all 0.3s;
@@ -6142,7 +6115,6 @@ span.product-title{
     line-height: inherit;
     max-height: inherit;
 }
-
 /*Back to top Start*/
 #move-to-top {
     background-color: #ff3377;
@@ -6188,7 +6160,8 @@ span.product-title{
 .single-product.woocommerce div.product div.images .woocommerce-product-gallery__trigger{
   right: 0;
 }
-.thaps-search-box{
+.thaps-search-box,
+.tapsp-search-box{
   padding: 12px 0;
 }
 .woocommerce .return-to-shop a:hover{
@@ -6227,7 +6200,6 @@ display:inline;
     transition: border-color .2s ease;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-
 }
 .single-product .social-share ul li a:hover {
 opacity:1;
@@ -6235,10 +6207,8 @@ opacity:1;
 .single-product .social-share ul li.fb-icon a {
 border-color:#3B5999;
 }
-
 .single-product .social-share ul li.gml-icon a {
 border-color:#DB4A39;
-
 }
 .single-product .social-share ul li.twt-icon a {
 border-color:#00A0D0;
@@ -6372,7 +6342,6 @@ border-color: #0177B5;
     top: 7px;
     right: 7px;
   }
-
 .shop-page-products-layouts .thunk-wishlist a,
 .shop-page-products-layouts .thunk-compare a,
 .shop-page-products-layouts .yith-wcwl-wishlistexistsbrowse,
@@ -6821,7 +6790,6 @@ border-color: #0177B5;
     -moz-transform: translateX(0px);
     transform: translateX(0px);
 }
-
 .linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a::before, 
 .linkeffect-1 .sider-inner ul.th-shop-mania-menu > li > a::after {
     display: inline-block;
@@ -7143,7 +7111,6 @@ position:relative;
 .linkeffect-8 .sider-inner ul.th-shop-mania-menu > li.menu-active > a span:after{
   width: 100%;
  }
-
 /************************/
 /*elementor plugin*/
 /************************/
@@ -7397,7 +7364,8 @@ h2.wc-block-mini-cart__title{
 .page-head h1{
   margin-bottom: 21px;
 }
-.resp-mobileh-below-header .thaps-search-box{
+.resp-mobileh-below-header .thaps-search-box,
+.resp-mobileh-below-header .tapsp-search-box{
   max-width: 100%;
 }
 .woocommerce div.product p.price ins, .woocommerce div.product span.price ins{
@@ -7408,6 +7376,14 @@ h2.wc-block-mini-cart__title{
 .woocommerce.theme-th-shop-mania button.button, 
 .woocommerce.theme-th-shop-mania input.button{
   font-weight: 500;
+}
+.theme-th-shop-mania #thaps-search-button:focus{
+  outline: 1px dotted #111;
+  outline-offset: 2px;
+}
+.theme-th-shop-mania .thaps-search-autocomplete:focus{
+  outline: thin dotted;
+  outline-offset: 2px;
 }
 @media screen and (max-width: 1024px){
 .main-area{
@@ -7457,7 +7433,8 @@ display:none;
 .below-header,.desktop-main-header {
  display:none;
 }
-.responsive-main-header #thaps-search-button{
+.responsive-main-header #thaps-search-button,
+.responsive-main-header #tapsp-search-button{
   margin: 0.2rem;
 }
 .toggle-cat-wrap {
@@ -7648,16 +7625,21 @@ margin-right:0;
 }
 /* TH Advance Search Css  */
 .thaps-content-left,
-.thaps-content-right{
+.thaps-content-right,
+.tapsp-content-left,
+.tapsp-content-right{
   width: 100%;
 }
-.thaps-content-left{
+.thaps-content-left,
+.tapsp-content-left{
   margin-bottom: 9px;
 }
-.thaps-autocomplete-suggestion{
+.thaps-autocomplete-suggestion,
+.tapsp-autocomplete-suggestion{
   padding: 0.7rem;
 }
-.woocommerce .thaps-content-wrapp{
+.woocommerce .thaps-content-wrapp,
+.woocommerce .tapsp-content-wrapp{
   flex-wrap: wrap;
   justify-content: flex-start;
 }
@@ -7689,13 +7671,6 @@ margin-right:0;
 .widget_th_shop_mania_tabbed_product_widget .thunk-product-hover{
   right: 10px;
 }
-/*.single-product.woocommerce .related.products a.compare.button,
-.single-product.woocommerce .related.products .yith-wcwl-wishlistexistsbrowse,
-.single-product.woocommerce .related.products a.add_to_wishlist.single_add_to_wishlist{
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-}*/
 .single-product.woocommerce .related.products .thunk-wishlist .yith-wcwl-add-button > a i,
 .single-product.woocommerce a.th-product-compare-btn.button::before,
 .single-product.woocommerce .related.products .add-to-cart a:before{
@@ -7710,7 +7685,8 @@ margin-right:0;
 .woocommerce-checkout .main-area {
     max-width: 70%;
 }
-.thaps-autocomplete-suggestions{
+.thaps-autocomplete-suggestions,
+.tapsp-autocomplete-suggestions{
   width: 312px!important;
   left: 0!important;
 }
@@ -7752,7 +7728,8 @@ margin-right:0;
 .woocommerce .entry-summary .th-product-compare-btn-wrap{
   margin-left: 9px;
 }
-.responsive-main-header .thaps-search-form .thaps-search-autocomplete{
+.responsive-main-header .thaps-search-form .thaps-search-autocomplete,
+.responsive-main-header .tapsp-search-form .tapsp-search-autocomplete{
   height: 30px;
   line-height: 30px;
 }
@@ -8003,7 +7980,8 @@ width:50%;
 header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon{
   font-size: 23px;
 }
-.responsive-main-header .thaps-search-box{
+.responsive-main-header .thaps-search-box,
+.responsive-main-header .tapsp-search-box{
   padding: 0;
 }
 .responsive-main-header .main-header-col3 .cart-count-item, 
@@ -8014,25 +7992,22 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
     left: 7px;
     top: -18px;    
 }
-.responsive-main-header .thaps-search-form .thaps-search-autocomplete{
+.responsive-main-header .thaps-search-form .thaps-search-autocomplete,
+.responsive-main-header .tapsp-search-form .tapsp-search-autocomplete{
   height: 25px;
   line-height: 25px;
 }
-.responsive-main-header #thaps-search-button{
+.responsive-main-header #thaps-search-button,
+.responsive-main-header #tapsp-search-button{
   margin: 0;
-}
-.responsive-main-header #thaps-search-button:focus{
-  outline: 2px dotted #999;
-}
-.responsive-main-header .thaps-search-autocomplete:focus{
-  outline: thin dotted;
 }
 .responsive-main-header .taiowc-content .taiowc-total,
 .sticky-header-bar .taiowc-content .taiowc-total{
   font-size: 12px;
   display: none;
 }
-.responsive-main-header .thaps-search-box{
+.responsive-main-header .thaps-search-box,
+.responsive-main-header .tapsp-search-box{
   max-width: initial;
 }
 .logo-content img{
@@ -8140,7 +8115,6 @@ right:15px
   padding-left: 10px;
   padding-right: 10px;
 }
-
 /*(8)Sticky Header Resp 767*/
 .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents i, .sticky-header .header-icon a i {
    font-size: 16px;
@@ -8745,17 +8719,6 @@ font-size:12px;
 .responsive-main-header .main-header-col3{
   width: 52%
 }
-/*.woocommerce div.product .summary form{
-  float: initial;
-}
-.woocommerce div.entry-summary form.cart button[type=submit]{
-  flex-grow: 2;
-}
-.summary .yith-wcwl-add-button a, 
-.summary .yith-wcwl-wishlistaddedbrowse a, 
-.summary .yith-wcwl-wishlistexistsbrowse a{
-  margin-left: 0;
-}*/
 .single-product div.product form.cart button.plus, .single-product div.product form.cart button.minus{
   margin: 0 2px!important;
 }

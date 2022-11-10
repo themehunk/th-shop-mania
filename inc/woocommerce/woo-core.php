@@ -277,7 +277,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		   wp_enqueue_script( 'th-shop-mania-woocommerce-js', TH_SHOP_MANIA_THEME_URI .'/inc/woocommerce/js/woocommerce.js', array( 'jquery' ), '2.0.0', true );
            
            wp_enqueue_script('open-quick-view', TH_SHOP_MANIA_THEME_URI.'inc/woocommerce/quick-view/js/quick-view.js', array( 'jquery' ), '', true );
-           wp_localize_script('open-quick-view', 'thlocalizeqv', array('ajaxurl' => admin_url( 'admin-ajax.php' )));      
+           wp_localize_script('open-quick-view', 'thlocalizeqv', array('ajaxurl' => esc_url(admin_url( 'admin-ajax.php' ))));      
 		   }
 		/**
 		 * Add Style
@@ -315,7 +315,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			<div class="thunk-quik">
 			             <div class="thunk-quickview">
                                <span class="quik-view">
-                                   <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($product_id); ?>"><div th-tooltip="<?php echo __('Quick View', 'th-shop-mania'); ?>" class="quik-view-tooltip">
+                                   <a href="#" class="opn-quick-view-text" data-product_id="<?php echo esc_attr($product_id); ?>"><div th-tooltip="<?php echo esc_attr__('Quick View', 'th-shop-mania'); ?>" class="quik-view-tooltip">
                                    	  <span class="th-icon th-icon-eye"></span>
                                       <span class="qv-text"><?php echo esc_html($label); ?></span>
                                       </div>
