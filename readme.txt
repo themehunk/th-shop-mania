@@ -4,7 +4,7 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.0
 Requires PHP: 5.4
 Tested up to: 6.1
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -23,6 +23,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= Version 1.1.8 =
+* Update - Theme checked and completed.
+
 = Version 1.1.7 =
 * Update - Mobile Sticky Header Style Improved.
 * Update - Wishlist Text issue resolved.
@@ -32,7 +35,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update - Load More text not changing issue resolved.
 * Update - Search Issue in reponsive not working resolved.
 * New	 - Mania Companion plugin working tested with theme. 
-
+* Update - Keyboard Navigation completed.
 
 = Version 1.1.6 =
 * Update - Standard Checkout page issue resolved.
@@ -115,18 +118,11 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * White Label Link removed.
 
 = Version 1.0.0 =
-Initial release
+* Initial release
 
 == Upgrade Notice ==
-= Version 1.1.7 =
-* Update - Mobile Sticky Header Style Improved.
-* Update - Wishlist Text issue resolved.
-* Update - Popup Login 1nd login issue resolved.
-* Update - Single Page Button center aliggn issue resolved.
-* Update - Coupon Style issue resolved in responsive.
-* Update - Load More text not changing issue resolved.
-* Update - Search Issue in reponsive not working resolved.
-* New	 - Mania Companion plugin working tested with theme. 
+= Version 1.1.8 =
+* Update - Theme checked and completed.
 
 == Resources ==
  
@@ -140,13 +136,9 @@ Th-Shop-Mania-Copyright 2021, themehunk.com
 License : GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-== Roboto Font ==
-License: Apache License, Version 2.0.
-License URL: http://www.apache.org/licenses/
-
-== Owl Carousel v2.3.4 ==
-License: MIT License
-License URl : https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+== Jost Font ==
+License: Open Font License, Version 3.7.
+License URL: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 == normalize.css == 
 License: MIT

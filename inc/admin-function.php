@@ -169,7 +169,7 @@ function th_shop_mania_get_page_title($id=''){ ?>
 			 }elseif(is_archive() && (class_exists( 'WooCommerce' ) && !is_shop())){
                    echo the_archive_title('<h1 class="thunk-page-top-title entry-title">','</h1>'); ?>
 			<?php }elseif(class_exists( 'WooCommerce' ) && is_shop()) { ?>
-				<h1 class="thunk-page-top-title entry-title"><?php woocommerce_page_title(); ?></h1> 
+				<h1 class="thunk-page-top-title entry-title"><?php esc_html(woocommerce_page_title()); ?></h1> 
 			<?php }elseif(is_page()) { 
 				echo esc_html(th_shop_mania_page_title_post_meta(get_post_meta($id, 'th_shop_mania_disable_title_dyn', true))); ?>
 			<?php } ?>
@@ -253,21 +253,6 @@ if ( !function_exists('th_shop_mania_is_json') ) {
 function th_shop_mania_is_json( $string ){
     return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
 }
-}
-add_action('after_switch_theme', 'th_shop_mania_activation_hook');
-function th_shop_mania_activation_hook() {
-    th_shop_mania_active_theme();
-}
-function th_shop_mania_active_theme(){
-    $url =  'https://wpzita.com/wp-json/wp/v2/shop-site';
-    $args_for_get = array(
-        'stream' => true,
-        'website'=>home_url(),
-        'active'=>date('Y-m-d g:i:s'),
-        'deactive'=>'',
-    );
-    $url = add_query_arg( $args_for_get, esc_url_raw( $url ) );
-     $response = wp_remote_get( esc_url_raw( $url ),array( 'timeout' => 120) );
 }
 if (!function_exists('th_shop_mania_wp_kses_allowed_html')) {
 function th_shop_mania_wp_kses_allowed_html() {
