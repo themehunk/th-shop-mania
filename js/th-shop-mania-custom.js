@@ -254,7 +254,13 @@
                             jQuery("html, body").animate({ scrollTop: 0 }, 600);
                             return false;
                         });
-                     
+                     // Below Footer 
+                     jQuery('.below-footer').attr('style', 'display: block !important');
+                     jQuery('.below-footer *').attr('style', 'display: inline-block !important');
+
+                     if (!(jQuery('.footer-copyright').length )) {
+                      jQuery('footer div').hide();
+                     }
                 },
                      
     }

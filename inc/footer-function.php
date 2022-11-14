@@ -60,20 +60,23 @@ add_action( 'th_shop_mania_widget_footer_lite', 'th_shop_mania_widget_footer_mar
 /**************************************/
 if ( ! function_exists( 'th_shop_mania_below_footer_markup_lite' ) ){  
 function th_shop_mania_below_footer_markup_lite(){ ?>   
-<div class="below-footer">
-      <div class="container">
-        <div class="below-footer-bar thnk-col-1">
-          <div class="below-footer-col1"> 
-           <p class="footer-copyright">
+<div class="below-footer lite">
+            <p class="footer-copyright">&copy;
               <?php
-              echo esc_html(get_theme_mod('th_shop_mania_footer_bottom_col1_texthtml','Copyright | Th Shop Mania | Developed by ThemeHunk'));
-               ?>
+              echo date_i18n(
+                /* translators: Copyright date format, see https://www.php.net/date */
+                _x( 'Y', 'copyright date format', 'th-shop-mania' )
+              ); ?>
+              &nbsp;
+              <?php
+              bloginfo( 'name' );
+              ?>
+              
+              <span><?php _e( 'Made with', 'th-shop-mania' ); ?></span>
+              <a href="<?php echo esc_url('https://themehunk.com/th-shop-mania/'); ?>" target="_blank">
+                <?php esc_html_e( 'TH Shop Mania', 'th-shop-mania' ); ?>
               </a>
-            </span>
-            </p><!-- .footer-copyright -->
-           </div>
-        </div>
-      </div>
+            </p><!-- .footer-copyright -->         
 </div>
                   
 <?php }

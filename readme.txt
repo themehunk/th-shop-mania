@@ -25,6 +25,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Changelog ==
 = Version 1.1.8 =
 * Update - Theme checked and completed.
+* Update - Below footer settings removed.
 
 = Version 1.1.7 =
 * Update - Mobile Sticky Header Style Improved.
@@ -123,11 +124,14 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Upgrade Notice ==
 = Version 1.1.8 =
 * Update - Theme checked and completed.
+* Update - Below footer settings removed.
 
 == Resources ==
  
 License for images:
 == Screenshots ==
+https://stocksnap.io/photo/vase-wall-JGTJS8KF6Q
+https://stocksnap.io/photo/interior-chair-DQGQZHMELB
 
 
 == Theme License & Copyright ==
