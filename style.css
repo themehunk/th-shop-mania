@@ -7385,6 +7385,18 @@ h2.wc-block-mini-cart__title{
   outline: thin dotted;
   outline-offset: 2px;
 }
+.footer-copyright{
+  position: relative;
+  text-align: center;
+  padding: 12px;
+}
+.footer-copyright a{
+  position: relative;
+  font-size: 18px;
+}
+.below-footer.lite{
+  text-align: center;
+}
 @media screen and (max-width: 1024px){
 .main-area{
   padding-left: 10px;
