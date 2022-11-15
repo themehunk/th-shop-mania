@@ -240,7 +240,8 @@ margin-right:0%;
     margin: 15px 0;
 }
 
-a.plugin-detail.thickbox.open-plugin-details-modal {
+a.plugin-detail.thickbox.open-plugin-details-modal,
+.th-option-bpro a {
     margin-bottom: 15px !important;
     display: block;
 }
@@ -624,6 +625,17 @@ display: flex;
 }
 .themehunk-site-library-theme-preview .theme-install-overlay iframe{
   max-width: 100%;
+}
+.title-plugin .pro-text {
+    color: #ffffff;
+    padding: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: #2f9b14;
+    font-size: 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
 }
 /*.appearance_page_th_shop_mania_thunk_started #Import-Demo-Content .import-demo .theme_link button[data-activated="Activated"]:after{
 
