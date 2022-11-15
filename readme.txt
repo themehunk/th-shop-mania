@@ -26,6 +26,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 = Version 1.2 =
 * Update - Footer Text modified.
 * Update - Version Updated.
+* Update - Recoomended plugin modification.
 
 
 = Version 1.1.8 =
@@ -127,9 +128,10 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==
-= Version 2.0 =
+= Version 1.2 =
 * Update - Footer Text modified.
 * Update - Version Updated.
+* Update - Recoomended plugin modification.
 
 == Resources ==
  

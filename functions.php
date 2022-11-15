@@ -101,56 +101,147 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                                                  'thumbnail_image_width' => 320,
                                              ) );
          // Recommend plugins
-           add_theme_support( 'recommend-plugins', array(
+        //    add_theme_support( 'recommend-plugins', array(
 
-        	  'hunk-companion' => array(
+        // 	  'hunk-companion' => array(
+        //         'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
+        //          'img' => 'icon-128x128.png',
+        //         'active_filename' => 'hunk-companion/hunk-companion.php',
+        //     ),
+        // 	'th-all-in-one-woo-cart' => array(
+        //     'name' => esc_html__( 'TH All In One Woo Cart', 'th-shop-mania' ),
+        //     'img' => 'icon-128x128.png',
+        //     'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+        //     ),  
+        //     'th-advance-product-search' => array(
+        //     'name' => esc_html__( 'TH Advance Product Search', 'th-shop-mania' ),
+        //     'img' => 'icon-128x128.gif',
+        //     'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+        //     ),
+        //     'th-variation-swatches' => array(
+        //         'name' => esc_html__( 'TH Variation Swatches', 'th-shop-mania' ),
+        //          'img' => 'icon-128x128.gif',
+        //         'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
+        //     ),
+        //     'lead-form-builder' => array(
+        //         'name' => esc_html__( 'Lead Form Builder', 'th-shop-mania' ),
+        //          'img' => 'icon-128x128.png',
+        //         'active_filename' => 'lead-form-builder/lead-form-builder.php',
+        //     ),
+        //     'wp-popup-builder' => array(
+        //         'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'th-shop-mania' ),
+        //          'img' => 'icon-128x128.png',
+        //         'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
+        //     ), 
+        //     'th-product-compare' => array(
+        //          'name' => esc_html__( 'Th Product Compare', 'th-shop-mania' ),
+        //           'img' => 'icon-128x128.png',
+        //          'active_filename' => 'th-product-compare/th-product-compare.php',
+        //      ),
+        //     'yith-woocommerce-wishlist' => array(
+        //          'name' => esc_html__( 'YITH WooCommerce Wishlist', 'th-shop-mania' ),
+        //           'img' => 'icon-128x128.jpg',
+        //          'active_filename' => 'yith-woocommerce-wishlist/init.php',
+        //      ),
+            
+        // ) );  
+
+
+            add_theme_support( 'recommend-plugins', array(
+
+        	 'hunk-companion' => array(
                 'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
                  'img' => 'icon-128x128.png',
+                 'pro_link' =>'',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
             ),
-        	'th-all-in-one-woo-cart' => array(
-            'name' => esc_html__( 'TH All In One Woo Cart', 'th-shop-mania' ),
-            'img' => 'icon-128x128.png',
-            'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
-            ),  
-            'th-advance-product-search' => array(
-            'name' => esc_html__( 'TH Advance Product Search', 'th-shop-mania' ),
-            'img' => 'icon-128x128.gif',
-            'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+
+        	 'th-all-in-one-woo-cart' => array(
+                'name' => esc_html__( 'Th All In One Woo Cart', 'th-shop-mania' ),
+                'img' => 'icon-128x128.png',
+                'pro_link' => esc_url('https://themehunk.com/th-all-in-one-woo-cart/'),
+                'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
+                'pro-plugin' => array('slug'=>'th-all-in-one-woo-cart-pro',
+                					'init'=>'th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php',
+                					 'admin_link'=>'th-all-in-one-woo-cart-pro',
+                					 'docs'=>esc_url('https://themehunk.com/docs/th-all-in-one-woo-cart/'),
+
+            						)
             ),
-            'th-variation-swatches' => array(
-                'name' => esc_html__( 'TH Variation Swatches', 'th-shop-mania' ),
-                 'img' => 'icon-128x128.gif',
-                'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
-            ),
-            'lead-form-builder' => array(
+        	'lead-form-builder' => array(
                 'name' => esc_html__( 'Lead Form Builder', 'th-shop-mania' ),
-                 'img' => 'icon-128x128.png',
+                'img' => 'icon-128x128.png',
+                'pro_link' => esc_url('https://themehunk.com/product/lead-form-builder-pro/'),
                 'active_filename' => 'lead-form-builder/lead-form-builder.php',
+                'pro-plugin' => array('slug'=>'lead-form-builder',
+                					'init'=>'lead-form-builder/init.php',
+                					  'admin_link'=>'wplf-plugin-menu',
+                					  'docs'=>esc_url('https://themehunk.com/docs/lead-form-builder-pro/'),
+            						)
             ),
             'wp-popup-builder' => array(
                 'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'th-shop-mania' ),
-                 'img' => 'icon-128x128.png',
+                'img' => 'icon-128x128.png',
+                'pro_link' => esc_url('https://themehunk.com/wp-popup-builder-pro/'),
                 'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
-            ), 
+                'pro-plugin' => array('slug'=>'wp-popup-builder',
+                					'init'=>'wp-popup-builder-pro/wp-popup-builder.php',
+                					'admin_link'=>'wppb',
+                					'docs'=>esc_url('https://themehunk.com/docs/wp-popup-builder-pro/'),
+            						)
+            ),
+
+            'th-advance-product-search' => array(
+                'name' => esc_html__( 'Th Advance Product Search', 'th-shop-mania' ),
+                'img' => 'icon-128x128.gif',
+                'pro_link' => esc_url('https://themehunk.com/advance-product-search/'),
+                'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+                'pro-plugin' => array('slug'=>'th-advance-product-search-pro',
+                					'init'=>'th-advance-product-search-pro/th-advance-product-search-pro.php',
+                					 'admin_link'=>'th-advance-product-search-pro',
+                					 'docs'=>esc_url('https://themehunk.com/docs/th-advance-product-search/'),
+
+            						)
+            ),
             'th-product-compare' => array(
-                 'name' => esc_html__( 'Th Product Compare', 'th-shop-mania' ),
-                  'img' => 'icon-128x128.png',
-                 'active_filename' => 'th-product-compare/th-product-compare.php',
-             ),
+                'name' => esc_html__( 'Th Product Compare', 'th-shop-mania' ),
+                'img' => 'icon-128x128.png',
+                'pro_link' => esc_url('https://themehunk.com/th-product-compare/'),
+                'active_filename' => 'th-product-compare/th-product-compare.php',
+                'pro-plugin' => array('slug'=>'th-product-compare-pro',
+                					'init'=>'th-product-compare-pro/th-product-compare-pro.php',
+                					 'admin_link'=>'th-product-compare-pro',
+                					 'docs'=>esc_url('https://themehunk.com/docs/th-product-compare/'),
+
+            						)
+            ),
+            'th-variation-swatches' => array(
+                'name' => esc_html__( 'Th Variation Swatches', 'th-shop-mania' ),
+                'img' => 'icon-128x128.gif',
+                'pro_link' => esc_url('https://themehunk.com/th-variation-swatches/'),
+                'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
+                'pro-plugin' => array('slug'=>'th-variation-swatches',
+                					'init'=>'th-variation-swatches-pro/th-variation-swatches-pro.php',
+                					 'admin_link'=>'th-variation-swatches',
+                					 'docs'=>esc_url('https://themehunk.com/docs/th-variation-swatches-plugin/'),
+            						)
+            ), 
             'yith-woocommerce-wishlist' => array(
                  'name' => esc_html__( 'YITH WooCommerce Wishlist', 'th-shop-mania' ),
                   'img' => 'icon-128x128.jpg',
+                  'pro_link' => '',
                  'active_filename' => 'yith-woocommerce-wishlist/init.php',
              ),
             
-        ) );         
+        ) );
+
        // Import Data Content plugins
         add_theme_support( 'import-demo-content', array(
              'hunk-companion' => array(
                 'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
                  'img' => 'icon-128x128.png',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
+                'pro_link' => esc_url(''),
             ),    
 
         ));

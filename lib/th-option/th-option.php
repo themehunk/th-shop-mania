@@ -265,94 +265,129 @@ static public function white_level_menu_callback() {
   }
 
 
+function plugin_install_button($plugin){
+            $pro_text = '<b class="pro-text">'.$plugin['pro_text'].'</b>';
 
-  function plugin_install_button($plugin)
-  {
-    $button = '<div class="rcp theme_link th-row">';
-    $button .= ' <div class="th-column"><img src="' . esc_url($plugin['thumb']) . '" /> </div>';
-    $button .= '<div class="th-column">';
+            $button = '<div class="rcp theme_link th-row">';
+            $button .= ' <div class="th-column"><img src="'.esc_url( $plugin['thumb'] ).'" /> </div>';
+            $button .= '<div class="th-column">';
 
-    $button .= '<div class="title-plugin">
-            <h4>' . esc_html($plugin['plugin_name']) . ' </h4><a class="plugin-detail thickbox open-plugin-details-modal" href="' . esc_url($plugin['detail_link']) . '">' . esc_html__('Details & Version', 'th-shop-mania') . '</a>
+           $pro_settings = ($plugin['pro_active'])?'<a href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>':'<a id="'.esc_attr( $plugin['slug'] ).'" style="display:none;" href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>';
+
+            $docs = '<a target="_blank"  class="plugin-detail" href="'.esc_url( $plugin['docs'] ).'">'.esc_html__( 'Documentation', 'th-shop-mania' ).'</a>';
+
+            if($plugin['pro_text'] ==''){
+                 $pro_settings = ($plugin['pro_link']!='')?'<a href="'.esc_url( $plugin['pro_link'] ).'" class="buy-pro">GO PRO</a>':'';
+                 $docs = '<a class="plugin-detail thickbox open-plugin-details-modal" href="'.esc_url( $plugin['detail_link'] ).'">'.esc_html__( 'Details & Version', 'th-shop-mania' ).'</a>';
+                            $pro_text = "";
+
+            }
+
+            $button .= '<div class="title-plugin">
+            <h4>'.esc_html( $plugin['plugin_name'] ).$pro_text. '</h4><div class="th-option-bpro"> '.$docs .$pro_settings. '
+            </div>
             </div>';
-    $button .= '<button data-activated="Activated" data-msg="Activating" data-init="' . esc_attr($plugin['plugin_init']) . '" data-slug="' . esc_attr($plugin['slug']) . '" class="button ' . esc_attr($plugin['button_class']) . '">' . esc_html($plugin['button_txt']) . '</button>';
-    $button .= '</div></div>';
+             $button .='<button data-activated="Activated" data-msg="Activating" data-init="'.esc_attr($plugin['plugin_init']).'" data-slug="'.esc_attr( $plugin['slug'] ).'" class="button '.esc_attr( $plugin['button_class'] ).'">'.esc_html($plugin['button_txt']).'</button>';
+            $button .= '</div></div>';
 
-    echo $button;
-  }
+            echo $button;
+            
+}
+
+ public  function plugin_install($rplugins = 'recommend-plugins'){
+    $recommend_plugins = get_theme_support( $rplugins );
+
+       if ( is_array( $recommend_plugins ) && isset( $recommend_plugins[0] ) ){
+
+        $pluginArr =array();
+        foreach($recommend_plugins[0] as $slug=>$plugin){
+
+            // pro plugin check
+            $pro_path = isset($plugin['pro-plugin'])?ABSPATH . 'wp-content/plugins/'.$plugin['pro-plugin']['init']:'';
+            $plugin_init = $plugin['active_filename'];
+                $img_slug = $slug;
+                $pro_text = $admin_link = $docs = ''; 
+                 $pro_active = false;
+            if( file_exists($pro_path)) {
+                $slug = $plugin['pro-plugin']['slug'];
+                $plugin_init = $plugin['pro-plugin']['init'];
+                $admin_link = $plugin['pro-plugin']['admin_link'];
+                $pro_text = 'pro'; 
+                                $docs = $plugin['pro-plugin']['docs'];
+
+                if(is_plugin_active( $plugin['pro-plugin']['init'] )){
+                    $pro_active = true; 
+                }
+             }
+
+            $status = is_dir( WP_PLUGIN_DIR . '/' . $slug );
+
+            $button_class = 'install-now button '.$slug;
+
+             if ( is_plugin_active( $plugin_init ) ) {
+                   $button_class = 'button disabled '.$slug;
+                   $button_txt = esc_html__( 'Activated', 'th-shop-mania' );
+                   $detail_link = $install_url = '';
+                }
+
+            if ( ! is_plugin_active( $plugin_init ) ){
+                    $button_txt = esc_html__( 'Install Now', 'th-shop-mania' );
+                    if ( ! $status ) {
+                        $install_url = wp_nonce_url(
+                            add_query_arg(
+                                array(
+                                    'action' => 'install-plugin',
+                                    'plugin' => $slug
+                                ),
+                                network_admin_url( 'update.php' )
+                            ),
+                            'install-plugin_'.$slug
+                        );
+
+                    } else {
+                        $install_url = add_query_arg(array(
+                            'action' => 'activate',
+                            'plugin' => rawurlencode( $plugin_init ),
+                            'plugin_status' => 'all',
+                            'paged' => '1',
+                            '_wpnonce' => wp_create_nonce('activate-plugin_' . $plugin_init ),
+                        ), network_admin_url('plugins.php'));
+                        $button_class = 'activate-now button-primary '.$slug;
+                        $button_txt = esc_html__( 'Activate Now', 'th-shop-mania' );
+                    }
+                }
+                $detail_link = add_query_arg(
+                        array(
+                            'tab' => 'plugin-information',
+                            'plugin' => $slug,
+                            'TB_iframe' => 'true',
+                            'width' => '772',
+                            'height' => '500',
+                        ),
+                        network_admin_url( 'plugin-install.php' )
+                    );
+
+                    $pluginArr['plugin_name'] =  $plugin['name'];
+                    $pluginArr['slug']= $slug;
+                    $pluginArr['thumb']= "https://ps.w.org/". $img_slug."/assets/".$plugin['img'];
+                    $pluginArr['plugin_init']= $plugin_init;
+                    $pluginArr['detail_link']= $detail_link;
+                    $pluginArr['button_txt']= $button_txt;
+                    $pluginArr['button_class']= $button_class;
+
+                    // pro variable
+                    $pluginArr['pro_link']= $plugin['pro_link'];
+                    $pluginArr['pro_text']= $pro_text;
+                    $pluginArr['docs']= $docs;
+                    $pluginArr['admin_link']= $admin_link;
+                    $pluginArr['pro_active']= $pro_active;
 
 
-
-
-  /**
-   * Include Welcome page content
-   */
-  public  function plugin_install($rplugins = 'recommend-plugins')
-  {
-    $recommend_plugins = get_theme_support($rplugins);
-
-    if (is_array($recommend_plugins) && isset($recommend_plugins[0])) {
-      $pluginArr = array();
-      foreach ($recommend_plugins[0] as $slug => $plugin) {
-
-        $plugin_init = $plugin['active_filename'];
-        $status = is_dir(WP_PLUGIN_DIR . '/' . $slug);
-
-        $button_class = 'install-now button ' . $slug;
-
-        if (is_plugin_active($plugin_init)) {
-          $button_class = 'button disabled ' . $slug;
-          $button_txt = esc_html__('Activated', 'th-shop-mania');
-          $detail_link = $install_url = '';
+                   $this->plugin_install_button($pluginArr);
         }
-
-        if (!is_plugin_active($plugin_init)) {
-          $button_txt = esc_html__('Install Now', 'th-shop-mania');
-          if (!$status) {
-            $install_url = wp_nonce_url(
-              add_query_arg(
-                array(
-                  'action' => 'install-plugin',
-                  'plugin' => $slug
-                ),
-                network_admin_url('update.php')
-              ),
-              'install-plugin_' . $slug
-            );
-          } else {
-            $install_url = add_query_arg(array(
-              'action' => 'activate',
-              'plugin' => rawurlencode($plugin_init),
-              'plugin_status' => 'all',
-              'paged' => '1',
-              '_wpnonce' => wp_create_nonce('activate-plugin_' . $plugin_init),
-            ), network_admin_url('plugins.php'));
-            $button_class = 'activate-now button-primary ' . $slug;
-            $button_txt = esc_html__('Activate Now', 'th-shop-mania');
-          }
-        }
-        $detail_link = add_query_arg(
-          array(
-            'tab' => 'plugin-information',
-            'plugin' => $slug,
-            'TB_iframe' => 'true',
-            'width' => '772',
-            'height' => '500',
-          ),
-          network_admin_url('plugin-install.php')
-        );
-
-        $pluginArr['plugin_name'] =  $plugin['name'];
-        $pluginArr['slug'] = $slug;
-        $pluginArr['thumb'] = "https://ps.w.org/" . $slug . "/assets/" . $plugin['img'];
-        $pluginArr['plugin_init'] = $plugin_init;
-        $pluginArr['detail_link'] = $detail_link;
-        $pluginArr['button_txt'] = $button_txt;
-        $pluginArr['button_class'] = $button_class;
-
-        $this->plugin_install_button($pluginArr);
-      }
     } // plugin check
-  }
+}
+
+
 } // class end
 $boj = new Th_Shop_Mania_theme_option();
