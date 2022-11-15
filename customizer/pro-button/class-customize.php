@@ -78,18 +78,6 @@ final class Th_Shop_Mania_Lite_Pro_Button_Customize {
 				)
 			)
 		);
-		$manager->add_section(
-			new th_shop_mania_Button_Customize_Section(
-				$manager,
-				'Docs_button',
-				array(
-					'title'    => esc_html__( 'View Documentation', 'th-shop-mania' ),
-					'pro_text' => esc_html__( 'View Docs',         'th-shop-mania' ),
-					'pro_url'  => esc_url(apply_filters('th_shop_mania_doc_link', 'https://themehunk.com/docs/th-shop-mania/')),
-					'priority' => 2,
-				)
-			)
-		);
 	}
 
 	/**
