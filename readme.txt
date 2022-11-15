@@ -4,13 +4,13 @@ Tags: e-commerce, blog, grid-layout, one-column, two-columns, three-columns, fou
 Requires at least: WordPress 5.0
 Requires PHP: 5.4
 Tested up to: 6.1
-Stable tag: 2.0
+Stable tag: 1.2
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 
 == Description ==
-Th Shop mania is a builder based free WooCommerce WordPress theme. It has a modern and minimalist design which will help you in creating any type of shopping website. Theme has many advanced options and very attractive demo templates which will give lots of opportunities to welcome customers, introduce them to your business, and sell site products. This beautiful theme will provide all the necessary functionality, all wrapped up in a fully modern and stylish design. Theme is integrated with WooCommerce, Th Advanced Product Search, Th Woo Cart plugin,  Th Product compare, Th Variation Swatches plugin and lead form builder plugin which will help you in designing a perfect Online Store.
+TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
 
 For more information about Theme https://www.themehunk.com
 
@@ -23,7 +23,7 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
-= Version 2.0 =
+= Version 1.2 =
 * Update - Footer Text modified.
 * Update - Version Updated.
 
