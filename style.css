@@ -5227,6 +5227,7 @@ input[type="text"], input[type="email"],input[type="url"],
   margin-top: 20px;
   padding-top: 1em;
   padding-bottom: 1em;
+  text-decoration: none;
 }
 .woocommerce-checkout.thsm-checkout-layout-stepped .woocommerce-billing-fields h3{
   display: none;
