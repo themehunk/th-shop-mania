@@ -4148,7 +4148,8 @@ padding-right:20px!important;
 /* product-thumb-slider-css */
 .woocommerce .flex-control-thumbs button.th-icon{
   position: absolute;
-  top: 42%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 25px;
   height: 25px;
   line-height: 25px;
