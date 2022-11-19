@@ -27,6 +27,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update - Footer Text modified.
 * Update - Version Updated.
 * Update - Recoomended plugin modification.
+* Update - Gallery Slider Layout issue resolved.
 
 
 = Version 1.1.8 =
