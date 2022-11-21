@@ -4533,6 +4533,9 @@ justify-content: center;
     list-style: none;
     opacity: 0;
   }
+  .single-product.grid-gallery ul.flex-direction-nav{
+  top: 252px;
+}
   .single-product .woocommerce-product-gallery:hover ul.flex-direction-nav {
     opacity: 1;
 }
