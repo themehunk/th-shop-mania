@@ -44,7 +44,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 		    add_filter( 'post_class', array( $this, 'th_shop_mania_post_class' ) );
 		   
-		    add_action( 'after_setup_theme', array( $this, 'th_shop_mania_common_actions' ), 999 );
+		    add_action( 'wp', array( $this, 'th_shop_mania_common_actions' ), 999 );
 		    add_filter( 'open_theme_js_localize', array( $this, 'th_shop_mania_js_localize' ) );
 		    // In this theme product image gallery is inserted directly so this is commented
 		    // add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'th_shop_mania_product_flip_image' ), 10 );
@@ -593,7 +593,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
         }
 
         function shop_pagination(){
-			$pagination = get_theme_mod( 'th_shop_mania_pagination' );
+			$pagination = get_theme_mod( 'th_shop_mania_pagination','num' );
 			if ( 'click' == $pagination || 'scroll' == $pagination){
 				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 				add_action( 'woocommerce_after_shop_loop', array( $this, 'th_shop_mania_pagination' ), 10 );

@@ -1469,6 +1469,10 @@ header .taiowc-icon .th-icon{
 .header-support-wrap{
   margin-right: 20px;
 }
+.mhdrtwo .header-support-wrap,
+.mhdrthree .header-support-wrap{
+  margin-right: 0;
+}
 .header-support-wrap pre{
   margin: 0;
   padding: 9px;
@@ -4144,14 +4148,31 @@ padding-right:20px!important;
 /* product-thumb-slider-css */
 .woocommerce .flex-control-thumbs button.th-icon{
   position: absolute;
-  top: 42%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 25px;
   height: 25px;
   line-height: 25px;
+  font-size: 16px;
   background: #EAEAEA;
   color: #111;
   border-radius: 50%;
   z-index: 108;
+}
+.woocommerce .thunk-single-product-summary-wrap .slick-next:before, 
+.woocommerce .thunk-single-product-summary-wrap .slick-prev:before{
+  font-family: "th-icon";
+  color: #111;
+  background: initial;
+  font-size: inherit;
+    line-height: inherit;
+    opacity: inherit;
+}
+.woocommerce .thunk-single-product-summary-wrap .slick-prev:before{
+  content: "\f104";
+}
+.woocommerce .thunk-single-product-summary-wrap .slick-next:before{
+  content: "\f105";
 }
 .woocommerce .flex-control-thumbs .slick-slide{
   padding: 9px;
@@ -4609,7 +4630,9 @@ justify-content: center;
   right: 30px;
 }
 .thunk-single-product-summary-wrap{
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .woocommerce .right-side{
   width: 49%;
@@ -5227,6 +5250,7 @@ input[type="text"], input[type="email"],input[type="url"],
   margin-top: 20px;
   padding-top: 1em;
   padding-bottom: 1em;
+  text-decoration: none;
 }
 .woocommerce-checkout.thsm-checkout-layout-stepped .woocommerce-billing-fields h3{
   display: none;
