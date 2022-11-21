@@ -487,7 +487,10 @@ if (!function_exists('th_shop_mania_woo_woocommerce_shop_product_content')) {
       th_shop_mania_woocommerce_product_layout5($product, $productId);
     }
       else if ($shop_th_shop_mania_woo_product_layout == 6) {
-      th_shop_mania_woocommerce_product_layout6($product, $productId);
+        if (function_exists('th_shop_mania_woocommerce_product_layout6')) {
+          th_shop_mania_woocommerce_product_layout6($product, $productId);
+        }
+        
     }
   }
 }
