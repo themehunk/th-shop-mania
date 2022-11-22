@@ -594,7 +594,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
         function shop_pagination(){
 			$pagination = get_theme_mod( 'th_shop_mania_pagination','num' );
-			if ( 'click' == $pagination || 'scroll' == $pagination){
+			if ( ('click' == $pagination || 'scroll' == $pagination ) && function_exists('th_shop_mania_pro_load_plugin') ){
 				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 				add_action( 'woocommerce_after_shop_loop', array( $this, 'th_shop_mania_pagination' ), 10 );
 			}

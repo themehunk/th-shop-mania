@@ -409,7 +409,12 @@ remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
 add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
 function woocommerce_custom_sale_text($text, $post, $_product)
 {
-  return '<span class="onsale">' . esc_html(get_theme_mod('th_shop_mania_woo_sale_text', 'Sale')) . '</span>';
+  if (function_exists('th_shop_mania_pro_load_plugin')) {
+    $sale = get_theme_mod('th_shop_mania_woo_sale_text', 'Sale');
+  } else{
+    $sale = 'Sale';
+  }
+  return '<span class="onsale">' . esc_html($sale) . '</span>';
 }
 // This Action for product style in shop page
 add_action('wp', 'th_shop_mania_shop_customization', 5);
@@ -477,20 +482,18 @@ if (!function_exists('th_shop_mania_woo_woocommerce_shop_product_content')) {
     $productId = $product->get_id();
     if ($shop_th_shop_mania_woo_product_layout == 1) {
       th_shop_mania_woocommerce_product_layout_default($product, $productId);
-    } else if ($shop_th_shop_mania_woo_product_layout == 2) {
+    } elseif ($shop_th_shop_mania_woo_product_layout == 2 && function_exists('th_shop_mania_woocommerce_product_layout2')) {
       th_shop_mania_woocommerce_product_layout2($product, $productId);
-    } else if ($shop_th_shop_mania_woo_product_layout == 3) {
+    } elseif ($shop_th_shop_mania_woo_product_layout == 3 && function_exists('th_shop_mania_woocommerce_product_layout3')) {
       th_shop_mania_woocommerce_product_layout3($product, $productId);
-    } else if ($shop_th_shop_mania_woo_product_layout == 4) {
+    } elseif ($shop_th_shop_mania_woo_product_layout == 4 && function_exists('th_shop_mania_woocommerce_product_layout4')) {
       th_shop_mania_woocommerce_product_layout4($product, $productId);
-    } else if ($shop_th_shop_mania_woo_product_layout == 5) {
+    } elseif ($shop_th_shop_mania_woo_product_layout == 5 && function_exists('th_shop_mania_woocommerce_product_layout5')) {
       th_shop_mania_woocommerce_product_layout5($product, $productId);
-    }
-      else if ($shop_th_shop_mania_woo_product_layout == 6) {
-        if (function_exists('th_shop_mania_woocommerce_product_layout6')) {
-          th_shop_mania_woocommerce_product_layout6($product, $productId);
-        }
-        
+    } elseif ($shop_th_shop_mania_woo_product_layout == 6 && function_exists('th_shop_mania_woocommerce_product_layout6')) {
+          th_shop_mania_woocommerce_product_layout6($product, $productId);        
+    } else{
+      th_shop_mania_woocommerce_product_layout_default($product, $productId);
     }
   }
 }
