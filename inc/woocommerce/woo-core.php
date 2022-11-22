@@ -216,10 +216,11 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
                 $classes[] ='th-shop-mania-slide-item-hover';
 			  }	
 		   }	
-		   $single_product_style = get_theme_mod('th_shop_mania_single_product_alignment', 'left');
-		   if ('' !== $single_product_style) {
+				if (function_exists('th_shop_mania_pro_load_plugin')) {
+				$single_product_style = get_theme_mod('th_shop_mania_single_product_alignment', 'left');
 				$classes[] = 'th-shop-mania-single-product-content-' . esc_attr($single_product_style);
-				}
+			}
+				
 			return $classes;
 		}
 		/**
@@ -418,7 +419,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			}
 
 			$single_product_layout = get_theme_mod('th_shop_mania_pro_single_product_layout','standard');
-			if ($single_product_layout == 'twocolumn') {
+			if ($single_product_layout == 'twocolumn' && function_exists('th_shop_mania_pro_load_plugin')) {
 				// Single Product Two Column Customization.
 				add_filter('woocommerce_product_description_heading', '__return_empty_string');
             add_filter('woocommerce_product_reviews_heading', '__return_empty_string');
@@ -594,7 +595,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
         function shop_pagination(){
 			$pagination = get_theme_mod( 'th_shop_mania_pagination','num' );
-			if ( 'click' == $pagination || 'scroll' == $pagination){
+			if ( ('click' == $pagination || 'scroll' == $pagination ) && function_exists('th_shop_mania_pro_load_plugin') ){
 				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 				add_action( 'woocommerce_after_shop_loop', array( $this, 'th_shop_mania_pagination' ), 10 );
 			}
