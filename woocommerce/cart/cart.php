@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.0.1
+ * @version 3.8.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -24,17 +24,19 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		<thead>
-			<tr>
-				<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'th-shop-mania' ); ?></span></th>
-				<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'th-shop-mania' ); ?></span></th>
-				<th class="product-name"><?php esc_html_e( 'Product', 'th-shop-mania' ); ?></th>
-				<th class="product-price"><?php esc_html_e( 'Price', 'th-shop-mania' ); ?></th>
-				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'th-shop-mania' ); ?></th>
-				<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'th-shop-mania' ); ?></th>
-			</tr>
-		</thead>
+
 		<tbody>
+			<thead>
+		<tr>
+			<th class="product-remove">&nbsp;</th>
+			<th class="product-thumbnail">&nbsp;</th>
+			<th class="product-name"><?php _e( 'Product', 'th-shop-mania' ); ?></th>
+			<th class="product-remove">&nbsp;</th>
+			<th class="product-thumbnail">&nbsp;</th><th class="product-remove">&nbsp;</th>
+			<th class="product-thumbnail">&nbsp;</th>
+			<th class="product-subtotal"><?php _e( 'Total', 'th-shop-mania' ); ?></th>
+		</tr>
+	</thead>
 			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 			<?php
@@ -47,36 +49,23 @@ do_action( 'woocommerce_before_cart' ); ?>
 					?>
 					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-						<td class="product-remove">
-							<?php
-								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-									'woocommerce_cart_item_remove_link',
-									sprintf(
-										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-										esc_html__( 'Remove this item', 'th-shop-mania' ),
-										esc_attr( $product_id ),
-										esc_attr( $_product->get_sku() )
-									),
-									$cart_item_key
-								);
-							?>
-						</td>
 
 						<td class="product-thumbnail">
 						<?php
 						$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 						if ( ! $product_permalink ) {
-							echo $thumbnail; // PHPCS: XSS ok.
+							echo wp_kses_post($thumbnail); // PHPCS: XSS ok.
 						} else {
-							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+							printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses_post($thumbnail) ); // PHPCS: XSS ok.
 						}
 						?>
 						</td>
 
-						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'th-shop-mania' ); ?>">
-						<?php
+						<td class="product-content">
+							<div class="product-top">
+								<div class="product-name">
+									<?php
 						if ( ! $product_permalink ) {
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 						} else {
@@ -93,45 +82,57 @@ do_action( 'woocommerce_before_cart' ); ?>
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'th-shop-mania' ) . '</p>', $product_id ) );
 						}
 						?>
-						</td>
+								</div>
 
-						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'th-shop-mania' ); ?>">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
-						</td>
+								<div class="product-price product-subtotal">
+									<?php
+								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+									?>
+									
+								</div>
+							</div>
 
-						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'th-shop-mania' ); ?>">
-						<?php
+							<div class="product-bottom">
+								<div class="product-qty">
+									<?php
 						if ( $_product->is_sold_individually() ) {
-							$min_quantity = 1;
-							$max_quantity = 1;
+							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 						} else {
-							$min_quantity = 0;
-							$max_quantity = $_product->get_max_purchase_quantity();
+							$product_quantity = woocommerce_quantity_input(
+								array(
+									'input_name'   => "cart[{$cart_item_key}][qty]",
+									'input_value'  => $cart_item['quantity'],
+									'max_value'    => $_product->get_max_purchase_quantity(),
+									'min_value'    => '0',
+									'product_name' => $_product->get_name(),
+								),
+								$_product,
+								false
+							);
 						}
-
-						$product_quantity = woocommerce_quantity_input(
-							array(
-								'input_name'   => "cart[{$cart_item_key}][qty]",
-								'input_value'  => $cart_item['quantity'],
-								'max_value'    => $max_quantity,
-								'min_value'    => $min_quantity,
-								'product_name' => $_product->get_name(),
-							),
-							$_product,
-							false
-						);
 
 						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 						?>
+								</div>
+								<div class="product-remove">
+							<?php
+								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									'woocommerce_cart_item_remove_link',
+									sprintf(
+										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times; Remove</a>',
+										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+										esc_html__( 'Remove this item', 'th-shop-mania' ),
+										esc_attr( $product_id ),
+										esc_attr( $_product->get_sku() )
+									),
+									$cart_item_key
+								);
+							?>
+								</div>
+							</div>
+
 						</td>
 
-						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'th-shop-mania' ); ?>">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
-						</td>
 					</tr>
 					<?php
 				}
@@ -145,12 +146,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
-							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'th-shop-mania' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'th-shop-mania' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'th-shop-mania' ); ?>"><?php esc_attr_e( 'Apply coupon', 'th-shop-mania' ); ?></button>
+							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'th-shop-mania' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'th-shop-mania' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'th-shop-mania' ); ?>"><?php esc_html_e( 'Apply coupon', 'th-shop-mania' ); ?></button>
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
 
-					<button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'th-shop-mania' ); ?>"><?php esc_html_e( 'Update cart', 'th-shop-mania' ); ?></button>
+					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'th-shop-mania' ); ?>"><?php esc_html_e( 'Update cart', 'th-shop-mania' ); ?></button>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -177,8 +178,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 		do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
-
 </div>
-<?php if ($th_shop_mania_woo_cart_crosssell_enable) {
+<?php 
+if ($th_shop_mania_woo_cart_crosssell_enable || (!function_exists('th_shop_mania_pro_load_plugin'))) {
 	do_action( 'woocommerce_after_cart' );
 	} ?>

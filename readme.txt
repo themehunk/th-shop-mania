@@ -31,7 +31,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update - Shop Page Load More Issue resolved.
 * Update - Pro features modifications in Th Shop Mania Options.
 * Update - Pro Compatibility issue resolved.
-
+* Update - Cart Page Style.
+* Update - Related , Upsell Product issue in lite theme.
 
 = Version 1.1.8 =
 * Update - Theme checked and completed.
@@ -139,6 +140,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update - Gallery Slider Layout issue resolved.
 * Update - Shop Page Load More Issue resolved.
 * Update - Pro features modifications in Th Shop Mania Options.
+* Update - Pro Compatibility issue resolved.
+* Update - Cart Page Style.
+* Update - Related , Upsell Product issue in lite theme.
 
 == Resources ==
  

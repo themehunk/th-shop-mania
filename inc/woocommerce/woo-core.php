@@ -451,14 +451,14 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
             add_filter('woocommerce_product_reviews_heading', '__return_empty_string');
             add_filter('woocommerce_product_additional_information_heading', '__return_empty_string');   
 			/* Display Related Products */
-			if ( ! get_theme_mod( 'th_shop_mania_related_product_display',true ) ) {
+			if ( ! get_theme_mod( 'th_shop_mania_related_product_display',true ) && (function_exists('th_shop_mania_pro_load_plugin')) ) {
 				remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 			}
 			/* Display upsell Products */
-			if ( ! get_theme_mod( 'th_shop_mania_upsell_product_display',true ) ) {
+			if ( ! get_theme_mod( 'th_shop_mania_upsell_product_display',true ) && (function_exists('th_shop_mania_pro_load_plugin')) ) {
 				remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 20 );
 			}
-			if(get_theme_mod( 'th_shop_mania_upsell_product_display',true )==true){
+			if(get_theme_mod( 'th_shop_mania_upsell_product_display',true )==true || (!function_exists('th_shop_mania_pro_load_plugin'))){
 			  add_action( 'woocommerce_after_single_product_summary',array( $this, 'th_shop_mania_woocommerce_output_upsells' ),15);
              }else{
              remove_action( 'woocommerce_after_single_product_summary',array( $this, 'th_shop_mania_woocommerce_output_upsells' ));	
