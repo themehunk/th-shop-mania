@@ -3771,7 +3771,6 @@ section.upsells.products h2,
 }
 .woocommerce div.product form.cart.variations_form{
   flex-wrap: wrap;
-  flex-direction: column;
 }
 .woocommerce .variations_form .reset_variations{
   display: none!important;
@@ -3808,6 +3807,9 @@ section.upsells.products h2,
 }
 .woocommerce-variation-price,.woocommerce div.product form.cart .variations{
 margin-bottom:20px;
+}
+.single_variation_wrap{
+  width: 100%;
 }
 .woocommerce #respond input#submit.alt.disabled,
 .woocommerce #respond input#submit.alt.disabled:hover,
@@ -4271,6 +4273,9 @@ width:100%;
     margin-bottom:20px;
     text-align: center;
 }
+.woocommerce.single-product #reviews #comments h2{
+  display: none;
+}
 .woocommerce-variation-price{
 margin-bottom:30px;
 display:inline-flex;
@@ -4286,6 +4291,9 @@ clear: initial;
 .summary .yith-wcwl-add-to-wishlist{
     float: left;
     margin: 0 0 21px 15px;
+}
+.product-type-variable .summary .yith-wcwl-add-to-wishlist{
+  margin-left: 0;
 }
 .summary .yith-wcwl-add-button, .summary .yith-wcwl-wishlistaddedbrowse,
 .summary .yith-wcwl-wishlistexistsbrowse{
@@ -8438,9 +8446,6 @@ font-size:13px
 line-height: 36px;
 min-width:70px;
 }
-.woocommerce.woocommerce-checkout button.button{
-  line-height: 45px;
-}
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, .summary .yith-wcwl-wishlistexistsbrowse a,
 .woocommerce .entry-summary a.th-product-compare-btn.button {
     height: 35px;
@@ -8464,7 +8469,6 @@ min-width:70px;
 .woocommerce div.product form.cart .variations td, 
 .woocommerce div.product form.cart .variations th{
   width: initial;
-  height: 30px;
   padding: 0;
 }
 .woocommerce div.product form.cart.variations_form{
@@ -8488,6 +8492,9 @@ padding: 0px 0px 0px 0px;
 }
 .woocommerce-tabs.wc-tabs-wrapper{
   padding: 30px 0;
+}
+.th-variation-swatches .variable-items-wrapper .variable-item.button-variable-item{
+  margin-bottom: 5px;
 }
 section.related.products h2, 
 section.upsells.products h2,
@@ -8727,6 +8734,9 @@ font-size:12px;
 .respmobile-layout-2 .tapsp-autocomplete-suggestions{
   width: 305px!important;
   position: fixed!important;
+}
+.woocommerce span.onsale, .woocommerce ul.products li.product .onsale{
+  padding: 2px 4px;
 }
 }
 @media screen and (max-width:550px){
