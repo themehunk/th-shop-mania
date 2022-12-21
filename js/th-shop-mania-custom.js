@@ -36,7 +36,7 @@
                                   }
                                 $(window).on('load', function(){
                                   var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart; 
-                                  console.log(loadTime);
+                                  // console.log(loadTime);
                                   if (loadTime <= 10000) { myStopFunction(); }
                                 setTimeout(removeLoader); //wait for page load PLUS two seconds.
                                 });
@@ -255,12 +255,14 @@
                             return false;
                         });
                      // Below Footer 
+                     if (!(jQuery('.th-shop-mania-pro').length )) {
                      jQuery('.below-footer').attr('style', 'display: block !important');
                      jQuery('.below-footer *').attr('style', 'display: inline-block !important');
 
                      if (!(jQuery('.footer-copyright').length )) {
                       jQuery('footer div').hide();
                      }
+                   }
                 },
                      
     }
