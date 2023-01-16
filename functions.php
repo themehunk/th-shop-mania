@@ -100,54 +100,8 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
         add_theme_support( 'woocommerce', array(
                                                  'thumbnail_image_width' => 320,
                                              ) );
-         // Recommend plugins
-        //    add_theme_support( 'recommend-plugins', array(
 
-        // 	  'hunk-companion' => array(
-        //         'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
-        //          'img' => 'icon-128x128.png',
-        //         'active_filename' => 'hunk-companion/hunk-companion.php',
-        //     ),
-        // 	'th-all-in-one-woo-cart' => array(
-        //     'name' => esc_html__( 'TH All In One Woo Cart', 'th-shop-mania' ),
-        //     'img' => 'icon-128x128.png',
-        //     'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
-        //     ),  
-        //     'th-advance-product-search' => array(
-        //     'name' => esc_html__( 'TH Advance Product Search', 'th-shop-mania' ),
-        //     'img' => 'icon-128x128.gif',
-        //     'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
-        //     ),
-        //     'th-variation-swatches' => array(
-        //         'name' => esc_html__( 'TH Variation Swatches', 'th-shop-mania' ),
-        //          'img' => 'icon-128x128.gif',
-        //         'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
-        //     ),
-        //     'lead-form-builder' => array(
-        //         'name' => esc_html__( 'Lead Form Builder', 'th-shop-mania' ),
-        //          'img' => 'icon-128x128.png',
-        //         'active_filename' => 'lead-form-builder/lead-form-builder.php',
-        //     ),
-        //     'wp-popup-builder' => array(
-        //         'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'th-shop-mania' ),
-        //          'img' => 'icon-128x128.png',
-        //         'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
-        //     ), 
-        //     'th-product-compare' => array(
-        //          'name' => esc_html__( 'Th Product Compare', 'th-shop-mania' ),
-        //           'img' => 'icon-128x128.png',
-        //          'active_filename' => 'th-product-compare/th-product-compare.php',
-        //      ),
-        //     'yith-woocommerce-wishlist' => array(
-        //          'name' => esc_html__( 'YITH WooCommerce Wishlist', 'th-shop-mania' ),
-        //           'img' => 'icon-128x128.jpg',
-        //          'active_filename' => 'yith-woocommerce-wishlist/init.php',
-        //      ),
-            
-        // ) );  
-
-
-            add_theme_support( 'recommend-plugins', array(
+        add_theme_support( 'recommend-plugins', array(
 
         	 'hunk-companion' => array(
                 'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
@@ -246,37 +200,6 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
 
         ));
         
-        /***********************************************
-         * This to implement with mania companion plugin
-         * *********************************************
-         *
-         * 
-
-        if (!function_exists('hunk_companion_load_plugin')) {
-
-        add_theme_support( 'import-demo-content', array(
-             'mania-companion' => array(
-                'name' => esc_html__( 'Mania Companion', 'th-shop-mania' ),
-                 'img' => 'icon-128x128.png',
-                'active_filename' => 'mania-companion/mania-companion.php',
-            ),    
-
-        ));
-
-        } else{
-
-        add_theme_support( 'import-demo-content', array(
-             'hunk-companion' => array(
-                'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
-                 'img' => 'icon-128x128.png',
-                'active_filename' => 'hunk-companion/hunk-companion.php',
-            ),    
-
-        ));
-
-        }
-        */
-// remove_theme_support( 'widgets-block-editor' );
 	}
 endif;
 add_action( 'after_setup_theme', 'th_shop_mania_setup' );
@@ -329,7 +252,6 @@ function th_shop_mania_scripts(){
 	// enqueue css
 	$dir_name    = defined( 'SCRIPT_DEBUG' ) && ( SCRIPT_DEBUG ) ? 'unminified' : 'minified';
 	$prefix = defined( 'SCRIPT_DEBUG' ) && ( SCRIPT_DEBUG ) ? '' : '.min';
-	// wp_enqueue_style( 'jost-fonts', 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap', '', TH_SHOP_MANIA_THEME_VERSION );
 	wp_enqueue_style( 'th-icon', TH_SHOP_MANIA_THEME_URI . 'third-party/fonts/th-icon/style.css', '', TH_SHOP_MANIA_THEME_VERSION );
 	wp_enqueue_style( 'th-shop-mania-menu', TH_SHOP_MANIA_THEME_URI . 'css/th-shop-mania-menu.css','',TH_SHOP_MANIA_THEME_VERSION);	
 
@@ -381,3 +303,6 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 		do_action( 'wp_body_open' );
 	}
 }
+
+// Add block patterns
+require get_template_directory() . '/inc/block-pattern.php';
