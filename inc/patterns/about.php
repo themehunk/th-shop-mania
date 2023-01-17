@@ -27,20 +27,20 @@ return array(
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"40px"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="margin-top:40px"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"white","textColor":"vivid-red","style":{"border":{"radius":"25px"}},"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-vivid-red-color has-white-background-color has-text-color has-background wp-element-button" style="border-radius:25px">Explore More</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"white","style":{"border":{"radius":"25px"},"color":{"text":"#4167cf"}},"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-background-color has-text-color has-background wp-element-button" style="border-radius:25px;color:#4167cf">Explore More</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"backgroundColor":"vivid-red","style":{"border":{"radius":"25px"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-vivid-red-background-color has-background wp-element-button" style="border-radius:25px">Get Started Today</a></div>
+<!-- wp:button {"style":{"border":{"radius":"25px"},"color":{"background":"#4167cf"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-background wp-element-button" style="border-radius:25px;background-color:#4167cf">Get Started Today</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"61%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:61%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10px","bottomLeft":"2917px"},"width":"47px"},"spacing":{"blockGap":"0","padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}},"backgroundColor":"vivid-red","textColor":"vivid-red","layout":{"type":"flex","orientation":"vertical","justifyContent":"right"}} -->
-<div class="wp-block-group has-vivid-red-color has-vivid-red-background-color has-text-color has-background" style="border-width:47px;border-top-left-radius:10px;border-bottom-left-radius:2917px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:group {"style":{"border":{"radius":"100px"},"spacing":{"padding":{"top":"var:preset|spacing|80","right":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|80"}}},"backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"right"}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:61%"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"10px","bottomLeft":"2917px"},"width":"47px"},"spacing":{"blockGap":"0","padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}},"color":{"text":"#4167cf"}},"gradient":"midnight","layout":{"type":"flex","orientation":"vertical","justifyContent":"right"}} -->
+<div class="wp-block-group has-midnight-gradient-background has-text-color has-background" style="border-width:47px;border-top-left-radius:10px;border-bottom-left-radius:2917px;color:#4167cf;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:group {"style":{"border":{"radius":"100px"},"spacing":{"padding":{"top":"var:preset|spacing|80","right":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|80"}}},"backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"right"}} -->
 <div class="wp-block-group has-white-background-color has-background" style="border-radius:100px;padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--80)"></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
