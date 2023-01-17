@@ -98,7 +98,7 @@
 			],
 			"palette": [
 				{
-					"color": "#0f1629",
+					"color": "#FFFFFF",
 					"name": "Background",
 					"slug": "background"
 				},
@@ -106,21 +106,6 @@
 					"color": "#fff",
 					"name": "Foreground",
 					"slug": "foreground"
-				},
-				{
-					"color": "#FFF",
-					"name": "Bg-Prim",
-					"slug": "bg-prim"
-				},
-				{
-					"color": "#161c30",
-					"name": "Bg-Sec",
-					"slug": "bg-sec"
-				},
-				{
-					"color": "#000000",
-					"name": "Accent",
-					"slug": "accent"
 				}
 			]
 		},
@@ -240,10 +225,6 @@
 		        }
 		   }
 		},
-		"color": {
-			"background": "var(--wp--preset--color--bg-prim)",
-			"text": "var(--wp--preset--color--accent)"
-		},
 		"elements": {
 			"h1": {
 				"typography": {
@@ -293,9 +274,6 @@
 					}
 				},
 				":hover": {
-					"color": {
-						"text": "var(--wp--preset--color--accent)"
-					},
 					"typography": {
 						"textDecoration": "none"
 					}
