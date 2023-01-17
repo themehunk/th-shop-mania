@@ -4,17 +4,13 @@
  * 
  * slug: pricing
  * title: About Section
- * categories: blockline
+ * categories: thshopmania
  */
 
 return array(
     'title'      =>__( 'About Section', 'th-shop-mania' ),
-    'categories' => array( 'blockline' ),
-    'content'    => '<!-- wp:paragraph -->
-<p>h</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"},"blockGap":"29px"}},"layout":{"type":"constrained"}} -->
+    'categories' => array( 'thshopmania' ),
+    'content'    => '<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"},"blockGap":"29px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px"><!-- wp:columns {"verticalAlignment":"center","style":{"color":{"background":"#fafafa"},"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center has-background" style="background-color:#fafafa;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:column {"verticalAlignment":"center","width":"39%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:39%"><!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":1.2,"fontStyle":"normal","fontWeight":"600","letterSpacing":"2px"},"color":{"text":"#2e3d62"}},"fontSize":"extra-large"} -->

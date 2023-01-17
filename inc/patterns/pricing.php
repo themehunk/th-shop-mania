@@ -4,12 +4,12 @@
  * 
  * slug: pricing
  * title: Pricing Section
- * categories: blockline
+ * categories: thshopmania
  */
 
 return array(
     'title'      =>__( 'Pricing Section', 'th-shop-mania' ),
-    'categories' => array( 'blockline' ),
+    'categories' => array( 'thshopmania' ),
     'content'    => '<!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"0","left":"0"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"border":{"top":{"color":"#c9e8fd","width":"1px"},"right":{"width":"0px","style":"none"},"bottom":{"color":"#c9e8fd","width":"1px"},"left":{"color":"#c9e8fd","width":"1px"}},"spacing":{"padding":{"right":"0","left":"0"}}}} -->
