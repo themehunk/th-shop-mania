@@ -47,7 +47,16 @@
 
 	$block_patterns = array(
 		'ribbon',
+		'pricing',
+		'service',
+		'about',
 	);
+
+	if (class_exists('WooCommerce')) {
+		// $block_patterns [] = 'all-products';
+
+		array_push($block_patterns, 'all-products','new-products');
+	}
 
 	/**
 	 * Filters the theme block patterns.
