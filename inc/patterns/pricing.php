@@ -22,8 +22,8 @@ return array(
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"textColor":"foreground","fontSize":"extra-large"} -->
-<p class="has-foreground-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:800">$ 79</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"textColor":"black","fontSize":"extra-large"} -->
+<p class="has-black-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:800">$ 79</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"cyan-bluish-gray"} -->
@@ -31,12 +31,12 @@ return array(
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.8"}},"textColor":"foreground"} -->
-<p class="has-text-align-center has-foreground-color has-text-color" style="line-height:0.8">Included</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.8"}},"textColor":"black"} -->
+<p class="has-text-align-center has-black-color has-text-color" style="line-height:0.8">Included</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"align":"center","textColor":"foreground"} -->
-<p class="has-text-align-center has-foreground-color has-text-color">All Themes</p>
+<!-- wp:paragraph {"align":"center","textColor":"black"} -->
+<p class="has-text-align-center has-black-color has-text-color">All Themes</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"0"}}} -->
@@ -50,8 +50,8 @@ return array(
 <p class="has-text-align-left has-vivid-red-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500"> &lt;-Multiple Sites -&gt;</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"left":"var:preset|spacing|50"}}},"textColor":"foreground"} -->
-<p class="has-foreground-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500">&lt;-Premium Support</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"left":"var:preset|spacing|50"}}},"textColor":"black"} -->
+<p class="has-black-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500">&lt;-Premium Support</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -70,8 +70,8 @@ return array(
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"textColor":"foreground","fontSize":"extra-large"} -->
-<p class="has-foreground-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:800">$ 99</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"textColor":"black","fontSize":"extra-large"} -->
+<p class="has-black-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:800">$ 99</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"cyan-bluish-gray"} -->
@@ -79,12 +79,12 @@ return array(
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.8"}},"textColor":"foreground"} -->
-<p class="has-text-align-center has-foreground-color has-text-color" style="line-height:0.8">Included</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.8"}},"textColor":"black"} -->
+<p class="has-text-align-center has-black-color has-text-color" style="line-height:0.8">Included</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"align":"center","textColor":"foreground"} -->
-<p class="has-text-align-center has-foreground-color has-text-color">All Themes</p>
+<!-- wp:paragraph {"align":"center","textColor":"black"} -->
+<p class="has-text-align-center has-black-color has-text-color">All Themes</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"0"}}} -->
@@ -98,8 +98,8 @@ return array(
 <p class="has-text-align-left has-vivid-red-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500"> &lt;-Multiple Sites -&gt;</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"left":"var:preset|spacing|50"}}},"textColor":"foreground"} -->
-<p class="has-foreground-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500">&lt;-Premium Support</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"left":"var:preset|spacing|50"}}},"textColor":"black"} -->
+<p class="has-black-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500">&lt;-Premium Support</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -118,8 +118,8 @@ return array(
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"textColor":"foreground","fontSize":"extra-large"} -->
-<p class="has-foreground-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:800">$ 179</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"textColor":"black","fontSize":"extra-large"} -->
+<p class="has-black-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:800">$ 179</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"cyan-bluish-gray"} -->
@@ -127,12 +127,12 @@ return array(
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.8"}},"textColor":"foreground"} -->
-<p class="has-text-align-center has-foreground-color has-text-color" style="line-height:0.8">Included</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.8"}},"textColor":"black"} -->
+<p class="has-text-align-center has-black-color has-text-color" style="line-height:0.8">Included</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"align":"center","textColor":"foreground"} -->
-<p class="has-text-align-center has-foreground-color has-text-color">All Themes</p>
+<!-- wp:paragraph {"align":"center","textColor":"black"} -->
+<p class="has-text-align-center has-black-color has-text-color">All Themes</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"0"}}} -->
@@ -146,8 +146,8 @@ return array(
 <p class="has-text-align-left has-vivid-red-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500"> &lt;-Multiple Sites -&gt;</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"left":"var:preset|spacing|50"}}},"textColor":"foreground"} -->
-<p class="has-foreground-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500">&lt;-Premium Support</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"padding":{"left":"var:preset|spacing|50"}}},"textColor":"black"} -->
+<p class="has-black-color has-text-color" style="padding-left:var(--wp--preset--spacing--50);font-style:normal;font-weight:500">&lt;-Premium Support</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
