@@ -23,6 +23,9 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 == Changelog ==
+= Version 1.2.4 =
+* Pattern issues resolved.
+
 = Version 1.2.3 =
 * Pattern Added.
 
@@ -142,8 +145,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==
-= Version 1.2.3 =
-* Pattern Added.
+= Version 1.2.4 =
+* Pattern issues resolved.
 
 == Resources ==
  
