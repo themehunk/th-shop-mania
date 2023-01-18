@@ -50,6 +50,8 @@
 		'pricing',
 		'service',
 		'about',
+		'banner-ribbon',
+		'testimonials'
 	);
 
 	if (class_exists('WooCommerce')) {
