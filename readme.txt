@@ -24,7 +24,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Changelog ==
 = Version 1.2.5 =
-* Block Patter added.
+* Block Patterns added.
+* Tickera Plugin Integrated.
 
 = Version 1.2.4 =
 * Pattern issues resolved.
@@ -149,7 +150,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 == Upgrade Notice ==
 = Version 1.2.5 =
-* Block Patter added.
+* Block Patterns added.
+* Tickera Plugin Integrated.
 
 == Resources ==
  
