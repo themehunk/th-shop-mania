@@ -25,6 +25,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Changelog ==
 = Version 1.2.6 =
 * Taxonomy added in get_terms.
+* screenshot changed.
 
 = Version 1.2.5 =
 * Block Patterns added.
@@ -154,6 +155,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 == Upgrade Notice ==
 = Version 1.2.6 =
 * Taxonomy added in get_terms.
+* screenshot changed.
 
 == Resources ==
  
