@@ -148,7 +148,7 @@ if (!function_exists('th_shop_mania_product_list_categories')) {
 
   $exclude_id = $term;
 
-  $list_pluck = wp_list_pluck(get_terms(), 'term_id');
+  $list_pluck = wp_list_pluck(get_terms( array('taxonomy' => 'product_cat',) ), 'term_id');
 
   $list_pluck_include  = array_diff($list_pluck, $exclude_id);
 
