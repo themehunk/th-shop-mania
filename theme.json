@@ -158,7 +158,7 @@
 		},
 		"layout": {
 			"contentSize": "900px",
-			"wideSize": "1350px"
+			"wideSize": "1200px"
 		},
 		"spacing": {
 			"units": [
@@ -175,53 +175,63 @@
 			"fontSizes": [
 				{
 					"name": "Tiny",
-					"size": "13px",
+					"size": "0.813rem",
 					"slug": "tiny"
 				},
 				{
 					"name": "Extra Small",
-					"size": "14px",
+					"size": "0.875rem",
 					"slug": "extra-small"
 				},
 				{
 					"name": "Small",
-					"size": "15px",
+					"size": "0.938rem",
 					"slug": "small"
 				},
 				{
 					"name": "Medium",
-					"size": "16px",
+					"size": "1rem",
 					"slug": "medium"
 				},
 				{
 					"name": "Upper Heading",
-					"size": "18px",
+					"size": "1.125rem",
 					"slug": "upper-heading"
 				},
 				{
 					"name": "Normal",
-					"size": "clamp(18px,1.6vw,20px)",
+					"size": "clamp(1rem,1.6vw,1.25rem)",
 					"slug": "normal"
 				},
 				{
 					"name": "Content Heading",
-					"size": "clamp(22px,4.2vw,24px)",
+					"size": "clamp(1.25rem,4.2vw,1.5rem)",
 					"slug": "content-heading"
 				},
 				{
 					"name": "Large",
-					"size": "clamp(28px,4.2vw,32px)",
+					"size": "clamp(1.5rem,4.2vw,2rem)",
 					"slug": "large"
 				},
 				{
 					"name": "Extra large (Recent Post Title)",
-					"size": "clamp(32px,6vw,36px)",
+					"size": "clamp(1.75rem,6vw,2.813rem)",
 					"slug": "extra-large"
 				},
 				{
 					"name": "Huge (Display)",
-					"size": "clamp(36px,5.2vw,80px)",
+					"size": "clamp(2rem,5.2vw,3.438rem)",
 					"slug": "huge"
+				},
+				{
+					"name": "Extra Huge",
+					"size": "clamp(2.25rem,5.2vw,4.688rem)",
+					"slug": "extra-huge"
+				},
+				{
+					"name": "Extremely Large",
+					"size": "clamp(2.625rem,5.2vw,5.625rem)",
+					"slug": "largest"
 				}
 			]
 		}
