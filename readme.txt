@@ -22,12 +22,11 @@ Yes our theme supports builder
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
-== Changelog ==
-
 = Version 1.2.7 =
 * Theme JSON file updated with fontSize.
 * Blank Template Added.
 * Tags Added.
+* Style modification.
 * Style modification.
 
 = Version 1.2.6 =
@@ -160,7 +159,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==
-= Version 1.2.8 =
+= Version 1.2.9 =
 * Style modification.
 
 == Resources ==
