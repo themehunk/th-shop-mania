@@ -108,7 +108,7 @@
 			],
 			"palette": [
 				{
-		            "color": "#0f1629",
+		            "color": "#FFF",
 		            "name": "Background",
 		            "slug": "background"
        			},
@@ -123,13 +123,13 @@
 		          "slug": "light-background"
 		        },
 		        {
-		          "color": "#ffffff",
+		          "color": "#111",
 		          "name": "Heading Color",
 		          "slug": "heading"
 		        },
 		        {
 		          "slug": "bodytext",
-		          "color": "#fff",
+		          "color": "#1c1d1e",
 		          "name": "Body Text"
 		        },
 		        {
