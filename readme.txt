@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.0
 Requires PHP: 5.4
 Tested up to: 6.1
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -21,6 +21,11 @@ Yes our theme supports builder
 
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
+
+= Version 1.2.8 =
+* Background color Changed in JSON.
+* WooCommerce plugin added in recommended.
+* Tickera Plugin removed from recommended.
 
 = Version 1.2.7 =
 * Theme JSON file updated with fontSize.
@@ -159,8 +164,10 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==
-= Version 1.2.9 =
-* Style modification.
+= Version 1.2.8 =
+* Background color Changed in JSON.
+* WooCommerce plugin added in recommended.
+* Tickera Plugin removed from recommended.
 
 == Resources ==
  

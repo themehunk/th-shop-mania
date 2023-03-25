@@ -109,7 +109,12 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'pro_link' =>'',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
             ),
-
+			'woocommerce' => array(
+				'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
+				 'img' => 'icon-128x128.png',
+				 'pro_link' => '',
+				 'active_filename' => 'woocommerce/woocommerce.php',
+			),
         	 'th-all-in-one-woo-cart' => array(
                 'name' => esc_html__( 'Th All In One Woo Cart', 'th-shop-mania' ),
                 'img' => 'icon-128x128.png',
@@ -185,13 +190,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                   'img' => 'icon-128x128.jpg',
                   'pro_link' => '',
                  'active_filename' => 'yith-woocommerce-wishlist/init.php',
-             ),
-            'tickera-event-ticketing-system' => array(
-                 'name' => esc_html__( 'Tickera', 'th-shop-mania' ),
-                  'img' => 'icon-128x128.jpg',
-                  'pro_link' => '',
-                 'active_filename' => 'tickera-event-ticketing-system/tickera.php',
-             ),
+             )
             
         ) );
 
