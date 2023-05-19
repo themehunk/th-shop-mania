@@ -1,10 +1,10 @@
 == Theme: Th Shop Mania ==
 Contributors: ThemeHunk
 Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, add_editor_style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
-Requires at least: WordPress 5.0
-Requires PHP: 5.4
-Tested up to: 6.1
-Stable tag: 1.2.8
+Requires at least: WordPress 5.5
+Requires PHP: 5.6
+Tested up to: 6.2
+Stable tag: 1.2.9
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -21,6 +21,10 @@ Yes our theme supports builder
 
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
+
+= Version 1.2.9 =
+* New: Extra product options For WooCommerce style compatibility added.
+
 
 = Version 1.2.8 =
 * Background color Changed in JSON.
@@ -164,10 +168,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==
-= Version 1.2.8 =
-* Background color Changed in JSON.
-* WooCommerce plugin added in recommended.
-* Tickera Plugin removed from recommended.
+= Version 1.2.9 =
+* New: Extra product options For WooCommerce style compatibility added.
 
 == Resources ==
  
