@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
-Version: 1.2.9
+Version: 1.3.0
 Requires at least: 5.5
 Tested up to: 6.2
 Requires PHP: 5.6
@@ -1638,6 +1638,9 @@ position:relative;
   justify-content: center;
 }
 /* mhdrfour */
+.mhdrfour .main-header-col1{
+  min-width: initial;
+}
 .mhdrfour .below-header-col1{
   width: initial;
 }
@@ -1647,6 +1650,9 @@ position:relative;
   padding-right: 0;
 }
 /* mhdrfive */
+.mhdrfive .main-header-col1{
+  min-width: initial;
+}
 .mhdrfive a.prd-search{
   padding-right: 0;
 }
@@ -7473,6 +7479,9 @@ h2.wc-block-mini-cart__title{
  }
  .theme-th-shop-mania .tickera_table input.tickera-button{
   border: 0;
+ }
+ .ea-simple-product-slider .elemento-owl-slider.owl-carousel .owl-nav{
+  top: 139px!important;
  }
 @media screen and (max-width: 1024px){
 .main-area{
