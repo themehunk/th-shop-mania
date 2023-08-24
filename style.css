@@ -796,7 +796,7 @@ flex-basis: initial;
   background: #fff;
 }
 .thunk-logo img{
-  width: 225px;
+  max-width: 250px;
 }
 .left-menu .th-shop-mania-menu{
   text-align: left;
