@@ -84,7 +84,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
           <div class="main-header-bar thnk-col-3">
             <div class="main-header-col1">
             <span class="logo-content">
-            <?php th_shop_mania_logo(); ?>
+            <?php th_shop_mania_logo('responsive'); ?>
             </span>
             <?php
             if(function_exists('th_shop_mania_show_off_canvas_sidebar_icon')){
@@ -195,7 +195,7 @@ add_action( 'th_shop_mania_below_header', 'th_shop_mania_below_header_markup' );
 //logo & site title function
 /**************************************/
 if ( ! function_exists( 'th_shop_mania_logo' ) ){
-function th_shop_mania_logo(){
+function th_shop_mania_logo($headertype = ''){
 $title_disable          = get_theme_mod( 'title_disable','enable');
 $tagline_disable        = get_theme_mod( 'tagline_disable','enable');
 $description            = get_bloginfo( 'description', 'display' );
@@ -205,7 +205,7 @@ if($title_disable!=''){
 ?>
 <div class="site-title">
    <?php //latest post
-   if ( is_home() || is_front_page() ) { ?>
+   if ( (is_home() || is_front_page()) && $headertype === '') { ?>
     <h1>
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
     </h1>
