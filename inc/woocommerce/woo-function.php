@@ -30,12 +30,19 @@ if (!function_exists('th_shop_mania_cart_total_item')) {
    */
   function th_shop_mania_cart_total_item()
   {
-    if (shortcode_exists('taiowc')) { ?>
-      <div class="cart-contents">
-        <?php echo do_shortcode('[taiowc]'); ?>
-      </div>
-    <?php }
-  }
+if (shortcode_exists('taiowc')) {
+    $shortcode = 'taiowc';
+} elseif (shortcode_exists('taiowcp')) {
+    $shortcode = 'taiowcp';
+} else {
+    echo __("No Shortcode found", "th-shop-mania");
+    return;
+}
+?>
+<div class="cart-contents">
+    <?php echo do_shortcode("[$shortcode]"); ?>
+</div>
+ <?php }
   add_action('th_shop_mania_cart_total_item', 'th_shop_mania_cart_total_item');
 }
 /** My Account Menu **/
