@@ -162,7 +162,7 @@
         
         MobileMenuFunction : function(){
                  // close-button-active
-                   $('body').find('.sider').prepend('<div class="menu-close"><a href="#" class="menu-close-btn">close</a></div>');
+                   $('body').find('.sider').prepend('<div class="menu-close"><a href="#" class="menu-close-btn">'+thsmcustjs.menu_close+'</a></div>');
                         $('.menu-close-btn').removeAttr("href");
                         //Menu close
                         $('.menu-close-btn,.th-shop-mania-menu li a span.th-shop-mania-menu-link').click(function(){
