@@ -66,44 +66,44 @@
 			],
 			"gradients": [
 				{
-					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--tertiary) 100%)",
-					"name": "Vertical secondary to tertiary",
-					"slug": "vertical-secondary-to-tertiary"
+					"gradient": "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
+					"name": "MoonlitAsteroid secondary to tertiary",
+					"slug": "moonlitasteroid-secondary-to-tertiary"
 				},
 				{
-					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--background) 100%)",
-					"name": "Vertical secondary to background",
-					"slug": "vertical-secondary-to-background"
+					"gradient": "linear-gradient(to right, #ff9966, #ff5e62)",
+					"name": "Orange Coral to background",
+					"slug": "orange-coral-to-background"
 				},
 				{
-					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--tertiary) 0%,var(--wp--preset--color--background) 100%)",
-					"name": "Vertical tertiary to background",
-					"slug": "vertical-tertiary-to-background"
+					"gradient": "linear-gradient(to right, #0575e6, #021b79)",
+					"name": "VeryBlue to background",
+					"slug": "veryblue-tertiary-to-background"
 				},
 				{
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--primary) 0%,var(--wp--preset--color--heading) 100%)",
-					"name": "Diagonal primary to heading",
-					"slug": "diagonal-primary-to-heading"
+					"gradient": "linear-gradient(to right, #dbe6f6, #c5796d)",
+					"name": "Jaipur primary to heading",
+					"slug": "jaipur-primary-to-heading"
 				},
 				{
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--secondary) 50%,var(--wp--preset--color--background) 50%)",
-					"name": "Diagonal secondary to background",
-					"slug": "diagonal-secondary-to-background"
+					"gradient": "linear-gradient(to right, #283048, #859398)",
+					"name": "Titanium to background",
+					"slug": "titanium-secondary-to-background"
 				},
 				{
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--background) 50%,var(--wp--preset--color--secondary) 50%)",
-					"name": "Diagonal background to secondary",
-					"slug": "diagonal-background-to-secondary"
+					"gradient": "linear-gradient(to right, #0052d4, #4364f7, #6fb1fc)",
+					"name": "Bluelagoo background to secondary",
+					"slug": "bluelagoo-background-to-secondary"
 				},
 				{
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--tertiary) 50%,var(--wp--preset--color--background) 50%)",
-					"name": "Diagonal tertiary to background",
-					"slug": "diagonal-tertiary-to-background"
+					"gradient": "linear-gradient(to right, #02aab0, #00cdac)",
+					"name": "Green Beach tertiary to background",
+					"slug": "greenbeach-to-background"
 				},
 				{
-					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--background) 50%,var(--wp--preset--color--tertiary) 50%)",
-					"name": "Diagonal background to tertiary",
-					"slug": "diagonal-background-to-tertiary"
+					"gradient": "linear-gradient(to right, #1d976c, #93f9b9)",
+					"name": "Mojito background to tertiary",
+					"slug": "mojito-background-to-tertiary"
 				}
 			],
 			"palette": [
@@ -112,25 +112,26 @@
 		            "name": "Background",
 		            "slug": "background"
        			},
-		        {
-		          "color": "#161c30",
-		          "name": "Dark Background",
-		          "slug": "dark-background"
-		        },
+		   
 		        {
 		          "color": "#999",
 		          "name": "Light Background",
 		          "slug": "light-background"
 		        },
+				{
+					"color": "#f7f8f9",
+					"name": "gray Background",
+					"slug": "gray-background"
+				  },
 		        {
 		          "color": "#111",
 		          "name": "Heading Color",
 		          "slug": "heading"
 		        },
 		        {
-		          "slug": "bodytext",
-		          "color": "#1c1d1e",
-		          "name": "Body Text"
+		          "slug": "buttonbaground",
+		          "color": "#63d436",
+		          "name": "Button Background"
 		        },
 		        {
 		          "slug": "button-border",
@@ -138,7 +139,7 @@
 		          "name": "Button Border"
 		        },
 		        {
-		          "color": "#008000",
+		          "color": "#ffd21d",
 		          "name": "Accent",
 		          "slug": "accent"
 		        }
