@@ -17,7 +17,7 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
         $blog_page_id = get_option('page_for_posts');
         $postid = $blog_page_id;
     } else {
-        $postid = $post->ID;
+        $postid =(isset($post->ID)) ? $post->ID : '';
     }
 $th_shop_mania_disable_above_footer_dyn  = get_post_meta( $postid, 'th_shop_mania_disable_above_footer_dyn', true );
 $th_shop_mania_disable_footer_widget_dyn = get_post_meta( $postid, 'th_shop_mania_disable_footer_widget_dyn', true ); 
