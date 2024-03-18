@@ -111,13 +111,13 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ),
 			'woocommerce' => array(
 				'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
-				 'img' => 'icon-128x128.png',
+				 'img' => 'icon-128x128.gif',
 				 'pro_link' => '',
 				 'active_filename' => 'woocommerce/woocommerce.php',
 			),
         	 'th-all-in-one-woo-cart' => array(
                 'name' => esc_html__( 'Th All In One Woo Cart', 'th-shop-mania' ),
-                'img' => 'icon-128x128.png',
+                'img' => 'icon-128x128.gif',
                 'pro_link' => esc_url('https://themehunk.com/th-all-in-one-woo-cart/'),
                 'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
                 'pro-plugin' => array('slug'=>'th-all-in-one-woo-cart-pro',
@@ -164,7 +164,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ),
             'th-product-compare' => array(
                 'name' => esc_html__( 'Th Product Compare', 'th-shop-mania' ),
-                'img' => 'icon-128x128.png',
+                'img' => 'icon-128x128.gif',
                 'pro_link' => esc_url('https://themehunk.com/th-product-compare/'),
                 'active_filename' => 'th-product-compare/th-product-compare.php',
                 'pro-plugin' => array('slug'=>'th-product-compare-pro',

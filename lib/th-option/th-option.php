@@ -9,7 +9,7 @@ class Th_Shop_Mania_theme_option
      * @since 1.0
      * @var array $menu_page_title
      */
-    static public $menu_page_title = 'Th Shop Mania';
+    static public $menu_page_title = 'TH Shop Mania';
 
     /**
      * Current Slug
@@ -40,8 +40,8 @@ class Th_Shop_Mania_theme_option
       }
   function menu_tab()
   {
-    $menu_title = sprintf( esc_html__( '%s Options', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'TH Shop Mania', 'th-shop-mania' ) ) );
-    add_theme_page(esc_html__('Th Shop Mania', 'th-shop-mania'), $menu_title, 'edit_theme_options', 'th_shop_mania_thunk_started', array($this, 'tab_page'));
+    $menu_title = sprintf( esc_html__( '%s Options', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Shop Mania', 'th-shop-mania' ) ) );
+    add_theme_page(esc_html__('Shop Mania', 'th-shop-mania'), $menu_title, 'edit_theme_options', 'th_shop_mania_thunk_started', array($this, 'tab_page'));
 
     $menu_page_title = '';
     $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
