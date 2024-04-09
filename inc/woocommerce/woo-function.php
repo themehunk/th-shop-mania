@@ -35,7 +35,6 @@ if (shortcode_exists('taiowc')) {
 } elseif (shortcode_exists('taiowcp')) {
     $shortcode = 'taiowcp';
 } else {
-    echo __("No Shortcode found", "th-shop-mania");
     return;
 }
 ?>
