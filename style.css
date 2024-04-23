@@ -469,7 +469,8 @@ img{
 .comment-content a{
 text-decoration: underline;
 }
-article.thunk-post-article a.thunk-readmore{
+article.thunk-post-article a.thunk-readmore,
+.thunk-content-wrap .entry-content a.dokan-btn.vendor-dashboard{
 text-decoration:none;
 }
 .entry-content form.post-password-form input[type="password"]{
@@ -7485,6 +7486,31 @@ h2.wc-block-mini-cart__title{
  }
  .wp-block-search__inside-wrapper .wp-element-button{
   padding: 9px;
+}
+.responsive-main-header #mega-menu-wrap-th-shop-mania-main-menu .mega-menu-toggle{
+  background: transparent;
+}
+#mega-menu-wrap-th-shop-mania-main-menu .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner, #mega-menu-wrap-th-shop-mania-main-menu .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner::before, #mega-menu-wrap-th-shop-mania-main-menu .mega-menu-toggle .mega-toggle-block-0 .mega-toggle-animated-inner::after{
+  height: .5px;
+  background: #111;
+}
+#mega-menu-th-shop-mania-main-menu::-webkit-scrollbar {
+  width: .7em;
+}
+ 
+#mega-menu-th-shop-mania-main-menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+#mega-menu-th-shop-mania-main-menu::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.responsive-main-header #mega-menu-wrap-th-shop-mania-main-menu #mega-menu-th-shop-mania-main-menu li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator:after{
+  content: "+";
+}
+.responsive-main-header #mega-menu-wrap-th-shop-mania-main-menu #mega-menu-th-shop-mania-main-menu li.mega-menu-item-has-children.mega-toggle-on > a.mega-menu-link > span.mega-indicator:after{
+  content: "-";
 }
 @media screen and (max-width: 1024px){
 .main-area{

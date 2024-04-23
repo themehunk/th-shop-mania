@@ -49,4 +49,4 @@ $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_ena
         		</div>  <!-- end content-wrap -->
         	</div> 
         </div> <!-- end content page-content -->
-<?php get_footer();?>
+<?php get_footer();
