@@ -124,7 +124,8 @@ add_action('woocommerce_before_add_to_cart_quantity', 'th_shop_mania_display_qua
 function th_shop_mania_display_quantity_minus()
 {
   global $product;
-  if ($product->get_sold_individually() != '1') :
+  // echo "RAMSIYARAM JAI MAHANKAL"; echo $product->get_stock_quantity();
+  if ($product->get_sold_individually() != '1' && $product->get_stock_quantity() > '1') :
     echo '<div class="th-shop-mania-quantity"><button type="button" class="minus" >-</button>';
   endif;
 }
@@ -132,7 +133,8 @@ add_action('woocommerce_after_add_to_cart_quantity', 'th_shop_mania_display_quan
 function th_shop_mania_display_quantity_plus()
 {
   global $product;
-  if ($product->get_sold_individually() != '1') :
+  $product->get_stock_quantity(); 
+  if ($product->get_sold_individually() != '1' && $product->get_stock_quantity() > '1') :
     echo '<button type="button" class="plus" >+</button></div>';
   endif;
 }
