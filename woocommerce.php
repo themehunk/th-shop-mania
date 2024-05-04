@@ -53,7 +53,9 @@ if (class_exists('WooCommerce') && is_product()) {
                     <div class="page-head">
                       <?php
                       th_shop_mania_get_page_title($id);  
-                      th_shop_mania_breadcrumb_trail();
+                       if (function_exists('woocommerce_breadcrumb')) {
+                          woocommerce_breadcrumb();
+                      } 
                       ?>
                     </div>
             <?php } ?>

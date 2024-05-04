@@ -123,18 +123,32 @@ function th_shop_mania_prev_next_product()
 add_action('woocommerce_before_add_to_cart_quantity', 'th_shop_mania_display_quantity_minus', 10, 2);
 function th_shop_mania_display_quantity_minus()
 {
-  global $product;
-  if ($product->get_sold_individually() != '1') :
+   global $product;
+    // Get the product ID
+    $product_id = $product->get_id();
+
+    // Check if stock management is enabled
+    $manage_stock = get_post_meta( $product_id, '_manage_stock', true );
+
+    // Check if the product has stock management and the quantity is greater than 1
+    if ( ( $manage_stock === 'no' ) || ( $manage_stock === 'yes' && $product->get_stock_quantity() > 1 ) ) {
     echo '<div class="th-shop-mania-quantity"><button type="button" class="minus" >-</button>';
-  endif;
+ }
 }
 add_action('woocommerce_after_add_to_cart_quantity', 'th_shop_mania_display_quantity_plus', 10, 2);
 function th_shop_mania_display_quantity_plus()
 {
-  global $product;
-  if ($product->get_sold_individually() != '1') :
+ global $product;
+    // Get the product ID
+    $product_id = $product->get_id();
+
+    // Check if stock management is enabled
+    $manage_stock = get_post_meta( $product_id, '_manage_stock', true );
+
+    // Check if the product has stock management and the quantity is greater than 1
+    if ( ( $manage_stock === 'no' ) || ( $manage_stock === 'yes' && $product->get_stock_quantity() > 1 ) ) {
     echo '<button type="button" class="plus" >+</button></div>';
-  endif;
+ }
 }
 //Woocommerce: How to remove page-title at the home/shop page archive & category pages
 add_filter('woocommerce_show_page_title', '__return_null');
