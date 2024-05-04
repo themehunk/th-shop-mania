@@ -6419,6 +6419,11 @@ border-color: #0177B5;
     color: #FFF;
     border-radius: 0;
 }
+.woocommerce ul.products li.product .shop-page-products-layouts .thunk-compare a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .shop-page-products-layouts .thunk-wishlist, 
 .shop-page-products-layouts .thunk-compare{
   margin: 0 0 12px 0;
