@@ -97,9 +97,6 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
         add_theme_support( 'custom-background',$args );
         
         $GLOBALS['content_width'] = apply_filters( 'th_shop_mania_content_width', 640 );
-        add_theme_support( 'woocommerce', array(
-                                                 'thumbnail_image_width' => 320,
-                                             ) );
 
         add_theme_support( 'recommend-plugins', array(
 
