@@ -24,10 +24,11 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 
 = Version 1.3.8 =
 * Update: Style updated.
+* Update: Advance Slider Elementor addon Improve;
 
 = Version 1.3.7 =
 * Update: Remove quantity button when only 1 product remaining in stock;
-
+* Update: Catlog Thumbnail Image size added;
 
 = Version 1.3.6 =
 * Update: No Shortcode issue resolved.

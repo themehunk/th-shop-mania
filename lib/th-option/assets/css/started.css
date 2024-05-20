@@ -94,9 +94,9 @@
     position: relative;
 }
 .th-option-top-hdr .col-2{
-    margin-left: 20px;
     display: flex;
     align-items: center;
+    margin-top: -21px;
 }
 .th-option-heading h2{
     font-size: 21px;
@@ -118,6 +118,9 @@
     border: 1px solid #999;
     content: " ";
     margin: 0 9px;
+}
+span.lite-versionlabel:before {
+    content: "FREE THEME";
 }
 .th-option-area .version + span
 {
@@ -142,7 +145,7 @@
     line-height: 25px;
 }
 .th-option-area .logo-img a{
-    color: #fff;
+    color: #767676;
     font-weight: 600;
     text-decoration: none;
 
@@ -152,11 +155,11 @@
     display: block;
     text-align: center;
     padding: 10% 5%;
-    font-size: 10px;
-    line-height: 24px;
-    background: #2e639a;
-    background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7);
-    background: linear-gradient(to bottom, #51b1d1, #19548f);
+    /* font-size: 10px; */
+    /* line-height: 24px; */
+    /* background: #2e639a; */
+    /* background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7); */
+    /* background: linear-gradient(to bottom, #f8faff, #f8faff);*/
 
 }
 
@@ -191,16 +194,17 @@
 }*/
 
 .th-import-tab-button .tooltiptext {
-  background-color: #2303a1;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 4px 7px;
-  font-weight: normal;
-  right: -21px;
-  position: absolute;
-  z-index: 1;
-  top: -21px;
+    background-image: linear-gradient(135deg, #1873e7, #12477c 100%);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-weight: normal;
+    right: -10px;
+    position: absolute;
+    z-index: 1;
+    top: -13px;
+    font-size: 10px;
 }
 
 .th-import-tab-button .tooltiptext::after {
@@ -211,7 +215,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: black transparent transparent transparent;
+  border-color: #1561ba transparent transparent transparent;
 }
 .appearance_page_th_shop_mania_thunk_started{
 background:#fff;
@@ -380,24 +384,29 @@ width: 50%;
 .th-column img {
     width: 128px;
     border: 1px solid #efefef;
+    border-radius: 8px;
 }
 
-.facebook-gropup{
-display: flex;
+.x-gropup .x-image img{
+width: 50px;
+}
+.x-gropup{
+    display: flex;
     align-items: center;
-    background-color: #3b5998;
-    padding: 9px 9px 9px 14px;
+    background-color: #2a2929;
+    padding: 2px 0px 1px 12px;
     margin: 20px 0 0 !important;
     color: #fff;
     line-height: normal;
     text-decoration: none;
     box-shadow: 0 0 0 0 #3b5998;
     transition: .3s ease;
-    border-radius: 2px;
-    width: 55%;
+    border-radius: 58px;
+    width: 32%;
 }
-.facebook-gropup:hover{
+.x-gropup:hover{
 color:#fff;
+background-color: #000000;
 }
 
 /** customizer links **/

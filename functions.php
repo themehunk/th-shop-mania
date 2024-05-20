@@ -97,9 +97,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
         add_theme_support( 'custom-background',$args );
         
         $GLOBALS['content_width'] = apply_filters( 'th_shop_mania_content_width', 640 );
-        add_theme_support( 'woocommerce', array(
-                                                 'thumbnail_image_width' => 320,
-                                             ) );
+
 
         add_theme_support( 'recommend-plugins', array(
 
@@ -108,6 +106,11 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'img' => 'icon-128x128.png',
                  'pro_link' =>'',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
+				     'pro-plugin' => array('slug'=>'th-shop-mania-pro',
+                					'init'=>'th-shop-mania-pro/th-shop-mania-pro.php',
+                					 'admin_link'=>'',
+                					 'docs'=>esc_url('https://themehunk.com/docs/th-shop-mania'),
+            						)
             ),
 			'woocommerce' => array(
 				'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
@@ -124,7 +127,6 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                 					'init'=>'th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php',
                 					 'admin_link'=>'th-all-in-one-woo-cart-pro',
                 					 'docs'=>esc_url('https://themehunk.com/docs/th-all-in-one-woo-cart/'),
-
             						)
             ),
         	'lead-form-builder' => array(
@@ -196,12 +198,17 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
 
        // Import Data Content plugins
         add_theme_support( 'import-demo-content', array(
-             'hunk-companion' => array(
+			'hunk-companion' => array(
                 'name' => esc_html__( 'Hunk Companion', 'th-shop-mania' ),
                  'img' => 'icon-128x128.png',
+                 'pro_link' =>'',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
-                'pro_link' => esc_url(''),
-            ),    
+				     'pro-plugin' => array('slug'=>'th-shop-mania-pro',
+                					'init'=>'th-shop-mania-pro/th-shop-mania-pro.php',
+                					 'admin_link'=>'',
+                					 'docs'=>esc_url('https://themehunk.com/docs/th-shop-mania'),
+            						)
+            )
 
         ));
         
