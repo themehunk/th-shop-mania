@@ -23,6 +23,7 @@ Yes our theme supports builder
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
 = Version 1.3.8 =
+* Update: Style updated.
 * Update: Advance Slider Elementor addon Improve;
 
 = Version 1.3.7 =

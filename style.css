@@ -5885,7 +5885,8 @@ display: -webkit-box;
 .page-head h1{
 color: #111;
 }
- .page-head .breadcrumb-trail.breadcrumbs{
+ .page-head .breadcrumb-trail.breadcrumbs,
+ .page-head .woocommerce-breadcrumb{
   width: 100%;
 }
 .thunk-breadcrumb {
@@ -7516,6 +7517,9 @@ h2.wc-block-mini-cart__title{
 }
 .responsive-main-header #mega-menu-wrap-th-shop-mania-main-menu #mega-menu-th-shop-mania-main-menu li.mega-menu-item-has-children.mega-toggle-on > a.mega-menu-link > span.mega-indicator:after{
   content: "-";
+}
+.theme-th-shop-mania header .taiowc-content{
+  bottom: initial;
 }
 @media screen and (max-width: 1024px){
 .main-area{
