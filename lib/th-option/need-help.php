@@ -30,7 +30,7 @@
     <h3><?php _e('Spread the News','th-shop-mania'); ?></h3>
     <p> <?php _e('Love using this theme? Spread the word and let the world know you’ve crafted an awesome website for your store! Share your experience and showcase your stunning online presence to inspire others.','th-shop-mania');?></p> 
 
-    <a href="https://twitter.com/intent/tweet?url=https://themehunk.com/th-shop-mania&text=Hey, I am using this awesome WooCommerce Theme for WordPress and created a beautiful store website for <?php echo home_url(); ?> . You can also check out this awesome theme: Shop Mania By 
+    <a href="https://twitter.com/intent/tweet?url=https://themehunk.com/th-shop-mania&text=Hey, I am using this awesome WooCommerce Theme for WordPress and created a beautiful store website for <?php echo esc_url(home_url()); ?> . You can also check out this awesome theme: Shop Mania By 
 @ThemeHunk %20%23WooCommerce%20%23WordPress" target="_blank" rel="external noreferrer noopener" class="x-gropup is-link">
         <span class="x-image"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/x.png" /></span>
         <span><?php _e(' Click to Tweet','th-shop-mania'); ?></span></a>
