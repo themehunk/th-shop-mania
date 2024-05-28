@@ -236,7 +236,7 @@
                       /**************************************************/
                       // Show-hide Scroll to top & move-to-top arrow
                       /**************************************************/
-                        jQuery("body").prepend("<a id='move-to-top' class='animate' href='#'><span class='th-icon th-icon-angle-up'></span></a>"); 
+                        jQuery("body").prepend("<a id='move-to-top' class='animate' href='#'><span class='th-icon th-icon-chevron-up-thin-converted'></span></a>"); 
                         var scrollDes = 'html,body';  
                         /*Opera does a strange thing if we use 'html' and 'body' together so my solution is to do the UA sniffing thing*/
                         if(navigator.userAgent.match(/opera/i)){

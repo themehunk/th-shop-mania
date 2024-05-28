@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
 Tested up to: 6.5
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -21,6 +21,10 @@ Yes our theme supports builder
 
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
+
+= Version 1.3.9 =
+* Update: Move to top icon changed.
+* New: New icon added in th-icon.
 
 = Version 1.3.8 =
 * Update: Style updated.
@@ -199,8 +203,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==
-= Version 1.3.7 =
-* Update: Remove quantity button when only 1 product remaining in stock;
+= Version 1.3.9 =
+* Update: Move to top icon changed.
+* New: New icon added in th-icon.
 
 == Resources ==
  
