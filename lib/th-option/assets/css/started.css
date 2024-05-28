@@ -6,7 +6,8 @@
 .th-pro-theme-ad + hr{
     display: block;
 }
-.th-option-bottom-hdr .tablinks:nth-of-type(5){
+.th-option-bottom-hdr .tablinks:nth-of-type(5),.th-option-bottom-hdr .tablinks:nth-of-type(4){
+
     display: none;
 }
 .sidebar-wrap .button {
@@ -66,7 +67,7 @@
 }
 .about-wrap-th {
     position: relative;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .th-option-area{
@@ -96,7 +97,7 @@
 .th-option-top-hdr .col-2{
     display: flex;
     align-items: center;
-    margin-top: -21px;
+    margin-top: -10px;
 }
 .th-option-heading h2{
     font-size: 21px;
@@ -171,6 +172,7 @@ span.lite-versionlabel:before {
 .th-option-area .logo-image{
     width: 100%;
     display: block;
+    font-weight: 700;
 }
 
 .th-option-bottom-hdr .tablinks {
