@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'th-icon';
-  src:  url('fonts/th-icon.eot?4hvsi7');
-  src:  url('fonts/th-icon.eot?4hvsi7#iefix') format('embedded-opentype'),
-    url('fonts/th-icon.ttf?4hvsi7') format('truetype'),
-    url('fonts/th-icon.woff?4hvsi7') format('woff'),
-    url('fonts/th-icon.svg?4hvsi7#th-icon') format('svg');
+  src:  url('fonts/th-icon.eot?k3xn19');
+  src:  url('fonts/th-icon.eot?k3xn19#iefix') format('embedded-opentype'),
+    url('fonts/th-icon.ttf?k3xn19') format('truetype'),
+    url('fonts/th-icon.woff?k3xn19') format('woff'),
+    url('fonts/th-icon.svg?k3xn19#th-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,7 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.th-icon-CursorAndSelection-Icons-17-converted:before {
+.th-icon-chevron-up-thin-converted:before {
+  content: "\e936";
+}
+.th-icon-Interface-Icons-04-converted:before {
   content: "\e935";
 }
 .th-icon-Photography-Icons-19-converted:before {
@@ -96,6 +99,99 @@
 }
 .th-icon-TextEditor-Icons-02:before {
   content: "\e92b";
+}
+.th-icon-clear:before {
+  content: "\e900";
+}
+.th-icon-format_align_justify:before {
+  content: "\e901";
+}
+.th-icon-format_align_left:before {
+  content: "\e902";
+}
+.th-icon-keyboard_arrow_left:before {
+  content: "\e903";
+}
+.th-icon-keyboard_arrow_right:before {
+  content: "\e904";
+}
+.th-icon-local_grocery_store:before {
+  content: "\e905";
+}
+.th-icon-arrow_forward:before {
+  content: "\e906";
+}
+.th-icon-check:before {
+  content: "\e907";
+}
+.th-icon-cached:before {
+  content: "\e908";
+}
+.th-icon-favorite:before {
+  content: "\e909";
+}
+.th-icon-favorite_outline:before {
+  content: "\e90a";
+}
+.th-icon-arrow-left:before {
+  content: "\e90b";
+}
+.th-icon-arrow-right:before {
+  content: "\e90c";
+}
+.th-icon-check1:before {
+  content: "\e90d";
+}
+.th-icon-chevron-left:before {
+  content: "\e90e";
+}
+.th-icon-chevron-right:before {
+  content: "\e90f";
+}
+.th-icon-eye:before {
+  content: "\e910";
+}
+.th-icon-headphones:before {
+  content: "\e911";
+}
+.th-icon-heart1:before {
+  content: "\e912";
+}
+.th-icon-lock:before {
+  content: "\e913";
+}
+.th-icon-phone:before {
+  content: "\e914";
+}
+.th-icon-refresh-ccw:before {
+  content: "\e915";
+}
+.th-icon-refresh-cw:before {
+  content: "\e916";
+}
+.th-icon-repeat:before {
+  content: "\e917";
+}
+.th-icon-search:before {
+  content: "\e918";
+}
+.th-icon-shopping-cart:before {
+  content: "\e919";
+}
+.th-icon-search1:before {
+  content: "\e930";
+}
+.th-icon-heart2:before {
+  content: "\e92c";
+}
+.th-icon-cart:before {
+  content: "\e92d";
+}
+.th-icon-refresh:before {
+  content: "\e92e";
+}
+.th-icon-heart:before {
+  content: "\e9da";
 }
 .th-icon-th-col:before {
   content: "\f00a";
@@ -180,97 +276,4 @@
 }
 .th-icon-vimeo:before {
   content: "\f27d";
-}
-.th-icon-search1:before {
-  content: "\e930";
-}
-.th-icon-clear:before {
-  content: "\e900";
-}
-.th-icon-format_align_justify:before {
-  content: "\e901";
-}
-.th-icon-format_align_left:before {
-  content: "\e902";
-}
-.th-icon-keyboard_arrow_left:before {
-  content: "\e903";
-}
-.th-icon-keyboard_arrow_right:before {
-  content: "\e904";
-}
-.th-icon-local_grocery_store:before {
-  content: "\e905";
-}
-.th-icon-arrow_forward:before {
-  content: "\e906";
-}
-.th-icon-check:before {
-  content: "\e907";
-}
-.th-icon-cached:before {
-  content: "\e908";
-}
-.th-icon-favorite:before {
-  content: "\e909";
-}
-.th-icon-favorite_outline:before {
-  content: "\e90a";
-}
-.th-icon-arrow-left:before {
-  content: "\e90b";
-}
-.th-icon-arrow-right:before {
-  content: "\e90c";
-}
-.th-icon-check1:before {
-  content: "\e90d";
-}
-.th-icon-chevron-left:before {
-  content: "\e90e";
-}
-.th-icon-chevron-right:before {
-  content: "\e90f";
-}
-.th-icon-eye:before {
-  content: "\e910";
-}
-.th-icon-headphones:before {
-  content: "\e911";
-}
-.th-icon-heart1:before {
-  content: "\e912";
-}
-.th-icon-lock:before {
-  content: "\e913";
-}
-.th-icon-phone:before {
-  content: "\e914";
-}
-.th-icon-refresh-ccw:before {
-  content: "\e915";
-}
-.th-icon-refresh-cw:before {
-  content: "\e916";
-}
-.th-icon-repeat:before {
-  content: "\e917";
-}
-.th-icon-search:before {
-  content: "\e918";
-}
-.th-icon-shopping-cart:before {
-  content: "\e919";
-}
-.th-icon-heart2:before {
-  content: "\e92c";
-}
-.th-icon-cart:before {
-  content: "\e92d";
-}
-.th-icon-refresh:before {
-  content: "\e92e";
-}
-.th-icon-heart:before {
-  content: "\e9da";
 }

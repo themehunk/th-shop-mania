@@ -22,6 +22,7 @@ Yes our theme supports builder
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
 
+
 = Version 1.4.0 =
 * Update: Style update.
 * Update: Connect premium plugin.
@@ -30,6 +31,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update: Style update.
 * Update: X share issue fixed.
 * Update: Shop Mania Pro install feature added.
+Update: Move to top icon changed.
+* New: New icon added in th-icon.
+
 
 = Version 1.3.8 =
 * Update: Style updated.
@@ -209,8 +213,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==
-= Version 1.3.7 =
-* Update: Remove quantity button when only 1 product remaining in stock;
+= Version 1.3.9 =
+* Update: Move to top icon changed.
+* New: New icon added in th-icon.
 
 == Resources ==
  
