@@ -23,20 +23,21 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
                 </div>
                 <div class="col-2">
                     <div class="th-option-heading">
-                        <h2><?php printf( esc_html__( 'Welcome To %s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ) ); ?>
+                        <h2><?php echo esc_html__( 'Welcome To Shop Mania', 'th-shop-mania' ); ?>
                         </h2>
                         <span><?php echo esc_html($theme_header['welcome_desc']); ?></span>
                     </div>
                     <span class="version"><?php echo esc_html($theme_header['v']); ?></span>
-                    <span class="lite-versionlabel"><?php echo _e('FREE THEME', 'th-shop-mania'); ?></span>
+                    <span class="lite-versionlabel"></span>
                 </div>
             </div>
             <div class="th-option-bottom-hdr">
                 <a class="tablinks <?php echo esc_attr($tabActiveWl) ?>" onclick="openTab(event, 'Welcome')"><?php _e('Welcome', 'th-shop-mania'); ?></a>
                 <a class="tablinks <?php echo esc_attr($tabActiveRp) ?>" onclick="openTab(event, 'Recommended-Plugin')"><?php _e('Recommended Plugin', 'th-shop-mania'); ?> </a>
-                <a class="tablinks th-import-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" onclick="openTab(event, 'Import-Demo-Content')"><?php _e('Demo Import', 'th-shop-mania'); ?> <p class="tooltiptext"><?php _e('Starter Templates', 'th-shop-mania'); ?></p> </a>
+                <a class="tablinks th-import-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" onclick="openTab(event, 'Import-Demo-Content')"><?php _e('Starter Templates', 'th-shop-mania'); ?> <p class="tooltiptext"><?php _e('Demo Import', 'th-shop-mania'); ?></p> </a>
+                <a class="tablinks th-license-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" href="?page=shop-mania-license"><?php _e('License', 'th-shop-mania'); ?> </a>
+                <a class="tablinks th-whitelabel-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" href="?page=white-label"><?php _e('White Label', 'th-shop-mania'); ?> </a>
                 <a class="tablinks get-child <?php echo esc_attr($tabActiveGtChild) ?>" onclick="openTab(event, 'Get-Child-Theme')"><?php _e('Get Child Theme', 'th-shop-mania'); ?></a>
-                <a class="tablinks <?php echo esc_attr($tabActiveFreePRo) ?>" onclick="openTab(event, 'Free-Vs-Pro')"><?php _e('Free Vs Pro', 'th-shop-mania'); ?></a>
                 <a class="tablinks <?php echo esc_attr($tabActiveHelp) ?>" onclick="openTab(event, 'Help')"><?php _e('Help', 'th-shop-mania'); ?></a>
             </div>
         </div>
@@ -63,15 +64,16 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
 
                     <div class="rcp theme_link th-row import-demo">
                         <div class="import-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/import.png">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/import.gif">
                         </div>
                         <div class="title-plugin">
                             <h3><?php _e('Import Demo Content', 'th-shop-mania'); ?></h3>
 
                             <p> <?php _e('Install "Starter site plugin" mentioned below to activate import demo button.', 'th-shop-mania'); ?></p>
                             <a class="button disabled importdemo"><?php _e('Import Demo', 'th-shop-mania'); ?></a>
-                            
+
                             <?php $this->plugin_install('import-demo-content'); ?>
+  
                         </div>
 
                     </div>

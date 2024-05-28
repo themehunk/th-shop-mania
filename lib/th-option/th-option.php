@@ -9,7 +9,7 @@ class Th_Shop_Mania_theme_option
      * @since 1.0
      * @var array $menu_page_title
      */
-    static public $menu_page_title = 'TH Shop Mania';
+    static public $menu_page_title = 'Shop Mania';
 
     /**
      * Current Slug
@@ -22,7 +22,7 @@ class Th_Shop_Mania_theme_option
   function __construct()
   {
     add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
-    add_action('admin_menu', array($this, 'menu_tab'),99);
+    add_action('admin_menu', array($this, 'menu_tab'),49);
     
     // self::save_settings();
     // AJAX.
@@ -47,7 +47,7 @@ class Th_Shop_Mania_theme_option
     $page_white_level_menu_func = __CLASS__ . '::white_level_menu_callback';
     $capability     = 'manage_options';
     if ( class_exists('Th_Shop_Mania_Ext_White_Label_Markup') && Th_Shop_Mania_Ext_White_Label_Markup::show_branding() ) {
-    add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func );
+    add_theme_page( 'White Label Page Title',' White Label Option', $capability, 'white-label', $page_white_level_menu_func,12 );
   }
 }
 
@@ -146,7 +146,7 @@ static public function white_level_menu_callback() {
       $data = apply_filters(
         'th_option_localize_vars',
         array(
-          'oneClickDemo' => esc_url(admin_url('themes.php?page=themehunk-site-library')),
+          'oneClickDemo' => esc_url(admin_url('themes.php?page=themehunk-site-library&template=step')),
           'wpnonce'    => wp_create_nonce( "ajaxnonce" ),
 
         )
@@ -272,7 +272,7 @@ function plugin_install_button($plugin){
             $button .= ' <div class="th-column"><img src="'.esc_url( $plugin['thumb'] ).'" /> </div>';
             $button .= '<div class="th-column">';
 
-           $pro_settings = ($plugin['pro_active'])?'<a href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>':'<a id="'.esc_attr( $plugin['slug'] ).'" style="display:none;" href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>';
+           $pro_settings = ($plugin['pro_active'] && $plugin['admin_link'] !=='')?'<a href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>':'<a id="'.esc_attr( $plugin['slug'] ).'" style="display:none;" href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>';
 
             $docs = '<a target="_blank"  class="plugin-detail" href="'.esc_url( $plugin['docs'] ).'">'.esc_html__( 'Documentation', 'th-shop-mania' ).'</a>';
 
@@ -301,19 +301,29 @@ function plugin_install_button($plugin){
 
         $pluginArr =array();
         foreach($recommend_plugins[0] as $slug=>$plugin){
-
             // pro plugin check
             $pro_path = isset($plugin['pro-plugin'])?ABSPATH . 'wp-content/plugins/'.$plugin['pro-plugin']['init']:'';
             $plugin_init = $plugin['active_filename'];
                 $img_slug = $slug;
                 $pro_text = $admin_link = $docs = ''; 
                  $pro_active = false;
+
+                 $plugin['img'] = "https://ps.w.org/". $img_slug."/assets/".$plugin['img'];
+
+
+
             if( file_exists($pro_path)) {
+
+              if($slug==='hunk-companion'){
+                $plugin['name'] = 'Shop Mania Pro';
+                $plugin['img'] = get_template_directory_uri() . '/lib/th-option/assets/images/shop-mania.png';
+              }
+
                 $slug = $plugin['pro-plugin']['slug'];
                 $plugin_init = $plugin['pro-plugin']['init'];
                 $admin_link = $plugin['pro-plugin']['admin_link'];
                 $pro_text = 'pro'; 
-                                $docs = $plugin['pro-plugin']['docs'];
+                $docs = $plugin['pro-plugin']['docs'];
 
                 if(is_plugin_active( $plugin['pro-plugin']['init'] )){
                     $pro_active = true; 
@@ -325,12 +335,13 @@ function plugin_install_button($plugin){
             $button_class = 'install-now button '.$slug;
 
              if ( is_plugin_active( $plugin_init ) ) {
+
                    $button_class = 'button disabled '.$slug;
                    $button_txt = esc_html__( 'Activated', 'th-shop-mania' );
                    $detail_link = $install_url = '';
                 }
 
-            if ( ! is_plugin_active( $plugin_init ) ){
+                if ( ! is_plugin_active( $plugin_init ) ){
                     $button_txt = esc_html__( 'Install Now', 'th-shop-mania' );
                     if ( ! $status ) {
                         $install_url = wp_nonce_url(
@@ -369,7 +380,7 @@ function plugin_install_button($plugin){
 
                     $pluginArr['plugin_name'] =  $plugin['name'];
                     $pluginArr['slug']= $slug;
-                    $pluginArr['thumb']= "https://ps.w.org/". $img_slug."/assets/".$plugin['img'];
+                    $pluginArr['thumb']= $plugin['img'];
                     $pluginArr['plugin_init']= $plugin_init;
                     $pluginArr['detail_link']= $detail_link;
                     $pluginArr['button_txt']= $button_txt;
@@ -381,8 +392,7 @@ function plugin_install_button($plugin){
                     $pluginArr['docs']= $docs;
                     $pluginArr['admin_link']= $admin_link;
                     $pluginArr['pro_active']= $pro_active;
-
-
+                    
                    $this->plugin_install_button($pluginArr);
         }
     } // plugin check
