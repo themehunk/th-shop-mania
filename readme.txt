@@ -31,7 +31,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update: Style update.
 * Update: X share issue fixed.
 * Update: Shop Mania Pro install feature added.
-Update: Move to top icon changed.
+* Update: Move to top icon changed.
 * New: New icon added in th-icon.
 
 
