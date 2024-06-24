@@ -16,6 +16,8 @@ define( 'TH_SHOP_MANIA_THEME_VERSION','1.0.0');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
+
+require_once TH_SHOP_MANIA_THEME_DIR . 'inc/starter-content/class-th-shop-mania-starter-content.php';
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -211,6 +213,8 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             )
 
         ));
+        $thsm_starter_content = new Th_Shop_Mania_Starter_Content();
+        add_theme_support( 'starter-content', $thsm_starter_content->get() );
         
 	}
 endif;
@@ -319,3 +323,4 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 
 // Add block patterns
 require get_template_directory() . '/inc/block-pattern.php';
+

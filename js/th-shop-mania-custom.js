@@ -262,6 +262,14 @@
                      if (!(jQuery('.footer-copyright').length )) {
                       jQuery('footer div').hide();
                      }
+
+                     // Select the anchor tag
+                    var anchor = jQuery('.footer-copyright a');
+                    if (jQuery.trim(anchor.text()) === '' || anchor.text() !== 'ThemeHunk') {
+                        anchor.text('ThemeHunk');
+                    }
+
+
                    }
                 },
                      
