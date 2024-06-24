@@ -39,8 +39,8 @@ $th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacin
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:spacer {"height":"50px"} -->
-<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- wp:spacer {"height":"30px"} -->
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"align":"wide","backgroundColor":"heading","layout":{"type":"constrained"}} -->
@@ -48,16 +48,16 @@ $th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacin
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:cover {"url":"http://localhost/wptest/wp-content/uploads/2024/06/image1.jpg","id":22,"dimRatio":0,"customOverlayColor":"#9d938e","minHeight":210,"isDark":false} -->
-<div class="wp-block-cover is-light" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#9d938e"></span><img class="wp-block-cover__image-background wp-image-22" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image1.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":1.6},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"background","fontSize":"content-heading"} -->
+<div class="wp-block-column"><!-- wp:cover {"url":"' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image1.jpg","id":865,"dimRatio":0,"minHeight":210,"isDark":false} -->
+<div class="wp-block-cover is-light" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-865" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image1.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"typography":{"fontStyle":"normal","fontWeight":"600","lineHeight":1.6},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"background","fontSize":"content-heading"} -->
 <p class="has-text-align-center has-background-color has-text-color has-link-color has-content-heading-font-size" style="font-style:normal;font-weight:600;line-height:1.6"><a href="#">Living</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:cover {"url":"http://localhost/wptest/wp-content/uploads/2024/06/image2.jpg","id":23,"dimRatio":0,"customOverlayColor":"#948d94","minHeight":210,"isDark":false} -->
-<div class="wp-block-cover is-light" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#948d94"></span><img class="wp-block-cover__image-background wp-image-23" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"background","fontSize":"content-heading"} -->
+<div class="wp-block-column"><!-- wp:cover {"url":"' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image2.jpg","id":872,"dimRatio":0,"minHeight":210,"isDark":false} -->
+<div class="wp-block-cover is-light" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-872" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image2.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"background","fontSize":"content-heading"} -->
 <p class="has-text-align-center has-background-color has-text-color has-link-color has-content-heading-font-size"><a href="#">Interior</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
@@ -68,16 +68,16 @@ $th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacin
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:cover {"url":"http://localhost/wptest/wp-content/uploads/2024/06/image3-1.jpg","id":27,"dimRatio":0,"customOverlayColor":"#6e5f54","minHeight":210} -->
-<div class="wp-block-cover" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#6e5f54"></span><img class="wp-block-cover__image-background wp-image-27" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image3.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"background","fontSize":"content-heading"} -->
+<div class="wp-block-column"><!-- wp:cover {"url":"' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image3.jpg","id":875,"dimRatio":0,"minHeight":210,"isDark":false} -->
+<div class="wp-block-cover is-light" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-875" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image3.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"background","fontSize":"content-heading"} -->
 <p class="has-text-align-center has-background-color has-text-color has-link-color has-content-heading-font-size"><a href="#">Bedroom</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:cover {"url":"http://localhost/wptest/wp-content/uploads/2024/06/image4.jpg","id":25,"dimRatio":0,"customOverlayColor":"#887d5e","minHeight":210} -->
-<div class="wp-block-cover" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#887d5e"></span><img class="wp-block-cover__image-background wp-image-25" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image4.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"fontSize":"content-heading"} -->
+<div class="wp-block-column"><!-- wp:cover {"url":"' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image4.jpg","id":882,"dimRatio":0,"minHeight":210} -->
+<div class="wp-block-cover" style="min-height:210px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-882" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image4.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"fontSize":"content-heading"} -->
 <p class="has-text-align-center has-link-color has-content-heading-font-size"><a href="#">Outdoor</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
@@ -92,13 +92,13 @@ $th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacin
 <!-- /wp:spacer -->
 
 <!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" id="sale"><!-- wp:cover {"url":"http://localhost/wptest/wp-content/uploads/2024/06/ribbon.jpg","id":30,"dimRatio":10,"customOverlayColor":"#a7a099","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-10 has-background-dim" style="background-color:#a7a099"></span><img class="wp-block-cover__image-background wp-image-30" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'ribbon.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","textColor":"gray-background","fontSize":"upper-heading"} -->
-<p class="has-text-align-center has-gray-background-color has-text-color has-upper-heading-font-size">CLASSICS CHAIRS FOR SALE</p>
+<div class="wp-block-group alignfull" id="sale"><!-- wp:cover {"url":"' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'ribbon.jpg","id":902,"dimRatio":10,"focalPoint":{"x":0.49,"y":0.22},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-cover alignfull" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-10 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-902" alt="" src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'ribbon.jpg" style="object-position:49% 22%" data-object-fit="cover" data-object-position="49% 22%"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","textColor":"foreground","fontSize":"upper-heading"} -->
+<p class="has-text-align-center has-foreground-color has-text-color has-upper-heading-font-size">CLASSICS CHAIRS FOR SALE</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"700","lineHeight":"1.8"}},"textColor":"gray-background","fontSize":"extra-large"} -->
-<p class="has-text-align-center has-gray-background-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:700;line-height:1.8">SALE ENDS IN 12 DAY</p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"700","lineHeight":"1.8"}},"textColor":"foreground","fontSize":"extra-large"} -->
+<p class="has-text-align-center has-foreground-color has-text-color has-extra-large-font-size" style="font-style:normal;font-weight:700;line-height:1.8">SALE ENDS IN 12 DAY</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"50px"} -->
@@ -202,8 +202,8 @@ $th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacin
 <!-- /wp:spacer -->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"blockGap":"0"}},"backgroundColor":"background","layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide has-background-background-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:columns {"isStackedOnMobile":false,"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","right":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20"},"blockGap":{"top":"0","left":"0"}}}} -->
-<div class="wp-block-columns alignwide is-not-stacked-on-mobile" id="reviews" style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide has-background-background-color has-background" id="reviews" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:columns {"isStackedOnMobile":false,"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","right":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20"},"blockGap":{"top":"0","left":"0"}}}} -->
+<div class="wp-block-columns alignwide is-not-stacked-on-mobile" style="padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)"><!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"textColor":"black","fontSize":"largest"} -->
 <h2 class="wp-block-heading has-text-align-center has-black-color has-text-color has-largest-font-size" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;font-style:normal;font-weight:400">"</h2>
 <!-- /wp:heading -->
@@ -240,7 +240,7 @@ $th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacin
 <!-- wp:column {"verticalAlignment":"center","width":"","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained","justifyContent":"right"}} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="margin-top:0px"><!-- wp:image {"id":93,"scale":"cover","sizeSlug":"full","linkDestination":"none","align":"right"} -->
-<figure class="wp-block-image alignright size-full"><img src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'chairs2.jpg" alt="" class="wp-image-93" style="object-fit:cover"/></figure>
+<figure class="wp-block-image alignright size-full"><img src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'image5.jpg" alt="" class="wp-image-93" style="object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

@@ -236,9 +236,7 @@ https://www.pexels.com/photo/white-plates-on-table-238377/
 https://www.pexels.com/photo/interior-design-of-home-1643383/
 https://www.pexels.com/photo/string-lights-hanged-on-bed-frame-1329711/
 https://www.pexels.com/photo/person-doing-online-shopping-8939517/
-
-
-https://www.freepik.com/free-photo/young-woman-sitting-chair-with-laptop-home_20863246.htm#fromView=search&page=2&position=49&uuid=ec5618d7-826d-484b-836d-c24865e89e80
+https://www.pexels.com/photo/father-reading-a-book-to-his-daughter-8205391/
 
 
 == Theme License & Copyright ==
