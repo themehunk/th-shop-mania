@@ -26,6 +26,10 @@ $th_shop_mania_style.=".loader{
 	border-bottom-color:{$th_shop_mania_theme_clr};
 	border-left-color:{$th_shop_mania_theme_clr};}";
 
+if (is_front_page() && !is_home()) {
+	$th_shop_mania_style.=".page-head{display: none}";
+}
+
 return $th_shop_mania_style;
 }
 
