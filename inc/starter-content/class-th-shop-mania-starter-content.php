@@ -138,6 +138,8 @@ class Th_Shop_Mania_Starter_Content {
 			),
 			'theme_mods'  => array(
 				'th_shop_mania_theme_clr' => '#0029ff',
+				// 'title_disable' 		=>	false,
+				'tagline_disable'		=> false
 			),
 			
 			'posts'       => [

@@ -3,7 +3,7 @@ Contributors: ThemeHunk
 Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, add_editor_style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
-Tested up to: 6.5.4
+Tested up to: 6.5.5
 Stable tag: 1.4.3
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -232,14 +232,14 @@ https://stocksnap.io/photo/vase-wall-JGTJS8KF6Q
 https://stocksnap.io/photo/interior-chair-DQGQZHMELB
 dining-room-DYTXNUKGP2
 
-https://www.pexels.com/photo/gray-wooden-sideboard-271816/
+
 https://www.pexels.com/photo/round-brown-wooden-table-with-chairs-inside-room-1668860/
 https://www.pexels.com/photo/white-plates-on-table-238377/
 https://www.pexels.com/photo/interior-design-of-home-1643383/
 https://www.pexels.com/photo/string-lights-hanged-on-bed-frame-1329711/
 https://www.pexels.com/photo/person-doing-online-shopping-8939517/
 https://www.pexels.com/photo/father-reading-a-book-to-his-daughter-8205391/
-
+https://www.pexels.com/photo/brown-wooden-chair-beside-white-curtain-7193704/
 
 == Theme License & Copyright ==
 Th Shop Mania is distributed under the terms of the GNU GPL

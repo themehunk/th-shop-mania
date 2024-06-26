@@ -6,7 +6,7 @@ Author URI: https://www.themehunk.com
 Description: TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
 Version: 1.4.3
 Requires at least: 5.5
-Tested up to: 6.5.4
+Tested up to: 6.5.5
 Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -467,10 +467,14 @@ img{
 html {
   scroll-behavior: smooth;
 }
+.home.page-template-default .th-shop-mania-site a,
+:root :where(a:where(:not(.wp-element-button))){
+  text-decoration: none!important;
+}
 .thunk-post-excerpt a,.thunk-content-wrap .entry-content a,
 .widget .textwidget a,
 .comment-content a{
-text-decoration: underline;
+text-decoration: underline!important;
 }
 article.thunk-post-article a.thunk-readmore,
 .thunk-content-wrap .entry-content a.dokan-btn.vendor-dashboard{
@@ -1812,6 +1816,9 @@ display:block;
 }
 .site-title span{
   font-size:30px;
+}
+.site-title a{
+  text-decoration: none!important;
 }
 p.demo_store{
     position: fixed;
@@ -4945,7 +4952,7 @@ border: 1px solid #f1f1f1;
 /*checkout page style*/
 /************************/
 .woocommerce-checkout .main-area{
-  max-width: 60%;
+  max-width: 90%;
 }
 .woocommerce-checkout.thsm-checkout-layout-standard .main-area{
   max-width:  100%;
@@ -7526,6 +7533,12 @@ h2.wc-block-mini-cart__title{
 }
 .wp-block-cover a,
 .wp-block-button a{
+  text-decoration: none!important;
+}
+.wc-block-cart__submit-container a:hover{
+  color: #FFF;
+}
+.wc-block-cart__submit-container a{
   text-decoration: none!important;
 }
 @media screen and (max-width: 1024px){
