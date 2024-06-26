@@ -554,6 +554,9 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
             ?>
           </div>
           <div class="thunk-product-content"> 
+          <?php if (class_exists('TH_Variation_Swatches_Pro')) {
+              thvs_loop_available_attributes($product);
+            }?>
               <?php th_shop_mania_woo_woocommerce_template_loop_product_title(); ?>
             <?php th_shop_mania_woo_shop_product_price($product);
             echo th_shop_mania_woo_shop_product_rating($product); ?>
