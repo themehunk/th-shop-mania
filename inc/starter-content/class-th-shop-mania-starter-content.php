@@ -13,6 +13,7 @@ class Th_Shop_Mania_Starter_Content {
 	const SHOP_SLUG   = '#shop';
 	const OFFERS_SLUG  = '#offers';
 	const REVIEWS_SLUG  = '#reviews';
+	const CONTACT_SLUG  = '#contact';
 
 
 	/**
@@ -122,6 +123,11 @@ class Th_Shop_Mania_Starter_Content {
 				'title' => __( 'Reviews', 'th-shop-mania' ),
 				'type'  => 'custom',
 				'url'   => '{{' . self::REVIEWS_SLUG . '}}',
+			),
+			'contact'  => array(
+				'title' => __( 'Contact', 'th-shop-mania' ),
+				'type'  => 'custom',
+				'url'   => '{{' . self::CONTACT_SLUG . '}}',
 			),
 		);
 
