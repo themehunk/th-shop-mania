@@ -126,29 +126,29 @@ function th_shop_mania_display_quantity_minus()
    global $product;
     // Get the product ID
     $product_id = $product->get_id();
-
     // Check if stock management is enabled
-    $manage_stock = get_post_meta( $product_id, '_manage_stock', true );
-
+    $manage_stock      = get_post_meta( $product_id, '_manage_stock', true );
+    $sold_individually = get_post_meta( $product_id, '_sold_individually', true );
     // Check if the product has stock management and the quantity is greater than 1
-    if ( ( $manage_stock === 'no' ) || ( $manage_stock === 'yes' && $product->get_stock_quantity() > 1 ) ) {
-    echo '<div class="th-shop-mania-quantity"><button type="button" class="minus" >-</button>';
- }
+    if($sold_individually === 'no'){
+    if ( ( $manage_stock === 'no' ) || ( $manage_stock === 'yes' && $product->get_stock_quantity() > 1 )) {?>
+    <div class="open-shop-quantity"><button type="button" class="minus" >-</button>
+<?php }}
 }
 add_action('woocommerce_after_add_to_cart_quantity', 'th_shop_mania_display_quantity_plus', 10, 2);
 function th_shop_mania_display_quantity_plus()
 {
  global $product;
-    // Get the product ID
-    $product_id = $product->get_id();
-
-    // Check if stock management is enabled
-    $manage_stock = get_post_meta( $product_id, '_manage_stock', true );
-
-    // Check if the product has stock management and the quantity is greater than 1
-    if ( ( $manage_stock === 'no' ) || ( $manage_stock === 'yes' && $product->get_stock_quantity() > 1 ) ) {
-    echo '<button type="button" class="plus" >+</button></div>';
- }
+  // Get the product ID
+  $product_id = $product->get_id();
+  // Check if stock management is enabled
+  $manage_stock = get_post_meta( $product_id, '_manage_stock', true );
+  $sold_individually = get_post_meta( $product_id, '_sold_individually', true );
+  // Check if the product has stock management and the quantity is greater than 1
+  if($sold_individually === 'no'){
+  if ( ( $manage_stock === 'no' ) || ( $manage_stock === 'yes' && $product->get_stock_quantity() > 1 )) {?>
+  <button type="button" class="plus" >+</button></div>
+<?php }}
 }
 //Woocommerce: How to remove page-title at the home/shop page archive & category pages
 add_filter('woocommerce_show_page_title', '__return_null');

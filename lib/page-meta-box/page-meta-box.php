@@ -109,6 +109,14 @@ $meta_boxes = array(
                 'nameslug' => esc_html__('Disable Page Header','th-shop-mania'),
                    
             ),
+             array(
+                'name' => '',
+                'id' => esc_attr($prefix) . 'disable_flexi_sidebar',
+                'type' => 'checkbox',
+                'nameslug' => esc_html__('Disable Flexi Sidebar','th-shop-mania'),
+                // 'default' => false,   
+                   
+            ),
            
               
         )
