@@ -275,7 +275,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 * Add Scripts
 		 */
 		function th_shop_mania_add_scripts(){
-		   wp_enqueue_script( 'th-shop-mania-woocommerce-js', TH_SHOP_MANIA_THEME_URI .'/inc/woocommerce/js/woocommerce.js', array( 'jquery' ), '2.0.0', true );
+		   wp_enqueue_script( 'th-shop-mania-woocommerce-js', TH_SHOP_MANIA_THEME_URI .'/inc/woocommerce/js/woocommerce.js', array( 'jquery','th-sale-countdownfront-js' ), '2.0.0', true );
            
            wp_enqueue_script('open-quick-view', TH_SHOP_MANIA_THEME_URI.'inc/woocommerce/quick-view/js/quick-view.js', array( 'jquery' ), '', true );
            wp_localize_script('open-quick-view', 'thlocalizeqv', array('ajaxurl' => esc_url(admin_url( 'admin-ajax.php' ))));      
