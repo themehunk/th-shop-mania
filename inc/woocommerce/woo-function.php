@@ -132,7 +132,7 @@ function th_shop_mania_display_quantity_minus()
     // Check if the product has stock management and the quantity is greater than 1
     if($sold_individually === 'no'){
     if ( ( $manage_stock === 'no' ) || ( $manage_stock === 'yes' && $product->get_stock_quantity() > 1 )) {?>
-    <div class="open-shop-quantity"><button type="button" class="minus" >-</button>
+    <div class="th-shop-mania-quantity"><button type="button" class="minus" >-</button>
 <?php }}
 }
 add_action('woocommerce_after_add_to_cart_quantity', 'th_shop_mania_display_quantity_plus', 10, 2);

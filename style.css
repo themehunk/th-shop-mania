@@ -1193,7 +1193,6 @@ display: contents;
     z-index: 999;
     visibility: hidden;
     opacity: 0;
-    background: #fff;
     padding: 9px 0;
     width:100%;
     -webkit-animation: fadeOutUpBig .5s ease;
@@ -3889,7 +3888,7 @@ section.upsells.products h2,
 .woocommerce div.product form.cart .variations select {
     z-index: 1;
     border: none;
-    height: 56px;
+    height: 39px;
     line-height: normal;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
