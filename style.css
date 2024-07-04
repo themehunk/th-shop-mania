@@ -1139,6 +1139,9 @@ header .mobile-nav-bar.sider.right {
   padding-right: 21px;
   display: block;
 }
+.taiowcp .sticky-header-col3 .header-icon a.taiowcp-content{
+  padding-right: 0;
+}
 .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents{
 position: relative;
 padding: 0;
