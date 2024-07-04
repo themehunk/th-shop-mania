@@ -559,7 +559,13 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
             }?>
               <?php th_shop_mania_woo_woocommerce_template_loop_product_title(); ?>
             <?php th_shop_mania_woo_shop_product_price($product);
-            echo th_shop_mania_woo_shop_product_rating($product); ?>
+            echo th_shop_mania_woo_shop_product_rating($product); 
+
+            if (get_theme_mod('open_shop_sale_countdown_shop_enable',true)==true && shortcode_exists( 'show_thwcd_product' )) {
+              echo do_shortcode('[show_thwcd_product]');
+            }
+            
+            ?>
           </div>
         </a>
         <div class="thunk-product-hover">
