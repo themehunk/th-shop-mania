@@ -6430,42 +6430,6 @@ border-color: #0177B5;
 .th-shop-mania-shop-page-layout-default .thunk-product-hover{
   margin: 0 -1px;
 }
-.th-shop-mania-shop-page-layout-default .thwcd-sale-countdown,
-.th-shop-mania-shop-page-layout-default .thwcd-bar-wrap,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-4 .thwcd-sale-countdown,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-4 .thwcd-bar-wrap,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-5 .thwcd-sale-countdown,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-5 .thwcd-bar-wrap,
-.elemento-addons-post-grid-layout.elemento-product-layout-2 .thwcd-sale-countdown,
-.elemento-addons-post-grid-layout.elemento-product-layout-2 .thwcd-bar-wrap,
-.elemento-addons-post-grid-layout.elemento-product-layout-3 .thwcd-sale-countdown,
-.elemento-addons-post-grid-layout.elemento-product-layout-3 .thwcd-bar-wrap,
-.elemento-addons-post-grid-layout.elemento-product-layout-4 .thwcd-sale-countdown,
-.elemento-addons-post-grid-layout.elemento-product-layout-4 .thwcd-bar-wrap,
-.elemento-product-layout-5 .thwcd-sale-countdown,
-.elemento-product-layout-5 .thwcd-bar-wrap,
-.elemento-owl-slider-common-secript .thwcd-sale-countdown,
-.elemento-owl-slider-common-secript .thwcd-bar-wrap,
-.elemento-addons-post-big-image .thwcd-sale-countdown,
-.elemento-addons-post-big-image .thwcd-bar-wrap{
-  text-align: center;
-}
-.elemento-product-layout-1  .elemento-owl-slider-common-secript .thwcd-sale-countdown,
-.elemento-product-layout-1 .elemento-owl-slider-common-secript .thwcd-bar-wrap{
-  text-align: left;
-}
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-2 .thwcd-timer,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .thwcd-timer{
-  justify-content: flex-start;
-}
-.elemento-addons-post-grid-layout.elemento-product-layout-2 .thwcd-timer,
-.elemento-addons-post-grid-layout.elemento-product-layout-3 .thwcd-timer,
-.elemento-addons-post-grid-layout.elemento-product-layout-4 .thwcd-timer,
-.elemento-product-layout-5 .thwcd-timer,
-.elemento-owl-slider-common-secript .thwcd-timer,
-.elemento-addons-post-big-image .thwcd-timer{
-  justify-content: center;
-}
 /*============================================================================
 *  product layouts style and layout 2
 ==============================================================================*/
