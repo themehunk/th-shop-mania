@@ -6430,16 +6430,6 @@ border-color: #0177B5;
 .th-shop-mania-shop-page-layout-default .thunk-product-hover{
   margin: 0 -1px;
 }
-.th-shop-mania-shop-page-layout-default .thwcd-sale-countdown,
-.th-shop-mania-shop-page-layout-default .thwcd-bar-wrap,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-5 .thwcd-sale-countdown,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-5 .thwcd-bar-wrap{
-  text-align: center;
-}
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-2 .thwcd-timer,
-#shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .thwcd-timer{
-  justify-content: flex-start;
-}
 /*============================================================================
 *  product layouts style and layout 2
 ==============================================================================*/
