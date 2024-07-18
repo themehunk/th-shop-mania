@@ -105,57 +105,7 @@
 					"name": "Mojito background to tertiary",
 					"slug": "mojito-background-to-tertiary"
 				}
-			],
-			"palette": [
-				{
-		            "color": "#FFF",
-		            "name": "Background",
-		            "slug": "background"
-       			},
-		   
-		        {
-		          "color": "#999",
-		          "name": "Light Background",
-		          "slug": "light-background"
-		        },
-				{
-					"color": "#f7f8f9",
-					"name": "gray Background",
-					"slug": "gray-background"
-				  },
-		        {
-		          "color": "#111",
-		          "name": "Heading Color",
-		          "slug": "heading"
-		        },
-		        {
-		          "slug": "buttonbaground",
-		          "color": "#63d436",
-		          "name": "Button Background"
-		        },
-		        {
-		          "slug": "button-border",
-		          "color": "#008000",
-		          "name": "Button Border"
-		        },
-		        {
-		          "color": "#ffd21d",
-		          "name": "Accent",
-		          "slug": "accent"
-		        }
 			]
-		},
-		"custom": {
-			"spacing": {
-				"baseline": "16px",
-				"gap": {
-					"horizontal": "clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 2.222vw, calc( 2 * var( --wp--custom--spacing--baseline ) ) )",
-					"vertical": "clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 3.333vw, calc( 3 * var( --wp--custom--spacing--baseline ) ) )"
-				},
-				"gutter": "clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 3.333vw, calc( 3 * var( --wp--custom--spacing--baseline ) ) )",
-				"outer": "var( --wp--custom--spacing--gutter )",
-				"small": "min(24px, 6.4vw)"
-			}
 		},
 		"layout": {
 			"contentSize": "900px",
@@ -244,13 +194,6 @@
 					"radius": "10px"
 				  }
 			},
-			"core/navigation": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)",
-					"fontWeight": "600",
-					"lineHeight": "normal"
-				}
-			},
 			"core/site-title": {
 				"elements": {
 					"link": {
@@ -264,64 +207,9 @@
 						}
 					}
 				}
-			},
-			"core/button": {
-		        "border": {
-		          "radius": "4px"
-		        },
-		        "color": {
-		          "background": "var(--wp--preset--color--accent)",
-		          "text": "var(--wp--preset--color--background)"
-		        }
-		   }
-		},
-		"color": {
-			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--bodytext)"
+			}
 		},
 		"elements": {
-			"h1": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--poppins)",
-					"fontSize": "var(--wp--preset--font-size--large)",
-					"lineHeight": "normal"
-				}
-			},
-			"h2": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--poppins)",
-					"fontSize": "var(--wp--preset--font-size--upper-heading)",
-					"lineHeight": "normal"
-				}
-			},
-			"h3": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--poppins)",
-					"fontSize": "var(--wp--preset--font-size--content-heading)",
-					"lineHeight": "normal"
-				}
-			},
-			"h4": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--poppins)",
-					"fontSize": "var(--wp--preset--font-size--normal)",
-					"lineHeight": "normal"
-				}
-			},
-			"h5": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--poppins)",
-					"fontSize": "var(--wp--preset--font-size--medium)",
-					"lineHeight": "normal"
-				}
-			},
-			"h6": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--poppins)",
-					"fontSize": "var(--wp--preset--font-size--extra-small)",
-					"lineHeight": "normal"
-				}
-			},
 			"link": {
 				":active": {
 					"typography": {
@@ -332,25 +220,8 @@
 					"typography": {
 						"textDecoration": "none"
 					}
-				},
-				":hover": {
-					"color": {
-						"text": "var(--wp--preset--color--accent)"
-					},
-					"typography": {
-						"textDecoration": "none"
-					}
-				},
-				"color": {
-					"text": "var:preset|color|heading"
 				}
-				
 			}
-		},
-		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--poppins)",
-			"fontSize": "var(--wp--preset--font-size--medium)",
-			"lineHeight": "normal"
 		}
 	}
 }

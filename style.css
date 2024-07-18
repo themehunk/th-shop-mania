@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
-Version: 1.4.3
+Version: 1.4.4
 Requires at least: 5.5
 Tested up to: 6.5.5
 Requires PHP: 5.6
@@ -397,12 +397,6 @@ th,th a,dt,b, strong{
 table, td, th {
     border: 1px solid rgba(0,0,0,.1);
 }
-a{
- color: var(--body-text);
-}
-a:hover{
- color: #ff3377;
-}
 dd {
     margin: 0 1.5em 1.5em;
 }
@@ -444,7 +438,7 @@ code, kbd, pre, samp {
     -moz-box-sizing: inherit;
     box-sizing: inherit;
 }
-body{
+body.theme-th-shop-mania{
     color: var(--body-text);
     background: #FFF;
     font-style: normal;
@@ -460,6 +454,15 @@ body{
     -moz-osx-font-smoothing: grayscale; 
     text-rendering: optimizeLegibility; 
     -moz-font-feature-settings: "liga" on; 
+}
+body.theme-th-shop-mania a{
+  text-decoration: none;
+}
+body.theme-th-shop-mania a{
+ color: var(--body-text);
+}
+body.theme-th-shop-mania a:hover{
+ color: #ff3377;
 }
 img{
   display: block;
