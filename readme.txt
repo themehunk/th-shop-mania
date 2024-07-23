@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
 Tested up to: 6.6
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -21,6 +21,9 @@ Yes our theme supports builder
 
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
+
+= Version 1.4.5 =
+* Update: .woocommerce-demo-store .th-shop-mania-site margin css removed.
 
 = Version 1.4.4 =
 * Update: Theme tested with WordPress 6.6.
@@ -224,8 +227,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==  
-= Version 1.4.4 =
-* Update: Theme tested with WordPress 6.6.
+= Version 1.4.5 =
+* Update: .woocommerce-demo-store .th-shop-mania-site margin css removed.
 
 == Resources ==
  
