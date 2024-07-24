@@ -142,6 +142,17 @@ require_once TH_SHOP_MANIA_THEME_DIR . 'inc/starter-content/class-th-shop-mania-
                 					  'docs'=>esc_url('https://themehunk.com/docs/lead-form-builder-pro/'),
             						)
             ),
+             'vayu-blocks' => array(
+                'name' => esc_html__( 'Vayu Blocks – Gutenberg Blocks for WordPress & WooCommerce', 'th-shop-mania' ),
+                'img' => 'icon-128x128.png',
+                'pro_link' => esc_url(''),
+                'active_filename' => 'vayu-blocks/vayu-blocks.php',
+                'pro-plugin' => array('slug'=>'vayu-blocks',
+                					'init'=>'vayu-blocks-pro/vayu-blocks.php',
+                					'admin_link'=>'vayu-blocks',
+                					'docs'=>esc_url('https://themehunk.com/docs/vayu-blocks/'),
+            						)
+            ),
             'wp-popup-builder' => array(
                 'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'th-shop-mania' ),
                 'img' => 'icon-128x128.png',
