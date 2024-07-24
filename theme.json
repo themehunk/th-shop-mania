@@ -1,115 +1,11 @@
 {
-	"$schema": "https://schemas.wp.org/wp/6.1/theme.json",
-	"version": 2,
-	"templateParts": [
-		{
-			"area": "header",
-			"name": "header"
-		},
-		{
-			"area": "footer",
-			"name": "footer"
-		}
-	],
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+	"version": 3,
 	"settings": {
 		"appearanceTools": true,
-		"color": {
-			"duotone": [
-				{
-					"colors": [
-						"#000000",
-						"#ffffff"
-					],
-					"name": "heading and background",
-					"slug": "heading-and-background"
-				},
-				{
-					"colors": [
-						"#000000",
-						"#ffe2c7"
-					],
-					"name": "heading and secondary",
-					"slug": "heading-and-secondary"
-				},
-				{
-					"colors": [
-						"#000000",
-						"#f6f6f6"
-					],
-					"name": "heading and tertiary",
-					"slug": "heading-and-tertiary"
-				},
-				{
-					"colors": [
-						"#1a4548",
-						"#ffffff"
-					],
-					"name": "Primary and background",
-					"slug": "primary-and-background"
-				},
-				{
-					"colors": [
-						"#1a4548",
-						"#ffe2c7"
-					],
-					"name": "Primary and secondary",
-					"slug": "primary-and-secondary"
-				},
-				{
-					"colors": [
-						"#1a4548",
-						"#f6f6f6"
-					],
-					"name": "Primary and tertiary",
-					"slug": "primary-and-tertiary"
-				}
-			],
-			"gradients": [
-				{
-					"gradient": "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
-					"name": "MoonlitAsteroid secondary to tertiary",
-					"slug": "moonlitasteroid-secondary-to-tertiary"
-				},
-				{
-					"gradient": "linear-gradient(to right, #ff9966, #ff5e62)",
-					"name": "Orange Coral to background",
-					"slug": "orange-coral-to-background"
-				},
-				{
-					"gradient": "linear-gradient(to right, #0575e6, #021b79)",
-					"name": "VeryBlue to background",
-					"slug": "veryblue-tertiary-to-background"
-				},
-				{
-					"gradient": "linear-gradient(to right, #dbe6f6, #c5796d)",
-					"name": "Jaipur primary to heading",
-					"slug": "jaipur-primary-to-heading"
-				},
-				{
-					"gradient": "linear-gradient(to right, #283048, #859398)",
-					"name": "Titanium to background",
-					"slug": "titanium-secondary-to-background"
-				},
-				{
-					"gradient": "linear-gradient(to right, #0052d4, #4364f7, #6fb1fc)",
-					"name": "Bluelagoo background to secondary",
-					"slug": "bluelagoo-background-to-secondary"
-				},
-				{
-					"gradient": "linear-gradient(to right, #02aab0, #00cdac)",
-					"name": "Green Beach tertiary to background",
-					"slug": "greenbeach-to-background"
-				},
-				{
-					"gradient": "linear-gradient(to right, #1d976c, #93f9b9)",
-					"name": "Mojito background to tertiary",
-					"slug": "mojito-background-to-tertiary"
-				}
-			]
-		},
 		"layout": {
 			"contentSize": "900px",
-			"wideSize": "1200px"
+			"wideSize": "1350px"
 		},
 		"spacing": {
 			"units": [
@@ -119,10 +15,15 @@
 				"rem",
 				"vh",
 				"vw"
-			]
+			],
+			"blockGap": true,
+      		"margin": true,
+      		"padding": true
 		},
 		"typography": {
 			"customFontSize": true,
+			"customLineHeight": true,
+      		"dropCap": true,
 			"fontSizes": [
 				{
 					"name": "Tiny",
@@ -185,43 +86,59 @@
 					"slug": "largest"
 				}
 			]
+		},
+		"color": {
+			"gradients": [
+				{
+					"gradient": "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
+					"name": "MoonlitAsteroid secondary to tertiary",
+					"slug": "moonlitasteroid-secondary-to-tertiary"
+				},
+				{
+					"gradient": "linear-gradient(to right, #ff9966, #ff5e62)",
+					"name": "Orange Coral to background",
+					"slug": "orange-coral-to-background"
+				},
+				{
+					"gradient": "linear-gradient(to right, #0575e6, #021b79)",
+					"name": "VeryBlue to background",
+					"slug": "veryblue-tertiary-to-background"
+				},
+				{
+					"gradient": "linear-gradient(to right, #dbe6f6, #c5796d)",
+					"name": "Jaipur primary to heading",
+					"slug": "jaipur-primary-to-heading"
+				},
+				{
+					"gradient": "linear-gradient(to right, #283048, #859398)",
+					"name": "Titanium to background",
+					"slug": "titanium-secondary-to-background"
+				},
+				{
+					"gradient": "linear-gradient(to right, #0052d4, #4364f7, #6fb1fc)",
+					"name": "Bluelagoo background to secondary",
+					"slug": "bluelagoo-background-to-secondary"
+				},
+				{
+					"gradient": "linear-gradient(to right, #02aab0, #00cdac)",
+					"name": "Green Beach tertiary to background",
+					"slug": "greenbeach-to-background"
+				},
+				{
+					"gradient": "linear-gradient(to right, #1d976c, #93f9b9)",
+					"name": "Mojito background to tertiary",
+					"slug": "mojito-background-to-tertiary"
+				}
+			]
 		}
 	},
-	"styles": {
-		"blocks": {
-			"core/columns": {
-				"border": {
-					"radius": "10px"
-				  }
-			},
-			"core/site-title": {
-				"elements": {
-					"link": {
-						":hover": {
-							"typography": {
-								"textDecoration": "none"
-							}
-						},
-						"typography": {
-							"textDecoration": "none"
-						}
-					}
-				}
-			}
-		},
-		"elements": {
-			"link": {
-				":active": {
-					"typography": {
-						"textDecoration": "none"
-					}
-				},
-				":focus": {
-					"typography": {
-						"textDecoration": "none"
-					}
-				}
-			}
-		}
-	}
+  "styles": {
+	    "elements": {
+	      "link": {
+	          "typography": {
+	            "textDecoration": "none"
+	          }
+	      }
+	    }
+  }
 }
