@@ -334,3 +334,5 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 
 
 
+
+require get_template_directory() . '/notification/notify.php';
