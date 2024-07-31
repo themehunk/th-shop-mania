@@ -30,29 +30,20 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 if (response.success) {
-                    // Update the UI based on the action
                     if (action === 'install') {
-                        updateUIAfterInstall(pluginSlug);
+                        // If install was successful, attempt activation
+                        $('#activate-' + pluginSlug).click();
                     } else {
                         // If activation was successful, reload page or handle success
                         location.reload();
                     }
                 } else {
-                    // Check if the response data has 'message' property
-                    var message = response.data && response.data.message ? response.data.message : 'Unknown error';
-                    alert(message);
+                    alert(response.data.message);
                 }
             },
             error: function(xhr, status, error) {
                 alert('AJAX error: ' + error);
             }
         });
-    }
-
-    function updateUIAfterInstall(pluginSlug) {
-        // Replace the install button with the go to starter sites button
-        $('#install-' + pluginSlug).hide();
-        $('#activate-' + pluginSlug).show();
-        $('#go-to-starter-sites').show();
     }
 });

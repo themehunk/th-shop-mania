@@ -14,27 +14,31 @@ add_action('admin_notices', 'vayu_x_display_admin_notice');
 function vayu_x_display_admin_notice() {
     global $plugin_pro_file, $plugin_pro_slug, $plugin_companion_file, $plugin_companion_slug;
 
-    $plugin_pro_installed = file_exists(WP_PLUGIN_DIR . '/' . $plugin_pro_file);
-    $plugin_pro_active = is_plugin_active($plugin_pro_file);
+    // Check if 'th-shop-mania-pro' is installed
+    $plugin_pro_installed = is_plugin_active($plugin_pro_file);
+    $plugin_pro_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_pro_file);
 
-    if ($plugin_pro_installed) {
-        if ($plugin_pro_active) {
+    if ($plugin_pro_exists) {
+        // 'th-shop-mania-pro' is installed
+        if ($plugin_pro_installed) {
+            // Plugin is activated
             echo '<div class="notice notice-info vayu-wrapper-banner is-dismissible">
                 <div class="left">
                     <h2 class="title">' . esc_html__('Thank you for installing "th-shop-mania-pro"', 'vayu-x') . '</h2>
                     <p>' . esc_html__('The plugin is active. You can go to starter sites now.', 'vayu-x') . '</p>
-                    <a href="' . esc_url(admin_url('admin.php?page=starter-sites')) . '" class="button button-primary" id="go-to-starter-sites">' . esc_html__('Go to Starter Sites', 'vayu-x') . '</a>
+                    <a href="' . esc_url(admin_url('admin.php?page=themehunk-site-library')) . '" class="button button-primary">' . esc_html__('Go to Starter Sites', 'vayu-x') . '</a>
                 </div>
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
                 </div>
             </div>';
         } else {
+            // Plugin is installed but not activated
             echo '<div class="notice notice-info vayu-wrapper-banner is-dismissible">
                 <div class="left">
                     <h2 class="title">' . esc_html__('Please Activate "th-shop-mania-pro"', 'vayu-x') . '</h2>
                     <p>' . esc_html__('The plugin is installed but not activated. Please activate it to continue.', 'vayu-x') . '</p>
-                    <button class="button button-primary" id="activate-th-shop-mania-pro">' . esc_html__('Activate', 'vayu-x') . '</button>
+                    <button class="button button-primary" id="activate-th-shop-mania-pro" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Activate', 'vayu-x') . '</button>
                 </div>
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
@@ -42,17 +46,18 @@ function vayu_x_display_admin_notice() {
             </div>';
         }
     } else {
-        $plugin_companion_installed = file_exists(WP_PLUGIN_DIR . '/' . $plugin_companion_file);
-        $plugin_companion_active = is_plugin_active($plugin_companion_file);
+        // 'th-shop-mania-pro' is not installed, check 'hunk-companion'
+        $plugin_companion_installed = is_plugin_active($plugin_companion_file);
+        $plugin_companion_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_companion_file);
 
         echo '<div class="notice notice-info vayu-wrapper-banner is-dismissible">
             <div class="left">
-                <h2 class="title">' . esc_html__('Import Demo Content', 'vayu-x') . '</h2>
-                <p>' . esc_html__('Install "Starter site plugin" mentioned below to activate import demo button.', 'vayu-x') . '</p>';
+                <h2 class="title">' . esc_html__('Please Install & Activate Required Plugins', 'vayu-x') . '</h2>
+                <p>' . esc_html__('You need to install and activate the required plugins to get started.', 'vayu-x') . '</p>';
 
-        if ($plugin_companion_installed) {
-            if ($plugin_companion_active) {
-                echo '<button class="button button-primary" id="go-to-starter-sites">' . esc_html__('Go to Starter Sites', 'vayu-x') . '</button>';
+        if ($plugin_companion_exists) {
+            if ($plugin_companion_installed) {
+                echo '<button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Starter Sites', 'vayu-x') . '</button>';
             } else {
                 echo '<button class="button button-primary" id="activate-hunk-companion" data-slug="' . esc_attr($plugin_companion_slug) . '">' . esc_html__('Activate', 'vayu-x') . '</button>';
             }
@@ -102,7 +107,6 @@ add_action('wp_ajax_vayu_blocks_install_and_activate_callback', 'vayu_blocks_ins
 add_action('wp_ajax_nopriv_vayu_blocks_install_and_activate_callback', 'vayu_blocks_install_and_activate_callback');
 
 // Callback function to install and activate plugin
-// Callback function to install and activate plugin
 function vayu_blocks_install_and_activate_callback() {
     // Check nonce for security
     check_ajax_referer('vayunonce', 'security');
@@ -114,24 +118,24 @@ function vayu_blocks_install_and_activate_callback() {
         wp_send_json_error(array('message' => 'Plugin slug is missing.'));
     }
 
-    // Get the full path to the main plugin file
     $plugin_file = WP_PLUGIN_DIR . '/' . $plugin_slug . '/' . $plugin_slug . '.php';
 
-    // Check if the plugin is installed but not activated
-    if (vayu_x_is_plugin_installed($plugin_slug) && !is_plugin_active($plugin_file)) {
-        // Activate the plugin
-        $status = activate_plugin($plugin_file);
-        if (is_wp_error($status)) {
-            wp_send_json_error(array('message' => $status->get_error_message()));
-        }
-    } else {
-        // Install the plugin
+    // Install the plugin
+    if (!file_exists($plugin_file)) {
         $status = vayu_install_custom_plugin($plugin_slug);
         if (is_wp_error($status)) {
             wp_send_json_error(array('message' => $status->get_error_message()));
         }
+        
+        // Check if the plugin file exists after installation
+        if (!file_exists($plugin_file)) {
+            wp_send_json_error(array('message' => 'Plugin file does not exist after installation.'));
+            return;
+        }
+    }
 
-        // Activate the plugin
+    // Activate the plugin
+    if (!is_plugin_active($plugin_file)) {
         $status = activate_plugin($plugin_file);
         if (is_wp_error($status)) {
             wp_send_json_error(array('message' => $status->get_error_message()));
@@ -141,7 +145,6 @@ function vayu_blocks_install_and_activate_callback() {
     // Return success response
     wp_send_json_success(array('message' => 'Plugin installed and activated successfully.'));
 }
-
 
 function vayu_x_admin_script() {
     wp_enqueue_style('vayu-x-admin-css', get_template_directory_uri() . '/notification/css/admin.css', array(), '1.0.0', 'all');
