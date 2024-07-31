@@ -1,14 +1,14 @@
-.vayu-wrapper-banner{
+.th-shop-mania-wrapper-banner{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 18px;
 }
-.vayu-wrapper-banner > div{
+.th-shop-mania-wrapper-banner > div{
     width: 50%;
 }
-.wp-core-ui .vayu-wrapper-banner .button-primary,
-.wp-core-ui .vayu-wrapper-banner .button{
+.wp-core-ui .th-shop-mania-wrapper-banner .button-primary,
+.wp-core-ui .th-shop-mania-wrapper-banner .button{
     padding: 8px 27px !important;
     min-width: 154px;
     background: #6C1BC3;
@@ -23,26 +23,26 @@
     justify-content: center;
     min-height: 52px;
 }
-.wp-core-ui .vayu-wrapper-banner .button{
+.wp-core-ui .th-shop-mania-wrapper-banner .button{
     margin-right: 21px;
 }
-.wp-core-ui .vayu-wrapper-banner .button:focus{
+.wp-core-ui .th-shop-mania-wrapper-banner .button:focus{
     outline: 0;
     box-shadow: 0 0 0 1px #6C1BC3;
 }
-.wp-core-ui .vayu-wrapper-banner .button.learn-more{
+.wp-core-ui .th-shop-mania-wrapper-banner .button.learn-more{
     background: #FFF;
     color: #6C1BC3;
 }
-.vayu-wrapper-banner .title{
+.th-shop-mania-wrapper-banner .title{
     font-size: 29px;
     line-height: 39px;
     margin: 0;
 }
-.vayu-wrapper-banner img{
+.th-shop-mania-wrapper-banner img{
     max-width: 100%;
 }
-.vayu-wrapper-banner p{
+.th-shop-mania-wrapper-banner p{
     color: #494545;
     font-size: 18px;
     margin: 29px 0;
@@ -77,7 +77,7 @@
       transform: rotate(360deg);
     }
   }
-  #install-vayu-blocks .loader {
+  #install-th-shop-mania-blocks .loader {
     -webkit-animation: rotating 2s linear infinite;
     -moz-animation: rotating 2s linear infinite;
     -ms-animation: rotating 2s linear infinite;

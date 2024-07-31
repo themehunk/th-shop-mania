@@ -22,14 +22,15 @@ jQuery(document).ready(function($) {
     function handlePluginAction(pluginSlug, action) {
         $.ajax({
             url: theme_data.ajax_url,
-            type: 'POST',
+             method: 'POST',
+            dataType: 'html',
             data: {
-                action: 'vayu_blocks_install_and_activate_callback',
+                action: 'th_shop_mania_install_and_activate_callback',
                 security: theme_data.security,
                 plugin_slug: pluginSlug
             },
             success: function(response) {
-                if (response.success) {
+                if (response) {
                     if (action === 'install') {
                         // If install was successful, attempt activation
                         $('#activate-' + pluginSlug).click();
