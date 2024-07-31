@@ -22,8 +22,7 @@ jQuery(document).ready(function($) {
     function handlePluginAction(pluginSlug, action) {
         $.ajax({
             url: theme_data.ajax_url,
-             method: 'POST',
-            dataType: 'html',
+            type: 'POST',
             data: {
                 action: 'th_shop_mania_install_and_activate_callback',
                 security: theme_data.security,
