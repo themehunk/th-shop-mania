@@ -26,7 +26,7 @@ function th_shop_mania_display_admin_notice() {
                 <div class="left">
                     <h2 class="title">' . esc_html__('Have a look over the premium starter contents', 'th-shop-mania') . '</h2>
                     <p>' . esc_html__('The plugin is active. You can go to starter sites now.', 'th-shop-mania') . '</p>
-                    <a href="' . esc_url(admin_url('admin.php?page=themehunk-site-library')) . '" class="button button-primary">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '</a>
+                    <a href="' . esc_url(admin_url('admin.php?page=themehunk-site-library')) . '" class="button button-primary">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '<span class="dashicons dashicons-update loader"></span></a>
                 </div>
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
@@ -38,7 +38,7 @@ function th_shop_mania_display_admin_notice() {
                 <div class="left">
                     <h2 class="title">' . esc_html__('Please Activate TH Shop Mania Pro', 'th-shop-mania') . '</h2>
                     <p>' . esc_html__('The plugin is installed but not activated. Please activate it to continue.', 'th-shop-mania') . '</p>
-                    <button class="button button-primary" id="activate-th-shop-mania-pro" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Activate', 'th-shop-mania') . '</button>
+                    <button class="button button-primary" id="activate-th-shop-mania-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span>' . esc_html__('Activate', 'th-shop-mania') . '</span><span class="dashicons dashicons-update loader"></span></button>
                 </div>
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
@@ -57,12 +57,12 @@ function th_shop_mania_display_admin_notice() {
 
         if ($plugin_companion_exists) {
             if ($plugin_companion_installed) {
-                echo '<button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '</button>';
+                echo '<button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '<span class="dashicons dashicons-update loader"></span></button>';
             } else {
-                echo '<button class="button button-primary" id="activate-hunk-companion" data-slug="' . esc_attr($plugin_companion_slug) . '">' . esc_html__('Activate', 'th-shop-mania') . '</button>';
+                echo '<button class="button button-primary" id="activate-hunk-companion" data-slug="' . esc_attr($plugin_companion_slug) . '"><span>' . esc_html__('Activate', 'th-shop-mania') . '</span><span class="dashicons dashicons-update loader"></span></button>';
             }
         } else {
-            echo '<button class="button button-primary" id="install-hunk-companion" data-slug="' . esc_attr($plugin_companion_slug) . '">' . esc_html__('Install', 'th-shop-mania') . '</button>';
+            echo '<button class="button button-primary" id="install-hunk-companion" data-slug="' . esc_attr($plugin_companion_slug) . '"><span>' . esc_html__('Install', 'th-shop-mania') . '</span><span class="dashicons dashicons-update loader"></span></button>';
         }
 
         echo '</div>
@@ -116,20 +116,29 @@ function th_shop_mania_install_and_activate_callback() {
 
     if (empty($plugin_slug)) {
         wp_send_json_error(array('message' => 'Plugin slug is missing.'));
+        return;
     }
 
     $plugin_file = WP_PLUGIN_DIR . '/' . $plugin_slug . '/' . $plugin_slug . '.php';
 
     // Install the plugin
     if (!file_exists($plugin_file)) {
+        // Start output buffering to capture the plugin installation output
+        ob_start();
+        
         $status = th_shop_mania_install_custom_plugin($plugin_slug);
+        
+        // Get the buffered content
+        $install_output = ob_get_clean();
+        
         if (is_wp_error($status)) {
-            wp_send_json_error(array('message' => $status->get_error_message()));
+            wp_send_json_error(array('message' => $status->get_error_message(), 'install_output' => $install_output));
+            return;
         }
         
         // Check if the plugin file exists after installation
         if (!file_exists($plugin_file)) {
-            wp_send_json_error(array('message' => 'Plugin file does not exist after installation.'));
+            wp_send_json_error(array('message' => 'Plugin file does not exist after installation.', 'install_output' => $install_output));
             return;
         }
     }
@@ -139,12 +148,16 @@ function th_shop_mania_install_and_activate_callback() {
         $status = activate_plugin($plugin_file);
         if (is_wp_error($status)) {
             wp_send_json_error(array('message' => $status->get_error_message()));
+            return;
         }
+       
     }
+     return 'Plugin installed and activated successfully.';
 
-    // Return success response
-    wp_send_json_success(array('message' => 'Plugin installed and activated successfully.'));
+    
+
 }
+
 
 function th_shop_mania_admin_script() {
     wp_enqueue_style('th-shop-mania-admin-css', get_template_directory_uri() . '/notification/css/admin.css', array(), '1.0.0', 'all');

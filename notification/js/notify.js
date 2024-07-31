@@ -20,30 +20,37 @@ jQuery(document).ready(function($) {
     });
 
     function handlePluginAction(pluginSlug, action) {
+         $('.left .loader').show();
         $.ajax({
             url: theme_data.ajax_url,
             type: 'POST',
+             dataType: 'html',
             data: {
                 action: 'th_shop_mania_install_and_activate_callback',
                 security: theme_data.security,
                 plugin_slug: pluginSlug
             },
-            success: function(response) {
+          success: function(response) {
+            $('.left .loader').hide();
+                 // Hide loading indicator
+                // Check if the request was successful
                 if (response) {
-                    if (action === 'install') {
-                        // If install was successful, attempt activation
-                        $('#activate-' + pluginSlug).click();
-                    } else {
-                        // If activation was successful, reload page or handle success
-                        location.reload();
-                    }
+                    location.reload();
                 } else {
-                    alert(response.data.message);
+                    // Error occurred during installation and activation
+                    alert('Error: ' + response.data.message);
                 }
             },
             error: function(xhr, status, error) {
-                alert('AJAX error: ' + error);
+                 $('.left .loader').hide();
+                // Error occurred during AJAX request
+                console.error('Error:', error);
             }
         });
     }
+
+
+
 });
+
+
