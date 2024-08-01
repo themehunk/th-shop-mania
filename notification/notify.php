@@ -26,7 +26,7 @@ function th_shop_mania_display_admin_notice() {
                 <div class="left">
                     <h2 class="title">' . esc_html__('Have a look over the premium starter contents', 'th-shop-mania') . '</h2>
                     <p>' . esc_html__('The plugin is active. You can go to starter sites now.', 'th-shop-mania') . '</p>
-                    <a href="' . esc_url(admin_url('admin.php?page=themehunk-site-library')) . '" class="button button-primary">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '<span class="dashicons dashicons-update loader"></span></a>
+                    <a href="' . esc_url(admin_url('themes.php?page=themehunk-site-library&template=step')) . '" class="button button-primary">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '<span class="dashicons dashicons-update loader"></span></a>
                 </div>
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
@@ -167,7 +167,7 @@ function th_shop_mania_admin_script() {
     wp_localize_script('th-shop-mania-notifyjs', 'theme_data', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'security' => wp_create_nonce('vayunonce'), // Create nonce for security
-        'redirectUrl' => admin_url('admin.php?page=themehunk-site-library&template=step') // Generate dynamic URL
+        'redirectUrl' => esc_url(admin_url('themes.php?page=themehunk-site-library&template=step')) // Generate dynamic URL
     ));
 }
 add_action('admin_enqueue_scripts', 'th_shop_mania_admin_script');
