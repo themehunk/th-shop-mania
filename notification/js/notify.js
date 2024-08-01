@@ -31,11 +31,13 @@ jQuery(document).ready(function($) {
                 plugin_slug: pluginSlug
             },
           success: function(response) {
-            $('.left .loader').hide();
-                 // Hide loading indicator
                 // Check if the request was successful
                 if (response) {
-                    location.reload();
+                    // location.reload();
+                     window.location.href = theme_data.redirectUrl;
+                             setTimeout(function() {
+                                    $('.left .loader').hide();
+                                }, 2000);
                 } else {
                     // Error occurred during installation and activation
                     alert('Error: ' + response.data.message);

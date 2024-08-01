@@ -8,11 +8,23 @@ $plugin_companion_slug = 'hunk-companion';
 $plugin_companion_file = 'hunk-companion/hunk-companion.php';
 
 // Show admin notice to install or activate the secondary plugin
-add_action('admin_notices', 'th_shop_mania_display_admin_notice');
-
+$plugin_pro_installed = is_plugin_active($plugin_pro_file);
+$plugin_pro_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_pro_file);
+$plugin_companion_installed = is_plugin_active($plugin_companion_file);
+$plugin_companion_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_companion_file);
+if (isset($_GET['page']) && $_GET['page'] == 'th_shop_mania_thunk_started' ) {
+    add_action('admin_notices', 'th_shop_mania_display_admin_notice');
+}
+elseif((!$plugin_pro_exists && !$plugin_companion_exists) ||($plugin_pro_exists && !$plugin_pro_installed) || (!$plugin_pro_exists && $plugin_companion_exists && !$plugin_companion_installed)
+) {
+    add_action('admin_notices', 'th_shop_mania_display_admin_notice');
+}
 // Display admin notice
 function th_shop_mania_display_admin_notice() {
     global $plugin_pro_file, $plugin_pro_slug, $plugin_companion_file, $plugin_companion_slug;
+    global $current_user;
+    $user_id   = $current_user->ID;
+    $theme_data  = wp_get_theme();
 
     // Check if 'th-shop-mania-pro' is installed
     $plugin_pro_installed = is_plugin_active($plugin_pro_file);
@@ -23,9 +35,9 @@ function th_shop_mania_display_admin_notice() {
         if ($plugin_pro_installed) {
             // Plugin is activated
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
-                <div class="left">
-                    <h2 class="title">' . esc_html__('Have a look over the premium starter contents', 'th-shop-mania') . '</h2>
-                    <p>' . esc_html__('The plugin is active. You can go to starter sites now.', 'th-shop-mania') . '</p>
+                <div class="left"><h2 class="title">
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Starter plugin</strong></p>
                     <a href="' . esc_url(admin_url('themes.php?page=themehunk-site-library&template=step')) . '" class="button button-primary">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '<span class="dashicons dashicons-update loader"></span></a>
                 </div>
                 <div class="right">
@@ -36,8 +48,9 @@ function th_shop_mania_display_admin_notice() {
             // Plugin is installed but not activated
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left">
-                    <h2 class="title">' . esc_html__('Please Activate TH Shop Mania Pro', 'th-shop-mania') . '</h2>
-                    <p>' . esc_html__('The plugin is installed but not activated. Please activate it to continue.', 'th-shop-mania') . '</p>
+                    <h2 class="title">
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>TH Shop Mania Pro</strong></p>
                     <button class="button button-primary" id="activate-th-shop-mania-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span>' . esc_html__('Activate', 'th-shop-mania') . '</span><span class="dashicons dashicons-update loader"></span></button>
                 </div>
                 <div class="right">
@@ -52,8 +65,9 @@ function th_shop_mania_display_admin_notice() {
 
         echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
             <div class="left">
-                <h2 class="title">' . esc_html__('Get starter plugin activate to acess starter sites', 'th-shop-mania') . '</h2>
-                <p>' . esc_html__('You need to install and activate the required plugins to get started.', 'th-shop-mania') . '</p>';
+                  <h2 class="title">
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Starter plugin</strong></p>';
 
         if ($plugin_companion_exists) {
             if ($plugin_companion_installed) {
