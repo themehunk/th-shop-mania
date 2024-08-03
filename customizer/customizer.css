@@ -87,7 +87,7 @@ body.wp-customizer .wp-picker-container{
 	height: 30px;
 	margin-left: 2px;
 }
-.control-panel-themes .theme-section,
+.control-panel-themes .theme-section, 
 #customize-theme-controls .control-panel-themes>.accordion-section-title, #customize-theme-controls .control-panel-themes>.accordion-section-title:hover{
 	margin:  9px 21px;
 	padding: 10px 10px 11px 14px;
@@ -155,4 +155,7 @@ body.wp-customizer .wp-picker-input-wrap{
 }
 input[type=checkbox]{
 	margin-bottom: 2px;
+}
+#accordion-section-customizer-plugin-notice-section{
+	display: block!important;
 }
