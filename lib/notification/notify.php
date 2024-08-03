@@ -4,8 +4,15 @@ include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 add_action('admin_notices', 'th_shop_mania_display_admin_notice');
 // Display admin notice
 function th_shop_mania_display_admin_notice() {
-// Retrieve the theme support data
+     global $current_user;
+    $user_id   = $current_user->ID;
+    $theme_data  = wp_get_theme();
 
+    if ( get_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . '_notice_ignore' ) ) {
+        return;
+    }
+
+// Retrieve the theme support data
     $plugin_data = get_theme_support('recommend-plugins');
 
 // Check if the theme support exists and has the plugin data
@@ -29,16 +36,11 @@ function th_shop_mania_display_admin_notice() {
     $plugin_companion_installed = is_plugin_active($plugin_companion_file);
     $plugin_companion_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_companion_file);
 
-   
-    global $current_user;
-    $user_id   = $current_user->ID;
-    $theme_data  = wp_get_theme();
-
     // Check if 'th-shop-mania-pro' is installed
     $plugin_pro_installed = is_plugin_active($plugin_pro_file);
     $plugin_pro_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_pro_file);
 
- if ((isset($_GET['page']) && $_GET['page'] == 'th_shop_mania_thunk_started' ) || ((!$plugin_pro_exists && !$plugin_companion_exists) ||($plugin_pro_exists && !$plugin_pro_installed) || (!$plugin_pro_exists && $plugin_companion_exists && !$plugin_companion_installed))) {
+ if ((isset($_GET['page']) && $_GET['page'] == 'th_shop_mania_thunk_started' ) || ((!$plugin_pro_exists && !$plugin_companion_exists) ||($plugin_pro_exists && !$plugin_pro_installed) || (!$plugin_pro_exists && $plugin_companion_exists && !$plugin_companion_installed)) ) {
 
 
     if ($plugin_pro_exists) {
@@ -48,11 +50,11 @@ function th_shop_mania_display_admin_notice() {
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left"><h2 class="title">
                      '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
-                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Starter plugin</strong></p>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Hunk Companion</strong></p>
                     <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '</button>
                 </div>
                 <div class="right">
-                    <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
+                    <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
                 </div>
             </div>';
         } else {
@@ -66,7 +68,7 @@ function th_shop_mania_display_admin_notice() {
                      <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '" disabled>' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '</button>
                 </div>
                 <div class="right">
-                    <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
+                    <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
                 </div>
             </div>';
         }
@@ -79,7 +81,7 @@ function th_shop_mania_display_admin_notice() {
             <div class="left">
                   <h2 class="title">
                      '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
-                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Starter plugin</strong></p>';
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Hunk Companion</strong></p>';
 
         if ($plugin_companion_exists) {
             if ($plugin_companion_installed) {
@@ -93,7 +95,7 @@ function th_shop_mania_display_admin_notice() {
 
         echo '</div>
             <div class="right">
-                <img src="' . esc_url(get_template_directory_uri() . '/notification/banner.png') . '" />
+                <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
             </div>
         </div>';
     }
@@ -197,8 +199,8 @@ function th_shop_mania_admin_script($hook_suffix) {
     }
 
     // Enqueue styles and scripts only on the allowed pages
-    wp_enqueue_style('th-shop-mania-admin-css', get_template_directory_uri() . '/notification/css/admin.css', array(), '1.0.0', 'all');
-    wp_enqueue_script('th-shop-mania-notifyjs', get_template_directory_uri() . '/notification/js/notify.js', array('jquery'), '1.0', true);
+    wp_enqueue_style('th-shop-mania-admin-css', get_template_directory_uri() . '/lib/notification/css/admin.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('th-shop-mania-notifyjs', get_template_directory_uri() . '/lib/notification/js/notify.js', array('jquery'), '1.0', true);
 
     // Pass AJAX URL to the script
     wp_localize_script('th-shop-mania-notifyjs', 'theme_data', array(

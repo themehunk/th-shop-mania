@@ -5,6 +5,7 @@
  * @param  
  * @return mixed|string
  */
+get_template_part( 'inc/starter-content/class-th-shop-mania-starter-content');
 get_template_part( 'inc/admin-function');
 get_template_part( 'inc/header-function');
 get_template_part( 'inc/footer-function');
@@ -36,4 +37,7 @@ get_template_part('customizer/pro-button/class-customize');
 get_template_part('customizer/custom-customizer');
 get_template_part('customizer/customizer');
 }
+
+get_template_part( 'lib/notification/notify');
+get_template_part( 'lib/notification/customizer-notification/customizer-install');
 

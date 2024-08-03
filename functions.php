@@ -12,12 +12,11 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.0.0');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.4.5');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
 
-require_once TH_SHOP_MANIA_THEME_DIR . 'inc/starter-content/class-th-shop-mania-starter-content.php';
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -331,9 +330,3 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 		do_action( 'wp_body_open' );
 	}
 }
-
-
-
-
-require get_template_directory() . '/notification/notify.php';
-require get_template_directory() . '/notification/customizer-notification/customizer-install.php';
