@@ -1,109 +1,70 @@
 <?php
-if ( ! class_exists( 'WP_Customize_Control' ) ) {
-    return;
-}
-class TH_Shop_Mania_Customizer_Notice_Section extends WP_Customize_Section {
-    public $type = 'customizer-plugin-notice-section';
-    public $recommended_plugins = '';
+if (class_exists('WP_Customize_Section')) {
 
-    public function check_active($slug) {
-        if (file_exists(WP_PLUGIN_DIR . '/' . $slug . '/' . $slug . '.php')) {
-            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-            $needs = is_plugin_active($slug . '/' . $slug . '.php') ? 'deactivate' : 'activate';
-            return array('status' => is_plugin_active($slug . '/' . $slug . '.php'), 'needs' => $needs);
-        }
-        return array('status' => false, 'needs' => 'install');
-    }
+    class TH_Shop_Mania_Custom_Section extends WP_Customize_Section {
+        public $type = 'th_shop_mania_custom_section';
 
-    public function create_action_link($state, $slug) {
-        switch ($state) {
-            case 'install':
-                return wp_nonce_url(
-                    add_query_arg(
-                        array('action' => 'install-plugin', 'plugin' => $slug),
-                        network_admin_url('update.php')
-                    ),
-                    'install-plugin_' . $slug
-                );
-            case 'deactivate':
-                return add_query_arg(
-                    array(
-                        'action' => 'deactivate',
-                        'plugin' => rawurlencode($slug . '/' . $slug . '.php'),
-                        'plugin_status' => 'all',
-                        'paged' => '1',
-                        '_wpnonce' => wp_create_nonce('deactivate-plugin_' . $slug . '/' . $slug . '.php'),
-                    ),
-                    network_admin_url('plugins.php')
-                );
-            case 'activate':
-                return add_query_arg(
-                    array(
-                        'action' => 'activate',
-                        'plugin' => rawurlencode($slug . '/' . $slug . '.php'),
-                        'plugin_status' => 'all',
-                        'paged' => '1',
-                        '_wpnonce' => wp_create_nonce('activate-plugin_' . $slug . '/' . $slug . '.php'),
-                    ),
-                    network_admin_url('plugins.php')
-                );
-        }
-    }
+        protected function render_template() {
+            ?>
+            <# if (data.title) { #>
+            <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
+                <h3 class="accordion-section-title">
+                    <span class="section-title">
+                        {{ data.title }}
+                    </span>
+                </h3>
+                <div class="th-shop-mania-custom-section">
+                    <?php
+                    // Add your buttons here based on the plugin status
+                    $plugin_pro_file = 'th-shop-mania-pro/th-shop-mania-pro.php';
+                    $plugin_companion_file = 'hunk-companion/hunk-companion.php';
 
-    public function json() {
-        $json = parent::json();
-        $customize_plugins = array();
+                    $plugin_pro_installed = is_plugin_active($plugin_pro_file);
+                    $plugin_pro_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_pro_file);
+                    $plugin_companion_installed = is_plugin_active($plugin_companion_file);
+                    $plugin_companion_exists = file_exists(WP_PLUGIN_DIR . '/' . $plugin_companion_file);
 
-        $plugins = array(
-            'th-shop-mania-pro' => 'TH Shop Mania Pro',
-            'hunk-companion' => 'Hunk Companion',
-        );
+                    $go_to_starter_sites_disabled = true;
 
-        foreach ($plugins as $slug => $name) {
-            $active = $this->check_active($slug);
-            $plugin = array(
-                'url' => $this->create_action_link($active['needs'], $slug),
-                'class' => $active['needs'] !== 'install' && $active['status'] ? 'active' : '',
-                'button_class' => $active['needs'] . '-now button' . ($active['needs'] === 'activate' ? ' button-primary' : ''),
-                'button_label' => ucfirst($active['needs']),
-                'title' => $name,
-                'plugin_slug' => $slug,
-            );
-            $customize_plugins[] = $plugin;
-        }
+                    if ($plugin_pro_exists) {
+                        if ($plugin_pro_installed) {
+                            $go_to_starter_sites_disabled = false;
+                        } else {
+                            echo '<button class="button button-primary" id="activate-th-shop-mania-pro">' . esc_html__('Activate TH Shop Mania Pro', 'th-shop-mania') . '</button>';
+                        }
+                    } elseif ($plugin_companion_exists) {
+                        if ($plugin_companion_installed) {
+                            $go_to_starter_sites_disabled = false;
+                        } else {
+                            echo '<button class="button button-primary" id="activate-hunk-companion">' . esc_html__('Activate Hunk Companion', 'th-shop-mania') . '</button>';
+                        }
+                    } else {
+                        echo '<button class="button button-primary" id="install-hunk-companion">' . esc_html__('Install Hunk Companion', 'th-shop-mania') . '</button>';
+                    }
 
-        $json['recommended_plugins'] = $customize_plugins;
-        return $json;
-    }
-
-    protected function render_template() {
-        ?>
-        <# if (data.recommended_plugins.length > 0) { #>
-        <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
-            <h3 class="accordion-section-title">
-                <span class="section-title">
-                    {{ data.title }}
-                </span>
-            </h3>
-            <div class="recommended-actions_container" id="plugin-filter">
-                <# for (var action in data.recommended_plugins) { #>
-                <div class="recommended-actions">
-                    <p class="title">{{ data.recommended_plugins[action].title }}</p>
-                    <div class="description">
-                        <p>Click the button below to {{ data.recommended_plugins[action].button_label }} the plugin.</p>
-                    </div>
-                    <div class="custom-action">
-                        <p class="plugin-card-{{ data.recommended_plugins[action].plugin_slug }} action_button {{ data.recommended_plugins[action].class }}">
-                            <a data-slug="{{ data.recommended_plugins[action].plugin_slug }}"
-                               class="{{ data.recommended_plugins[action].button_class }}"
-                               href="{{ data.recommended_plugins[action].url }}">{{ data.recommended_plugins[action].button_label }}</a>
-                        </p>
-                    </div>
+                    // Go to Starter Sites button (always present, conditionally enabled/disabled)
+                    echo '<button class="button button-primary" id="go-to-starter-sites" ' . ($go_to_starter_sites_disabled ? 'disabled' : '') . '>' . esc_html__('Go to Starter Sites', 'th-shop-mania') . '</button>';
+                    ?>
                 </div>
-                <# } #>
-            </div>
-        </li>
-        <# } #>
-        <?php
+            </li>
+            <# } #>
+            <?php
+        }
     }
 }
+
+function th_shop_mania_customize_install_register($wp_customize) {
+    $wp_customize->register_section_type('TH_Shop_Mania_Custom_Section');
+
+    $wp_customize->add_section(
+        new TH_Shop_Mania_Custom_Section(
+            $wp_customize,
+            'th_shop_mania_custom_section',
+            array(
+                'title' => __('Starter Site & More Options', 'th-shop-mania'),
+                'priority' => 1,
+            )
+        )
+    );
+}
+add_action('customize_register', 'th_shop_mania_customize_install_register');
