@@ -35,6 +35,8 @@ get_template_part('customizer/customizer-toggle/class-th-shop-mania-toggle-contr
 get_template_part('customizer/pro-button/class-customize');
 get_template_part('customizer/custom-customizer');
 get_template_part('customizer/customizer');
+get_template_part('lib/notification/customizer-notification/thsm-custom-section');
+
 }
 
 get_template_part( 'lib/notification/notify');

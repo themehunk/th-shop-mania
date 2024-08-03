@@ -156,6 +156,25 @@ body.wp-customizer .wp-picker-input-wrap{
 input[type=checkbox]{
 	margin-bottom: 2px;
 }
-#accordion-section-customizer-plugin-notice-section{
+#accordion-section-th_shop_mania_custom_section{
 	display: block!important;
+	background: #eaffea;
+    padding: 12px 0;
+}
+#accordion-section-th_shop_mania_custom_section .accordion-section-title{
+	padding: 0 0 0 29px;
+	margin: 0 0 21px 0;
+	font-size: 25px;
+	font-weight: 500;
+}
+#accordion-section-th_shop_mania_custom_section .accordion-section-title:hover{
+	background: initial;
+}
+#accordion-section-th_shop_mania_custom_section .th-shop-mania-custom-section{
+	display: flex;
+	padding-left: 29px;
+	flex-wrap: wrap;
+}
+#accordion-section-th_shop_mania_custom_section .th-shop-mania-custom-section button{
+	margin-bottom: 21px;
 }
