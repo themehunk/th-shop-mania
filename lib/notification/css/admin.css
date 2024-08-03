@@ -2,10 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 54px!important;
+    padding: 20px 40px!important;
 }
 .th-shop-mania-wrapper-banner > div.left{
-    width: 55%;
+    width: 45%;
 }
 .th-shop-mania-wrapper-banner > div.right{
     width: 45%;
@@ -39,7 +39,7 @@
 }
 .th-shop-mania-wrapper-banner .title{
     font-size: 26px;
-    line-height: 34px;
+    line-height: 36px;
     margin: 0;
     padding: 0;
     margin: 0 0 21px 0;
@@ -102,4 +102,7 @@
         -o-animation: rotating 2s linear infinite;
         animation: rotating 2s linear infinite;
         margin-left: 12px;
+  }
+  #wpbody-content .notice.th-shop-mania-wrapper-banner{
+    display: flex!important;
   }
