@@ -73,8 +73,8 @@ function th_shop_mania_below_footer_markup_lite(){ ?>
               ?>
               
               <span><?php _e( 'Made with', 'th-shop-mania' ); ?></span>
-              <a href="<?php echo esc_url('https://themehunk.com/'); ?>" target="_blank">
-                <?php esc_html_e( 'ThemeHunk', 'th-shop-mania' ); ?>
+              <a href="<?php echo esc_url('https://themehunk.com/'); ?>" target="_blank" rel="nofollow noopener">
+                <?php esc_html_e( 'ThemeHunk WordPress Theme', 'th-shop-mania' ); ?>
               </a>
             </p><!-- .footer-copyright -->         
 </div>
