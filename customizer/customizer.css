@@ -170,10 +170,12 @@ input[type=checkbox]{
 	line-height: 25px;
 	font-weight: 500;
 	margin-bottom: 12px;
+	color: #111;
 }
 #customize-controls .control-section-th_shop_mania_custom_section.cannot-expand:hover .accordion-section-title{
 	background: transparent;
 	border: 0;
+	color: #111;
 }
 
 #accordion-section-th_shop_mania_custom_section .accordion-section-title:hover{

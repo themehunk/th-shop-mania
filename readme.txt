@@ -27,6 +27,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Update: New theme.json version 3 added.
 * Update: Style improved.
 * Update: Block Patterns removed.
+* New: Admin area Plugin activation added.
+* New Custmizer plugin activation added.
 
 = Version 1.4.4 =
 * Update: Theme tested with WordPress 6.6.

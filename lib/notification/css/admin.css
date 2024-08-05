@@ -5,33 +5,39 @@
     padding: 20px 40px!important;
 }
 .th-shop-mania-wrapper-banner > div.left{
-    width: 45%;
+    width: 51%;
 }
 .th-shop-mania-wrapper-banner > div.right{
     width: 45%;
 }
 .wp-core-ui .th-shop-mania-wrapper-banner .button-primary,
 .wp-core-ui .th-shop-mania-wrapper-banner .button{
-    padding: 8px 27px !important;
+   padding: 8px 18px !important;
     min-width: 154px;
-    background: #6C1BC3;
+    background: #6ca12b;
     outline: 0;
     color: #FFF;
-    letter-spacing: 2px;
-    font-size: 16px;
+    letter-spacing: 1.4px;
+    font-size: 14px;
     border-radius: 4px;
-    border-color: #6C1BC3;
+    border-color: #6ca12b;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 52px;
+    text-transform: uppercase;
+}
+#go-to-starter-sites:after{
+    content: "\f344";
+    font-family: "Dashicons";
+    margin-left: 9px;
 }
 .wp-core-ui .th-shop-mania-wrapper-banner .button{
     margin-right: 21px;
 }
 .wp-core-ui .th-shop-mania-wrapper-banner .button:focus{
     outline: 0;
-    box-shadow: 0 0 0 1px #6C1BC3;
+    box-shadow: 0 0 0 1px #6ca12b;
 }
 .wp-core-ui .th-shop-mania-wrapper-banner .button.learn-more{
     background: #FFF;
