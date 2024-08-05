@@ -13,3 +13,9 @@ function th_shop_mania_customizer_scripts() {
 }
 add_action('customize_controls_enqueue_scripts', 'th_shop_mania_customizer_scripts');
 
+// style
+function th_shop_mania_customizer_notify_css(){
+    
+  wp_enqueue_style('th_shop_mania_customizer_notify-styles', TH_SHOP_MANIA_THEME_URI .'lib/notification/customizer-notification/customizer-notify.css');
+}
+add_action('customize_controls_print_styles', 'th_shop_mania_customizer_notify_css');
