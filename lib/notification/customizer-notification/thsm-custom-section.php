@@ -30,16 +30,16 @@ if (class_exists('WP_Customize_Section')) {
                         if ($plugin_pro_installed) {
                             $go_to_starter_sites_disabled = false;
                         } else {
-                            echo '<button class="button button-primary" id="activate-th-shop-mania-pro">' . esc_html__('Activate TH Shop Mania Pro', 'th-shop-mania') . '</button>';
+                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the TH Shop Mania Pro', 'th-shop-mania') .'</p><button class="button button-primary" id="activate-th-shop-mania-pro"><span class="text">'. esc_html__('Activate', 'th-shop-mania') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                         }
                     } elseif ($plugin_companion_exists) {
                         if ($plugin_companion_installed) {
                             $go_to_starter_sites_disabled = false;
                         } else {
-                            echo '<button class="button button-primary" id="activate-hunk-companion">' . esc_html__('Activate Hunk Companion', 'th-shop-mania') . '</button>';
+                            echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the Hunk Companion', 'th-shop-mania') .'</p><button class="button button-primary" id="activate-hunk-companion"><span class="text">'. esc_html__('Activate', 'th-shop-mania') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                         }
                     } else {
-                        echo '<button class="button button-primary" id="install-hunk-companion">' . esc_html__('Install Hunk Companion', 'th-shop-mania') . '</button>';
+                        echo '<p>'. esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the Hunk Companion', 'th-shop-mania') .'</p><button class="button button-primary" id="install-hunk-companion"><span class="text">'. esc_html__('Install Now', 'th-shop-mania') .'</span><span class="icon dashicons dashicons-update th-loader"></span></button>';
                     }
 
                     // Go to Starter Sites button (always present, conditionally enabled/disabled)
@@ -61,7 +61,7 @@ function th_shop_mania_customize_install_register($wp_customize) {
             $wp_customize,
             'th_shop_mania_custom_section',
             array(
-                'title' => __('Starter Site & More Options', 'th-shop-mania'),
+                'title' => __('Thank You for installing Shop Mania Theme', 'th-shop-mania'),
                 'priority' => 1,
             )
         )
