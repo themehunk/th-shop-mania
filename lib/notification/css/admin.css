@@ -112,3 +112,16 @@
   #wpbody-content .notice.th-shop-mania-wrapper-banner{
     display: flex!important;
   }
+
+  @media screen and (max-width: 767px){
+    #wpbody-content .notice.th-shop-mania-wrapper-banner{
+        flex-wrap: wrap;
+    }
+    .th-shop-mania-wrapper-banner > div.left,
+    .th-shop-mania-wrapper-banner > div.right{
+        width: 100%;
+    }
+    .th-shop-mania-wrapper-banner > div.left{
+        margin-bottom: 21px;
+    }
+}
