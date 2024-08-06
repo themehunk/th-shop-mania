@@ -480,7 +480,7 @@ html {
 .thunk-post-excerpt a,.thunk-content-wrap .entry-content a,
 .widget .textwidget a,
 .comment-content a{
-text-decoration: underline!important;
+text-decoration: underline;
 }
 article.thunk-post-article a.thunk-readmore,
 .thunk-content-wrap .entry-content a.dokan-btn.vendor-dashboard{
