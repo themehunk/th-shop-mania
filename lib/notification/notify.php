@@ -1,9 +1,65 @@
 <?php
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
-add_action('admin_notices', 'th_shop_mania_display_admin_notice');
+    function th_shop_mania_set_cookie() { 
+        $expire_time = time() + (86400 * 7); // 7 days in seconds
+        
+        if (!isset($_COOKIE['th_shop_mania_thms_time'])) {
+                // Set a cookie for 7 days
+        setcookie('th_shop_mania_thms_time', $expire_time, $expire_time, COOKIEPATH, COOKIE_DOMAIN);
+            }
+
+        }
+    function th_shop_mania_unset_cookie(){
+
+        $visit_time = time();
+        if (isset($_COOKIE['th_shop_mania_thms_time']) && $_COOKIE['th_shop_mania_thms_time'] < $visit_time) {
+            setcookie('th_shop_mania_thms_time', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN);
+        }
+    }
+
+    function th_shop_mania_clear_notice_cookie() {
+    // Clear the cookie when the theme is switched
+        if (isset($_COOKIE['th_shop_mania_thms_time'])) {
+            setcookie('th_shop_mania_thms_time', '', time() - 3600, COOKIEPATH, COOKIE_DOMAIN);
+        }
+    }
+
+    if(isset($_GET['notice-disable']) && $_GET['notice-disable'] == true){
+        add_action('admin_init', 'th_shop_mania_set_cookie');
+    }
+
+
+    if(!isset($_COOKIE['th_shop_mania_thms_time'])) {
+       add_action('admin_notices', 'th_shop_mania_display_admin_notice');
+
+   }
+
+   if(isset($_COOKIE['th_shop_mania_thms_time'])) {
+    add_action( 'admin_notices', 'th_shop_mania_unset_cookie');
+}
+
+// add_action('admin_notices', 'th_shop_mania_display_admin_notice');
+
 // Display admin notice
 function th_shop_mania_display_admin_notice() {
+
+     $allowed_pages = array(
+        'dashboard',             // index.php
+        'themes',                // themes.php
+        'plugins',               // plugins.php
+        'users',
+        'appearance_page_th_shop_mania_thunk_started' // appearance_page_thunk_started
+    );
+
+    // Get the current screen
+    $current_screen = get_current_screen();
+
+    // Check if the current screen is one of the allowed pages
+    if (!in_array($current_screen->base, $allowed_pages)) {
+        return; // Exit if not on an allowed page
+    }
+
      global $current_user;
     $user_id   = $current_user->ID;
     $theme_data  = wp_get_theme();
@@ -56,6 +112,7 @@ function th_shop_mania_display_admin_notice() {
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
                 </div>
+                <a href="?notice-disable=1" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>
             </div>';
         } else {
             // Plugin is installed but not activated
@@ -70,6 +127,7 @@ function th_shop_mania_display_admin_notice() {
                 <div class="right">
                     <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
                 </div>
+                <a href="?notice-disable=1" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>
             </div>';
         }
     } else {
@@ -97,6 +155,7 @@ function th_shop_mania_display_admin_notice() {
             <div class="right">
                 <img src="' . esc_url(get_template_directory_uri() . '/lib/notification/banner.png') . '" />
             </div>
+             <a href="?notice-disable=1" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>
         </div>';
     }
 }
@@ -188,8 +247,10 @@ function th_shop_mania_install_and_activate_callback() {
 function th_shop_mania_admin_script($hook_suffix) {
     // Define the pages where the script should be enqueued
     $allowed_pages = array(
+        'index.php',
         'themes.php',
         'plugins.php',
+        'users.php',
         'appearance_page_th_shop_mania_thunk_started'
     );
 
@@ -211,6 +272,7 @@ function th_shop_mania_admin_script($hook_suffix) {
 }
 add_action('admin_enqueue_scripts', 'th_shop_mania_admin_script');
 
-
+// Hook the function to clear the cookie when the theme is switched to
+add_action('after_switch_theme', 'th_shop_mania_clear_notice_cookie');
 
 ?>

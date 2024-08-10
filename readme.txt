@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
 Tested up to: 6.6
-Stable tag: 1.4.6
+Stable tag: 1.4.7
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -21,6 +21,10 @@ Yes our theme supports builder
 
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
+
+= Version 1.4.7 =
+* New: Cookies added in admin banner.
+* Update: Conditions added in admin banner.
 
 = Version 1.4.6 =
 * New: Admin area Plugin activation added.
@@ -235,10 +239,9 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==  
-= Version 1.4.6 =
-* New: Admin area Plugin activation added.
-* New Custmizer plugin activation added.
-* Update: Below footer anchor rel added.
+= Version 1.4.7 =
+* New: Cookies added in admin banner.
+* Update: Conditions added in admin banner.
 
 == Resources ==
  

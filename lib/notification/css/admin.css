@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px!important;
+    padding: 41px 40px 20px 40px!important;
 }
 .th-shop-mania-wrapper-banner > div.left{
     width: 51%;
@@ -33,7 +33,7 @@
     margin-left: 9px;
 }
 .wp-core-ui .th-shop-mania-wrapper-banner .button{
-    margin-right: 21px;
+    margin: 0 21px 21px 0;
 }
 .wp-core-ui .th-shop-mania-wrapper-banner .button:focus{
     outline: 0;
