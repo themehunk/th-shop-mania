@@ -207,6 +207,23 @@ if (!function_exists('th_shop_mania_product_list_categories')) {
     echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">' . $html . '</ul>';
   }
 }
+if (!function_exists('th_shop_mania_product_categories_exist')) {
+  function th_shop_mania_product_categories_exist(){
+    $args = array(
+                    'taxonomy'   => 'product_cat',
+                    'hide_empty' => true, // Set to true to exclude categories without products
+                );
+
+    $categories = get_terms($args);
+    
+    if (!is_wp_error($categories) && !empty($categories)) {
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+}
 if (!function_exists('th_shop_mania_product_list_categories_mobile')) {
   function th_shop_mania_product_list_categories_mobile($args = '')
   {
