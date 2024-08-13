@@ -254,10 +254,15 @@ $th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_
                   <li class="primary active" data-menu="primary">
                      <a href="#mobile-nav-tab-menu"><?php _e('Menu','th-shop-mania');?></a>
                   </li>
-                  
+                  <?php 
+
+                    if (th_shop_mania_product_categories_exist()) { ?>
+
                   <li class="categories" data-menu="categories">
                     <a href="#mobile-nav-tab-category"><?php _e('Categories','th-shop-mania');?></a>
                   </li>
+
+              <?php } ?>
                 
                 </ul>
             </div>
