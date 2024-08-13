@@ -17,6 +17,7 @@ else{
   $th_shop_mania_sidebar = '';
 }
 $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_enable',false);
+$sidebar_meta = get_post_meta(get_option('page_for_posts'), 'th_shop_mania_sidebar_dyn', true);
 ?>
 <div id="content" class="page-content archive  <?php echo esc_attr($th_shop_mania_sidebar); ?>">
             <div class="content-wrap" >
@@ -53,7 +54,7 @@ $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_ena
                        </div>
                         </div> <!-- end primary primary-content-area-->
                         <?php if(th_shop_mania_is_blog()){
-                               if(get_post_meta(get_option( 'page_for_posts' ),$th_shop_mania_sidebar)!='no-sidebar'){
+                                if ($sidebar_meta !== 'no-sidebar' && !empty($sidebar_meta)) {
                                             get_sidebar();
                             }
                         } ?><!-- end sidebar-primary  sidebar-content-area-->
