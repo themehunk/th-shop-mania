@@ -2,6 +2,7 @@
 /******************/
 //Global Option
 /******************/
+
 $wp_customize->add_panel( 'th-shop-mania-panel-color-background', array(
         'priority' => 22,
         'title'    => __( 'Total Color & BG Options', 'th-shop-mania' ),

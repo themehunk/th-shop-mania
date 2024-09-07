@@ -1,3 +1,19 @@
+/* Smooth scrolling in customizer sections */
+#customize-controls .accordion-section-content {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Prevent content jumping */
+#customize-controls .accordion-section.open {
+    overflow-y: auto;
+}
+
+/* Ensure no jumping when opening a section */
+html {
+    overflow-y: scroll;
+}
+
 .customize-pane-parent{
 	background: #FFF;
 }
