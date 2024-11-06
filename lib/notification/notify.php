@@ -195,6 +195,12 @@ add_action('wp_ajax_th_shop_mania_install_and_activate_callback', 'th_shop_mania
 
 // Callback function to install and activate plugin
 function th_shop_mania_install_and_activate_callback() {
+
+    if ( ! current_user_can( 'administrator' ) ) {
+
+        wp_die( - 1, 403 );
+        
+    } 
     // Check nonce for security
     check_ajax_referer('thactivatenonce', 'security');
 
