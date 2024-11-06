@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
 Tested up to: 6.6
-Stable tag: 1.4.9
+Stable tag: 1.5.0
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -21,6 +21,9 @@ Yes our theme supports builder
 
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
+
+= Version 1.5.0 =
+* Fixed: Security issue fixed.
 
 = Version 1.4.9 =
 * Update: Woocommerce single product count-down dependency removed.
