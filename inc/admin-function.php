@@ -247,11 +247,13 @@ function th_shop_mania_add_media_query( $dimension, $custom_css ){
       return $custom_css;
 }
 endif;
+
 if ( !function_exists('th_shop_mania_is_json') ) {
 function th_shop_mania_is_json( $string ){
     return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
 }
 }
+
 if (!function_exists('th_shop_mania_wp_kses_allowed_html')) {
 function th_shop_mania_wp_kses_allowed_html() {
 	return array(

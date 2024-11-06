@@ -67,4 +67,4 @@ function th_shop_mania_customize_install_register($wp_customize) {
         )
     );
 }
-add_action('customize_register', 'th_shop_mania_customize_install_register');
+add_action('customize_register', 'th_shop_mania_customize_install_register' , 1);
