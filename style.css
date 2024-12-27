@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
-Version: 1.5.1
+Version: 1.5.2
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 5.6
@@ -7623,6 +7623,49 @@ h2.wc-block-mini-cart__title{
 }
 .wc-block-cart__submit-container a{
   text-decoration: none!important;
+}
+/* Yith Wishlist   */
+.theme-th-shop-mania.single-product .yith-wcwl-add-button svg {
+  display: none;
+}
+.theme-th-shop-mania.single-product .yith-wcwl-wishlistaddedbrowse .feedback{
+  display: none;
+}
+.thunk-wishlist .thunk-wishlist-inner svg,
+.shop-page-products-layouts .thunk-wishlist a svg,
+.elemento-wishlist .add_to_wishlist svg,
+.elemento-wishlist .feedback svg,
+.elemento-addons-advance-product .add_to_wishlist svg{
+  display: none;
+}
+.thunk-wishlist .thunk-wishlist-inner a,
+.shop-page-products-layouts .thunk-wishlist a,
+.elemento-wishlist .add_to_wishlist,
+.elemento-addons-advance-product .add_to_wishlist{
+  position: relative;
+}
+.thunk-wishlist .thunk-wishlist-inner a:after,
+.shop-page-products-layouts .thunk-wishlist a:after,
+.elemento-wishlist .add_to_wishlist:after,
+.elemento-product-layout-5 .elemento-wishlist .add_to_wishlist:before,
+.ea-simple-product-slider .elemento-wishlist .add_to_wishlist:before,
+.elemento-addons-advance-product .add_to_wishlist:before{
+  content: "\e912";
+  font-family: "th-icon";
+}
+.th-shop-mania-shop-page-layout-default .yith-wcwl-wishlistaddedbrowse{
+  flex-direction: initial;
+}
+.elemento-addons-advance-product a[data-title="Browse wishlist"]{
+  font-size: 0!important;
+}
+.elemento-product-layout-5 .yith-wcwl-wishlistaddedbrowse .feedback:before,
+.ea-simple-product-slider .yith-wcwl-wishlistaddedbrowse .feedback:before,
+.elemento-addons-advance-product .yith-wcwl-wishlistaddedbrowse .feedback:before{
+  color: #ff0052!important;
+}
+.elemento-wishlist .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse .feedback{
+  display: initial;
 }
 @media screen and (max-width: 1024px){
 .main-area{
