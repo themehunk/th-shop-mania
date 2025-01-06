@@ -12,6 +12,7 @@ else{
    $th_shop_mania_sidebar = '';
 }
 $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_enable',false);
+$breadcrumb = get_theme_mod('th_shop_mania_pro_breadcrumb_select', 'default');
 ?>
 <div id="content" class="page-content thunk-page <?php echo esc_attr($th_shop_mania_sidebar); ?>">
           <div class="container">
@@ -23,7 +24,12 @@ $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_ena
                     <div class="page-head">
                       <?php
                       th_shop_mania_get_page_title($id);  
-                      th_shop_mania_breadcrumb_trail();
+                      if ($breadcrumb == 'yoast' && function_exists('yoast_breadcrumb')) {
+                          yoast_breadcrumb( '<p id="breadcrumbs" class="thunk-breadcrumb">','</p>' );
+                      }
+                      else {
+                          th_shop_mania_breadcrumb_trail();
+                      } 
                       ?>
                     </div>
                   <?php } ?>

@@ -3614,6 +3614,8 @@ display:none;
   list-style: none;
   margin: 0;
   text-align: left;
+  display: block;
+  width: 100%;
 }
 .thunk-breadcrumb li{
   display: inline;
@@ -4509,7 +4511,8 @@ top:0em!important;
     font-weight: 500;
 }
 /*compare style*/
-.woocommerce .entry-summary a.th-product-compare-btn.button{
+.woocommerce .entry-summary a.th-product-compare-btn.button,
+.summary .yith-wcwl-add-to-wishlist-button{
     border: 1px solid #9c9c9c;
     border-radius: 5px;
     color: #9c9c9c;
@@ -7644,13 +7647,17 @@ h2.wc-block-mini-cart__title{
 .elemento-addons-advance-product .add_to_wishlist{
   position: relative;
 }
-.thunk-wishlist .thunk-wishlist-inner a:after,
-.shop-page-products-layouts .thunk-wishlist a:after,
+.thunk-wishlist .thunk-wishlist-inner a:before,
+.shop-page-products-layouts .thunk-wishlist a:before,
 .elemento-wishlist .add_to_wishlist:after,
 .elemento-product-layout-5 .elemento-wishlist .add_to_wishlist:before,
 .ea-simple-product-slider .elemento-wishlist .add_to_wishlist:before,
 .elemento-addons-advance-product .add_to_wishlist:before{
   content: "\e912";
+  font-family: "th-icon";
+}
+.thunk-wishlist .thunk-wishlist-inner .yith-wcwl-add-to-wishlist-button--added:before{
+  content: "\e909";
   font-family: "th-icon";
 }
 .th-shop-mania-shop-page-layout-default .yith-wcwl-wishlistaddedbrowse{
@@ -7666,6 +7673,45 @@ h2.wc-block-mini-cart__title{
 }
 .elemento-wishlist .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse .feedback{
   display: initial;
+}
+/* New Wishlist 2025  */
+
+.summary .yith-wcwl-add-to-wishlist-button__label{
+  display: none;
+}
+.summary .yith-wcwl-add-to-wishlist-button:before{
+    content: "\e912";
+    font-family: th-icon;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    font-size: 16px;
+}
+.summary .yith-wcwl-add-to-wishlist-button--added:before{
+    content: "\e909";
+}
+.summary .yith-add-to-wishlist-button-block--single,
+.theme-th-shop-mania .summary .yith-add-to-wishlist-button-block{
+    margin-left: 15px;
+    float: left;
+}
+.theme-th-shop-mania .yith-wcwl-add-to-wishlist-button svg{
+    display: none;
+}
+.theme-th-shop-mania .yith-wcwl-add-to-wishlist-button--added .yith-wcwl-add-to-wishlist-button__label{
+    display: none;
+}
+.theme-th-shop-mania .yith-wcwl-add-to-wishlist-button__label{
+  display: none;
+}
+.theme-th-shop-mania .th-shop-mania-shop-page-layout-default .yith-wcwl-add-to-wishlist-button__label{
+  display: inline-flex;
+}
+.theme-th-shop-mania .yith-add-to-wishlist-button-block{
+  margin: 0;
 }
 @media screen and (max-width: 1024px){
 .main-area{
@@ -7941,7 +7987,8 @@ margin-right:0;
 }
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, 
 .summary .yith-wcwl-wishlistexistsbrowse a, 
-.woocommerce .entry-summary a.th-product-compare-btn.button{
+.woocommerce .entry-summary a.th-product-compare-btn.button,
+.summary .yith-wcwl-add-to-wishlist-button{
   width: 35px;
   height: 35px;
   line-height: 35px;
@@ -8008,7 +8055,9 @@ margin-right:0;
 .responsive-main-header .main-header-col3{
   width: auto;
 }
-.woocommerce .entry-summary .th-product-compare-btn-wrap{
+.woocommerce .entry-summary .th-product-compare-btn-wrap,
+.summary .yith-add-to-wishlist-button-block--single, 
+.theme-th-shop-mania .summary .yith-add-to-wishlist-button-block{
   margin-left: 9px;
 }
 .responsive-main-header .thaps-search-form .thaps-search-autocomplete,
@@ -8678,6 +8727,7 @@ line-height: 36px;
 min-width:70px;
 }
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, .summary .yith-wcwl-wishlistexistsbrowse a,
+.summary .yith-wcwl-add-to-wishlist-button,
 .woocommerce .entry-summary a.th-product-compare-btn.button {
     height: 35px;
     line-height: 35px;
@@ -8685,7 +8735,9 @@ min-width:70px;
     display: block;
 }
 .woocommerce .entry-summary .th-product-compare-btn-wrap,
-.summary .yith-wcwl-add-to-wishlist{
+.summary .yith-wcwl-add-to-wishlist,
+.summary .yith-add-to-wishlist-button-block--single, 
+.theme-th-shop-mania .summary .yith-add-to-wishlist-button-block{
   margin-left: 7px;
 }
 .th-shop-mania-quantity,

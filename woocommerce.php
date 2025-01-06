@@ -11,6 +11,7 @@ if ( ! class_exists( 'WooCommerce' ) ){
 get_header();
 $shoppage_id = '';
 $id = '';
+$breadcrumb = get_theme_mod('th_shop_mania_pro_breadcrumb_select', 'default');
 
     if(class_exists( 'WooCommerce' ) && is_shop() || class_exists( 'WooCommerce' ) && is_product_category()){
             // To make woocommerce archive or category page same as Woocommerce Shop Page
@@ -53,9 +54,13 @@ if (class_exists('WooCommerce') && is_product()) {
                     <div class="page-head">
                       <?php
                       th_shop_mania_get_page_title($id);  
-                       if (function_exists('woocommerce_breadcrumb')) {
+                      if ($breadcrumb == 'yoast' && function_exists('yoast_breadcrumb')) {
+                          yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+                      }
+                      elseif (function_exists('woocommerce_breadcrumb')) {
                           woocommerce_breadcrumb();
-                      } 
+                      }
+                        
                       ?>
                     </div>
             <?php } ?>
