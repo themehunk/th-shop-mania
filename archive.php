@@ -18,6 +18,7 @@ else{
 }
 $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_enable',false);
 $sidebar_meta = get_post_meta(get_option('page_for_posts'), 'th_shop_mania_sidebar_dyn', true);
+$breadcrumb = get_theme_mod('th_shop_mania_pro_breadcrumb_select', 'default');
 ?>
 <div id="content" class="page-content archive  <?php echo esc_attr($th_shop_mania_sidebar); ?>">
             <div class="content-wrap" >
@@ -29,7 +30,15 @@ $sidebar_meta = get_post_meta(get_option('page_for_posts'), 'th_shop_mania_sideb
                    <?php if ($th_shop_mania_page_header_enable != true) { 
                        th_shop_mania_get_page_title();
                       }   
-                      th_shop_mania_breadcrumb_trail();?>
+                       if ($breadcrumb == 'yoast' && function_exists('yoast_breadcrumb')) {
+                          yoast_breadcrumb( '<p id="breadcrumbs" class="thunk-breadcrumb">','</p>' );
+                      }
+                      else {
+                          th_shop_mania_breadcrumb_trail();
+
+                      } 
+
+                      ?>
                     </div>
                             <div class="primary-content-wrap">
                                  <?php

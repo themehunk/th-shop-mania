@@ -10,6 +10,7 @@ $th_shop_mania_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', 
 else{
    $th_shop_mania_sidebar = '' ;
 }
+$breadcrumb = get_theme_mod('th_shop_mania_pro_breadcrumb_select', 'default');
 ?>
 <div id="content" class="page-content thunk-single-post <?php echo esc_attr($th_shop_mania_sidebar); ?>">
             <div class="container">
@@ -17,7 +18,12 @@ else{
         			<div class="main-area">
         				<div id="primary" class="primary-content-area">
                    <div class="page-head">
-                    <?php th_shop_mania_breadcrumb_trail();
+                    <?php  if ($breadcrumb == 'yoast' && function_exists('yoast_breadcrumb')) {
+                          yoast_breadcrumb( '<p id="breadcrumbs" class="thunk-breadcrumb">','</p>' );
+                      }
+                      else {
+                          th_shop_mania_breadcrumb_trail();
+                      } 
                     the_title( '<h1 class="entry-title thunk-post-title">', '</h1>' ); ?>
                     </div>
         					<div class="primary-content-wrap">

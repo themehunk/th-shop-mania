@@ -225,6 +225,8 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
         ));
         $thsm_starter_content = new Th_Shop_Mania_Starter_Content();
         add_theme_support( 'starter-content', $thsm_starter_content->get() );
+
+        add_theme_support( 'yoast-seo-breadcrumbs' );
         
 	}
 endif;
