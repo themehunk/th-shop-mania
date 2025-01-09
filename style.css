@@ -7649,15 +7649,16 @@ h2.wc-block-mini-cart__title{
 }
 .thunk-wishlist .thunk-wishlist-inner a:before,
 .shop-page-products-layouts .thunk-wishlist a:before,
-.elemento-wishlist .add_to_wishlist:after,
+.elemento-wishlist a:before,
 .elemento-product-layout-5 .elemento-wishlist .add_to_wishlist:before,
 .ea-simple-product-slider .elemento-wishlist .add_to_wishlist:before,
 .elemento-addons-advance-product .add_to_wishlist:before{
   content: "\e912";
   font-family: "th-icon";
 }
-.thunk-wishlist .thunk-wishlist-inner .yith-wcwl-add-to-wishlist-button--added:before{
-  content: "\e909";
+.thunk-wishlist .thunk-wishlist-inner .yith-wcwl-add-to-wishlist-button--added:before,
+.theme-th-shop-mania .yith-wcwl-add-to-wishlist-button--added:before{
+  content: "\e909"!important;
   font-family: "th-icon";
 }
 .th-shop-mania-shop-page-layout-default .yith-wcwl-wishlistaddedbrowse{

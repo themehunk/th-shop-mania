@@ -257,10 +257,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==  
-= Version 1.5.1 =
-* Update: Customizer optimsation.
-* Fixed: Border removed on hover.
-* Fixed: Style improved.
+= Version 1.5.2 =
+* New: New wishlist integrated.
 
 == Resources ==
  
