@@ -241,7 +241,7 @@ class th_shop_mania_thMetaDataClass {
  
         foreach ($this->_meta_box['fields'] as $field){
             $old = get_post_meta($post_id, $field['id'], true);
-            $new = sanitize_key($_POST[$field['id']]);
+            $new = isset($_POST[$field['id']]) ? sanitize_key($_POST[$field['id']]) : '';
             if($new && $new != $old){
                 update_post_meta($post_id, $field['id'], $new);
             }elseif('' == $new && $old){

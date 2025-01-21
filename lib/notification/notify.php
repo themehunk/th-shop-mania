@@ -190,6 +190,8 @@ function th_shop_mania_install_custom_plugin($plugin_slug) {
     return "success";
 }
 
+if ( !function_exists('th_shop_mania_install_and_activate_callback') ) {
+
 // AJAX handler for installing and activating plugins
 add_action('wp_ajax_th_shop_mania_install_and_activate_callback', 'th_shop_mania_install_and_activate_callback');
 
@@ -249,6 +251,7 @@ function th_shop_mania_install_and_activate_callback() {
    
 }
 
+}
 
 function th_shop_mania_admin_script($hook_suffix) {
     // Define the pages where the script should be enqueued
