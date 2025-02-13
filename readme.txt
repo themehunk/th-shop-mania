@@ -4,7 +4,7 @@ Tags: wide-blocks, block-patterns, block-styles, editor-style, e-commerce, blog,
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
 Tested up to: 6.7
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -21,6 +21,9 @@ Yes our theme supports builder
 
 = Can i use your theme with latest version of WordPress=
 Yes, this theme is tested with latest version of WordPress, you can use it for your site.
+
+= Version 1.5.4 =
+* Update: Archive page sidbar new condition added.
 
 = Version 1.5.3 =
 * Update: Admin banner ajax issue resolved.
@@ -263,11 +266,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
 * Initial release
 
 == Upgrade Notice ==  
-= Version 1.5.3 =
-* Update: Admin banner ajax issue resolved.
-* Fix: Customizer Issue resolved.
-* Update: Woocommerce/cart/cart.php updated.
-* Fix: meta-box undefined error resolved.
+= Version 1.5.4 =
+* Update: Archive page sidbar new condition added.
 
 == Resources ==
  
