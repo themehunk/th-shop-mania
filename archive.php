@@ -6,21 +6,12 @@
  * @since 1.0.0
  */
 get_header();
-if (isset($post->ID)) {
-if(empty(get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true ))){
-$th_shop_mania_sidebar = 'right';
-}else{
-$th_shop_mania_sidebar = get_post_meta( $post->ID, 'th_shop_mania_sidebar_dyn', true );
-}
-}
-else{
-  $th_shop_mania_sidebar = '';
-}
+
 $th_shop_mania_page_header_enable = get_theme_mod('th_shop_mania_page_header_enable',false);
 $sidebar_meta = get_post_meta(get_option('page_for_posts'), 'th_shop_mania_sidebar_dyn', true);
 $breadcrumb = get_theme_mod('th_shop_mania_pro_breadcrumb_select', 'default');
 ?>
-<div id="content" class="page-content archive  <?php echo esc_attr($th_shop_mania_sidebar); ?>">
+<div id="content" class="page-content archive  <?php echo esc_attr($sidebar_meta); ?>">
             <div class="content-wrap" >
                 <div class="container">
                     <div class="main-area">
