@@ -608,3 +608,22 @@ function th_shop_mania_nav_description( $item_output, $item, $depth, $args ){
 }
 add_filter( 'walker_nav_menu_start_el', 'th_shop_mania_nav_description', 10, 4 );
 }
+
+function th_shop_mania_wrap_woocommerce_ordering() {
+  ?>
+  <div class="th-sort-order-wrapper">
+    <?php woocommerce_result_count(); ?>
+    <div class="right"> 
+      <span class="th-sort-by-label"><?php esc_html_e('Sort by:', 'th-shop-mania'); ?></span>
+      <?php woocommerce_catalog_ordering(); ?>
+    </div>
+  </div>
+  <?php
+}
+// Remove default ordering and re-add it inside our wrapper
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+add_action('woocommerce_before_shop_loop', 'th_shop_mania_wrap_woocommerce_ordering', 18);
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+// Remove Category Word as prefix
+add_filter('get_the_archive_title_prefix','__return_empty_string');
