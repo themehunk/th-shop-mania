@@ -3845,6 +3845,7 @@ section.upsells.products h2,
 .single-product div.product form.cart button.plus:hover,
 .single-product div.product form.cart button.minus:hover{
   background: #eee;
+  color: #111;
 }
 .th-shop-mania-quantity:hover,
 .single-product div.product form.cart .th-shop-mania-quantity:hover input[type="number"]{
@@ -7442,21 +7443,7 @@ h2.wc-block-mini-cart__title{
 #th-shop-mania-mobile-bar{
   display:none;
 }
-#th-shop-mania-mobile-bar{
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    min-width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    box-shadow: 0px 0px 5px rgba(0,0,0,.2);
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.2s;
-    visibility: hidden;
-    display:block;
-    padding: 9px 4px;
-}
+
 #th-shop-mania-mobile-bar.active {
     opacity: 1;
     transition: opacity 0.2s, visibility 0.3s;
@@ -7477,9 +7464,6 @@ h2.wc-block-mini-cart__title{
     -ms-flex: 1 0;
     flex: 1 0;
     text-align: center;
-}
-#th-shop-mania-mobile-bar li a{
-  color: #FFF;
 }
 #th-shop-mania-mobile-bar li a,
 #th-shop-mania-mobile-bar .taiowc-icon .th-icon{
@@ -7713,6 +7697,9 @@ h2.wc-block-mini-cart__title{
 }
 .theme-th-shop-mania .yith-add-to-wishlist-button-block{
   margin: 0;
+}
+.theme-th-shop-mania .woocommerce-review-link{
+  outline: none;
 }
 @media screen and (max-width: 1024px){
 .main-area{
