@@ -48,7 +48,7 @@ if (shortcode_exists('taiowc')) {
 if (!function_exists('th_shop_mania_account')) {
   function th_shop_mania_account()
   { ?>
-    <a class="account" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"><span class="th-icon th-icon-user"></span>
+    <a class="account" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" aria-label="account"><span class="th-icon th-icon-user"></span>
       </a>
 
         <?php  if( shortcode_exists( 'thsmw-popup' ) ){
