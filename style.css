@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
-Version: 1.5.5
+Version: 1.5.6
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 5.6
@@ -647,23 +647,23 @@ background: #ff3377;
   /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 .screen-reader-text:focus {
-  background-color:#006799;
-  border-radius:0;
-  box-shadow: none;
-  clip: auto !important;
-  clip-path: none;
-  color: #fff;
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 500;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 8px 25px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
+    clip: auto !important;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+    clip-path: none;
+    color: #2b2d2f;
+    display: block;
+    font-size: .875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
   /* Above WP toolbar. */
 }
 /* Do not show the outline on the skip link target. */
@@ -3527,15 +3527,28 @@ position:relative;
     float: right;
     margin-right:0px;
 }
+.th-sort-order-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  justify-content: space-between;
+}
+.th-sort-order-wrapper .right{
+    align-items: center;
+    gap: 9px;
+    display: flex;
+}
 #shop-product-wrap select {
 width: 100%;
-padding: 12px;
+padding: 10px;
 color: #666;
-border: 1px solid #ccc;
+border: 1px solid #eee;
 font-size: 16px;
 line-height: 23px;
 line-height: 1.5em;
 cursor: pointer;
+outline: none;
+border-radius: 5px;
 }
 #shop-product-wrap select:hover,
 #shop-product-wrap select:focus{
@@ -3845,6 +3858,7 @@ section.upsells.products h2,
 .single-product div.product form.cart button.plus:hover,
 .single-product div.product form.cart button.minus:hover{
   background: #eee;
+  color: #111;
 }
 .th-shop-mania-quantity:hover,
 .single-product div.product form.cart .th-shop-mania-quantity:hover input[type="number"]{
@@ -5960,7 +5974,7 @@ cursor:pointer;
 margin-bottom: 20px;
 }
  .page-head{
-padding-bottom:15px;
+padding-bottom: 12px;
 display: -webkit-box;
   display: -webkit-flex;
     display: -moz-box;
@@ -5992,7 +6006,7 @@ padding-bottom:0;
   margin-bottom: 10px;
 }
 .thunk-page-top-title + .breadcrumb-trail{
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .single-product .page-head .breadcrumb-trail.breadcrumbs {
 flex: initial;
@@ -7442,21 +7456,7 @@ h2.wc-block-mini-cart__title{
 #th-shop-mania-mobile-bar{
   display:none;
 }
-#th-shop-mania-mobile-bar{
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    min-width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    box-shadow: 0px 0px 5px rgba(0,0,0,.2);
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.2s;
-    visibility: hidden;
-    display:block;
-    padding: 9px 4px;
-}
+
 #th-shop-mania-mobile-bar.active {
     opacity: 1;
     transition: opacity 0.2s, visibility 0.3s;
@@ -7477,9 +7477,6 @@ h2.wc-block-mini-cart__title{
     -ms-flex: 1 0;
     flex: 1 0;
     text-align: center;
-}
-#th-shop-mania-mobile-bar li a{
-  color: #FFF;
 }
 #th-shop-mania-mobile-bar li a,
 #th-shop-mania-mobile-bar .taiowc-icon .th-icon{
@@ -7525,7 +7522,14 @@ h2.wc-block-mini-cart__title{
   margin-top: 30px;
 }
 .page-head h1{
-  margin-bottom: 21px;
+  margin-bottom: 5px;
+}
+.theme-th-shop-mania.woocommerce .woocommerce-breadcrumb{
+  margin-bottom: .5em;
+}
+.theme-th-shop-mania.woocommerce .woocommerce-result-count,
+.theme-th-shop-mania.woocommerce .woocommerce-ordering{
+  margin: 0;
 }
 .resp-mobileh-below-header .thaps-search-box,
 .resp-mobileh-below-header .tapsp-search-box{
@@ -7714,8 +7718,15 @@ h2.wc-block-mini-cart__title{
 .theme-th-shop-mania .yith-add-to-wishlist-button-block{
   margin: 0;
 }
+.theme-th-shop-mania .woocommerce-review-link{
+  outline: none;
+}
 @media screen and (max-width: 1024px){
 .main-area{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.page-head{
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -8300,6 +8311,9 @@ width:50%;
 .primary-content-area{
   order: 1;
 }
+.theme-th-shop-mania .page-content{
+  padding-top: 15px;
+}
 .sidebar-content-area{
   order: 2;
 }
@@ -8604,7 +8618,7 @@ padding:7.5px
 .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
     float: left;
 }
-.woocommerce .woocommerce-result-count{float:none;}
+.woocommerce .woocommerce-result-count{float:left;}
 .thunk-list-grid-switcher a{
   margin-right:0;
   margin-left:8px;
@@ -8911,8 +8925,8 @@ font-size:12px;
 /* Checkout page */
 .page-head h1{
   width: initial;
-  font-size: 26px;
-  line-height: 33px;
+  font-size: 18px;
+  line-height: 25px;
   margin-bottom: 9px;
 }
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
@@ -9021,6 +9035,10 @@ font-size:12px;
 }
 .woocommerce span.onsale, .woocommerce ul.products li.product .onsale{
   padding: 2px 4px;
+}
+.woocommerce #shop-product-wrap .woocommerce-ordering{
+  max-width: 151px;
+  width: initial;
 }
 }
 @media screen and (max-width:550px){

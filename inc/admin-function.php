@@ -46,7 +46,7 @@ add_filter( 'wp_page_menu', 'th_shop_mania_add_classes_to_page_menu' );
               'container'      => false, 
               'link_before'    =>'<span class="th-shop-mania-menu-link">',
               'link_after'     => '</span>',
-              'items_wrap'     => '<ul id="th-shop-mania-menu" class="th-shop-mania-menu" data-menu-style='.esc_attr(th_shop_mania_header_menu_style()).'>%3$s</ul>',
+              'items_wrap'     => '<ul id="th-shop-mania-menu" role="menu" class="th-shop-mania-menu" data-menu-style='.esc_attr(th_shop_mania_header_menu_style()).'>%3$s</ul>',
              ));
          }
 function th_shop_mania_add_classes_to_page_menu_default( $ulclass ){
@@ -267,5 +267,17 @@ function th_shop_mania_wp_kses_allowed_html() {
        )
 
 	);
+}
+}
+if (!function_exists('th_shop_mania_get_image_alt_text')) {
+function th_shop_mania_get_image_alt_text($image_url) {
+    $attachment_id = attachment_url_to_postid($image_url); // Get Attachment ID
+    
+    if ($attachment_id) {
+        $alt_text = get_post_meta($attachment_id, '_wp_attachment_image_alt', true); // Get ALT Text
+        return $alt_text ? $alt_text : 'No ALT text found';
+    }
+    
+    return 'Image not found';
 }
 }

@@ -42,15 +42,7 @@ if (class_exists('WooCommerce') && is_product()) {
 <div id="content" class="page-content <?php echo esc_attr($th_shop_mania_sidebar); ?>">
         	<div class="container">
           <div class="content-wrap" >
-        			<div class="main-area">
-                 <?php 
-                if($th_shop_mania_sidebar !== 'no-sidebar' ):
-                get_sidebar();
-                endif;
-                 ?><!-- end sidebar-primary  sidebar-content-area-->
-                 <div id="primary" class="primary-content-area">
-                  <div class="primary-content-wrap">
-            <?php if ($th_shop_mania_page_header_enable != true) { ?>
+          <?php if ($th_shop_mania_page_header_enable != true) { ?>
                     <div class="page-head">
                       <?php
                       th_shop_mania_get_page_title($id);  
@@ -64,6 +56,15 @@ if (class_exists('WooCommerce') && is_product()) {
                       ?>
                     </div>
             <?php } ?>
+        			<div class="main-area">
+                 <?php 
+                if($th_shop_mania_sidebar !== 'no-sidebar' ):
+                get_sidebar();
+                endif;
+                 ?><!-- end sidebar-primary  sidebar-content-area-->
+                 <div id="primary" class="primary-content-area">
+                  <div class="primary-content-wrap">
+        
                     <?php woocommerce_content();?>  
                            </div> <!-- end primary-content-wrap-->
                 </div> <!-- end primary primary-content-area-->
