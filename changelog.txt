@@ -1,0 +1,252 @@
+27-03-2025  = Version 1.5.7 =
+* New: Changelog.txt added.
+* Update Readme.txt updated.
+
+= Version 1.5.6 =
+* Update: Seo optimisation of images alt text , links.
+
+= Version 1.5.5 =
+* Update: Cart.php updated.
+
+= Version 1.5.4 =
+* Update: Archive page sidbar new condition added.
+
+= Version 1.5.3 =
+* Update: Admin banner ajax issue resolved.
+* Fix: Customizer Issue resolved.
+* Update: Woocommerce/cart/cart.php updated.
+* Fix: meta-box undefined error resolved.
+
+= Version 1.5.2 =
+* New: New wishlist integrated.
+
+= Version 1.5.1 =
+* Update: Customizer optimsation.
+* Fixed: Border removed on hover.
+* Fixed: Style improved.
+
+= Version 1.5.0 =
+* Fixed: Security issue fixed.
+
+= Version 1.4.9 =
+* Update: Woocommerce single product count-down dependency removed.
+
+= Version 1.4.8 =
+* Update: SIdebar is falling down on acrchive page issue resolved.
+* Update: Remove Category option in responsive views.
+
+= Version 1.4.7 =
+* New: Cookies added in admin banner.
+* Update: Conditions added in admin banner.
+
+= Version 1.4.6 =
+* New: Admin area Plugin activation added.
+* New Custmizer plugin activation added.
+* Update: Below footer anchor rel added.
+
+= Version 1.4.5 =
+* Update: .woocommerce-demo-store .th-shop-mania-site margin css removed.
+* Update: New theme.json version 3 added.
+* Update: Style improved.
+* Update: Block Patterns removed.
+
+= Version 1.4.4 =
+* Update: Theme tested with WordPress 6.6.
+
+= Version 1.4.3 =
+* Fixed: Shop loop Variation issue fixed.
+
+= Version 1.4.2 =
+* New: Starter Content Added.
+
+= Version 1.4.1 =
+* Update: Prefix added in th-icon style.
+
+= Version 1.4.0 =
+* Update: Style update.
+* Update: Connect premium plugin.
+
+= Version 1.3.9 =
+* Update: Style update.
+* Update: X share issue fixed.
+* Update: Shop Mania Pro install feature added.
+* Update: Move to top icon changed.
+* New: New icon added in th-icon.
+
+
+= Version 1.3.8 =
+* Update: Style updated.
+* Update: Advance Slider Elementor addon Improve;
+
+= Version 1.3.7 =
+* Update: Remove quantity button when only 1 product remaining in stock;
+* Update: Catlog Thumbnail Image size added;
+
+= Version 1.3.6 =
+* Update: No Shortcode issue resolved.
+
+= Version 1.3.5 =
+* Update:Warning: Attempt to read property "ID" on null resolved.
+
+= Version 1.3.4 =
+* Update: Menu close transaltion issue resolved.
+* Update: Menu with brizy plugin issue resolved.
+
+= Version 1.3.3 =
+* Update: TH Woo Cart Pro integrated.
+
+= Version 1.3.2 =
+* Update: Multiple h1 tag issue reolved.
+
+= Version 1.3.1 =
+* Update: Style Modification.
+
+= Version 1.3.0 =
+* Update: Header Style Issue Resolved.
+* Update: Ultimate Product slider navigation position issue resolved.
+
+
+= Version 1.2.9 =
+* New: Extra product options For WooCommerce style compatibility added.
+
+
+= Version 1.2.8 =
+* Background color Changed in JSON.
+* WooCommerce plugin added in recommended.
+* Tickera Plugin removed from recommended.
+
+= Version 1.2.7 =
+* Theme JSON file updated with fontSize.
+* Blank Template Added.
+* Tags Added.
+* Style modification.
+* Style modification.
+
+= Version 1.2.6 =
+* Taxonomy added in get_terms.
+* screenshot changed.
+
+= Version 1.2.5 =
+* Block Patterns added.
+* Tickera Plugin Integrated.
+
+= Version 1.2.4 =
+* Pattern issues resolved.
+
+= Version 1.2.3 =
+* Pattern Added.
+
+= Version 1.2.2 =
+* WooCommerce > Cart.php modification. 
+
+= Version 1.2.1 =
+* Version Update.
+
+= Version 1.2 =
+* Update - Footer Text modified.
+* Update - Version Updated.
+* Update - Recoomended plugin modification.
+* Update - Gallery Slider Layout issue resolved.
+* Update - Shop Page Load More Issue resolved.
+* Update - Pro features modifications in Th Shop Mania Options.
+* Update - Pro Compatibility issue resolved.
+* Update - Cart Page Style.
+* Update - Related , Upsell Product issue in lite theme.
+
+= Version 1.1.8 =
+* Update - Theme checked and completed.
+* Update - Below footer settings removed.
+
+= Version 1.1.7 =
+* Update - Mobile Sticky Header Style Improved.
+* Update - Wishlist Text issue resolved.
+* Update - Popup Login 1nd login issue resolved.
+* Update - Single Page Button center aliggn issue resolved.
+* Update - Coupon Style issue resolved in responsive.
+* Update - Load More text not changing issue resolved.
+* Update - Search Issue in reponsive not working resolved.
+* New	 - Mania Companion plugin working tested with theme. 
+* Update - Keyboard Navigation completed.
+
+= Version 1.1.6 =
+* Update - Standard Checkout page issue resolved.
+* Update - Style issues resolved.
+* New - Popup Login 2nd layout integrated.
+* New - Blog Excerpt work.
+* Update - Blog Layout Modification.
+* Update - Blog Single style Work.
+* New - 404 Page layout Added.
+* Update - 404 Page Modification.
+* Update - Logo Max-width added in responsive.
+* Update - issues resolved.
+
+= Version 1.1.5 =
+* Update - TH Search Suggestion issue resolved.
+* Update - Iframe CSS Removed.
+* Update - Z-Index Removed from header.
+
+= Version 1.1.4 =
+* Version Updated.
+* Update - Product Image in block style added.
+* New - TH Product Compare pro plugin integrated.
+* Update - TH Advance Search z-index increased.
+* Update - TH Search Pro Integrated.
+* Update - Admin Bar style.
+* Update - Search Issue resolved.
+
+= Version 1.1.3 =
+* New - Slider in single product page added.
+* New - Option for button size in single product added.
+* New - Loader Time is set 10second for default.
+* New - Max Mega Menu Plugin Compatibility Added.
+* New - WPML Plugin Compatibility Added.
+* Update - Style issues resolved.
+* Update - Plugin Ads removed from admin area.
+* Update - Single product page by default no-sidebar issue resolved.
+* New - Two Column Single Page Layot Added.
+* Resolved - Warning Attempt to read property "ID" on Header & Footer.
+* New - WooCommerce new block style.
+* Padding option added.
+* Update - WooCommerce new block style improved.
+
+= Version 1.1.2 =
+* Theme optimisation work and icons changed.
+* Comments removed from specific files.
+* New - Product Gallery slider added.
+
+
+= Version 1.1.1 =
+* Issues resolved.
+
+= Version 1.1.0 =
+* Auto Update code remove.
+
+= Version 1.0.8 =
+* Issues resolved.
+
+= Version 1.0.7 =
+* Style Issues resolved.
+
+= Version 1.0.6 =
+* Style Changes.
+
+= Version 1.0.5 =
+* Icon sissue in header resolved.
+
+= Version 1.0.4 =
+* Theme Update checker feature added.
+* Header Icon style.
+* Mobile Menu issue rsolved.
+
+= Version 1.0.3 =
+* Latest update
+
+= Version 1.0.2 =
+* Active theme api added.
+
+= Version 1.0.1 =
+* Import Demo text changed.	
+* White Label Link removed.
+
+= Version 1.0.0 =
+* Initial release
