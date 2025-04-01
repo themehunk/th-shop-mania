@@ -67,7 +67,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
 					<div class="main-header-col3">
            <div class="thunk-icon-market">
             <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
-              <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>" aria-label="wishlist">
+              <a class="whishlist" aria-label="Wishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>">
        <span class="th-icon th-icon-heartline"></span></a> 
      <?php } ?>
 
@@ -100,7 +100,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
            <div class="main-header-col3">
             <div class="thunk-icon-market">
                 <div class="menu-toggle">
-                    <button type="button" class="menu-btn" id="menu-btn" aria-label="menu">
+                    <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu">
                         <div class="btn">
                            <span class="th-icon th-icon-TextEditor-Icons-01"></span>
                        </div>
@@ -108,7 +108,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
                 </div>
                 <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
                 <div>
-                  <a class="whishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>">
+                  <a class="whishlist" aria-label="Wishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>">
                   <span class="th-icon th-icon-heartline"></span></a>
                 </div>
               <?php } ?>
@@ -162,7 +162,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
               <nav>
         <!-- Menu Toggle btn-->
         <div class="menu-toggle">
-                <button type="button" class="menu-btn" id="menu-btn" aria-label="menu">
+                <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu">
                         <div class="btn">
                            <span class="th-icon th-icon-TextEditor-Icons-01"></span>
                        </div>

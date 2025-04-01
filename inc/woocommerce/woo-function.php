@@ -614,8 +614,8 @@ function th_shop_mania_wrap_woocommerce_ordering() {
   <div class="th-sort-order-wrapper">
     <?php woocommerce_result_count(); ?>
     <div class="right"> 
+    <?php woocommerce_catalog_ordering(); ?>
       <span class="th-sort-by-label"><?php esc_html_e('Sort by:', 'th-shop-mania'); ?></span>
-      <?php woocommerce_catalog_ordering(); ?>
     </div>
   </div>
   <?php
