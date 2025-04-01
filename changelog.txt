@@ -1,3 +1,6 @@
+01-01-2025  = Version 1.5.8 =
+* Update: Seo aria-label updated.
+
 27-03-2025  = Version 1.5.7 =
 * New: Changelog.txt added.
 * Update Readme.txt updated.
