@@ -53,7 +53,8 @@ class Th_Shop_Mania_theme_option
 
 static public function white_level_menu_callback() {
 
-      $current_slug = isset( $_GET['action'] ) ? esc_attr( $_GET['action'] ) : self::$current_slug;
+      // $current_slug = isset( $_GET['action'] ) ? esc_attr( $_GET['action'] ) : self::$current_slug;
+      $current_slug = isset($_GET['action']) ? sanitize_key($_GET['action']) : self::$current_slug;
 
       $active_tab   = str_replace( '_', '-', $current_slug );
       $current_slug = str_replace( '-', '_', $current_slug );
@@ -234,7 +235,9 @@ static public function white_level_menu_callback() {
 
     check_ajax_referer( 'ajaxnonce', 'nonce' );
 
-    if (!current_user_can('install_plugins') || !isset($_POST['init']) || !$_POST['init']) {
+    $plugin_init = isset($_POST['init']) ? sanitize_text_field($_POST['init']) : '';
+
+    if (!current_user_can('install_plugins') || empty($plugin_init)) {
       wp_send_json_error(
         array(
           'success' => false,
@@ -243,7 +246,7 @@ static public function white_level_menu_callback() {
       );
     }
 
-    $plugin_init = (isset($_POST['init'])) ? esc_attr($_POST['init']) : '';
+    // $plugin_init = (isset($_POST['init'])) ? esc_attr($_POST['init']) : '';
 
     $activate = activate_plugin($plugin_init);
 
@@ -290,7 +293,7 @@ function plugin_install_button($plugin){
              $button .='<button data-activated="Activated" data-msg="Activating" data-init="'.esc_attr($plugin['plugin_init']).'" data-slug="'.esc_attr( $plugin['slug'] ).'" class="button '.esc_attr( $plugin['button_class'] ).'">'.esc_html($plugin['button_txt']).'</button>';
             $button .= '</div></div>';
 
-            echo $button;
+            echo wp_kses_post($button);
             
 }
 

@@ -24,7 +24,7 @@ global $post, $product, $woocommerce;
 		echo
 			sprintf(
 				'<li class="woocommerce-product-gallery__image">%s</li>',
-				$image
+				wp_kses_post($image)
 			);
 
 		if ( $attachment_ids ) {
@@ -48,7 +48,12 @@ global $post, $product, $woocommerce;
 			}
 		}
 	} else {
-		echo sprintf( '<li><img src="%s" alt="%s" /></li>', wc_placeholder_img_src(), __( 'Placeholder', 'th-shop-mania' ) );
+		echo sprintf(
+    		'<li><img src="%s" alt="%s" /></li>',
+   			 	esc_url( wc_placeholder_img_src() ), // Escape the image URL
+    			esc_attr__( 'Placeholder', 'th-shop-mania' ) // Escape the alt attribute
+			);
+
 	}
 	?>
 	</div>

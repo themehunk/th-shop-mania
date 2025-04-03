@@ -79,7 +79,8 @@ if ( ! function_exists( 'th_shop_mania_check_is_ie' ) ) :
 
 		$is_ie = false;
 		if (isset($_SERVER['HTTP_USER_AGENT'])) {
-		$ua = htmlentities( $_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8' );
+		// $ua = htmlentities( $_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8' );
+		$ua = sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] );
 		}
 		else{
 		$ua = '';
@@ -157,7 +158,7 @@ add_action( 'wp_footer', 'th_shop_mania_mobile_menu_wrap' );
 function th_shop_mania_get_page_title($id=''){ ?>
 			<?php if(is_search()){ ?> 
             <h2 class="thunk-page-top-title entry-title">
-              	<?php printf( __( 'Search Results for: %s', 'th-shop-mania' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
+              	<?php printf( esc_html__( 'Search Results for: %s', 'th-shop-mania' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
 
 			<?php }elseif (th_shop_mania_is_blog() && !is_single() && !is_archive()){
 				if( !(is_front_page()) ){
@@ -167,7 +168,7 @@ function th_shop_mania_get_page_title($id=''){ ?>
 			echo'<h1 class="thunk-page-top-title entry-title">'.esc_html__('Blog','th-shop-mania').'</h1>'; ?>
 			<?php }	 
 			 }elseif(is_archive() && (class_exists( 'WooCommerce' ) && !is_shop())){
-                   echo the_archive_title('<h1 class="thunk-page-top-title entry-title">','</h1>'); ?>
+                   the_archive_title('<h1 class="thunk-page-top-title entry-title">','</h1>'); ?>
 			<?php }elseif(class_exists( 'WooCommerce' ) && is_shop()) { ?>
 				<h1 class="thunk-page-top-title entry-title"><?php esc_html(woocommerce_page_title()); ?></h1> 
 			<?php }elseif(is_page()) { 

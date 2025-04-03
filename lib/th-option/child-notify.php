@@ -61,8 +61,8 @@ class ThemeHunk_Child_Notify{
 		?>
 
           <div class="notice notice-success is-dismissible child-theme-notice" style="display:<?php echo esc_attr($display); ?>;">
-        <p><?php _e( "Child theme inherit the style and functionality of parent theme, you can easily update the parent theme without losing its Customization. That's why we highly recommend you to use Child theme to make your site update proof.", 'th-shop-mania' ); ?></p>
-        <a href="<?php echo esc_url('https://themehunk.com/child-theme/#th-shop-mania-child'); ?>" class="button" target="_blank"><?php _e('Get Child Theme Now','th-shop-mania') ?></a>
+        <p><?php esc_html_e( "Child theme inherit the style and functionality of parent theme, you can easily update the parent theme without losing its Customization. That's why we highly recommend you to use Child theme to make your site update proof.", 'th-shop-mania' ); ?></p>
+        <a href="<?php echo esc_url('https://themehunk.com/child-theme/#th-shop-mania-child'); ?>" class="button" target="_blank"><?php esc_html_e('Get Child Theme Now','th-shop-mania') ?></a>
 
         <a href="?notice-disable=1"  class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>
     </div>

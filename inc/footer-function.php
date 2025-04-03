@@ -63,16 +63,16 @@ function th_shop_mania_below_footer_markup_lite(){ ?>
 <div class="below-footer lite">
             <p class="footer-copyright">&copy;
               <?php
-              echo date_i18n(
+              esc_html_e(date_i18n(
                 /* translators: Copyright date format, see https://www.php.net/date */
                 _x( 'Y', 'copyright date format', 'th-shop-mania' )
-              ); ?>
+              )); ?>
               &nbsp;
               <?php
               bloginfo( 'name' );
               ?>
               
-              <span><?php _e( 'Made with', 'th-shop-mania' ); ?></span>
+              <span><?php esc_html_e( 'Made with', 'th-shop-mania' ); ?></span>
               <a href="<?php echo esc_url('https://themehunk.com/'); ?>" target="_blank" rel="nofollow noopener">
                 <?php esc_html_e( 'ThemeHunk WordPress Theme', 'th-shop-mania' ); ?>
               </a>

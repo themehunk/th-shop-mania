@@ -230,7 +230,7 @@ class th_shop_mania_Breadcrumb_Trail {
 		if ( false === $this->args['echo'] )
 			return $breadcrumb;
 
-		echo $breadcrumb;
+		echo wp_kses_post($breadcrumb);
 	}
 
 	/* ====== Protected Methods ====== */

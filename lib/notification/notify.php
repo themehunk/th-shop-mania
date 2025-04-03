@@ -105,7 +105,7 @@ function th_shop_mania_display_admin_notice() {
             // Plugin is activated
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left"><h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
                     <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Hunk Companion</strong></p>
                     <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Ready To Import website Templates ', 'th-shop-mania') . '</button>
                 </div>
@@ -119,7 +119,7 @@ function th_shop_mania_display_admin_notice() {
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left">
                     <h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
                     <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>TH Shop Mania Pro</strong></p>
                     <button class="button button-primary" id="activate-th-shop-mania-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span>' . esc_html__('Activate', 'th-shop-mania') . '</span><span class="dashicons dashicons-update loader"></span></button>
                      <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '" disabled>' . esc_html__('Go to Ready To Import website Templates ', 'th-shop-mania') . '</button>
@@ -138,7 +138,7 @@ function th_shop_mania_display_admin_notice() {
         echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
             <div class="left">
                   <h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', __( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
                     <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Hunk Companion</strong></p>';
 
         if ($plugin_companion_exists) {
@@ -177,9 +177,20 @@ function th_shop_mania_install_custom_plugin($plugin_slug) {
         return $plugin_info->get_error_message();
     }
 
-    $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
-        'api' => $plugin_info,
-    )));
+    // $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
+    //     'api' => $plugin_info,
+    // )));
+
+    // Validate plugin info before proceeding
+    if (!empty($plugin_info->download_link) && filter_var($plugin_info->download_link, FILTER_VALIDATE_URL)) {
+        $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
+            'api' => $plugin_info,
+        )));
+        $upgrader->install(esc_url_raw($plugin_info->download_link));
+    } else {
+        wp_die(__('Invalid plugin source.', 'th-shop-mania'));
+    }
+
 
     $result = $upgrader->install($plugin_info->download_link);
 

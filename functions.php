@@ -201,7 +201,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ), 
             'yith-woocommerce-wishlist' => array(
                  'name' => esc_html__( 'YITH WooCommerce Wishlist', 'th-shop-mania' ),
-                  'img' => 'icon-128x128.jpg',
+                  'img' => 'icon-128x128.gif',
                   'pro_link' => '',
                  'active_filename' => 'yith-woocommerce-wishlist/init.php',
              )
