@@ -145,7 +145,10 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 					$image_size = apply_filters( 'single_product_archive_thumbnail_size', 'shop_catalog' );
 
-					echo apply_filters( 'open_woocommerce_th_shop_mania_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-hover' ) ) );
+        			$image_html = apply_filters( 'open_woocommerce_th_shop_mania_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-hover' ) ) );
+
+        			echo wp_kses_post( $image_html );
+					// echo  $image_html ;
 				}
 			}
 			if ('slide' === $hover_style ) {
@@ -156,7 +159,10 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 					$image_size = apply_filters( 'single_product_archive_thumbnail_size', 'shop_catalog' );
 
-					echo apply_filters( 'th_shop_mania_woocommerce_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-slide' ) ) );
+					$image_html = apply_filters( 'th_shop_mania_woocommerce_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'show-on-slide' ) ) );
+				
+					echo wp_kses_post( $image_html );
+					// echo  $image_html ;
 				}
 			}
 		}	
@@ -203,18 +209,22 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			}
 			if ( 'swap' === $hover_style && !is_front_page() && (!is_admin()) && !th_shop_mania_is_blog()){
             global $product;
+			if ( $product || is_a( $product, 'WC_Product' ) ) {
 			$attachment_ids = $product->get_gallery_image_ids();
 			if(count($attachment_ids) > '0'){
                 $classes[] ='th-shop-mania-swap-item-hover';
 			  }
+			}
 			
 		    }
 		     if('slide' === $hover_style && !is_front_page() &&  (!is_admin()) && !th_shop_mania_is_blog()){
             global $product;
-			$attachment_ids = $product->get_gallery_image_ids();
-			if(count($attachment_ids) > '0'){
-                $classes[] ='th-shop-mania-slide-item-hover';
-			  }	
+			if ( $product || is_a( $product, 'WC_Product' ) ) {
+				$attachment_ids = $product->get_gallery_image_ids();
+				if(count($attachment_ids) > '0'){
+					$classes[] ='th-shop-mania-slide-item-hover';
+				}	
+			}
 		   }	
 				if (function_exists('th_shop_mania_pro_load_plugin')) {
 				$single_product_style = get_theme_mod('th_shop_mania_single_product_alignment', 'left');
@@ -358,7 +368,9 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			ob_start();
 			// load content template.
 			require_once TH_SHOP_MANIA_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product.php';
-			echo ob_get_clean();
+			$content = ob_get_clean();
+
+    		echo wp_kses_post( $content ); // Proper escaping applied
 			die();
 		}
 		/**
@@ -614,9 +626,10 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 					<?php if ( 'click' == $infinite_event ){ ?>
 						
 							<div class="th-shop-mania-load-more">
-								<button id="load-more-product" class="load-more-product-button thunk-button opn-shop-load-more active" >
-									<?php echo apply_filters( 'open_load_more_text', esc_html( $load_more_text ) ); ?>
+								<button id="load-more-product" class="load-more-product-button thunk-button opn-shop-load-more active">
+									<?php echo esc_html( apply_filters( 'open_load_more_text', $load_more_text ) ); ?>
 								</button>
+
 							</div>
 							
 					<?php } ?>
@@ -656,7 +669,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		}
 		//Share Icon on Product Single Page
 		function th_shop_mania_product_share_button_func() {
-		echo'<div class="social-share"><h3>'.__('Share','th-shop-mania').'</h3><ul>'?>
+		echo'<div class="social-share"><h3>'.esc_html__('Share','th-shop-mania').'</h3><ul>'?>
 		 <li class="fb-icon"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink()); ?>"></a></li>
 		 <li class="twt-icon"><a target="_blank" href="https://twitter.com/home?status=<?php the_title(); ?>-<?php esc_url(the_permalink()); ?>"></a></li>
 		 <li class="pinterest-icon"><a data-pin-do="skipLink" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php esc_url(the_permalink()); ?>&amp;media=&amp;description=<?php the_title(); ?>"></a></li>

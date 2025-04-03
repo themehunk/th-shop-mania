@@ -9,27 +9,27 @@
 
 <!--- tab second -->
 <div class="theme_link">
-    <h3><?php _e('Customize Your Website','th-shop-mania'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
-    <p><?php _e('Th Shop Mania theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel','th-shop-mania'); ?></p>
+    <h3><?php esc_html_e('Customize Your Website','th-shop-mania'); ?><!-- <php echo $theme_config['plugin_title']; ?> --></h3>
+    <p><?php esc_html_e('Th Shop Mania theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel','th-shop-mania'); ?></p>
     <p>
-    <a href="<?php echo admin_url('customize.php'); ?>" class="button button-primary"><?php _e("Start Customize","th-shop-mania"); ?></a>
+    <a href="<?php echo esc_url(admin_url('customize.php')); ?>" class="button button-primary"><?php esc_html_e("Start Customize","th-shop-mania"); ?></a>
     </p>
 </div>
 <!--- tab third -->
 
   <div class="theme_link custommizer_link">
-    <h3><?php _e("Customizer Links","th-shop-mania"); ?></h3>
+    <h3><?php esc_html_e("Customizer Links","th-shop-mania"); ?></h3>
     <div class="card-content">
         <div class="columns">
                 <div class="col">
-                    <a href="<?php echo admin_url('customize.php?autofocus[control]=custom_logo'); ?>" class="components-button is-link"><?php _e("Upload Logo","th-shop-mania"); ?></a>
-                    <hr><a href="<?php echo admin_url('customize.php?autofocus[section]=th-shop-mania-gloabal-color'); ?>" class="components-button is-link"><?php _e("Global Colors","th-shop-mania"); ?></a><hr>
-                    <a href="<?php echo admin_url('customize.php?autofocus[panel]=woocommerce'); ?>" class="components-button is-link"><?php _e("Woocommerce","th-shop-mania"); ?></a><hr>
-                    <a href="<?php echo admin_url('customize.php?autofocus[section]=header_image'); ?>" class="components-button is-link"><?php _e("Header Image","th-shop-mania"); ?></a><hr>
-                    <a href="<?php echo admin_url('customize.php?autofocus[panel]=widgets'); ?>" class="components-button is-link"><?php _e("Widgets","th-shop-mania"); ?></a><hr>
+                    <a href="<?php echo esc_url(admin_url('customize.php?autofocus[control]=custom_logo')); ?>" class="components-button is-link"><?php esc_html_e("Upload Logo","th-shop-mania"); ?></a>
+                    <hr><a href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=th-shop-mania-gloabal-color')); ?>" class="components-button is-link"><?php esc_html_e("Global Colors","th-shop-mania"); ?></a><hr>
+                    <a href="<?php echo esc_url(admin_url('customize.php?autofocus[panel]=woocommerce')); ?>" class="components-button is-link"><?php esc_html_e("Woocommerce","th-shop-mania"); ?></a><hr>
+                    <a href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=header_image')); ?>" class="components-button is-link"><?php esc_html_e("Header Image","th-shop-mania"); ?></a><hr>
+                    <a href="<?php echo esc_url(admin_url('customize.php?autofocus[panel]=widgets')); ?>" class="components-button is-link"><?php esc_html_e("Widgets","th-shop-mania"); ?></a><hr>
 
 
-                 <a href="<?php echo admin_url('customize.php?autofocus[section]=th-shop-mania-bottom-footer'); ?>" class="components-button is-link"><?php _e("Footer Section","th-shop-mania"); ?></a><hr>
+                 <a href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=th-shop-mania-bottom-footer')); ?>" class="components-button is-link"><?php esc_html_e("Footer Section","th-shop-mania"); ?></a><hr>
             </div>
 
         </div>
@@ -39,7 +39,7 @@
 <!--- tab fourth -->
 
 <div class="theme_link more">
-    <h3><?php _e('More Options available with Th Shop Mania Pro','th-shop-mania'); ?></h3>
+    <h3><?php esc_html_e('More Options available with Th Shop Mania Pro','th-shop-mania'); ?></h3>
     <div class="th-more-options-wrapper">
        <ul>
         <li class="option-list"><a href="https://themehunk.com/docs/th-shop-mania/#blog-layout" target="_blank"><?php esc_html_e('Blog Layouts','th-shop-mania'); ?></a> <a href="https://themehunk.com/docs/th-shop-mania/#blog-layout" class="learn-more" target="_blank"><?php esc_html_e('Learn More','th-shop-mania'); ?></a></li>

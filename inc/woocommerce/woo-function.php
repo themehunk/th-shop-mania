@@ -114,8 +114,16 @@ function th_shop_mania_prev_next_product()
   $previous = next_post_link('%link', '&larr;', false, ' ', 'product_cat');
   $next = previous_post_link('%link', '&rarr;', false, ' ', 'product_cat');
 
-  echo $previous;
-  echo $next;
+  // echo $previous;
+  // echo $next;
+
+          if ($previous) {
+            echo wp_kses_post( $previous ); // Escape and allow safe HTML
+        }
+
+        if ($next) {
+            echo wp_kses_post( $next ); // Escape and allow safe HTML
+        }
 
   echo '</div>';
 }
@@ -204,7 +212,7 @@ if (!function_exists('th_shop_mania_product_list_categories')) {
       'use_desc_for_title'  => 0,
     );
     $html = wp_list_categories($defaults);
-    echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">' . $html . '</ul>';
+    echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">' . wp_kses_post($html) . '</ul>';
   }
 }
 if (!function_exists('th_shop_mania_product_categories_exist')) {
@@ -396,7 +404,7 @@ if (!function_exists('th_shop_mania_add_to_cart')) {
   function th_shop_mania_add_to_cart($layout = '')
   {
     if ($layout == 'tooltip') {
-      echo '<div class="th-add-to-cart"><div th-tooltip="' . __('Add To Cart', 'th-shop-mania') . '">';
+      echo '<div class="th-add-to-cart"><div th-tooltip="' . esc_attr__('Add To Cart', 'th-shop-mania') . '">';
       echo woocommerce_template_loop_add_to_cart();
       echo '</div></div>';
     } else {

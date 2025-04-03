@@ -168,8 +168,11 @@ class th_shop_mania_thMetaDataClass {
     function show(){
         global $post;
         // Use nonce for verification
-        echo '<input type="hidden" name="th_dynamic_custom_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
- 
+        
+        // echo '<input type="hidden" name="th_dynamic_custom_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+        
+        echo '<input type="hidden" name="th_dynamic_custom_box_nonce" value="' . esc_attr( wp_create_nonce( basename( __FILE__ ) ) ) . '" />'; 
+
         echo '<div class="open-post-meta-box">';
  
         foreach ($this->_meta_box['fields'] as $field) {
@@ -181,11 +184,11 @@ class th_shop_mania_thMetaDataClass {
                     '<p class="post-attributes-setting">';
             switch ($field['type']) {
                 case 'text':
-                    echo '<input type="text" name="', esc_attr($field['id']), '" id="', esc_attr($field['id']), '" value="', $meta ? $meta : esc_attr($field['std']), '" size="30" style="width:97%" />',
+                    echo '<input type="text" name="', esc_attr($field['id']), '" id="', esc_attr($field['id']), '" value="', $meta ? esc_attr($meta) : esc_attr($field['std']), '" size="30" style="width:97%" />',
                         '<br />', esc_html($field['desc']);
                     break;
                 case 'textarea':
-                    echo '<textarea name="', esc_attr($field['id']), '" id="', esc_attr($field['id']), '" cols="60" rows="4" style="width:97%">', $meta ? $meta : esc_html($field['std']), '</textarea>',
+                    echo '<textarea name="', esc_attr($field['id']), '" id="', esc_attr($field['id']), '" cols="60" rows="4" style="width:97%">', $meta ? esc_attr($meta) : esc_html($field['std']), '</textarea>',
                         '<br />', esc_html($field['desc']);
                     break;
                 case 'select':
@@ -199,12 +202,12 @@ class th_shop_mania_thMetaDataClass {
                     foreach ($field['options'] as $option) {
                         $checked='';
                         if($field['std']==$option['value'] && empty($meta)){
-                           $checked = 'checked="checked"';
+                            $checked = 'checked';
                         }elseif($meta==$option['value']){
-                             $checked = 'checked="checked"';
+                            $checked = 'checked';
                         }
                        
-                        echo '<input type="radio" name="', esc_attr($field['id']), '" value="', esc_attr($option['value']), '"', $checked, '/>', esc_html($option['name']);
+                        echo '<input type="radio" name="', esc_attr($field['id']), '" value="', esc_attr($option['value']), '"', esc_attr( $checked ), '/>', esc_html($option['name']);
                         echo '<br />';
                     }
                     break;
@@ -221,7 +224,7 @@ class th_shop_mania_thMetaDataClass {
     // Save data from meta box
     function save($post_id) {
         // verify nonce
-          if (!isset($_POST['th_dynamic_custom_box_nonce']) || !wp_verify_nonce($_POST['th_dynamic_custom_box_nonce'], basename(__FILE__))) {
+          if (!isset($_POST['th_dynamic_custom_box_nonce']) || !wp_verify_nonce(sanitize_text_field($_POST['th_dynamic_custom_box_nonce']), basename(__FILE__))) {
             return $post_id;
         }
  
