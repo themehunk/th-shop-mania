@@ -1,5 +1,5 @@
 <?php
-$getUrlTab = isset($_GET['th-tab']) && $_GET['th-tab'] ? sanitize_key($_GET['th-tab']) : false;
+$getUrlTab = isset($_GET['th-tab']) && $_GET['th-tab'] ? sanitize_text_field($_GET['th-tab']) : false;
 $tabActiveWl =  $getUrlTab == 'welcome' ? 'active' : '';
 $tabActiveRp =  $getUrlTab == 'recommended-plugin' ? 'active' : '';
 $tabActiveImportDc =  $getUrlTab == 'import-demo-content' ? 'active' : '';

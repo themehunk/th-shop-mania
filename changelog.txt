@@ -1,4 +1,7 @@
-01-01-2025  = Version 1.5.8 =
+03-04-2025  = Version 1.5.9 =
+* Update WooCommerce issues resolved.
+
+01-04-2025  = Version 1.5.8 =
 * Update: Seo aria-label updated.
 
 27-03-2025  = Version 1.5.7 =

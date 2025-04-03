@@ -38,8 +38,8 @@ if ( post_password_required() ) {
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: post title. */
-					esc_html__( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'th-shop-mania' ) ),
-					esc_html( number_format_i18n( $comment_count ) ), // Escaped output
+					esc_html__( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', (int)$comment_count, 'comments title', 'th-shop-mania' ) ),
+					esc_html( number_format_i18n( (int)$comment_count ) ), // Escaped output
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 
