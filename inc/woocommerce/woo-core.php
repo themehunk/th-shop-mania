@@ -368,6 +368,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			ob_start();
 			// load content template.
 			require_once TH_SHOP_MANIA_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product.php';
+			// echo ob_get_clean();
 			$content = ob_get_clean();
 
     		echo wp_kses_post( $content ); // Proper escaping applied

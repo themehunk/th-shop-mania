@@ -405,11 +405,11 @@ if (!function_exists('th_shop_mania_add_to_cart')) {
   {
     if ($layout == 'tooltip') {
       echo '<div class="th-add-to-cart"><div th-tooltip="' . esc_attr__('Add To Cart', 'th-shop-mania') . '">';
-      echo woocommerce_template_loop_add_to_cart();
+      woocommerce_template_loop_add_to_cart();
       echo '</div></div>';
     } else {
       echo '<div class="th-add-to-cart">';
-      echo woocommerce_template_loop_add_to_cart();
+      woocommerce_template_loop_add_to_cart();
       echo '</div>';
     }
   }
@@ -421,7 +421,7 @@ if (!function_exists('th_shop_mania_add_to_compare_fltr')) {
   function th_shop_mania_add_to_compare_fltr($pid = '')
   {
     if (class_exists('th_product_compare') || class_exists('Tpcp_product_compare')) {
-      echo '<div class="thunk-compare"><div th-tooltip="' . __('Compare', 'th-shop-mania') . '" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="' . esc_attr($pid) . '"><span class="th-icon th-icon-repeat"></span><span class="text">' . __('Compare', 'th-shop-mania') . '</span></a></div></div>';
+      echo '<div class="thunk-compare"><div th-tooltip="' . esc_attr__('Compare', 'th-shop-mania') . '" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="' . esc_attr($pid) . '"><span class="th-icon th-icon-repeat"></span><span class="text">' . esc_html__('Compare', 'th-shop-mania') . '</span></a></div></div>';
     }
   }
 }
@@ -432,7 +432,7 @@ if (!function_exists('th_shop_mania_whish_list')) {
   function th_shop_mania_whish_list($pid = '')
   {
     if (shortcode_exists('yith_wcwl_add_to_wishlist')) {
-      echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="' . __('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . do_shortcode('[yith_wcwl_add_to_wishlist product_id=' . esc_attr($pid) . ' icon="th-icon th-icon-heart1" label=' . __('wishlist', 'th-shop-mania') . ' already_in_wishslist_text=' . __('Already', 'th-shop-mania') . ' browse_wishlist_text=' . __('Added', 'th-shop-mania') . ']') . '</div></span></div>';
+      echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="' . esc_attr__('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . do_shortcode('[yith_wcwl_add_to_wishlist product_id=' . esc_attr($pid) . ' icon="th-icon th-icon-heart1" label=' . esc_attr__('wishlist', 'th-shop-mania') . ' already_in_wishslist_text=' . esc_attr__('Already', 'th-shop-mania') . ' browse_wishlist_text=' . esc_attr__('Added', 'th-shop-mania') . ']') . '</div></span></div>';
     }
   }
 }
@@ -584,7 +584,7 @@ function th_shop_mania_woocommerce_product_layout_default($product, $productId)
             }?>
               <?php th_shop_mania_woo_woocommerce_template_loop_product_title(); ?>
             <?php th_shop_mania_woo_shop_product_price($product);
-            echo th_shop_mania_woo_shop_product_rating($product); 
+            echo wp_kses_post(th_shop_mania_woo_shop_product_rating($product)); 
 
             if (get_theme_mod('open_shop_sale_countdown_shop_enable',true)==true && shortcode_exists( 'show_thwcd_product' )) {
               echo do_shortcode('[show_thwcd_product]');

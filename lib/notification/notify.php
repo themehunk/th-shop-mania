@@ -177,9 +177,20 @@ function th_shop_mania_install_custom_plugin($plugin_slug) {
         return $plugin_info->get_error_message();
     }
 
-    $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
-        'api' => $plugin_info,
-    )));
+    // $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
+    //     'api' => $plugin_info,
+    // )));
+
+    // Validate plugin info before proceeding
+    if (!empty($plugin_info->download_link) && filter_var($plugin_info->download_link, FILTER_VALIDATE_URL)) {
+        $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
+            'api' => $plugin_info,
+        )));
+        $upgrader->install(esc_url_raw($plugin_info->download_link));
+    } else {
+        wp_die(__('Invalid plugin source.', 'th-shop-mania'));
+    }
+
 
     $result = $upgrader->install($plugin_info->download_link);
 
