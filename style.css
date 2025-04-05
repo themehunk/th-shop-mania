@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
-Version: 1.5.9
+Version: 1.5.10
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 5.6
@@ -720,6 +720,7 @@ header{
   border-bottom:solid;
   border-bottom-width: 0;
   position:relative;
+  flex-wrap: nowrap;
 }
 .top-header:before{
  content: "";
@@ -742,7 +743,7 @@ header{
     border-bottom: 1px solid #ebebeb;
 }
 .th-sm-col-3{
-  width: 33.33%;
+  width: 100%;
   padding: 0 10px;
 }
 .th-sm-col-3:nth-of-type(2n+2){
@@ -840,7 +841,8 @@ flex-basis: initial;
 /*mobile header*/
 .responsive-main-header{display:none;}
 .below-footer .below-footer-bar{
-  line-height:40px;
+  line-height:27px;
+  padding: 12px 0;
 }
 /*below header special css*/
 .below-header-col1{
@@ -3698,9 +3700,10 @@ text-align:left;
   max-width: 100%;
   margin: 0 auto;
 }
+/*  Adjust and see the min-height with gallery slider only in desktop view and in mobile view set it to initial  */
 .woocommerce.single-product .woocommerce-product-gallery__image a {
     width: 100%;
-    min-height: 600px;
+    /* min-height: 600px; */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -4602,6 +4605,7 @@ line-height: initial;
 display: flex;
 align-items: center;
 justify-content: center;
+color: inherit;
 }
 .woocommerce #content div.product.th-shop-mania-single-product-content-right div.images, 
 .woocommerce div.product.th-shop-mania-single-product-content-right div.images, 
@@ -7715,6 +7719,16 @@ h2.wc-block-mini-cart__title{
     margin-left: 15px;
     float: left;
 }
+.summary .variations_form + .th-product-compare-btn-wrap + .yith-add-to-wishlist-button-block,
+.summary .variations_form + .yith-add-to-wishlist-button-block{
+  margin-left: 0!important;
+  margin-bottom: 15px;
+}
+.woocommerce div.product form.cart .reset_variations{
+  visibility: visible!important;
+  font-size: 1em;
+  font-weight: 500;
+}
 .theme-th-shop-mania .yith-wcwl-add-to-wishlist-button svg{
     display: none;
 }
@@ -8316,6 +8330,9 @@ width:50%;
 }
 }
 @media screen and (max-width: 767px){
+  .top-header{
+    flex-wrap: wrap;
+  }
 .primary-content-area,
 .sidebar-content-area{
   width: 100%;
@@ -8628,9 +8645,13 @@ padding:7.5px
 }
 /*shop page*/
 .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
-    float: left;
+  float: left;
 }
-.woocommerce .woocommerce-result-count{float:left;}
+.woocommerce .woocommerce-result-count{
+  float:left;
+  width: 59%;
+  line-height: 29px;  
+}
 .thunk-list-grid-switcher a{
   margin-right:0;
   margin-left:8px;
@@ -8810,7 +8831,7 @@ section.related.products h2,
 section.upsells.products h2,
 .woocommerce div.product .product_title,
 .thwbt-wrapper > h2 {
-    font-size: 28px;
+    font-size: 25px;
     margin: 0px 0px 15px 0px;
 }
 section.related.products, section.upsells.products{
@@ -9051,6 +9072,13 @@ font-size:12px;
 .woocommerce #shop-product-wrap .woocommerce-ordering{
   max-width: 151px;
   width: initial;
+}
+.th-sort-order-wrapper{
+  align-items: flex-start;
+}
+.th-sort-order-wrapper .right{
+  justify-content: end;
+  flex-wrap: wrap;
 }
 }
 @media screen and (max-width:550px){

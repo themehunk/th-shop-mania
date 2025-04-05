@@ -105,7 +105,7 @@ function th_shop_mania_display_admin_notice() {
             // Plugin is activated
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left"><h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), esc_html(apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) )), esc_html( $theme_data->Version ) ).'</h2>
                     <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Hunk Companion</strong></p>
                     <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Ready To Import website Templates ', 'th-shop-mania') . '</button>
                 </div>
@@ -119,7 +119,7 @@ function th_shop_mania_display_admin_notice() {
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left">
                     <h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), esc_html(apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) )), esc_html( $theme_data->Version ) ).'</h2>
                     <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>TH Shop Mania Pro</strong></p>
                     <button class="button button-primary" id="activate-th-shop-mania-pro" data-slug="' . esc_attr($plugin_pro_slug) . '"><span>' . esc_html__('Activate', 'th-shop-mania') . '</span><span class="dashicons dashicons-update loader"></span></button>
                      <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '" disabled>' . esc_html__('Go to Ready To Import website Templates ', 'th-shop-mania') . '</button>
@@ -138,7 +138,7 @@ function th_shop_mania_display_admin_notice() {
         echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
             <div class="left">
                   <h2 class="title">
-                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) ), esc_html( $theme_data->Version ) ).'</h2>
+                     '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), esc_html(apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) )), esc_html( $theme_data->Version ) ).'</h2>
                     <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Hunk Companion</strong></p>';
 
         if ($plugin_companion_exists) {
@@ -162,43 +162,61 @@ function th_shop_mania_display_admin_notice() {
 }
 
 // Custom function to check if a plugin is installed
-function th_shop_mania_is_plugin_installed($plugin_slug) {
-    $plugin_dir = WP_PLUGIN_DIR . '/' . $plugin_slug;
-    return is_dir($plugin_dir);
-}
+// Safely install a plugin from WordPress.org
+/**
+ * Safely install a plugin from a trusted download link WordPress.org.
+ *
+ * @param object $plugin_info Plugin info object (must contain download_link).
+ * @return void
+ */
+function th_shop_mania_install_custom_plugin( $plugin_slug ) {
+	require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+	require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+	require_once ABSPATH . 'wp-admin/includes/file.php';
 
-function th_shop_mania_install_custom_plugin($plugin_slug) {
-    require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-    require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+	// Ensure the plugin slug is sanitized (just for extra safety)
+	$plugin_slug = sanitize_key( $plugin_slug );
 
-    $plugin_info = plugins_api('plugin_information', array('slug' => $plugin_slug));
+	// Fetch plugin data from WordPress.org API — this is a trusted source
+	$plugin_info = plugins_api( 'plugin_information', array( 'slug' => $plugin_slug ) );
 
-    if (is_wp_error($plugin_info)) {
-        return $plugin_info->get_error_message();
-    }
+	if ( is_wp_error( $plugin_info ) ) {
+		return $plugin_info->get_error_message();
+	}
 
-    // $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
-    //     'api' => $plugin_info,
-    // )));
+	// Validate download_link from the API response
+	if (
+		empty( $plugin_info->download_link ) ||
+		! filter_var( $plugin_info->download_link, FILTER_VALIDATE_URL ) ||
+		! wp_http_validate_url( $plugin_info->download_link )
+	) {
+		wp_die( esc_html__( 'Invalid plugin source.', 'th-shop-mania' ) );
+	}
 
-    // Validate plugin info before proceeding
-    if (!empty($plugin_info->download_link) && filter_var($plugin_info->download_link, FILTER_VALIDATE_URL)) {
-        $upgrader = new Plugin_Upgrader(new Plugin_Installer_Skin(array(
-            'api' => $plugin_info,
-        )));
-        $upgrader->install(esc_url_raw($plugin_info->download_link));
-    } else {
-        wp_die(__('Invalid plugin source.', 'th-shop-mania'));
-    }
+	// Restrict installation to plugins from WordPress.org only
+	$parsed_url = wp_parse_url( $plugin_info->download_link );
+	$allowed_hosts = array( 'downloads.wordpress.org' );
 
+	if ( ! isset( $parsed_url['host'] ) || ! in_array( $parsed_url['host'], $allowed_hosts, true ) ) {
+		wp_die( esc_html__( 'Untrusted plugin source.', 'th-shop-mania' ) );
+	}
 
-    $result = $upgrader->install($plugin_info->download_link);
+	// Now safe to proceed
+	$upgrader = new Plugin_Upgrader(
+		new Plugin_Installer_Skin(
+			array(
+				'api' => $plugin_info,
+			)
+		)
+	);
 
-    if (is_wp_error($result)) {
-        return $result->get_error_message();
-    }
+	$result = $upgrader->install( esc_url_raw( $plugin_info->download_link ) );
 
-    return "success";
+	if ( is_wp_error( $result ) ) {
+		return $result->get_error_message();
+	}
+
+	return 'success';
 }
 
 if ( !function_exists('th_shop_mania_install_and_activate_callback') ) {

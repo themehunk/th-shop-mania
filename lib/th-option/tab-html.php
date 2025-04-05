@@ -1,5 +1,6 @@
 <?php
-$getUrlTab = isset($_GET['th-tab']) && $_GET['th-tab'] ? sanitize_text_field($_GET['th-tab']) : false;
+// $getUrlTab = isset($_GET['th-tab']) && esc_html($_GET['th-tab']) ? esc_html($_GET['th-tab']) : false;
+$getUrlTab = false;
 $tabActiveWl =  $getUrlTab == 'welcome' ? 'active' : '';
 $tabActiveRp =  $getUrlTab == 'recommended-plugin' ? 'active' : '';
 $tabActiveImportDc =  $getUrlTab == 'import-demo-content' ? 'active' : '';
@@ -34,7 +35,7 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
             <div class="th-option-bottom-hdr">
                 <a class="tablinks <?php echo esc_attr($tabActiveWl) ?>" onclick="openTab(event, 'Welcome')"><?php esc_html_e('Welcome', 'th-shop-mania'); ?></a>
                 <a class="tablinks <?php echo esc_attr($tabActiveRp) ?>" onclick="openTab(event, 'Recommended-Plugin')"><?php esc_html_e('Recommended Plugin', 'th-shop-mania'); ?> </a>
-                <a class="tablinks th-import-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" onclick="openTab(event, 'Import-Demo-Content')"><?php esc_html_e('Starter Templates', 'th-shop-mania'); ?> <p class="tooltiptext"><?php _e('Demo Import', 'th-shop-mania'); ?></p> </a>
+                <a class="tablinks th-import-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" onclick="openTab(event, 'Import-Demo-Content')"><?php esc_html_e('Starter Templates', 'th-shop-mania'); ?> <p class="tooltiptext"><?php esc_html_e('Demo Import', 'th-shop-mania'); ?></p> </a>
                 <a class="tablinks th-license-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" href="?page=shop-mania-license"><?php esc_html_e('License', 'th-shop-mania'); ?> </a>
                 <a class="tablinks th-whitelabel-tab-button <?php echo esc_attr($tabActiveImportDc) ?>" href="?page=white-label"><?php esc_html_e('White Label', 'th-shop-mania'); ?> </a>
                 <a class="tablinks get-child <?php echo esc_attr($tabActiveGtChild) ?>" onclick="openTab(event, 'Get-Child-Theme')"><?php esc_html_e('Get Child Theme', 'th-shop-mania'); ?></a>
