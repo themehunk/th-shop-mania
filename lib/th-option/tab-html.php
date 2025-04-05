@@ -1,5 +1,6 @@
 <?php
-$getUrlTab = isset($_GET['th-tab']) && esc_html($_GET['th-tab']) ? esc_html($_GET['th-tab']) : false;
+// $getUrlTab = isset($_GET['th-tab']) && esc_html($_GET['th-tab']) ? esc_html($_GET['th-tab']) : false;
+$getUrlTab = false;
 $tabActiveWl =  $getUrlTab == 'welcome' ? 'active' : '';
 $tabActiveRp =  $getUrlTab == 'recommended-plugin' ? 'active' : '';
 $tabActiveImportDc =  $getUrlTab == 'import-demo-content' ? 'active' : '';

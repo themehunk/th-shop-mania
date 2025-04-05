@@ -1,5 +1,14 @@
+05-04-2025  = Version 1.5.10 =
+* Update: WooCommerce issues resolved.
+* Update: Decreased the space between variations and the add to cart button.
+* Update: Decreased featured image bottom space.
+* Update: Mobile view of the "Frequently Bought Together" section on the product single page.
+* Update: Decreased space between variation and add to cart.
+* Update: Prev Next icons not visible on single page in both PC and mobile.
+* Update: Decrease line height of the Bottom footer text in mobile view.
+
 03-04-2025  = Version 1.5.9 =
-* Update WooCommerce issues resolved.
+* Update: WooCommerce issues resolved.
 
 01-04-2025  = Version 1.5.8 =
 * Update: Seo aria-label updated.
