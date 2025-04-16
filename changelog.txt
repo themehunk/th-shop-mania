@@ -7,6 +7,7 @@
 * Update: Prev Next icons not visible on single page in both PC and mobile.
 * Update: Decrease line height of the Bottom footer text in mobile view.
 * Update: _load_textdomain_just_in_time was called incorrectly issue resolved.
+* Update: Theme tested with lates WordPress 6.8.
 
 03-04-2025  = Version 1.5.9 =
 * Update: WooCommerce issues resolved.
