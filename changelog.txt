@@ -1,3 +1,6 @@
+16-04-2025  = Version 1.5.11 =
+* Update: Tested with WordPress 6.8.
+
 05-04-2025  = Version 1.5.10 =
 * Update: WooCommerce issues resolved.
 * Update: Decreased the space between variations and the add to cart button.
