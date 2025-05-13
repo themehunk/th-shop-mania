@@ -3920,6 +3920,9 @@ section.upsells.products h2,
 .single-product .summary .woocommerce-variation-add-to-cart{
   display: flex;
 }
+.woocommerce.single-product .variations_form.cart{
+  float: initial;
+}
 .woocommerce div.product form.cart .variations select {
     z-index: 1;
     border: none;
@@ -3952,6 +3955,10 @@ margin-bottom:20px;
 }
 .single_variation_wrap{
   width: 100%;
+}
+.single-product .variations tr{
+  display: flex;
+  gap: 9px;
 }
 .woocommerce #respond input#submit.alt.disabled,
 .woocommerce #respond input#submit.alt.disabled:hover,
