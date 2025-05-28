@@ -1,3 +1,6 @@
+28-05-2025 = = Version 1.5.12 =
+* Update: Tested with WooCommerce 9.8.5 and style updated.
+
 16-04-2025  = Version 1.5.11 =
 * Update: Tested with WordPress 6.8.
 

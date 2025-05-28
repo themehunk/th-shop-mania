@@ -28,7 +28,6 @@ $breadcrumb = get_theme_mod('th_shop_mania_pro_breadcrumb_select', 'default');
                           th_shop_mania_breadcrumb_trail();
 
                       } 
-
                       ?>
                     </div>
                             <div class="primary-content-wrap">
@@ -62,4 +61,4 @@ $breadcrumb = get_theme_mod('th_shop_mania_pro_breadcrumb_select', 'default');
                 </div>
             </div> <!-- end content-wrap -->
         </div> <!-- end content page-content -->
-<?php get_footer();?>
+<?php get_footer();
