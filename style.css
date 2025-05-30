@@ -4,12 +4,12 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: TH Shop Mania is a Fast, Lightweight, and Fully Customizable WooCommerce WordPress Theme for Creating eCommerce Websites. Build with SEO in mind it uses a powerful AJAX tech​ to give users a very fast and seamless online shopping interface​ without the need to constantly refresh pages. Shop Mania works perfectly with all page builders like Elementor, Visual Composer, Beaver Builder, Brizy, Gutenberg, etc. You can easily create websites for: electronics, fashion, furniture, niche store, clothing, glasses, watches, sport, shoes, jewelry, cosmetics, multi-vendor marketplace, medical, food, auto parts, organic, landing page, music shop, and others. Shop Mania improved performance by optimizing dynamic styles, using CSS variables, and optimizing server response time. The theme is integrated with WooCommerce, Advanced Product Search, Woo Cart plugin, Product compare, Variation Swatches plugin, and the lead form builder plugin which will help you design a perfect Online Store.
-Version: 1.5.11
+Version: 1.5.12
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
 WC requires at least: 7.9
-WC tested up to: 9.7.1
+WC tested up to: 9.8.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: th-shop-mania
@@ -2955,7 +2955,7 @@ border:none;
     color: #111;
 }
 .th-flexiSidebar-icon{
-display: -webkit-box;
+    display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -2986,8 +2986,7 @@ display: -webkit-box;
         opacity: 1;
         visibility: visible;
         max-width: 140px;
-        padding: 0 0 0 10px;
-    
+        padding: 0 0 0 10px;   
     }
     #flexisidebar .toggle-sidebar-text {
         padding: 0;
@@ -3551,6 +3550,7 @@ position:relative;
 }
 .woocommerce-ordering + .th-sort-by-label{
   display: inline-flex;
+  text-transform: capitalize;
 }
 #shop-product-wrap select {
 width: 100%;
@@ -4439,7 +4439,7 @@ clear: initial;
 /*wishlist icon*/
 .summary .yith-wcwl-add-to-wishlist{
     float: left;
-    margin: 0 0 21px 15px;
+    margin: 0 0 20px 15px;
 }
 .product-type-variable .summary .yith-wcwl-add-to-wishlist{
   margin-left: 0;
@@ -5096,7 +5096,7 @@ border: 1px solid #f1f1f1;
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
   width: 50%;
   border: 0;
-  padding: 21px;
+  padding: 20px;
   text-align: center;
   margin: 15px auto 60px auto;
   background: #f5f5f5;

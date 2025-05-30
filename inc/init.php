@@ -51,4 +51,3 @@ get_template_part('customizer/customizer');
 if (is_admin()) {
     get_template_part('lib/notification/notify');
 }
-

@@ -65,7 +65,6 @@ class Th_Shop_Mania_Starter_Content {
 		return $value;
 	}
 
-
 	/**
 	 * Register listener to insert post.
 	 *
@@ -152,7 +151,6 @@ class Th_Shop_Mania_Starter_Content {
 				self::HOME_SLUG       => require TH_SHOP_MANIA_THEME_DIR . 'inc/starter-content/home.php',				
 			],
 		];
-
 
 		return apply_filters( 'th_shop_mania_starter_content', $content );
 	}
