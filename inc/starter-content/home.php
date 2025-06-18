@@ -5,9 +5,9 @@
  * @since 1.4.2
  */
 
-$th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0","right":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide" style="padding-top:0;padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:image {"id":30,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'hero.jpg" alt="" class="wp-image-30"/></figure>
+$th_shop_mania_starter_content = '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:image {"id":19,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="' . esc_url( TH_SHOP_MANIA_THEME_URI . 'inc/starter-content/images/').'hero.jpg" alt="" class="wp-image-19"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 

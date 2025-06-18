@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.5.14');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.5.15');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -223,8 +223,9 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             )
 
         ));
-        $thsm_starter_content = new Th_Shop_Mania_Starter_Content();
-        add_theme_support( 'starter-content', $thsm_starter_content->get() );
+        
+        // $thsm_starter_content = new Th_Shop_Mania_Starter_Content();
+        // add_theme_support( 'starter-content', $thsm_starter_content->get() );
 
         add_theme_support( 'yoast-seo-breadcrumbs' );
         

@@ -9,7 +9,7 @@ $plugin_pro_file = 'th-shop-mania-pro/th-shop-mania-pro.php';
 $plugin_companion_file = 'hunk-companion/hunk-companion.php';
 $plugin_pro_exists = file_exists(WP_PLUGIN_DIR . '/' . 'th-shop-mania-pro/th-shop-mania-pro.php');
 $plugin_companion_exists = file_exists(WP_PLUGIN_DIR . '/' . 'hunk-companion/hunk-companion.php');
-get_template_part( 'inc/starter-content/class-th-shop-mania-starter-content');
+// get_template_part( 'inc/starter-content/class-th-shop-mania-starter-content');
 get_template_part( 'inc/admin-function');
 get_template_part( 'inc/header-function');
 get_template_part( 'inc/footer-function');

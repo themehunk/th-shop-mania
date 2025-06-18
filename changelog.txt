@@ -1,3 +1,8 @@
+18-06-2025 = = Version 1.5.15 =
+* Update: Starter content code commented in init.php & in functions.php 
+   // $thsm_starter_content = new Th_Shop_Mania_Starter_Content();
+   // add_theme_support( 'starter-content', $thsm_starter_content->get() );
+
 16-06-2025 = = Version 1.5.14 =
 * Update: update description.
 
