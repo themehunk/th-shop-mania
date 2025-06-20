@@ -3093,6 +3093,7 @@ text-align: center;
     box-shadow: 0 7px 5px #eee;
     border-color: #f1f1f1;
     padding-bottom:15px;
+    padding-top: 15px;
     -webkit-transform: translate(0,0);
     -ms-transform: translate(0,0);
     -o-transform: translate(0,0);
@@ -3106,7 +3107,6 @@ text-align: center;
     box-shadow: 0 0 15px #eee;
     border-color: #f1f1f1;
     border-bottom: 0;
-    padding-bottom: 5px;
 }
 .thunk-product-wrap:hover .thunk-product {
    box-shadow: 0 0 15px #eee;

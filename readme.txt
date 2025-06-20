@@ -26,9 +26,8 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
  
 License for images:
 == Screenshots ==
-https://stocksnap.io/photo/vase-wall-JGTJS8KF6Q
-https://stocksnap.io/photo/interior-chair-DQGQZHMELB
-dining-room-DYTXNUKGP2
+https://www.freepik.com/free-photo/portrait-young-happy-woman-model-with-bright-make[…]kered-shirt-sunglasses-isolated-white-going-crazy_6562796.htm
+https://www.freepik.com/free-photo/fashion-portrait-young-sexy-businessman-handsome-model-man-casual-cloth-suit-sunglasses-street_6766704.htm
 
 
 https://www.pexels.com/photo/round-brown-wooden-table-with-chairs-inside-room-1668860/
