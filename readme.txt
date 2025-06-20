@@ -26,8 +26,10 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
  
 License for images:
 == Screenshots ==
-https://www.freepik.com/free-photo/portrait-young-happy-woman-model-with-bright-make[…]kered-shirt-sunglasses-isolated-white-going-crazy_6562796.htm
-https://www.freepik.com/free-photo/fashion-portrait-young-sexy-businessman-handsome-model-man-casual-cloth-suit-sunglasses-street_6766704.htm
+https://www.pexels.com/photo/woman-wearing-gray-blazer-982585/
+https://www.pexels.com/photo/photo-of-man-wearing-white-shirt-2698918/
+https://www.pexels.com/photo/young-men-wearing-comfortable-loungewear-while-posing-in-studio-9775768/
+https://www.pexels.com/photo/elegant-fashion-portrait-of-two-women-in-dresses-31094918/
 
 
 https://www.pexels.com/photo/round-brown-wooden-table-with-chairs-inside-room-1668860/
