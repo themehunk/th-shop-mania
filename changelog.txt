@@ -1,3 +1,11 @@
+18-06-2025 = = Version 1.5.15 =
+* Update: Starter content code commented in init.php & in functions.php 
+   // $thsm_starter_content = new Th_Shop_Mania_Starter_Content();
+   // add_theme_support( 'starter-content', $thsm_starter_content->get() );
+
+* add_action( 'wp_enqueue_scripts', 'th_shop_mania_blocks_library', 1005 ); added to support 
+wp-block-library, wp-block-library-theme, wc-block-style ,wc-blocks-style.
+
 16-06-2025 = = Version 1.5.14 =
 * Update: update description.
 
