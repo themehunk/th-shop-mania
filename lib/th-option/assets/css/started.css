@@ -151,13 +151,16 @@ span.lite-versionlabel:before {
     text-decoration: none;
 
 }
-
+.logo-image{
+    color: #2c2929;
+    letter-spacing: .9px;
+}
 .th-option-area .logo-img{
     display: block;
     text-align: center;
     padding: 10% 5%;
-    /* font-size: 10px; */
-    /* line-height: 24px; */
+    font-size: 10px; 
+    line-height: 24px; 
     /* background: #2e639a; */
     /* background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7); */
     /* background: linear-gradient(to bottom, #f8faff, #f8faff);*/
@@ -396,7 +399,7 @@ width: 50px;
     display: flex;
     align-items: center;
     background-color: #2a2929;
-    padding: 2px 0px 1px 12px;
+    padding: 2px 12px;
     margin: 20px 0 0 !important;
     color: #fff;
     line-height: normal;
@@ -404,12 +407,15 @@ width: 50px;
     box-shadow: 0 0 0 0 #3b5998;
     transition: .3s ease;
     border-radius: 58px;
-    width: 32%;
+    width: max-content;
 }
-.x-gropup:hover{
-color:#fff;
-background-color: #000000;
-}
+  .x-gropup:hover ,.x-gropup:active,.x-gropup:focus{
+    color:#fff;
+    background-color: #000000;
+    }
+    .content-wrap a{
+        text-decoration: none;
+    }
 
 /** customizer links **/
  
