@@ -25,6 +25,7 @@ get_template_part( 'inc/th-shop-mania-custom-style');
 /******************************/
 get_template_part( 'inc/woocommerce/woo-core');
 get_template_part( 'inc/woocommerce/woo-function');
+get_template_part( 'inc/woocommerce/woo-login-extend');
  //theme-option
 get_template_part( 'lib/th-option/th-option');
 //CHILD THEME 
