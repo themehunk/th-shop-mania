@@ -1,3 +1,6 @@
+27-06-2025 = = Version 1.5.16 =
+* Update: woo-login-extend.php new created to make Woocommerce acoount field extend.
+
 18-06-2025 = = Version 1.5.15 =
 * Update: Starter content code commented in init.php & in functions.php 
    // $thsm_starter_content = new Th_Shop_Mania_Starter_Content();
