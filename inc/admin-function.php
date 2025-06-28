@@ -282,3 +282,5 @@ function th_shop_mania_get_image_alt_text($image_url) {
     return 'Image not found';
 }
 }
+
+

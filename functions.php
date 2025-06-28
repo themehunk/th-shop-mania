@@ -346,4 +346,3 @@ function th_shop_mania_blocks_library() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'th_shop_mania_blocks_library', 1005 );
-
