@@ -4847,8 +4847,11 @@ color: inherit;
   float: right;
 }
 .woocommerce-cart .cross-sells{
+  position: relative;
   clear: both;
   padding: 21px 0;
+  background: #FFF;
+  z-index: 9;
 }
 .woocommerce-cart .cross-sells ul.products{
   display: flex;
@@ -7753,6 +7756,41 @@ h2.wc-block-mini-cart__title{
 }
 .theme-th-shop-mania .woocommerce-review-link{
   outline: none;
+}
+/* Woo Login Extend   */
+#th-register-success-modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+}
+
+#th-register-success-modal .th-modal-inner {
+    background: #fff;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+#th-register-success-modal #th-close-register-modal {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#th-register-success-modal p{
+  margin-top: 16px;
+  margin-bottom: 21px;
+}
+#th-register-success-modal .button{
+  background: #111;
+  color: #FFF;
 }
 @media screen and (max-width: 1024px){
 .main-area{

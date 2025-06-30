@@ -12,6 +12,7 @@
             if ($('body.single-product').length) {
              $this.woccomerce_tab();
            }
+            $this.woo_login_extend();
           },
           woccomerce_tab: function (){
                  $( document ).ready( function() {
@@ -47,6 +48,30 @@
             });
 
         },
+       woo_login_extend: function (){
+            document.addEventListener('DOMContentLoaded', function() {
+                var modal = document.getElementById('th-register-success-modal');
+                var closeBtn = document.getElementById('th-close-register-modal');
+
+                if (modal && document.querySelector('.woocommerce-message') && 
+                    document.querySelector('.woocommerce-message').innerText.toLowerCase().includes('account was created')) {
+                    modal.style.display = 'flex';
+                }
+
+                if (modal) {
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === modal) modal.style.display = 'none';
+                    });
+                }
+
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function(){
+                        modal.style.display = 'none';
+                    });
+                }
+            });
+
+        }
       
     
       }
