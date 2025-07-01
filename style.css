@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.5.16
+Version: 1.6.0
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -767,6 +767,7 @@ header{
 .main-header {
     position:relative;
     border-bottom: 1px solid #ebebeb;
+    padding: 30px 0;
 }
 .main-header-col1{
   width: auto;
@@ -3830,7 +3831,6 @@ section.upsells.products h2,
 .woocommerce div.product .woocommerce-tabs .panel p{
     font-size: 18px;
     line-height: 32px;
-    color: var(--single-pro-text-color);
     font-weight: 400;
     letter-spacing: 0.5px;
 }
@@ -4872,9 +4872,11 @@ color: inherit;
   display: flex!important;
   padding: 25px 0;
   border-bottom: 1px solid #e2e2e2;
+  justify-content: space-between;
 }
 .woocommerce-cart table.cart .product-thumbnail{
   display: block!important;
+  min-width: 172px;
 }
 .woocommerce-cart .woocommerce-cart-form__cart-item .product-content{
   flex-grow: 2;
@@ -8296,6 +8298,12 @@ h5 {
   width: initial;
   font-size: 32px;
   line-height: 39px;
+}
+.woocommerce-cart .cross-sells ul.products{
+  justify-content: space-between;
+}
+.woocommerce.woocommerce-cart .shop_table_responsive td.product-name{
+  text-align: left!important;
 }
 /*top-slide*/
 .slide-layout-3 .thunk-3col-slider-wrap .thunk-slider-content {

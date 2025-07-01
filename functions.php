@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.5.15');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.6.0');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -346,3 +346,13 @@ function th_shop_mania_blocks_library() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'th_shop_mania_blocks_library', 1005 );
+
+// Before cart form
+add_action('woocommerce_before_cart', function() {
+    echo '<div class="th-cartpage-wrapper">';
+}, 5);
+
+// After cart form (end the wrapper)
+add_action('woocommerce_after_cart', function() {
+    echo '</div>';
+}, 100);
