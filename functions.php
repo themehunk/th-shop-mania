@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.5.15');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.6.0');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -198,14 +198,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                 					 'admin_link'=>'th-variation-swatches',
                 					 'docs'=>esc_url('https://themehunk.com/docs/th-variation-swatches-plugin/'),
             						)
-            ), 
-            'yith-woocommerce-wishlist' => array(
-                 'name' => esc_html__( 'YITH WooCommerce Wishlist', 'th-shop-mania' ),
-                  'img' => 'icon-128x128.gif',
-                  'pro_link' => '',
-                 'active_filename' => 'yith-woocommerce-wishlist/init.php',
-             )
-            
+            ),           
         ) );
 
        // Import Data Content plugins
@@ -303,7 +296,7 @@ function th_shop_mania_scripts(){
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts' );
+add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts');
 
 add_action( 'enqueue_block_editor_assets', function() {
 	require_once trailingslashit(TH_SHOP_MANIA_THEME_DIR).'third-party/fonts/wptt-webfont-loader.php';
@@ -346,3 +339,13 @@ function th_shop_mania_blocks_library() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'th_shop_mania_blocks_library', 1005 );
+
+// Before cart form
+// add_action('woocommerce_before_cart', function() {
+//     echo '<div class="th-cartpage-wrapper">';
+// }, 5);
+
+// // After cart form (end the wrapper)
+// add_action('woocommerce_after_cart', function() {
+//     echo '</div>';
+// }, 100);

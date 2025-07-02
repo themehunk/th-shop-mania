@@ -1,11 +1,8 @@
 <?php
-// Disable auto-login after registration
-// remove_action('woocommerce_created_customer', 'wc_registration_redirect');
-
-// add_filter('woocommerce_registration_redirect', 'th_shop_mania_registration_redirect');
-// function th_shop_mania_registration_redirect($redirect) {
-//     return wc_get_page_permalink('myaccount') . '?registered=true';
-// }
+// Check if WooCommerce is active
+if (!class_exists('WooCommerce')) {
+    return; // If WooCommerce is not active, stop further execution
+}
 
 // 1. Add custom fields: confirm password + phone
 add_action('woocommerce_register_form', function() {

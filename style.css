@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.5.16
+Version: 1.6.0
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -767,6 +767,7 @@ header{
 .main-header {
     position:relative;
     border-bottom: 1px solid #ebebeb;
+    padding: 30px 0;
 }
 .main-header-col1{
   width: auto;
@@ -3078,6 +3079,7 @@ text-align: center;
     top:100%;
     background:#fff;
     border: 1px solid transparent;
+    border-top: 0;
     padding-bottom: 10px;
     -webkit-transform: translate(0,40px);
     -ms-transform: translate(0,40px);
@@ -3830,7 +3832,6 @@ section.upsells.products h2,
 .woocommerce div.product .woocommerce-tabs .panel p{
     font-size: 18px;
     line-height: 32px;
-    color: var(--single-pro-text-color);
     font-weight: 400;
     letter-spacing: 0.5px;
 }
@@ -4872,9 +4873,11 @@ color: inherit;
   display: flex!important;
   padding: 25px 0;
   border-bottom: 1px solid #e2e2e2;
+  justify-content: space-between;
 }
 .woocommerce-cart table.cart .product-thumbnail{
   display: block!important;
+  min-width: 172px;
 }
 .woocommerce-cart .woocommerce-cart-form__cart-item .product-content{
   flex-grow: 2;
@@ -5072,6 +5075,52 @@ border: 1px solid #f1f1f1;
 }
 /************************/
 /*woocommerce cart page*/
+/************************/
+
+/************************/
+/*woocommerce Block cart page*/
+/************************/
+.woocommerce-cart .editor-styles-wrapper table.wc-block-cart-items .wc-block-cart-items__header, 
+.woocommerce-cart table.wc-block-cart-items .wc-block-cart-items__header{
+  font-size: 1.2em;
+}
+.woocommerce-cart .is-large.wc-block-cart .wc-block-cart__totals-title{
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 500;
+}
+ table.wc-block-cart-items .wc-block-cart-items__row .wc-block-components-product-name{
+  text-decoration: none;
+  font-size: 1.2em;
+ }
+ .woocommerce-cart .wc-block-components-product-metadata{
+  font-size: .9em;
+ }
+.wc-block-cart__submit-button,
+.wc-block-components-totals-coupon__button{
+  border-radius: 5px;
+}
+.wc-block-components-sidebar{
+  background: #F5F5F5;
+  position: sticky;
+  top: 108px;
+  align-self: flex-start;
+  padding: 29px;
+}
+.woocommerce-cart .wc-block-cart__submit.wp-block-woocommerce-proceed-to-checkout-block{
+  margin-bottom: 0;
+}
+.woocommerce-cart table.wc-block-cart-items .wc-block-cart-items__header th{
+  font-weight: 500;
+}
+.woocommerce-cart .is-small.wc-block-components-sidebar-layout .wc-block-components-sidebar{
+  padding: 21px;
+}
+.woocommerce-cart .wc-block-components-totals-wrapper{
+  border-top: 0;
+}
+/************************/
+/*woocommerce Block cart page*/
 /************************/
 
 /************************/
@@ -7476,52 +7525,6 @@ h2.wc-block-mini-cart__title{
 .wc-block-grid__product-image img{
   margin: 0 auto;
 }
-/*****************/
-/*mobile nav bar*/
-/*****************/
-#th-shop-mania-mobile-bar{
-  display:none;
-}
-
-#th-shop-mania-mobile-bar.active {
-    opacity: 1;
-    transition: opacity 0.2s, visibility 0.3s;
-    visibility: visible;
-}
-#th-shop-mania-mobile-bar ul{
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0;
-}
-#th-shop-mania-mobile-bar li{
-    list-style: none;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0;
-    flex: 1 0;
-    text-align: center;
-}
-#th-shop-mania-mobile-bar li a,
-#th-shop-mania-mobile-bar .taiowc-icon .th-icon{
-  font-size: 25px;
-  line-height: 32px;
-}
-#th-shop-mania-mobile-bar .menu-btn{
-  background: transparent;
-}
-#th-shop-mania-mobile-bar .taiowc-total{
-  display: none;
-}
-#th-shop-mania-mobile-bar li a span,
-#th-shop-mania-mobile-bar .taiowc-icon .th-icon{
-  display: block;
-}
-#th-shop-mania-mobile-bar li a.menu-btn{
-  -webkit-appearance: initial;
-}
 .single .page-head h1{
   padding-bottom: 0;
   margin-bottom: 0;
@@ -8296,6 +8299,12 @@ h5 {
   width: initial;
   font-size: 32px;
   line-height: 39px;
+}
+.woocommerce-cart .cross-sells ul.products{
+  justify-content: space-between;
+}
+.woocommerce.woocommerce-cart .shop_table_responsive td.product-name{
+  text-align: left!important;
 }
 /*top-slide*/
 .slide-layout-3 .thunk-3col-slider-wrap .thunk-slider-content {
