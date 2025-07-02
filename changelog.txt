@@ -5,6 +5,7 @@
 * Update: Cart.php removed & new design added because every time when woocommerce updates it starts showing update your outdated template.
 * Update: Color issues resolved.
 * Update: Style updated.
+* Update: Block Cart Page Style Updated.
 
 18-06-2025 = = Version 1.5.15 =
 * Update: Starter content code commented in init.php & in functions.php 

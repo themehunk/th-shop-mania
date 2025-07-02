@@ -296,7 +296,7 @@ function th_shop_mania_scripts(){
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts' );
+add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts');
 
 add_action( 'enqueue_block_editor_assets', function() {
 	require_once trailingslashit(TH_SHOP_MANIA_THEME_DIR).'third-party/fonts/wptt-webfont-loader.php';
