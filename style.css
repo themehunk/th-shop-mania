@@ -7010,6 +7010,19 @@ border-color: #0177B5;
 .th-shop-mania-site .linkeffect-none .sider-inner ul.th-shop-mania-menu > li > a span::before{
   background: transparent;
 }
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span.arrow::before,
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span.arrow::after{
+  width: initial;
+  background: initial;
+  opacity: initial;
+  -webkit-transform: initial;
+  -moz-transform: initial;
+  transform: initial;
+  position: relative;
+}
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span.arrow::before{
+   content: "\f107";
+}
 /********************/
 /*effect-1*/
 /***********************/
@@ -7055,7 +7068,7 @@ border-color: #0177B5;
 /***********************/
 .linkeffect-2 .sider-inner ul.th-shop-mania-menu > li > a::before {
     position: absolute;
-    top: 70%;
+    top: 59%;
     left: 50%;
     color: transparent;
     content: "•";
@@ -7086,7 +7099,6 @@ border-color: #0177B5;
 .linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span::before {
     color:#006799;
     text-shadow: 0 0 1px rgba(255,255,255,0.3);
-    content: attr(data-hover);
     position: absolute;
     -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
     -moz-transition: -moz-transform 0.3s, opacity 0.3s;
