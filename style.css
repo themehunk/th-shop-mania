@@ -6094,6 +6094,12 @@ padding-bottom:0;
 .single-product .page-head .breadcrumb-trail.breadcrumbs {
 flex: initial;
 }
+.woocommerce-shop .page-head{
+  padding-bottom: 0!important;
+}
+.woocommerce-shop .woocommerce-breadcrumb{
+  margin-bottom: 0!important;
+}
 /*//LOADER*/
 .thunk-loadContainer{
   display:none;
