@@ -258,9 +258,10 @@ transition: all 0.2s ease-in-out;
     display: none;
 }
 .th-shop-mania-menu > li > a span.arrow{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    display: inline-flex;
+    align-items: flex-end;
+    line-height: normal;
 }
 /****************************/
 /*end hamburger menu*/

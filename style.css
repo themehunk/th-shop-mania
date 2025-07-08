@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.6.0
+Version: 1.6.1
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -1592,7 +1592,8 @@ font-size:30px;
   position:relative;
     min-height: 550px;
 }
-.theme-th-shop-mania .page-content{
+.theme-th-shop-mania .page-content,
+.wp-theme-th-shop-mania .page-content{
   padding-top: 30px;
 }
 .elementor-page.theme-th-shop-mania .page-content{
@@ -4028,7 +4029,7 @@ margin-bottom:20px;
     line-height: 24px;
     letter-spacing: 0.05em;
     position: relative;
-    color: #111;
+    color: #4a4a4a;
     padding:0;
     padding: 10px 20px;
     font-weight: 500;
@@ -4038,6 +4039,10 @@ margin-bottom:20px;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{
   background: transparent;
+  text-decoration-line: underline;
+    text-decoration-color: inherit;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 9px;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li::after,
 .woocommerce div.product .woocommerce-tabs ul.tabs li::before{
@@ -4058,6 +4063,9 @@ margin-bottom:20px;
 .woocommerce-page div.product div.images {
     float: left;
     width: 45%;
+}
+.single-product div.product .woocommerce-tabs ul.tabs{
+  padding-bottom: 9px;
 }
 body .woocommerce-tabs .tabs li.active a::before, body .woocommerce-tabs .tabs li:hover a::before {
     -webkit-transform: scale(1);
@@ -6086,6 +6094,12 @@ padding-bottom:0;
 .single-product .page-head .breadcrumb-trail.breadcrumbs {
 flex: initial;
 }
+.woocommerce-shop .page-head{
+  padding-bottom: 0!important;
+}
+.woocommerce-shop .woocommerce-breadcrumb{
+  margin-bottom: 0!important;
+}
 /*//LOADER*/
 .thunk-loadContainer{
   display:none;
@@ -6715,13 +6729,16 @@ border-color: #0177B5;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
+    justify-content: center;
   }
   .woocommerce .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title > *{
     margin: 0;
   }
+  .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-content{
+    text-align: center;
+  }
   .th-shop-mania-shop-page-layout-3 .woocommerce-loop-product__title,
   .th-shop-mania-shop-page-layout-3 .price{
-    text-align: left!important;
     overflow: initial; 
     text-overflow: initial; 
     display: initial; 
@@ -6733,7 +6750,7 @@ border-color: #0177B5;
   .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .th_shop_mania-product-buttons{
     flex-direction: initial;
     position: relative;
-    justify-content: flex-start;
+    justify-content: center;
     top: initial;
     right: initial;
   }
@@ -7010,6 +7027,19 @@ border-color: #0177B5;
 .th-shop-mania-site .linkeffect-none .sider-inner ul.th-shop-mania-menu > li > a span::before{
   background: transparent;
 }
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span.arrow::before,
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span.arrow::after{
+  width: initial;
+  background: initial;
+  opacity: initial;
+  -webkit-transform: initial;
+  -moz-transform: initial;
+  transform: initial;
+  position: relative;
+}
+.theme-th-shop-mania .th-shop-mania-site .sider-inner ul.th-shop-mania-menu > li > a span.arrow::before{
+   content: "\f107";
+}
 /********************/
 /*effect-1*/
 /***********************/
@@ -7055,7 +7085,7 @@ border-color: #0177B5;
 /***********************/
 .linkeffect-2 .sider-inner ul.th-shop-mania-menu > li > a::before {
     position: absolute;
-    top: 70%;
+    top: 59%;
     left: 50%;
     color: transparent;
     content: "•";
@@ -7086,7 +7116,6 @@ border-color: #0177B5;
 .linkeffect-3 .sider-inner ul.th-shop-mania-menu > li > a span::before {
     color:#006799;
     text-shadow: 0 0 1px rgba(255,255,255,0.3);
-    content: attr(data-hover);
     position: absolute;
     -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
     -moz-transition: -moz-transform 0.3s, opacity 0.3s;
@@ -7971,6 +8000,10 @@ margin-top: 5px;
 }
 .thunk-product:hover .thunk-product-hover {
     top: 0;
+}
+.thunk-product:hover .thunk-product-hover{
+  padding-bottom: 10px;
+  padding-top: initial;
 }
 .thunk-product:hover .thunk-product-hover,
 .thunk-product-wrap:hover .thunk-product{
