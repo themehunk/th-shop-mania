@@ -6723,13 +6723,16 @@ border-color: #0177B5;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
+    justify-content: center;
   }
   .woocommerce .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title > *{
     margin: 0;
   }
+  .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-content{
+    text-align: center;
+  }
   .th-shop-mania-shop-page-layout-3 .woocommerce-loop-product__title,
   .th-shop-mania-shop-page-layout-3 .price{
-    text-align: left!important;
     overflow: initial; 
     text-overflow: initial; 
     display: initial; 
@@ -6741,7 +6744,7 @@ border-color: #0177B5;
   .shop-page-products-layouts.th-shop-mania-shop-page-layout-3 .th_shop_mania-product-buttons{
     flex-direction: initial;
     position: relative;
-    justify-content: flex-start;
+    justify-content: center;
     top: initial;
     right: initial;
   }
