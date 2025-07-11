@@ -287,10 +287,10 @@ function th_shop_mania_scripts(){
 	);
 	
     //enqueue js
-    wp_enqueue_script('th-shop-mania-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-menu.js', array( 'jquery' ), '1.0.0', true );
-    wp_enqueue_script('th-shop-mania-accordian-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-accordian-menu.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , true );
+    wp_enqueue_script('th-shop-mania-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-menu.js', array( 'jquery' ), '1.0.0', array('in_footer' => true,'strategy'  => 'defer',) );
+    wp_enqueue_script('th-shop-mania-accordian-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-accordian-menu.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , array('in_footer' => true,'strategy'  => 'defer',) );
 
-    wp_enqueue_script( 'th-shop-mania-custom-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-custom.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , true );
+    wp_enqueue_script( 'th-shop-mania-custom-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-custom.js', array( 'jquery' ), TH_SHOP_MANIA_THEME_VERSION , array('in_footer' => true,'strategy'  => 'defer',) );
     wp_localize_script('th-shop-mania-custom-js', 'thsmcustjs', array('menu_close' => __('Close','th-shop-mania')));
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
 		wp_enqueue_script( 'comment-reply' );

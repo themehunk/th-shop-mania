@@ -299,7 +299,7 @@ function th_shop_mania_admin_script($hook_suffix) {
 
     // Enqueue styles and scripts only on the allowed pages
     wp_enqueue_style('th-shop-mania-admin-css', get_template_directory_uri() . '/lib/notification/css/admin.css', array(), TH_SHOP_MANIA_THEME_VERSION, 'all');
-    wp_enqueue_script('th-shop-mania-notifyjs', get_template_directory_uri() . '/lib/notification/js/notify.js', array('jquery'), TH_SHOP_MANIA_THEME_VERSION, true);
+    wp_enqueue_script('th-shop-mania-notifyjs', get_template_directory_uri() . '/lib/notification/js/notify.js', array('jquery'), TH_SHOP_MANIA_THEME_VERSION, array('in_footer' => true,'strategy'  => 'defer',));
 
     // Pass AJAX URL to the script
     wp_localize_script('th-shop-mania-notifyjs', 'theme_data', array(

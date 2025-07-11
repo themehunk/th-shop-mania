@@ -1,4 +1,7 @@
-08-07-2025 = = Version 1.6.0 =
+11-07-2025 = = Version 1.6.2 =
+* Update: array( 'in_footer' => true, 'strategy'  => 'async',) attribute added in wp_enqueue_script.
+
+08-07-2025 = = Version 1.6.1 =
 * Update: Style improved.
 
 27-06-2025 = = Version 1.6.0 =
