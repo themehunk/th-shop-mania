@@ -140,7 +140,7 @@ static public function white_level_menu_callback() {
   {
     if ($hook === 'appearance_page_th_shop_mania_thunk_started') {
       wp_enqueue_style('thunk-started-css', get_template_directory_uri() . '/lib/th-option/assets/css/started.css');
-      wp_enqueue_script('th-shop-mania-admin-load', get_template_directory_uri() . '/lib/th-option/assets/js/th-options.js', array('jquery', 'updates'), '1', true);
+      wp_enqueue_script('th-shop-mania-admin-load', get_template_directory_uri() . '/lib/th-option/assets/js/th-options.js', array('jquery', 'updates'), '1', array('in_footer' => true,'strategy'  => 'defer',));
 
       
 

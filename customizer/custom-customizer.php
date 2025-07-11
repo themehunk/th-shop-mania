@@ -507,7 +507,7 @@ $wp_customize->register_section_type( 'th_shop_mania_Toggle_Control' );
 }
 add_action('customize_register','th_shop_mania_customize_function_register');
 function th_shop_mania_customizer_script_registers(){
-  wp_enqueue_script( 'open_customizer_script', TH_SHOP_MANIA_THEME_URI .'customizer/extend-customizer/extend-js/extend-customizer.js', array("jquery"), '', true );  
+  wp_enqueue_script( 'open_customizer_script', TH_SHOP_MANIA_THEME_URI .'customizer/extend-customizer/extend-js/extend-customizer.js', array("jquery"), '', array('in_footer' => true,'strategy'  => 'defer',) );  
 }
 add_action('customize_controls_enqueue_scripts', 'th_shop_mania_customizer_script_registers' );
 
