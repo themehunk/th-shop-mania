@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.6.2
+Version: 1.6.3
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -1480,8 +1480,8 @@ header .th-icon{
   min-width: initial;
   padding: 0;
 }
-.thunk-icon-market .thaps-search-box .th-icon,
-.thunk-icon-market .tapsp-search-box .th-icon{
+.thunk-icon-market .thaps-search-box .click-icon,
+.thunk-icon-market .tapsp-search-box .click-icon{
   color: #111!important;
 }
 .thunk-icon-market .th-icon-searchview{
@@ -4556,7 +4556,7 @@ top:0em!important;
     font-weight: 500;
 }
 /*compare style*/
-.woocommerce .entry-summary a.th-product-compare-btn.button,
+.woocommerce .entry-summary a.th-product-compare-btn,
 .summary .yith-wcwl-add-to-wishlist-button{
     border: 1px solid #9c9c9c;
     border-radius: 5px;
@@ -4571,9 +4571,11 @@ top:0em!important;
     text-align: center;
     font-weight: normal;
     min-width: auto;
+    margin-top: 0;
 }
-.woocommerce .entry-summary a.th-product-compare-btn.button:before{
-  content: "\e917";
+.woocommerce .entry-summary a.th-product-compare-btn:before{
+    background: transparent;
+    content: "\e917";
     font-family: th-icon;
     display: block;
     font-size: 16px;
@@ -4582,13 +4584,8 @@ top:0em!important;
     top: 50%;
     transform: translate(-50%,-50%);
 }
-.woocommerce .entry-summary a.th-product-compare-btn.button.loading:before{
-  animation: spin 2s linear infinite;
-  top: initial;
-  left: 0;
-  right: 0;
-  bottom: initial;
-  transform: initial;
+.woocommerce .entry-summary a.th-product-compare-btn.loading:before{
+    content: " ";
 }
 .woocommerce .entry-summary a.th-added-compare:before{
 color:#ff3377;
@@ -4596,6 +4593,7 @@ color:#ff3377;
 .woocommerce .entry-summary .th-product-compare-btn-wrap{
   display: inline-flex;
   margin-left: 15px;
+  margin-top: 0;
 }
 .woocommerce .entry-summary .clear{
 clear: initial;
@@ -6435,6 +6433,8 @@ margin:15px 0px;;
 }
 .single-product .social-share ul{
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 .single-product .social-share h3{
 margin-bottom:15px;
@@ -6443,24 +6443,9 @@ margin-bottom:15px;
 display:inline;
 }
 .single-product .social-share ul li a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 40px;
-    min-width: 50px;
-    opacity:0.8;
-    min-height: 30px;
-    margin: 0 4px 4px 0;
-    border: 1px solid;
-    border-radius: 5px;
-    font: normal normal normal 12px/30px th-icon;
-    text-decoration: none;
-    text-align: center;
-    -webkit-transition: border-color .2s ease;
-    transition: border-color .2s ease;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+   margin: 0 18px 4px 0;
+   font: normal normal normal 27px / 30px th-icon;
+   text-decoration: none;
 }
 .single-product .social-share ul li a:hover {
 opacity:1;
@@ -6488,9 +6473,8 @@ border-color: #0177B5;
     content: "\f0d5";
     color: #DB4A39;
 }
-.single-product .social-share .twt-icon a:before {
-    content: "\f099";
-    color: #00A0D0;
+.single-product .social-share .twt-icon a svg {
+    fill: #00A0D0;
 }
 .single-product .social-share .pinterest-icon a:before {
     content: "\f231";
@@ -7488,18 +7472,11 @@ header.zta-transparent-header.shrink {
 .elemento-quickview-wrapper .left-content img{
   margin: 0 auto;
 }
-.theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading{
+.theme-th-shop-mania.woocommerce a.th-product-compare-btn.loading{
   padding: 0;
 }
-.theme-th-shop-mania.woocommerce .th-shop-mania-shop-page-layout-default a.th-product-compare-btn.button.loading{
+.theme-th-shop-mania.woocommerce .th-shop-mania-shop-page-layout-default a.th-product-compare-btn.loading{
   padding: 0 1em;
-}
-.theme-th-shop-mania.woocommerce a.th-product-compare-btn.button.loading::after{
-  top: initial;
-  right: initial;
-  left: initial;
-  padding: 0;
-  font-size: 16px;
 }
 .widget_search label{
   display: none;
@@ -7824,6 +7801,17 @@ h2.wc-block-mini-cart__title{
   background: #111;
   color: #FFF;
 }
+/* New product filters block styles */
+.theme-th-shop-mania .wc-block-product-filter-checkbox-list__input-wrapper:before{
+  width: 1.2em;
+  height: 1.2em;
+}
+.theme-th-shop-mania .wc-block-product-filter-checkbox-list__text-wrapper{
+  font-size: 1em;
+}
+.theme-th-shop-mania .wc-block-product-filter-checkbox-list__label{
+  gap: .999em;
+}
 @media screen and (max-width: 1024px){
 .main-area{
   padding-left: 10px;
@@ -7855,7 +7843,7 @@ display:block;
 }
 header .th-icon,
 header .taiowc-icon .th-icon{
-  font-size: 27px;
+  font-size: 29px;
 }
 .mobile-nav-bar .mobile-nav-widget .header-support-wrap{
   float:left;
@@ -8106,7 +8094,7 @@ margin-right:0;
 }
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, 
 .summary .yith-wcwl-wishlistexistsbrowse a, 
-.woocommerce .entry-summary a.th-product-compare-btn.button,
+.woocommerce .entry-summary a.th-product-compare-btn,
 .summary .yith-wcwl-add-to-wishlist-button{
   width: 35px;
   height: 35px;
@@ -8122,7 +8110,7 @@ margin-right:0;
   right: 10px;
 }
 .single-product.woocommerce .related.products .thunk-wishlist .yith-wcwl-add-button > a i,
-.single-product.woocommerce a.th-product-compare-btn.button::before,
+.single-product.woocommerce a.th-product-compare-btn::before,
 .single-product.woocommerce .related.products .add-to-cart a:before{
   font-size: 12px;
   line-height: 19px;
@@ -8455,7 +8443,7 @@ width:50%;
   margin: 0;
 }
 header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon{
-  font-size: 23px;
+  font-size: 32px;
 }
 .responsive-main-header .thaps-search-box,
 .responsive-main-header .tapsp-search-box{
@@ -8863,7 +8851,7 @@ min-width:70px;
 }
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, .summary .yith-wcwl-wishlistexistsbrowse a,
 .summary .yith-wcwl-add-to-wishlist-button,
-.woocommerce .entry-summary a.th-product-compare-btn.button {
+.woocommerce .entry-summary a.th-product-compare-btn {
     height: 35px;
     line-height: 35px;
     width: 35px;
@@ -8920,6 +8908,9 @@ section.upsells.products h2,
 .thwbt-wrapper > h2 {
     font-size: 25px;
     margin: 0px 0px 15px 0px;
+}
+.woocommerce.single-product div.product .product_title{
+  margin-top: 9px;
 }
 section.related.products, section.upsells.products{
   padding: 0 0 30px 0;
@@ -8992,7 +8983,7 @@ font-size:12px;
   margin-bottom:10px;
   border-right: 0;
 }
-.woocommerce a.th-product-compare-btn.button::before, 
+.woocommerce a.th-product-compare-btn::before, 
 .woocommerce ul.products li .product-button-hover .add_to_wishlist::before,
 .woocommerce .thunk-product-hover a.add_to_cart_button.ajax_add_to_cart::before,
 .thunk-product .yith-wcwl-wishlistexistsbrowse:before, 
