@@ -3194,8 +3194,8 @@ text-align: center;
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
-  display: flex!important;
-  align-items: center;
+  /*display: flex!important;
+  align-items: center;*/
 }
 .thunk-product .thunk-compare a:hover{
   background: transparent;
