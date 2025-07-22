@@ -5291,7 +5291,6 @@ input[type="text"], input[type="email"],input[type="url"],
     border: 0;
     padding: 20px;
 }
-.woocommerce-checkout .thunk-content-wrap{display:-webkit-flex;}
 .woocommerce #order_review table.shop_table thead th {
     font-size: 16px;
     letter-spacing: 1px;
@@ -7818,6 +7817,11 @@ h2.wc-block-mini-cart__title{
 }
 .theme-th-shop-mania .wc-block-product-filter-checkbox-list__label{
   gap: .999em;
+}
+.elemento-advance-product-icon .elemento-ad-icon a span{
+  width: initial;
+  height: initial;
+  margin: 0;
 }
 @media screen and (max-width: 1024px){
 .main-area{
