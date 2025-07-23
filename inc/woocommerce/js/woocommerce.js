@@ -11,6 +11,7 @@
             $this.AddtoCartQuanty();
             if ($('body.single-product').length) {
              $this.woccomerce_tab();
+             $this.copyProductLink(); 
            }
             $this.woo_login_extend();
           },
@@ -71,7 +72,18 @@
                 }
             });
 
+        },
+        copyProductLink: function () {
+            $(document).on('click', '.copy-product-link', function () {
+                var link = $(this).data('link');
+                navigator.clipboard.writeText(link).then(function () {
+                    alert('Product link copied to clipboard!');
+                }, function (err) {
+                    alert('Failed to copy: ' + err);
+                });
+            });
         }
+
       
     
       }

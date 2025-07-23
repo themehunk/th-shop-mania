@@ -1,5 +1,6 @@
 21-07-2025 = = Version 1.6.2 =
 * Update: woocommerce style product filters updated.
+* New: Single product share button updated with copy link button functionality.
 
 11-07-2025 = = Version 1.6.2 =
 * Update: array( 'in_footer' => true, 'strategy'  => 'async',) attribute added in wp_enqueue_script.
