@@ -1,4 +1,7 @@
-21-07-2025 = = Version 1.6.2 =
+29-07-2025 = = Version 1.6.4 =
+* Update: Move to Top and header on woocommerce deactivation issue resolved.
+
+21-07-2025 = = Version 1.6.3 =
 * Update: woocommerce style product filters updated.
 * New: Single product share button updated with copy link button functionality.
 

@@ -20,7 +20,7 @@
              // $this.AboveMenu();
              $this.MobileMenuFunction();
              $this.mobile_menu_with_woocat(); 
-              if (jQuery('.theme-th-shop-mania-pro').length && th_shop_mania.th_shop_mania_move_to_top_optn ) {
+              if (jQuery('.theme-th-shop-mania-pro').length && th_shop_mania_woo_object.th_shop_mania_move_to_top_optn ) {
                 $this.MoveToTop();
               }
               else if(!jQuery('.theme-th-shop-mania-pro').length){
