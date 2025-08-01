@@ -106,7 +106,7 @@ function th_shop_mania_display_admin_notice() {
             echo '<div class="notice notice-info th-shop-mania-wrapper-banner is-dismissible">
                 <div class="left"><h2 class="title">
                      '.sprintf( esc_html__( 'Thank you for installing %1$s - Version %2$s', 'th-shop-mania' ), esc_html(apply_filters( 'thsm_page_title', esc_html__( 'Th Shop Mania', 'th-shop-mania' ) )), esc_html( $theme_data->Version ) ).'</h2>
-                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>Hunk Companion</strong></p>
+                    <p>' . esc_html__('To take full advantage of all the features this theme has to offer, please install and activate the ', 'th-shop-mania') . '<strong>TH Shop Mania Pro </strong></p>
                     <button class="button button-primary" id="go-to-starter-sites" data-slug="' . esc_attr($plugin_pro_slug) . '">' . esc_html__('Go to Ready To Import website Templates ', 'th-shop-mania') . '</button>
                 </div>
                 <div class="right">

@@ -113,12 +113,12 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                 					 'docs'=>esc_url('https://themehunk.com/docs/th-shop-mania'),
             						)
             ),
-			'woocommerce' => array(
-				'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
-				 'img' => 'icon-128x128.gif',
-				 'pro_link' => '',
-				 'active_filename' => 'woocommerce/woocommerce.php',
-			),
+        	//  'woocommerce' => array(
+			// 	'name' => esc_html__( 'Woocommerce', 'th-shop-mania' ),
+			// 	 'img' => 'icon-128x128.gif',
+			// 	 'pro_link' => '',
+			// 	 'active_filename' => 'woocommerce/woocommerce.php',
+			// ),
         	 'th-all-in-one-woo-cart' => array(
                 'name' => esc_html__( 'Th All In One Woo Cart', 'th-shop-mania' ),
                 'img' => 'icon-128x128.gif',
@@ -208,11 +208,11 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                  'img' => 'icon-128x128.png',
                  'pro_link' =>'',
                 'active_filename' => 'hunk-companion/hunk-companion.php',
-				     'pro-plugin' => array('slug'=>'th-shop-mania-pro',
-                					'init'=>'th-shop-mania-pro/th-shop-mania-pro.php',
-                					 'admin_link'=>'',
-                					 'docs'=>esc_url('https://themehunk.com/docs/th-shop-mania'),
-            						)
+				     // 'pro-plugin' => array('slug'=>'th-shop-mania-pro',
+                	// 				'init'=>'th-shop-mania-pro/th-shop-mania-pro.php',
+                	// 				 'admin_link'=>'',
+                	// 				 'docs'=>esc_url('https://themehunk.com/docs/th-shop-mania'),
+            		// 				)
             )
 
         ));

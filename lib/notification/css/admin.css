@@ -98,7 +98,8 @@
   }
   
   /*  loader  */
-   .left .loader{
+   .left .loader,
+   .sidebar .loader{
     display: none;
    }
   .left .loader{
