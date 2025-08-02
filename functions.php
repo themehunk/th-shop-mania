@@ -271,6 +271,12 @@ add_action( 'widgets_init', 'th_shop_mania_widgets_init' );
  */
 function th_shop_mania_scripts(){
 	require_once trailingslashit(TH_SHOP_MANIA_THEME_DIR).'third-party/fonts/wptt-webfont-loader.php';
+	// Load the webfont.
+	wp_enqueue_style('jost-fonts',wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap' ),
+		array(),
+		'1.0'
+	);
+
 	// enqueue css
 	$dir_name    = defined( 'SCRIPT_DEBUG' ) && ( SCRIPT_DEBUG ) ? 'unminified' : 'minified';
 	$prefix = defined( 'SCRIPT_DEBUG' ) && ( SCRIPT_DEBUG ) ? '' : '.min';
@@ -279,12 +285,8 @@ function th_shop_mania_scripts(){
 
 	wp_enqueue_style('th-shop-mania-style', get_template_directory_uri() . '/style.css', array(), TH_SHOP_MANIA_THEME_VERSION);
 	wp_add_inline_style('th-shop-mania-style', th_shop_mania_custom_style());
+	wp_add_inline_style('th-shop-mania-style', '@font-face{font-family:"th-icon";src:url("' . esc_url(get_template_directory_uri() . '/third-party/fonts/th-icon/fonts/th-icon.ttf?k3xn19') . '") format("truetype");font-weight:normal;font-style:normal;font-display:block;}');
 
-	// Load the webfont.
-	wp_enqueue_style('jost-fonts',wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap' ),
-		array(),
-		'1.0'
-	);
 	
     //enqueue js
     wp_enqueue_script('th-shop-mania-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-menu.js', array( 'jquery' ), '1.0.0', array('in_footer' => true,'strategy'  => 'defer',) );

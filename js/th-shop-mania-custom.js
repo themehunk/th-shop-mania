@@ -20,12 +20,12 @@
              // $this.AboveMenu();
              $this.MobileMenuFunction();
              $this.mobile_menu_with_woocat(); 
-              if (jQuery('.theme-th-shop-mania-pro').length && th_shop_mania_woo_object.th_shop_mania_move_to_top_optn ) {
-                $this.MoveToTop();
+              if ( !jQuery('.theme-th-shop-mania-pro').length ||
+                   th_shop_mania_woo_object.th_shop_mania_move_to_top_optn ||
+                    typeof th_shop_mania_woo_object === 'undefined'
+                 ) {
+                  $this.MoveToTop();
               }
-              else if(!jQuery('.theme-th-shop-mania-pro').length){
-             $this.MoveToTop();
-           }
         },    
           PreLoader : function (){
                                if(!$('body').hasClass('elementor-editor-active')){

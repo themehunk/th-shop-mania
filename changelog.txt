@@ -1,5 +1,7 @@
-29-07-2025 = = Version 1.6.4 =
+02-08-2025 = = Version 1.6.4 =
 * Update: Move to Top and header on woocommerce deactivation issue resolved.
+* Update: Relative path removed from th-icon/fonts/style.css because with speedy cache plugin icons are not showing because of relative path. So it is best practice to use absolute path.
+* Update: Move To Top logic changed.
 
 21-07-2025 = = Version 1.6.3 =
 * Update: woocommerce style product filters updated.
