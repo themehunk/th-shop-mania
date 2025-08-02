@@ -15,7 +15,7 @@ $plugin_active = is_plugin_active($plugin_file);
                 <center><a class="button ztabtn" target="_blank" href="<?php echo esc_url('https://themehunk.com/th-shop-mania/'); ?>"><?php esc_html_e('Get Pro','th-shop-mania'); ?> </a></center>
             <?php }
             elseif ( ! $plugin_active ) { ?>
-                 <center><button class="button button-primary" id="activateinsidebar-th-shop-mania-pro" data-slug="th-shop-mania-pro"><span>Activate</span><span class="dashicons dashicons-update loader"></span></button></center>
+                 <center><button class="button button-primary activethbtn" id="activateinsidebar-th-shop-mania-pro" data-slug="th-shop-mania-pro"><span>Activate</span><span class="dashicons dashicons-update loader"></span></button></center>
          <?php    }
              else{ ?>
                 <center><button class="button button-primary" id="activate-th-shop-mania-pro" data-slug="th-shop-mania-pro" disabled><span>Activated</span></button></center>
