@@ -657,6 +657,10 @@ display: flex;
 /*.appearance_page_th_shop_mania_thunk_started #Import-Demo-Content .import-demo .theme_link button[data-activated="Activated"]:after{
 
 }*/
+ .sidebar .th-pro-theme-ad,
+ .sidebar .th-pro-theme-ad + hr{
+    display: block!important;
+  }
 @media (min-width: 768px){
 .theme_link {
     width: 18%;

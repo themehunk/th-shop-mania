@@ -96,12 +96,18 @@
     animation: rotating 2s linear infinite;
     display: none;
   }
-  
+  .sidebar .button-primary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   /*  loader  */
-   .left .loader{
+   .left .loader,
+   .sidebar .loader{
     display: none;
    }
-  .left .loader{
+  .left .loader,
+  .sidebar .loader{
      -webkit-animation: rotating 2s linear infinite;
         -moz-animation: rotating 2s linear infinite;
         -ms-animation: rotating 2s linear infinite;

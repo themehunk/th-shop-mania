@@ -420,8 +420,8 @@ if (!function_exists('th_shop_mania_add_to_cart')) {
 if (!function_exists('th_shop_mania_add_to_compare_fltr')) {
   function th_shop_mania_add_to_compare_fltr($pid = '')
   {
-    if (class_exists('th_product_compare') || class_exists('Tpcp_product_compare')) {
-      echo '<div class="thunk-compare"><div th-tooltip="' . esc_attr__('Compare', 'th-shop-mania') . '" class="compare-tooltip"><a class="th-product-compare-btn compare button" data-th-product-id="' . esc_attr($pid) . '"><span class="th-icon th-icon-repeat"></span><span class="text">' . esc_html__('Compare', 'th-shop-mania') . '</span></a></div></div>';
+    if (shortcode_exists('th_compare')) {
+      echo do_shortcode('[th_compare pid="' . esc_attr($pid) . '"]');
     }
   }
 }
