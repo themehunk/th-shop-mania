@@ -65,7 +65,8 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
 	?>
 
 <div id="page" class="th-shop-mania-site">
-	<header class="<?php echo esc_attr(th_shop_mania_header_transparent_class($th_shop_mania_transparent_header_dyn)); ?>">
+	<?php do_action( 'th_shop_mania_before_header' ); ?>
+	<header class="thsm-header <?php echo esc_attr(th_shop_mania_header_transparent_class($th_shop_mania_transparent_header_dyn)); ?>">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'th-shop-mania' ); ?></a>
         <?php do_action( 'th_shop_mania_sticky_header' );
         	th_shop_mania_header_abv_post_meta($th_shop_mania_disable_above_header_dyn);
@@ -74,7 +75,7 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
         ?> 
 		<!-- end below-header -->
 	</header> <!-- end header -->
-
+	<?php do_action( 'th_shop_mania_after_header' ); ?>
 	<?php 
 	//Page Header 
 		$id = (isset($post->ID)) ? $post->ID : '';

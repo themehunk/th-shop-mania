@@ -431,9 +431,33 @@ if (!function_exists('th_shop_mania_add_to_compare_fltr')) {
 if (!function_exists('th_shop_mania_whish_list')) {
   function th_shop_mania_whish_list($pid = '')
   {
-    if (shortcode_exists('yith_wcwl_add_to_wishlist')) {
-      echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="' . esc_attr__('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . do_shortcode('[yith_wcwl_add_to_wishlist product_id=' . esc_attr($pid) . ' icon="th-icon th-icon-heart1" label=' . esc_attr__('wishlist', 'th-shop-mania') . ' already_in_wishslist_text=' . esc_attr__('Already', 'th-shop-mania') . ' browse_wishlist_text=' . esc_attr__('Added', 'th-shop-mania') . ']') . '</div></span></div>';
-    }
+    // if (shortcode_exists('yith_wcwl_add_to_wishlist')) {
+    //   echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="' . esc_attr__('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . do_shortcode('[yith_wcwl_add_to_wishlist product_id=' . esc_attr($pid) . ' icon="th-icon th-icon-heart1" label=' . esc_attr__('wishlist', 'th-shop-mania') . ' already_in_wishslist_text=' . esc_attr__('Already', 'th-shop-mania') . ' browse_wishlist_text=' . esc_attr__('Added', 'th-shop-mania') . ']') . '</div></span></div>';
+    // }
+if (shortcode_exists('thwl_add_to_wishlist')) {
+    // Define the icon HTML using sprintf
+    $icon_html = sprintf('<span class="%s"></span>', 'th-icon th-icon-heart1'); // Corrected class name
+
+    // Directly insert the icon HTML inside the add_icon parameter
+    echo '<div class="thunk-wishlist">
+        <span class="thunk-wishlist-inner">
+            <div th-tooltip="' . esc_attr__('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . 
+            do_shortcode('[thwl_add_to_wishlist 
+                product_id="' . esc_attr($pid) . '" 
+                add_icon="th-icon th-icon-heart1" 
+                add_text="' . esc_attr__('Wishlist', 'th-shop-mania') . '" 
+                add_browse_icon="th-icon th-icon-favorite"
+                browse_text="' . esc_attr__('Added', 'th-shop-mania') . '"
+                theme_style="yes"
+                custom_class="th-wishlist-integrated"
+              ]') . 
+            '</div>
+        </span>
+    </div>';
+}
+
+
+
   }
 }
 // * Shop customization.

@@ -28,6 +28,7 @@ $th_shop_mania_disable_footer_widget_dyn ='';
 $th_shop_mania_disable_bottom_footer_dyn ='';
 }
 ?>
+<?php do_action( 'th_shop_mania_before_footer' ); ?>
 <footer class="thsm-footer">
          <?php        
 	th_shop_mania_footer_abv_post_meta($th_shop_mania_disable_above_footer_dyn);
@@ -35,6 +36,7 @@ $th_shop_mania_disable_bottom_footer_dyn ='';
     th_shop_mania_footer_bottom_post_meta($th_shop_mania_disable_bottom_footer_dyn);
         ?>
 </footer> <!-- end footer -->
+<?php do_action( 'th_shop_mania_after_footer' ); ?>
     </div> <!-- end th-shop-mania-site -->
 <?php wp_footer(); ?>
 </body>
