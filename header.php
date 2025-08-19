@@ -25,33 +25,6 @@
 <?php
 // page post meta
 global $post;
-if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocommerce() || is_checkout() || is_cart() || is_account_page()))
-||  is_front_page() || is_home()) {
-	if (class_exists('WooCommerce') && is_shop()) {
-		$shop_page_id = get_option('woocommerce_shop_page_id');
-		$postid = $shop_page_id;
-	} elseif(th_shop_mania_is_blog()){
-		$blog_page_id = get_option('page_for_posts');
-		$postid = $blog_page_id;
-	} else {
-		$postid =(isset($post->ID)) ? $post->ID : '';
-	}
-	$th_shop_mania_transparent_header_dyn = get_post_meta($postid, 'th_shop_mania_transparent_header_dyn', true);
-	$th_shop_mania_disable_main_header_dyn = get_post_meta($postid, 'th_shop_mania_disable_main_header_dyn', true);
-	$th_shop_mania_disable_above_header_dyn = get_post_meta($postid, 'th_shop_mania_disable_above_header_dyn', true);
-	$th_shop_mania_disable_bottom_header_dyn = get_post_meta($postid, 'th_shop_mania_disable_bottom_header_dyn', true);
-	if (is_search() || is_404()) {
-		$th_shop_mania_sticky_header_dyn = '';
-	} else {
-		$th_shop_mania_sticky_header_dyn = get_post_meta($postid, 'th_shop_mania_sticky_header_dyn', true);
-	}
-} else {
-	$th_shop_mania_disable_above_header_dyn = '';
-	$th_shop_mania_disable_main_header_dyn = '';
-	$th_shop_mania_disable_bottom_header_dyn = '';
-	$th_shop_mania_transparent_header_dyn = '';
-	$th_shop_mania_sticky_header_dyn = '';
-}
 ?>
 <body <?php body_class();?>>
 
@@ -65,16 +38,9 @@ if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocomme
 	?>
 
 <div id="page" class="th-shop-mania-site">
-	<header class="<?php echo esc_attr(th_shop_mania_header_transparent_class($th_shop_mania_transparent_header_dyn)); ?>">
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'th-shop-mania' ); ?></a>
-        <?php do_action( 'th_shop_mania_sticky_header' );
-        	th_shop_mania_header_abv_post_meta($th_shop_mania_disable_above_header_dyn);
-        	th_shop_mania_header_main_post_meta($th_shop_mania_disable_main_header_dyn);
-			th_shop_mania_header_btm_post_meta($th_shop_mania_disable_bottom_header_dyn);
-        ?> 
-		<!-- end below-header -->
-	</header> <!-- end header -->
-
+	<?php do_action( 'th_shop_mania_before_header' ); ?>
+	<?php do_action( 'th_shop_mania_header' ); ?>
+	<?php do_action( 'th_shop_mania_after_header' ); ?>
 	<?php 
 	//Page Header 
 		$id = (isset($post->ID)) ? $post->ID : '';

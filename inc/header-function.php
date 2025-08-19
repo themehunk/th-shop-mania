@@ -7,6 +7,53 @@
  * @copyright   Copyright (c) 2021, Th Shop Mania
  * @since       Th Shop Mania 1.0.0
  */
+if ( !function_exists('th_shop_mania_full_header_markup')) {
+function th_shop_mania_full_header_markup() {
+   global $post;
+if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocommerce() || is_checkout() || is_cart() || is_account_page()))
+||  is_front_page() || is_home()) {
+    if (class_exists('WooCommerce') && is_shop()) {
+        $shop_page_id = get_option('woocommerce_shop_page_id');
+        $postid = $shop_page_id;
+    } elseif(th_shop_mania_is_blog()){
+        $blog_page_id = get_option('page_for_posts');
+        $postid = $blog_page_id;
+    } else {
+        $postid =(isset($post->ID)) ? $post->ID : '';
+    }
+    $th_shop_mania_transparent_header_dyn = get_post_meta($postid, 'th_shop_mania_transparent_header_dyn', true);
+    $th_shop_mania_disable_main_header_dyn = get_post_meta($postid, 'th_shop_mania_disable_main_header_dyn', true);
+    $th_shop_mania_disable_above_header_dyn = get_post_meta($postid, 'th_shop_mania_disable_above_header_dyn', true);
+    $th_shop_mania_disable_bottom_header_dyn = get_post_meta($postid, 'th_shop_mania_disable_bottom_header_dyn', true);
+    if (is_search() || is_404()) {
+        $th_shop_mania_sticky_header_dyn = '';
+    } else {
+        $th_shop_mania_sticky_header_dyn = get_post_meta($postid, 'th_shop_mania_sticky_header_dyn', true);
+    }
+} else {
+    $th_shop_mania_disable_above_header_dyn = '';
+    $th_shop_mania_disable_main_header_dyn = '';
+    $th_shop_mania_disable_bottom_header_dyn = '';
+    $th_shop_mania_transparent_header_dyn = '';
+    $th_shop_mania_sticky_header_dyn = '';
+}
+
+    // Render the header using raw HTML
+    ?>
+    <header class="thsm-header <?php echo esc_attr(th_shop_mania_header_transparent_class($th_shop_mania_transparent_header_dyn)); ?>">
+        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'th-shop-mania' ); ?></a>
+        <?php do_action( 'th_shop_mania_sticky_header' );
+            th_shop_mania_header_abv_post_meta($th_shop_mania_disable_above_header_dyn);
+            th_shop_mania_header_main_post_meta($th_shop_mania_disable_main_header_dyn);
+            th_shop_mania_header_btm_post_meta($th_shop_mania_disable_bottom_header_dyn);
+        ?> 
+        <!-- end below-header -->
+    </header> <!-- end header -->
+    <?php
+}
+add_action('th_shop_mania_header', 'th_shop_mania_full_header_markup');
+}
+
 /**************************************/
 //Top Header function
 /**************************************/
@@ -66,7 +113,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
           </div>
 					<div class="main-header-col3">
            <div class="thunk-icon-market">
-            <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
+            <?php if ( class_exists( 'THWL_Wishlist' ) || defined( 'YITH_WCWL_SLUG' ) ) { ?>
               <a class="whishlist" aria-label="Wishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>">
        <span class="th-icon th-icon-heartline"></span></a> 
      <?php } ?>
@@ -106,7 +153,7 @@ $th_shop_mania_pro_menu_effect = get_theme_mod('th_shop_mania_pro_menu_effect', 
                        </div>
                     </button>
                 </div>
-                <?php if ( defined( 'YITH_WCWL_SLUG' ) ) { ?>
+                <?php if ( class_exists( 'THWL_Wishlist' ) || defined( 'YITH_WCWL_SLUG' ) ) { ?>
                 <div>
                   <a class="whishlist" aria-label="Wishlist" href="<?php echo esc_url(apply_filters('th_shop_mania_whishlist_url',' ','','')); ?>">
                   <span class="th-icon th-icon-heartline"></span></a>

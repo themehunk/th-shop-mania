@@ -1,3 +1,16 @@
+19-08-2025 = = Version 1.6.5 =
+1. TH COMPARE INETEGRATED.
+2. Style Improved
+3. Tested with latest PHP 8.3 / 8.4.
+4. Tested with wordpress 6.8.
+5. No open code present (__load_text_domain error)
+6. TH Wishlist added in Option Panel.
+7. Hooks added at after & before of haeder and footer also class added in these tags.
+8. Product layouts style issue resolved.
+9. Update: Header implementation through hooks using do_action( 'th_shop_mania_header' );
+10. Update: Footer implementation through hooks using do_action( 'th_shop_mania_footer' );
+11. Update: Absolute path in th-icon issue resolved.
+
 02-08-2025 = = Version 1.6.4 =
 * Update: Move to Top and header on woocommerce deactivation issue resolved.
 * Update: Relative path removed from th-icon/fonts/style.css because with speedy cache plugin icons are not showing because of relative path. So it is best practice to use absolute path.

@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.6.4');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.6.5');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -186,6 +186,17 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                 					 'admin_link'=>'th-product-compare-pro',
                 					 'docs'=>esc_url('https://themehunk.com/docs/th-product-compare/'),
 
+            						)
+            ),
+            'th-wishlist' => array(
+                'name' => esc_html__( 'TH Wishlist for WooCommerce', 'th-shop-mania' ),
+                'img' => 'icon-128x128.gif',
+                'pro_link' => esc_url(''),
+                'active_filename' => 'th-wishlist/th-wishlist.php',
+                'pro-plugin' => array('slug'=>'th-wishlist',
+                					'init'=>'th-wishlist-pro/th-wishlist.php',
+                					'admin_link'=>'th-wishlist',
+                					'docs'=>esc_url('https://themehunk.com/docs/th-wishlist/'),
             						)
             ),
             'th-variation-swatches' => array(

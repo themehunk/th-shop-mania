@@ -6,7 +6,14 @@ if (!class_exists('WooCommerce')) {
 if (!function_exists('th_shop_mania_whishlist_url')) {
   function th_shop_mania_whishlist_url($argu = '')
   {
-    $wishlist_page_id   =  get_option('yith_wcwl_wishlist_page_id');
+    $wishlist_page_id = '';
+        if (class_exists( 'THWL_Wishlist' )) {
+          $wishlist_page_id =  get_option( 'thwl_page_id' );
+        }
+        elseif( class_exists( 'YITH_WCWL' ) ){
+          $wishlist_page_id =  get_option( 'yith_wcwl_wishlist_page_id' );
+        }
+        
     $wishlist_permalink = get_the_permalink($wishlist_page_id);
     return $wishlist_permalink;
   }
@@ -431,9 +438,33 @@ if (!function_exists('th_shop_mania_add_to_compare_fltr')) {
 if (!function_exists('th_shop_mania_whish_list')) {
   function th_shop_mania_whish_list($pid = '')
   {
-    if (shortcode_exists('yith_wcwl_add_to_wishlist')) {
+      if (shortcode_exists('thwl_add_to_wishlist')) {
+          // Define the icon HTML using sprintf
+          $icon_html = sprintf('<span class="%s"></span>', 'th-icon th-icon-heart1'); // Corrected class name
+
+          // Directly insert the icon HTML inside the add_icon parameter
+          echo '<div class="thunk-wishlist">
+              <span class="thunk-wishlist-inner">
+                  <div th-tooltip="' . esc_attr__('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . 
+                  do_shortcode('[thwl_add_to_wishlist 
+                      product_id="' . esc_attr($pid) . '" 
+                      add_icon="" 
+                      add_text="' . esc_attr__('Wishlist', 'th-shop-mania') . '" 
+                      add_browse_icon=""
+                      browse_text="' . esc_attr__('Added', 'th-shop-mania') . '"
+                      theme_style="yes"
+                      custom_class="th-wishlist-integrated"
+                    ]') . 
+                  '</div>
+              </span>
+          </div>';
+      }
+      elseif (shortcode_exists('yith_wcwl_add_to_wishlist')) {
       echo '<div class="thunk-wishlist"><span class="thunk-wishlist-inner"><div th-tooltip="' . esc_attr__('Wishlist', 'th-shop-mania') . '" class="wishlist-tooltip">' . do_shortcode('[yith_wcwl_add_to_wishlist product_id=' . esc_attr($pid) . ' icon="th-icon th-icon-heart1" label=' . esc_attr__('wishlist', 'th-shop-mania') . ' already_in_wishslist_text=' . esc_attr__('Already', 'th-shop-mania') . ' browse_wishlist_text=' . esc_attr__('Added', 'th-shop-mania') . ']') . '</div></span></div>';
     }
+
+
+
   }
 }
 // * Shop customization.
@@ -446,6 +477,12 @@ remove_action('woocommerce_init', 'th_compare_add_action_shop_list');
 
 //To disable th compare Pro button 
 remove_action('woocommerce_init', 'tpcp_add_action_shop_list');
+
+// To disable Wishlist button for loop button at shop page
+remove_action( 'wp', 'thwl_hook_wishlist_loop_button_position');
+
+// To disable Wishlist button for loop button at single page
+// remove_action( 'wp', 'thwl_hook_wishlist_single_button_position');
 
 // Woocommerce Cart Page Customisation
 remove_action('woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
