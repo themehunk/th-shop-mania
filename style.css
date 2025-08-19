@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.6.4
+Version: 1.6.5
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -4566,9 +4566,13 @@ top:0em!important;
     text-align: center;
     font-weight: 500;
 }
+.woocommerce div.entry-summary form.cart button[type=submit]{
+  margin-right: 15px;
+}
 /*compare style*/
 .woocommerce .entry-summary a.th-product-compare-btn,
-.summary .yith-wcwl-add-to-wishlist-button{
+.summary .yith-wcwl-add-to-wishlist-button,
+.summary .th-wishlist-single a{
     border: 1px solid #9c9c9c;
     border-radius: 5px;
     color: #9c9c9c;
@@ -4583,6 +4587,18 @@ top:0em!important;
     font-weight: normal;
     min-width: auto;
     margin-top: 0;
+}
+.summary .th-wishlist-single a .thw-to-browse-text,
+.summary .th-wishlist-single a .thw-to-add-text{
+  display: none;
+}
+.summary .thw-add-to-wishlist-button-wrap.th-wishlist-single{
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 21px;
+}
+.summary .thw-add-to-wishlist-button-wrap.th-wishlist-single svg{
+  width: 18px;
 }
 .woocommerce .entry-summary a.th-product-compare-btn:before{
     background: transparent;
@@ -4603,7 +4619,7 @@ color:#ff3377;
 }
 .woocommerce .entry-summary .th-product-compare-btn-wrap{
   display: inline-flex;
-  margin-left: 15px;
+  margin-right: 15px;
   margin-top: 0;
 }
 .woocommerce .entry-summary .clear{
@@ -6216,10 +6232,6 @@ text-align:center;
     transform: scale(1) translateZ(0) translateY(0);
     pointer-events: inherit;
 }
-.woocommerce.single-product div.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover .thunk-single-product-summary-wrap img:first-of-type,
-.woocommerce.single-product div.product .thunk-single-product-summary-wrap div.images .flex-control-thumbs li img{
-  opacity: 1;
-}
 .woocommerce li.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover img:first-of-type,
 .woocommerce div.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover img:first-of-type{
 opacity:0;
@@ -6328,6 +6340,12 @@ transition: all 0.4s ease;
     -ms-transform: translate(100%, 0px);
     -o-transform: translate(100%, 0px);
     transform: translate(100%, 0px);
+}
+.woocommerce.single-product div.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover .thunk-single-product-summary-wrap img:first-of-type,
+.woocommerce.single-product div.product .thunk-single-product-summary-wrap div.images .flex-control-thumbs li img,
+.woocommerce.single-product li.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover .woocommerce-product-gallery img:first-of-type, 
+.woocommerce.single-product div.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover .woocommerce-product-gallery img:first-of-type{
+  opacity: 1!important;
 }
 /*******************/
 /*text ellips css start*/
@@ -7694,6 +7712,7 @@ h2.wc-block-mini-cart__title{
 .elemento-wishlist .add_to_wishlist,
 .elemento-addons-advance-product .add_to_wishlist{
   position: relative;
+  font-weight: 500;
 }
 .thunk-wishlist .thunk-wishlist-inner a:before,
 .shop-page-products-layouts .thunk-wishlist a:before,
@@ -7705,7 +7724,8 @@ h2.wc-block-mini-cart__title{
   font-family: "th-icon";
 }
 .thunk-wishlist .thunk-wishlist-inner .yith-wcwl-add-to-wishlist-button--added:before,
-.theme-th-shop-mania .yith-wcwl-add-to-wishlist-button--added:before{
+.theme-th-shop-mania .yith-wcwl-add-to-wishlist-button--added:before,
+.thunk-wishlist .thunk-wishlist-inner a.in-wishlist:before{
   content: "\e909"!important;
   font-family: "th-icon";
 }
@@ -7744,7 +7764,7 @@ h2.wc-block-mini-cart__title{
 }
 .summary .yith-add-to-wishlist-button-block--single,
 .theme-th-shop-mania .summary .yith-add-to-wishlist-button-block{
-    margin-left: 15px;
+    margin-right: 15px;
     float: left;
 }
 .summary .variations_form + .th-product-compare-btn-wrap + .yith-add-to-wishlist-button-block,
@@ -8095,7 +8115,7 @@ margin-right:0;
   justify-content: flex-start;
 }
 .woocommerce div.entry-summary form.cart button[type=submit]{
-  width: 200px;
+  width: 179px;
   height: 37px;
   line-height: 37px;
 }
@@ -8109,7 +8129,8 @@ margin-right:0;
 .summary .yith-wcwl-add-button a, .summary .yith-wcwl-wishlistaddedbrowse a, 
 .summary .yith-wcwl-wishlistexistsbrowse a, 
 .woocommerce .entry-summary a.th-product-compare-btn,
-.summary .yith-wcwl-add-to-wishlist-button{
+.summary .yith-wcwl-add-to-wishlist-button,
+.summary .th-wishlist-single a{
   width: 35px;
   height: 35px;
   line-height: 35px;
@@ -8162,6 +8183,12 @@ margin-right:0;
   .woocommerce-checkout .main-area {
     max-width: 90%;
 }
+.woocommerce div.product form.cart{
+  width: 100%;
+}
+.single-product .product_meta{
+  margin-top: 9px;
+}
 }
 @media screen and (min-width: 768px) and (max-width: 980px){
 .responsive-main-header .main-header-col1{
@@ -8178,8 +8205,9 @@ margin-right:0;
 }
 .woocommerce .entry-summary .th-product-compare-btn-wrap,
 .summary .yith-add-to-wishlist-button-block--single, 
-.theme-th-shop-mania .summary .yith-add-to-wishlist-button-block{
-  margin-left: 9px;
+.theme-th-shop-mania .summary .yith-add-to-wishlist-button-block,
+.summary .thw-add-to-wishlist-button-wrap.th-wishlist-single{
+  margin-right: 9px;
 }
 .responsive-main-header .thaps-search-form .thaps-search-autocomplete,
 .responsive-main-header .tapsp-search-form .tapsp-search-autocomplete{
@@ -8416,6 +8444,9 @@ width:50%;
 .woocommerce-page div.product.th-shop-mania-single-product-content-center div.summary{
   width: 100%;
   margin: 50px auto 0 auto;
+}
+.woocommerce div.product form.cart{
+  width: initial;
 }
 }
 @media screen and (max-width: 767px){
@@ -8874,8 +8905,10 @@ min-width:70px;
 .woocommerce .entry-summary .th-product-compare-btn-wrap,
 .summary .yith-wcwl-add-to-wishlist,
 .summary .yith-add-to-wishlist-button-block--single, 
-.theme-th-shop-mania .summary .yith-add-to-wishlist-button-block{
-  margin-left: 7px;
+.theme-th-shop-mania .summary .yith-add-to-wishlist-button-block,
+.summary .thw-add-to-wishlist-button-wrap.th-wishlist-single,
+.woocommerce div.entry-summary form.cart button[type=submit]{
+  margin-right: 7px;
 }
 .th-shop-mania-quantity,
 .woocommerce div.product .right-side div.summary .th-shop-mania-quantity{

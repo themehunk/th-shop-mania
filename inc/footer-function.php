@@ -7,6 +7,41 @@
  * @copyright   Copyright (c) 2022, Th Shop Mania
  * @since       Th Shop Mania 1.0.0
  */
+if ( !function_exists('th_shop_mania_full_footer_markup') ) {
+function th_shop_mania_full_footer_markup() { 
+  global $post;
+if ((is_single() || is_page()) || ((class_exists('WooCommerce')) && (is_woocommerce() || is_checkout() || is_cart() || is_account_page()))
+||  is_front_page() || is_home()) {
+    if (class_exists('WooCommerce') && is_shop()) {
+        $shop_page_id = get_option('woocommerce_shop_page_id');
+        $postid = $shop_page_id;
+    } elseif(th_shop_mania_is_blog()){
+        $blog_page_id = get_option('page_for_posts');
+        $postid = $blog_page_id;
+    } else {
+        $postid =(isset($post->ID)) ? $post->ID : '';
+    }
+$th_shop_mania_disable_above_footer_dyn  = get_post_meta( $postid, 'th_shop_mania_disable_above_footer_dyn', true );
+$th_shop_mania_disable_footer_widget_dyn = get_post_meta( $postid, 'th_shop_mania_disable_footer_widget_dyn', true ); 
+$th_shop_mania_disable_bottom_footer_dyn = get_post_meta( $postid, 'th_shop_mania_disable_bottom_footer_dyn', true ); 
+}else{
+$th_shop_mania_disable_above_footer_dyn  ='';
+$th_shop_mania_disable_footer_widget_dyn ='';
+$th_shop_mania_disable_bottom_footer_dyn ='';
+}
+?>
+  <footer class="thsm-footer">
+         <?php        
+  th_shop_mania_footer_abv_post_meta($th_shop_mania_disable_above_footer_dyn);
+    th_shop_mania_footer_widget_post_meta($th_shop_mania_disable_footer_widget_dyn);
+    th_shop_mania_footer_bottom_post_meta($th_shop_mania_disable_bottom_footer_dyn);
+        ?>
+</footer> <!-- end footer -->
+    <?php }
+
+// Hook the custom footer function into 'zita_footer'
+add_action('th_shop_mania_footer', 'th_shop_mania_full_footer_markup');
+}
 /**************************************/
 //Widgett footer function
 /**************************************/
