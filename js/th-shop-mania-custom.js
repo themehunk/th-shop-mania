@@ -254,23 +254,24 @@
                             jQuery("html, body").animate({ scrollTop: 0 }, 600);
                             return false;
                         });
-                     // Below Footer 
-                     if (!(jQuery('.th-shop-mania-pro').length )) {
-                     jQuery('.below-footer').attr('style', 'display: block !important');
-                     jQuery('.below-footer *').attr('style', 'display: inline-block !important');
 
-                     if (!(jQuery('.footer-copyright').length )) {
-                      jQuery('footer div').hide();
-                     }
+                     // Below Footer code if made any changes in footer
+                   //   if (!(jQuery('.th-shop-mania-pro').length )) {
+                   //   jQuery('.below-footer').attr('style', 'display: block !important');
+                   //   jQuery('.below-footer *').attr('style', 'display: inline-block !important');
 
-                     // Select the anchor tag
-                    var anchor = jQuery('.footer-copyright a');
-                    if (jQuery.trim(anchor.text()) === '' || anchor.text() !== 'ThemeHunk') {
-                        anchor.text('ThemeHunk WordPress Theme');
-                    }
+                   //   if (!(jQuery('.footer-copyright').length )) {
+                   //    jQuery('footer div').hide();
+                   //   }
+
+                   //   // Select the anchor tag
+                   //  var anchor = jQuery('.footer-copyright a');
+                   //  if (jQuery.trim(anchor.text()) === '' || anchor.text() !== 'ThemeHunk') {
+                   //      anchor.text('ThemeHunk WordPress Theme');
+                   //  }
 
 
-                   }
+                   // }
                 },
                      
     }
