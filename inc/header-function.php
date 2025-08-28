@@ -406,11 +406,11 @@ function th_shop_mania_header_transparent_class($th_shop_mania_transparent_post_
         $th_shop_mania_header_transparent_special_page_disable = get_theme_mod('th_shop_mania_header_transparent_special_page_disable', false);
         $th_shop_mania_header_transparent = get_theme_mod('th_shop_mania_header_transparent', false);
         if ($th_shop_mania_header_transparent == true) {
-            if (($th_shop_mania_header_transparent_special_page_disable == true) && (is_archive() || is_404() || is_search() || (class_exists('WooCommerce') && (is_shop() || is_product())))) {
-                $class = '';
-            } else {
-                $class = 'zta-transparent-header';
-            }
+             if ( is_front_page() ) {
+            $class = 'zta-transparent-header';
+        } else {
+            $class = '';
+        }
             if (is_front_page() && is_home()) {
              $class = '';
             }
