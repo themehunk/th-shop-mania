@@ -1963,10 +1963,31 @@ display:none;
   min-width: 127px;
   position: relative;
 }
+/* WebKit-based browsers */
+.thunk-product-cat-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.thunk-product-cat-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.thunk-product-cat-list::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 5px;
+    border: 1px solid #f1f1f1; /* optional padding effect */
+}
+
+.thunk-product-cat-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
 .menu-category-list ul[data-menu-style="vertical"] {
     width: 100%;
     border: 1px solid #f1f1f1;
     background: #ffffff;
+    max-height: 509px;
+    overflow-y: scroll;
     position: absolute;
     border-radius: 5px;
     z-index: 99;
