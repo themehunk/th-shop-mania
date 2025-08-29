@@ -1,6 +1,8 @@
-25-08-2025 = = Version 1.6.6 =
-* Update: Below footer js code commented  // Below Footer code if made any changes in footer
+25-08-2025 = = Version 1.6.7 =
 * Update: Modification in th_shop_mania_header_transparent_class disable transparent header for inner pages should work in all pages except frontpage.
+
+21-08-2025 = = Version 1.6.6 =
+* Update: Below footer js code commented  // Below Footer code if made any changes in footer
 
 19-08-2025 = = Version 1.6.5 =
 1. TH COMPARE INETEGRATED.
