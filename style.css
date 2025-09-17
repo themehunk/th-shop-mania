@@ -7885,6 +7885,13 @@ h2.wc-block-mini-cart__title{
 .buttons_ .thunk-compare{
   margin: 0;
 }
+.th-icon-CursorAndSelection-Icons-17-converted{
+  position: relative;
+}
+.th-icon-CursorAndSelection-Icons-17-converted:before{
+  content: "\f0a6";
+  font-family: "FontAwesome";
+}
 @media screen and (max-width: 1024px){
 .main-area{
   padding-left: 10px;
