@@ -1,3 +1,6 @@
+24-09-2025 = = Version 1.6.8 =
+* Update: Single page gallery images hover issue resolved.
+
 25-08-2025 = = Version 1.6.7 =
 * Update: Modification in th_shop_mania_header_transparent_class disable transparent header for inner pages should work in all pages except frontpage.
 * Variation product icon add to add button.
