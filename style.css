@@ -140,7 +140,12 @@ section{
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+.theme-th-shop-mania h1, 
+.theme-th-shop-mania h2, 
+.theme-th-shop-mania h3, 
+.theme-th-shop-mania h4, 
+.theme-th-shop-mania h5, 
+.theme-th-shop-mania h6 {
     font-family: 'Jost';font-weight: 500;
 }
 h1 {
@@ -7903,6 +7908,19 @@ h2.wc-block-mini-cart__title{
 }
 .th-shop-mania-shop-page-layout-5 .compare-tooltip .th-icon{
   margin: 0;
+}
+.theme-th-shop-mania .compare-tooltip:hover:after{
+  display: none;
+}
+.wc-block-components-totals-coupon__button{
+  color: #FFF;
+}
+.has-dark-controls .wc-blocks-components-select .wc-blocks-components-select__select,
+.has-dark-controls .wc-blocks-components-select .wc-blocks-components-select__label,
+.woocommerce-checkout .has-dark-controls label,
+.woocommerce-cart .has-dark-controls label,
+.has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=email], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=number], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=password], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=tel], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=text], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=url], .has-dark-controls .wc-block-components-text-input input[type=email], .has-dark-controls .wc-block-components-text-input input[type=number], .has-dark-controls .wc-block-components-text-input input[type=password], .has-dark-controls .wc-block-components-text-input input[type=tel], .has-dark-controls .wc-block-components-text-input input[type=text], .has-dark-controls .wc-block-components-text-input input[type=url] {
+    color: #423f3f!important;
 }
 @media screen and (max-width: 1024px){
 .main-area{
