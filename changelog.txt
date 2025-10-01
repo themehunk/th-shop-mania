@@ -1,3 +1,11 @@
+30-09-2025 = = Version 1.6.9 =
+* Update: Single page gallery images hover issue resolved.
+* Update: Elementor addons gallery images hover issue resolved.
+* Update: page footEr and header style diffrent issue resolved.
+* Update: Account dark mode input box style issue resolved.
+* variation product home page cart or hand icon not show.
+
+
 24-09-2025 = = Version 1.6.8 =
 * Update: Single page gallery images hover issue resolved.
 

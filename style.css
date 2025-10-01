@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.6.8
+Version: 1.6.9
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -140,7 +140,12 @@ section{
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+.theme-th-shop-mania h1, 
+.theme-th-shop-mania h2, 
+.theme-th-shop-mania h3, 
+.theme-th-shop-mania h4, 
+.theme-th-shop-mania h5, 
+.theme-th-shop-mania h6 {
     font-family: 'Jost';font-weight: 500;
 }
 h1 {
@@ -6272,6 +6277,12 @@ text-align:center;
 .woocommerce div.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover img:first-of-type{
 opacity:0;
 }
+.woocommerce .elementor-widget-container li.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover img:first-of-type,
+.woocommerce .elementor-widget-container div.product.th-shop-mania-woo-hover-swap.th-shop-mania-swap-item-hover:hover img:first-of-type,
+.woocommerce .elementor-widget-container li.th-shop-mania-woo-hover-slide img,
+.woocommerce .elementor-widget-container div.th-shop-mania-woo-hover-slide img {
+  opacity: 1;
+}
 .woocommerce li.product.th-shop-mania-woo-hover-swap:hover img.show-on-hover,
 .woocommerce div.product.th-shop-mania-woo-hover-swap:hover img.show-on-hover,
 div.product.th-shop-mania-woo-hover-swap:hover .thunk-list img{
@@ -7897,6 +7908,19 @@ h2.wc-block-mini-cart__title{
 }
 .th-shop-mania-shop-page-layout-5 .compare-tooltip .th-icon{
   margin: 0;
+}
+.theme-th-shop-mania .compare-tooltip:hover:after{
+  display: none;
+}
+.wc-block-components-totals-coupon__button{
+  color: #FFF;
+}
+.has-dark-controls .wc-blocks-components-select .wc-blocks-components-select__select,
+.has-dark-controls .wc-blocks-components-select .wc-blocks-components-select__label,
+.woocommerce-checkout .has-dark-controls label,
+.woocommerce-cart .has-dark-controls label,
+.has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=email], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=number], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=password], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=tel], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=text], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=url], .has-dark-controls .wc-block-components-text-input input[type=email], .has-dark-controls .wc-block-components-text-input input[type=number], .has-dark-controls .wc-block-components-text-input input[type=password], .has-dark-controls .wc-block-components-text-input input[type=tel], .has-dark-controls .wc-block-components-text-input input[type=text], .has-dark-controls .wc-block-components-text-input input[type=url] {
+    color: #423f3f!important;
 }
 @media screen and (max-width: 1024px){
 .main-area{
