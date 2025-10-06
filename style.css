@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.6.9
+Version: 1.7.0
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -2148,17 +2148,20 @@ margin-right:10px;
 /***************/
 .th-wp-auto-search::-webkit-scrollbar,
 #product_cat::-webkit-scrollbar,
-.sidebar-main::-webkit-scrollbar{
+.sidebar-main::-webkit-scrollbar,
+#alm-quick-view-content div.summary::-webkit-scrollbar{
     width:5px;
 }
 .th-wp-auto-search::-webkit-scrollbar-track-piece,
 #product_cat::-webkit-scrollbar-track-piece,
-.sidebar-main::-webkit-scrollbar-track-piece{
+.sidebar-main::-webkit-scrollbar-track-piece,
+#alm-quick-view-content div.summary::-webkit-scrollbar-track-piece{
     background: #eee;
 }
 .th-wp-auto-search::-webkit-scrollbar-thumb,
 #product_cat::-webkit-scrollbar-thumb,
-.sidebar-main::-webkit-scrollbar-thumb{
+.sidebar-main::-webkit-scrollbar-thumb,
+#alm-quick-view-content div.summary::-webkit-scrollbar-thumb{
     background:#ddd;
 }
 .ui-menu .ui-menu-item{
@@ -3250,6 +3253,13 @@ text-align: center;
   margin: 0!important;
   padding-right: 0 10px!important;
 }
+.theme-th-shop-mania .thw-add-to-wishlist-button:hover, 
+.theme-th-shop-mania .thw-add-to-wishlist-button.loading{
+  opacity: 1;
+} 
+.elemento-wishlist .thw-add-to-wishlist-button .thw-icon{
+  font-size: 1em;
+}
 .single-product .entry-summary .thunk-compare{
   display: inline-flex;
   margin-top: 0;
@@ -3975,7 +3985,7 @@ section.upsells.products h2,
   float: initial;
 }
 .woocommerce div.product form.cart .variations select {
-    z-index: 1;
+    width: 100%;
     border: none;
     height: 39px;
     line-height: normal;
@@ -3989,7 +3999,30 @@ section.upsells.products h2,
     width: 100%;
     margin-right: 10px;
     margin-bottom: 7.5px;
+    z-index: 1;
 }
+.entry-summary .variations th{
+  min-width: 99px;
+}
+.entry-summary .variations td{
+  width: 100%;
+  position: relative;
+}
+.entry-summary .variations td::after {
+    content: '▼';
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    right: 10px;
+    top: 12%;
+    pointer-events: none;
+    z-index: 108;
+    }
+  .entry-summary .reset_variations{
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    }
 .woocommerce div.product form.cart .variations td.label{
      vertical-align:middle;
 }
@@ -7823,6 +7856,11 @@ h2.wc-block-mini-cart__title{
   visibility: visible!important;
   font-size: 1em;
   font-weight: 500;
+  text-align: right;
+  opacity: .5;
+}
+.woocommerce div.product form.cart .reset_variations:hover{
+  opacity: 1;
 }
 .theme-th-shop-mania .yith-wcwl-add-to-wishlist-button svg{
     display: none;
@@ -7921,6 +7959,9 @@ h2.wc-block-mini-cart__title{
 .woocommerce-cart .has-dark-controls label,
 .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=email], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=number], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=password], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=tel], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=text], .has-dark-controls .wc-block-components-form .wc-block-components-text-input input[type=url], .has-dark-controls .wc-block-components-text-input input[type=email], .has-dark-controls .wc-block-components-text-input input[type=number], .has-dark-controls .wc-block-components-text-input input[type=password], .has-dark-controls .wc-block-components-text-input input[type=tel], .has-dark-controls .wc-block-components-text-input input[type=text], .has-dark-controls .wc-block-components-text-input input[type=url] {
     color: #423f3f!important;
+}
+.woocommerce div.product form.cart .variations label{
+  text-transform: capitalize;
 }
 @media screen and (max-width: 1024px){
 .main-area{

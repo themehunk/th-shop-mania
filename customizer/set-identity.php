@@ -27,7 +27,7 @@ $wp_customize->add_control('title_disable', array(
         ),
     ));
 $wp_customize->add_setting('tagline_disable', array(
-        'default'           => 'enable',
+        'default'           => '',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'th_shop_mania_sanitize_checkbox',
     ));

@@ -56,7 +56,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		    // quick view ajax.
 			add_action( 'wp_ajax_alm_load_product_quick_view', array( $this, 'th_shop_mania_load_product_quick_view_ajax' ) );
 			add_action( 'wp_ajax_nopriv_alm_load_product_quick_view', array( $this, 'th_shop_mania_load_product_quick_view_ajax' ) );
-			add_action('th_shop_mania_woo_quick_view_product_summary', array( $this, 'th_shop_mania_woo_single_product_content_structure' ), 10, 1 );			
+			
 				// pagination
             add_action( 'th_shop_mania_pagination_infinite', array( $this, 'shop_page_styles' ) );
             add_action( 'th_shop_mania_pagination_infinite', array( $this, 'th_shop_mania_common_actions' ), 999 );
@@ -68,6 +68,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			$this->th_shop_mania_quick_view_content_actions();
 			
 		   add_action( 'wp', array( $this, 'th_shop_mania_single_product_customization' ) );
+		   add_action('th_shop_mania_woo_quick_view_product_summary', array( $this, 'th_shop_mania_woo_single_product_content_structure' ), 10, 1 );			
            
    		//  // Alter cross-sells display
 			if ( '0' != get_theme_mod( 'th_shop_mania_cross_num_col_shw', '5' ) ) {
@@ -362,9 +363,8 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			// load content template.
 			require_once TH_SHOP_MANIA_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product.php';
 			// echo ob_get_clean();
-			$content = ob_get_clean();
 
-    		echo wp_kses_post( $content ); // Proper escaping applied
+    		echo ob_get_clean(); // Proper escaping applied
 			die();
 		}
 		/**
