@@ -1,3 +1,8 @@
+06-10-2025 = = Version 1.7.0 =
+* Update: Add to cart loading issue resolved.
+* Update: Quick View in shop page issue resolved.
+* Update: Wishlist, variation style updated.
+
 30-09-2025 = = Version 1.6.9 =
 * Update: Single page gallery images hover issue resolved.
 * Update: Elementor addons gallery images hover issue resolved.

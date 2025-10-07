@@ -4,7 +4,7 @@ Tags: custom-logo, block-patterns, editor-style, e-commerce, blog, grid-layout, 
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
 Tested up to: 6.8
-Stable tag: 1.6.9
+Stable tag: 1.7.0
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -26,6 +26,12 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
  
 License for images:
 == Screenshots ==
+https://www.pexels.com/photo/man-sitting-holding-white-desk-globe-1036628/
+https://www.pexels.com/photo/woman-wearing-white-long-sleeve-dress-with-curly-hair-7304341/
+https://images.pexels.com/photos/8562440/pexels-photo-8562440.jpeg
+http://images.unsplash.com/photo-1560769629-975ec94e6a86
+https://images.unsplash.com/photo-1589354660857-ce40de261300
+
 https://www.pexels.com/photo/woman-wearing-gray-blazer-982585/
 https://www.pexels.com/photo/photo-of-man-wearing-white-shirt-2698918/
 https://www.pexels.com/photo/young-men-wearing-comfortable-loungewear-while-posing-in-studio-9775768/

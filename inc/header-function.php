@@ -242,7 +242,7 @@ add_action( 'th_shop_mania_below_header', 'th_shop_mania_below_header_markup' );
 if ( ! function_exists( 'th_shop_mania_logo' ) ){
 function th_shop_mania_logo($headertype = ''){
 $title_disable          = get_theme_mod( 'title_disable','enable');
-$tagline_disable        = get_theme_mod( 'tagline_disable','enable');
+$tagline_disable        = get_theme_mod( 'tagline_disable','');
 $description            = get_bloginfo( 'description', 'display' );
 th_shop_mania_custom_logo(); 
 if($title_disable!='' || $tagline_disable!=''){
