@@ -25,7 +25,7 @@
                     typeof th_shop_mania_woo_object === 'undefined'
                  ) {
                   $this.MoveToTop();
-              }
+              } 
         },    
           PreLoader : function (){
                                if(!$('body').hasClass('elementor-editor-active')){
@@ -232,47 +232,83 @@
                          $('.mobile-nav-tabs li:first a').click();
                 });
         },
-            MoveToTop:function(){
-                      /**************************************************/
-                      // Show-hide Scroll to top & move-to-top arrow
-                      /**************************************************/
-                        jQuery("body").prepend("<a id='move-to-top' class='animate' href='#'><span class='th-icon th-icon-chevron-up-thin-converted'></span></a>"); 
-                        var scrollDes = 'html,body';  
-                        /*Opera does a strange thing if we use 'html' and 'body' together so my solution is to do the UA sniffing thing*/
-                        if(navigator.userAgent.match(/opera/i)){
-                          scrollDes = 'html';
-                        }
-                        //show ,hide
-                        jQuery(window).scroll(function (){
-                          if(jQuery(this).scrollTop() > 160){
-                            jQuery('#move-to-top').addClass('filling').removeClass('hiding');
-                          }else{
-                            jQuery('#move-to-top').removeClass('filling').addClass('hiding');
-                          }
-                        });
-                        jQuery('#move-to-top').click(function(){
-                            jQuery("html, body").animate({ scrollTop: 0 }, 600);
-                            return false;
-                        });
+           MoveToTop: function () {
+  /**************************************************/
+  // Scroll-to-top button with circular progress
+  /**************************************************/
 
-                     // Below Footer code if made any changes in footer
-                   //   if (!(jQuery('.th-shop-mania-pro').length )) {
-                   //   jQuery('.below-footer').attr('style', 'display: block !important');
-                   //   jQuery('.below-footer *').attr('style', 'display: inline-block !important');
+  // If button already exists, skip creating
+  if (!jQuery('#move-to-top').length) {
+    jQuery('body').prepend(`
+      <a id="move-to-top" class="hiding" href="#" aria-label="Move to top" title="Move to top">
+        <svg class="th-mtt__ring" viewBox="0 0 56 56" aria-hidden="true">
+          <circle class="th-mtt__ring--track" cx="28" cy="28" r="26"></circle>
+          <circle class="th-mtt__ring--progress" cx="28" cy="28" r="26"></circle>
+        </svg>
+        <span class="th-mtt__btn" aria-hidden="true">
+          <span class="th-icon th-icon-chevron-up-thin-converted"></span>
+        </span>
+      </a>
+    `);
+  }
 
-                   //   if (!(jQuery('.footer-copyright').length )) {
-                   //    jQuery('footer div').hide();
-                   //   }
+  var $btn = jQuery('#move-to-top');
+  var $progress = $btn.find('.th-mtt__ring--progress');
 
-                   //   // Select the anchor tag
-                   //  var anchor = jQuery('.footer-copyright a');
-                   //  if (jQuery.trim(anchor.text()) === '' || anchor.text() !== 'ThemeHunk') {
-                   //      anchor.text('ThemeHunk WordPress Theme');
-                   //  }
+  // SVG ring math
+  var R = 26;
+  var CIRC = 2 * Math.PI * R;
+  $progress.css('stroke-dasharray', CIRC);
 
+  var SHOW_AFTER = 160;
+  var ticking = false;
 
-                   // }
-                },
+  function update() {
+    var $win = jQuery(window);
+    var $doc = jQuery(document);
+    var scrollTop = $win.scrollTop();
+    var docH = $doc.height();
+    var winH = $win.height();
+    var maxScroll = Math.max(docH - winH, 1);
+    var pct = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+
+    // Show/hide
+    if (scrollTop > SHOW_AFTER) {
+      $btn.addClass('filling').removeClass('hiding');
+    } else {
+      $btn.removeClass('filling').addClass('hiding');
+    }
+
+    // Progress ring fill
+    var dashOffset = CIRC * (1 - pct);
+    $progress.css('stroke-dashoffset', dashOffset);
+
+    ticking = false;
+  }
+
+  jQuery(window).on('scroll resize', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  });
+
+  // Smooth scroll to top
+  $btn.on('click', function (e) {
+    e.preventDefault();
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      window.scrollTo(0, 0);
+    } else {
+      jQuery('html, body').stop().animate({ scrollTop: 0 }, 600);
+    }
+    return false;
+  });
+
+  // Initial paint
+  update();
+}
+
                      
     }
 /* -----------------------------------------------------------------------------------------------
