@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.7.0
+Version: 1.7.1
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -6507,6 +6507,103 @@ span.product-title{
 #move-to-top:hover{
     opacity:1;
 }
+/* =============================================================
+   Move-to-Top (theme-colored circular progress) CSS Starts
+================================================================== */
+#move-to-top {
+   background-color: #ff3377;
+    font-size:18px;
+    right: 30px;
+    bottom: 151px;
+    position: fixed;
+    text-align: center;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    color: #fff;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+  transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+  opacity: 0;
+  pointer-events: none;
+  text-decoration: none;
+  --th-mtt-color: var(--th-accent, var(--accent-color, #111));
+}
+
+#move-to-top.filling {
+  opacity: 1;
+  pointer-events: auto;
+}
+#move-to-top.hiding {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#move-to-top:active {
+  transform: scale(0.96);
+}
+
+#move-to-top:focus-visible {
+  outline: 2px solid var(--th-mtt-color);
+  outline-offset: 3px;
+}
+
+.th-mtt__btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--th-mtt-color);
+  font-size: 18px;
+  line-height: 1;
+  user-select: none;
+}
+
+.th-mtt__ring {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  top: -1px;
+}
+
+.th-mtt__ring circle {
+  fill: none;
+  stroke-width: 4;
+}
+
+.th-mtt__ring--track {
+  stroke: #c9c9c94a;
+}
+
+.th-mtt__ring--progress {
+  stroke: var(--th-mtt-color);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-linecap: round;
+  stroke-dasharray: 0 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .1s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* =============================================================
+   Move-to-Top (theme-colored circular progress) CSS End
+================================================================== */
 .woocommerce #shop-product-wrap .woocommerce-ordering {
     width: 210px;
     text-align: right;

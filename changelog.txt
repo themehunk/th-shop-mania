@@ -1,3 +1,7 @@
+09-11-2025 = = Version 1.7.1 =
+* New: Circular Progress bar added in move to top.
+* Update: Style issue resolved.
+
 06-10-2025 = = Version 1.7.0 =
 * Update: Add to cart loading issue resolved.
 * Update: Quick View in shop page issue resolved.

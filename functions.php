@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.7.0');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.7.1');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
