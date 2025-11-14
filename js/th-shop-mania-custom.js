@@ -246,7 +246,7 @@
           <circle class="th-mtt__ring--progress" cx="28" cy="28" r="26"></circle>
         </svg>
         <span class="th-mtt__btn" aria-hidden="true">
-          <span class="th-icon th-icon-chevron-up-thin-converted"></span>
+          <span class="t-icon t-icon-chevron-up-thin-converted">↑</span>
         </span>
       </a>
     `);
