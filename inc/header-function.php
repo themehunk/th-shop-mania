@@ -276,10 +276,11 @@ if( $description || is_customize_preview() ):?>
 // Product search
 /***************************/
 function th_shop_mania_product_search_box(){  
-  if ( shortcode_exists( 'th-aps' ) ) {
+    $th_shop_mania_enable_search = esc_html(get_theme_mod('th_shop_mania_enable_search',true));
+  if ( $th_shop_mania_enable_search && shortcode_exists( 'th-aps' ) ) {
     echo do_shortcode('[th-aps]');          
   }
-  elseif ( shortcode_exists('tapsp') ){
+  elseif ( $th_shop_mania_enable_search && shortcode_exists('tapsp') ){
     echo do_shortcode('[tapsp]');
     }       
 }
