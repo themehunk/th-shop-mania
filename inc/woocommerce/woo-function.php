@@ -36,9 +36,10 @@ if (!function_exists('th_shop_mania_cart_total_item')) {
    */
   function th_shop_mania_cart_total_item()
   {
-if (shortcode_exists('taiowc')) {
+    $th_shop_mania_enable_cart = esc_html(get_theme_mod('th_shop_mania_enable_cart',true));
+if ($th_shop_mania_enable_cart && shortcode_exists('taiowc')) {
     $shortcode = 'taiowc';
-} elseif (shortcode_exists('taiowcp')) {
+} elseif ( $th_shop_mania_enable_cart && shortcode_exists('taiowcp')) {
     $shortcode = 'taiowcp';
 } else {
     return;
@@ -53,14 +54,18 @@ if (shortcode_exists('taiowc')) {
 /** My Account Menu **/
 if (!function_exists('th_shop_mania_account')) {
   function th_shop_mania_account()
-  { ?>
+  { 
+    $th_shop_mania_enable_account = esc_html(get_theme_mod('th_shop_mania_enable_account',true));
+    if ($th_shop_mania_enable_account) {
+    ?>
     <a class="account" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" aria-label="account"><span class="th-icon th-icon-user"></span>
       </a>
 
         <?php  if( shortcode_exists( 'thsmw-popup' ) ){
               do_shortcode("[thsmw-popup popup='Popup-2']");
           } ?>
-  <?php }
+  <?php } 
+}
   add_action('th_shop_mania_account', 'th_shop_mania_account');
 }
 /***************/

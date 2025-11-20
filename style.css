@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.7.1
+Version: 1.7.2
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -776,7 +776,7 @@ header{
 }
 .main-header-col1{
   width: auto;
-  min-width: 21%;
+/*  min-width: 21%;*/
   justify-content: flex-start;
   padding: 0 15px 0 0;
   align-items: center;
@@ -6556,25 +6556,26 @@ span.product-title{
 
 .th-mtt__btn {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   background: var(--th-mtt-color);
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1;
   user-select: none;
+  padding-bottom: 9px;
 }
 
 .th-mtt__ring {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  top: -1px;
+  /*left: calc(env(safe-area-inset-left) - 1px);
+  right: calc(env(safe-area-inset-right) - 1px);
+  bottom: calc(env(safe-area-inset-bottom) - 1px);
+  top: calc(env(safe-area-inset-top) - 1px);*/
 }
 
 .th-mtt__ring circle {
@@ -6720,6 +6721,9 @@ border-color: #0177B5;
 }
 .th-shop-mania-shop-page-layout-default .thunk-product-hover{
   margin: 0 -1px;
+}
+.th-shop-mania-shop-page-layout-default .thw-to-add-text{
+  margin-left: -4px;
 }
 /*============================================================================
 *  product layouts style and layout 2
@@ -9265,7 +9269,8 @@ font-size:12px;
     height: 35px;
     line-height: normal;
     letter-spacing: .1em;
-    width: 90px;
+    width: 108px;
+    min-width: initial;
 }
 .woocommerce ul.products li.product.thunk-woo-product-list .price,
 .woocommerce .thunk-list-view ul.products li.product.thunk-woo-product-list .price {
