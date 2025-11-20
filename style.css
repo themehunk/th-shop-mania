@@ -6491,10 +6491,7 @@ span.product-title{
     position: fixed;
     right: 20px;
     bottom: 90px;
-    box-shadow: 0 0 10px rgb(183 183 183 / 60%);
-    -moz-box-shadow: 0 0 10px rgb(183 183 183 / 60%);
-    -webkit-box-shadow: 0 0 10px rgb(183 183 183 / 60%);
-    -o-box-shadow: 0 0 10px rgb(183 183 183 / 60%);
+/*    box-shadow: 0 0 10px rgb(183 183 183 / 60%);*/
     backdrop-filter: blur(7.9px);
     -webkit-backdrop-filter: blur(7.9px);
     --th-mtt-color: var(--th-accent, var(--accent-color, #111));
