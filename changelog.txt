@@ -1,3 +1,6 @@
+20-11-2025 = = Version 1.7.1 =
+* New: Move to top issue resolved.
+
 19-11-2025 = = Version 1.7.1 =
 * New: New Enable options addded in header icons.
 
