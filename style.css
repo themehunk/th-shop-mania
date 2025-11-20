@@ -6481,24 +6481,30 @@ span.product-title{
 }
 /*Back to top Start*/
 #move-to-top {
-    background-color: #ff3377;
-    font-size:18px;
-    right: 30px;
-    bottom: 151px;
-    position: fixed;
-    text-align: center;
-    cursor: pointer;
-    width: 2em;
-    height: 2em;
-    line-height: 2em;
+    width: 54px;
+    height: 54px;
+    font-size: 2rem;
+    border-radius: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    box-shadow: 0 0 10px rgb(183 183 183 / 60%);
+    -moz-box-shadow: 0 0 10px rgb(183 183 183 / 60%);
+    -webkit-box-shadow: 0 0 10px rgb(183 183 183 / 60%);
+    -o-box-shadow: 0 0 10px rgb(183 183 183 / 60%);
+    backdrop-filter: blur(7.9px);
+    -webkit-backdrop-filter: blur(7.9px);
+    --th-mtt-color: var(--th-accent, var(--accent-color, #111));
+    line-height: 2em;
     color: #fff;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px; 
     z-index: 9999;
+    transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+    text-decoration: none;
+    --th-mtt-color: var(--th-accent, var(--accent-color, #111));
+    place-items: center;
 }
 #move-to-top:not(.filling){
     opacity: 0;
@@ -6510,32 +6516,6 @@ span.product-title{
 /* =============================================================
    Move-to-Top (theme-colored circular progress) CSS Starts
 ================================================================== */
-#move-to-top {
-   background-color: #ff3377;
-    font-size:18px;
-    right: 30px;
-    bottom: 151px;
-    position: fixed;
-    text-align: center;
-    cursor: pointer;
-    width: 2em;
-    height: 2em;
-    line-height: 2em;
-    color: #fff;
-  z-index: 9999;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,.15);
-  transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
-  opacity: 0;
-  pointer-events: none;
-  text-decoration: none;
-  --th-mtt-color: var(--th-accent, var(--accent-color, #111));
-}
-
 #move-to-top.filling {
   opacity: 1;
   pointer-events: auto;
@@ -6565,7 +6545,7 @@ span.product-title{
   font-size: 21px;
   line-height: 1;
   user-select: none;
-  padding-bottom: 9px;
+/*  padding-bottom: 9px;*/
 }
 
 .th-mtt__ring {
