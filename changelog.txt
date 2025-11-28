@@ -1,9 +1,6 @@
-25-11-2025 = = Version 1.7.3 =
+25-11-2025 = = Version 1.7.2 =
 * New: Move to top issue resolved.
 * Update: Style updated.
-
-20-11-2025 = = Version 1.7.2 =
-* New: Move to top issue resolved.
 
 09-11-2025 = = Version 1.7.1 =
 * New: Circular Progress bar added in move to top.
