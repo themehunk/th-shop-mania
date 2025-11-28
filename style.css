@@ -8094,6 +8094,12 @@ display:none;
 .below-header,.desktop-main-header {
  display:none;
 }
+.sticky-header .sticky-header-bar{
+  display: none;
+}
+.sticky-header .responsive-main-header{
+  display: block;
+}
 .responsive-main-header #thaps-search-button,
 .responsive-main-header #tapsp-search-button{
   margin: 0.2rem;
@@ -8349,11 +8355,7 @@ margin-right:0;
 .woocommerce-checkout .main-area {
     max-width: 70%;
 }
-.thaps-autocomplete-suggestions,
-.tapsp-autocomplete-suggestions{
-  width: 312px!important;
-  left: 0!important;
-}
+
 }
 @media screen and (max-width: 990px){
   section.related.products ul.products, 
