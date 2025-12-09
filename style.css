@@ -1989,7 +1989,6 @@ display:none;
     border: 1px solid #f1f1f1;
     background: #ffffff;
     max-height: 509px;
-    overflow-y: scroll;
     position: absolute;
     border-radius: 5px;
     z-index: 99;
@@ -6481,15 +6480,15 @@ span.product-title{
 }
 /*Back to top Start*/
 #move-to-top {
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.9rem;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    right: 20px;
+    right: 16px;
     bottom: 90px;
 /*    box-shadow: 0 0 10px rgb(183 183 183 / 60%);*/
     backdrop-filter: blur(7.9px);
@@ -6533,8 +6532,8 @@ span.product-title{
 
 .th-mtt__btn {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -8033,6 +8032,9 @@ h2.wc-block-mini-cart__title{
 }
 .woocommerce div.product form.cart .variations label{
   text-transform: capitalize;
+}
+.cart_fixed_1 .taiowc-icon .th-icon {
+    font-size: 1.9rem;
 }
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
