@@ -64,7 +64,7 @@ Th Shop Mania Responsive Menu script
                 $aceMenu.find('li.menu-active').removeClass('menu-active');
                 $aceMenu.find('ul.slide').removeClass('slide').removeAttr('style');
                 $aceMenu.addClass('collapse hide-menu');
-                $('.main-header .menu-toggle,.sticky-header .menu-toggle,.below-header .menu-toggle').show();
+                $('.main-header .menu-toggle,.sticky-header .menu-toggle,.below-header .menu-toggle').show().css('display', 'flex');;
                 $('.th-shop-mania-menu a,.menu-close-btn,.arrow').attr('tabindex',-1);
                 }else{
                 $aceMenu.attr('data-menu-style', $menuStyle);
