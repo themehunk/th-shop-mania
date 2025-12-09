@@ -1,11 +1,9 @@
-09-12-2025 = = Version 1.7.4 =
-* Update: Style changes.
-* Update: Menu Icon replaced with svg.
-
 25-11-2025 = = Version 1.7.3 =
 * New: Move to top issue resolved.
 * Update: Style updated.
 * Category not displaying by default issue resolved.
+* Update: Style changes.
+* Update: Menu Icon replaced with svg.
 
 25-11-2025 = = Version 1.7.2 =
 * New: Move to top issue resolved.
