@@ -1,3 +1,6 @@
+12-12-2025 = = Version 1.7.4 =
+* New: Wishlist double icon issue resolved.
+
 25-11-2025 = = Version 1.7.3 =
 * New: Move to top issue resolved.
 * Update: Style updated.

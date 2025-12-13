@@ -19,7 +19,6 @@ $th_shop_mania_style.="#move-to-top .th-mtt__btn,article.thunk-post-article .thu
 ";
 $th_shop_mania_style.="#searchform [type='submit']:hover, .widget_product_search button[type='submit']:hover,.thunk-product .th-add-to-cart a,.th-shop-mania-pre-loader .th-loader,.th-shop-mania-load-more button,article.thunk-post-article .thunk-readmore.button, .comment-respond [type='submit'],.btn-main-header,.wc-block-components-product-sale-badge,.wc-block-grid__product-onsale,.theme-th-shop-mania input[type='submit'].dokan-btn-theme, .theme-th-shop-mania a.dokan-btn-theme, .theme-th-shop-mania .dokan-btn-theme{border-color:{$th_shop_mania_theme_clr};}";
 
-$th_shop_mania_style.=".cart-contents:hover path{fill:{$th_shop_mania_theme_clr};}";
 
 $th_shop_mania_style.="#move-to-top .th-mtt__ring--progress{stroke:{$th_shop_mania_theme_clr};}";
 
