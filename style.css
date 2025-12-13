@@ -1544,14 +1544,21 @@ header .taiowc-icon .th-icon{
 }
 .main-header-col3 .cart-count-item,
 .sticky-header .cart-count-item{
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
     right: initial;
-    left: 16px;
+    line-height: 1rem;
+    left: 14px;
     top: -7px;
     background: #999;
-    font-size: 0.69rem;
+    font-size: 0.65rem;
+    padding: 0;
+    border-radius: 9999px;
+    width: 1.125rem;
+    height: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    box-shadow: 0 0 0 2px #FFFFFF;
 }
 .main-header-col3 .taiowc-cart-item{
   padding: 0;
@@ -1560,7 +1567,10 @@ header .taiowc-icon .th-icon{
 #no-results .page-content p, #error-404 .page-content p{
   margin: 0;
 }
-
+header .woocommerce-Price-amount {
+  font-weight: 400;
+  letter-spacing: .001rem;
+}
 #no-results .form-content input[type="text"],#error-404 .form-content input[type="text"]{
 width: 250px;
 }
