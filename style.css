@@ -1454,8 +1454,10 @@ display:none;
 }
 .thunk-icon-market{
   display: flex;
-  align-items: center;
   justify-content: flex-end;
+  column-gap: 7px;
+  align-items: center;
+
 }
 .thunk-icon-market > a{
   margin-right: 20px;
@@ -1542,12 +1544,12 @@ header .taiowc-icon .th-icon{
 }
 .main-header-col3 .cart-count-item,
 .sticky-header .cart-count-item{
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
     right: initial;
-    left: 21px;
-    top: -20px;
+    left: 16px;
+    top: -7px;
     background: #999;
     font-size: 0.69rem;
 }
@@ -1631,7 +1633,7 @@ font-size:30px;
 position:relative;
 }
 .main-header-col3 .account{
-  display: block;
+  display: flex;
 }
 .header-support-content,
 .footer-support-content{
@@ -3181,7 +3183,7 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 12px 0 0 9px;
+  margin: 12px 0 0 16px;
 }
 .thunk-wishlist a{
   background: transparent;
@@ -7751,7 +7753,6 @@ h2.wc-block-mini-cart__title{
   font-weight: 500;
 }
 .woocommerce.theme-th-shop-mania #respond input#submit, 
-.woocommerce.theme-th-shop-mania a.button, 
 .woocommerce.theme-th-shop-mania button.button, 
 .woocommerce.theme-th-shop-mania input.button{
   font-weight: 500;
@@ -7866,7 +7867,6 @@ h2.wc-block-mini-cart__title{
 }
 .thunk-wishlist .thunk-wishlist-inner a:before,
 .shop-page-products-layouts .thunk-wishlist a:before,
-.elemento-wishlist a:before,
 .elemento-product-layout-5 .elemento-wishlist .add_to_wishlist:before,
 .ea-simple-product-slider .elemento-wishlist .add_to_wishlist:before,
 .elemento-addons-advance-product .add_to_wishlist:before{
@@ -8035,6 +8035,28 @@ h2.wc-block-mini-cart__title{
 }
 .cart_fixed_1 .taiowc-icon .th-icon {
     font-size: 1.9rem;
+}
+.ea-simple-product-slider .th-wishlist-icon-svg{
+  width: 16px;;
+}
+.ea-simple-product-slider .thw-add-to-wishlist-button{
+  /* font-weight: 500; */
+}
+.ea-simple-product-slider .elemento-product-outer-wrap .elemento-product-simple-inner-bottom .buttons_{
+  gap: 16px;
+}
+.thunk-icon-market svg{
+  stroke-width: 1.5px;
+}
+.buttons_ a{
+  text-decoration: none!important;
+}
+.thw-add-to-wishlist-button,
+.th-product-compare-btn{
+  font-weight: initial!important;
+}
+.ea-simple-product-slider .buttons_ a{
+	background: transparent!important;
 }
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
@@ -8682,7 +8704,7 @@ width:50%;
 .responsive-main-header .main-header-col2{
   width: 100%;
   order: 3;
-  margin: 0 0 10px 0;
+  margin: 5px 0 10px 0;
 }
 .respmobile-layout-1 .main-header-col2{
  margin: 9px 0 10px 0;
