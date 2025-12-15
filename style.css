@@ -8046,7 +8046,8 @@ h2.wc-block-mini-cart__title{
 .cart_fixed_1 .taiowc-icon .th-icon {
     font-size: 1.9rem;
 }
-.ea-simple-product-slider .th-wishlist-icon-svg{
+.ea-simple-product-slider .th-wishlist-icon-svg,
+.elemento-product-layout-5 .th-wishlist-icon-svg{
   width: 16px;;
 }
 .ea-simple-product-slider .thw-add-to-wishlist-button{
@@ -8054,6 +8055,9 @@ h2.wc-block-mini-cart__title{
 }
 .ea-simple-product-slider .elemento-product-outer-wrap .elemento-product-simple-inner-bottom .buttons_{
   gap: 16px;
+}
+.elemento-product-layout-5 .buttons_{
+  column-gap: 16px!important;
 }
 .thunk-icon-market svg{
   stroke-width: 1.5px;
@@ -8389,7 +8393,9 @@ margin-right:0;
 .woocommerce-checkout .main-area {
     max-width: 70%;
 }
-
+.thunk-icon-market .btn{
+	display: flex;
+}
 }
 @media screen and (max-width: 990px){
   section.related.products ul.products, 
@@ -8677,13 +8683,16 @@ width:50%;
 }
 }
 @media screen and (max-width: 767px){
+  .thunk-icon-market .btn{
+	display: flex;
+}
 .thsm-header .th-icon,
 #th-shop-mania-mobile-bar .th-icon{
   font-size: 27px!important;
   line-height: 27px!important;
 }
 .responsive-main-header .thunk-icon-market{
-  gap: 5px;
+  gap: 9px;
 }
   .top-header{
     flex-wrap: wrap;
