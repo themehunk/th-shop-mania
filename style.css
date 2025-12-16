@@ -8072,6 +8072,23 @@ h2.wc-block-mini-cart__title{
 .ea-simple-product-slider .buttons_ a{
 	background: transparent!important;
 }
+/** **/
+
+
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+.th-shop-mania-quantity input::-webkit-outer-spin-button,
+.th-shop-mania-quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+.th-shop-mania-quantity input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 #th-shop-mania-mobile-bar .th-icon{

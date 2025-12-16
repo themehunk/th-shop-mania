@@ -24,29 +24,38 @@
 
            },
          AddtoCartQuanty: function (){
-                $('form.cart').on( 'click', 'button.plus, button.minus', function(){
-                // Get current quantity values
-                var qty = $( this ).siblings('.quantity').find( '.qty' );
-                var val = parseFloat(qty.val()) ? parseFloat(qty.val()) : '0';
-                var max = parseFloat(qty.attr( 'max' ));
-                var min = parseFloat(qty.attr( 'min' ));
-                var step = parseFloat(qty.attr( 'step' ));
-                // Change the value if plus or minus
-                if ( $(this).is( '.plus' ) ) {
-                    if ( max && ( max <= val ) ) {
-                        qty.val( max );
-                    } else {
-                        qty.val( val + step );
-                    }
-                } else {
-                    if ( min && ( min >= val ) ) {
-                        qty.val( min );
-                    } else if ( val > 1 ) {
-                        qty.val( val - step );
-                    }
-                }
-                 
-            });
+         $('form.cart').on('click', '.plus, .minus', function () {
+
+        // Find input correctly
+        var qty = $(this)
+            .closest('.th-shop-mania-quantity')
+            .find('input.qty');
+
+        var val  = parseFloat(qty.val()) || 0;
+        var max  = parseFloat(qty.attr('max'));
+        var min  = parseFloat(qty.attr('min')) || 1;
+        var step = parseFloat(qty.attr('step')) || 1;
+
+        if ($(this).hasClass('plus')) {
+
+            if (max && val >= max) {
+                qty.val(max);
+            } else {
+                qty.val(val + step);
+            }
+
+        } else {
+
+            if (val <= min) {
+                qty.val(min);
+            } else {
+                qty.val(val - step);
+            }
+        }
+
+        // IMPORTANT for WooCommerce
+        qty.trigger('change');
+    });
 
         },
        woo_login_extend: function (){
