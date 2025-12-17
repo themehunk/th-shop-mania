@@ -113,7 +113,7 @@ function woocommerce_product_meta_tab()
 /**
  * Add next/prev buttons @ WooCommerce Single Product Page
  */
-add_action('woocommerce_before_single_product_summary', 'th_shop_mania_prev_next_product', 0);
+// add_action('woocommerce_before_single_product_summary', 'th_shop_mania_prev_next_product', 0);
 
 // and if you also want them at the bottom...
 // add_action( 'woocommerce_single_product_summary', 'th_shop_mania_prev_next_product',0 );
