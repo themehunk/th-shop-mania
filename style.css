@@ -3865,9 +3865,6 @@ section.upsells.products h2,
 .woocommerce #reviews #comments h2,
 .thwbt-wrapper > h2{color:var(--body-text);}
 
-.single-product .summary .product_title{
-  max-width: 390px;
-}
 .single-product div.product .summary .woocommerce-product-rating{
   float: right;
 }
@@ -3993,21 +3990,17 @@ section.upsells.products h2,
   float: initial;
 }
 .woocommerce div.product form.cart .variations select {
-    width: 100%;
-    border: none;
-    height: 39px;
-    line-height: normal;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    background: #fff;
-    position: relative;
-    border: 1px solid #9c9c9c;
-    padding: 0px 10px;
-    width: 100%;
-    margin-right: 10px;
-    margin-bottom: 7.5px;
-    z-index: 1;
+  font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #f9fafb;
+    border: 1px solid #f3f4f6;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 .entry-summary .variations th{
   min-width: 99px;
@@ -4016,16 +4009,6 @@ section.upsells.products h2,
   width: 100%;
   position: relative;
 }
-.entry-summary .variations td::after {
-    content: '▼';
-    font-size: 12px;
-    color: #666;
-    position: absolute;
-    right: 10px;
-    top: 12%;
-    pointer-events: none;
-    z-index: 108;
-    }
   .entry-summary .reset_variations{
     width: 100%;
     display: block;
@@ -4049,8 +4032,13 @@ margin-bottom:20px;
   width: 100%;
 }
 .single-product .variations tr{
-  display: flex;
-  gap: 9px;
+    display: flex;
+    gap: 9px;
+    flex-direction: column;
+}
+
+.single-product .variations th.label {
+    padding: 0;
 }
 .woocommerce #respond input#submit.alt.disabled,
 .woocommerce #respond input#submit.alt.disabled:hover,
@@ -4696,9 +4684,7 @@ top:0em!important;
 .woocommerce .entry-summary a.th-product-compare-btn.loading:before{
     content: " ";
 }
-.woocommerce .entry-summary a.th-added-compare:before{
-color:#ff3377;
-}
+
 .woocommerce .entry-summary .th-product-compare-btn-wrap{
   display: inline-flex;
   margin-right: 15px;
@@ -6616,7 +6602,10 @@ span.product-title{
 }
 /* Single Product Social Share Button */
 .single-product .social-share{
-margin:15px 0px;;
+  margin-top:20px;
+    display: flex;
+    gap: 8px;
+
 }
 .single-product .social-share ul{
   margin: 0;

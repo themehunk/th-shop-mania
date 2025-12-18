@@ -352,13 +352,3 @@ function th_shop_mania_blocks_library() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'th_shop_mania_blocks_library', 1005 );
-
-// Before cart form
-// add_action('woocommerce_before_cart', function() {
-//     echo '<div class="th-cartpage-wrapper">';
-// }, 5);
-
-// // After cart form (end the wrapper)
-// add_action('woocommerce_after_cart', function() {
-//     echo '</div>';
-// }, 100);
