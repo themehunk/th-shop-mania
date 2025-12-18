@@ -3874,12 +3874,12 @@ section.upsells.products h2,
     margin-bottom: 21px;
 }
 .woocommerce #content div.product div.summary p.price{
-    display:block;
+    display: block;
     font-size: 24px;
     line-height: 31px;
-    font-weight: 500;
+    font-weight: 800;
     color: #111;
-    margin-bottom:20px!important;
+    margin-bottom: 20px !important;
 }
 .woocommerce .summary.entry-summary p.in-stock{
   font-size: 16px;
@@ -4230,12 +4230,13 @@ section.upsells.products > h2,
     line-height: 35px;
     color: var(--body-text);
     display: inline-block;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.02rem;
     position: relative;
     vertical-align: top;
     margin: 0 0 30px 0;
     width: 100%;
     padding: 0;
+    font-weight: 700;
 }
 section.related.products > h2, 
 section.upsells.products > h2,
