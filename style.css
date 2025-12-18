@@ -3189,7 +3189,7 @@ text-align: center;
   display: none;
 }
 .thunk-wishlist,
-.thunk-compare{
+.thunk-product .thunk-compare{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3267,11 +3267,6 @@ text-align: center;
 } 
 .elemento-wishlist .thw-add-to-wishlist-button .thw-icon{
   font-size: 1em;
-}
-.single-product .entry-summary .thunk-compare{
-  display: inline-flex;
-  margin-top: 0;
-  margin-left: 0;
 }
 .thunk-product .yith-wcwl-wishlistaddedbrowse:before, 
 .thunk-product .yith-wcwl-wishlistexistsbrowse:before {
@@ -4013,6 +4008,10 @@ section.upsells.products h2,
     width: 100%;
     display: block;
     border-bottom: 1px solid #e5e5e5;
+    }
+    .entry-summary .thunk-compare{
+      width: initial;
+      margin: 0;
     }
 .woocommerce div.product form.cart .variations td.label{
      vertical-align:middle;
