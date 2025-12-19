@@ -3115,7 +3115,6 @@ text-align: center;
     left: 0;
     right:0;
     top:100%;
-    background:#fff;
     border: 1px solid transparent;
     border-top: 0;
     padding-bottom: 10px;
@@ -3126,11 +3125,10 @@ text-align: center;
     opacity: 0;
     visibility: hidden;
    border-radius: 0 0 4px 4px;
-    transition: all 0.5s ease 0.1s;
+   transition: all 0.5s ease 0.1s;
 }
 .thunk-product:hover .thunk-product-hover{
     opacity: 1;
-    box-shadow: 0 7px 5px #eee;
     border-color: #f1f1f1;
     padding-bottom:15px;
     padding-top: 15px;
@@ -3142,15 +3140,29 @@ text-align: center;
     visibility: visible;
     border-top:none;
     z-index:15;
+
+    background: rgb(255 255 255 / 72%);
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 .thunk-woo-product-list .thunk-product-wrap:hover .thunk-product{
-    box-shadow: 0 0 15px #eee;
-    border-color: #f1f1f1;
-    border-bottom: 0;
+    /* box-shadow: 0 0 15px #eee; */
+    border-color: rgba(255, 255, 255, 0.3);
+     border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
 }
 .thunk-product-wrap:hover .thunk-product {
-   box-shadow: 0 0 15px #eee;
-   border-color: #f1f1f1;
+   /* box-shadow: 0 0 15px #eee; */
+   border-color: rgba(255, 255, 255, 0.3);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+
 }
 .thunk-product .th-add-to-cart{
   width: 100%;
