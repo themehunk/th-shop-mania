@@ -1,0 +1,63 @@
+/* General RTL adjustments */
+body {
+    direction: rtl; /* Set text direction */
+    text-align: right; /* Right-align text */
+}
+
+/* Adjust header layout for RTL */
+.header {
+    float: right;
+}
+
+/* Reposition the navigation menu for RTL */
+.nav-menu {
+    text-align: right;
+}
+
+.nav-menu li {
+    float: right; /* Flip menu items for RTL */
+}
+
+/* For images or other media that may need to be flipped */
+img, .img-fluid {
+    direction: rtl; /* Ensure images also respect the RTL layout */
+}
+
+/* Adjust footer layout */
+.footer {
+    text-align: right;
+}
+
+/* Reverse margins/paddings if needed */
+.sidebar {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.sidebar ul {
+    padding-right: 10px;
+    padding-left: 0;
+}
+
+/* Form inputs and buttons */
+input, textarea, select {
+    direction: rtl;
+}
+
+button, input[type="submit"], .button {
+    float: right; /* If buttons are floating in some parts */
+}
+
+/* Adjust alignment of blockquotes and quotes */
+blockquote {
+    text-align: right;
+}
+
+/* Adjusting for floating elements if needed */
+.float-left {
+    float: right !important;
+}
+
+.float-right {
+    float: left !important;
+}
