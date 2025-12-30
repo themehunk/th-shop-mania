@@ -4431,6 +4431,7 @@ padding-right:20px!important;
     width: auto;
     word-wrap: break-word;
     font-size: 16px;
+    outline: 0;
 }
 .woocommerce-error::before, 
 .woocommerce-info::before, 
