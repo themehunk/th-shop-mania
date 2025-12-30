@@ -4,7 +4,6 @@
 * Style : variation style issue fixed.
 * Fixed : wishlist and compare issue fixed.
 
-
 12-12-2025 = = Version 1.7.4 =
 * New: Wishlist double icon issue resolved.
 
