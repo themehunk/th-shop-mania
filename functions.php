@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.7.5');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.7.6');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -298,6 +298,10 @@ function th_shop_mania_scripts(){
 	wp_add_inline_style('th-shop-mania-style', th_shop_mania_custom_style());
 	wp_add_inline_style('th-shop-mania-style', '@font-face{font-family:"th-icon";src:url("' . esc_url(get_template_directory_uri() . '/third-party/fonts/th-icon/fonts/th-icon.ttf?k3xn19') . '") format("truetype");font-weight:normal;font-style:normal;font-display:block;}');
 
+	// Check if the site language is RTL and enqueue the RTL stylesheet
+    if (is_rtl()) {
+        wp_enqueue_style('th-shop-mania-rtl-style', TH_SHOP_MANIA_THEME_URI . 'css/rtl.css','',TH_SHOP_MANIA_THEME_VERSION);	
+    }
 	
     //enqueue js
     wp_enqueue_script('th-shop-mania-menu-js', TH_SHOP_MANIA_THEME_URI .'js/th-shop-mania-menu.js', array( 'jquery' ), '1.0.0', array('in_footer' => true,'strategy'  => 'defer',) );
