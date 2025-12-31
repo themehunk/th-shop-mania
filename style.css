@@ -1785,64 +1785,6 @@ ul.open-bottom-menu .sub-menu{display:none;}
     margin: 0 auto;
     z-index:-1;
 }
-/*social icon*/
-.content-social ul.social-icon{
-list-style: none;
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    flex-wrap: wrap;
-}
-.content-social ul.social-icon li{
-padding:5px 7px;
-}   
-.content-social ul.social-icon li i{
-  padding:0;
-}
-.social-icon.original-social-icon .th-icon-facebook{
-color:#4867AA;
-}
-.social-icon.original-social-icon .th-icon-linkedin{
-color:#007BB6;
-}
-.social-icon.original-social-icon .th-icon-twitter{
-color:#00ACED;
-}
-.social-icon.original-social-icon .th-icon-instagram{
-color:#C50067;
-}
-.social-icon.original-social-icon .th-icon-pinterest{
-color:#BD081B;
-}
-.social-icon.original-social-icon .th-icon-youtube-play{
-color:#FF0000;
-}
-.social-icon.original-social-icon .th-icon-tumblr{
-color:#36465D;
-}
-.social-icon.original-social-icon .th-icon-stumbleupon{
-color:#EB4823;
-}
-.social-icon.original-social-icon .th-icon-dribbble{
-color:#EA4C89;
-}
-.social-icon.original-social-icon .th-icon-skype{
-color:#00aff0;
-}
-.content-social .social-icon a{
-font-size: 16px;  
-width: 1em;
-height: 1em;
-line-height:1em;
-display:block;
-text-align:center;
-border:1px solid transparent;
-}
-.social-icon.original-social-icon a{
-background-color:transparent!important;
-border:none;
-display:block;
-}
 .site-title span{
   font-size:30px;
 }
