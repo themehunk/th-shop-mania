@@ -61,3 +61,18 @@ blockquote {
 .float-right {
     float: left !important;
 }
+.rtl .main-header-col3 .cart-count-item, 
+.rtl .sticky-header .cart-count-item{
+    right: 12px;
+    top: -9px;
+    left: initial;
+}
+.rtl .sticky-header-col3 .thunk-icon .cart-icon a.cart-contents, 
+.rtl .sticky-header-col3 .header-icon a, .sticky-header a.prd-search{
+    padding-right: 0;
+    padding-left: 21px;
+}
+.rtl .taiowcp-content .taiowcp-total{
+    margin-left: 0;
+    margin-right: 9px;
+}

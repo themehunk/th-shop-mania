@@ -1,4 +1,15 @@
 <?php 
+// Remove current-menu-item class from menu items with # links
+add_filter('nav_menu_css_class', function ($classes, $item) {
+    if (strpos($item->url, '#') !== false) {
+        $classes = array_diff($classes, [
+            'current-menu-item',
+            'current_page_item'
+        ]);
+    }
+    return $classes;
+}, 10, 2);
+
 /**
  * Common Function for Th Shop ManiaTheme.
  *
