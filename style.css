@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.7.6
+Version: 1.7.7
 Requires at least: 5.5
 Tested up to: 6.9
 Requires PHP: 5.6
@@ -1685,6 +1685,12 @@ position:relative;
 .main-header.mhdrfour a.prd-search,
 .mhdrfour .main-header-col1{
   padding-right: 0;
+}
+.content-social ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    justify-content: center;
 }
 /* mhdrfive */
 .mhdrfive .main-header-col1{
@@ -9123,8 +9129,8 @@ min-width:70px;
 }
 /* Variable Product */
 .woocommerce div.product form.cart .variations select{
-  height: 30px;
-  line-height: 30px;
+height: auto; 
+line-height: 15px; 
 }
 .woocommerce div.product form.cart .variations td, 
 .woocommerce div.product form.cart .variations th{

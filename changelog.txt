@@ -1,3 +1,7 @@
+06-01-2026 = = Version 1.7.7 =
+* Update: social icon and mobile variation style issue resolved.
+
+
 31-12-2025 = = Version 1.7.6 =
 * New: RTL CSS Added.
 * Update: Style updated.
