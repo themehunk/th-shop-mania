@@ -184,6 +184,8 @@ if (!function_exists('th_shop_mania_product_list_categories')) {
   {
       // Get selected categories from theme customizer
     $term = get_theme_mod('th_shop_mania_exclde_category', array());
+    // Remove empty values
+    $term = array_filter($term);
 
     // If term is a valid non-empty array → show ONLY those categories
     if (!empty($term) && is_array($term)) {
@@ -236,45 +238,37 @@ if (!function_exists('th_shop_mania_product_categories_exist')) {
 if (!function_exists('th_shop_mania_product_list_categories_mobile')) {
   function th_shop_mania_product_list_categories_mobile($args = '')
   {
-    $term = get_theme_mod('th_shop_mania_exclde_category');
-    if(!empty($term['0'])){
+     // Get selected categories from theme customizer
+    $term = get_theme_mod('th_shop_mania_exclde_category', array());
+    // Remove empty values
+    $term = array_filter($term);
 
-  $exclude_id = $term;
+    // If term is a valid non-empty array → show ONLY those categories
+    if (!empty($term) && is_array($term)) {
+        $include_ids = $term;   // ✅ Show only these
+    } else {
+        $include_ids = '';     // ✅ Show all categories
+    }
 
-  $list_pluck = wp_list_pluck(get_terms(), 'term_id');
-
-  $list_pluck_include  = array_diff($list_pluck, $exclude_id);
-
-  }else{
-
-  $exclude_id = '';
-  $list_pluck_include = 'all';
-
-  }
     $defaults = array(
-      'include' => $list_pluck_include,
-      'child_of'            => 0,
-      'current_category'    => 0,
-      'depth'               => 5,
-      'echo'                => 0,
-      'exclude'             => $exclude_id,
-      'exclude_tree'        => $exclude_id,
-      'feed'                => '',
-      'feed_image'          => '',
-      'feed_type'           => '',
-      'hide_empty'          => 1,
-      'hide_title_if_empty' => false,
-      'hierarchical'        => true,
-      'order'               => 'ASC',
-      'orderby'             => 'menu_order',
-      'separator'           => '<br />',
-      'show_count'          => 0,
-      'show_option_all'     => '',
-      'show_option_none'    => __('No categories', 'th-shop-mania'),
-      'style'               => 'list',
-      'taxonomy'            => 'product_cat',
-      'title_li'            => '',
-      'use_desc_for_title'  => 0,
+        'include'              => $include_ids,
+        'child_of'             => 0,
+        'current_category'     => 0,
+        'depth'                => 5,
+        'echo'                 => 0,
+        'hide_empty'           => 1,
+        'hide_title_if_empty'  => false,
+        'hierarchical'         => true,
+        'order'                => 'ASC',
+        'orderby'              => 'menu_order',
+        'separator'            => '<br />',
+        'show_count'           => 0,
+        'show_option_all'      => '',
+        'show_option_none'     => __('No categories', 'th-shop-mania'),
+        'style'                => 'list',
+        'taxonomy'             => 'product_cat',
+        'title_li'             => '',
+        'use_desc_for_title'   => 0,
     );
     $html = wp_list_categories($defaults);
     echo '<ul class="mob-product-cat-list thunk-product-cat-list mobile" data-menu-style="accordion">' .wp_kses_post($html). '</ul>';
