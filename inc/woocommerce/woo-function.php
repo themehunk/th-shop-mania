@@ -179,45 +179,80 @@ function th_shop_mania_not_a_shop_page()
 //***********************/
 // product category list
 //************************/
-if (!function_exists('th_shop_mania_product_list_categories')) {
-  function th_shop_mania_product_list_categories($args = '')
-  {
-      // Get selected categories from theme customizer
-    $term = get_theme_mod('th_shop_mania_exclde_category', array());
-    // Remove empty values
-    $term = array_filter($term);
+if ( ! function_exists( 'th_shop_mania_product_list_categories' ) ) {
 
-    // If term is a valid non-empty array → show ONLY those categories
-    if (!empty($term) && is_array($term)) {
-        $include_ids = $term;   // ✅ Show only these
-    } else {
-        $include_ids = '';     // ✅ Show all categories
+    function th_shop_mania_product_list_categories( $args = '' ) {
+
+        /**
+         * STEP 1: Fetch customizer value safely
+         */
+        $raw_terms = get_theme_mod( 'th_shop_mania_exclde_category', array() );
+
+        /**
+         * STEP 2: Normalize value into an array of integers
+         */
+        $include_ids = array();
+
+        if ( is_array( $raw_terms ) ) {
+
+            $include_ids = $raw_terms;
+
+        } elseif ( is_string( $raw_terms ) && $raw_terms !== '' ) {
+
+            // Handle comma-separated or single values
+            $include_ids = explode( ',', $raw_terms );
+
+        } elseif ( is_numeric( $raw_terms ) ) {
+
+            // Single numeric value
+            $include_ids = array( $raw_terms );
+
+        }
+
+        /**
+         * STEP 3: Sanitize & clean values
+         */
+        $include_ids = array_filter(
+            array_map( 'absint', $include_ids )
+        );
+
+        /**
+         * STEP 4: Prepare wp_list_categories args
+         */
+        $defaults = array(
+            'include'              => ! empty( $include_ids ) ? $include_ids : '',
+            'child_of'             => 0,
+            'current_category'     => 0,
+            'depth'                => 5,
+            'echo'                 => 0,
+            'hide_empty'           => 1,
+            'hide_title_if_empty'  => false,
+            'hierarchical'         => true,
+            'order'                => 'ASC',
+            'orderby'              => 'menu_order',
+            'separator'            => '<br />',
+            'show_count'           => 0,
+            'show_option_all'      => '',
+            'show_option_none'     => esc_html__( 'No categories', 'th-shop-mania' ),
+            'style'                => 'list',
+            'taxonomy'             => 'product_cat',
+            'title_li'             => '',
+            'use_desc_for_title'   => 0,
+        );
+
+        /**
+         * STEP 5: Generate category list safely
+         */
+        $html = wp_list_categories( $defaults );
+
+        if ( ! empty( $html ) && is_string( $html ) ) {
+            echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">';
+            echo wp_kses_post( $html );
+            echo '</ul>';
+        }
     }
-
-    $defaults = array(
-        'include'              => $include_ids,
-        'child_of'             => 0,
-        'current_category'     => 0,
-        'depth'                => 5,
-        'echo'                 => 0,
-        'hide_empty'           => 1,
-        'hide_title_if_empty'  => false,
-        'hierarchical'         => true,
-        'order'                => 'ASC',
-        'orderby'              => 'menu_order',
-        'separator'            => '<br />',
-        'show_count'           => 0,
-        'show_option_all'      => '',
-        'show_option_none'     => __('No categories', 'th-shop-mania'),
-        'style'                => 'list',
-        'taxonomy'             => 'product_cat',
-        'title_li'             => '',
-        'use_desc_for_title'   => 0,
-    );
-    $html = wp_list_categories($defaults);
-    echo '<ul class="product-cat-list thunk-product-cat-list" data-menu-style="vertical">' . wp_kses_post($html) . '</ul>';
-  }
 }
+
 if (!function_exists('th_shop_mania_product_categories_exist')) {
   function th_shop_mania_product_categories_exist(){
     $args = array(
@@ -238,38 +273,62 @@ if (!function_exists('th_shop_mania_product_categories_exist')) {
 if (!function_exists('th_shop_mania_product_list_categories_mobile')) {
   function th_shop_mania_product_list_categories_mobile($args = '')
   {
-     // Get selected categories from theme customizer
-    $term = get_theme_mod('th_shop_mania_exclde_category', array());
-    // Remove empty values
-    $term = array_filter($term);
+      /**
+         * STEP 1: Fetch customizer value safely
+         */
+        $raw_terms = get_theme_mod( 'th_shop_mania_exclde_category', array() );
 
-    // If term is a valid non-empty array → show ONLY those categories
-    if (!empty($term) && is_array($term)) {
-        $include_ids = $term;   // ✅ Show only these
-    } else {
-        $include_ids = '';     // ✅ Show all categories
-    }
+        /**
+         * STEP 2: Normalize value into an array of integers
+         */
+        $include_ids = array();
 
-    $defaults = array(
-        'include'              => $include_ids,
-        'child_of'             => 0,
-        'current_category'     => 0,
-        'depth'                => 5,
-        'echo'                 => 0,
-        'hide_empty'           => 1,
-        'hide_title_if_empty'  => false,
-        'hierarchical'         => true,
-        'order'                => 'ASC',
-        'orderby'              => 'menu_order',
-        'separator'            => '<br />',
-        'show_count'           => 0,
-        'show_option_all'      => '',
-        'show_option_none'     => __('No categories', 'th-shop-mania'),
-        'style'                => 'list',
-        'taxonomy'             => 'product_cat',
-        'title_li'             => '',
-        'use_desc_for_title'   => 0,
-    );
+        if ( is_array( $raw_terms ) ) {
+
+            $include_ids = $raw_terms;
+
+        } elseif ( is_string( $raw_terms ) && $raw_terms !== '' ) {
+
+            // Handle comma-separated or single values
+            $include_ids = explode( ',', $raw_terms );
+
+        } elseif ( is_numeric( $raw_terms ) ) {
+
+            // Single numeric value
+            $include_ids = array( $raw_terms );
+
+        }
+
+        /**
+         * STEP 3: Sanitize & clean values
+         */
+        $include_ids = array_filter(
+            array_map( 'absint', $include_ids )
+        );
+
+        /**
+         * STEP 4: Prepare wp_list_categories args
+         */
+        $defaults = array(
+            'include'              => ! empty( $include_ids ) ? $include_ids : '',
+            'child_of'             => 0,
+            'current_category'     => 0,
+            'depth'                => 5,
+            'echo'                 => 0,
+            'hide_empty'           => 1,
+            'hide_title_if_empty'  => false,
+            'hierarchical'         => true,
+            'order'                => 'ASC',
+            'orderby'              => 'menu_order',
+            'separator'            => '<br />',
+            'show_count'           => 0,
+            'show_option_all'      => '',
+            'show_option_none'     => esc_html__( 'No categories', 'th-shop-mania' ),
+            'style'                => 'list',
+            'taxonomy'             => 'product_cat',
+            'title_li'             => '',
+            'use_desc_for_title'   => 0,
+        );
     $html = wp_list_categories($defaults);
     echo '<ul class="mob-product-cat-list thunk-product-cat-list mobile" data-menu-style="accordion">' .wp_kses_post($html). '</ul>';
   }

@@ -3155,6 +3155,9 @@ text-align: center;
   justify-content: center;
   margin: 12px 0 0 16px;
 }
+.th-shop-mania-shop-page-layout-default .thunk-product .thunk-compare .text{
+  margin-left: 5px;
+}
 .thunk-wishlist a{
   background: transparent;
   color: #111;
