@@ -1,3 +1,11 @@
+17-01-2026 = = Version 1.8.0 =
+* Update: Svg Icons replaced.
+* Update: Style updated & cart icon issue resolved.
+* Update: Header icon structure updated and style modified.
+
+14-01-2026 = = Version 1.7.9 =
+* Update: Empty Categories on import issue reolved by modifying th_shop_mania_product_list_categories().
+
 12-01-2026 = = Version 1.7.8 =
 * Update: Categories not showing in mobile issue resolved.
 

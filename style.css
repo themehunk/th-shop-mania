@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.7.8
+Version: 1.8.0
 Requires at least: 5.5
 Tested up to: 6.9
 Requires PHP: 5.6
@@ -1539,9 +1539,6 @@ header .taiowc-icon .th-icon{
   flex-grow: 2;
 }
 /* taiowc css   */
-.main-header-bar .taiowc-content{
-  display: block;
-}
 .main-header-col3 .cart-count-item,
 .sticky-header .cart-count-item{
     right: initial;
@@ -1562,6 +1559,20 @@ header .taiowc-icon .th-icon{
 }
 .main-header-col3 .taiowc-cart-item{
   padding: 0;
+}
+.theme-th-shop-mania .taiowc-fixed-cart .taiowc-cart-item, 
+.theme-th-shop-mania .taiowcp-fixed-cart .taiowcp-cart-item {
+    padding: initial;
+    border-radius: 100% !important;
+    width: 48px;
+    height: 48px;
+}
+.theme-th-shop-mania .taiowc-fixed-cart .taiowc-content{
+   bottom: 156px;
+}
+.theme-th-shop-mania .taiowc-fixed-cart.cart_fixed_1 .taiowc-content, 
+.theme-th-shop-mania .taiowcp-fixed-cart.cart_fixed_1 .taiowcp-content {
+    margin-right: -20px;
 }
 /* (10)404 page & no-result page*/
 #no-results .page-content p, #error-404 .page-content p{
@@ -1638,9 +1649,6 @@ font-size:30px;
 }
 .th-shop-mania-widget-content {
     position:relative; 
-}
-.main-header-col3 a:not(.taiowc-cart-close){
-position:relative;
 }
 .main-header-col3 .account{
   display: flex;
@@ -7794,9 +7802,6 @@ h2.wc-block-mini-cart__title{
 .responsive-main-header #mega-menu-wrap-th-shop-mania-main-menu #mega-menu-th-shop-mania-main-menu li.mega-menu-item-has-children.mega-toggle-on > a.mega-menu-link > span.mega-indicator:after{
   content: "-";
 }
-.theme-th-shop-mania header .taiowc-content{
-  bottom: initial;
-}
 .wp-block-cover a,
 .wp-block-button a{
   text-decoration: none!important;
@@ -8710,14 +8715,6 @@ header .th-icon:not(.header-support-wrap .th-icon), header .taiowc-icon .th-icon
 .responsive-main-header .tapsp-search-box{
   padding: 0;
 }
-.responsive-main-header .main-header-col3 .cart-count-item, 
-.sticky-header .cart-count-item {
-    width: 21px;
-    height: 21px;
-    line-height: 21px;
-    left: 7px;
-    top: -18px;    
-}
 .responsive-main-header .thaps-search-form .thaps-search-autocomplete,
 .responsive-main-header .tapsp-search-form .tapsp-search-autocomplete{
   height: 25px;
@@ -9460,7 +9457,7 @@ font-size:12px;
   text-align: left;
 }
 .responsive-main-header .thunk-icon-market > *{
-  margin-left: 12px;
+  margin-left: 9px;
 }
 }
 @media screen and (max-width: 390px){
