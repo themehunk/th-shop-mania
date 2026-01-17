@@ -4,7 +4,7 @@ Tags: custom-logo, block-patterns, editor-style, e-commerce, blog, grid-layout, 
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 1.7.9
+Stable tag: 1.8.0
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
