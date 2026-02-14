@@ -1,3 +1,6 @@
+13-02-2026 = = Version 1.7.9 =
+* Update:  Add to cart float issue fixd
+
 17-01-2026 = = Version 1.8.0 =
 * Update: Svg Icons replaced.
 * Update: Style updated & cart icon issue resolved.
