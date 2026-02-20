@@ -1570,10 +1570,10 @@ header .taiowc-icon .th-icon{
 .theme-th-shop-mania .taiowc-fixed-cart .taiowc-content{
    bottom: 156px;
 }
-.theme-th-shop-mania .taiowc-fixed-cart.cart_fixed_1 .taiowc-content, 
+/*.theme-th-shop-mania .taiowc-fixed-cart.cart_fixed_1 .taiowc-content, 
 .theme-th-shop-mania .taiowcp-fixed-cart.cart_fixed_1 .taiowcp-content {
     margin-right: -20px;
-}
+}*/
 /* (10)404 page & no-result page*/
 #no-results .page-content p, #error-404 .page-content p{
   margin: 0;
@@ -1812,9 +1812,9 @@ p.demo_store{
     right: 0;
     bottom: 0;
 }
-.woocommerce-demo-store #move-to-top {
+/*.woocommerce-demo-store #move-to-top {
     bottom: 50px;
-}
+}*/
 .toggle-cat-wrap{ 
     box-sizing: border-box;
     color: #111;
@@ -6456,9 +6456,7 @@ span.product-title{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    right: 16px;
-    bottom: 90px;
+    position: relative;
 /*    box-shadow: 0 0 10px rgb(183 183 183 / 60%);*/
     backdrop-filter: blur(7.9px);
     -webkit-backdrop-filter: blur(7.9px);
@@ -8045,12 +8043,60 @@ h2.wc-block-mini-cart__title{
     -moz-appearance: textfield;
 }
 
+/* thsm-side-icons CSS Starts  */
+.thsm-side-icons-wrapper{
+  position: fixed;
+  right: 9px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 9px;
+  border-radius: 5px;
+}
+.thsm-side-icons-wrapper .cart_fixed_1 .taiowc-cart-item{
+  border-radius: 100%;
+}
+.thsm-side-icons-wrapper .cart_fixed_1 .taiowc-content,
+.cart_fixed_1 .taiowcp-content{
+  position: relative;
+  top: initial;
+  bottom: initial;
+  right: initial;
+  left: initial;
+}
+/*.thsm-side-icons-wrapper #move-to-top{
+  order: 3;
+}
+.thsm-side-icons-wrapper .thsm-rv-btn{
+  order: 2;
+}
+.thsm-side-icons-wrapper .taiowc-fixed-cart,
+.thsm-side-icons-wrapper .taiowcp-fixed-cart{
+  order: 1;
+}*/
 
+.thsm-side-icons-wrapper .cart_fixed_1 .taiowc-cart-item,
+.thsm-side-icons-wrapper .taiowcp-fixed-cart.cart_fixed_1 .taiowcp-cart-item{
+  width: 48px;
+  height: 48px;
+}
+.thsm-side-icons-wrapper .cart_fixed_1.taiowcp-fixed-cart .taiowcp-content,
+.thsm-side-icons-wrapper .cart_fixed_1.taiowc-fixed-cart .taiowc-content{
+  top: initial;
+  bottom: initial;
+  right: initial;
+}
+.thsm-side-icons-wrapper .cart_fixed_1 .taiowcp-icon, 
+.thsm-side-icons-wrapper .cart_fixed_2 .taiowcp-icon,
+.thsm-side-icons-wrapper .cart_fixed_1 .taiowc-icon,
+.thsm-side-icons-wrapper .cart_fixed_2 .taiowc-icon{
+  color: inherit;
+}
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
-#th-shop-mania-mobile-bar .th-icon{
-  font-weight: 600!important;
-}
 .main-area{
   padding-left: 10px;
   padding-right: 10px;
@@ -9417,6 +9463,9 @@ font-size:12px;
 .th-sort-order-wrapper .right{
   justify-content: end;
   flex-wrap: wrap;
+}
+.thsm-side-icons-wrapper{
+  bottom: calc(env(safe-area-inset-left) + 18px);
 }
 }
 @media screen and (max-width:550px){

@@ -20,12 +20,13 @@
              // $this.AboveMenu();
              $this.MobileMenuFunction();
              $this.mobile_menu_with_woocat(); 
-              if ( !jQuery('.theme-th-shop-mania-pro').length ||
-                   th_shop_mania_woo_object.th_shop_mania_move_to_top_optn ||
-                    typeof th_shop_mania_woo_object === 'undefined'
-                 ) {
-                  $this.MoveToTop();
-              } 
+             $this.MoveToTop();
+              // if ( !jQuery('.theme-th-shop-mania-pro').length ||
+              //      th_shop_mania_woo_object.th_shop_mania_move_to_top_optn ||
+              //       typeof th_shop_mania_woo_object === 'undefined'
+              //    ) {
+              //     $this.MoveToTop();
+              // } 
         },    
           PreLoader : function (){
                                if(!$('body').hasClass('elementor-editor-active')){
@@ -238,19 +239,6 @@
   /**************************************************/
 
   // If button already exists, skip creating
-  if (!jQuery('#move-to-top').length) {
-    jQuery('body').prepend(`
-      <a id="move-to-top" class="hiding" href="#" aria-label="Move to top" title="Move to top">
-        <svg class="th-mtt__ring" viewBox="0 0 56 56" aria-hidden="true">
-          <circle class="th-mtt__ring--track" cx="28" cy="28" r="26"></circle>
-          <circle class="th-mtt__ring--progress" cx="28" cy="28" r="26"></circle>
-        </svg>
-        <span class="th-mtt__btn" aria-hidden="true">
-          <span class="t-icon t-icon-chevron-up-thin-converted">↑</span>
-        </span>
-      </a>
-    `);
-  }
 
   var $btn = jQuery('#move-to-top');
   var $progress = $btn.find('.th-mtt__ring--progress');
