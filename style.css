@@ -8095,6 +8095,9 @@ h2.wc-block-mini-cart__title{
 .thsm-side-icons-wrapper .cart_fixed_2 .taiowc-icon{
   color: inherit;
 }
+#move-to-top{
+  border-radius: 100%!important;
+}
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 .main-area{
