@@ -100,3 +100,38 @@ border: 1px solid rgba(0, 0, 0, 0.14901960784313725);
     -webkit-box-shadow: 0 0 1px #ddd;
     box-shadow: 0 0 5px #ddd;
 }
+
+/* hide native radio */
+.customize-control-radio-image input[type="radio"]{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+/* ================================
+   SVG CONTROLS ONLY (2 per row)
+================================ */
+
+/* if label contains svg image */
+.customize-control-radio-image label:has(img[src$=".svg"]),
+.customize-control-radio-image label:has(.th-radio-svg){
+    width:50% !important;
+    max-width:50% !important;
+    float:left;
+    padding:8px;
+}
+
+/* improve svg display */
+.customize-control-radio-image label:has(img[src$=".svg"]) img,
+.customize-control-radio-image label:has(.th-radio-svg) svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* active border */
+.customize-control-radio-image label.active img,
+.customize-control-radio-image label.active svg{
+    border-color:#00b6ff;
+    box-shadow:0 0 5px #3EC8FE;
+}

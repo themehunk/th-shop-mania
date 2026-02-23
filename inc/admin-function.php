@@ -294,4 +294,90 @@ function th_shop_mania_get_image_alt_text($image_url) {
 }
 }
 
+if (!function_exists('th_shop_mania_three_icons')) {
+function th_shop_mania_three_icons($image_url) { 
+
+	if (get_theme_mod('th_shop_mania_move_to_top', true) == true) {
+
+	$sideicons_structure = '';
+	if (function_exists('th_shop_mania_pro_get_option')) {
+		$sideicons_structure = apply_filters('th_shop_mania_bottom_fixed_side_icons', th_shop_mania_pro_get_option('th_shop_mania_bottom_fixed_side_icons'), $image_url); 
+	} ?>
+   
+   <div class="thsm-side-icons-wrapper"> 
+   	<?php
+
+  if (is_array($sideicons_structure) && !empty($sideicons_structure)) {
+     
+        foreach ($sideicons_structure as $value) {
+
+          switch ($value) {
+            case 'cart': 
+            if ( function_exists('taiowcp_main') ) {
+
+   			if(taiowcp_main()->taiowcp_get_option( 'taiowcp-show_cart' ) == true){
+       
+                if(taiowcp_main()->taiowcp_get_option( 'taiowcp-cart_style' ) == 'style-1'){
+
+                     echo do_shortcode('[taiowcp layout="cart_fixed_1"]');
+
+                }elseif(taiowcp_main()->taiowcp_get_option( 'taiowcp-cart_style' ) == 'style-2'){
+
+                     echo do_shortcode('[taiowcp layout="cart_fixed_2"]');
+
+                }
+
+             }
+
+   		}elseif ( function_exists('taiowc') ) {
+
+		    $show_cart  = taiowc()->get_option('taiowc-show_cart');
+		    $cart_style = taiowc()->get_option('cart_style');
+
+		    if ( $show_cart && $cart_style === 'style-1' ) {
+		        echo do_shortcode('[taiowc layout="cart_fixed_1"]');
+		    }
+
+    	}
+            break;
+            case 'recently':
+              do_action('thsm_recently_view'); 
+              break;
+            case 'movetotop': ?>
+             <a id="move-to-top" class="hiding" href="#" aria-label="Move to top" title="Move to top">
+        <svg class="th-mtt__ring" viewBox="0 0 56 56" aria-hidden="true">
+          <circle class="th-mtt__ring--track" cx="28" cy="28" r="26"></circle>
+          <circle class="th-mtt__ring--progress" cx="28" cy="28" r="26"></circle>
+        </svg>
+        <span class="th-mtt__btn" aria-hidden="true">
+          <span class="t-icon t-icon-chevron-up-thin-converted">↑</span>
+        </span>
+      </a>
+            <?php  break;
+            default:
+              break;
+          }
+          
+        }
+      } 
+	?>
+
+   </div>
+
+   <?php } }
+}
+	
+add_action('wp_footer','th_shop_mania_three_icons');
+
+
+
+//Remove taiowc default Icon
+add_action('wp_loaded', function() {
+    if ( function_exists('taiowc') ) {
+        remove_action('wp_footer', array(taiowc(), 'addcartBody'), 99);
+    }
+    elseif( function_exists('taiowcp_main') ){
+    	remove_action( 'wp_footer', array( taiowcp_main(), 'taiowcp_addcartBody' ));
+    }
+}, 20);
 

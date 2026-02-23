@@ -48,18 +48,50 @@ class th_shop_mania_WP_Customize_Control_Radio_Image extends WP_Customize_Contro
      * @access public
      * @return void
      */
-    public function to_json() {
-        parent::to_json();
+  public function to_json() {
+    parent::to_json();
 
-        // We need to make sure we have the correct image URL.
-        foreach ( $this->choices as $value => $args )
-            $this->choices[ $value ]['url'] = esc_url( sprintf( $args['url'], get_template_directory_uri(), get_stylesheet_directory_uri() ) );
+    foreach ( $this->choices as $value => $args ) {
 
-        $this->json['choices'] = $this->choices;
-        $this->json['link']    = $this->get_link();
-        $this->json['value']   = $this->value();
-        $this->json['id']      = $this->id;
+        /* ---------- SVG MODE ---------- */
+        if ( isset( $args['svg'] ) && $args['svg'] === true ) {
+
+            // filesystem path
+            $svg_path = sprintf(
+                $args['url'],
+                get_template_directory(),
+                get_stylesheet_directory()
+            );
+
+            if ( file_exists( $svg_path ) ) {
+
+                $svg_content = file_get_contents( $svg_path );
+
+                // remove xml + doctype (important inside Customizer)
+                $svg_content = preg_replace( '/<\?xml.*?\?>/', '', $svg_content );
+                $svg_content = preg_replace( '/<!DOCTYPE.*?>/', '', $svg_content );
+
+                $this->choices[$value]['svg_markup'] = $svg_content;
+            }
+
+        } else {
+
+            /* ---------- NORMAL IMAGE MODE (OLD BEHAVIOR) ---------- */
+            $this->choices[$value]['url'] = esc_url(
+                sprintf(
+                    $args['url'],
+                    get_template_directory_uri(),
+                    get_stylesheet_directory_uri()
+                )
+            );
+        }
     }
+
+    $this->json['choices'] = $this->choices;
+    $this->json['link']    = $this->get_link();
+    $this->json['value']   = $this->value();
+    $this->json['id']      = $this->id;
+}
 
     /**
      * Underscore JS template to handle the control's output.
