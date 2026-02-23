@@ -8098,6 +8098,15 @@ h2.wc-block-mini-cart__title{
 #move-to-top{
   border-radius: 100%!important;
 }
+/* Default Cart Style  */
+
+.wc-block-cart__main .wc-block-cart-items .wc-block-components-product-name{
+    font-weight: 600;
+}
+.wc-block-cart__main .wc-block-cart-items .wc-block-cart-item__total span.price.wc-block-components-product-price {
+    font-size: 16px;
+    font-weight: 600;
+}
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 .main-area{
