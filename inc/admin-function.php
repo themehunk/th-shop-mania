@@ -302,7 +302,7 @@ function th_shop_mania_three_icons($image_url) {
 	$sideicons_structure = '';
 
                     // Detect PRO plugin
-                if ( function_exists('th_shop_mania_pro_get_option') ) {
+                if ( function_exists('th_shop_mania_pro_load_plugin') ) {
 
                     // Normal premium behaviour
                     $sideicons_structure = apply_filters(

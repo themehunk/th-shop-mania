@@ -8109,6 +8109,12 @@ h2.wc-block-mini-cart__title{
     font-size: 16px;
     font-weight: 600;
 }
+.thsm-side-icons-wrapper .taiowcp-wrap.cart_fixed_2{
+  backdrop-filter: initial!important;
+  position: relative;
+  top: initial!important;
+  bottom: initial!important;
+}
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 .main-area{
