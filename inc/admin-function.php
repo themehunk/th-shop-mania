@@ -300,9 +300,31 @@ function th_shop_mania_three_icons($image_url) {
 	if (get_theme_mod('th_shop_mania_move_to_top', true) == true) {
 
 	$sideicons_structure = '';
-	if (function_exists('th_shop_mania_pro_get_option')) {
-		$sideicons_structure = apply_filters('th_shop_mania_bottom_fixed_side_icons', th_shop_mania_pro_get_option('th_shop_mania_bottom_fixed_side_icons'), $image_url); 
-	} ?>
+
+                    // Detect PRO plugin
+                if ( function_exists('th_shop_mania_pro_get_option') ) {
+
+                    // Normal premium behaviour
+                    $sideicons_structure = apply_filters(
+                        'th_shop_mania_bottom_fixed_side_icons',
+                        th_shop_mania_pro_get_option('th_shop_mania_bottom_fixed_side_icons'),
+                        $image_url
+                    );
+
+                } else {
+
+                    // Fallback when PRO plugin not active
+                    $sideicons_structure = array();
+
+                    // Always show cart if WooCommerce exists
+                    if ( class_exists('WooCommerce') ) {
+                        $sideicons_structure[] = 'cart';
+                    }
+
+                    // Always show move to top
+                    $sideicons_structure[] = 'movetotop';
+                }
+                 ?>
    
    <div class="thsm-side-icons-wrapper"> 
    	<?php
@@ -360,8 +382,7 @@ function th_shop_mania_three_icons($image_url) {
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
                             <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        </svg>
-                    </a>
+                        </svg>                    </a>
             <?php  break;
             case 'wishlist': 
             	do_action('th_shop_mania_wishlist_icon'); 
