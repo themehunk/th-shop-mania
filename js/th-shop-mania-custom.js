@@ -21,6 +21,7 @@
              $this.MobileMenuFunction();
              $this.mobile_menu_with_woocat(); 
              $this.MoveToTop();
+             $this.adjustSideIconsPosition();
               // if ( !jQuery('.theme-th-shop-mania-pro').length ||
               //      th_shop_mania_woo_object.th_shop_mania_move_to_top_optn ||
               //       typeof th_shop_mania_woo_object === 'undefined'
@@ -233,6 +234,43 @@
                          $('.mobile-nav-tabs li:first a').click();
                 });
         },
+
+       adjustSideIconsPosition: function () {
+
+    function updatePosition() {
+        var $sideIcons = jQuery('.thsm-side-icons-wrapper');
+        var $mobileBar = jQuery('#th-shop-mania-mobile-bar.full-width');
+        var $compareBar = jQuery('.th-compare-footer-wrap');
+
+        if (!$sideIcons.length || !$mobileBar.length) return;
+
+        var mobileBarHeight = 0;
+
+        // Priority 1 → Compare footer
+        if ($compareBar.length && $compareBar.hasClass('active')) {
+            mobileBarHeight = $compareBar.outerHeight();
+        }
+
+        // Priority 2 → Mobile bar (only if compare not active)
+        else if ($mobileBar.length && $mobileBar.hasClass('active')) {
+            mobileBarHeight = $mobileBar.outerHeight();
+        }
+        // ✅ Add extra 12px gap
+        var finalBottom = mobileBarHeight + 21;
+
+        $sideIcons.css('bottom', finalBottom + 'px');
+    }
+
+    // Run on load
+    jQuery(window).on('load', updatePosition);
+
+    // Run on resize
+    jQuery(window).on('resize', updatePosition);
+
+    // Run on scroll (because mobile bar toggles on scroll)
+    jQuery(window).on('scroll', updatePosition);
+},
+
            MoveToTop: function () {
   /**************************************************/
   // Scroll-to-top button with circular progress
