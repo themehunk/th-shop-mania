@@ -8082,6 +8082,7 @@ h2.wc-block-mini-cart__title{
 .thsm-side-icons-wrapper .taiowcp-fixed-cart.cart_fixed_1 .taiowcp-cart-item{
   width: 48px;
   height: 48px;
+  padding: 0;
 }
 .thsm-side-icons-wrapper .cart_fixed_1.taiowcp-fixed-cart .taiowcp-content,
 .thsm-side-icons-wrapper .cart_fixed_1.taiowc-fixed-cart .taiowc-content{
