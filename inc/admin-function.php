@@ -354,6 +354,39 @@ function th_shop_mania_three_icons($image_url) {
         </span>
       </a>
             <?php  break;
+            case 'home': ?>
+            <a class="gethome" href="<?php echo esc_url( home_url('/') ); ?>">
+                        <!-- SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                            <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        </svg>
+                    </a>
+            <?php  break;
+            case 'wishlist': 
+            	do_action('th_shop_mania_wishlist_icon'); 
+              break;
+            case 'account': 
+           		do_action('th_shop_mania_account');
+            	  break;
+            case 'shop': 
+            if ( function_exists('wc_get_page_id') ) :
+                    $shop_id = wc_get_page_id('shop');
+                    if ( $shop_id > 0 ) : ?>
+                        <div class="shop">
+                            <a href="<?php echo esc_url( get_permalink($shop_id) ); ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="8" cy="21" r="1" />
+                                    <circle cx="19" cy="21" r="1" />
+                                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                </svg>
+                            </a>
+                    
+                        </div>
+                    <?php
+                    endif;
+                endif;
+            	  break;
             default:
               break;
           }
