@@ -8055,7 +8055,7 @@ h2.wc-block-mini-cart__title{
   gap: 18px;
   padding: 9px;
   border-radius: 5px;
-  z-index: 54;
+  z-index: 99;
 }
 .thsm-side-icons-wrapper .cart_fixed_1 .taiowc-cart-item{
   border-radius: 100%;
