@@ -333,7 +333,7 @@ $th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_
       </div>
 <?php 
 }
-add_action( 'th_shop_mania_below_header', 'th_shop_mania_cart_mobile_panel' );
+add_action( 'wp_footer', 'th_shop_mania_cart_mobile_panel' );
 /***********************************************************
  *Header Post Meta Hide and show Function for Theme
  ***************************************************************/

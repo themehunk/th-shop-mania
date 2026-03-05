@@ -4856,7 +4856,7 @@ color: inherit;
   padding: 30px;
 }
 .woocommerce div.product .right-side div.summary form.cart{
-  flex-direction: column;
+/*  flex-direction: column;*/
 }
 .woocommerce div.product .right-side div.summary .th-shop-mania-quantity{
   height: 56px;
@@ -4871,6 +4871,7 @@ color: inherit;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .woocommerce .right-side{
   width: 49%;

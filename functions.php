@@ -132,7 +132,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ),
         	'lead-form-builder' => array(
                 'name' => esc_html__( 'Lead Form Builder', 'th-shop-mania' ),
-                'img' => 'icon-128x128.png',
+                'img' => 'icon-128x128.gif',
                 'pro_link' => esc_url('https://themehunk.com/product/lead-form-builder-pro/'),
                 'active_filename' => 'lead-form-builder/lead-form-builder.php',
                 'pro-plugin' => array('slug'=>'lead-form-builder',
