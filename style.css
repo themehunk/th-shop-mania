@@ -1956,7 +1956,6 @@ display:none;
     width: 100%;
     border: 1px solid #f1f1f1;
     background: #ffffff;
-    max-height: 509px;
     position: absolute;
     border-radius: 5px;
     z-index: 99;
@@ -8097,6 +8096,12 @@ h2.wc-block-mini-cart__title{
 .thsm-side-icons-wrapper .cart_fixed_1 .taiowc-icon,
 .thsm-side-icons-wrapper .cart_fixed_2 .taiowc-icon{
   color: inherit;
+}
+.thsm-side-icons-wrapper .taiowcp-cart-item,
+.thsm-side-icons-wrapper .taiowc-cart-item{
+  background: transparent!important;
+  border: 0!important;
+  box-shadow: initial!important;
 }
 #move-to-top{
   border-radius: 100%!important;

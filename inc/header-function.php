@@ -288,7 +288,9 @@ function th_shop_mania_product_search_box(){
 function th_shop_mania_cart_mobile_panel(){
 $th_shop_mania_mobile_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left');
 $th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_resp_mobile_header_layout','respmobile-layout-1');
+$category_text = get_theme_mod('th_shop_mania_main_hdr_cat_txt','All Categories');
   ?>
+
       <div class="mobile-nav-bar sider main  th-shop-mania-menu-hide <?php echo esc_attr($th_shop_mania_mobile_menu_open).' '.esc_attr($th_shop_mania_pro_resp_mobile_header_layout); ?>">
         <?php th_shop_mania_product_search_box(); ?>
         <div class="sider-inner">
@@ -305,7 +307,7 @@ $th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_
                     if (th_shop_mania_product_categories_exist()) { ?>
 
                   <li class="categories" data-menu="categories">
-                    <a href="#mobile-nav-tab-category"><?php esc_html_e('Categories','th-shop-mania');?></a>
+                    <a href="#mobile-nav-tab-category"><?php echo esc_html($category_text);?></a>
                   </li>
 
               <?php } ?>
