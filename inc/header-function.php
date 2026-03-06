@@ -365,7 +365,7 @@ if (!function_exists('th_shop_mania_header_btm_post_meta')) {
     {
         if ($page_post_meta_set !== 'on') {
           if (function_exists('th_shop_mania_pro_load_plugin')) {
-          add_action( 'th_shop_mania_pro_below_header', 'th_shop_mania_cart_mobile_panel' );
+          // add_action( 'th_shop_mania_pro_below_header', 'th_shop_mania_cart_mobile_panel' );
           do_action( 'th_shop_mania_pro_below_header' );
 
         }
