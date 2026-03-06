@@ -288,7 +288,9 @@ function th_shop_mania_product_search_box(){
 function th_shop_mania_cart_mobile_panel(){
 $th_shop_mania_mobile_menu_open = get_theme_mod('th_shop_mania_mobile_menu_open','left');
 $th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_resp_mobile_header_layout','respmobile-layout-1');
+$category_text = get_theme_mod('th_shop_mania_main_hdr_cat_txt','All Categories');
   ?>
+
       <div class="mobile-nav-bar sider main  th-shop-mania-menu-hide <?php echo esc_attr($th_shop_mania_mobile_menu_open).' '.esc_attr($th_shop_mania_pro_resp_mobile_header_layout); ?>">
         <?php th_shop_mania_product_search_box(); ?>
         <div class="sider-inner">
@@ -305,7 +307,7 @@ $th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_
                     if (th_shop_mania_product_categories_exist()) { ?>
 
                   <li class="categories" data-menu="categories">
-                    <a href="#mobile-nav-tab-category"><?php esc_html_e('Categories','th-shop-mania');?></a>
+                    <a href="#mobile-nav-tab-category"><?php echo esc_html($category_text);?></a>
                   </li>
 
               <?php } ?>
@@ -333,7 +335,7 @@ $th_shop_mania_pro_resp_mobile_header_layout = get_theme_mod('th_shop_mania_pro_
       </div>
 <?php 
 }
-add_action( 'th_shop_mania_below_header', 'th_shop_mania_cart_mobile_panel' );
+add_action( 'wp_footer', 'th_shop_mania_cart_mobile_panel' );
 /***********************************************************
  *Header Post Meta Hide and show Function for Theme
  ***************************************************************/
@@ -365,7 +367,7 @@ if (!function_exists('th_shop_mania_header_btm_post_meta')) {
     {
         if ($page_post_meta_set !== 'on') {
           if (function_exists('th_shop_mania_pro_load_plugin')) {
-          add_action( 'th_shop_mania_pro_below_header', 'th_shop_mania_cart_mobile_panel' );
+          // add_action( 'th_shop_mania_pro_below_header', 'th_shop_mania_cart_mobile_panel' );
           do_action( 'th_shop_mania_pro_below_header' );
 
         }

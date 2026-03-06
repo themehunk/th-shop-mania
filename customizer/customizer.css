@@ -172,3 +172,9 @@ body.wp-customizer .wp-picker-input-wrap{
 input[type=checkbox]{
 	margin-bottom: 2px;
 }
+
+
+.customize-control-checkbox-multiple ul{
+	max-height: 151px;
+	overflow-y: auto;
+}

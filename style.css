@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.8.1
+Version: 1.8.2
 Requires at least: 5.5
 Tested up to: 6.9
 Requires PHP: 5.6
@@ -1956,7 +1956,6 @@ display:none;
     width: 100%;
     border: 1px solid #f1f1f1;
     background: #ffffff;
-    max-height: 509px;
     position: absolute;
     border-radius: 5px;
     z-index: 99;
@@ -4856,7 +4855,7 @@ color: inherit;
   padding: 30px;
 }
 .woocommerce div.product .right-side div.summary form.cart{
-  flex-direction: column;
+/*  flex-direction: column;*/
 }
 .woocommerce div.product .right-side div.summary .th-shop-mania-quantity{
   height: 56px;
@@ -4871,6 +4870,7 @@ color: inherit;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .woocommerce .right-side{
   width: 49%;
@@ -8097,6 +8097,12 @@ h2.wc-block-mini-cart__title{
 .thsm-side-icons-wrapper .cart_fixed_2 .taiowc-icon{
   color: inherit;
 }
+.thsm-side-icons-wrapper .taiowcp-cart-item,
+.thsm-side-icons-wrapper .taiowc-cart-item{
+  background: transparent!important;
+  border: 0!important;
+  box-shadow: initial!important;
+}
 #move-to-top{
   border-radius: 100%!important;
 }
@@ -8109,7 +8115,8 @@ h2.wc-block-mini-cart__title{
     font-size: 16px;
     font-weight: 600;
 }
-.thsm-side-icons-wrapper .taiowcp-wrap.cart_fixed_2{
+  .thsm-side-icons-wrapper .taiowcp-fixed-cart.cart_fixed_2,
+  .thsm-side-icons-wrapper .taiowc-fixed-cart.cart_fixed_2{
   backdrop-filter: initial!important;
   position: relative;
   top: initial!important;

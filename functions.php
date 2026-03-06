@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.1');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.2');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -132,7 +132,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
             ),
         	'lead-form-builder' => array(
                 'name' => esc_html__( 'Lead Form Builder', 'th-shop-mania' ),
-                'img' => 'icon-128x128.png',
+                'img' => 'icon-128x128.gif',
                 'pro_link' => esc_url('https://themehunk.com/product/lead-form-builder-pro/'),
                 'active_filename' => 'lead-form-builder/lead-form-builder.php',
                 'pro-plugin' => array('slug'=>'lead-form-builder',
