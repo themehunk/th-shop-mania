@@ -8122,6 +8122,16 @@ h2.wc-block-mini-cart__title{
   top: initial!important;
   bottom: initial!important;
 }
+header .taiowcp-icon,
+header .taiowcp-content .taiowcp-total{
+  color: inherit;
+}
+header .taiowcp-wrap{
+  margin-left: -9px;
+}
+header a.whishlist{
+  display: flex;
+}
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 .main-area{

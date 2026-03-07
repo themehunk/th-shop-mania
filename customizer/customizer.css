@@ -175,6 +175,6 @@ input[type=checkbox]{
 
 
 .customize-control-checkbox-multiple ul{
-	max-height: 151px;
+	max-height: 251px;
 	overflow-y: auto;
 }
