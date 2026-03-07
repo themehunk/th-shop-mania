@@ -1,12 +1,9 @@
-07-03-2026 = = Version 1.8.3 =
+07-03-2026 = = Version 1.8.2 =
+* Update:  Style Update.
+* Update: Compatible with old cart plugin.
 * Update:  Range Value css modified.
 * Update: Account action hook modified.
 * Update: Style improved.
-
-
-20-02-2026 = = Version 1.8.2 =
-* Update:  Style Update.
-* Update: Compatible with old cart plugin
 
 20-02-2026 = = Version 1.8.1 =
 * Update:  Fixed Side Icons added.
