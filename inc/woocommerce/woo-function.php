@@ -53,10 +53,10 @@ if ($th_shop_mania_enable_cart && shortcode_exists('taiowc')) {
 }
 /** My Account Menu **/
 if (!function_exists('th_shop_mania_account')) {
-  function th_shop_mania_account()
+  function th_shop_mania_account( $type = '')
   { 
     $th_shop_mania_enable_account = esc_html(get_theme_mod('th_shop_mania_enable_account',true));
-    if ($th_shop_mania_enable_account) {
+    if ($type == 'bottom-sticky' || $th_shop_mania_enable_account) {
     ?>
     <a class="account" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" aria-label="account"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-6 h-6 stroke-[1.5px]" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
       </a>
