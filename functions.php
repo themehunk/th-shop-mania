@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.2');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.3');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -344,15 +344,5 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 	}
 }
 
-function th_shop_mania_blocks_library() {
-    // WordPress block library styles
-    wp_enqueue_style( 'wp-block-library' );
-    wp_enqueue_style( 'wp-block-library-theme' );
 
-    // WooCommerce block styles (if WooCommerce is active)
-    if ( class_exists( 'WooCommerce' ) ) {
-        wp_enqueue_style( 'wc-block-style' );
-        wp_enqueue_style( 'wc-blocks-style' ); // This one may not always exist
-    }
-}
-add_action( 'wp_enqueue_scripts', 'th_shop_mania_blocks_library', 1005 );
+
