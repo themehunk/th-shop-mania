@@ -1,5 +1,9 @@
+31-03-2026 = = Version 1.8.4 =
+* Update: Cart and checkout page design issue fixed.
+* Update: Single product page mobile design issue fixed.
+
 09-03-2026 = = Version 1.8.3 =
-* Update: Woocommerce mini-cart not working issue resolved by removing add_action( 'wp_enqueue_scripts', 'th_shop_mania_blocks_library', 1005 );
+* Update: Woocommerce mini-cart not working issue resolved.
 
 07-03-2026 = = Version 1.8.2 =
 * Update:  Style Update.
