@@ -20,6 +20,8 @@ get_template_part( 'lib/breadcrumbs/breadcrumbs');
 get_template_part( 'lib/page-meta-box/page-meta-box');
 //custom-style
 get_template_part( 'inc/th-shop-mania-custom-style');
+//performance
+get_template_part( 'inc/performance');
 /******************************/
 // woocommerce
 /******************************/
