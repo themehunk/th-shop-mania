@@ -5,11 +5,11 @@ Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
 Version: 1.8.5
+Description: Shop Mania is a fast, modern and SEO friendly WordPress WooCommerce theme designed for creating professional online stores, ecommerce websites and multivendor marketplaces. Built for performance and flexibility, the theme integrates seamlessly with WooCommerce and works smoothly with Elementor, making it easy to design and customize store layouts without coding. This responsive ecommerce theme is perfect for building fashion stores, electronics shops, furniture stores, grocery websites, dropshipping businesses and other online shops. Shop Mania includes clean product grids, modern shop layouts, promotional sections and customizable homepage designs that help showcase products effectively and improve user experience. Optimized for speed and mobile performance, the theme ensures your online store loads quickly and works smoothly across smartphones, tablets and desktops. The lightweight structure and clean code make it compatible with popular SEO and performance plugins used with WordPress. With easy customization options, flexible layouts and strong WooCommerce support, Shop Mania provides a reliable solution for creating fast, professional and scalable ecommerce websites. You can also get the premium version of the theme from here: https://themehunk.com/th-shop-mania/
+Version: 1.8.4
 Requires at least: 5.5
 Tested up to: 6.9
 Requires PHP: 5.6
-WC requires at least: 7.9
-WC tested up to: 10.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: th-shop-mania
@@ -3714,7 +3714,6 @@ z-index: 9;
 .thunk-single-product-summary-wrap{
 position:relative;
 display: block;
-margin-bottom: 60px;
 }
 .single-product .thunk-woo-product-list{
 text-align:left;
@@ -4035,6 +4034,17 @@ margin-bottom:20px;
     background-color: #000;
     color: #fff;
 }
+
+.wp-block-woocommerce-product-collection h2.wp-block-heading {
+    line-height: 1.2rem;
+    text-align: center;
+}
+.wc-block-product-template.wc-block-product-template {
+    margin: 0;
+}
+.wc-block-cart .wp-block-woocommerce-cart-order-summary-block{
+  padding: 18px;
+}
 .woocommerce div.product .woocommerce-tabs ul.tabs {
     border-bottom: 1px solid #e2e2e2;
     text-align: center;
@@ -4145,9 +4155,6 @@ body .woocommerce-tabs .tabs li.active a::before, body .woocommerce-tabs .tabs l
     font-size: 16px;
     line-height: 24px;
     color: #525252;
-}
-.thunk-single-product-summary-wrap .product_meta span{
-margin-bottom:10px;
 }
 .product_meta > span {
     display:block;
@@ -5150,7 +5157,7 @@ border: 1px solid #f1f1f1;
 /************************/
 
 /************************/
-/*woocommerce Block cart page*/
+/*woocommerce Block cart page and checkout page*/
 /************************/
 .woocommerce-cart .editor-styles-wrapper table.wc-block-cart-items .wc-block-cart-items__header, 
 .woocommerce-cart table.wc-block-cart-items .wc-block-cart-items__header{
@@ -5172,13 +5179,35 @@ border: 1px solid #f1f1f1;
 .wc-block-components-totals-coupon__button{
   border-radius: 5px;
 }
-.wc-block-components-sidebar{
+.wp-block-woocommerce-cart .wc-block-components-sidebar{
   background: #F5F5F5;
   position: sticky;
   top: 108px;
   align-self: flex-start;
   padding: 29px;
 }
+.wc-block-components-order-summary .wc-block-components-order-summary-item__description p ,
+.wc-block-components-product-metadata .wc-block-components-product-metadata__description>p{
+    display: none;
+}
+.editor-styles-wrapper table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__image img, 
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__image img,
+.wc-block-components-order-summary .wc-block-components-order-summary-item__image>img,
+body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link) {
+    border-radius: 6px;
+}
+.wc-block-components-form .wc-block-components-text-input label, .wc-block-components-text-input label{
+      color: #505050;
+          font-size: 14px;
+
+}
+.wc-block-components-form .wc-block-components-text-input input:-webkit-autofill, .wc-block-components-form .wc-block-components-text-input.is-active input[type=email], .wc-block-components-form .wc-block-components-text-input.is-active input[type=number], .wc-block-components-form .wc-block-components-text-input.is-active input[type=password], .wc-block-components-form .wc-block-components-text-input.is-active input[type=tel], .wc-block-components-form .wc-block-components-text-input.is-active input[type=text], .wc-block-components-form .wc-block-components-text-input.is-active input[type=url], .wc-block-components-text-input input:-webkit-autofill, .wc-block-components-text-input.is-active input[type=email], .wc-block-components-text-input.is-active input[type=number], .wc-block-components-text-input.is-active input[type=password], .wc-block-components-text-input.is-active input[type=tel], .wc-block-components-text-input.is-active input[type=text], .wc-block-components-text-input.is-active input[type=url] {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
 .woocommerce-cart .wc-block-cart__submit.wp-block-woocommerce-proceed-to-checkout-block{
   margin-bottom: 0;
 }
@@ -5191,6 +5220,31 @@ border: 1px solid #f1f1f1;
 .woocommerce-cart .wc-block-components-totals-wrapper{
   border-top: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .thsm-checkout-layout-standard .breadcrumb-trail.breadcrumbs {
+        display: none;
+    }
+    .thsm-checkout-layout-standard h1.entry-title {
+    font-size: 32px;
+    padding: 0;
+    margin: 0;
+  }
+  .thsm-checkout-layout-standard .page-head {
+      margin-top: 15px;
+  justify-content: center;
+  }
+  .thsm-checkout-layout-standard .wp-block-woocommerce-checkout{
+    padding-top: 10px !important;
+  }
+
+  .thsm-checkout-layout-standard.theme-th-shop-mania.woocommerce .woocommerce-breadcrumb {
+    padding-bottom: .5em;
+    padding-top: .5em;
+    text-align: center;
+}
+}
+
 /************************/
 /*woocommerce Block cart page*/
 /************************/
@@ -5461,6 +5515,7 @@ input[type="text"], input[type="email"],input[type="url"],
     border: 1px solid #cccc;
     height:45px;
     width: 100%;
+    font-size: 16px;
 }
 .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register{
     margin-top:0;
@@ -8759,7 +8814,7 @@ width:50%;
   order: 1;
 }
 .theme-th-shop-mania .page-content{
-  padding-top: 15px;
+  padding-top: 5px;
 }
 .sidebar-content-area{
   order: 2;
