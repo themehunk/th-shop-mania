@@ -358,7 +358,11 @@ function th_shop_mania_three_icons($image_url) {
 
 		    if ( $show_cart && $cart_style === 'style-1' ) {
 		        echo do_shortcode('[taiowc layout="cart_fixed_1"]');
-		    }
+		    }elseif($show_cart && $cart_style === 'style-2'){
+
+                     echo do_shortcode('[taiowc layout="cart_fixed_2"]');
+
+                }
 
     	}elseif(taiowc_main()->taiowc_get_option( 'taiowc-show_cart' ) == true){
        
