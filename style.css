@@ -5218,7 +5218,20 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
 .woocommerce-cart .wc-block-components-totals-wrapper{
   border-top: 0;
 }
-
+.thsm-side-icons-wrapper > *:not(.cart_fixed_2) {
+    font-size: 1.9rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 48px;
+    height: 48px;
+}
 @media screen and (max-width: 768px) {
     .thsm-checkout-layout-standard .breadcrumb-trail.breadcrumbs {
         display: none;
