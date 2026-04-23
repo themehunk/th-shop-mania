@@ -1458,12 +1458,12 @@ display:none;
 
 }
 .thunk-icon-market > a{
-  margin-right: 20px;
+  margin-right: 10px;
   color: #111;
 }
 .thunk-icon-market > :last-child{
   margin-right: 0;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .thunk-icon-market > :nth-last-child(2){
   margin-right: 0;
