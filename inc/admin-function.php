@@ -358,9 +358,26 @@ function th_shop_mania_three_icons($image_url) {
 
 		    if ( $show_cart && $cart_style === 'style-1' ) {
 		        echo do_shortcode('[taiowc layout="cart_fixed_1"]');
-		    }
+		    }elseif($show_cart && $cart_style === 'style-2'){
 
-    	}
+                     echo do_shortcode('[taiowc layout="cart_fixed_2"]');
+
+                }
+
+    	}elseif(taiowc_main()->taiowc_get_option( 'taiowc-show_cart' ) == true){
+       
+                if(taiowc_main()->taiowc_get_option( 'taiowc-cart_style' ) == 'style-1'){
+
+                     echo do_shortcode('[taiowc layout="cart_fixed_1"]');
+
+                }elseif(taiowc_main()->taiowc_get_option( 'taiowc-cart_style' ) == 'style-2'){
+
+                     echo do_shortcode('[taiowc layout="cart_fixed_2"]');
+
+                }
+
+        }
+
             break;
             case 'recently':
               do_action('thsm_recently_view'); 
@@ -432,6 +449,9 @@ add_action('wp_loaded', function() {
     }
     elseif( function_exists('taiowcp_main') ){
     	remove_action( 'wp_footer', array( taiowcp_main(), 'taiowcp_addcartBody' ));
+    }
+    elseif( function_exists('taiowc_main') ){
+        remove_action( 'wp_footer', array( taiowc_main(), 'taiowc_addcartBody' ));
     }
 }, 20);
 

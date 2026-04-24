@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.4');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.5');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -119,6 +119,17 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
 			// 	 'pro_link' => '',
 			// 	 'active_filename' => 'woocommerce/woocommerce.php',
 			// ),
+        	   'th-store-one' => array(
+                'name' => esc_html__( 'TH Store One – A powerful all in one WooCommerce toolkit', 'th-shop-mania' ),
+                'img' => 'icon-128x128.png',
+                'pro_link' => esc_url(''),
+                'active_filename' => 'th-store-one/th-store-one.php',
+                'pro-plugin' => array('slug'=>'th-store-one',
+                					'init'=>'th-store-one-pro/th-store-one.php',
+                					'admin_link'=>'vayu-blocks',
+                					'docs'=>esc_url('https://themehunk.com/docs/th-store-one/'),
+            						)
+            ),
         	 'th-all-in-one-woo-cart' => array(
                 'name' => esc_html__( 'Th All In One Woo Cart', 'th-shop-mania' ),
                 'img' => 'icon-128x128.gif',
