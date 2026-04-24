@@ -364,7 +364,9 @@ function th_shop_mania_three_icons($image_url) {
 
                 }
 
-    	}elseif(taiowc_main()->taiowc_get_option( 'taiowc-show_cart' ) == true){
+    	}elseif( function_exists('taiowc_main')){
+
+            if(taiowc_main()->taiowc_get_option( 'taiowc-show_cart' ) == true){
        
                 if(taiowc_main()->taiowc_get_option( 'taiowc-cart_style' ) == 'style-1'){
 
@@ -375,6 +377,7 @@ function th_shop_mania_three_icons($image_url) {
                      echo do_shortcode('[taiowc layout="cart_fixed_2"]');
 
                 }
+            }
 
         }
 
