@@ -4194,7 +4194,7 @@ section.upsells.products ul.products{
 }
 section.related.products,
 section.upsells.products{
-  padding: 0 0 60px 0;
+  padding: 60px 0;
 }
 section.related.products > h2, 
 section.upsells.products > h2,
@@ -4292,7 +4292,7 @@ margin:0px 0px 0px 10px;
 .comment-form input[type="text"], 
 .comment-form input[type="email"], 
 .comment-form input[type="url"]{
-  width:80%;
+  width: 100%;
 }
 .comment-form textarea{
   height:200px;
@@ -4841,7 +4841,6 @@ color: inherit;
 .woocommerce #content div.product .left-side div.images{
   width: 100%;
   border: 1px solid #e1e3e4;
-  margin-bottom: 20px;
   padding: 30px;
 }
 .right-side .woocommerce-tabs.wc-tabs-wrapper{
@@ -5254,6 +5253,14 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
     padding-top: .5em;
     text-align: center;
 }
+  .thunk-single-product-summary-wrap .comment-form-cookies-consent{
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .thunk-single-product-summary-wrap .comment-form-cookies-consent label{
+        font-size: 15px;
+    }
 }
 
 /************************/
@@ -6157,6 +6164,7 @@ form p label{
   float: left;
   margin-top: 5px;
   margin-right: 10px;
+  outline: 0;
 }
 #searchform [type="submit"],
 .widget_product_search button[type="submit"] {
@@ -8195,6 +8203,69 @@ header .taiowcp-wrap{
 }
 header a.whishlist{
   display: flex;
+}
+/* Modern Cookie Consent Checkbox UI */
+
+.thunk-single-product-summary-wrap .comment-form-cookies-consent{
+    margin-top: 22px !important;
+    padding: 18px 20px;
+    /* background: #f7f8f9; */
+    /* border: 1px solid #e8e8e8; */
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); */
+    transition: all 0.3s ease;
+    max-width: 700px;
+}
+
+/* Hide default checkbox */
+.thunk-single-product-summary-wrap .comment-form-cookies-consent input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 2px solid #cfcfcf;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.25s ease;
+    margin-top: 2px;
+}
+
+/* Checked State */
+.thunk-single-product-summary-wrap .comment-form-cookies-consent input[type="checkbox"]:checked{
+    background: linear-gradient(135deg, #00c853, #00e676);
+    border-color: #00c853;
+    box-shadow: 0 4px 12px rgba(0, 200, 83, 0.35);
+    outline: none;
+}
+
+/* Tick Mark */
+.thunk-single-product-summary-wrap .comment-form-cookies-consent input[type="checkbox"]:checked::after{
+    content: "✓";
+    position: absolute;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+}
+
+/* Label Styling */
+.thunk-single-product-summary-wrap .comment-form-cookies-consent label{
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2d2d2d;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.2px;
 }
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,

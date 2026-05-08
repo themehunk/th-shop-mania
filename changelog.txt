@@ -2,6 +2,7 @@
 * Update: Woo cart compatibility added.
 * Update: Woo cart style added.
 * Update: Move to Top style issue resolved.
+* Update: Single product style spacing improved.
 
 31-03-2026 = = Version 1.8.4 =
 * Update: Cart and checkout page design issue fixed.
