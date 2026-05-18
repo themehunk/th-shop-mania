@@ -126,7 +126,7 @@ define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
                 'active_filename' => 'th-store-one/th-store-one.php',
                 'pro-plugin' => array('slug'=>'th-store-one',
                 					'init'=>'th-store-one-pro/th-store-one.php',
-                					'admin_link'=>'vayu-blocks',
+                					'admin_link'=>'',
                 					'docs'=>esc_url('https://themehunk.com/docs/th-store-one/'),
             						)
             ),

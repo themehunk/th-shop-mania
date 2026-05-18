@@ -296,6 +296,7 @@ a.plugin-detail.thickbox.open-plugin-details-modal,
 
  .th-row{
   display: flex;
+  align-items: center;
 }
 
 .th-column {
@@ -662,9 +663,20 @@ display: flex;
  .sidebar .th-pro-theme-ad + hr{
     display: block!important;
   }
+
+  @media (min-width: 1300px){
+.appearance_page_th_shop_mania_thunk_started .theme_link{
+    width: 42%;
+}
+.th-column img{
+    width: 90px;
+}
+}
+
 @media (min-width: 768px){
 .theme_link {
     width: 18%;
    padding: 1%;
 }
 }
+
