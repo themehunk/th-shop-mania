@@ -272,7 +272,7 @@ function plugin_install_button($plugin){
             $pro_text = '<b class="pro-text">'.$plugin['pro_text'].'</b>';
 
             $button = '<div class="rcp theme_link th-row">';
-            $button .= ' <div class="th-column"><img src="'.esc_url( $plugin['thumb'] ).'" /> </div>';
+            $button .= ' <div class="th-column image"><img src="'.esc_url( $plugin['thumb'] ).'" /> </div>';
             $button .= '<div class="th-column">';
 
            $pro_settings = ($plugin['pro_active'] && $plugin['admin_link'] !=='')?'<a href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>':'<a id="'.esc_attr( $plugin['slug'] ).'" style="display:none;" href="'.esc_url( admin_url( 'themes.php?page='.$plugin['admin_link'] )).'">Settings</a>';

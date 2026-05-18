@@ -4322,7 +4322,7 @@ margin:0px 0px 0px 10px;
     border: medium none;
     color: #fff;
     display: inline-block;
-    float: left;
+/*    float: left;*/
     font-family: 'Jost';font-weight: 500;
     line-height: 45px;
     max-height: 45px;
@@ -4638,6 +4638,7 @@ top:0em!important;
   float: left;
   margin-right: 15px;
   margin-bottom: 21px;
+  display: initial;
 }
 .summary .thw-add-to-wishlist-button-wrap.th-wishlist-single svg{
   width: 18px;
