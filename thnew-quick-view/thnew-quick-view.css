@@ -79,7 +79,7 @@ LAYOUT
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 9px;
 }
 
 /*=============================
@@ -183,11 +183,11 @@ SUMMARY
 
 .thnew-qv-title{
     padding: 0 0 18px;
-    font-size:52px;
-    line-height:1.05;
-    font-weight:700;
-    letter-spacing:-.03em;
-    border-bottom:1px solid #eee;
+font-size: 28px;
+line-height: 1;
+font-weight: 700;
+letter-spacing: 0em;
+border-bottom: 1px solid #eee;
 }
 
 /*.thnew-qv-rating{
@@ -201,28 +201,40 @@ SUMMARY
 .thnew-qv-rating .woocommerce-review-link{
     display: none;
 }
+.thnew-qv-rating .star-rating{
+    margin: 0;
+}
+.thnew-qv-rating .woocommerce-product-rating .star-rating{
+    margin: .9em 10px 0 0;
+}
 .thnew-qv-price{
-    font-size: 27px;
+    font-size: 20px;
     font-weight: 700;
+    line-height: 27px;
+    margin-top: 9px;
 }
 .thnew-qv-price .price{
     font-size:38px;
     font-weight:700;
     line-height:1;
 }
+.thnew-qv-price del {
+    font-size: .599rem;
+    margin-left: auto;
+    color: #9ca3af;
+}
 
 .thnew-qv-description{
     line-height:1.8;
     color:#555;
+    height: 199px;
+    overflow-y: auto;
 }
 
 /*=============================
 VARIATIONS
 =============================*/
 
-.thnew-qv-variation-wrap{
-    margin-top:26px;
-}
 .thnew-qv-variation-wrap .label{
     border: 0;
 }
@@ -234,7 +246,6 @@ VARIATIONS
 
 .thnew-qv-variation-wrap tr{
     display:block;
-    margin-bottom:22px;
 }
 
 .thnew-qv-variation-wrap td{
@@ -245,7 +256,7 @@ VARIATIONS
 
 .thnew-qv-variation-wrap label{
     display:block;
-    margin-bottom:10px;
+    margin-bottom: 0;
     font-size:13px;
     font-weight:700;
     letter-spacing:.08em;
@@ -259,6 +270,18 @@ VARIATIONS
     border-radius:14px;
     padding:0 16px;
     background:#fff;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding-right: 40px;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23666' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 21px center;
+    background-size: 12px;
+     padding-right: 30px !important;
 }
 
 .thnew-qv-variation-wrap .reset_variations{
@@ -285,7 +308,7 @@ CUSTOM CART
 .thnew-qv-qty-wrap{
     display:flex;
     align-items:center;
-    width:150px;
+    width: 90px;
     height: 39px;
     border:1px solid #ddd;
     border-radius:999px;
@@ -364,8 +387,14 @@ META
 .thnew-qv-meta .product_meta{
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 0;
     padding: 0;
+    font-size: 16px;
+    line-height: 29px;
+}
+.thnew-qv-meta .product_meta *{
+    font-size: inherit;
+    line-height: inherit;
 }
 
 /*=============================
@@ -466,6 +495,7 @@ RESPONSIVE
 grid-template-columns: minmax(175px, 400px) minmax(175px, 400px);
     justify-content:center;
     gap:36px;
+     grid-template-columns: repeat(2, 400px);
 
 }
 .thnew-qv-left{
@@ -567,7 +597,7 @@ FLEXSLIDER ARROWS
 .thnew-cart-wrapper {
    border-radius: 9px;
     display: flex;
-    gap: 9px;
+    gap: 12px;
     align-items: center;
     position: sticky;
     bottom: 0;
@@ -584,8 +614,8 @@ FLEXSLIDER ARROWS
 }
 
 /* scroll bar css */
-.thnew-popup-wrapper {
-    overflow-y: auto;
+.thnew-qv-description,
+.thnew-popup-wrapper{
 
     /* Firefox */
     scrollbar-width: thin;
@@ -593,14 +623,17 @@ FLEXSLIDER ARROWS
 }
 
 /* Chrome, Edge, Safari */
+.thnew-qv-description::-webkit-scrollbar,
 .thnew-popup-wrapper::-webkit-scrollbar {
     width: 6px;
 }
 
+.thnew-qv-description::-webkit-scrollbar-track,
 .thnew-popup-wrapper::-webkit-scrollbar-track {
     background: transparent;
 }
 
+.thnew-qv-description::-webkit-scrollbar-thumb,
 .thnew-popup-wrapper::-webkit-scrollbar-thumb {
     background: linear-gradient(
         180deg,
@@ -611,6 +644,7 @@ FLEXSLIDER ARROWS
     transition: all 0.3s ease;
 }
 
+.thnew-qv-description::-webkit-scrollbar-thumb:hover,
 .thnew-popup-wrapper::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(
         180deg,
@@ -619,8 +653,17 @@ FLEXSLIDER ARROWS
     );
 }
 
+.thnew-qv-description::-webkit-scrollbar-corner,
 .thnew-popup-wrapper::-webkit-scrollbar-corner {
     background: transparent;
+}
+.thnew-qv-description::-webkit-scrollbar{
+    display: none; 
+}
+.thnew-qv-description::-webkit-scrollbar {
+    display: none!important;
+    width: 0;
+    height: 0;
 }
 
 
@@ -788,4 +831,25 @@ SKELETON LOADER
     .thnew-sk-title{
         height:42px;
     }
+}
+
+.thnew-read-more{
+
+    margin-top:12px;
+
+    border:none;
+    background:none;
+
+    padding:0;
+
+    color:#111;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+    outline: 0;
+}
+.thnew-read-more:focus{
+    outline: 0;
 }

@@ -92,6 +92,8 @@
                     self.addToCart(e, $(this));
                 }
             );
+
+            self.descriptionToggle();
         },
 
         /**
@@ -658,6 +660,50 @@
                 .text('Add To Cart');
         },
 
+/**
+ * Description Toggle.
+ */
+descriptionToggle: function () {
+
+    $(document).on(
+        'click',
+        '.thnew-read-more',
+        function () {
+
+            let button =
+                $(this);
+
+            let moreText =
+                button.siblings(
+                    '.thnew-desc-more'
+                );
+
+            moreText.stop().slideToggle(200);
+
+            button.toggleClass(
+                'active'
+            );
+
+            /**
+             * Button Text.
+             */
+            if (
+                button.hasClass('active')
+            ) {
+
+                button.text(
+                    'Read Less'
+                );
+
+            } else {
+
+                button.text(
+                    'Read More'
+                );
+            }
+        }
+    );
+},
         /**
          * Close Popup.
          */
@@ -672,6 +718,8 @@
 
             }, 300);
         }
+
+
     };
 
     /**
@@ -680,3 +728,6 @@
     THNEWQuickView.init();
 
 })(jQuery);
+
+
+

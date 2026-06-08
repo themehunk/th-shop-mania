@@ -198,13 +198,15 @@ class THNEW_Quick_View {
 
 				<?php $this->render_title( $product ); ?>
 
+				<?php $this->render_price( $product ); ?>
+
 				<?php $this->render_meta(); ?>
 
-				<?php $this->render_price( $product ); ?>
+				<?php $this->render_stock_status( $product ); ?>
 
 				<?php $this->render_variations( $product ); ?>
 
-				<?php $this->render_rating(); ?>
+				<?php $this->render_rating( $product ); ?>
 
 				<?php $this->render_description( $product ); ?>
 
@@ -214,9 +216,39 @@ class THNEW_Quick_View {
 				<div class="thnew-cart-wrapper">
 					<?php $this->render_quantity(); ?>
 					<?php $this->render_add_to_cart( $product ); ?>
+					<?php
+					 if( shortcode_exists( 'thwl_add_to_wishlist' )){ ?>
+        <div class="thnew-qv-wishlist">
+                <?php 
+                    if( shortcode_exists( 'thwl_add_to_wishlist' )) {
+                        echo do_shortcode('[thwl_add_to_wishlist 
+                            product_id="' . esc_attr($product->id) . '" 
+                            add_icon="th-icon th-icon-heart1" 
+                            add_text="" 
+                            add_browse_icon="th-icon th-icon-favorite"
+                            browse_text=""
+                            theme_style="yes"
+                            icon_style="icon_only_no_style"
+                            custom_class="th-wishlist-integrated"
+                        ]');
+                    }
+                ?> 
+        </div>
+
+   <?php    } ?>
+
+
+  			 <?php
+			if(class_exists('th_product_compare') || class_exists('Tpcp_product_compare')){ ?>
+                	<div class="thnew-qv-compare">
+                		<a data-th-product-id="<?php echo ($product->id);  ?>">
+                			<span class="th-icon th-icon-repeat"></span>
+                		</a>
+                	</div>
+              <?php  } ?>
 				</div>
 
-				<?php do_action( 'thnew_quick_view_after_cart',$product); ?>
+				<?php do_action( 'thnew_quick_view_after_cart'); ?>
 
 
 			</div>
@@ -256,31 +288,81 @@ class THNEW_Quick_View {
 	 */
 	private function render_gallery( $product ) {
 
-		$gallery_ids = $product->get_gallery_image_ids();
+	$gallery_ids = array();
 
-		array_unshift(
-			$gallery_ids,
-			$product->get_image_id()
-		);
+	/**
+	 * Main Product Image.
+	 */
+	$product_image_id =
+		$product->get_image_id();
 
-		$gallery_ids = array_unique(
-			array_filter( $gallery_ids )
-		);
-		?>
+	if (
+		! empty( $product_image_id ) &&
+		wp_attachment_is_image(
+			$product_image_id
+		)
+	) {
 
-		<div class="thnew-qv-gallery-wrap">
+		$gallery_ids[] =
+			$product_image_id;
+	}
 
-			<div class="thnew-qv-gallery">
+	/**
+	 * Gallery Images.
+	 */
+	$product_gallery_ids =
+		$product->get_gallery_image_ids();
 
-				<ul class="slides">
+	if (
+		! empty( $product_gallery_ids )
+	) {
+
+		foreach (
+			$product_gallery_ids as $gallery_id
+		) {
+
+			if (
+				wp_attachment_is_image(
+					$gallery_id
+				)
+			) {
+
+				$gallery_ids[] =
+					$gallery_id;
+			}
+		}
+	}
+
+	/**
+	 * Unique Images.
+	 */
+	$gallery_ids =
+		array_unique( $gallery_ids );
+
+	/**
+	 * No Images.
+	 */
+	$has_images =
+		! empty( $gallery_ids );
+
+	?>
+
+	<div class="thnew-qv-gallery-wrap">
+
+		<div class="thnew-qv-gallery">
+
+			<ul class="slides">
+
+				<?php if ( $has_images ) : ?>
 
 					<?php foreach ( $gallery_ids as $image_id ) : ?>
 
 						<?php
-						$image = wp_get_attachment_image_url(
-							$image_id,
-							'woocommerce_single'
-						);
+						$image =
+							wp_get_attachment_image_url(
+								$image_id,
+								'woocommerce_single'
+							);
 
 						if ( empty( $image ) ) {
 							continue;
@@ -297,48 +379,61 @@ class THNEW_Quick_View {
 
 					<?php endforeach; ?>
 
-				</ul>
+				<?php else : ?>
 
-			</div>
+					<li>
 
-			<?php if ( count( $gallery_ids ) > 1 ) : ?>
+						<img class="th-gallery-image"
+							 src="<?php echo esc_url( wc_placeholder_img_src() ); ?>"
+							 alt="">
 
-				<div class="thnew-qv-thumbs">
+					</li>
 
-					<ul class="slides">
+				<?php endif; ?>
 
-						<?php foreach ( $gallery_ids as $image_id ) : ?>
+			</ul>
 
-							<?php
-							$thumb = wp_get_attachment_image_url(
+		</div>
+
+		<?php if ( count( $gallery_ids ) > 1 ) : ?>
+
+			<div class="thnew-qv-thumbs">
+
+				<ul class="slides">
+
+					<?php foreach ( $gallery_ids as $image_id ) : ?>
+
+						<?php
+						$thumb =
+							wp_get_attachment_image_url(
 								$image_id,
 								'woocommerce_gallery_thumbnail'
 							);
 
-							if ( empty( $thumb ) ) {
-								continue;
-							}
-							?>
+						if ( empty( $thumb ) ) {
+							continue;
+						}
+						?>
 
-							<li>
+						<li>
 
-								<img src="<?php echo esc_url( $thumb ); ?>"
-									 alt="">
+							<img src="<?php echo esc_url( $thumb ); ?>"
+								 alt="">
 
-							</li>
+						</li>
 
-						<?php endforeach; ?>
+					<?php endforeach; ?>
 
-					</ul>
+				</ul>
 
-				</div>
+			</div>
 
-			<?php endif; ?>
+		<?php endif; ?>
 
-		</div>
+	</div>
 
-		<?php
-	}
+	<?php
+}
 
 	/**
 	 * Title.
@@ -358,17 +453,27 @@ class THNEW_Quick_View {
 	/**
 	 * Rating.
 	 */
-	private function render_rating() {
-		?>
+	/**
+ * Rating.
+ */
+private function render_rating( $product ) {
 
-		<div class="thnew-qv-rating">
+	$rating_count =
+		$product->get_rating_count();
 
-			<?php woocommerce_template_single_rating(); ?>
-
-		</div>
-
-		<?php
+	if ( empty( $rating_count ) ) {
+		return;
 	}
+	?>
+
+	<div class="thnew-qv-rating">
+
+		<?php woocommerce_template_single_rating(); ?>
+
+	</div>
+
+	<?php
+}
 
 	/**
 	 * Price.
@@ -390,27 +495,110 @@ class THNEW_Quick_View {
 		<?php
 	}
 
+	private function render_stock_status( $product ) {
+
+	if ( $product->is_in_stock() ) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-stock out-of-stock">
+<span class="stock out-of-stock">
+<?php
+		esc_html_e(
+			'This product is currently out of stock and unavailable.',
+			'th-shop-mania'
+		);
+		?>
+	</span>
+		
+
+	</div>
+
+	<?php
+}
+
 	/**
 	 * Description.
 	 */
 	private function render_description( $product ) {
-		?>
 
-		<div class="thnew-qv-description"
-			 id="th-dynamic-desc">
+	$description =
+		wp_strip_all_tags(
+			$product->get_short_description()
+		);
 
-			<?php
-			echo wp_kses_post(
-				wpautop(
-					$product->get_short_description()
-				)
-			);
-			?>
+	$limit = 15;
 
-		</div>
+	$words =
+		explode(
+			' ',
+			$description
+		);
 
-		<?php
-	}
+	$is_long =
+		count( $words ) > $limit;
+
+	$short_desc =
+		implode(
+			' ',
+			array_slice(
+				$words,
+				0,
+				$limit
+			)
+		);
+
+	$remaining_desc =
+		implode(
+			' ',
+			array_slice(
+				$words,
+				$limit
+			)
+		);
+	?>
+
+	<div class="thnew-qv-description"
+		 id="th-dynamic-desc">
+
+		<span class="thnew-desc-short">
+
+			<?php echo esc_html( $short_desc ); ?>
+
+		</span>
+
+		<?php if ( $is_long ) : ?>
+
+			<span class="thnew-desc-more"
+				  style="display:none;">
+
+				<?php
+				echo esc_html(
+					$remaining_desc
+				);
+				?>
+
+			</span>
+
+			<button type="button"
+					class="thnew-read-more">
+
+				<?php
+				esc_html_e(
+					'Read More',
+					'th-shop-mania'
+				);
+				?>
+
+			</button>
+
+		<?php endif; ?>
+
+	</div>
+
+	<?php
+}
 
 	/**
 	 * Variations.
