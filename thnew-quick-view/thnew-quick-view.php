@@ -395,40 +395,7 @@ class THNEW_Quick_View {
 
 		</div>
 
-		<?php if ( count( $gallery_ids ) > 1 ) : ?>
-
-			<div class="thnew-qv-thumbs">
-
-				<ul class="slides">
-
-					<?php foreach ( $gallery_ids as $image_id ) : ?>
-
-						<?php
-						$thumb =
-							wp_get_attachment_image_url(
-								$image_id,
-								'woocommerce_gallery_thumbnail'
-							);
-
-						if ( empty( $thumb ) ) {
-							continue;
-						}
-						?>
-
-						<li>
-
-							<img src="<?php echo esc_url( $thumb ); ?>"
-								 alt="">
-
-						</li>
-
-					<?php endforeach; ?>
-
-				</ul>
-
-			</div>
-
-		<?php endif; ?>
+		
 
 	</div>
 

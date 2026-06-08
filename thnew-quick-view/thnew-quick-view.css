@@ -19,7 +19,7 @@
     overflow: auto;
     margin: 2vh auto;
     background: #fff;
-    border-radius: 24px;
+    border-radius: 5px;
     padding: 29px;
     top: 50%;
     transform: translateY(-50%);
@@ -80,6 +80,8 @@ LAYOUT
     display: flex;
     flex-direction: column;
     gap: 9px;
+    overflow-y: auto;
+    flex-wrap: wrap;
 }
 
 /*=============================
@@ -93,14 +95,12 @@ GALLERY
 
 .thnew-qv-gallery{
     overflow:hidden;
-    border:1px solid #d9d9d9;
-    border-radius:18px;
-    margin-bottom:16px;
+/*    border:1px solid #d9d9d9;*/
     background:#fff;
-    padding: 9px;
+/*    padding: 9px;*/
 }
 .thnew-qv-gallery img{
-    border-radius: 18px;
+    border-radius: 5px;
 }
 .thnew-qv-gallery .slides{
     margin:0;
@@ -116,7 +116,8 @@ GALLERY
     width:100%;
     display:block;
     object-fit:cover;
-    aspect-ratio: 1/1;
+/*    aspect-ratio: 1/1;*/
+border: 1px solid #efefef;
 }
 
 .thnew-qv-gallery .flex-direction-nav a{
@@ -219,9 +220,9 @@ border-bottom: 1px solid #eee;
     line-height:1;
 }
 .thnew-qv-price del {
-    font-size: .599rem;
     margin-left: auto;
     color: #9ca3af;
+    font-weight: 500;
 }
 
 .thnew-qv-description{
@@ -236,6 +237,7 @@ VARIATIONS
 =============================*/
 
 .thnew-qv-variation-wrap .label{
+    width: 108px;
     border: 0;
 }
 .thnew-qv-variation-wrap table{
@@ -245,7 +247,8 @@ VARIATIONS
 }
 
 .thnew-qv-variation-wrap tr{
-    display:block;
+    display: flex;
+    margin-bottom: 18px;
 }
 
 .thnew-qv-variation-wrap td{
@@ -603,11 +606,11 @@ FLEXSLIDER ARROWS
     bottom: 0;
     z-index: 99;
     padding: 0px 5px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;
     border-bottom: 1px solid #F3F4F6;
     backdrop-filter: blur(5px);
     box-shadow: 0 8px 30px rgb(120 120 120 / 12%);
-    padding: 12px;
+    padding: 12px;*/
 }
 .thnew-qv-grid.style-1 .thnew-qv-label{
     display: none;
@@ -631,6 +634,8 @@ FLEXSLIDER ARROWS
 .thnew-qv-description::-webkit-scrollbar-track,
 .thnew-popup-wrapper::-webkit-scrollbar-track {
     background: transparent;
+    border-radius: 24px;
+    margin: 24px 0; /* top & bottom gap */
 }
 
 .thnew-qv-description::-webkit-scrollbar-thumb,
@@ -640,7 +645,7 @@ FLEXSLIDER ARROWS
         rgba(120, 120, 140, 0.6),
         rgba(90, 90, 110, 0.8)
     );
-    border-radius: 20px;
+    border-radius: 24px;
     transition: all 0.3s ease;
 }
 
