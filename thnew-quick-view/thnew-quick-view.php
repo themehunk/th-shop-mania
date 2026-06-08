@@ -186,7 +186,7 @@ class THNEW_Quick_View {
 	private function render_layout_style1( $product ) {
 		?>
 
-		<div class="thnew-qv-grid">
+		<div class="thnew-qv-grid style-1">
 
 			<div class="thnew-qv-left">
 
@@ -198,27 +198,26 @@ class THNEW_Quick_View {
 
 				<?php $this->render_title( $product ); ?>
 
+				<?php $this->render_meta(); ?>
+
 				<?php $this->render_price( $product ); ?>
 
 				<?php $this->render_variations( $product ); ?>
 
-
-				<?php $this->render_quantity(); ?>
-
-
-			<?php $this->render_description( $product ); ?>
-	
 				<?php $this->render_rating(); ?>
+
+				<?php $this->render_description( $product ); ?>
+
 
 				<?php do_action('thnew_quick_view_before_cart',$product);?>
 
-				
-			<?php $this->render_add_to_cart( $product ); ?>
-
+				<div class="thnew-cart-wrapper">
+					<?php $this->render_quantity(); ?>
+					<?php $this->render_add_to_cart( $product ); ?>
+				</div>
 
 				<?php do_action( 'thnew_quick_view_after_cart',$product); ?>
 
-				<?php $this->render_meta(); ?>
 
 			</div>
 
@@ -473,8 +472,6 @@ class THNEW_Quick_View {
 	 */
 	private function render_add_to_cart( $product ) {
 		?>
-<div>
-	
 		<button type="button"
 				id="th-custom-add-to-cart"
 				data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"

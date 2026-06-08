@@ -181,7 +181,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
         if ( ! th_shop_mania_is_blog() || is_shop() || is_product_taxonomy() ) {
             $classes[] = 'thunk-woo-product-list';
 
-            $qv_enable = get_theme_mod( 'th_shop_mania_woo_quickview_enable', false );
+            $qv_enable = get_theme_mod( 'th_shop_mania_woo_quickview_enable', true );
             if ( true == $qv_enable ) {
                 $classes[] = 'opn-qv-enable';
             }
@@ -241,7 +241,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			$localize['is_cart']                    = is_cart();
 			$localize['is_single_product']          = is_product();
 			$localize['query_vars']                 = json_encode( $wp_query->query );
-			$localize['shop_quick_view_enable']     = (bool)get_theme_mod('th_shop_mania_woo_quickview_enable',false );
+			$localize['shop_quick_view_enable']     = (bool)get_theme_mod('th_shop_mania_woo_quickview_enable',true );
 			$localize['shop_infinite_nonce']        = wp_create_nonce( 'opn-shop-load-more-nonce' );
 			$localize['shop_infinite_count']        = 2;
 			$localize['shop_infinite_total']        = $wp_query->max_num_pages;
@@ -267,7 +267,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 * Init Quick View
 		 */
 		function th_shop_mania_shop_init_quick_view(){
-			$qv_enable = get_theme_mod( 'th_shop_mania_woo_quickview_enable',false );
+			$qv_enable = get_theme_mod( 'th_shop_mania_woo_quickview_enable',true );
 			if ( true == $qv_enable ){
 				add_filter( 'open_theme_js_localize', array( $this, 'th_shop_mania_th_shop_mania_qv_js_localize' ) );
 				add_action( 'quickview', array( $this,'th_shop_mania_add_quick_view_on_img' ),15);

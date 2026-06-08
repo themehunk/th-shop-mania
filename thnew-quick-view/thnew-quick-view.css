@@ -14,16 +14,19 @@
 
 .thnew-popup-wrapper{
     position: relative;
-    width: min(96%, 1200px);
+    width: min(96%, 900px);
     max-height: 92vh;
     overflow: auto;
     margin: 2vh auto;
     background: #fff;
     border-radius: 24px;
     padding: 29px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 700px;
 }
 
-.thnew-popup-close{
+.thnew-popup-close {
     position: absolute;
     top: 18px;
     right: 18px;
@@ -35,7 +38,24 @@
     cursor: pointer;
     font-size: 28px;
     z-index: 10;
+    color: #222;
     box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+
+    transition:
+        transform .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease,
+        color .2s ease;
+}
+
+.thnew-popup-close:hover {
+    background: #f6f6f6;
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+
+.thnew-popup-close:active {
+    transform: scale(0.96);
 }
 
 /*=============================
@@ -54,8 +74,12 @@ LAYOUT
 }
 
 .thnew-qv-right{
-    min-width:0;
-    padding-top:6px;
+    min-width: 0;
+    padding-top: 6px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 /*=============================
@@ -92,6 +116,7 @@ GALLERY
     width:100%;
     display:block;
     object-fit:cover;
+    aspect-ratio: 1/1;
 }
 
 .thnew-qv-gallery .flex-direction-nav a{
@@ -157,21 +182,29 @@ SUMMARY
 =============================*/
 
 .thnew-qv-title{
-    margin:0 0 12px;
+    padding: 0 0 18px;
     font-size:52px;
     line-height:1.05;
     font-weight:700;
     letter-spacing:-.03em;
+    border-bottom:1px solid #eee;
 }
 
-.thnew-qv-rating{
-    margin-bottom:20px;
+/*.thnew-qv-rating{
+    margin-bottom: 0;
 }
 
 .thnew-qv-price{
-    margin-bottom:26px;
-}
+    margin-bottom: 0;
+}*/
 
+.thnew-qv-rating .woocommerce-review-link{
+    display: none;
+}
+.thnew-qv-price{
+    font-size: 27px;
+    font-weight: 700;
+}
 .thnew-qv-price .price{
     font-size:38px;
     font-weight:700;
@@ -179,7 +212,6 @@ SUMMARY
 }
 
 .thnew-qv-description{
-    margin-bottom:28px;
     line-height:1.8;
     color:#555;
 }
@@ -327,14 +359,13 @@ META
 =============================*/
 
 .thnew-qv-meta{
-    margin-top:34px;
-    padding-top:24px;
-    border-top:1px solid #eee;
+    padding: 0;
 }
 .thnew-qv-meta .product_meta{
     display: flex;
     flex-direction: column;
     gap: 9px;
+    padding: 0;
 }
 
 /*=============================
@@ -432,7 +463,7 @@ RESPONSIVE
 .thnew-qv-grid{
     display:grid;
 /*    grid-template-columns:minmax(320px,720px) minmax(420px,540px);*/
-grid-template-columns: minmax(175px, 500px) minmax(175px, 540px);
+grid-template-columns: minmax(175px, 400px) minmax(175px, 400px);
     justify-content:center;
     gap:36px;
 
@@ -531,4 +562,230 @@ FLEXSLIDER ARROWS
 .thnew-qv-gallery-wrap .flex-disabled{
     opacity:.4 !important;
     pointer-events:none;
+}
+
+.thnew-cart-wrapper {
+   border-radius: 9px;
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    z-index: 99;
+    padding: 0px 5px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #F3F4F6;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 30px rgb(120 120 120 / 12%);
+    padding: 12px;
+}
+.thnew-qv-grid.style-1 .thnew-qv-label{
+    display: none;
+}
+
+/* scroll bar css */
+.thnew-popup-wrapper {
+    overflow-y: auto;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 120, 140, 0.5) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.thnew-popup-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.thnew-popup-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.thnew-popup-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        rgba(120, 120, 140, 0.6),
+        rgba(90, 90, 110, 0.8)
+    );
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.thnew-popup-wrapper::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(140, 140, 160, 0.8),
+        rgba(100, 100, 120, 1)
+    );
+}
+
+.thnew-popup-wrapper::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+/*=====================================
+SKELETON LOADER
+=====================================*/
+
+.thnew-qv-skeleton{
+    pointer-events:none;
+}
+
+.shimmer{
+    position:relative;
+    overflow:hidden;
+    background:#f1f1f1;
+}
+
+.shimmer::before{
+
+    content:'';
+
+    position:absolute;
+    top:0;
+    left:-150px;
+
+    width:120px;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0),
+            rgba(255,255,255,.7),
+            rgba(255,255,255,0)
+        );
+
+    animation:
+        thnewShimmer 1.2s infinite;
+}
+
+@keyframes thnewShimmer{
+
+    100%{
+        left:120%;
+    }
+}
+
+/* LEFT */
+
+.thnew-sk-image{
+
+    width:100%;
+    aspect-ratio:1/1.15;
+
+    border-radius:22px;
+
+    margin-bottom:18px;
+}
+
+.thnew-sk-thumbs{
+    display:flex;
+    gap:14px;
+}
+
+.thnew-sk-thumbs span{
+
+    width:120px;
+    height:120px;
+
+    border-radius:16px;
+
+    display:block;
+}
+
+/* RIGHT */
+
+.thnew-sk-meta{
+
+    width:140px;
+    height:14px;
+
+    border-radius:999px;
+
+    margin-bottom:18px;
+}
+
+.thnew-sk-title{
+
+    width:78%;
+    height:62px;
+
+    border-radius:18px;
+
+    margin-bottom:24px;
+}
+
+.thnew-sk-price{
+
+    width:180px;
+    height:42px;
+
+    border-radius:14px;
+
+    margin-bottom:28px;
+}
+
+.thnew-sk-variation{
+
+    width:100%;
+    height:56px;
+
+    border-radius:14px;
+
+    margin-bottom:18px;
+}
+
+.thnew-sk-desc{
+
+    width:100%;
+    height:18px;
+
+    border-radius:999px;
+
+    margin-bottom:12px;
+}
+
+.thnew-sk-desc.small{
+    width:72%;
+}
+
+.thnew-sk-cart{
+
+    display:flex;
+    gap:18px;
+
+    margin-top:40px;
+}
+
+.thnew-sk-qty{
+
+    width:150px;
+    height:58px;
+
+    border-radius:999px;
+}
+
+.thnew-sk-button{
+
+    flex:1;
+    height:58px;
+
+    border-radius:999px;
+}
+
+/* MOBILE */
+
+@media(max-width:767px){
+
+    .thnew-sk-thumbs span{
+
+        width:80px;
+        height:80px;
+    }
+
+    .thnew-sk-title{
+        height:42px;
+    }
 }
