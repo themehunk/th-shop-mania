@@ -622,3 +622,170 @@ FLEXSLIDER ARROWS
 .thnew-popup-wrapper::-webkit-scrollbar-corner {
     background: transparent;
 }
+
+
+/*=====================================
+SKELETON LOADER
+=====================================*/
+
+.thnew-qv-skeleton{
+    pointer-events:none;
+}
+
+.shimmer{
+    position:relative;
+    overflow:hidden;
+    background:#f1f1f1;
+}
+
+.shimmer::before{
+
+    content:'';
+
+    position:absolute;
+    top:0;
+    left:-150px;
+
+    width:120px;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0),
+            rgba(255,255,255,.7),
+            rgba(255,255,255,0)
+        );
+
+    animation:
+        thnewShimmer 1.2s infinite;
+}
+
+@keyframes thnewShimmer{
+
+    100%{
+        left:120%;
+    }
+}
+
+/* LEFT */
+
+.thnew-sk-image{
+
+    width:100%;
+    aspect-ratio:1/1.15;
+
+    border-radius:22px;
+
+    margin-bottom:18px;
+}
+
+.thnew-sk-thumbs{
+    display:flex;
+    gap:14px;
+}
+
+.thnew-sk-thumbs span{
+
+    width:120px;
+    height:120px;
+
+    border-radius:16px;
+
+    display:block;
+}
+
+/* RIGHT */
+
+.thnew-sk-meta{
+
+    width:140px;
+    height:14px;
+
+    border-radius:999px;
+
+    margin-bottom:18px;
+}
+
+.thnew-sk-title{
+
+    width:78%;
+    height:62px;
+
+    border-radius:18px;
+
+    margin-bottom:24px;
+}
+
+.thnew-sk-price{
+
+    width:180px;
+    height:42px;
+
+    border-radius:14px;
+
+    margin-bottom:28px;
+}
+
+.thnew-sk-variation{
+
+    width:100%;
+    height:56px;
+
+    border-radius:14px;
+
+    margin-bottom:18px;
+}
+
+.thnew-sk-desc{
+
+    width:100%;
+    height:18px;
+
+    border-radius:999px;
+
+    margin-bottom:12px;
+}
+
+.thnew-sk-desc.small{
+    width:72%;
+}
+
+.thnew-sk-cart{
+
+    display:flex;
+    gap:18px;
+
+    margin-top:40px;
+}
+
+.thnew-sk-qty{
+
+    width:150px;
+    height:58px;
+
+    border-radius:999px;
+}
+
+.thnew-sk-button{
+
+    flex:1;
+    height:58px;
+
+    border-radius:999px;
+}
+
+/* MOBILE */
+
+@media(max-width:767px){
+
+    .thnew-sk-thumbs span{
+
+        width:80px;
+        height:80px;
+    }
+
+    .thnew-sk-title{
+        height:42px;
+    }
+}
