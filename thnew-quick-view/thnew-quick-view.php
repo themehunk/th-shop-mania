@@ -57,7 +57,7 @@ class THNEW_Quick_View {
 			get_template_directory_uri() .
 			'/thnew-quick-view/thnew-quick-view.css',
 			array(),
-			'1.0.0'
+			TH_SHOP_MANIA_THEME_VERSION
 		);
 
 		wp_enqueue_script(
@@ -69,7 +69,7 @@ class THNEW_Quick_View {
 				'flexslider',
 				'wc-add-to-cart-variation',
 			),
-			'1.0.0',
+			TH_SHOP_MANIA_THEME_VERSION,
 			true
 		);
 
@@ -97,7 +97,7 @@ class THNEW_Quick_View {
 
 				<button type="button"
 						class="thnew-popup-close"
-						aria-label="<?php echo esc_attr__( 'Close Popup', 'textdomain' ); ?>">
+						aria-label="<?php echo esc_attr__( 'Close Popup', 'th-shop-mania' ); ?>">
 
 					×
 				</button>
@@ -207,6 +207,18 @@ class THNEW_Quick_View {
 
 				<?php $this->render_variations( $product ); ?>
 
+
+				<?php $this->render_sku( $product ); ?>
+
+				<?php $this->render_tags( $product ); ?>
+
+				<?php $this->render_stock_status( $product ); ?>
+
+				<?php do_action('thnew_quick_view_share_button'); ?>
+				
+
+				<?php $this->render_description( $product ); ?>
+
 				<?php do_action('thnew_quick_view_before_cart',$product);?>
 
 				<div class="thnew-cart-wrapper">
@@ -245,17 +257,6 @@ class THNEW_Quick_View {
 				</div>
 
 				<?php do_action( 'thnew_quick_view_after_cart'); ?>
-
-				<?php $this->render_sku( $product ); ?>
-
-				<?php $this->render_tags( $product ); ?>
-
-				<?php $this->render_stock_status( $product ); ?>
-
-				<?php do_action('thnew_quick_view_share_button'); ?>
-				
-
-				<?php $this->render_description( $product ); ?>
 
 
 			</div>
@@ -412,17 +413,31 @@ class THNEW_Quick_View {
 	/**
 	 * Title.
 	 */
-	private function render_title( $product ) {
-		?>
+	/**
+ * Title.
+ */
+private function render_title( $product ) {
 
-		<h2 class="thnew-qv-title">
+	$product_link =
+		$product->get_permalink();
+	?>
 
-			<?php echo esc_html( $product->get_name() ); ?>
+	<h2 class="thnew-qv-title">
 
-		</h2>
+		<a href="<?php echo esc_url( $product_link ); ?>">
 
-		<?php
-	}
+			<?php
+			echo esc_html(
+				$product->get_name()
+			);
+			?>
+
+		</a>
+
+	</h2>
+
+	<?php
+}
 
 	/**
 	 * Rating.
@@ -469,105 +484,97 @@ private function render_rating( $product ) {
 		<?php
 	}
 
-	private function render_stock_status( $product ) {
+	/**
+ * Stock Status.
+ */
+private function render_stock_status( $product ) {
 
-	if ( $product->is_in_stock() ) {
+	$availability =
+		wc_get_stock_html(
+			$product
+		);
+
+	if ( empty( $availability ) ) {
 		return;
 	}
 	?>
 
-	<div class="thnew-qv-stock out-of-stock">
-<span class="stock out-of-stock">
-<?php
-		esc_html_e(
-			'This product is currently out of stock and unavailable.',
-			'th-shop-mania'
+	<div class="thnew-qv-stock">
+		<span class="thnew-qv-meta-label">
+
+			<?php
+			esc_html_e(
+				'Availability:',
+				'th-shop-mania'
+			);
+			?>
+
+		</span>
+		<?php
+		echo wp_kses_post(
+			$availability
 		);
 		?>
-	</span>
-		
 
 	</div>
 
 	<?php
 }
-
 	/**
 	 * Description.
 	 */
-	private function render_description( $product ) {
+	/**
+ * Description Accordion.
+ */
+private function render_description( $product ) {
 
 	$description =
 		wp_strip_all_tags(
 			$product->get_short_description()
 		);
 
-	$limit = 15;
-
-	$words =
-		explode(
-			' ',
-			$description
-		);
-
-	$is_long =
-		count( $words ) > $limit;
-
-	$short_desc =
-		implode(
-			' ',
-			array_slice(
-				$words,
-				0,
-				$limit
-			)
-		);
-
-	$remaining_desc =
-		implode(
-			' ',
-			array_slice(
-				$words,
-				$limit
-			)
-		);
+	if ( empty( $description ) ) {
+		return;
+	}
 	?>
 
-	<div class="thnew-qv-description"
-		 id="th-dynamic-desc">
+	<div class="thnew-qv-accordion">
 
-		<span class="thnew-desc-short">
+		<button type="button"
+				class="thnew-qv-accordion-title">
 
-			<?php echo esc_html( $short_desc ); ?>
-
-		</span>
-
-		<?php if ( $is_long ) : ?>
-
-			<span class="thnew-desc-more"
-				  style="display:none;">
+			<span>
 
 				<?php
-				echo esc_html(
-					$remaining_desc
+				esc_html_e(
+					'Description',
+					'th-shop-mania'
 				);
 				?>
 
 			</span>
 
-			<button type="button"
-					class="thnew-read-more">
+			<span class="thnew-qv-accordion-icon">
+
+				+
+
+			</span>
+
+		</button>
+
+		<div class="thnew-qv-accordion-content">
+
+			<p>
 
 				<?php
-				esc_html_e(
-					'Read More',
-					'th-shop-mania'
+				echo esc_html(
+					$description
 				);
 				?>
 
-			</button>
+			</p>
 
-		<?php endif; ?>
+		</div>
 
 	</div>
 
@@ -668,7 +675,7 @@ private function render_rating( $product ) {
 					<?php
 					esc_html_e(
 						'Quantity',
-						'textdomain'
+						'th-shop-mania'
 					);
 					?>
 

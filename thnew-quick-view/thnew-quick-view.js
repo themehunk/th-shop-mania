@@ -93,7 +93,7 @@
                 }
             );
 
-            self.descriptionToggle();
+            self.descriptionAccordion();
         },
 
         /**
@@ -663,44 +663,50 @@
 /**
  * Description Toggle.
  */
-descriptionToggle: function () {
+/**
+ * Description Accordion.
+ */
+descriptionAccordion: function () {
 
     $(document).on(
         'click',
-        '.thnew-read-more',
+        '.thnew-qv-accordion-title',
         function () {
 
             let button =
                 $(this);
 
-            let moreText =
-                button.siblings(
-                    '.thnew-desc-more'
+            let wrapper =
+                button.closest(
+                    '.thnew-qv-accordion'
                 );
 
-            moreText.stop().slideToggle(200);
+            let content =
+                wrapper.find(
+                    '.thnew-qv-accordion-content'
+                );
 
-            button.toggleClass(
+            wrapper.toggleClass(
                 'active'
             );
 
+            content
+                .stop(true, true)
+                .slideToggle(250);
+
             /**
-             * Button Text.
+             * Icon.
              */
-            if (
-                button.hasClass('active')
-            ) {
-
-                button.text(
-                    'Read Less'
+            let icon =
+                button.find(
+                    '.thnew-qv-accordion-icon'
                 );
 
-            } else {
-
-                button.text(
-                    'Read More'
-                );
-            }
+            icon.text(
+                wrapper.hasClass('active')
+                    ? '−'
+                    : '+'
+            );
         }
     );
 },
