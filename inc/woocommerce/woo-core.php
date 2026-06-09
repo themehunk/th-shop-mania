@@ -79,6 +79,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 			// add share button
 			add_action( 'woocommerce_single_product_summary', array( $this, 'th_shop_mania_product_share_button_func'),90 );
+			add_action( 'thnew_quick_view_share_button', array( $this, 'th_shop_mania_product_share_button_func'),90 );
 		 }
 		 // woocommerce sidebar
 		/**
