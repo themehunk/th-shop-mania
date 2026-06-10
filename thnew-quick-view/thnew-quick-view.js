@@ -178,13 +178,7 @@
 
                         <div class="thnew-sk-image shimmer"></div>
 
-                        <div class="thnew-sk-thumbs">
 
-                            <span class="shimmer"></span>
-                            <span class="shimmer"></span>
-                            <span class="shimmer"></span>
-
-                        </div>
 
                     </div>
 
