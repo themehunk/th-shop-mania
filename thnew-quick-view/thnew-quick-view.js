@@ -212,49 +212,62 @@
         /**
          * FlexSlider.
          */
-        initFlexSlider: function () {
+      initFlexSlider: function () {
 
-            let galleryLength =
-                $('.thnew-qv-gallery .slides li').length;
+    let galleryLength =
+        $('.thnew-qv-gallery .slides li').length;
 
-            $('.thnew-qv-gallery').flexslider({
+    /**
+     * MAIN GALLERY
+     */
+    $('.thnew-qv-gallery').flexslider({
 
-                animation: 'slide',
+        animation: 'slide',
 
-                controlNav: false,
+        controlNav: galleryLength > 1,
 
-                animationLoop: false,
+        animationLoop: false,
 
-                slideshow: false,
+        slideshow: false,
 
-                directionNav: galleryLength > 1,
+        directionNav: galleryLength > 1,
 
-                sync:
-                    galleryLength > 1
-                        ? '.thnew-qv-thumbs'
-                        : ''
-            });
+        sync:
+            galleryLength > 1
+                ? '.thnew-qv-thumbs'
+                : '',
 
-            if (galleryLength > 1) {
+        /**
+         * DOTS THUMBNAILS.
+         */
+        controlsContainer:
+            '.thnew-qv-gallery-wrap'
+    });
 
-                $('.thnew-qv-thumbs').flexslider({
+    /**
+     * THUMBNAILS
+     */
+    if (galleryLength > 1) {
 
-                    animation: 'slide',
+        $('.thnew-qv-thumbs').flexslider({
 
-                    controlNav: false,
+            animation: 'slide',
 
-                    animationLoop: false,
+            controlNav: false,
 
-                    slideshow: false,
+            animationLoop: false,
 
-                    itemWidth: 90,
+            slideshow: false,
 
-                    itemMargin: 12,
+            itemWidth: 90,
 
-                    asNavFor: '.thnew-qv-gallery'
-                });
-            }
-        },
+            itemMargin: 12,
+
+            asNavFor:
+                '.thnew-qv-gallery'
+        });
+    }
+},
 
         /**
          * Variation Form.
