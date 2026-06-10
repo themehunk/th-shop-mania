@@ -92,6 +92,8 @@
                     self.addToCart(e, $(this));
                 }
             );
+
+            self.descriptionAccordion();
         },
 
         /**
@@ -176,13 +178,7 @@
 
                         <div class="thnew-sk-image shimmer"></div>
 
-                        <div class="thnew-sk-thumbs">
 
-                            <span class="shimmer"></span>
-                            <span class="shimmer"></span>
-                            <span class="shimmer"></span>
-
-                        </div>
 
                     </div>
 
@@ -216,49 +212,62 @@
         /**
          * FlexSlider.
          */
-        initFlexSlider: function () {
+      initFlexSlider: function () {
 
-            let galleryLength =
-                $('.thnew-qv-gallery .slides li').length;
+    let galleryLength =
+        $('.thnew-qv-gallery .slides li').length;
 
-            $('.thnew-qv-gallery').flexslider({
+    /**
+     * MAIN GALLERY
+     */
+    $('.thnew-qv-gallery').flexslider({
 
-                animation: 'slide',
+        animation: 'slide',
 
-                controlNav: false,
+        controlNav: galleryLength > 1,
 
-                animationLoop: false,
+        animationLoop: false,
 
-                slideshow: false,
+        slideshow: false,
 
-                directionNav: galleryLength > 1,
+        directionNav: galleryLength > 1,
 
-                sync:
-                    galleryLength > 1
-                        ? '.thnew-qv-thumbs'
-                        : ''
-            });
+        sync:
+            galleryLength > 1
+                ? '.thnew-qv-thumbs'
+                : '',
 
-            if (galleryLength > 1) {
+        /**
+         * DOTS THUMBNAILS.
+         */
+        controlsContainer:
+            '.thnew-qv-gallery-wrap'
+    });
 
-                $('.thnew-qv-thumbs').flexslider({
+    /**
+     * THUMBNAILS
+     */
+    if (galleryLength > 1) {
 
-                    animation: 'slide',
+        $('.thnew-qv-thumbs').flexslider({
 
-                    controlNav: false,
+            animation: 'slide',
 
-                    animationLoop: false,
+            controlNav: false,
 
-                    slideshow: false,
+            animationLoop: false,
 
-                    itemWidth: 90,
+            slideshow: false,
 
-                    itemMargin: 12,
+            itemWidth: 90,
 
-                    asNavFor: '.thnew-qv-gallery'
-                });
-            }
-        },
+            itemMargin: 12,
+
+            asNavFor:
+                '.thnew-qv-gallery'
+        });
+    }
+},
 
         /**
          * Variation Form.
@@ -483,8 +492,7 @@
             }
 
             button
-                .addClass('loading')
-                .text('Adding...');
+                .addClass('loading');
 
             if (
                 $('.variations_form').length
@@ -635,15 +643,7 @@
 
             button
                 .removeClass('loading')
-                .text('Added ✓');
-
-            setTimeout(function () {
-
-                button.text(
-                    'Add To Cart'
-                );
-
-            }, 2000);
+                
         },
 
         /**
@@ -658,6 +658,56 @@
                 .text('Add To Cart');
         },
 
+/**
+ * Description Toggle.
+ */
+/**
+ * Description Accordion.
+ */
+descriptionAccordion: function () {
+
+    $(document).on(
+        'click',
+        '.thnew-qv-accordion-title',
+        function () {
+
+            let button =
+                $(this);
+
+            let wrapper =
+                button.closest(
+                    '.thnew-qv-accordion'
+                );
+
+            let content =
+                wrapper.find(
+                    '.thnew-qv-accordion-content'
+                );
+
+            wrapper.toggleClass(
+                'active'
+            );
+
+            content
+                .stop(true, true)
+                .slideToggle(250);
+
+            /**
+             * Icon.
+             */
+            let icon =
+                button.find(
+                    '.thnew-qv-accordion-icon'
+                );
+
+            icon.text(
+                wrapper.hasClass('active')
+                    ? '−'
+                    : '+'
+            );
+        }
+    );
+},
         /**
          * Close Popup.
          */
@@ -672,6 +722,8 @@
 
             }, 300);
         }
+
+
     };
 
     /**
@@ -680,3 +732,6 @@
     THNEWQuickView.init();
 
 })(jQuery);
+
+
+

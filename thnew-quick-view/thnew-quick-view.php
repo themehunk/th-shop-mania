@@ -57,7 +57,7 @@ class THNEW_Quick_View {
 			get_template_directory_uri() .
 			'/thnew-quick-view/thnew-quick-view.css',
 			array(),
-			'1.0.0'
+			TH_SHOP_MANIA_THEME_VERSION
 		);
 
 		wp_enqueue_script(
@@ -69,7 +69,7 @@ class THNEW_Quick_View {
 				'flexslider',
 				'wc-add-to-cart-variation',
 			),
-			'1.0.0',
+			TH_SHOP_MANIA_THEME_VERSION,
 			true
 		);
 
@@ -97,7 +97,7 @@ class THNEW_Quick_View {
 
 				<button type="button"
 						class="thnew-popup-close"
-						aria-label="<?php echo esc_attr__( 'Close Popup', 'textdomain' ); ?>">
+						aria-label="<?php echo esc_attr__( 'Close Popup', 'th-shop-mania' ); ?>">
 
 					×
 				</button>
@@ -196,27 +196,67 @@ class THNEW_Quick_View {
 
 			<div class="thnew-qv-right">
 
-				<?php $this->render_title( $product ); ?>
+				
+				<?php $this->render_categories( $product ); ?>
 
-				<?php $this->render_meta(); ?>
+				<?php $this->render_title( $product ); ?>
 
 				<?php $this->render_price( $product ); ?>
 
+				<?php $this->render_rating( $product ); ?>
+
 				<?php $this->render_variations( $product ); ?>
 
-				<?php $this->render_rating(); ?>
+
+				<?php $this->render_sku( $product ); ?>
+
+				<?php $this->render_tags( $product ); ?>
+
+				<?php $this->render_stock_status( $product ); ?>
+
+				<?php do_action('thnew_quick_view_share_button'); ?>
+				
 
 				<?php $this->render_description( $product ); ?>
-
 
 				<?php do_action('thnew_quick_view_before_cart',$product);?>
 
 				<div class="thnew-cart-wrapper">
 					<?php $this->render_quantity(); ?>
 					<?php $this->render_add_to_cart( $product ); ?>
+					<?php
+					 if( shortcode_exists( 'thwl_add_to_wishlist' )){ ?>
+        <div class="thnew-qv-wishlist">
+                <?php 
+                    if( shortcode_exists( 'thwl_add_to_wishlist' )) {
+                        echo do_shortcode('[thwl_add_to_wishlist 
+                            product_id="' . esc_attr($product->id) . '" 
+                            add_icon="th-icon th-icon-heart1" 
+                            add_text="" 
+                            add_browse_icon="th-icon th-icon-favorite"
+                            browse_text=""
+                            theme_style="yes"
+                            icon_style="icon_only_no_style"
+                            custom_class="th-wishlist-integrated"
+                        ]');
+                    }
+                ?> 
+        </div>
+
+   <?php    } ?>
+
+
+  			 <?php
+			if(class_exists('th_product_compare') || class_exists('Tpcp_product_compare')){ ?>
+                	<div class="thnew-qv-compare">
+                		<a data-th-product-id="<?php echo ($product->id);  ?>" class="th-product-compare-btn compare">
+                			<span class="th-icon th-icon-repeat"></span>
+                		</a>
+                	</div>
+              <?php  } ?>
 				</div>
 
-				<?php do_action( 'thnew_quick_view_after_cart',$product); ?>
+				<?php do_action( 'thnew_quick_view_after_cart'); ?>
 
 
 			</div>
@@ -256,31 +296,81 @@ class THNEW_Quick_View {
 	 */
 	private function render_gallery( $product ) {
 
-		$gallery_ids = $product->get_gallery_image_ids();
+	$gallery_ids = array();
 
-		array_unshift(
-			$gallery_ids,
-			$product->get_image_id()
-		);
+	/**
+	 * Main Product Image.
+	 */
+	$product_image_id =
+		$product->get_image_id();
 
-		$gallery_ids = array_unique(
-			array_filter( $gallery_ids )
-		);
-		?>
+	if (
+		! empty( $product_image_id ) &&
+		wp_attachment_is_image(
+			$product_image_id
+		)
+	) {
 
-		<div class="thnew-qv-gallery-wrap">
+		$gallery_ids[] =
+			$product_image_id;
+	}
 
-			<div class="thnew-qv-gallery">
+	/**
+	 * Gallery Images.
+	 */
+	$product_gallery_ids =
+		$product->get_gallery_image_ids();
 
-				<ul class="slides">
+	if (
+		! empty( $product_gallery_ids )
+	) {
+
+		foreach (
+			$product_gallery_ids as $gallery_id
+		) {
+
+			if (
+				wp_attachment_is_image(
+					$gallery_id
+				)
+			) {
+
+				$gallery_ids[] =
+					$gallery_id;
+			}
+		}
+	}
+
+	/**
+	 * Unique Images.
+	 */
+	$gallery_ids =
+		array_unique( $gallery_ids );
+
+	/**
+	 * No Images.
+	 */
+	$has_images =
+		! empty( $gallery_ids );
+
+	?>
+
+	<div class="thnew-qv-gallery-wrap">
+
+		<div class="thnew-qv-gallery">
+
+			<ul class="slides">
+
+				<?php if ( $has_images ) : ?>
 
 					<?php foreach ( $gallery_ids as $image_id ) : ?>
 
 						<?php
-						$image = wp_get_attachment_image_url(
-							$image_id,
-							'woocommerce_single'
-						);
+						$image =
+							wp_get_attachment_image_url(
+								$image_id,
+								'woocommerce_single'
+							);
 
 						if ( empty( $image ) ) {
 							continue;
@@ -297,78 +387,82 @@ class THNEW_Quick_View {
 
 					<?php endforeach; ?>
 
-				</ul>
+				<?php else : ?>
 
-			</div>
+					<li>
 
-			<?php if ( count( $gallery_ids ) > 1 ) : ?>
+						<img class="th-gallery-image"
+							 src="<?php echo esc_url( wc_placeholder_img_src() ); ?>"
+							 alt="">
 
-				<div class="thnew-qv-thumbs">
+					</li>
 
-					<ul class="slides">
+				<?php endif; ?>
 
-						<?php foreach ( $gallery_ids as $image_id ) : ?>
-
-							<?php
-							$thumb = wp_get_attachment_image_url(
-								$image_id,
-								'woocommerce_gallery_thumbnail'
-							);
-
-							if ( empty( $thumb ) ) {
-								continue;
-							}
-							?>
-
-							<li>
-
-								<img src="<?php echo esc_url( $thumb ); ?>"
-									 alt="">
-
-							</li>
-
-						<?php endforeach; ?>
-
-					</ul>
-
-				</div>
-
-			<?php endif; ?>
+			</ul>
 
 		</div>
 
-		<?php
-	}
+		
+
+	</div>
+
+	<?php
+}
 
 	/**
 	 * Title.
 	 */
-	private function render_title( $product ) {
-		?>
+	/**
+ * Title.
+ */
+private function render_title( $product ) {
 
-		<h2 class="thnew-qv-title">
+	$product_link =
+		$product->get_permalink();
+	?>
 
-			<?php echo esc_html( $product->get_name() ); ?>
+	<h2 class="thnew-qv-title">
 
-		</h2>
+		<a href="<?php echo esc_url( $product_link ); ?>">
 
-		<?php
-	}
+			<?php
+			echo esc_html(
+				$product->get_name()
+			);
+			?>
+
+		</a>
+
+	</h2>
+
+	<?php
+}
 
 	/**
 	 * Rating.
 	 */
-	private function render_rating() {
-		?>
+	/**
+ * Rating.
+ */
+private function render_rating( $product ) {
 
-		<div class="thnew-qv-rating">
+	$rating_count =
+		$product->get_rating_count();
 
-			<?php woocommerce_template_single_rating(); ?>
-
-		</div>
-
-		<?php
+	if ( empty( $rating_count ) ) {
+		return;
 	}
+	?>
+
+	<div class="thnew-qv-rating">
+
+		<?php woocommerce_template_single_rating(); ?>
+
+	</div>
+
+	<?php
+}
 
 	/**
 	 * Price.
@@ -391,26 +485,101 @@ class THNEW_Quick_View {
 	}
 
 	/**
-	 * Description.
-	 */
-	private function render_description( $product ) {
-		?>
+ * Stock Status.
+ */
+private function render_stock_status( $product ) {
 
-		<div class="thnew-qv-description"
-			 id="th-dynamic-desc">
+	$availability =
+		wc_get_stock_html(
+			$product
+		);
+
+	if ( empty( $availability ) ) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-stock">
+		<span class="thnew-qv-meta-label">
 
 			<?php
-			echo wp_kses_post(
-				wpautop(
-					$product->get_short_description()
-				)
+			esc_html_e(
+				'Availability:',
+				'th-shop-mania'
 			);
 			?>
 
+		</span>
+		<?php
+		echo wp_kses_post(
+			$availability
+		);
+		?>
+
+	</div>
+
+	<?php
+}
+	/**
+	 * Description.
+	 */
+	/**
+ * Description Accordion.
+ */
+private function render_description( $product ) {
+
+	$description =
+		wp_strip_all_tags(
+			$product->get_short_description()
+		);
+
+	if ( empty( $description ) ) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-accordion">
+
+		<button type="button"
+				class="thnew-qv-accordion-title">
+
+			<span>
+
+				<?php
+				esc_html_e(
+					'Description',
+					'th-shop-mania'
+				);
+				?>
+
+			</span>
+
+			<span class="thnew-qv-accordion-icon">
+
+				+
+
+			</span>
+
+		</button>
+
+		<div class="thnew-qv-accordion-content">
+
+			<p>
+
+				<?php
+				echo esc_html(
+					$description
+				);
+				?>
+
+			</p>
+
 		</div>
 
-		<?php
-	}
+	</div>
+
+	<?php
+}
 
 	/**
 	 * Variations.
@@ -479,12 +648,12 @@ class THNEW_Quick_View {
 				data-quantity="1"
 				class="thnew-qv-add-to-cart">
 
-			<?php
-			echo esc_html__(
-				'Add To Cart',
-				'th-shop-mania'
-			);
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag stroke-[1.5px]" aria-hidden="true"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg>
+
+				<span class="text">
+					<?php echo esc_html__( 'Add To Cart', 'th-shop-mania');
 			?>
+				</span>
 
 		</button>
 
@@ -506,7 +675,7 @@ class THNEW_Quick_View {
 					<?php
 					esc_html_e(
 						'Quantity',
-						'textdomain'
+						'th-shop-mania'
 					);
 					?>
 
@@ -528,19 +697,209 @@ class THNEW_Quick_View {
 	}
 
 	/**
-	 * Meta.
+	 * SKU.
 	 */
-	private function render_meta() {
-		?>
+private function render_sku( $product ) {
 
-		<div class="thnew-qv-meta">
+	$sku =
+		$product->get_sku();
 
-			<?php woocommerce_template_single_meta(); ?>
+	if ( empty( $sku ) ) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-sku">
+
+		<span class="thnew-qv-meta-label">
+
+			<?php
+			esc_html_e(
+				'SKU:',
+				'th-shop-mania'
+			);
+			?>
+
+		</span>
+
+		<span class="thnew-qv-meta-value">
+
+			<?php echo esc_html( $sku ); ?>
+
+		</span>
+
+	</div>
+
+	<?php
+}
+
+/**
+ * Categories.
+ */
+private function render_categories( $product ) {
+
+	$categories =
+		get_the_terms(
+			$product->get_id(),
+			'product_cat'
+		);
+
+	if (
+		empty( $categories ) ||
+		is_wp_error( $categories )
+	) {
+		return;
+	}
+
+	/**
+	 * Limit.
+	 */
+	$categories =
+		array_slice(
+			$categories,
+			0,
+			3
+		);
+	?>
+
+	<div class="thnew-qv-categories">
+
+
+			<?php
+			foreach (
+				$categories as $index => $category
+			) :
+
+				$category_link =
+					get_term_link(
+						$category
+					);
+
+				if (
+					is_wp_error(
+						$category_link
+					)
+				) {
+					continue;
+				}
+				?>
+
+				<a href="<?php echo esc_url( $category_link ); ?>">
+
+					<?php
+					echo esc_html(
+						$category->name
+					);
+					?>
+
+				</a>
+
+				<?php
+				if (
+					$index !==
+					count( $categories ) - 1
+				) :
+
+					echo ', ';
+
+				endif;
+
+			endforeach;
+			?>
+
+		
+
+	</div>
+
+	<?php
+}
+
+/**
+ * Tags.
+ */
+private function render_tags( $product ) {
+
+	$tags =
+		get_the_terms(
+			$product->get_id(),
+			'product_tag'
+		);
+
+	if (
+		empty( $tags ) ||
+		is_wp_error( $tags )
+	) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-tags">
+
+		<span class="thnew-qv-meta-label">
+
+			<?php
+			esc_html_e(
+				'Tags:',
+				'th-shop-mania'
+			);
+			?>
+
+		</span>
+
+		<div class="thnew-qv-meta-links">
+
+			<?php
+			foreach (
+				$tags as $index => $tag
+			) :
+
+				$tag_link =
+					get_term_link(
+						$tag
+					);
+
+				if (
+					is_wp_error(
+						$tag_link
+					)
+				) {
+					continue;
+				}
+				?>
+
+				<a href="<?php echo esc_url( $tag_link ); ?>">
+
+					<?php
+					echo esc_html(
+						$tag->name
+					);
+					?>
+
+				</a>
+
+				<?php
+				if (
+					$index !==
+					count( $tags ) - 1
+				) :
+
+					echo ', ';
+
+				endif;
+
+			endforeach;
+			?>
 
 		</div>
 
-		<?php
-	}
+	</div>
+
+	<?php
+}
+
+
+
+
 }
 
 new THNEW_Quick_View();

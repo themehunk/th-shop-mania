@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.8.6
+Version: 1.8.7
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 5.6
@@ -3844,7 +3844,7 @@ section.upsells.products h2,
     display: block;
     font-size: 24px;
     line-height: 31px;
-    font-weight: 800;
+    font-weight: 600;
     color: #111;
     margin-bottom: 20px !important;
 }
@@ -6648,20 +6648,40 @@ span.product-title{
 }
 /* Single Product Social Share Button */
 .single-product .social-share{
-  margin-top:20px;
     display: flex;
-    gap: 8px;
-
-}
-.single-product .social-share ul{
-  margin: 0;
-  display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 9px;
 }
 .single-product .social-share h3{
-margin-bottom:15px;
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: .05em;
+    text-transform: uppercase;
 }
-.social-share ul li{
-display:inline;
+.single-product .social-share li{
+    margin-right: 9px;
+}
+.single-product .social-share li{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.single-product .social-share svg{
+    width: 16px !important;
+    height: 16px !important;
+    fill: #111;
+}
+.single-product .social-share ul{
+    margin: 0 0 0 9px;
+}
+.single-product .social-share span{
+    font-size: 16px;
+}
+.single-product .copy-product-link{
+    display: inline-flex;
 }
 .single-product .social-share ul li a {
    margin: 0 9px 4px 0;
@@ -7792,7 +7812,7 @@ h2.wc-block-mini-cart__title{
   max-width: 100%;
 }
 .woocommerce div.product p.price ins, .woocommerce div.product span.price ins{
-  font-weight: 500;
+  font-weight: 600;
 }
 .woocommerce.theme-th-shop-mania #respond input#submit, 
 .woocommerce.theme-th-shop-mania button.button, 

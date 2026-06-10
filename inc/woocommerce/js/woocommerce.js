@@ -11,8 +11,8 @@
             $this.AddtoCartQuanty();
             if ($('body.single-product').length) {
              $this.woccomerce_tab();
-             $this.copyProductLink(); 
            }
+            $this.copyProductLink(); 
             $this.woo_login_extend();
           },
           woccomerce_tab: function (){
