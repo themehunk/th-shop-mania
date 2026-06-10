@@ -25,7 +25,7 @@
 
 .thnew-popup-close {
     position: absolute;
-    top: 18px;
+    top: 2px;
     right: 18px;
     width: 36px;
     height: 36px;
@@ -71,7 +71,7 @@ LAYOUT
 
 .thnew-qv-right{
     min-width: 0;
-   padding: 12px;
+   padding: 12px 12px 7px 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -228,7 +228,7 @@ SUMMARY
     font-size: 21px;
     font-weight: 700;
     line-height: 27px;
-    margin-bottom: 5px;
+   padding-bottom: 18px;
 }
 .thnew-qv-price del {
     margin-left: auto;
@@ -245,11 +245,11 @@ SUMMARY
 VARIATIONS
 =============================*/
 .thnew-qv-variation-wrap th.label{
+    max-width: 145px;
     padding: 0;
     border: 0;
 }
 .thnew-qv-variation-wrap .label label{
-    width: 108px;
     border: 0;
     margin: 0;
     padding: 0;
@@ -272,6 +272,8 @@ VARIATIONS
     display:block;
     padding:0;
     border:none;
+    padding-left: 12px;
+    position: relative;
 }
 
 .thnew-qv-variation-wrap label{
@@ -305,7 +307,11 @@ VARIATIONS
 }
 
 .thnew-qv-variation-wrap .reset_variations{
-    display:none!important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    right: -39px;
+    margin: 0 !important;
 }
 
 /* IMPORTANT */
@@ -397,6 +403,35 @@ CUSTOM CART
     pointer-events:none;
 }
 
+/* Hide icon while loading */
+#th-custom-add-to-cart.loading svg {
+    display: none;
+}
+
+/* Loader */
+#th-custom-add-to-cart.loading::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: thSpin 0.8s linear infinite;
+}
+
+/* Optional text change */
+#th-custom-add-to-cart.loading .text {
+    margin-left: 4px;
+}
+
+@keyframes thSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.thnew-qv-right .added_to_cart.wc-forward{
+    display: none;
+}
 /*=============================
 HOOKS
 =============================*/
@@ -470,41 +505,6 @@ input[type="number"] {
 RESPONSIVE
 =============================*/
 
-@media(max-width:1199px){
-
-    .thnew-qv-title{
-        font-size:42px;
-    }
-}
-
-@media(max-width:991px){
-
-    .thnew-popup-wrapper{
-        width:100%;
-        height:100vh;
-        max-height:100vh;
-        margin:0;
-        border-radius:0;
-        padding:20px;
-    }
-
-    .thnew-qv-grid{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .thnew-qv-gallery-wrap{
-        position:relative;
-    }
-
-    .thnew-qv-title{
-        font-size:34px;
-    }
-
-    .thnew-qv-price .price{
-        font-size:30px;
-    }
-}
 
 @media(max-width:767px){
 
@@ -551,7 +551,6 @@ FLEXSLIDER ARROWS
 
     box-shadow: 0 6px 20px rgba(0,0,0,.12);
 
-    opacity: 0!important;
 
     z-index:10;
 
@@ -559,8 +558,9 @@ FLEXSLIDER ARROWS
 
     transition:.25s ease;
     font-size: 0;
+    opacity: 0;
 }
-.thnew-qv-gallery:hover .flex-direction-nav a,
+.thnew-qv-gallery-wrap:hover .flex-direction-nav a,
 .thnew-qv-thumbs:hover .flex-direction-nav a{
     opacity: 1!important;
 }
@@ -692,7 +692,7 @@ SKELETON LOADER
     width:100%;
     aspect-ratio:1/1.15;
 
-    border-radius:22px;
+    border-radius:0;
 
     margin-bottom:18px;
 }
@@ -707,7 +707,7 @@ SKELETON LOADER
     width:120px;
     height:120px;
 
-    border-radius:16px;
+    border-radius:0;
 
     display:block;
 }
@@ -719,7 +719,7 @@ SKELETON LOADER
     width:140px;
     height:14px;
 
-    border-radius:999px;
+    border-radius:0;
 
     margin-bottom:18px;
 }
@@ -729,7 +729,7 @@ SKELETON LOADER
     width:78%;
     height:62px;
 
-    border-radius:18px;
+    border-radius:0;
 
     margin-bottom:24px;
 }
@@ -739,7 +739,7 @@ SKELETON LOADER
     width:180px;
     height:42px;
 
-    border-radius:14px;
+    border-radius:0;
 
     margin-bottom:28px;
 }
@@ -749,7 +749,7 @@ SKELETON LOADER
     width:100%;
     height:56px;
 
-    border-radius:14px;
+    border-radius:0;
 
     margin-bottom:18px;
 }
@@ -759,7 +759,7 @@ SKELETON LOADER
     width:100%;
     height:18px;
 
-    border-radius:999px;
+    border-radius:0;
 
     margin-bottom:12px;
 }
@@ -781,7 +781,7 @@ SKELETON LOADER
     width:150px;
     height:58px;
 
-    border-radius:999px;
+    border-radius:0;
 }
 
 .thnew-sk-button{
@@ -789,7 +789,7 @@ SKELETON LOADER
     flex:1;
     height:58px;
 
-    border-radius:999px;
+    border-radius:5px;
 }
 
 /* MOBILE */
@@ -842,7 +842,7 @@ SKELETON LOADER
     text-transform: uppercase;
     text-decoration: none !important;
     color: #7c7c7c;
-    margin: 0 0 5px;
+    padding: 12px 0 5px 0;
     display: inline-flex;
 }
 
@@ -857,6 +857,12 @@ SKELETON LOADER
     letter-spacing: 0;
     text-transform: none;
     margin-bottom: 16px;
+}
+.thnew-qv-stock .in-stock{
+    color: green;
+}
+.thnew-qv-stock .out-of-stock{
+    color: #a93232;
 }
 .thnew-qv-meta-label{
     color: #111;
@@ -987,10 +993,9 @@ ACCORDION
 
 .thnew-qv-accordion-content p{
     font-size: 15px;
-    line-height: 1.333333333333333em;
+    line-height: 27px;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: 0;
     text-transform: none;
     text-decoration: none !important;
     color: #7c7c7c;

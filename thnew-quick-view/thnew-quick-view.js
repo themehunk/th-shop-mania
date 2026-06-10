@@ -492,8 +492,7 @@
             }
 
             button
-                .addClass('loading')
-                .text('Adding...');
+                .addClass('loading');
 
             if (
                 $('.variations_form').length
@@ -644,15 +643,7 @@
 
             button
                 .removeClass('loading')
-                .text('Added ✓');
-
-            setTimeout(function () {
-
-                button.text(
-                    'Add To Cart'
-                );
-
-            }, 2000);
+                
         },
 
         /**
