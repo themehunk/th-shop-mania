@@ -523,11 +523,12 @@ grid-template-columns: minmax(175px, 400px) minmax(175px, 400px);
     position: sticky;
     top: 9px;
 }
-.thnew-qv-left div,
+/*.thnew-qv-left div,
 .thnew-qv-left ul,
 .thnew-qv-left li{
     height: 100%;
-}
+}*/
+
 /*=====================================
 FLEXSLIDER ARROWS
 =====================================*/
@@ -692,7 +693,6 @@ SKELETON LOADER
 .thnew-sk-image{
 
     width:100%;
-    aspect-ratio:1/1.15;
 
     border-radius:22px;
 
@@ -709,7 +709,7 @@ SKELETON LOADER
     width:120px;
     height:120px;
 
-    border-radius:16px;
+    border-radius: 5px;
 
     display:block;
 }
@@ -721,7 +721,7 @@ SKELETON LOADER
     width:140px;
     height:14px;
 
-    border-radius:999px;
+    border-radius: 5px;
 
     margin-bottom:18px;
 }
@@ -731,7 +731,7 @@ SKELETON LOADER
     width:78%;
     height:62px;
 
-    border-radius:18px;
+    border-radius:0;
 
     margin-bottom:24px;
 }
@@ -741,7 +741,7 @@ SKELETON LOADER
     width:180px;
     height:42px;
 
-    border-radius:14px;
+    border-radius:9px;
 
     margin-bottom:28px;
 }
@@ -751,7 +751,7 @@ SKELETON LOADER
     width:100%;
     height:56px;
 
-    border-radius:14px;
+    border-radius:9px;
 
     margin-bottom:18px;
 }
@@ -885,7 +885,7 @@ SKELETON LOADER
     color: green;
 }
 .thnew-qv-stock .out-of-stock{
-    color: red;
+    color: #a93232;
 }
 .thnew-qv-tags a,
 .thnew-qv-sku a{
@@ -1001,4 +1001,36 @@ ACCORDION
     text-transform: none;
     text-decoration: none !important;
     color: #7c7c7c;
+}
+
+.thnew-qv-gallery{
+
+    aspect-ratio: 1 / 1.12;
+
+    overflow: hidden;
+}
+
+.thnew-qv-gallery .slides,
+.thnew-qv-gallery .flex-viewport{
+
+    height:100%;
+}
+
+.thnew-qv-gallery li{
+
+    height:100%!important;
+}
+
+.thnew-qv-gallery img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.thnew-qv-left div,
+.thnew-qv-left ul,
+.thnew-qv-left li{
+    height: 100%;
 }
