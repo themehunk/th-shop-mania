@@ -219,6 +219,8 @@ class THNEW_Quick_View {
 
 				<?php $this->render_description( $product ); ?>
 
+				<?php $this->render_long_description( $product ); ?>
+
 				<?php do_action('thnew_quick_view_before_cart',$product);?>
 
 				<div class="thnew-cart-wrapper">
@@ -575,6 +577,93 @@ private function render_description( $product ) {
 			</p>
 
 		</div>
+
+	</div>
+
+	<?php
+}
+
+private function render_long_description( $product ) {
+
+	$description =
+		wp_strip_all_tags(
+			$product->get_description()
+		);
+
+	if ( empty( $description ) ) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-accordion">
+
+		<button type="button"
+				class="thnew-qv-accordion-title">
+
+			<span>
+
+				<?php
+				esc_html_e(
+					'Long Details',
+					'th-shop-mania'
+				);
+				?>
+
+			</span>
+
+			<span class="thnew-qv-accordion-icon">
+
+				+
+
+			</span>
+
+		</button>
+
+		<div class="thnew-qv-accordion-content">
+
+			<p>
+
+				<?php
+				echo esc_html(
+					$description
+				);
+				?>
+
+			</p>
+
+		</div>
+
+	</div>
+
+	<?php
+}
+
+/**
+ * Short Description.
+ */
+private function render_short_description( $product ) {
+
+	$short_description =
+		wp_strip_all_tags(
+			$product->get_short_description()
+		);
+
+	if ( empty( $short_description ) ) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-short-description">
+
+		<p>
+
+			<?php
+			echo esc_html(
+				$short_description
+			);
+			?>
+
+		</p>
 
 	</div>
 

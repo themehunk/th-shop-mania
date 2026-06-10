@@ -3801,22 +3801,29 @@ button.pswp__button--arrow--right::before,
 .woocommerce div.product .product_title, 
 .woocommerce div.product p.price,
 .woocommerce-product-details__short-description {
-  margin-bottom:20px;
+  margin-bottom:22px;
   position: relative;
 }
 .woocommerce div.product .woocommerce-product-rating{
-  margin-bottom:20px;
+  margin-bottom: 24px;
   position: relative;
   text-transform: capitalize;
+  line-height: normal;
+    display: flex;
+    align-items: center;
 }
 .woocommerce .woocommerce-product-rating .star-rating {
-  margin: .5em 10px 0 0;
-  float: left;
-  width:6em;
-  line-height: normal;
+    font-size: .625rem;
+    line-height: 1;
+    overflow: hidden;
+    position: relative;
+    font-weight: 400;
 }
-.woocommerce .summary .star-rating{
-  font-size: 13px;
+.woocommerce .star-rating span{
+  color: #ff9c05;
+}
+.single-product div.product .woocommerce-product-rating .woocommerce-review-link{
+  color: #7a7a7a;
 }
 .woocommerce table.shop_attributes td {
     padding: 0px 8px;
@@ -3827,9 +3834,7 @@ section.upsells.products h2,
 .woocommerce #reviews #comments h2,
 .thwbt-wrapper > h2{color:var(--body-text);}
 
-.single-product div.product .summary .woocommerce-product-rating{
-  float: right;
-}
+
 /*quantity button*/
 .th-shop-mania-quantity {
     margin-right: 15px;
@@ -3842,10 +3847,10 @@ section.upsells.products h2,
 }
 .woocommerce #content div.product div.summary p.price{
     display: block;
-    font-size: 24px;
-    line-height: 31px;
     font-weight: 600;
     color: #111;
+    font-size: clamp(1.5rem, 3vw, 1.625rem);
+    line-height: 25.71px;
     margin-bottom: 20px !important;
 }
 .woocommerce .summary.entry-summary p.in-stock{
@@ -4202,14 +4207,14 @@ section.related.products > h2,
 section.upsells.products > h2,
 .woocommerce div.product .product_title,
 .thwbt-wrapper > h2{
-  font-size: 28px;
-    line-height: 35px;
+    font-size: 1.625rem;
+    margin-top: 0;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.034em;
     color: var(--body-text);
     display: inline-block;
-    letter-spacing: 0.02rem;
     position: relative;
     vertical-align: top;
-    margin: 0 0 30px 0;
     width: 100%;
     padding: 0;
     font-weight: 700;
@@ -4821,9 +4826,6 @@ color: inherit;
 }
 .single-product ul.flex-direction-nav li a:hover {
   text-decoration: none;
-}
-.single-product .woocommerce-review-link{
-  font-size: 0;
 }
 .single-product .woocommerce-review-link .count{
   font-size: 16px;
@@ -7802,6 +7804,13 @@ h2.wc-block-mini-cart__title{
 }
 .theme-th-shop-mania.woocommerce .woocommerce-breadcrumb{
   margin-bottom: .5em;
+  font-size: .875rem;
+  color: #111;
+  font-weight: 500;
+}
+.theme-th-shop-mania.woocommerce .woocommerce-breadcrumb a{
+  color: #888888;
+  padding: 0 9px;
 }
 .theme-th-shop-mania.woocommerce .woocommerce-result-count,
 .theme-th-shop-mania.woocommerce .woocommerce-ordering{

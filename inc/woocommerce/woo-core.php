@@ -477,7 +477,11 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
 			add_filter( 'woocommerce_get_availability', array( $this, 'th_shop_mania_override_get_availability'),10, 2 );
+
+			 // add_filter( 'woocommerce_product_meta_start', array( $this, 'show_wc_stock_html_in_meta' ) );
 		}
+
+
 
 		  /**
 		 * Single Product customization.
@@ -656,6 +660,12 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			}
 			return $pagination;
 		}
+
+		function show_wc_stock_html_in_meta() {
+    global $product;
+
+    echo wc_get_stock_html( $product );
+}
 
 		// The hook in function $availability is passed via the filter!
 		function th_shop_mania_override_get_availability( $availability, $_product ) {
