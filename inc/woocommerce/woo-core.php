@@ -425,7 +425,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 				return;
 			}
 
-			$single_product_layout = get_theme_mod('th_shop_mania_pro_single_product_layout','standard');
+			$single_product_layout = get_theme_mod('th_shop_mania_pro_single_product_layout','twocolumn');
 			if ($single_product_layout == 'twocolumn' && function_exists('th_shop_mania_pro_load_plugin')) {
 				// Single Product Two Column Customization.
 				add_filter('woocommerce_product_description_heading', '__return_empty_string');
