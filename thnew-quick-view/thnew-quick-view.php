@@ -540,7 +540,7 @@ private function render_description( $product ) {
 	}
 	?>
 
-	<div class="thnew-qv-accordion">
+	<div class="thnew-qv-accordion th-qv-short active">
 
 		<button type="button"
 				class="thnew-qv-accordion-title">
@@ -558,7 +558,7 @@ private function render_description( $product ) {
 
 			<span class="thnew-qv-accordion-icon">
 
-				+
+				−
 
 			</span>
 
