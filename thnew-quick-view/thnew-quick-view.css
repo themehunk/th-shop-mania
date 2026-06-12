@@ -59,7 +59,7 @@ LAYOUT
 .thnew-qv-grid{
     display:flex;
     gap: 2%;
-    height: 521px!important;
+    height: 600px!important;
 }
 .thnew-qv-left{
     max-width: 720px;
@@ -604,9 +604,8 @@ FLEXSLIDER ARROWS
 }
 
 /* DISABLED */
-.thnew-qv-gallery-wrap .flex-disabled{
+.thnew-qv-gallery-wrap a:not(.flex-disabled){
     opacity:.4 !important;
-    pointer-events:none;
 }
 
 .thnew-cart-wrapper {
@@ -624,8 +623,14 @@ FLEXSLIDER ARROWS
     box-shadow: 0 8px 30px rgb(120 120 120 / 12%);
     */
     margin-top: auto;
-    background: #FFF;
+    background: #ffffff4d;
     padding-bottom: 9px;
+    padding-top: 9px;
+
+    border-top: 1px solid rgb(0 0 0 / 7%);
+    border-bottom: 1px solid #F3F4F6;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12)
 }
 .thnew-qv-grid.style-1 .thnew-qv-label{
     display: none;
@@ -915,7 +920,6 @@ SKELETON LOADER
 .thnew-qv-right .social-share svg{
     width: 16px !important;
     height: 16px !important;
-    fill: #111;
 }
 .thnew-qv-right .social-share ul{
     margin: 0 0 0 9px;

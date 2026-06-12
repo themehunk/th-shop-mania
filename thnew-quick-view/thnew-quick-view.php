@@ -549,7 +549,7 @@ private function render_description( $product ) {
 
 				<?php
 				esc_html_e(
-					'Description',
+					'Short Description',
 					'th-shop-mania'
 				);
 				?>
@@ -604,7 +604,7 @@ private function render_long_description( $product ) {
 
 				<?php
 				esc_html_e(
-					'Long Details',
+					'Description',
 					'th-shop-mania'
 				);
 				?>
