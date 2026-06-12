@@ -3731,6 +3731,7 @@ text-align:left;
   width: initial;
   max-width: 100%;
   margin: 0 auto;
+  border-radius: 5px;
 }
 /*  Adjust and see the min-height with gallery slider only in desktop view and in mobile view set it to initial  */
 .woocommerce.single-product .woocommerce-product-gallery__image a {
@@ -3824,6 +3825,8 @@ button.pswp__button--arrow--right::before,
 }
 .single-product div.product .woocommerce-product-rating .woocommerce-review-link{
   color: #7a7a7a;
+    font-size: 12px;
+    text-transform: lowercase;
 }
 .woocommerce table.shop_attributes td {
     padding: 0px 8px;
@@ -3837,13 +3840,14 @@ section.upsells.products h2,
 
 /*quantity button*/
 .th-shop-mania-quantity {
-    margin-right: 15px;
+    margin-right: 7px;
     float: left;
-    border: 1px solid #9c9c9c;
-    border-radius: 5px;
+    border: 1px solid #ebebeb;
     display: flex;
     align-items: center;
-    margin-bottom: 21px;
+    border-radius: 5px;
+    margin-bottom: 34px;
+    background: #F5F5F5;
 }
 .woocommerce #content div.product div.summary p.price{
     display: block;
@@ -3855,15 +3859,16 @@ section.upsells.products h2,
 }
 .summary.entry-summary p,
 .woocommerce div.product .woocommerce-tabs .panel p{
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 15px;
+    line-height: 26px;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: .0299px
+    color: #444;
 }
 .single-product div.product form.cart input[type="number"]{
   border-color: #9c9c9c;
     border-width: 0 1px;
-    color: #9c9c9c;
+    color: #4a4949;
     float: left;
     font-size: 18px;
     background: transparent;
@@ -3886,24 +3891,24 @@ section.upsells.products h2,
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 21px;
-    line-height: 27px;
-    width: 25px;
-    height: 25px;
-    margin: 0 9px;
+    font-size: 22px;
+    line-height: 21PX;
+    width: 21px;
+    height: 21px;
+    margin: 0 5px;
     text-align: center;
     background: transparent;
     border-radius: 50%;
-    color: #9c9c9c;
+    color: #111;
+}
 }
 .single-product div.product form.cart button.plus:hover,
 .single-product div.product form.cart button.minus:hover{
   background: #eee;
-  color: #111;
 }
-.th-shop-mania-quantity:hover,
-.single-product div.product form.cart .th-shop-mania-quantity:hover input[type="number"]{
-  border-color: #111;
+
+.single-product div.product form.cart button.plus:hover, .single-product div.product form.cart button.minus:hover {
+    background: #CBCBCB;
 }
 .single-product .product_meta{
   width: 100%;
@@ -4241,8 +4246,9 @@ section.upsells.products > h2,
 .woocommerce div.product .product_title,
 .thwbt-wrapper > h2{
     font-size: 1.625rem;
+    line-height: calc(1 + .21 / 1);;
     margin-top: 0;
-    margin: 0 0 12px 0;
+    margin: 0 0 9px 0;
     letter-spacing: -0.034em;
     color: var(--body-text);
     display: inline-block;
@@ -4250,7 +4256,7 @@ section.upsells.products > h2,
     vertical-align: top;
     width: 100%;
     padding: 0;
-    font-weight: 500;
+    font-weight: 600;
 }
 section.related.products > h2, 
 section.upsells.products > h2,
@@ -4882,7 +4888,7 @@ color: inherit;
 .woocommerce #content div.product .left-side div.images{
   width: 100%;
 /*  border: 1px solid #e1e3e4;*/
-  padding: 30px;
+  padding: 0;
 }
 .right-side .woocommerce-tabs.wc-tabs-wrapper{
 /*  border: 1px solid #e1e3e4;*/
@@ -4897,7 +4903,7 @@ color: inherit;
 }
 .woocommerce #content div.product .right-side div.summary{
 /*  border: 1px solid #e1e3e4;*/
-  padding: 30px;
+  padding: 0;
 }
 .woocommerce div.product .right-side div.summary form.cart{
 /*  flex-direction: column;*/
@@ -4928,7 +4934,7 @@ color: inherit;
   margin-bottom: 0;
 }
 .single-product.th-single-twocolumn .page-content{
-  padding-top: 45px;
+  padding-top: 21px;
 }
 .right-side .woocommerce-tabs.wc-tabs-wrapper{
   width: 100%;
@@ -7838,13 +7844,14 @@ h2.wc-block-mini-cart__title{
 }
 .theme-th-shop-mania.woocommerce .woocommerce-breadcrumb{
   margin-bottom: .5em;
-  font-size: .875rem;
-  color: #4a4444;
-  font-weight: 500;
+  font-size: .799rem;
+  line-height: 1.16;
+  color: #2a2a2a;
+  font-weight: 400;
 }
 .theme-th-shop-mania.woocommerce .woocommerce-breadcrumb a{
   color: #888888;
-  padding: 0 9px;
+  padding: 0 2px 0 0;
 }
 .theme-th-shop-mania.woocommerce .woocommerce-result-count,
 .theme-th-shop-mania.woocommerce .woocommerce-ordering{
