@@ -12,7 +12,7 @@
  */
 
 if ( ! function_exists( 'th_shop_mania_setup' ) ) :
-define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.7');
+define( 'TH_SHOP_MANIA_THEME_VERSION','1.8.9');
 define( 'TH_SHOP_MANIA_THEME_DIR', get_template_directory() . '/' );
 define( 'TH_SHOP_MANIA_THEME_URI', get_template_directory_uri() . '/' );
 define( 'TH_SHOP_MANIA_THEME_SETTINGS', 'th-shop-mania-settings' );
@@ -294,7 +294,7 @@ add_action( 'widgets_init', 'th_shop_mania_widgets_init' );
 function th_shop_mania_scripts(){
 	require_once trailingslashit(TH_SHOP_MANIA_THEME_DIR).'third-party/fonts/wptt-webfont-loader.php';
 	// Load the webfont.
-	wp_enqueue_style('jost-fonts',wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap' ),
+	wp_enqueue_style('instrument-fonts',wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap' ),
 		array(),
 		'1.0'
 	);
@@ -328,7 +328,7 @@ add_action( 'wp_enqueue_scripts', 'th_shop_mania_scripts');
 
 add_action( 'enqueue_block_editor_assets', function() {
 	require_once trailingslashit(TH_SHOP_MANIA_THEME_DIR).'third-party/fonts/wptt-webfont-loader.php';
-	wp_enqueue_style('jost-fonts',wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&display=swap' ),
+	wp_enqueue_style('instrument-fonts',wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap' ),
 		array(),
 		'1.0'
 	);

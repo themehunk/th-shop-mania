@@ -425,7 +425,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 				return;
 			}
 
-			$single_product_layout = get_theme_mod('th_shop_mania_pro_single_product_layout','standard');
+			$single_product_layout = get_theme_mod('th_shop_mania_pro_single_product_layout','twocolumn');
 			if ($single_product_layout == 'twocolumn' && function_exists('th_shop_mania_pro_load_plugin')) {
 				// Single Product Two Column Customization.
 				add_filter('woocommerce_product_description_heading', '__return_empty_string');
@@ -476,8 +476,19 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
  				*/
 			add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
-			add_filter( 'woocommerce_get_availability', array( $this, 'th_shop_mania_override_get_availability'),10, 2 );
+			// add_filter( 'woocommerce_get_availability', array( $this, 'th_shop_mania_override_get_availability'),10, 2 );
+
+
+			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+			add_action(
+				'woocommerce_single_product_summary',
+				array( $this, 'show_wc_custom_product_meta' ),
+				40
+			);
 		}
+
+
 
 		  /**
 		 * Single Product customization.
@@ -657,6 +668,95 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			return $pagination;
 		}
 
+		public function show_wc_custom_product_meta() {
+	global $product;
+
+	if ( ! $product instanceof WC_Product ) {
+		return;
+	}
+	?>
+
+	<div class="product_meta">
+
+		<?php if ( $product->get_sku() ) : ?>
+			<div class="custom-meta-row">
+				<span class="meta-label">
+					<?php esc_html_e( 'SKU:', 'textdomain' ); ?>
+				</span>
+
+				<span class="meta-value">
+					<?php echo esc_html( $product->get_sku() ); ?>
+				</span>
+			</div>
+		<?php endif; ?>
+
+		<?php
+		$category_list = wc_get_product_category_list(
+			$product->get_id(),
+			', '
+		);
+
+		if ( $category_list ) :
+			?>
+			<div class="custom-meta-row">
+				<span class="meta-label">
+					<?php esc_html_e( 'Categories:', 'textdomain' ); ?>
+				</span>
+
+				<span class="meta-value">
+					<?php echo wp_kses_post( $category_list ); ?>
+				</span>
+			</div>
+		<?php endif; ?>
+
+		<div class="custom-meta-row">
+			<span class="meta-label">
+				<?php esc_html_e( 'Availability:', 'textdomain' ); ?>
+			</span>
+
+			<span class="meta-value">
+				<?php echo wp_kses_post( wc_get_stock_html( $product ) ); ?>
+			</span>
+		</div>
+
+	</div>
+
+	<?php
+}
+
+function show_wc_stock_html_in_meta() {
+	global $product;
+	$availability =
+		wc_get_stock_html(
+			$product
+		);
+
+	if ( empty( $availability ) ) {
+		return;
+	}
+	?>
+
+	<span class="thnew-stock">
+		<span class="thnew-meta-label">
+
+			<?php
+			esc_html_e(
+				'Availability:',
+				'th-shop-mania'
+			);
+			?>
+
+		</span>
+		<?php
+		echo wp_kses_post(
+			$availability
+		);
+		?>
+
+	</span>
+
+	<?php
+}
 		// The hook in function $availability is passed via the filter!
 		function th_shop_mania_override_get_availability( $availability, $_product ) {
 		if ( $_product->is_in_stock() ) $availability['availability'] = __('(In Stock)', 'th-shop-mania');
@@ -664,7 +764,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		}
 		//Share Icon on Product Single Page
 		function th_shop_mania_product_share_button_func() { 
-		echo'<div class="social-share"><h3>'.esc_html__('Share','th-shop-mania').'</h3><ul>'?>
+		echo'<div class="social-share"><h3>'.esc_html__('Share:','th-shop-mania').'</h3><ul>'?>
 		 <li class="fb-icon"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink()); ?>"><svg class="svg--facebook" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45px" height="45px" viewBox="0 0 45 45" xml:space="preserve"><path d="M26.4,25.2v18.3h-8.7V25.2h-7.2v-7.8h7.2v-5.7C17.1,6.6,21,2.1,26.4,1.5c0.6,0,1.2,0,1.8,0c2.1,0,4.2,0.3,6.3,0.6v6.6h-3.6c-2.1-0.6-4.2,0.9-4.5,3c0,0.3,0,0.6,0,0.9v4.8h7.8L33,25.2H26.4z"></path></svg></a></li>
 		 <li class="twt-icon">
 	    <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php esc_url(the_permalink()); ?>&text=<?php the_title(); ?>">
@@ -678,7 +778,9 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 <!-- Copy Link -->
 		<li class="copy-link-icon">
 		    <button class="copy-product-link" data-link="<?php echo esc_url(get_permalink()); ?>" aria-label="Copy Link">
-		        <span class="dashicons dashicons-admin-links"></span>
+			        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
+	  <path d="M7.8 12.2l-1.4 1.4a3 3 0 104.2 4.2l2.2-2.2a3 3 0 000-4.2l-.6-.6-1.4 1.4.6.6a1 1 0 010 1.4l-2.2 2.2a1 1 0 01-1.4-1.4l1.4-1.4-1.4-1.4zM12.2 7.8l1.4-1.4a3 3 0 10-4.2-4.2L7.2 4.4a3 3 0 000 4.2l.6.6 1.4-1.4-.6-.6a1 1 0 010-1.4l2.2-2.2a1 1 0 011.4 1.4l-1.4 1.4 1.4 1.4z"/>
+	</svg>
 		    </button>
 		</li>
 
