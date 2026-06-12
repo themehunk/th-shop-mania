@@ -3728,8 +3728,6 @@ text-align:left;
     padding: 10px;  
 }
 .woocommerce.single-product div.product div.images img{
-  width: initial;
-  max-width: 100%;
   margin: 0 auto;
   border-radius: 5px;
 }

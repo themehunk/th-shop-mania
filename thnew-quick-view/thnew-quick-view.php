@@ -197,7 +197,7 @@ class THNEW_Quick_View {
 			<div class="thnew-qv-right">
 
 				
-				<?php $this->render_categories( $product ); ?>
+				<?php $this->render_brands( $product ); ?>
 
 				<?php $this->render_title( $product ); ?>
 
@@ -211,6 +211,8 @@ class THNEW_Quick_View {
 				<?php $this->render_sku( $product ); ?>
 
 				<?php $this->render_tags( $product ); ?>
+
+				<?php $this->render_categories( $product ); ?>
 
 				<?php $this->render_stock_status( $product ); ?>
 
@@ -823,6 +825,88 @@ private function render_sku( $product ) {
 }
 
 /**
+ * Product Brands.
+ */
+private function render_brands( $product ) {
+
+	$taxonomy = apply_filters(
+		'thnew_qv_brand_taxonomy',
+		'product_brand'
+	);
+
+	$brands = get_the_terms(
+		$product->get_id(),
+		$taxonomy
+	);
+
+	if (
+		empty( $brands ) ||
+		is_wp_error( $brands )
+	) {
+		return;
+	}
+	?>
+
+	<div class="thnew-qv-brands">
+
+		<span class="thnew-qv-meta-label">
+
+
+		</span>
+
+		<div class="thnew-qv-meta-links">
+
+			<?php
+
+			$brands = array_slice( $brands, 0, 3 );
+
+			foreach (
+				$brands as $index => $brand
+			) :
+
+				$brand_link =
+					get_term_link(
+						$brand
+					);
+
+				if (
+					is_wp_error(
+						$brand_link
+					)
+				) {
+					continue;
+				}
+				?>
+
+				<a href="<?php echo esc_url( $brand_link ); ?>">
+
+					<?php
+					echo esc_html(
+						$brand->name
+					);
+					?>
+
+				</a>
+
+				<?php
+				if (
+					$index <
+					count( $brands ) - 1
+				) {
+					echo ', ';
+				}
+
+			endforeach;
+			?>
+
+		</div>
+
+	</div>
+
+	<?php
+}
+
+/**
  * Categories.
  */
 private function render_categories( $product ) {
@@ -853,7 +937,18 @@ private function render_categories( $product ) {
 
 	<div class="thnew-qv-categories">
 
+		<span class="thnew-qv-meta-label">
 
+			<?php
+			esc_html_e(
+				'Categories:',
+				'th-shop-mania'
+			);
+			?>
+
+		</span>
+
+		<div class="thnew-qv-meta-links">
 			<?php
 			foreach (
 				$categories as $index => $category
@@ -896,7 +991,7 @@ private function render_categories( $product ) {
 			endforeach;
 			?>
 
-		
+		</div>
 
 	</div>
 

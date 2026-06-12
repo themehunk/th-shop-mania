@@ -223,6 +223,7 @@ SUMMARY
     font-size: 14px;
     top: 0;
     line-height: 1em;
+    margin-left: 9px;
 }
 .thnew-qv-price{
     font-size: 21px;
@@ -597,6 +598,9 @@ FLEXSLIDER ARROWS
     width: 100%;
     height: 100%;
 }
+.thnew-qv-gallery-wrap .flex-prev::after{
+    margin-left: -5px;
+}
 
 /* CUSTOM RIGHT ICON */
 .thnew-qv-gallery-wrap .flex-next::after{
@@ -839,7 +843,7 @@ SKELETON LOADER
     width: 16px;
 }
 
-.thnew-qv-categories {
+.thnew-qv-brands {
     font-size: 12px;
     line-height: 1.2;
     font-weight: 400;
@@ -852,7 +856,8 @@ SKELETON LOADER
     display: inline-flex;
 }
 
-.thnew-qv-categories a{
+.thnew-qv-categories a,
+.thnew-qv-brands a{
     color: inherit!important;
 }
 .thnew-qv-stock.out-of-stock{
@@ -876,7 +881,8 @@ SKELETON LOADER
 }
 .thnew-qv-tags,
 .thnew-qv-sku,
-.thnew-qv-stock{
+.thnew-qv-stock,
+.thnew-qv-categories{
     display: flex;
     font-size: 11px;
     line-height: 1.2;
