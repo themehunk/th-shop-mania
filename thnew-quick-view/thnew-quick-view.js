@@ -222,27 +222,23 @@
      */
     $('.thnew-qv-gallery').flexslider({
 
-        animation: 'slide',
+    animation: 'slide',
 
-        controlNav: galleryLength > 1,
+    controlNav: galleryLength > 1,
 
-        animationLoop: false,
+    animationLoop: galleryLength > 1,
 
-        slideshow: false,
+    slideshow: false,
 
-        directionNav: galleryLength > 1,
+    directionNav: galleryLength > 1,
 
-        sync:
-            galleryLength > 1
-                ? '.thnew-qv-thumbs'
-                : '',
+    smoothHeight: false,
 
-        /**
-         * DOTS THUMBNAILS.
-         */
-        controlsContainer:
-            '.thnew-qv-gallery-wrap'
-    });
+    sync:
+        galleryLength > 1
+            ? '.thnew-qv-thumbs'
+            : ''
+});
 
     /**
      * THUMBNAILS
@@ -251,21 +247,22 @@
 
         $('.thnew-qv-thumbs').flexslider({
 
-            animation: 'slide',
+    animation: 'slide',
 
-            controlNav: false,
+    controlNav: false,
 
-            animationLoop: false,
+    animationLoop: galleryLength > 1,
 
-            slideshow: false,
+    slideshow: false,
 
-            itemWidth: 90,
+    directionNav: false,
 
-            itemMargin: 12,
+    itemWidth: 90,
 
-            asNavFor:
-                '.thnew-qv-gallery'
-        });
+    itemMargin: 12,
+
+    asNavFor: '.thnew-qv-gallery'
+});
     }
 },
 

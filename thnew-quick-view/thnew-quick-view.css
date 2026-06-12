@@ -59,7 +59,7 @@ LAYOUT
 .thnew-qv-grid{
     display:flex;
     gap: 2%;
-    height: 521px!important;
+    height: 600px!important;
 }
 .thnew-qv-left{
     max-width: 720px;
@@ -223,6 +223,7 @@ SUMMARY
     font-size: 14px;
     top: 0;
     line-height: 1em;
+    margin-left: 9px;
 }
 .thnew-qv-price{
     font-size: 21px;
@@ -597,6 +598,9 @@ FLEXSLIDER ARROWS
     width: 100%;
     height: 100%;
 }
+.thnew-qv-gallery-wrap .flex-prev::after{
+    margin-left: -5px;
+}
 
 /* CUSTOM RIGHT ICON */
 .thnew-qv-gallery-wrap .flex-next::after{
@@ -604,10 +608,9 @@ FLEXSLIDER ARROWS
 }
 
 /* DISABLED */
-.thnew-qv-gallery-wrap .flex-disabled{
+/*.thnew-qv-gallery-wrap a:not(.flex-disabled){
     opacity:.4 !important;
-    pointer-events:none;
-}
+}*/
 
 .thnew-cart-wrapper {
    border-radius: 9px;
@@ -618,14 +621,11 @@ FLEXSLIDER ARROWS
     bottom: 0;
     z-index: 99;
     padding: 0px 5px;
-    /*background: #f5f5f5;
-    border-bottom: 1px solid #F3F4F6;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 8px 30px rgb(120 120 120 / 12%);
-    */
     margin-top: auto;
     background: #FFF;
     padding-bottom: 9px;
+    background: linear-gradient(0deg, #FFFFFF 70%, #fefefe2e 100%);
+    padding-top: 34px;
 }
 .thnew-qv-grid.style-1 .thnew-qv-label{
     display: none;
@@ -834,7 +834,7 @@ SKELETON LOADER
     width: 16px;
 }
 
-.thnew-qv-categories {
+.thnew-qv-brands {
     font-size: 12px;
     line-height: 1.2;
     font-weight: 400;
@@ -847,7 +847,8 @@ SKELETON LOADER
     display: inline-flex;
 }
 
-.thnew-qv-categories a{
+.thnew-qv-categories a,
+.thnew-qv-brands a{
     color: inherit!important;
 }
 .thnew-qv-stock.out-of-stock{
@@ -871,7 +872,8 @@ SKELETON LOADER
 }
 .thnew-qv-tags,
 .thnew-qv-sku,
-.thnew-qv-stock{
+.thnew-qv-stock,
+.thnew-qv-categories{
     display: flex;
     font-size: 11px;
     line-height: 1.2;
@@ -915,7 +917,6 @@ SKELETON LOADER
 .thnew-qv-right .social-share svg{
     width: 16px !important;
     height: 16px !important;
-    fill: #111;
 }
 .thnew-qv-right .social-share ul{
     margin: 0 0 0 9px;
@@ -937,7 +938,7 @@ ACCORDION
 
 .thnew-qv-accordion{
     border-bottom: 1px solid #ebebeb;
-    margin-bottom: 18px;
+    padding: 0;
     cursor: pointer;
 }
 
