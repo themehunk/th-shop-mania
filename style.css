@@ -3860,7 +3860,7 @@ section.upsells.products h2,
     font-size: 15px;
     line-height: 26px;
     font-weight: 400;
-    letter-spacing: .0299px
+    letter-spacing: .0299px;
     color: #444;
 }
 .single-product div.product form.cart input[type="number"]{
@@ -3911,15 +3911,22 @@ section.upsells.products h2,
 .single-product .product_meta{
   width: 100%;
   clear: both;
-  padding: 0;
+  padding: 9px 0 0 0;
 }
-.single-product .product_meta > span{
+
+.single-product .th-product-brand{
     display: flex;
     font-weight: 400;
     margin-bottom: 2px;
     align-items: center;
     color: #444444;
     min-width: clamp(5.625rem, 5vw, 7.5rem);
+    gap: 2px;
+    font-size: .9rem;
+    letter-spacing: 0;
+}
+.single-product .th-product-brand a{
+  color: inherit;
 }
 .single-product .product_meta > span span{
     display: block;
@@ -3929,7 +3936,7 @@ section.upsells.products h2,
 .single-product .custom-meta-row{
     display:flex;
     align-items: center;
-    margin-bottom: 9px;
+    margin-bottom: 5px;
 }
 
 .single-product .meta-label{
@@ -3937,15 +3944,17 @@ section.upsells.products h2,
     flex-shrink:0;
     color: #444;
     font-weight: 400;
+    font-size: .899rem;
+    line-height: 1.5rem;
 }
 
 .single-product .meta-value,
 .single-product .meta-value *{
-    color: #333!important;
-    font-size: 15px!important;
-    line-height: 1.18!important;
-    text-transform: capitalize!important;
-    font-weight: 500!important;
+    color: #111 !important;
+    font-size: 15px !important;
+    line-height: 1.18 !important;
+    text-transform: capitalize !important;
+    font-weight: 400 !important;
 }
 .single-product.woocommerce ul.products li.product .woocommerce-loop-product__link, 
 .single-product.woocommerce-page ul.products li.product .woocommerce-loop-product__link{
@@ -4368,13 +4377,25 @@ margin:0px 0px 0px 10px;
     display: inline-block;
 /*    float: left;*/
     font-family: "Instrument Sans";font-weight: 500;
-    line-height: 45px;
-    max-height: 45px;
+    line-height: 50px;
+    max-height: 50px;
     font-size: 16px;
     text-align: center;
     padding: 0 10px;
     min-width: 125px;
     border-radius:5px;
+    padding: 0 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+    letter-spacing: .1em;
+    width: 145px;
+    border: 1px solid transparent;
+    margin-bottom: 21px;
+    text-align: center;
+    font-weight: 500;
     text-decoration: none;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -4643,10 +4664,10 @@ top:0em!important;
     color: #fff;
     border-radius: 5px;
     font-size: 14px;
-    max-height:56px;
-    line-height: 56px;
+    max-height:50px;
+    line-height: 50px;
     letter-spacing: .1em;
-    width:200px;
+    width: 199px;
     border: 1px solid transparent;
     margin-bottom: 21px;
     text-align: center;
@@ -4661,13 +4682,13 @@ top:0em!important;
 .summary .th-wishlist-single a{
     border: 1px solid #ebebeb;
     border-radius: 5px;
-    color: #9c9c9c;
+    color: #111;
     justify-content: center;
     align-items: center;
     font-size: 0;
-    height: 56px;
-    line-height: 56px;
-    width: 56px;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
     background: transparent;
     text-align: center;
     font-weight: normal;
@@ -4908,7 +4929,7 @@ color: inherit;
 /*  flex-direction: column;*/
 }
 .woocommerce div.product .right-side div.summary .th-shop-mania-quantity{
-  height: 56px;
+  height: 50px;
   justify-content: space-around;
 }
 .single-product.woocommerce div.product .left-side div.images a.woocommerce-product-gallery__trigger,

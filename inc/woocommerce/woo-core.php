@@ -486,6 +486,61 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 				array( $this, 'show_wc_custom_product_meta' ),
 				40
 			);
+
+
+			// To Remove default product brands
+			add_action(
+	'wp',
+	function() {
+
+		if ( ! is_product() ) {
+			return;
+		}
+
+		global $wp_filter;
+
+		if (
+			empty( $wp_filter['woocommerce_product_meta_end'] ) ||
+			empty( $wp_filter['woocommerce_product_meta_end']->callbacks )
+		) {
+			return;
+		}
+
+		foreach ( $wp_filter['woocommerce_product_meta_end']->callbacks as $priority => $callbacks ) {
+
+			foreach ( $callbacks as $callback ) {
+
+				if (
+					! isset( $callback['function'] ) ||
+					! is_array( $callback['function'] ) ||
+					! isset( $callback['function'][0], $callback['function'][1] )
+				) {
+					continue;
+				}
+
+				if (
+					$callback['function'][0] instanceof WC_Brands &&
+					'show_brand' === $callback['function'][1]
+				) {
+
+					remove_action(
+						'woocommerce_product_meta_end',
+						$callback['function'],
+						$priority
+					);
+
+					return;
+				}
+			}
+		}
+	},
+	999
+);
+
+			add_action( 'woocommerce_single_product_summary',array( $this, 'th_shop_mania_show_brand_above_title' ),4);
+
+		
+		
 		}
 
 
@@ -668,6 +723,23 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			return $pagination;
 		}
 
+function th_shop_mania_show_brand_above_title() {
+
+	global $product;
+
+	if ( ! $product || ! function_exists( 'wc_get_brands' ) ) {
+		return;
+	}
+
+	$brands = wc_get_brands( $product->get_id(), ', ' );
+
+	if ( ! empty( $brands ) ) {
+		echo '<div class="th-product-brand">';
+		echo wp_kses_post( $brands );
+		echo '</div>';
+	}
+}
+
 		public function show_wc_custom_product_meta() {
 	global $product;
 
@@ -678,10 +750,12 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 	<div class="product_meta">
 
+ <?php  do_action( 'woocommerce_product_meta_start' ); ?>
+
 		<?php if ( $product->get_sku() ) : ?>
 			<div class="custom-meta-row">
 				<span class="meta-label">
-					<?php esc_html_e( 'SKU:', 'textdomain' ); ?>
+					<?php esc_html_e( 'Sku:', 'th-shop-mania' ); ?>
 				</span>
 
 				<span class="meta-value">
@@ -700,7 +774,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			?>
 			<div class="custom-meta-row">
 				<span class="meta-label">
-					<?php esc_html_e( 'Categories:', 'textdomain' ); ?>
+					<?php esc_html_e( 'Categories:', 'th-shop-mania' ); ?>
 				</span>
 
 				<span class="meta-value">
@@ -711,13 +785,15 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 		<div class="custom-meta-row">
 			<span class="meta-label">
-				<?php esc_html_e( 'Availability:', 'textdomain' ); ?>
+				<?php esc_html_e( 'Availability:', 'th-shop-mania' ); ?>
 			</span>
 
 			<span class="meta-value">
 				<?php echo wp_kses_post( wc_get_stock_html( $product ) ); ?>
 			</span>
 		</div>
+
+ <?php  do_action( 'woocommerce_product_meta_end' ); ?>
 
 	</div>
 

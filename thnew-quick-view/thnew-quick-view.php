@@ -210,9 +210,10 @@ class THNEW_Quick_View {
 
 				<?php $this->render_sku( $product ); ?>
 
+				<?php $this->render_categories( $product ); ?>
+
 				<?php $this->render_tags( $product ); ?>
 
-				<?php $this->render_categories( $product ); ?>
 
 				<?php $this->render_stock_status( $product ); ?>
 
