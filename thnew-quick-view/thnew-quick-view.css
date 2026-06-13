@@ -1,3 +1,8 @@
+.thnew-popup {
+  --qv-text-color: #7c7c7c;
+  --qv-text-bold-color: #3e3e3e;
+}
+
 .thnew-popup{
     position:fixed;
     inset:0;
@@ -12,15 +17,14 @@
     backdrop-filter:blur(4px);
 }
 
-.thnew-popup-wrapper{
+.thnew-popup .thnew-popup-wrapper{
     position: relative;
-    width: min(96%, 900px);
+    width: min(96%, 1020px);
     margin: 2vh auto;
     background: #fff;
     top: 50%;
     transform: translateY(-50%);
-   /* height: 521px;
-    overflow-y: auto;*/
+   border-radius: 14px;
 }
 
 .thnew-popup-close {
@@ -56,10 +60,10 @@
 LAYOUT
 =============================*/
 
-.thnew-qv-grid{
+.thnew-popup-wrapper .thnew-qv-grid{
     display:flex;
-    gap: 2%;
-    height: 600px!important;
+    gap: 3%;
+    height: 650px!important;
 }
 .thnew-qv-left{
     max-width: 720px;
@@ -69,9 +73,9 @@ LAYOUT
     width: 49%;
 }
 
-.thnew-qv-right{
+.thnew-popup-content .thnew-qv-right{
     min-width: 0;
-   padding: 12px 12px 0 0;
+   padding: 1.5rem 2rem 0 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -93,16 +97,11 @@ LAYOUT
 GALLERY
 =============================*/
 
-/*.thnew-qv-gallery-wrap{
-    position:sticky;
-    top:0;
-}*/
-
 .thnew-qv-gallery{
     overflow:hidden;
-/*    border:1px solid #d9d9d9;*/
     background:#fff;
-/*    padding: 9px;*/
+      border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
 }
 
 .thnew-qv-gallery .slides{
@@ -189,7 +188,6 @@ SUMMARY
     line-height: 1.148148148148148em;
     font-weight: 500;
     letter-spacing: 0em;
-    margin-bottom: 9px;
 }
 
 .thnew-qv-title a{
@@ -197,44 +195,36 @@ SUMMARY
     text-decoration:none;
 }
 
-/*.thnew-qv-rating{
-    margin-bottom: 0;
-}
-
-.thnew-qv-price{
-    margin-bottom: 0;
-}*/
-
-.thnew-qv-rating{
-   margin-bottom: 29px;
-    margin-top: 0;
+.thnew-qv-right .thnew-qv-rating{
+    padding-bottom: 4px;
+    padding-top: 16px;
 }
 .thnew-qv-rating .woocommerce-product-rating{
     display: flex;
     align-items: center;
 }
 .thnew-qv-rating .woocommerce-product-rating .star-rating{
-    margin: 0;
-    color: #111;
-    font-size: 14px;
+    color: #686868;
+    font-size: 12px;
+        margin: 0;
 }
 .thnew-qv-rating .woocommerce-review-link{
-    color: #7c7c7c;
+   color: var(--qv-text-color);
     font-size: 14px;
-    top: 0;
-    line-height: 1em;
-    margin-left: 9px;
+    margin-left: 4px;
 }
 .thnew-qv-price{
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 700;
-    line-height: 27px;
-   padding-bottom: 18px;
+    line-height: 25px;
+    padding-bottom: 16px;
+    padding-top: 18px;
 }
 .thnew-qv-price del {
-    margin-left: auto;
-    color: #9ca3af;
+      margin-left: auto;
+    color: #9d9d9d;
     font-weight: 500;
+    font-size: 16px;
 }
 
 .thnew-qv-description{
@@ -264,16 +254,25 @@ VARIATIONS
     border:none;
     margin-top: 9px;
 }
+.woo-selected-variation-item-name {
+ color: var(--qv-text-color);
+}
+
 .thnew-qv-variation-wrap tr{
-    display: flex;
+       display: flex;
     margin-bottom: 12px;
+    flex-direction: column;
+        width: 70%;
+}
+
+.th-variation-swatches.woocommerce a.reset_variations{
+    font-size: 14px;
+    color: #474747;
 }
 
 .thnew-qv-variation-wrap td{
-    display:block;
     padding:0;
     border:none;
-    padding-left: 12px;
     position: relative;
 }
 
@@ -309,9 +308,8 @@ VARIATIONS
 
 .thnew-qv-variation-wrap .reset_variations{
     position: absolute;
-    right: 0;
-    top: 0;
-    right: -39px;
+    top: 12px;
+    right: -50px;
     margin: 0 !important;
 }
 
@@ -613,17 +611,15 @@ FLEXSLIDER ARROWS
 }*/
 
 .thnew-cart-wrapper {
-   border-radius: 9px;
     display: flex;
     gap: 12px;
     align-items: center;
     position: sticky;
     bottom: 0;
     z-index: 99;
-    padding: 0px 5px;
     margin-top: auto;
     background: #FFF;
-    padding-bottom: 9px;
+    padding-bottom: 26px;
     background: linear-gradient(0deg, #FFFFFF 70%, #fefefe2e 100%);
     padding-top: 34px;
 }
@@ -867,26 +863,28 @@ SKELETON LOADER
     color: #a93232;
 }
 .thnew-qv-meta-label{
-    color: #111;
+    color: var(--qv-text-bold-color);
     margin-right: 5px;
+}
+.thnew-qv-meta-links{
+font-size: 13px;
 }
 .thnew-qv-tags,
 .thnew-qv-sku,
 .thnew-qv-stock,
 .thnew-qv-categories{
     display: flex;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.2;
     font-weight: 500;
     font-style: normal;
-    letter-spacing: .05em;
-    text-transform: uppercase;
     text-decoration: none;
-    color: #7c7c7c;
+    color: var(--qv-text-color);
     position: relative;
     display: flex;
     align-items: center;
-    margin: 0 0 9px;
+      padding-top: 8px;
+    padding-bottom: 8px;
 }
 .thnew-qv-tags a,
 .thnew-qv-sku a{
@@ -895,34 +893,29 @@ SKELETON LOADER
 .thnew-qv-right .social-share{
     display: flex;
     align-items: center;
-    margin-top: 16px;
-    margin-bottom: 9px;
+     padding-top: 8px;
+    padding-bottom: 12px;
 }
-.thnew-qv-right .social-share h3{
-    font-size: 11px;
-    line-height: 1.2;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
-.thnew-qv-right .social-share li{
-    margin-right: 9px;
-}
+
+
 .thnew-qv-right .social-share li{
     display: inline-flex;
     align-items: center;
     justify-content: center;
+      margin-right: 9px;
 }
 .thnew-qv-right .social-share svg{
     width: 16px !important;
     height: 16px !important;
 }
 .thnew-qv-right .social-share ul{
-    margin: 0 0 0 9px;
+   margin: 0 0 0 5px;
+    line-height: 0;
 }
 .thnew-qv-right .social-share span{
-    font-size: 16px;
+       font-size: 14px;
+    font-weight: 500;
+    color: var(--qv-text-bold-color);
 }
 .thnew-qv-right .copy-product-link{
     display: inline-flex;
@@ -938,7 +931,7 @@ ACCORDION
 
 .thnew-qv-accordion{
     border-bottom: 1px solid #ebebeb;
-    padding: 0;
+      padding-top: 8px;
     cursor: pointer;
 }
 
@@ -966,7 +959,7 @@ ACCORDION
     letter-spacing: 0;
     text-transform: none;
     text-decoration: none !important;
-    color: #111;
+    color: var(--qv-text-bold-color);
     width: 100%;
     padding-right: 20px;
 }
@@ -974,7 +967,7 @@ ACCORDION
 /* ICON */
 
 .thnew-qv-accordion-icon{
-    color:#111;
+    color:var(--qv-text-bold-color);
     font-size: 18px;
     line-height:1;
     transition: transform .25s ease;
@@ -986,24 +979,20 @@ ACCORDION
 /* CONTENT */
 
 .thnew-qv-accordion-content{
-
     display:none;
-
-    padding:
-        0 0 26px;
+    padding: 0 0 26px;
 }
 .thnew-qv-accordion.th-qv-short .thnew-qv-accordion-content{
     display: block;
 }
 
 .thnew-qv-accordion-content p{
-    font-size: 15px;
-    line-height: 27px;
+    font-size: 14px;
+    line-height: 26px;
     font-weight: 400;
     font-style: normal;
     text-transform: none;
-    text-decoration: none !important;
-    color: #7c7c7c;
+    color: #444;
 }
 
 

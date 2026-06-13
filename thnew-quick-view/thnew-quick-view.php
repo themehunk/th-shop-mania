@@ -201,21 +201,17 @@ class THNEW_Quick_View {
 
 				<?php $this->render_title( $product ); ?>
 
-				<?php $this->render_price( $product ); ?>
-
 				<?php $this->render_rating( $product ); ?>
 
-				<?php $this->render_variations( $product ); ?>
-
+				<?php $this->render_price( $product ); ?>
 
 				<?php $this->render_sku( $product ); ?>
 
 				<?php $this->render_categories( $product ); ?>
 
 				<?php $this->render_tags( $product ); ?>
-
-
 				<?php $this->render_stock_status( $product ); ?>
+				<?php $this->render_variations( $product ); ?>
 
 				<?php do_action('thnew_quick_view_share_button'); ?>
 				

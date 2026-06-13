@@ -840,7 +840,7 @@ function show_wc_stock_html_in_meta() {
 		}
 		//Share Icon on Product Single Page
 		function th_shop_mania_product_share_button_func() { 
-		echo'<div class="social-share"><h3>'.esc_html__('Share:','th-shop-mania').'</h3><ul>'?>
+		echo'<div class="social-share"><span>'.esc_html__('Share:','th-shop-mania').'</span><ul>'?>
 		 <li class="fb-icon"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink()); ?>"><svg class="svg--facebook" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45px" height="45px" viewBox="0 0 45 45" xml:space="preserve"><path d="M26.4,25.2v18.3h-8.7V25.2h-7.2v-7.8h7.2v-5.7C17.1,6.6,21,2.1,26.4,1.5c0.6,0,1.2,0,1.8,0c2.1,0,4.2,0.3,6.3,0.6v6.6h-3.6c-2.1-0.6-4.2,0.9-4.5,3c0,0.3,0,0.6,0,0.9v4.8h7.8L33,25.2H26.4z"></path></svg></a></li>
 		 <li class="twt-icon">
 	    <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php esc_url(the_permalink()); ?>&text=<?php the_title(); ?>">
