@@ -689,7 +689,7 @@ SKELETON LOADER
     width:100%;
     aspect-ratio:1/1.15;
 
-    border-radius:0;
+    border-radius:14px;
 
     margin-bottom:18px;
 }
@@ -1061,4 +1061,16 @@ FLEX DOTS
     background:#979797;
 
     transform:scale(.7);
+}
+.thnew-popup .thnew-qv-sale-badge{
+    margin: 5px 0;
+}
+.thnew-popup .thnew-qv-sale-badge span{
+    background: green;
+    color: #fff;
+    padding: 2px 9px;
+    border-radius: 5px;
+    /* margin: 5px 0; */
+    font-size: 15px;
+    line-height: 18px;
 }

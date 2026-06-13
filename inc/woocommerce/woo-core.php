@@ -770,6 +770,7 @@ function th_shop_mania_show_brand_above_title() {
 			', '
 		);
 
+
 		if ( $category_list ) :
 			?>
 			<div class="custom-meta-row">
@@ -783,15 +784,21 @@ function th_shop_mania_show_brand_above_title() {
 			</div>
 		<?php endif; ?>
 
-		<div class="custom-meta-row">
-			<span class="meta-label">
-				<?php esc_html_e( 'Availability:', 'th-shop-mania' ); ?>
-			</span>
+				<?php
+				$stock_html = wc_get_stock_html( $product );
 
-			<span class="meta-value">
-				<?php echo wp_kses_post( wc_get_stock_html( $product ) ); ?>
-			</span>
-		</div>
+				if ( ! empty( $stock_html ) ) :
+				?>
+					<div class="custom-meta-row">
+						<span class="meta-label">
+							<?php esc_html_e( 'Availability:', 'th-shop-mania' ); ?>
+						</span>
+
+						<span class="meta-value">
+							<?php echo wp_kses_post( $stock_html ); ?>
+						</span>
+					</div>
+		<?php endif; ?>
 
  <?php  do_action( 'woocommerce_product_meta_end' ); ?>
 

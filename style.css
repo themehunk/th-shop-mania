@@ -3941,6 +3941,7 @@ section.upsells.products h2,
  font-weight: 400;
     font-size: 15px;
     line-height: 1.5rem;
+    min-width: 85px;
 }
 
 .single-product .meta-value,
@@ -4278,7 +4279,7 @@ margin-bottom:8px;
 .woocommerce p.stars a,
 .woocommerce .woocommerce-product-rating .star-rating,
 .wc-block-grid__product-rating{
-color: #f78686;
+color: #ff9c05;
 }
 .woocommerce div.product p.price, .woocommerce div.product span.price{
       color: #1c1d1e;
@@ -6681,7 +6682,7 @@ span.product-title{
 /* Single Product Social Share Button */
 .single-product .social-share{
   display: flex;
-  gap: 10px;
+  gap: 30px;
 }
 .single-product .social-share h3{
     width: 95px;
@@ -6701,7 +6702,7 @@ span.product-title{
 }
 .single-product .social-share ul{
   display: inline-flex;
-      margin: 0 0 0 3.5em;
+      margin: 0;
 }
 
 .single-product .copy-product-link{
