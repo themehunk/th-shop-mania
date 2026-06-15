@@ -14,6 +14,7 @@
            }
             $this.copyProductLink(); 
             $this.woo_login_extend();
+            $this.accordionTab();
           },
           woccomerce_tab: function (){
                  $( document ).ready( function() {
@@ -91,7 +92,26 @@
                     alert('Failed to copy: ' + err);
                 });
             });
+        },
+
+         accordionTab: function (){
+
+            $(document).on(
+        'click',
+        '.thsm-accordion-title',
+        function () {
+
+            var $parent = $(this).parent();
+
+            $parent
+                .toggleClass('active')
+                .find('.thsm-accordion-content')
+                .stop()
+                .slideToggle(250);
         }
+    );
+
+         },
 
       
     

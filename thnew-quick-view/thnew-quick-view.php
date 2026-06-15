@@ -199,6 +199,8 @@ class THNEW_Quick_View {
 				
 				<?php $this->render_brands( $product ); ?>
 
+				<?php $this->render_sale_badge( $product ); ?>
+
 				<?php $this->render_title( $product ); ?>
 
 				<?php $this->render_rating( $product ); ?>
@@ -846,10 +848,6 @@ private function render_brands( $product ) {
 
 	<div class="thnew-qv-brands">
 
-		<span class="thnew-qv-meta-label">
-
-
-		</span>
 
 		<div class="thnew-qv-meta-links">
 
@@ -897,6 +895,70 @@ private function render_brands( $product ) {
 			?>
 
 		</div>
+
+	</div>
+
+	<?php
+}
+
+/**
+ * Sale Badge.
+ */
+private function render_sale_badge( $product ) {
+
+	if ( ! $product->is_on_sale() ) {
+		return;
+	}
+
+	$sale_percentage = '';
+
+	if ( $product->is_type( 'simple' ) ) {
+
+		$regular_price =
+			(float) $product->get_regular_price();
+
+		$sale_price =
+			(float) $product->get_sale_price();
+
+		if (
+			$regular_price > 0 &&
+			$sale_price > 0
+		) {
+
+			$sale_percentage =
+				round(
+					(
+						(
+							$regular_price -
+							$sale_price
+						)
+						/
+						$regular_price
+					) * 100
+				);
+		}
+	}
+	?>
+
+	<div class="thnew-qv-sale-badge">
+
+		<?php
+		if ( ! empty( $sale_percentage ) ) {
+			?>
+
+			<span>
+
+				<?php
+				esc_html_e(
+				'Sale',
+				'th-shop-mania'
+			);
+				?>
+
+			</span>
+
+			<?php  }  ?>
+
 
 	</div>
 
