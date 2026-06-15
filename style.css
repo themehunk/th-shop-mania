@@ -3725,7 +3725,7 @@ text-align:left;
 }
 .woocommerce div.product div.images .flex-control-thumbs li {
     width:25%;
-    padding: 10px;  
+    padding: 9px 9px 9px 0;  
 }
 .woocommerce.single-product div.product div.images img{
   margin: 0 auto;
@@ -3777,6 +3777,9 @@ text-align:left;
     max-width: 100%;
     margin: 0 auto;
 }
+/*.verticalslide-gallery.woocommerce div.product div.images .flex-control-thumbs li img{
+  max-width: 108px;
+}*/
 .pswp__bg{
   opacity: 0.8!important;
 }
@@ -4295,6 +4298,9 @@ color: #ff9c05;
 margin-top:10px;
 width:60%;
 }
+#review_form .comment-form{
+  width: 100%;
+}
 .comment-form-rating{
 display:flex;
 line-height: normal;
@@ -4323,7 +4329,7 @@ margin:0px 0px 0px 10px;
     line-height:normal;
     min-height: 52px;
     background: transparent;
-    border: 1px solid #999;
+    border: 1px solid #EBEBEB;
     padding: 10px;
     color: inherit;
 }
@@ -4772,12 +4778,12 @@ color: inherit;
 }
 .woocommerce.verticalslide-gallery div.product .flex-viewport,
 .woocommerce.verticallightboxslide-gallery div.product .flex-viewport{
-  width: 79%;
+  width: 85%;
   order: 2;
 }
 .verticalslide-gallery.woocommerce div.product div.images .flex-control-thumbs,
 .verticallightboxslide-gallery.woocommerce div.product div.images .flex-control-thumbs{
-  width: 21%;
+  width: 15%;
   order: 1;
 }
 .verticalslide-gallery.single-product ul.flex-direction-nav,
@@ -4803,7 +4809,7 @@ color: inherit;
 }
 .woocommerce.verticalslide-gallery .flex-control-thumbs .slick-slide,
 .woocommerce.verticallightboxslide-gallery .flex-control-thumbs .slick-slide{
-  padding: 5px 9px;
+  padding: 5px 0;
 }
     /* Carousel in sinleproduct*/
     .single-product ul.flex-direction-nav {
@@ -8319,6 +8325,74 @@ header a.whishlist{
     font-weight: 500;
     letter-spacing: 0.2px;
 }
+
+/* Single Product Accordion  */
+/*--------------------------------------------------------------
+# Product Accordion
+--------------------------------------------------------------*/
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion{
+  margin-top:24px;
+  border-top:1px solid #e5e5e5;
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-item{
+  border-bottom:1px solid #EBEBEB;
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-title{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:9px 0;
+  margin:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  cursor:pointer;
+  text-align:left;
+  transition:all .2s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-title:focus{
+  outline:none;
+  box-shadow:none;
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-title::after{
+  content:'+';
+  flex-shrink:0;
+  margin-left:15px;
+  font-size:25px;
+  font-weight:400;
+  line-height:1;
+  transition:all .2s ease;
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-item.active .thsm-accordion-title::after{
+  content:'−';
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-content{
+  display:none;
+  padding:0 0 20px;
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-content > *:last-child{
+  margin-bottom:0;
+}
+
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-content p:last-child,
+.thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-content table:last-child{
+  margin-bottom:0;
+}
+
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 .main-area{

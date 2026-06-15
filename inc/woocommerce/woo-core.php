@@ -78,7 +78,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 			// add share button
-			add_action( 'woocommerce_single_product_summary', array( $this, 'th_shop_mania_product_share_button_func'),90 );
+			add_action( 'woocommerce_single_product_summary', array( $this, 'th_shop_mania_product_share_button_func'),89 );
 			add_action( 'thnew_quick_view_share_button', array( $this, 'th_shop_mania_product_share_button_func'),90 );
 		 }
 		 // woocommerce sidebar
@@ -432,7 +432,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
             add_filter('woocommerce_product_reviews_heading', '__return_empty_string');
             remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 
-				add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs',108 );
+				// add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs',108 );
 
 
 				add_action( 'woocommerce_before_single_product_summary', 'th_shop_mania_start_left_side', 5 );
@@ -452,6 +452,24 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 				function th_shop_mania_end_right_side() {
 				  echo '</div>';
 				}
+
+				add_filter(
+					'woocommerce_product_tabs',
+					array( $this, 'th_shop_mania_modify_product_tabs' ),
+					999
+				);
+
+				add_action(
+					'woocommerce_single_product_summary',
+					array( $this, 'th_shop_mania_product_tabs_accordion' ),
+					90
+				);
+
+				add_action(
+				'woocommerce_after_single_product_summary',
+				'comments_template',
+				108
+			);
 			}
             remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
             add_filter('woocommerce_product_description_heading', '__return_empty_string');
@@ -544,7 +562,67 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		}
 
 
+		/**
+ * Remove reviews tab from accordion.
+ *
+ * @param array $tabs Tabs.
+ * @return array
+ */
+public function th_shop_mania_modify_product_tabs( $tabs ) {
 
+	if ( isset( $tabs['reviews'] ) ) {
+		unset( $tabs['reviews'] );
+	}
+
+	return $tabs;
+}
+
+/**
+ * Product Tabs Accordion.
+ *
+ * @return void
+ */
+public function th_shop_mania_product_tabs_accordion() {
+
+	$tabs = apply_filters(
+		'woocommerce_product_tabs',
+		array()
+	);
+
+	if ( empty( $tabs ) ) {
+		return;
+	}
+
+	echo '<div class="thsm-product-accordion">';
+
+	foreach ( $tabs as $key => $tab ) {
+
+		echo '<div class="thsm-accordion-item">';
+
+		echo '<button class="thsm-accordion-title" type="button">';
+
+		echo esc_html( $tab['title'] );
+
+		echo '</button>';
+
+		echo '<div class="thsm-accordion-content">';
+
+		if ( isset( $tab['callback'] ) ) {
+
+			call_user_func(
+				$tab['callback'],
+				$key,
+				$tab
+			);
+		}
+
+		echo '</div>';
+
+		echo '</div>';
+	}
+
+	echo '</div>';
+}
 		  /**
 		 * Single Product customization.
 		 *
