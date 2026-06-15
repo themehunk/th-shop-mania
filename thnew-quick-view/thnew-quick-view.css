@@ -2,7 +2,12 @@
   --qv-text-color: #7c7c7c;
   --qv-text-bold-color: #3e3e3e;
 }
+body.thnew-qv-open{
 
+    overflow:hidden;
+
+    touch-action:none;
+}
 .thnew-popup{
     position:fixed;
     inset:0;
@@ -15,6 +20,7 @@
     inset:0;
     background:rgba(0,0,0,.72);
     backdrop-filter:blur(4px);
+    cursor:url("../../svg/close.svg");
 }
 
 .thnew-popup .thnew-popup-wrapper{
@@ -689,7 +695,8 @@ SKELETON LOADER
     width:100%;
     aspect-ratio:1/1.15;
 
-    border-radius:14px;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
 
     margin-bottom:18px;
 }

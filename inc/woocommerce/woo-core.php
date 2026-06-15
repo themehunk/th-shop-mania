@@ -468,7 +468,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 				add_action(
 				'woocommerce_after_single_product_summary',
 				'comments_template',
-				108
+				9
 			);
 			}
             remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
@@ -557,6 +557,8 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 
 			add_action( 'woocommerce_single_product_summary',array( $this, 'th_shop_mania_show_brand_above_title' ),4);
 
+			add_filter( 'woocommerce_reviews_title', array( $this, 'th_shop_mania_reviews_title' ), 10, 3 );
+
 		
 		
 		}
@@ -622,6 +624,27 @@ public function th_shop_mania_product_tabs_accordion() {
 	}
 
 	echo '</div>';
+}
+
+/**
+ * Custom reviews heading.
+ *
+ * @param string     $title        Default title.
+ * @param int        $count        Review count.
+ * @param WC_Product $product      Product object.
+ * @return string
+ */
+public function th_shop_mania_reviews_title( $title, $count, $product ) {
+
+	if ( $count <= 0 ) {
+		return esc_html__( 'Customer Reviews', 'th-shop-mania' );
+	}
+
+	return sprintf(
+		/* translators: %s: Review count */
+		esc_html__( 'Customer Reviews (%s)', 'th-shop-mania' ),
+		number_format_i18n( $count )
+	);
 }
 		  /**
 		 * Single Product customization.

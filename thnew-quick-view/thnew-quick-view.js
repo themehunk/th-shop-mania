@@ -114,6 +114,10 @@
 
             self.$popup.fadeIn(200);
 
+            $('body').addClass(
+                'thnew-qv-open'
+            );
+
             $.ajax({
 
                 url: thnewQuickView.ajaxurl,
@@ -709,6 +713,10 @@ descriptionAccordion: function () {
          * Close Popup.
          */
         closePopup: function () {
+
+            $('body').removeClass(
+                'thnew-qv-open'
+            );
 
             this.$popup.fadeOut(200);
 
