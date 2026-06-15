@@ -636,12 +636,13 @@ public function th_shop_mania_product_tabs_accordion() {
  */
 public function th_shop_mania_reviews_title( $title, $count, $product ) {
 
-	if ( $count <= 0 ) {
-		return esc_html__( 'Customer Reviews', 'th-shop-mania' );
+	error_log( 'Review Filter Fired: ' . $count );
+
+	if ( 0 === (int) $count ) {
+		return esc_html__( 'Write a Product Review', 'th-shop-mania' );
 	}
 
 	return sprintf(
-		/* translators: %s: Review count */
 		esc_html__( 'Customer Reviews (%s)', 'th-shop-mania' ),
 		number_format_i18n( $count )
 	);
