@@ -636,7 +636,6 @@ public function th_shop_mania_product_tabs_accordion() {
  */
 public function th_shop_mania_reviews_title( $title, $count, $product ) {
 
-	error_log( 'Review Filter Fired: ' . $count );
 
 	if ( 0 === (int) $count ) {
 		return esc_html__( 'Write a Product Review', 'th-shop-mania' );
