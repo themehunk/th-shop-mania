@@ -22,6 +22,8 @@ $th_shop_mania_style.="#searchform [type='submit']:hover, .widget_product_search
 
 $th_shop_mania_style.="#move-to-top .th-mtt__ring--progress{stroke:{$th_shop_mania_theme_clr};}";
 
+$th_shop_mania_style .= '.thnew-popup-overlay{cursor:url("' . TH_SHOP_MANIA_THEME_URI . '/svg/close.svg"),pointer;}';
+
 $th_shop_mania_style.=".loader{
 	border-right-color:{$th_shop_mania_theme_clr};
 	border-bottom-color:{$th_shop_mania_theme_clr};
