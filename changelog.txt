@@ -1,6 +1,7 @@
 10-06-2026 = = Version 1.8.7 =
 * Update: New quick view added.
 * Update: Single page style updated.
+* Update: Old quick view removed.
 
 22-05-2026 = = Version 1.8.6 =
 * Update: Theme tested with WordPress 7.0.
