@@ -40,7 +40,6 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		 */
 		public function __construct(){
 		    add_action( 'wp_enqueue_scripts',array( $this, 'th_shop_mania_add_scripts' ));	
-		    add_action( 'wp_enqueue_scripts',array( $this, 'th_shop_mania_add_style' ));	
 
 		    add_filter( 'post_class', array( $this, 'th_shop_mania_post_class' ) );
 		   
@@ -65,7 +64,6 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
             
 			add_action( 'wp_ajax_nopriv_th_shop_mania_pagination_infinite', array( $this, 'th_shop_mania_pagination_infinite' ) );
 			// // Custom Template Quick View.
-			$this->th_shop_mania_quick_view_content_actions();
 			
 		   add_action( 'wp', array( $this, 'th_shop_mania_single_product_customization' ) );
 		   add_action('th_shop_mania_woo_quick_view_product_summary', array( $this, 'th_shop_mania_woo_single_product_content_structure' ), 10, 1 );			
@@ -273,7 +271,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 				add_filter( 'open_theme_js_localize', array( $this, 'th_shop_mania_th_shop_mania_qv_js_localize' ) );
 				add_action( 'quickview', array( $this,'th_shop_mania_add_quick_view_on_img' ),15);
 				// load modal template.
-				add_action( 'wp_footer', array( $this, 'th_shop_mania_quick_view_html' ) );
+				
 			}
 		}
 		/**
@@ -282,15 +280,9 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 		function th_shop_mania_add_scripts(){
 		   wp_enqueue_script( 'th-shop-mania-woocommerce-js', TH_SHOP_MANIA_THEME_URI .'inc/woocommerce/js/woocommerce.js', array( 'jquery' ), '2.0.0', array('in_footer' => true,'strategy'  => 'defer',) );
            
-           wp_enqueue_script('open-quick-view', TH_SHOP_MANIA_THEME_URI.'inc/woocommerce/quick-view/js/quick-view.js', array( 'jquery' ), '', array('in_footer' => true,'strategy'  => 'defer',) );
-           wp_localize_script('open-quick-view', 'thlocalizeqv', array('ajaxurl' => esc_url(admin_url( 'admin-ajax.php' ))));      
+                 
 		   }
-		/**
-		 * Add Style
-		 */
-		function th_shop_mania_add_style(){
-        wp_enqueue_style( 'open-quick-view', TH_SHOP_MANIA_THEME_URI. 'inc/woocommerce/quick-view/css/quick-view.css', null, '');
-		}
+		
         /**
 		 * Quick view localize.
 		 *
@@ -334,13 +326,7 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			// $button = apply_filters( 'open_woo_add_quick_view_text_html', $button, $label, $product );
 			// echo $button;
 		}
-		/**
-		 * Quick view html
-		 */
-		function th_shop_mania_quick_view_html(){
-			$this->th_shop_mania_quick_view_dependent_data();
-			require_once TH_SHOP_MANIA_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-modal.php';
-		}
+		
 		/**
 		 * Quick view dependent data
 		 */
@@ -362,26 +348,17 @@ if ( ! class_exists( 'Th_Shop_Mania_Pro_Woocommerce_Ext' ) ) :
 			remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
 			ob_start();
 			// load content template.
-			require_once TH_SHOP_MANIA_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product.php';
+			
 			// echo ob_get_clean();
 
     		echo ob_get_clean(); // Proper escaping applied
 			die();
 		}
-		/**
-		 * Quick view actions
-		 */
-		public function th_shop_mania_quick_view_content_actions(){
-			// Image.
-			add_action('th_shop_mania_woo_qv_product_image', 'woocommerce_show_product_sale_flash', 10 );
-			add_action('th_shop_mania_woo_qv_product_image', array( $this, 'th_shop_mania_qv_product_images_markup' ), 20 );
-		} 		
+		 		
 		/**
 		 * Footer markup.
 		 */
-		function th_shop_mania_qv_product_images_markup(){
-           require_once TH_SHOP_MANIA_THEME_DIR . 'inc/woocommerce/quick-view/quick-view-product-image.php';
-		}
+		
         function th_shop_mania_woo_single_product_content_structure(){
 							/**
 							 * Add Product Title on single product page for all products.
@@ -636,12 +613,12 @@ public function th_shop_mania_product_tabs_accordion() {
  */
 public function th_shop_mania_reviews_title( $title, $count, $product ) {
 
-	if ( $count <= 0 ) {
-		return esc_html__( 'Customer Reviews', 'th-shop-mania' );
+
+	if ( 0 === (int) $count ) {
+		return esc_html__( 'Write a Product Review', 'th-shop-mania' );
 	}
 
 	return sprintf(
-		/* translators: %s: Review count */
 		esc_html__( 'Customer Reviews (%s)', 'th-shop-mania' ),
 		number_format_i18n( $count )
 	);
