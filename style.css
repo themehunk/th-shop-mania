@@ -3176,7 +3176,7 @@ text-align: center;
 .thunk-product a.th-product-compare-btn{
   display: inline-flex;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 23px;
   font-weight: 500;
 }
 .thunk-product a.add_to_wishlist *,
@@ -4120,6 +4120,9 @@ margin-bottom:20px;
     font-size: 16px;
     letter-spacing: 0;
 }
+.price del{
+  color: #7a7a7a;
+}
 .woocommerce div.product .woocommerce-tabs ul.tabs li{
     padding:0;
   }
@@ -4810,8 +4813,8 @@ color: inherit;
 }
 .verticalslide-gallery.single-product ul.flex-direction-nav,
 .verticallightboxslide-gallery.single-product ul.flex-direction-nav{
-  left: 21%; 
-  right: 0;
+  left: 16%; 
+  right: 2%;
   width: initial;
 }
 .woocommerce.verticalslide-gallery .flex-control-thumbs button.th-icon,
@@ -4846,7 +4849,7 @@ color: inherit;
     opacity: 0;
   }
   .single-product.grid-gallery ul.flex-direction-nav{
-  top: 252px;
+  top: 299px;
 }
   .single-product .woocommerce-product-gallery:hover ul.flex-direction-nav {
     opacity: 1;
@@ -4943,9 +4946,7 @@ color: inherit;
   height: 50px;
   justify-content: space-around;
 }
-.single-product.woocommerce div.product .left-side div.images a.woocommerce-product-gallery__trigger,
-.verticalslide-gallery.single-product .left-side ul.flex-direction-nav, 
-.verticallightboxslide-gallery.single-product .left-side ul.flex-direction-nav{
+.single-product.woocommerce div.product .left-side div.images a.woocommerce-product-gallery__trigger{
   right: 40px;
   top: 9px;
 }
@@ -9668,12 +9669,14 @@ font-size:12px;
 }
 .thunk-product .thw-add-to-wishlist-button,
 .thunk-product a.add_to_wishlist, .thunk-product .yith-wcwl-wishlistexistsbrowse, .thunk-product .thunk-wishlist-inner, .thunk-product a.th-product-compare-btn{
-  font-size: 10px;
+  font-size: 9px;
   margin-left: 0;
   margin-right: 0;
+  display: flex;
 }
 .thunk-product .thunk-wishlist, .thunk-product .thunk-compare{
   margin-left: 5px;
+  margin-top: 9px;
 }
 .woocommerce #content div.product .left-side div.images,
 .woocommerce #content div.product .right-side div.summary,
