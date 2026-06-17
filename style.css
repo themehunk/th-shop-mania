@@ -4218,6 +4218,9 @@ text-align:left;
   width: 50%;
   margin: 50px auto;
 }
+.woocommerce.single-product .woocommerce-Reviews p.stars a{
+  font-size: 16px;
+}
 section.related.products h2,section.upsells.products h2,
 .thwbt-wrapper > h2{
 margin-bottom:30px;
@@ -8439,7 +8442,7 @@ header a.whishlist{
 .page-head{
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 12px;
+  padding-bottom: 20px;
 }
 .container > .content-wrap{
   padding-top: 15px;
@@ -9664,15 +9667,19 @@ font-size:12px;
 }
 .single-product .left-side{
   position: relative;
-  margin-bottom: 45px;
   top: initial;
+}
+.ths-entry-summary{
+  margin-top: 25px;
 }
 .thunk-product .thw-add-to-wishlist-button,
 .thunk-product a.add_to_wishlist, .thunk-product .yith-wcwl-wishlistexistsbrowse, .thunk-product .thunk-wishlist-inner, .thunk-product a.th-product-compare-btn{
   font-size: 9px;
-  margin-left: 0;
-  margin-right: 0;
-  display: flex;
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        color: #202020;
+        font-weight: 700 !important;
 }
 .thunk-product .thunk-wishlist, .thunk-product .thunk-compare{
   margin-left: 5px;
@@ -9691,12 +9698,18 @@ font-size:12px;
 .single-product .woocommerce-Reviews{
   width: 100%;
 }
+.th-single-twocolumn.single-product .woocommerce-Reviews{
+  margin-top: 0;
+}
 /* Checkout page */
 .page-head h1{
   width: initial;
   font-size: 18px;
   line-height: 25px;
   margin-bottom: 9px;
+}
+.th-single-twocolumn.single-product .woocommerce-Reviews{
+  margin-top: 9px;
 }
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info{
   width: 100%;
