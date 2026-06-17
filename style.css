@@ -9681,6 +9681,9 @@ font-size:12px;
         color: #202020;
         font-weight: 700 !important;
 }
+.woocommerce #reviews #comments h2{
+  padding-top: 18px;
+}
 .thunk-product .thunk-wishlist, .thunk-product .thunk-compare{
   margin-left: 5px;
   margin-top: 9px;
