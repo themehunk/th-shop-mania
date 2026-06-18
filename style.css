@@ -3852,11 +3852,11 @@ section.upsells.products h2,
     font-size: clamp(1.5rem, 3vw, 1.625rem);
     line-height: 25.71px;
       margin-bottom: 18px !important;
-      margin-top: 0;
+      margin-top: 10px;
 }
 .summary.entry-summary p,
 .woocommerce div.product .woocommerce-tabs .panel p{
-      font-size: 14px;
+      font-size: 15px;
     line-height: 28px;
     font-weight: 400;
     letter-spacing: .06px;
@@ -3942,7 +3942,7 @@ section.upsells.products h2,
 .single-product .meta-label,
 .single-product .social-share span{
  font-weight: 400;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.5rem;
     min-width: 85px;
 }
@@ -3950,7 +3950,7 @@ section.upsells.products h2,
 .single-product .meta-value,
 .single-product .meta-value *{
     color: #7a7a7a;
-    font-size: 13px !important;
+    font-size: 15px !important;
   }
 .single-product.woocommerce ul.products li.product .woocommerce-loop-product__link, 
 .single-product.woocommerce-page ul.products li.product .woocommerce-loop-product__link{
@@ -8429,7 +8429,9 @@ header a.whishlist{
 .thunk-single-product-summary-wrap .right-side .summary.entry-summary .thsm-product-accordion .thsm-accordion-content table:last-child{
   margin-bottom:0;
 }
-
+.th-single-standard .woocommerce-Reviews-title{
+  display: none;
+}
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 .main-area{
@@ -8726,8 +8728,7 @@ margin-right:0;
   height: 35px;
   line-height: 35px;
 }
-.woocommerce div.product form.cart .variations select,
-.woocommerce.th-single-twocolumn div.product .right-side div.summary .th-shop-mania-quantity{
+.woocommerce div.product form.cart .variations select{
   height: 35px;
   line-height: 35px;
 }
@@ -9879,6 +9880,18 @@ font-size:12px;
 .responsive-main-header .thunk-icon-market > *{
   margin-left: 9px;
 }
+.summary.entry-summary p,
+.woocommerce div.product .woocommerce-tabs .panel p{
+  font-size: 14px;
+}
+.single-product .meta-label,
+.single-product .social-share span{
+  font-size: 13px;
+}
+.single-product .meta-value,
+.single-product .meta-value *{
+  font-size: 13px!important;
+}
 }
 @media screen and (max-width: 390px){
 .responsive-main-header .main-header-col1{
@@ -9890,5 +9903,8 @@ font-size:12px;
 }
 .single-product div.product form.cart button.plus, .single-product div.product form.cart button.minus{
   margin: 0 2px!important;
+}
+.woocommerce #content div.product div.summary p.price{
+  margin-bottom: 15px!important;
 }
 }
