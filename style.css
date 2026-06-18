@@ -4906,7 +4906,7 @@ color: inherit;
   float: left;
 }
 .single-product .left-side{
-  width: 53%;
+  width: 49%;
   position: sticky;
   top: 45px;
   float: left;
@@ -4960,7 +4960,7 @@ color: inherit;
   align-items: flex-start;
 }
 .woocommerce .right-side{
-  width: 43%;
+  width: 49%;
   float: right;
   display: flex;
   flex-wrap: wrap;
@@ -9674,11 +9674,11 @@ font-size:12px;
 }
 .thunk-product .thw-add-to-wishlist-button,
 .thunk-product a.add_to_wishlist, .thunk-product .yith-wcwl-wishlistexistsbrowse, .thunk-product .thunk-wishlist-inner, .thunk-product a.th-product-compare-btn{
-  font-size: 9px;
+      font-size: 9px;
         margin-left: 0;
         margin-right: 0;
         display: flex;
-        color: #202020;
+        color: #7c7c7c !important;
         font-weight: 700 !important;
 }
 .woocommerce #reviews #comments h2{
