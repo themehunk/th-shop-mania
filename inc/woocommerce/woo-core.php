@@ -862,6 +862,25 @@ function th_shop_mania_show_brand_above_title() {
 			</div>
 		<?php endif; ?>
 
+					<?php
+			$tag_list = wc_get_product_tag_list(
+				$product->get_id(),
+				', '
+			);
+
+			if ( $tag_list ) :
+			?>
+				<div class="custom-meta-row">
+					<span class="meta-label">
+						<?php esc_html_e( 'Tags:', 'th-shop-mania' ); ?>
+					</span>
+
+					<span class="meta-value">
+						<?php echo wp_kses_post( $tag_list ); ?>
+					</span>
+				</div>
+			<?php endif; ?>
+
 				<?php
 				$stock_html = wc_get_stock_html( $product );
 
