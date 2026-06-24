@@ -1066,3 +1066,8 @@ FLEX DOTS
     font-size: 15px;
     line-height: 18px;
 }
+
+.th-variation-swatches .thnew-popup-content .thnew-qv-right .variable-items-wrapper .variable-item:not(.disabled)[data-thvstooltip]::before,
+.th-variation-swatches .thnew-popup-content .thnew-qv-right .variable-items-wrapper .variable-item:not(.disabled)[data-thvstooltip]::after{
+    left: 92%;
+}
