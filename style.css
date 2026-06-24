@@ -4022,11 +4022,6 @@ section.upsells.products h2,
   width: 100%;
   position: relative;
 }
-  .entry-summary .reset_variations{
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid #e5e5e5;
-    }
     .entry-summary .thunk-compare{
       width: initial;
       margin: 0;
@@ -8055,10 +8050,6 @@ h2.wc-block-mini-cart__title{
 }
 .woocommerce div.product form.cart .reset_variations{
   visibility: visible!important;
-  font-size: 1em;
-  font-weight: 500;
-  text-align: right;
-  opacity: .5;
 }
 .woocommerce div.product form.cart .reset_variations:hover{
   opacity: 1;

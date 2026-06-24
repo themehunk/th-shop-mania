@@ -260,9 +260,6 @@ VARIATIONS
     border:none;
     margin-top: 9px;
 }
-.woo-selected-variation-item-name {
- color: var(--qv-text-color);
-}
 
 .thnew-qv-variation-wrap tr{
        display: flex;
@@ -271,17 +268,15 @@ VARIATIONS
         width: 70%;
 }
 
-.th-variation-swatches.woocommerce a.reset_variations{
-    font-size: 14px;
-    color: #474747;
-}
-
 .thnew-qv-variation-wrap td{
     padding:0;
     border:none;
     position: relative;
 }
 
+.thnew-qv-variation-wrap tr .label{
+    margin-bottom: 9px;
+}
 .thnew-qv-variation-wrap label{
     display:block;
     margin-bottom: 0;
@@ -310,13 +305,6 @@ VARIATIONS
     background-position: right 21px center;
     background-size: 12px;
      padding-right: 30px !important;
-}
-
-.thnew-qv-variation-wrap .reset_variations{
-    position: absolute;
-    top: 12px;
-    right: -50px;
-    margin: 0 !important;
 }
 
 /* IMPORTANT */
