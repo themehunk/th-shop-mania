@@ -3,6 +3,7 @@
 * Update: Single page style updated.
 * Update: Old quick view removed.
 * Update: Responsive style updated.
+* Update: Quick view variation swatches style modified.
 
 22-05-2026 = = Version 1.8.6 =
 * Update: Theme tested with WordPress 7.0.
