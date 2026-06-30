@@ -246,14 +246,6 @@ VARIATIONS
     padding: 0;
     border: 0;
 }
-.thnew-qv-variation-wrap .label label{
-    border: 0;
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    height: 100%;
-}
 .thnew-qv-variation-wrap table{
     width:100%;
     margin:0;
@@ -276,14 +268,6 @@ VARIATIONS
 
 .thnew-qv-variation-wrap tr .label{
     margin-bottom: 9px;
-}
-.thnew-qv-variation-wrap label{
-    display:block;
-    margin-bottom: 0;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:.08em;
-    text-transform:uppercase;
 }
 
 .thnew-qv-variation-wrap select{

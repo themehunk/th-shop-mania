@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.8.7
+Version: 1.8.8
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 5.6
@@ -1536,28 +1536,8 @@ header .taiowc-icon .th-icon{
 .thunk-icon-market .mega-menu-wrap{
   flex-grow: 2;
 }
-/* taiowc css   */
-.main-header-col3 .cart-count-item,
-.sticky-header .cart-count-item{
-    right: initial;
-    line-height: 1rem;
-    left: 14px;
-    top: -7px;
-    background: #999;
-    font-size: 0.65rem;
-    padding: 0;
-    border-radius: 9999px;
-    width: 1.125rem;
-    height: 1.125rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    box-shadow: 0 0 0 2px #FFFFFF;
-}
-.main-header-col3 .taiowc-cart-item{
-  padding: 0;
-}
+
+
 .theme-th-shop-mania .taiowc-fixed-cart .taiowc-cart-item, 
 .theme-th-shop-mania .taiowcp-fixed-cart .taiowcp-cart-item {
     /*padding: initial;
@@ -8048,9 +8028,6 @@ h2.wc-block-mini-cart__title{
   margin-left: 0!important;
   margin-bottom: 15px;
 }
-.woocommerce div.product form.cart .reset_variations{
-  visibility: visible!important;
-}
 .woocommerce div.product form.cart .reset_variations:hover{
   opacity: 1;
 }
@@ -8280,10 +8257,10 @@ h2.wc-block-mini-cart__title{
   top: initial!important;
   bottom: initial!important;
 }
-header .taiowcp-icon,
+/*header .taiowcp-icon,
 header .taiowcp-content .taiowcp-total{
   color: inherit;
-}
+}*/
 header .taiowcp-wrap{
   margin-left: -9px;
 }
@@ -9882,6 +9859,9 @@ font-size:12px;
 .single-product .meta-value,
 .single-product .meta-value *{
   font-size: 13px!important;
+}
+.th-variation-swatches .thunk-product-content .thvs-archive-variation-wrapper .variable-items-wrapper .variable-item.button-variable-item{
+  max-width: 49px;
 }
 }
 @media screen and (max-width: 390px){
