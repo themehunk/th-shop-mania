@@ -1,3 +1,6 @@
+08-07-2026 = = Version 1.8.9 =
+* Update: Quick View Variation Style improved.
+
 30-06-2026 = = Version 1.8.8 =
 * Update: Style improved.
 

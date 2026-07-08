@@ -2,6 +2,9 @@
   --qv-text-color: #7c7c7c;
   --qv-text-bold-color: #3e3e3e;
 }
+*{
+    box-sizing: border-box;
+}
 body.thnew-qv-open{
 
     overflow:hidden;
@@ -123,7 +126,8 @@ GALLERY
 .thnew-qv-gallery img{
     width:100%;
     display:block;
-    object-fit:cover;
+    object-fit:contain;
+    object-position: center;
     background: #FCFCFC;
 }
 
@@ -368,6 +372,7 @@ CUSTOM CART
     align-items: center;
     justify-content: center;
     gap: 9px;
+    box-sizing: border-box;
 }
 
 .thnew-qv-add-to-cart:hover{
@@ -901,7 +906,9 @@ font-size: 13px;
     padding: 0!important;
     margin: 0!important;
 }
-
+.thnew-qv-variation-wrap .variable-items-wrapper.th-variation-slide-active{
+    overflow: initial!important;
+}
 /*=====================================
 ACCORDION
 =====================================*/
@@ -1054,4 +1061,10 @@ FLEX DOTS
 .th-variation-swatches .thnew-popup-content .thnew-qv-right .variable-items-wrapper .variable-item:not(.disabled)[data-thvstooltip]::before,
 .th-variation-swatches .thnew-popup-content .thnew-qv-right .variable-items-wrapper .variable-item:not(.disabled)[data-thvstooltip]::after{
     left: 92%;
+}
+.th-variation-swatches .thnew-popup-content .thnew-qv-right .variable-items-wrapper .tooltip-image{
+    left: 54px!important;
+}
+.th-variation-swatches .thnew-popup-content .thnew-qv-right .variable-items-wrapper .variable-item-contents .tooltip-image:after{
+    left: 29px!important;
 }
