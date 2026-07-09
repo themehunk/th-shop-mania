@@ -28,6 +28,7 @@ get_template_part( 'inc/performance');
 get_template_part( 'inc/woocommerce/woo-core');
 get_template_part( 'inc/woocommerce/woo-function');
 get_template_part( 'inc/woocommerce/woo-login-extend');
+get_template_part( 'thnew-quick-view/thnew-quick-view');
  //theme-option
 get_template_part( 'lib/th-option/th-option');
 //CHILD THEME 
@@ -54,6 +55,3 @@ get_template_part('customizer/customizer');
 if (is_admin()) {
     get_template_part('lib/notification/notify');
 }
-
-
-require_once get_template_directory() . '/thnew-quick-view/thnew-quick-view.php';
