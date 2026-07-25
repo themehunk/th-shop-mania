@@ -3752,7 +3752,6 @@ text-align:left;
   width: initial;
 }
 .woocommerce div.product div.images .flex-control-thumbs li img {
-    width: initial;
     border: 1px solid #dddddd;
     max-width: 100%;
     margin: 0 auto;
@@ -8850,7 +8849,7 @@ h5 {
     width: 100%;
     float: right;
 }
-.woocommerce div.product div.images .flex-control-thumbs li, .woocommerce div.product div.images .flex-control-thumbs li {
+.woocommerce div.product div.images .flex-control-thumbs li {
     margin-right: 1em;
     margin-bottom: 1em;
     margin-top:1em;
@@ -8858,7 +8857,7 @@ h5 {
 .woocommerce div.product div.images .flex-control-thumbs, .woocommerce div.product div.images .flex-control-thumbs{
   width:100%;
 }
-.woocommerce div.product div.images .flex-control-thumbs li, .woocommerce div.product div.images .flex-control-thumbs li {
+.woocommerce div.product div.images .flex-control-thumbs li {
     width: 25%;
 }
 .woocommerce #content div.product div.images, 
@@ -9430,11 +9429,10 @@ article.thunk-article, article.thunk-post-article, .single article, .no-results.
 /*.thunk-single-product-summary-wrap{
   display: block;
 }*/
-.woocommerce div.product div.images .flex-control-thumbs li,
 .woocommerce div.product div.images .flex-control-thumbs li {
     margin-right:0px;
-    margin-bottom:15px;
-    margin-top:7.5px;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 /* Vertical Gallery Slider */
 .woocommerce .slick-track{
