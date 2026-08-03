@@ -40,10 +40,6 @@ class THNEW_Quick_View {
 	 */
 	public function enqueue_assets() {
 
-		if ( ! class_exists( 'WooCommerce' ) ) {
-			return;
-		}
-
 		wp_enqueue_style( 'flexslider' );
 
 		wp_enqueue_script( 'flexslider' );

@@ -28,7 +28,9 @@ get_template_part( 'inc/performance');
 get_template_part( 'inc/woocommerce/woo-core');
 get_template_part( 'inc/woocommerce/woo-function');
 get_template_part( 'inc/woocommerce/woo-login-extend');
+if ( class_exists( 'WooCommerce' ) ) {
 get_template_part( 'thnew-quick-view/thnew-quick-view');
+}
  //theme-option
 get_template_part( 'lib/th-option/th-option');
 //CHILD THEME 

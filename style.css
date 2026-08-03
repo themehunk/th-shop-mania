@@ -8399,6 +8399,9 @@ header a.whishlist{
 .th-single-standard .woocommerce-Reviews-title{
   display: none;
 }
+.thnew-popup{
+    display:none;
+}
 @media screen and (max-width: 1024px){
   .thsm-header .th-icon,
 .main-area{
