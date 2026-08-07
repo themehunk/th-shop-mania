@@ -32,9 +32,7 @@ Yes, this theme is tested with latest version of WordPress, you can use it for y
  
 License for images:
 == Screenshots ==
-https://www.pexels.com/photo/man-sitting-holding-white-desk-globe-1036628/
-https://www.pexels.com/photo/woman-wearing-white-long-sleeve-dress-with-curly-hair-7304341/
-https://images.pexels.com/photos/8562440/pexels-photo-8562440.jpeg
+All images are self created.
 
 == Theme License & Copyright ==
 Th Shop Mania is distributed under the terms of the GNU GPL
