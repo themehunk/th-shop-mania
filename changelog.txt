@@ -1,4 +1,4 @@
-07-08-2026 = = Version 1.9.0 =
+07-08-2026 = = Version 1.8.10 =
 * Update: Screenshot Updated.
 
 25-07-2026 = = Version 1.8.9 =
