@@ -1,3 +1,7 @@
+07-08-2026 = = Version 1.8.10 =
+* Update: Screenshot Updated.
+* Update: Related product add to cart button not working issue resolved.
+
 25-07-2026 = = Version 1.8.9 =
 * Update: Style improved.
 
