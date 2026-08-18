@@ -273,135 +273,172 @@
         /**
          * Variation Form.
          */
-        initVariationForm: function () {
+        /**
+ * Variation Form.
+ */
+initVariationForm: function () {
 
-            if (
-                $('.variations_form').length
+    $('.thnew-popup .variations_form').each(
+        function () {
+
+            $(this)
+                .wc_variation_form();
+
+        }
+    );
+
+},
+
+
+       
+        /**
+ * Variation Events.
+ */
+initVariationEvents: function () {
+
+    $(document)
+        .off(
+            'found_variation.thQuickView',
+            '.thnew-popup .variations_form'
+        )
+        .on(
+            'found_variation.thQuickView',
+            '.thnew-popup .variations_form',
+            function (
+                event,
+                variation
             ) {
 
-                $('.variations_form').each(
-                    function () {
+                const $form =
+                    $(this);
 
-                        $(this)
-                            .wc_variation_form();
-                    }
-                );
+                const $qv =
+                    $form.closest(
+                        '.thnew-qv-grid'
+                    );
 
-                $('#th-custom-add-to-cart')
-                    .addClass('disabled')
-                    .prop('disabled', true);
-            }
-        },
+                const $button =
+                    $qv.find(
+                        '.thnew-qv-add-to-cart'
+                    );
 
-        /**
-         * Variation Events.
-         */
-        initVariationEvents: function () {
+                /*
+                 * Enable custom Add To Cart.
+                 */
+                $button
+                    .attr(
+                        'data-variation_id',
+                        variation.variation_id
+                    )
+                    .removeClass('disabled')
+                    .prop(
+                        'disabled',
+                        false
+                    );
 
-            let defaultPrice =
-                $('#th-dynamic-price').html();
+                /*
+                 * Price.
+                 */
+                if (
+                    variation.price_html
+                ) {
 
-            let defaultDesc =
-                $('#th-dynamic-desc').html();
-
-            $(document)
-                .off('found_variation')
-                .on(
-                    'found_variation',
-                    '.variations_form',
-                    function (
-                        event,
-                        variation
-                    ) {
-
-                        $('#th-custom-add-to-cart')
-                            .attr(
-                                'data-variation_id',
-                                variation.variation_id
-                            )
-                            .removeClass('disabled')
-                            .prop(
-                                'disabled',
-                                false
-                            );
-
-                        /**
-                         * Price.
-                         */
-                        if (
+                    $qv
+                        .find(
+                            '#th-dynamic-price'
+                        )
+                        .html(
                             variation.price_html
-                        ) {
+                        );
+                }
 
-                            $('#th-dynamic-price')
-                                .html(
-                                    variation.price_html
-                                );
-                        }
+                /*
+                 * Description.
+                 */
+                if (
+                    variation.variation_description
+                ) {
 
-                        /**
-                         * Description.
-                         */
-                        if (
+                    $qv
+                        .find(
+                            '#th-dynamic-desc'
+                        )
+                        .html(
                             variation.variation_description
-                        ) {
+                        );
 
-                            $('#th-dynamic-desc')
-                                .html(
-                                    variation.variation_description
-                                );
+                } else {
 
-                        } else {
+                    $qv
+                        .find(
+                            '#th-dynamic-desc'
+                        )
+                        .html(
+                            ''
+                        );
+                }
 
-                            $('#th-dynamic-desc')
-                                .html(
-                                    defaultDesc
-                                );
-                        }
+                /*
+                 * Image.
+                 */
+                if (
+                    variation.image &&
+                    variation.image.src
+                ) {
 
-                        /**
-                         * Image.
-                         */
-                        if (
-                            variation.image &&
+                    $qv
+                        .find(
+                            '.th-gallery-image'
+                        )
+                        .first()
+                        .attr(
+                            'src',
                             variation.image.src
-                        ) {
+                        );
+                }
 
-                            $('.th-gallery-image')
-                                .first()
-                                .attr(
-                                    'src',
-                                    variation.image.src
-                                );
-                        }
-                    }
-                );
+            }
+        );
 
-            $(document)
-                .off('reset_data')
-                .on(
-                    'reset_data',
-                    '.variations_form',
-                    function () {
 
-                        $('#th-custom-add-to-cart')
-                            .attr(
-                                'data-variation_id',
-                                0
-                            )
-                            .addClass('disabled')
-                            .prop(
-                                'disabled',
-                                true
-                            );
+    /*
+     * Reset Variation.
+     */
+    $(document)
+        .off(
+            'reset_data.thQuickView',
+            '.thnew-popup .variations_form'
+        )
+        .on(
+            'reset_data.thQuickView',
+            '.thnew-popup .variations_form',
+            function () {
 
-                        $('#th-dynamic-price')
-                            .html(defaultPrice);
+                const $form =
+                    $(this);
 
-                        $('#th-dynamic-desc')
-                            .html(defaultDesc);
-                    }
-                );
-        },
+                const $qv =
+                    $form.closest(
+                        '.thnew-qv-grid'
+                    );
+
+                $qv
+                    .find(
+                        '.thnew-qv-add-to-cart'
+                    )
+                    .attr(
+                        'data-variation_id',
+                        0
+                    )
+                    .addClass('disabled')
+                    .prop(
+                        'disabled',
+                        true
+                    );
+
+            }
+        );
+},
 
         /**
          * Quantity Plus.

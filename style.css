@@ -4895,9 +4895,6 @@ color: inherit;
   object-fit: cover;
   height: auto;
 }
-.woocommerce #content div.product .left-side .woocommerce-product-gallery__trigger{
-  width: initial!important;
-}
 .right-side .woocommerce-tabs.wc-tabs-wrapper{
 /*  border: 1px solid #e1e3e4;*/
   padding: 20px 0;
