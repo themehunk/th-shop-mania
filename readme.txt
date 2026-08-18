@@ -3,7 +3,7 @@ Contributors: ThemeHunk
 Tags: custom-logo, block-patterns, editor-style, e-commerce, blog, grid-layout, featured-images, two columns, one-column, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, , custom-menu, RTL-language-support, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready.
 Requires at least: WordPress 5.5
 Requires PHP: 5.6
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 1.9.0
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
