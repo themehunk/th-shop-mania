@@ -381,21 +381,18 @@ initVariationEvents: function () {
                 /*
                  * Image.
                  */
-                if (
-                    variation.image &&
-                    variation.image.src
-                ) {
+                            if (
+                variation.image &&
+                variation.image.src
+            ) {
 
-                    $qv
-                        .find(
-                            '.th-gallery-image'
-                        )
-                        .first()
-                        .attr(
-                            'src',
-                            variation.image.src
-                        );
-                }
+                $qv
+                    .find('.flex-active-slide .th-gallery-image')
+                    .attr(
+                        'src',
+                        variation.image.src
+                    );
+            }
 
             }
         );
