@@ -4,9 +4,9 @@ Theme URI: https://themehunk.com/th-shop-mania/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Shop Mania is a modern, lightweight WooCommerce WordPress theme built for speed, flexibility, and seamless user experience. Designed with SEO optimization and AJAX technology, it ensures fast loading times and smooth, dynamic shopping without page reloads — keeping your customers engaged and boosting conversions.Compatible with page builders such as Elementor, and Gutenberg, Shop Mania is ideal for creating versatile online stores across various industries: electronics, fashion, furniture, apparel, sports gear, jewelry, cosmetics, multi-vendor marketplaces, health products, food, automotive parts, organic goods, and more.This theme boosts performance through advanced CSS variable styling and server optimization, while offering deep WooCommerce integration and support for powerful plugins. Discover everything Shop Mania has to offer and explore our powerful premium version at  https://themehunk.com/th-shop-mania
-Version: 1.8.10
+Version: 1.8.11
 Requires at least: 5.5
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -6456,10 +6456,10 @@ div.product.th-shop-mania-woo-hover-zoom .thunk-product:hover img  {
     left: 0;
     opacity: 1;
     filter: alpha(opacity=100);
-    -webkit-transform: translate(-100%, 0px);
-    -ms-transform: translate(-100%, 0px);
-    -o-transform: translate(-100%, 0px);
-    transform: translate(-100%, 0px);
+    -webkit-transform: translate(-102%, 0px);
+    -ms-transform: translate(-102%, 0px);
+    -o-transform: translate(-102%, 0px);
+    transform: translate(-102%, 0px);
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
@@ -6989,13 +6989,20 @@ border-color: #0177B5;
   
   .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
     justify-content: center;
   }
+  .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title .price{
+    width: 100%;
+  }
   .woocommerce .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title > *{
     margin: 0;
+  }
+   .woocommerce .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-price-title > .star-rating{
+    margin-bottom: 9px;
   }
   .th-shop-mania-shop-page-layout-3 .th_shop_mania-shop-product-content{
     text-align: center;
@@ -9001,6 +9008,9 @@ width:50%;
 }
 .woocommerce div.product form.cart{
   width: initial;
+}
+.th-shop-mania-shop-page-layout-5 .th_shop_mania-product-buttons > *{
+  margin: 0 2px;
 }
 }
 @media screen and (max-width: 767px){
