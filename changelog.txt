@@ -1,4 +1,4 @@
-19-08-2026 = = Version 1.8.11 =
+19-08-2026 = = Version 1.9.0 =
 * Update: Varitaion image not changing in quick view issue resolved.
 * Update: Shop page product hover image border issue resolved.
 * Update: Style Improved.
