@@ -1,3 +1,7 @@
+22-08-2026 = = Version 1.9.1 =
+* Update: Keyboard Navigation improved.
+* Update: Text overflowing container isssue resolved.
+
 19-08-2026 = = Version 1.9.0 =
 * Update: Varitaion image not changing in quick view issue resolved.
 * Update: Shop page product hover image border issue resolved.
