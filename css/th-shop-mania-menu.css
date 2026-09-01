@@ -534,6 +534,12 @@ background: rgba(16,18,19,.95);
     display: block;
         text-align: center;
 }
+.mobile-nav-tabs a:focus{
+    outline-offset: -5px;
+}
+.menu-close-btn:focus{
+    outline-offset: -2px;
+}
 .mobile-nav-tabs ul {
     display: -ms-flexbox;
     display: flex;

@@ -195,14 +195,33 @@
                        th_shop_mania_menu.modalMenu.init(); 
                     });
                     //ToggleBtn main menu Click
-                    $('#menu-btn,#mob-menu-btn').click(function (e){
-                       e.preventDefault();
-                       $('body').addClass('mobile-menu-active');
-                       $('#th-shop-mania-menu').removeClass('hide-menu');
-                       $('.sider.above').addClass('th-shop-mania-menu-hide');  
-                       $('.sider.main').removeClass('th-shop-mania-menu-hide');
-                       th_shop_mania_menu.modalMenu.init();     
-                    });
+                    $('#menu-btn,#mob-menu-btn').on('click', function (e) {
+
+                    e.preventDefault();
+
+                    $('body').addClass('mobile-menu-active');
+
+                    $('#th-shop-mania-menu').removeClass('hide-menu');
+
+                    $('.sider.above').addClass('th-shop-mania-menu-hide');
+
+                    $('.sider.main').removeClass('th-shop-mania-menu-hide');
+
+                    // First focusable element.
+                    var closeButton = document.querySelector(
+                        '.mobile-nav-bar.sider.main .menu-close-btn'
+                    );
+
+                    if (closeButton) {
+                        closeButton.setAttribute('tabindex', '0');
+
+                        requestAnimationFrame(function () {
+                            closeButton.focus();
+                        });
+                    }
+
+                    th_shop_mania_menu.modalMenu.init();
+                });
                      
                     //sticky
                     $('#menu-btn-stk').click(function (e){
