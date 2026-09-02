@@ -2,6 +2,7 @@
 * Update: Keyboard Navigation improved.
 * Update: Text overflowing container isssue resolved.
 * Update: Style Improved.
+* Update: Screenshot size reduced.
 
 19-08-2026 = = Version 1.9.0 =
 * Update: Varitaion image not changing in quick view issue resolved.
@@ -135,7 +136,7 @@
 1. TH COMPARE INETEGRATED.
 2. Style Improved
 3. Tested with latest PHP 8.3 / 8.4.
-4. Tested with wordpress 6.8.
+4. Tested with 6.8.
 5. No open code present (__load_text_domain error)
 6. TH Wishlist added in Option Panel.
 7. Hooks added at after & before of haeder and footer also class added in these tags.
