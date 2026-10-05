@@ -182,6 +182,12 @@ static public function white_level_menu_callback() {
 
   function default_home()
   {
+    if ( ! current_user_can( 'manage_options' ) ) {
+      wp_send_json_error( array( 'message' => __( 'Permission denied.', 'th-shop-mania' ) ), 403 );
+    }
+
+    check_ajax_referer( 'ajaxnonce', 'nonce' );
+
     $pages = get_pages(array(
       'meta_key' => '_wp_page_template',
       'meta_value' => 'frontpage.php'
@@ -202,7 +208,7 @@ static public function white_level_menu_callback() {
       update_option('page_on_front', $post_id);
       update_option('show_on_front', 'page');
     }
-    wp_die(); // this is required to terminate immediately and return a proper response
+    wp_send_json_success();
   }
 
 
