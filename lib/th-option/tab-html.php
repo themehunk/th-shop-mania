@@ -67,14 +67,31 @@ if (!$tabActiveWl && !$tabActiveRp && !$tabActiveImportDc && !$tabActiveGtChild 
                         <div class="import-image">
                             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/lib/th-option/assets/images/import.gif">
                         </div>
+                        <?php
+                        // The Pro plugin ships its own importer, so the starter site plugin is only needed without it.
+                        $thsm_pro_init      = 'th-shop-mania-pro/th-shop-mania-pro.php';
+                        $thsm_pro_installed = file_exists( WP_PLUGIN_DIR . '/' . $thsm_pro_init );
+                        $thsm_pro_active    = is_plugin_active( $thsm_pro_init );
+                        ?>
                         <div class="title-plugin">
                             <h3><?php esc_html_e('Import Demo Content', 'th-shop-mania'); ?></h3>
 
-                            <p> <?php esc_html_e('Install "Starter site plugin" mentioned below to activate import demo button.', 'th-shop-mania'); ?></p>
-                            <a class="button disabled importdemo"><?php esc_html_e('Import Demo', 'th-shop-mania'); ?></a>
+                            <?php if ( $thsm_pro_active ) { ?>
+                                <p><?php esc_html_e('Th Shop Mania Pro is active. Click the button below to import a starter template.', 'th-shop-mania'); ?></p>
+                                <a class="button ztabtn importdemo" href="<?php echo esc_url( admin_url( 'themes.php?page=themehunk-site-library&template=step' ) ); ?>"><?php esc_html_e('Import Demo', 'th-shop-mania'); ?></a>
 
-                            <?php $this->plugin_install('import-demo-content'); ?>
-  
+                            <?php } elseif ( $thsm_pro_installed ) { ?>
+                                <p><?php esc_html_e('Activate the Th Shop Mania Pro plugin to enable the import demo button.', 'th-shop-mania'); ?></p>
+                                <a class="button disabled importdemo"><?php esc_html_e('Import Demo', 'th-shop-mania'); ?></a>
+                                <button data-activated="Activated" data-msg="<?php esc_attr_e('Activating', 'th-shop-mania'); ?>" data-init="<?php echo esc_attr( $thsm_pro_init ); ?>" data-slug="th-shop-mania-pro" class="button activate-now button-primary th-shop-mania-pro"><?php esc_html_e('Activate Pro Plugin', 'th-shop-mania'); ?></button>
+
+                            <?php } else { ?>
+                                <p> <?php esc_html_e('Install "Starter site plugin" mentioned below to activate import demo button.', 'th-shop-mania'); ?></p>
+                                <a class="button disabled importdemo"><?php esc_html_e('Import Demo', 'th-shop-mania'); ?></a>
+
+                                <?php $this->plugin_install('import-demo-content'); ?>
+                            <?php } ?>
+
                         </div>
 
                     </div>

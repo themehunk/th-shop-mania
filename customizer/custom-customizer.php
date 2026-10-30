@@ -511,6 +511,22 @@ function th_shop_mania_customizer_script_registers(){
 }
 add_action('customize_controls_enqueue_scripts', 'th_shop_mania_customizer_script_registers' );
 
+// customizer search
+function th_shop_mania_customizer_search_registers(){
+  $prefix = defined( 'SCRIPT_DEBUG' ) && ( SCRIPT_DEBUG ) ? '' : '.min';
+  wp_enqueue_style( 'th-shop-mania-customizer-search', TH_SHOP_MANIA_THEME_URI . 'customizer/customizer-search/css/customizer-search' . $prefix . '.css', array( 'dashicons' ), '1.0.0' );
+  wp_enqueue_script( 'th-shop-mania-customizer-search', TH_SHOP_MANIA_THEME_URI . 'customizer/customizer-search/js/customizer-search' . $prefix . '.js', array( 'jquery', 'customize-controls' ), '1.0.0', true );
+  wp_localize_script( 'th-shop-mania-customizer-search', 'thShopManiaCustomizerSearch', array(
+    'placeholder' => __( 'Search settings...', 'th-shop-mania' ),
+    'noResults'   => __( 'No settings found.', 'th-shop-mania' ),
+    'panel'       => __( 'Panel', 'th-shop-mania' ),
+    'section'     => __( 'Section', 'th-shop-mania' ),
+    /* translators: %d: number of search results. */
+    'results'     => __( '%d results', 'th-shop-mania' ),
+  ) );
+}
+add_action('customize_controls_enqueue_scripts', 'th_shop_mania_customizer_search_registers' );
+
 // style
 function th_shop_mania_customizer_style_registers(){
     

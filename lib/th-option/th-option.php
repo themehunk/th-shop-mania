@@ -26,7 +26,8 @@ class Th_Shop_Mania_theme_option
     
     // self::save_settings();
     // AJAX.
-    add_action('wp_ajax_th_activeplugin', array($this, 'th_activeplugin'));
+    // Theme-prefixed action: other ThemeHunk plugins also register 'th_activeplugin'.
+    add_action('wp_ajax_th_shop_mania_activeplugin', array($this, 'th_activeplugin'));
     add_action('wp_ajax_default_home', array($this, 'default_home'));
     add_action( 'after_setup_theme', __CLASS__ . '::init_admin_settings', 99 );
       
@@ -139,8 +140,8 @@ static public function white_level_menu_callback() {
   function admin_scripts($hook)
   {
     if ($hook === 'appearance_page_th_shop_mania_thunk_started') {
-      wp_enqueue_style('thunk-started-css', get_template_directory_uri() . '/lib/th-option/assets/css/started.css');
-      wp_enqueue_script('th-shop-mania-admin-load', get_template_directory_uri() . '/lib/th-option/assets/js/th-options.js', array('jquery', 'updates'), '1', array('in_footer' => true,'strategy'  => 'defer',));
+      wp_enqueue_style('thunk-started-css', get_template_directory_uri() . '/lib/th-option/assets/css/started.css', array(), filemtime(get_template_directory() . '/lib/th-option/assets/css/started.css'));
+      wp_enqueue_script('th-shop-mania-admin-load', get_template_directory_uri() . '/lib/th-option/assets/js/th-options.js', array('jquery', 'updates'), filemtime(get_template_directory() . '/lib/th-option/assets/js/th-options.js'), array('in_footer' => true,'strategy'  => 'defer',));
 
       
 
@@ -263,6 +264,11 @@ static public function white_level_menu_callback() {
           'message' => $activate->get_error_message(),
         )
       );
+    }
+
+    // Pro has its own importer, so the starter site plugin is no longer needed.
+    if ('th-shop-mania-pro/th-shop-mania-pro.php' === $plugin_init && is_plugin_active('hunk-companion/hunk-companion.php')) {
+      deactivate_plugins('hunk-companion/hunk-companion.php');
     }
 
     wp_send_json_success(
