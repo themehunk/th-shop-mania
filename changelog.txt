@@ -1,3 +1,9 @@
+30-10-2026 = = Version 1.9.3 =
+* Update: Customizer search added.
+* Update: Getting started page design improved.
+* Update: Plugin activation not working on getting started page issue resolved.
+* Update: Starter templates button updated for Pro plugin.
+
 05-08-2026 = = Version 1.9.2 =
 * Update: nonce issue fix.
 
